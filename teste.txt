@@ -1,4 +1,0 @@
-Ciência da Computação é o estudo teórico e prático da computação, abrangendo áreas como algoritmos, programação, arquitetura de computadores, sistemas operacionais,
-inteligência artificial, redes de computadores e segurança da informação.
-É uma ciência que visa compreender, desenvolver e aplicar o conhecimento computacional para
-resolver problemas e criar soluções inovadoras em diversas áreas.
