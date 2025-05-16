@@ -4,6 +4,16 @@ from collections import Counter
 from itertools import islice
 from time import sleep
 
+#O QUE PRECISAMOS FAZER:
+# Implementar o modelo booleano
+# Fazer o menu funcionar
+# Salvar as informações em arquivos
+# Verificar se o arquivo existe antes de extrair o vocabulário
+# Tratar as stopwords
+
+
+
+
 #palavrasParaRetirar
 stopWords = [
     "eu", "tu", "ele", "ela", "nós", "vocês", "eles", "elas",
