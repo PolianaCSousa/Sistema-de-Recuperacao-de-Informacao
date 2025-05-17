@@ -46,6 +46,7 @@ def index_collection(vocabulary):
        # print(index[vocabulary_key])
     return index
 
+
 def bool_index(vocabulary):
     collection = create_collection_dictionary()
     #print(collection)
@@ -59,9 +60,100 @@ def bool_index(vocabulary):
             else:
                 bool[word][doc_name] = 0;
 
-    print(bool)
+    #print(bool)
+    return bool
 #Lê o arquivo e extrai o vocabulário colocando em um array.
 # O vocabulário é toda palavra com mais de 2 caracteres que não sejam stopwords  (pronomes, caracteres especiais, não, sim, e etc.)
+
+
+#OPERADORES: AND, OR e NOT
+'''
+ideia: primeiro passo é pegar termo por termo da consulta (separar os termos dos operadores)
+ex: doce AND mel
+[doce, AND, mel]
+
+'''
+operators = ['and', 'or', 'not']
+def boolean_model():
+    #wordsAndOperators is the consult
+    print('*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_* CONSULTA *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*\n'
+          '-*- INSTRUÇÕES -*-\n'
+          'Para realizar a consulta você pode utilizar os operadores AND, OR ou NOT.\n'
+          'Para cada consulta você pode usar no máximo dois operadores.\n')
+    words = input('Informe a consulta: ')
+
+    wordsAndOperators = list(map(str.lower, words.split())) #é a consulta separada em uma lista
+
+    #Verifica se o usuario digitou um operador
+    if len(wordsAndOperators) == 3:
+        if not wordsAndOperators[1] in operators:
+           return print('Não há operadores na frase!')
+    elif len(wordsAndOperators) == 5:
+        if (not wordsAndOperators[1] in operators) and (not wordsAndOperators[3] in operators):
+            return print('Não há operadores na frase!')
+        elif (not wordsAndOperators[1] in operators) or (not wordsAndOperators[3] in operators):
+            return print('Está faltando um operador!')
+
+    vocabulary = get_most_relevant_terms()
+    #Verifica se o usuario fez uma consulta que contém termos indexados
+    consult_boolean = words_in_vocabulary(wordsAndOperators, vocabulary)
+    if consult_boolean == -1:
+        print('Os termos da consulta não estão no vocabulário. Tente fazer uma consulta diferente!')
+    else:
+        #lógica para calcular o documento retornado
+        calculate_result()
+        print(f'retorno: {consult_boolean}')
+        pass
+
+
+def calculate_result(wordsAndOperators,consult_boolean):
+
+    if len(wordsAndOperators) == 3: #temos apenas um operador para calcular
+        calculate_operator(wordsAndOperators,consult_boolean)
+        pass
+    else: #temos 2 operadores para calcular
+        pass
+
+
+#vou fazer o metodo sempre receber apenas dois termos e um operador
+def calculate_operator(consult, consult_boolean):
+
+    if consult[1] == 'and':
+        pass
+
+    if consult[1] == 'or':
+        pass
+
+    if consult[1] == 'not':
+        pass
+
+
+
+
+
+def words_in_vocabulary(words,vocabulary):
+
+    boolean_index = bool_index(vocabulary)
+    consult_boolean_index = dict()
+
+    for i in range(0,len(words), 2): #gera índices pares, ou seja, ele vai de 2 em 2. Ex: se words tiver 5 elementos, i será: 0, 2, 4. Fiz isso pois os termos sempre estarão em índices pares e são eles que estamos analisando nesse método
+        for key, value in boolean_index.items():
+            if words[i] == key:
+                consult_boolean_index[key] = value
+
+    if not consult_boolean_index: #se o dicionario for vazio quer dizer que o usuário não informou nenhum termo que faz parte do vocabulário
+        return -1
+    else:
+        return consult_boolean_index
+
+
+
+
+
+
+
+
+
 def extract_vocabulary(fileName):
     file = open(fileName, 'r', encoding='utf-8')
     vocabulary = [];
@@ -130,6 +222,7 @@ def menu():
               "********** 2 - PARA IMPRIMIR O VOCABULÁRIO *******************\n"
               "********** 3 - PARA IMPRIMIR A MATRIZ DE OCORRÊNCIAS *********\n"
               "********** 4 - PARA IMPRIMIR A MATRIZ DE FREQUENCIAS *********\n"
+              "********** 5 - PARA APLICAR O MODELO BOOLEANO ****************\n"
               "********** 0 - SAIR ******************************************\n"
               "**************************************************************\n"
               "DIGITE A OPÇÃO DESEJADA: "))
@@ -154,12 +247,13 @@ def menu():
 
 
 if __name__ == "__main__":
+    boolean_model()
     # menu()
     #vocabulary = extract_vocabulary('doc1.txt')
-    result = get_most_relevant_terms() #menu 2
+    # result = get_most_relevant_terms() #menu 2
     #print(result)
 
-    index = bool_index(result)
+    # index = bool_index(result)
 
     '''
     vocabulary2 = create_dictionary('doc2.txt')
