@@ -101,31 +101,56 @@ def boolean_model():
         print('Os termos da consulta não estão no vocabulário. Tente fazer uma consulta diferente!')
     else:
         #lógica para calcular o documento retornado
-        calculate_result()
+        calculate_result(wordsAndOperators, consult_boolean)
         print(f'retorno: {consult_boolean}')
         pass
 
 
-def calculate_result(wordsAndOperators,consult_boolean):
+""" antes
+    def calculate_result(wordsAndOperators,consult_boolean):
 
     if len(wordsAndOperators) == 3: #temos apenas um operador para calcular
         calculate_operator(wordsAndOperators,consult_boolean)
         pass
     else: #temos 2 operadores para calcular
-        pass
+        pass """
+
+def calculate_result(wordsAndOperators, consult_boolean):
+    if len(wordsAndOperators) == 3:  # temos apenas um operador para calcular
+        calculate_operator(wordsAndOperators, consult_boolean)
+    else:  # temos 2 operadores para calcular
+        partial_result = calculate_operator(wordsAndOperators[0:3], consult_boolean)
+        new_consult = [partial_result] + wordsAndOperators[3:]
+        calculate_operator(new_consult, consult_boolean)
+
 
 
 #vou fazer o metodo sempre receber apenas dois termos e um operador
 def calculate_operator(consult, consult_boolean):
 
+    docs = list(next(iter(consult_boolean.values())).keys())
+
     if consult[1] == 'and':
-        pass
+        result = {}
+        for doc in docs:
+            result[doc] = consult_boolean[consult[0]][doc] & consult_boolean[consult[2]][doc]
+        print(f'\nResultado da operação AND: {result}')
+        return result
 
     if consult[1] == 'or':
-        pass
+        result = {}
+        for doc in docs:
+            result[doc] = consult_boolean[consult[0]][doc] | consult_boolean[consult[2]][doc]
+        print(f'\nResultado da operação OR: {result}')
+        return result
 
     if consult[1] == 'not':
-        pass
+        result = {}
+        for doc in docs:
+            result[doc] = int(not consult_boolean[consult[2]][doc])
+        print(f'\nResultado da operação NOT: {result}')
+        return result
+
 
 
 
@@ -155,16 +180,20 @@ def words_in_vocabulary(words,vocabulary):
 
 
 def extract_vocabulary(fileName):
-    file = open(fileName, 'r', encoding='utf-8')
-    vocabulary = [];
+    try:
+        file = open(fileName, 'r', encoding='utf-8')
+    except FileNotFoundError:
+        print(f'Arquivo {fileName} não encontrado.')
+        return []
+
+    vocabulary = []
     for line in file:
         strings = re.findall(r'\b[^\W\d_]{3,}\b', line, re.UNICODE)
         lower_strings = list(map(str.lower, strings))
-        #filtered = [s for s in strings if s and len(s) > 2 and not s.isdigit()]
-        vocabulary = vocabulary + lower_strings
+        filtered = [s for s in lower_strings if s not in stopWords]
+        vocabulary = vocabulary + filtered
 
     file.close()
-
     return vocabulary
 
 def create_dictionary(fileName):
@@ -230,16 +259,32 @@ def menu():
 
         match option:
             case 1:
-                index_collection()
+                vocabulary = get_most_relevant_terms()
+                index = index_collection(vocabulary)
+                print('\nColeção indexada com sucesso!')
 
             case 2:
-                pass
+                vocabulary = get_most_relevant_terms()
+                print('\nVOCABULÁRIO (20 termos mais frequentes):')
+                for word, freq in vocabulary.items():
+                    print(f'{word}: {freq}')
 
             case 3:
-                pass
+                vocabulary = get_most_relevant_terms()
+                matrix = bool_index(vocabulary)
+                print('\nMATRIZ DE OCORRÊNCIAS (0 = não aparece, 1 = aparece):')
+                for word, docs in matrix.items():
+                    print(f'{word}: {docs}')
 
             case 4:
-                pass
+                vocabulary = get_most_relevant_terms()
+                matrix = index_collection(vocabulary)
+                print('\nMATRIZ DE FREQUÊNCIAS:')
+                for word, data in matrix.items():
+                    print(f'{word}: {data[1]}')
+
+            case 5:
+                boolean_model()
 
             case 0:
                 break
@@ -247,13 +292,15 @@ def menu():
 
 
 if __name__ == "__main__":
-    boolean_model()
+    #boolean_model()
     # menu()
     #vocabulary = extract_vocabulary('doc1.txt')
     # result = get_most_relevant_terms() #menu 2
     #print(result)
 
     # index = bool_index(result)
+
+    menu()
 
     '''
     vocabulary2 = create_dictionary('doc2.txt')
