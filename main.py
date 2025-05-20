@@ -117,11 +117,19 @@ def boolean_model():
 
 def calculate_result(wordsAndOperators, consult_boolean):
     if len(wordsAndOperators) == 3:  # temos apenas um operador para calcular
-        calculate_operator(wordsAndOperators, consult_boolean)
+        result = calculate_operator(wordsAndOperators, consult_boolean)
+        print(f'\nResultado final da consulta: {result}')
     else:  # temos 2 operadores para calcular
-        partial_result = calculate_operator(wordsAndOperators[0:3], consult_boolean)
-        new_consult = [partial_result] + wordsAndOperators[3:]
-        calculate_operator(new_consult, consult_boolean)
+        result1 = calculate_operator(wordsAndOperators[0:3], consult_boolean)
+        
+        # Cria um dicionário simulado com os resultados parciais como se fosse um termo
+        partial_term = "_partial"
+        consult_boolean[partial_term] = result1
+
+        # Monta a nova consulta: usa o resultado da primeira operação como primeiro operando
+        final_consult = [partial_term, wordsAndOperators[3], wordsAndOperators[4]]
+        result2 = calculate_operator(final_consult, consult_boolean)
+        print(f'\nResultado final da consulta: {result2}')
 
 
 
@@ -156,7 +164,7 @@ def calculate_operator(consult, consult_boolean):
 
 
 
-def words_in_vocabulary(words,vocabulary):
+""" def words_in_vocabulary(words,vocabulary):
 
     boolean_index = bool_index(vocabulary)
     consult_boolean_index = dict()
@@ -171,8 +179,25 @@ def words_in_vocabulary(words,vocabulary):
     else:
         return consult_boolean_index
 
+ """
 
+def words_in_vocabulary(words, vocabulary):
+    boolean_index = bool_index(vocabulary)
+    consult_boolean_index = {}
 
+    missing = []
+
+    for i in range(0, len(words), 2):  
+        if words[i] in boolean_index:
+            consult_boolean_index[words[i]] = boolean_index[words[i]]
+        else:
+            missing.append(words[i])
+
+    if missing:
+        print(f"Os termos a seguir não estão no vocabulário: {', '.join(missing)}")
+        return -1
+
+    return consult_boolean_index
 
 
 
