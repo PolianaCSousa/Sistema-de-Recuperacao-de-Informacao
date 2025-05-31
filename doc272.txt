@@ -1,0 +1,159 @@
+O que é o IPFS
+É um sistema de arquivos.
+
+Caso você já tenha começado a pesquisar sobre IPFS, pode acabar ficando confuso com a maneira como esse protocolo é abordado. Geralmente os artigos começam com uma seção “IPFS versus HTTP” ou “HTTP é quebrado”, o que eu acho não somente desnecessário, como também que gera uma tendência grande de desentendimento a respeito da coisa toda.
+
+IPFS é a sigla para “InterPlanetary File System”. Logo, além de ser um sistema de arquivos, parece que a ideia é que ele seja ubíquo, onipresente.
+
+Talvez a melhor maneira de entender o IPFS seja atentar primeiramente para a parte conceitual, para somente depois ir adentrando seus aspectos técnicos.
+
+Um conceito de cada vez: armazenamento
+Imagine que alguma instituição muito bondosa (e rica) resolvesse distribuir gratuitamente chaves de acesso a um bucket do S3 (que é o serviço de armazenamento da Amazon) para qualquer um que pedisse. A ideia seria termos um lugar onde qualquer pessoa comum e ordinária pudesse jogar seus arquivos, criando assim um grande espaço global, democrático e acessível facilmente por qualquer computador conectado à internet.
+
+Esse é o primeiro conceito que o IPFS abarca: um local universal para o qual você pode enviar seus arquivos e do qual você pode acessar arquivos que outras pessoas jogaram lá.
+
+Resiliência
+Agora imagine que um conjunto de cientistas com grandes óculos, jalecos brancos e cabelos meio despenteados criaram um jeito “mágico” de fazer com que qualquer computador que estivesse fazendo uso desse espaço global de armazenamento servisse também como backup para uma boa parte do que foi guardado nO Grande Bucket do S3. Dessa forma, caso a Amazon sofresse alguma “grande queda” (tornando-se indisponível), ainda assim todos acabariam tendo acesso aos arquivos, provavelmente sem sequer sentir a “outage” da Amazon.
+
+Velocidade
+Agora imagine que esse mesmo esquema de fazer com que cada máquina fosse um backup dO Grande Bucket do S3 gerasse, “de brinde”, uma capacidade interessante: as máquinas não precisariam requisitar arquivos necessariamente para algum data center da Amazon, mas poderiam encontrar algum “vizinho próximo” que tivesse os arquivos requisitados e baixariam direto de seus vizinhos.
+
+Interessante, não?
+
+E é isso
+Armazenamento. Resiliência. Velocidade.
+
+Se você conseguiu imaginar um cenário como esse que descrevi, conseguirá facilmente entender como funciona o IPFS.
+
+Nomes?
+Creio que o único grande “gotcha” nessa questão conceitual é entender como os arquivos são nomeados dentro desse “Grande Bucket do S3".
+
+Pense você: bilhões de pessoas e máquinas estarão jogando seus arquivos num mesmo “HD” global. Como diabos vamos organizar essa loucura? Vamos criar um diretório para cada pessoa, com seu nome? E como eu vou garantir que não sobrescrevam meus arquivos? Ou que os apaguem?
+
+Pois bem, a grande mudança conceitual no IPFS com relação a essa situação fictícia do “Grande Bucket do S3” é a seguinte: ao invés de os arquivos terem nomes definidos pelos usuários do sistema, eles serão referenciados por meio de um código hash (bem grande) que é gerado a partir do conteúdo de cada arquivo.
+
+E isso gera algumas consequências interessantes. Primeiro, arquivos com conteúdo idêntico (ou seja: duplicados) acabam tendo o mesmo nome dentro desse Grande Bucket. Segundo: se não há mais a possibilidade de dois arquivos diferentes terem o mesmo nome (porque o nome depende do conteúdo, afinal), todos podem habitar o diretório raiz, em conjunto. E, terceiro: se todos podem habitar diretório raiz conjuntamente, logo temos a garantia de que nenhum arquivo dentro dO Grande Bucket é duplicado. Todos, absolutamente, são únicos.
+
+Mas agora ficou complicado
+Nós estamos acostumados a ter arquivos com nomes descritivos. E estamos acostumados a termos diretórios que agrupam arquivos com um mesmo propósito ou significado (ou não, como é o caso do “~/Desktop” de muita gente…). E depois do que eu disse sobre cada arquivo ter como nome um hash baseado em seu conteúdo, a impressão que fica é que o IPFS é muito pouco human-friendly.
+
+Mas eu explico melhor.
+
+As coisas que habitam “O Grande Bucket do S3" não são “arquivos”, mas objetos. E os objetos, eles mesmos, seguem um padrão muito semelhante ao dos nossos sistemas de arquivos usuais: eles podem representar arquivos, diretórios ou links simbólicos (e outros tipos, também, que não convém mencionar agora).
+
+Diretórios
+Um objeto, no IPFS, tem como nome, dentro do IPFS, um hash representando seu conteúdo. Mas ele mesmo pode ser referenciado por um objeto do tipo diretório, e essa referência, veja só, pode ter um nome human-readable!
+
+E agora vem a parte interessante: internamente, “minhas-paradas” é uma referência para um objeto, cujo nome verdadeiro é um hash baseado em seu conteúdo, que habita “a raiz” do IPFS. Mas os links dão nomes mais amigáveis e ajudam-nos a organizar as coisas de maneira mais compreensível. Dessa forma, você ganha uma visão mais amigável dos seus arquivos e diretórios ao mesmo tempo que mantém a de-duplicação de todos os arquivos dO Grande Bucket do S3 — por mais que, nessa camada mais amigável, eles sejam referenciados por diversos nomes diferentes.
+
+Imutabilidade
+A imutabilidade dos arquivos é um conceito meio complicado, especialmente se você começou a aprender sobre o IPFS daquela maneira do nerd-que-entende-tudo-mas-não-é-bom-em-explicar-para-os-outros. Mas vamos raciocinar juntos:
+
+1- O nome do objeto é um hash que depende do conteúdo do mesmo.
+
+2- Então, se eu mudo o conteúdo do arquivo (ou diretório)… muda o nome/hash.
+
+Divida isso agora em dois níveis semânticos:
+
+1- Humanamente falando, seu arquivo muda, sim, mas cada vez que muda ganha um novo nome/hash dentro do IPFS.
+
+2- Do ponto de vista “da máquina”, cada arquivo/diretório é imutável, porque o conteúdo de um nome/hash específico é sempre o mesmo. A máquina (ou “o protocolo”) não tem a compreensão semântica de que um novo nome/hash agora representa uma versão alterada de um nome/hash antigo. E nem precisa.
+
+Resumo conceitual
+Um “HD global” em que todos podem ler e escrever.
+Objetos podem representar arquivos, diretórios e links simbólicos.
+Os nomes dos objetos são hashs baseados em seus respectivos conteúdos.
+Você pode encarar os objetos como arquivos e diretórios de um sistema de arquivos comum e ordinário.
+
+
+Como funciona, tecnicamente
+O IPFS é um enxame global de clientes estilo BitTorrent que mantém regras simples e estritas sobre o objetos.
+
+Os objetos tem tamanho limitado a 256kB. Logo, se você quiser enviar um arquivo maior que isso, ele será quebrado em N objetos. Tipo no BitTorrent, mesmo.
+
+Cada nó/peer dentro da rede mantém uma coleção de objetos “em cache”. Do jeito que o protocolo foi feito, os nós são incentivados a manter objetos e até a procurar por objetos que outros peers estejam buscando.
+
+(Os incentivos a manter objetos em cache ainda são muito baseados na boa-vontade dos donos dos nós, mas há um protocolo chamado “FileCoin” sendo desenvolvido cuja ideia é justamente melhorar isso.)
+
+Quando você pede por um arquivo formado por N “sub-objetos”, você pode acabar pegando um pedacinho de cada peer conectado. O que faz com que a transmissão seja bem rápida (pense: você poderia acabar baixando um arquivo de forma “completamente” paralela).
+
+Todos os arquivos podem ser lidos por todos os peers. Ou seja: caso isso te incomode, cabe a você criptografar seus dados. Reza a lenda que em breve haverá suporte nativo no próprio IPFS para isso.
+
+IPNS
+O IPNS é um “protocolo acessório” do IPFS que permite que você dê um nome fixo para um conteúdo variável. Pense no IPNS como uma opção para você criar um nome/hash fixo que pode apontar para nomes/hashs variáveis do IPFS.
+
+Ele é a forma de se “transliterar” o conceito que temos de “um arquivo que muda” para o IPFS. Com o IPNS você cria uma espécie de link simbólico, que hoje aponta para um objeto IPFS, mas amanhã pode apontar para outro.
+
+Mudanças de paradigma
+Nossas mentes ainda estão muito acostumadas com a arquitetura cliente/servidor, que se tornou padrão na internet. Se você, como eu, é um desenvolvedor/programador, certamente acabará pensando “tá, mas e como isso muda a internet, afinal?”. Ou, pelo menos, “tá, mas como isso muda o meu jeito de trabalhar, afinal?”.
+
+Falarei no próximo tópico sobre possíveis usos do IPFS, muitas delas fora do escopo “desenvolvimento de aplicações”, que será o foco dessa seção.
+
+Assets
+Tudo o que é estático, hoje, no HTTP, deveria vir do IPFS. Pode ser seu site inteiro ou pode ser apenas os “assets”, como arquivos CSS, JS, imagens e vídeos.
+
+Os arquivos não são mais seus: são do mundo
+Deixa de existir o conceito do “meu” arquivo. Os arquivos são imutáveis e ficam fora do seu controle. O “dinamismo” acontece por meio de protocolos acessórios, como o IPNS — ou mesmo indicação de mudança via HTTP.
+
+Você não é mais o detentor oficial da propriedade sobre os dados. Isso vem de outras fontes. Você acaba se tornando, via IPNS, por exemplo, apenas o indicador padrão de qual é a última versão dos dados.
+
+Digo isso porque, se o arquivo é imutável, não faz diferença quem é o “dono”. A princípio parece algo muito sério, mas se você pensar bem a respeito verá que é, na verdade, algo muito natural.
+
+Banco de dados distribuído
+Nesse sentido, repare que o próprio banco de dados da aplicação quase que precisa ser distribuído também. Caso você use HTTP como protocolo de suporte, provavelmente acabará distribuindo chaves para que cada usuário possa de-criptografar seus próprios dados.
+
+E veja como isso pode tornar-se bem interessante: o banco de dados será composto por, digamos, mil objetos (~25MB), dos quais apenas algumas centenas irá, de fato, ser alterada, especialmente se houver muitas tabelas que sofrem mais adição do que edição (muitos inserts, poucos updates).
+
+Entretanto, embora torne-se fácil distribuir os dados, também torna-se complexo trabalhar com eles na máquina do cliente. Talvez esteja aí um bom nicho para que os SGBDs que rodam direto no navegador entrem em ação (exemplo: https://pouchdb.com/ , IndexedDB. Veja o próprio ipfs-live-db, também).
+
+Cada navegador é um nó
+Obrigar que cada pessoa que queira usufruir dos benefícios do IPFS rode seu próprio “servidor” localmente ainda é uma realidade distante e impraticável. Talvez por isso mesmo tenha surgido rapidamente o js-ipfs, que é o IPFS que pode rodar direto do navegador. Dessa forma, cada navegador torna-se um novo nó.
+
+Digamos que você queira distribuir assets da sua aplicação web via IPFS. Por exemplo: na DroneMapp, onde trabalho, a aplicação lida com muitos tiles de mapas. Se dentro de uma mesma rede (como a rede interna de algum cliente nosso) houver dois ou mais nós IPFS conectados, apenas um teria que fazer o download dos tiles a partir de algum outro nó externo. A partir daí, os assets estáticos estariam sendo servidos internamente, de maneira muito mais rápida para os clientes, menos onerosa para nós (menos requisições GET no nosso bucket do S3) e mais resiliente (a aplicação funcionaria razoavelmente bem até mesmo se a empresa ficasse sem internet).
+
+Aplicações interessantes
+Streaming de vídeo
+Veja que já temos o PopcornTime, que trabalha sobre o protocolo do BitTorrent.
+
+Vídeo é o tipo de conteúdo que consome muita banda e são poucas as empresas que podem investir em infraestrutura adequada para servir vídeos. O próprio Facebook demorou muito tempo até conseguir entregar vídeos de maneira razoável, veja você.
+
+E é óbvio que a tarefa é complicada. Ter milhões de pessoas conectadas simultaneamente em estruturas centralizadas/centralizadoras nem parece fazer sentido, mais. Podemos fazer melhor!
+
+Quem é que paga os servidores de vídeo do Popcorn Time, afinal? Eu imagino que haja alguns “web seeders” ativos, até, mas os dados não vem primariamente de servidores centralizados, mas dos próprios usuários do programa! Não somente o custo é monstruosamente menor, como a infraestrutura da internet sofre muito menos com isso. Quando eu assisto um filme via Popcorn Time, é bem provável que a maioria dos dados esteja vindo de dentro do meu próprio estado, quiçá aqui de Curitiba, mesmo!
+
+Storage
+Já dei o exemplo dos assets estáticos de sites, mas também acho que seria bem interessante se fosse implementado um “Dropbox IPFS”.
+
+Curiosamente, o IPFS implementa algumas coisas que o fazem também bem parecido com o git , também. Já pensou que interessante: você mandar um git push no galho-mestre e isso em si já servir de deploy?
+
+Repositórios de distribuições
+Que legal será o dia que o apt começar a usar IPFS como primeira opção de download de pacotes!
+
+Blockchains diversos
+O IPFS permite criar objetos que referenciam outros objetos e também contém dados (ou “meta-dados”). Ou seja: pode-se implementar blockchains nativos dentro do IPFS com pouquíssimo esforço. E, o que é melhor: esse tipo de coisa sequer incomodaria os usuários que não frequentam A Igreja do Blockchain…
+
+O IPFS substituirá o HTTP?
+Claro.
+
+Igual os jornais impressos, que mataram a transmissão de novidades no boca-a-boca.
+
+Igual o rádio, que substituiu os jornais impressos.
+
+Igual a TV, que substituiu o rádio.
+
+Igual a internet, que substituiu a TV.
+
+
+Limitações
+Envio de dados para um “servidor”
+Já há algum progresso em um sistema de pub/sub que roda sobre o IPFS. Mas, no geral, enviar dados para um servidor ou comunicar-se com alguma entidade central é algo que não tem suporte no IPFS e, como eu sugeri antes, provavelmente é o tipo de coisa que ficará relegada a protocolos alternativos como o bom e velho HTTP.
+
+Esse é um dos motivos que me faz pensar no IPFS não exatamente como um substituto, mas como uma grande adição à nossa maneira habitual de encarar a internet. Talvez não consigamos fazer um salto tão grande de uma vez só: de uma arquitetura centralizadora para outra completamente distribuída. E talvez nem seja interessante, mesmo. Provavelmente precisaremos de algumas iterações com graus variados de distribuição versus centralização até conseguirmos refinar velhas e novas tecnologias, bibliotecas, ferramentas e frameworks.
+
+Cada nó é um servidor
+A não ser que nos contentemos com o uso de gateways que funcionariam sobre a estrutura atual (DNS/HTTP), deveríamos ter tantos nós IPFS quanto temos navegadores.
+
+
+
+
+

@@ -1,0 +1,385 @@
+Redução de 3-SAT para Subconjunto Independente em
+Grafos: Implicac¸ ˜oes e Perspectivas
+Vitor Jos´e Ferreira dos S. de Santana1, Ericksulino M. de A. Moura1,
+Jos´e Miqueias de A. Pereira 1, Juliana Oliveira de Carvalho 1 ,
+Glauber Dias Gonc¸alves1
+1Universidade Federal do Piau´ı (UFPI)
+Picos – PI – Brazi
+vitorsantos,ericksulino,jmiqueias,julianaoc,ggoncalves}@ufpi.edu.br
+Abstract. This study investigates the reduction of the 3-SAT problem to Inde-
+pendent Subset in graphs, preserving the NP-complete complexity of the original
+problems. The methodology uses the 3-SAT mathematical structure to translate
+Boolean clauses into graphical relationships, enabling the verification of inde-
+pendent sets. The results show that this approach can offer efficient and scalable
+solutions, useful in consistency checks in specialized systems, optimization of di-
+gital circuits and other complex computational challenges.
+Resumo. Este estudo investiga a reduc¸ ˜ao do problema 3-SAT para Subconjunto
+Independente em grafos, preservando a complexidade NP-completa dos proble-
+mas originais. A metodologia utiliza a estrutura matem´atica do 3-SAT para tra-
+duzir cl´ausulas booleanas em relac¸ ˜oes gr´aficas, viabilizando a verificac¸ ˜ao de
+conjuntos independentes. Os resultados mostram que esta abordagem pode ofe-
+recer soluc¸ ˜oes eficientes e escal´aveis, ´uteis em verificac¸ ˜oes de consistˆencia em
+sistemas especialistas, otimizac¸ ˜ao de circuitos digitais e outros desafios compu-
+tacionais complexos.
+1. Introduc¸ ˜ao
+A reduc¸ ˜ao de problemas e a complexidade de software desempenham pap´eis fundamen-
+tais na resoluc¸ ˜ao de desafios computacionais no mundo contemporˆaneo. Para estudar a
+eficiˆencia computacional de problemas computacionais quaisquer existe a ´area da Com-
+plexidade Computacional [Papadimitriou 1994]. Em um contexto onde a tecnologia per-
+meia todos os aspectos da vida, desde a comunicac¸ ˜ao at´e a gest˜ao de recursos cr´ıticos, a
+eficiˆencia e a confiabilidade dos sistemas s˜ao cruciais. A complexidade excessiva pode
+resultar em sistemas dif´ıceis de entender, manter e escalar, aumentando significativamente
+os custos e o risco de falhas. Portanto, a simplificac¸ ˜ao n˜ao apenas melhora a qualidade
+do software, mas tamb´em reduz os potenciais pontos de falha, promovendo maior esta-
+bilidade. Complexidade significa o n´ıvel de dificuldade em compreender e verificar um
+software programa ou um determinado componente de software [Committee et al. 1990].
+Na pr´atica, a reduc¸ ˜ao de problemas envolve identificar e eliminar redundˆancias,
+simplificar algoritmos e arquiteturas, e adotar abordagens mais elegantes e eficientes. Os
+benef´ıcios da teoria da reduc¸ ˜ao de problemas na complexidade do algoritmo incluem me-
+nor custo computacional, maior eficiˆencia de pesquisa e abordagem da sobrecarga cog-
+nitiva para os tomadores de decis˜ao [Sinha et al. 2013]. A reduc¸ ˜ao objetiva na teoria da
+complexidade do algoritmo pode tornar problemas com muitos objetivos solucion´aveis,
+removendo objetivos n˜ao essenciais, melhorando a eficiˆencia da pesquisa, o custo com-
+putacional e a tomada de decis˜oes [Saxena et al. 2013].
+O problema de Satisfatibilidade de ordem 3 (3-SAT) ´e um problema bem co-
+nhecido como NP-completo e possui muitas aplicac¸ ˜oes pr´aticas, como verificac¸ ˜ao de
+consistˆencia em bases de conhecimento de sistemas especialistas e s´ıntese de circuitos
+ass´ıncronos [Fallah et al. 1998]. A verificac¸ ˜ao de consistˆencia ´e crucial para garantir que
+n˜ao existam conflitos entre as regras e fatos armazenados em uma base de conhecimento.
+A complexidade deste problema pode ser abordada de forma mais eficiente ao transform´a-
+lo em um problema de Subconjunto Independente, facilitando a aplicac¸ ˜ao de algoritmos
+gr´aficos para encontrar soluc¸ ˜oes consistentes.
+Al´em disso, o 3-SAT ´e amplamente resolvido pelo mapeamento do algo-
+ritmo de Davis-Putnam-Logemann-Loveland (DPLL) [Can´e et al. 2023]. Outros ca-
+sos de utilizac¸ ˜ao incluem a Inteligˆencia Artifical por meio da rede de Hopfi-
+eld [Hopfield and Tank 1989], automac¸ ˜ao de projeto eletrˆonico [Pan and Chu 2023] e
+computac¸ ˜ao molecular, como demonstrado por Lipton [Lipton 1995] para aproveitar o
+paralelismo proporcionado pela computac¸ ˜ao de DNA [Braich et al. 2002]. Este trabalho
+examina a viabilidade de soluc¸ ˜ao do problema 3-SAT por meio da reduc¸ ˜ao para o pro-
+blema de Subconjunto Independente, demonstrando como essa transformac¸ ˜ao preserva a
+complexidade original e pode ser uma alternativa de soluc¸ ˜ao de problemas comuns do
+3-SAT.
+O artigo ´e estruturado em cinco sec¸ ˜oes, al´em da introduc¸ ˜ao, divididos da seguinte
+forma. A Sec¸ ˜ao 2 discute conceitos chave para a compreenc¸ ˜ao deste trabalho.A Sec¸ ˜ao 3
+descreve os procedimentos e t´ecnicas utilizadas na pesquisa. Na Sec¸ ˜ao 4, s˜ao apresentados
+os dados obtidos e suas an´alises. E por fim, a Sec¸ ˜ao 5 resume as principais descobertas e
+implicac¸ ˜oes do estudo, sugerindo poss´ıveis direc¸ ˜oes para futuras pesquisas.
+2. Fundamentac¸ ˜ao Te´orica
+2.1. Reduc¸ ˜ao entre problemas
+A reduc¸ ˜ao entre problemas ´e uma t´ecnica fundamental no projeto de algoritmos, per-
+mitindo a transformac¸ ˜ao de um problema em outro, de modo que uma soluc¸ ˜ao efici-
+ente para o problema transformado possa ser utilizada para resolver o problema origi-
+nal. A ideia intuitiva ´e utilizar um algoritmo que j´a existe para um certo problema,
+ou qualquer algoritmo que venha a ser criado para ele, para resolver outro problema
+[Lintzmayer and Mota 2020]. A principal t´ecnica usada para demonstrar que dois pro-
+blemas s˜ao relacionado ´e o de “reduzir”um ao outro, dando uma transformac¸ ˜ao que ma-
+peia qualquer instˆancia do primeiro problema em um instˆancia equivalente do segundo
+[Garey and Johnson 1979].
+Do ponto de vista matem´atico, a reduc¸ ˜ao entre problemas ´e formalizada pela
+existˆencia de uma func¸ ˜ao comput´avel f que mapeia instˆancias sim de A para instˆancias
+sim de B e, por consequˆencia, instˆancias n˜ao de A para instˆancias n˜ao de B. Fazer
+reduc¸ ˜oes com essa garantia nos permite usar um algoritmo para o problema B sobre
+f (IA) de tal forma que se tal algoritmo responder sim, teremos certeza de que IA ´e sim,
+e se ele responder n˜ao, teremos certeza de que IA ´e n˜ao [Lintzmayer and Mota 2020]. A
+Figura 1 ilustra o fluxograma de soluc¸ ˜ao de um problema A por meio de um problema B.
+Figura 1. Fluxograma de ilustrac¸ ˜ao de soluc¸ ˜ao de um problema A por meio de
+reduc¸ ˜ao para um problema B. Fonte: [Lintzmayer and Mota 2020].
+2.2. Classes de complexidade
+A Complexidade Computacional caracteriza a complexidade de um problema a par-
+tir da quantidade de recursos computacionais, como espac¸o e tempo, para resolvˆe-lo
+[Moreira 2016]. Na complexidade computacional classificamos os problemas compu-
+tacionais em classes de complexidade [Papadimitriou 2003]. Essas classes nos ajudam
+a entender quais problemas podem ser resolvidos de forma eficiente e quais s˜ao in-
+trinsecamente dif´ıceis, requerendo mais recursos computacionais conforme aumenta a
+complexidade dos problemas. Uma classe de complexidade ´e especificada pelo mo-
+delo de computac¸ ˜ao e representa um conjunto de problemas relacionados aos recursos
+computacionais baseados em complexidade na Teoria da Complexidade Computacional
+[Rocha 2014].
+Conforme definido por Cook [Cook 2021], P ´e a classe dos conjuntos re-
+conhec´ıveis em tempo polinomial, significando que existe um algoritmo que re-
+solve o problema de entrada em um tempo que ´e uma func¸ ˜ao polinomial do tama-
+nho da entrada [Sipser 1996]. Informalmente, P pode ser definida como a classe
+dos problemas de reconhecimento resolv´ıveis por um algoritmo de tempo polinomial
+[Papadimitriou and Steiglitz 2013].
+NP ´e a classe das linguagens decididas por m´aquinas de Turing n˜ao deter-
+min´ısticas em tempo polinomial [Papadimitriou 2003], contendo todos os problemas de
+decis˜ao para os quais uma soluc¸ ˜ao pode ser verificada por uma m´aquina de Turing de-
+termin´ıstica em tempo polinomial [Lucchesi 1979]. A classe NP-completo ´e um sub-
+conjunto de NP, sendo os problemas mais dif´ıceis dentro dessa classe. Um problema ´e
+NP-completo se todos os outros problemas em NP se reduzem a ele em tempo polino-
+mial [Papadimitriou 2003]. Se um problema NP-completo puder ser resolvido em tempo
+polinomial, ent˜ao todos os problemas em NP tamb´em poderiam ser [Sipser 1996].
+A classe NP-dif´ıcil inclui todos os problemas que s˜ao, pelo menos, t˜ao dif´ıceis
+quanto os problemas mais dif´ıceis em NP, mas n˜ao precisam necessariamente estar em
+NP [Sipser 1996]. Milhares de problemas s˜ao conhecidos por serem NP-dif´ıcil, e para
+determinar se um problema ´e NP-dif´ıcil, deve-se verificar se algu´em j´a provou sua difi-
+culdade ou usou um problema NP-dif´ıcil conhecido para isso [Tovey 2002].
+2.3. Satisfabilidade de ordem 3 (3-SAT)
+O problema SAT ´e um prot´otipo de problema NP-completo de fundamental importˆancia
+na teoria da complexidade computacional, com muitas aplicac¸ ˜oes em ciˆencia e engenha-
+ria [Zhang et al. 2024]. Hipoteticamente, o problema de trˆes satisfatibilidades (3-SAT)
+pode ser classificado como um problema NP-Hard cl´assico [Choi 2011]. O problema de
+satisfatibilidade considerar´a como uma tarefa de busca de uma atribuic¸ ˜ao de verdade que
+satisfac¸a a express˜ao l´ogica como verdadeira [Mansor and Sathasivam 2016]. Geralmente
+SAT ´e uma l´ogica booleana composta por trˆes literais que permitem escolhas de valores
+para cada literal[Mansor et al. 2018].
+Este problema tem sido h´a muito tempo um cen´ario combinatorial padr˜ao para
+estudos algor´ıtmicos e te´oricos. A densidade d ´e um indicador crucial que caracteriza o
+espac¸o de soluc¸ ˜oes e sua dificuldade computacional. Para uma instˆancia 3-SAT com d
+pequeno, o problema ´e subdeterminado e provavelmente satisfaz´ıvel, enquanto que com d
+grande, ele ´e superdeterminado e provavelmente insatisfaz´ıvel [Zhang et al. 2024]. Dada
+uma instˆancia ϕ de 3-SAT em forma normal conjuntiva (CNF), o problema ´e dado pela
+F´ormula 1. De modo que cada lij representa um literal booleano. A sa´ıda do problema
+´e determinar se existe uma atribuic¸ ˜ao de valores booleanos para as vari´aveis de modo a
+f´ormula seja satisfeita. Logo, h´a uma atribuic¸ ˜ao de valores booelanos que deve tornar a
+formula ϕ verdadeira.
+ϕ = (l11 ∨ l12 ∨ l13) ∧ (l21 ∨ l22 ∨ l23) ∧ . . . ∧ (lm1 ∨ lm2 ∨ lm3) (1)
+2.4. Subconjunto Independente
+Um Subconjunto Independente (SI) de um grafo ´e um conjunto de v´ertices tal que nenhum
+par de v´ertices do conjunto ´e adjacente, ou seja, n˜ao h´a aresta conectando qualquer par
+de v´ertices no subconjunto [Garey and Johnson 1979]. O Subconjunto Independente ´e o
+problema no qual, dado um grafo G e um inteiro k, o objetivo ´e determinar se existe um
+conjunto independente de G com tamanho pelo menos k [Iwata and Yoshida 2015].
+O problema do Subconjunto Independente em grafos ´e um problema fundamental
+em teoria dos grafos, onde o objetivo ´e encontrar o maior conjunto de v´ertices em um
+grafo tal que nenhum par de v´ertices esteja conectado por uma aresta. Um conjunto [1, k]
+independente em um grafo ´e um subconjunto onde cada v´ertice v V S ´e adjacente a pelo
+menos um, mas n˜ao mais que k v´ertices em S, e o problema de decis˜ao relacionado a este
+conjunto ´e NP-completo [Chellali et al. 2014].
+Formalmente, dado um grafo G = (V, E), um subconjunto S ⊆ V ´e considerado
+independente se para todo par de v´ertices u, v ∈ S, n˜ao existe uma aresta (u, v) ∈ E. O
+problema busca encontrar S maximizando |S|, o tamanho do conjunto independente. Um
+conjunto independente de um grafo G = (V, E) ´e um conjunto S ⊆ V tal que G[S] n˜ao
+tem arestas [Iwata and Yoshida 2015].
+3. Trabalhos Relacionados
+Nesta sec¸ ˜ao, revisamos estudos relevantes que exploram a aplicac¸ ˜ao de algoritmos e teo-
+rias de reduc¸ ˜ao em problemas NP-completos, com um foco especial em 3SAT e problemas
+de grafos. Embora tenhamos procurado por trabalhos relacionados ao problema do Sub-
+conjunto Independente, n˜ao encontramos material significativo. Por isso, concentramos
+nossa an´alise em pesquisas que abordam problemas de grafos, onde a literatura existente
+oferece diversas abordagens para a compreens˜ao e reduc¸ ˜ao desses problemas complexos.
+O artigo de [Gibney et al. 2020] foca em reduc¸ ˜oes r´ıgidas do problema de sa-
+tisfatibilidade de f´ormulas booleanas gerais (F´ormula-SAT) para dois novos problemas:
+correspondˆencia de padr˜oes em gr´aficos rotulados (PMLG) e isomorfismo de sub´arvore.
+Destaca-se que as reduc¸ ˜oes da F´ormula-SAT s˜ao mais plaus´ıveis e trazem consequˆencias
+at´e para melhorias logar´ıtmicas nos limites superiores de um problema, ao contr´ario das
+reduc¸ ˜oes usuais da CNF-SAT. Al´em disso, o artigo utiliza t´ecnicas semelhantes `as usa-
+das em reduc¸ ˜oes anteriores, mas aplicadas em um contexto mais simples, facilitando a
+compreens˜ao das t´ecnicas envolvidas.
+O artigo de [Kusper et al. 2020] foca na comparac¸ ˜ao de diferentes modelos de
+convers˜ao de problemas 2-SAT e 3-SAT em grafos direcionados, com destaque para o
+Modelo Balatonbogl´ar e sua vers˜ao simplificada. O estudo inclui a apresentac¸ ˜ao de exem-
+plos e resultados de benchmarks utilizando o CSFLOC, analisando como o tamanho dos
+arquivos e o n´umero de cl´ausulas n˜ao utilizadas variam com a densidade do grafo repre-
+sentado.
+O artigo de [Karve and Hirani 2021] tem como objetivo explorar a intersec¸ ˜ao entre
+a satisfatibilidade e a teoria dos grafos por meio do problema de decis˜ao GraphSAT. A me-
+todologia empregada envolve uma an´alise aprofundada das relac¸ ˜oes entre esses dois cam-
+pos, buscando estabelecer conex˜oes significativas. Os autores apresentam informac¸ ˜oes
+sobre como a satisfatibilidade e a teoria dos grafos se relacionam, culminando em um
+resultado que contribui para a compreens˜ao e avanc¸o dessas ´areas de estudo.
+O artigo de [Marchetti and Bodily 2022] apresenta uma ferramenta visual para
+ajudar os alunos a entender o processo de reduc¸ ˜ao entre 3SAT e CLIQUE, abordando
+os desafios no ensino de conceitos te´oricos de ciˆencia da computac¸ ˜ao.A ferramenta de
+visualizac¸ ˜ao serve como um recurso pr´atico para educadores para facilitar o aprendizado e
+a compreens˜ao de t´opicos te´oricos complexos, como NP-completude e teoria da reduc¸ ˜ao.
+As conclus˜oes ressaltam a importˆancia de ferramentas interativas em ambientes educa-
+cionais para tornar os conceitos abstratos mais acess´ıveis e melhorar a compreens˜ao e
+retenc¸ ˜ao dos alunos dos princ´ıpios te´oricos da Ciˆencia da Computac¸ ˜ao.
+Tabela 1. Comparac¸ ˜ao de Trabalhos Relacionados
+Trabalho I II III IV
+[Gibney et al. 2020] Sim Sim N˜ao Sim
+[Kusper et al. 2020] N˜ao Sim N˜ao Sim
+[Karve and Hirani 2021] Sim Sim N˜ao Sim
+[Marchetti and Bodily 2022] Sim Sim N˜ao Sim
+Este artigo Sim Sim Sim Sim
+I - Faz reduc¸ ˜ao entre problemas; II - 3-SAT; III - Subconjunto Independente; e IV -
+Grafos;
+A Tabela 1 compara este trabalho com outras pesquisas, destacando sua di-
+mens˜ao ao cobrir todas as dimens˜oes consideradas: I-Reduc¸ ˜ao entre problemas, II-3-
+SAT, III-Subconjunto Independente e IV-Grafos. Este trabalho se diferencia dos estudos
+[Gibney et al. 2020], [Karve and Hirani 2021] e [Marchetti and Bodily 2022], que n˜ao
+abordam o subconjunto independente, e de [Kusper et al. 2020], que n˜ao inclui a reduc¸ ˜ao
+entre problemas. Ao oferecer uma cobertura completa, este artigo apresenta uma soluc¸ ˜ao
+mais robusta e integrada, potencialmente promovendo avanc¸os na teoria dos algoritmos e
+suas aplicac¸ ˜oes pr´aticas.
+4. Metodologia
+Esta sec¸ ˜ao apresenta a metodologia deste trabalho que consiste na an´alise de algoritmos e
+em investigar a reduc¸ ˜ao de problemas NP-completos. O principal objetivo deste trabalho
+´e analisar a viabilidade de soluc¸ ˜ao do problema 3-SAT por reduc¸ ˜ao para o Subconjunto
+Independente de modo que possam ser aplicados no contexto de utilizac¸ ˜ao do mundo real.
+A Figura 2 apresenta a vis˜ao geral da metodologia utilizada neste trabalho.
+Figura 2. Fluxograma da metodologia aplicada a este trabalho.
+O Algoritmo 1 converte uma f´ormula 3-SAT em um Grafo G(V, A), de modo a
+permitir a visualizac¸ ˜ao e manipulac¸ ˜ao das relac¸ ˜oes entre vari´aveis e cl´ausulas de forma
+gr´afica. Inicialmente, o conjunto de v´ertices V e o conjunto de arestas A s˜ao iniciados
+como vazios. Para cada cl´ausula na f´ormula, s˜ao extra´ıdos os literais e adicionados ao
+conjunto de v´ertices, caso ainda n˜ao estejam presentes (Linha 6 a 10). Em seguida, arestas
+s˜ao adicionadas entre os v´ertices correspondentes aos literais, estabelecendo conex˜oes
+que refletem a estrutura da cl´ausula (Linha 11 a 15). Adicionalmente, para cada vari´avel
+da f´ormula, s˜ao criadas arestas de incompatibilidade entre os v´ertices que representam a
+vari´avel e sua negac¸ ˜ao, garantindo que estas relac¸ ˜oes sejam mantidas no grafo resultante.
+Ao final, o algoritmo retorna o grafo G(V, A), que encapsula a estrutura l´ogica da f´ormula
+3-SAT em um formato adequado para an´alise gr´afica.
+O Algoritmo 2 visa determinar a existˆencia de um Subconjunto Independente de
+tamanho k em um grafo G(V, A). Inicialmente, o algoritmo itera sobre todos os subcon-
+juntos de v´ertices de tamanho k, verificando se cada subconjunto satisfaz a condic¸ ˜ao de
+independˆencia (Linha 2). Para isso, verifica-se se h´a alguma aresta conectando quaisquer
+dois v´ertices dentro do subconjunto (Linha 5 a 8). Caso nenhum par de v´ertices esteja
+conectado por uma aresta, o subconjunto ´e considerado independente. Se um conjunto
+independente de tamanho k ´e encontrado durante a iterac¸ ˜ao, o algoritmo retorna TRUE
+(Linha 11); caso contr´ario, retorna FALSE (Linha 14), indicando a n˜ao existˆencia de tal
+Subconjunto no Grafo.
+A combinac¸ ˜ao dos algoritmos apresentados permite resolver eficientemente o pro-
+blema 3-SAT quando h´a uma correspondˆencia com o problema do subconjunto indepen-
+dente em grafos. No contexto do problema 3-SAT, uma f´ormula ´e considerada satisfat´ıvel
+se existe uma atribuic¸ ˜ao de verdade `as vari´aveis que a torna verdadeira. A estrat´egia
+de convers˜ao da f´ormula 3-SAT em um grafo, conforme descrito no primeiro algoritmo,
+transforma o problema em uma representac¸ ˜ao gr´afica onde as cl´ausulas s˜ao mapeadas
+como conex˜oes entre v´ertices.
+Algorithm 1 Transformac¸ ˜ao de uma f´ormula 3-SAT em um grafo
+1: function SAT3PARAGRAFO(F)
+2: Entrada: F´ormula 3-SAT F
+3: Sa´ıda: Grafo G(V, A)
+4: G ← Graph()
+5: for each clause ∈ F do
+6: for each literal ∈ clause do
+7: if literal /∈ G then
+8: G.add node(literal)
+9: end if
+10: end for
+11: for i ← 0 to len(clause) − 1 do
+12: for j ← i + 1 to len(clause) do
+13: G.add edge(clause[i], clause[j])
+14: end for
+15: end for
+16: end for
+17: return G
+18: end function
+Algorithm 2 Verificar Subconjunto Independente de Tamanho k
+Entrada: Grafo G(V, A), inteiro k
+Sa´ıda: TRUE se existe um SI de tamanho k, FALSE caso contr´ario
+1: function VERIFICARSUBCONJUNTOINDEPENDENTE(G, k)
+2: for cada subconjunto S ⊆ V com |S| = k do
+3: independente ← TRUE
+4: for cada par de v´ertices (u, v) ∈ S × S do
+5: if (u, v) ∈ A then ▷ Se existe uma aresta entre u e v
+6: independente ← FALSE
+7: break
+8: end if
+9: end for
+10: if independente then
+11: return TRUE
+12: end if
+13: end for
+14: return FALSE
+15: end function=0
+Em seguida, o segundo algoritmo verifica se existe um conjunto independente de
+tamanho k nesse grafo. Quando aplicado em conjunto, se o grafo resultante possui um
+conjunto independente de tamanho igual ao n´umero de cl´ausulas na f´ormula 3-SAT, isso
+implica na existˆencia de uma atribuic¸ ˜ao de verdade que satisfaz a f´ormula original. Por-
+tanto, essa abordagem combinada oferece uma soluc¸ ˜ao eficaz e escal´avel para o problema
+3-SAT, explorando as propriedades estruturais dos grafos para determinar sua satisfatibi-
+lidade de maneira computacionalmente vi´avel.
+5. Resultados
+Nesta sec¸ ˜ao, s˜ao apresentados os resultados obtidos a partir da reduc¸ ˜ao do problema 3-
+SAT para o Subconjunto Independente. Com base na metodologia adotada neste estudo
+foi demonstrado que ´e poss´ıvel realizar a reduc¸ ˜ao entre os dois problemas de forma que
+a complexidade computacional do 3-SAT, sendo NP-completo, ´e preservada no problema
+de Subconjunto Independente.
+Os algoritmos desenvolvidos para esta reduc¸ ˜ao, como exemplificado pelo Algo-
+ritmo 1 que converte uma f´ormula 3-SAT em um Grafo, e o Algoritmo 2 que verifica a
+existˆencia de um conjunto independente de tamanho k, foram fundamentais para demons-
+trar a aplicabilidade dessa metodologia. A transformac¸ ˜ao da estrutura l´ogica das cl´ausulas
+3-SAT para representac¸ ˜oes em Grafos, seguida pela verificac¸ ˜ao estrutural de conjuntos in-
+dependentes no grafo resultante, demonstra uma abordagem que pode resolver problemas
+computacionais como a verificac¸ ˜ao de consistˆencia em bases de conhecimento de sistemas
+especialistas e s´ıntese de circuitos ass´ıncronos resultando em respostas n˜ao contradit´orias
+e confi´aveis.
+6. Conclus˜ao
+Este estudo demonstrou que a reduc¸ ˜ao do problema 3-SAT para o problema de Sub-
+conjunto Independente em grafos ´e uma estrat´egia eficaz para preservar a complexidade
+computacional dos problemas originais. A metodologia utilizada explorou a estrutura ma-
+tem´atica subjacente do 3-SAT, traduzindo-o em termos de grafos e permitindo a aplicac¸ ˜ao
+de t´ecnicas bem estabelecidas para verificac¸ ˜ao de conjuntos independentes. Os resultados
+obtidos destacam a viabilidade dessa abordagem em contextos onde a resoluc¸ ˜ao exata de
+problemas NP-completos como o 3-SAT ´e impratic´avel, mas soluc¸ ˜oes aproximadas s˜ao
+aceit´aveis e eficientes. Al´em disso, este estudo sublinha a relevˆancia dessa metodologia
+em aplicac¸ ˜oes pr´aticas, como verificac¸ ˜ao de consistˆencia em bases de conhecimento de
+sistemas especialistas e s´ıntese de circuitos ass´ıncronos.
+Para futuras investigac¸ ˜oes, recomenda-se explorar a extens˜ao e aplicac¸ ˜ao desta
+metodologia em diferentes classes de problemas NP-completos al´em do 3-SAT. Investi-
+gar a adaptac¸ ˜ao de outras reduc¸ ˜oes para problemas relacionados, como o Problema do
+Clique em grafos, pode proporcionar uma an´alise aprofundada da efic´acia dessas abor-
+dagens em diversos contextos computacionais. Al´em disso, estudos emp´ıricos para ava-
+liar o desempenho dessas t´ecnicas em larga escala e em ambientes de computac¸ ˜ao real
+poderiam fornecer validac¸ ˜oes pr´aticas importantes para sua aplicac¸ ˜ao. Adicionalmente,
+explorar variantes heur´ısticas e algoritmos de aproximac¸ ˜ao espec´ıficos para problemas
+derivados dessa metodologia poderia ampliar ainda mais as possibilidades de aplicac¸ ˜ao
+pr´atica dessas t´ecnicas em problemas computacionais complexos.
+Referˆencias
+Braich, R. S., Chelyapov, N., Johnson, C. R., Rothemund, P., and Adleman, L. (2002).
+Solution of a 20-variable 3-sat problem on a dna computer. Science, 296:499 – 502.
+Can´e, M., Coll, J., Rojo, M., and Villaret, M. (2023). Sat-it: the interactive sat tracer. In
+Artificial Intelligence Research and Development, pages 337–346. IOS Press.
+Chellali, M., Favaron, O., Haynes, T., Hedetniemi, S., and McRae, A. A. (2014). Inde-
+pendent [1, k]-sets in graphs. Australas. J Comb., 59:144–156.
+Choi, V. (2011). Quantum information & computation. 11(7-8):638–648.
+Committee, I. S. et al. (1990). Ieee standard glossary of software engineering terminology.
+IEEE Std, 610:12.
+Cook, S. A. (2021). The complexity of theorem-proving procedures (1971).
+Fallah, F., Devadas, S., and Keutzer, K. (1998). Functional vector generation for hdl
+models using linear programming and 3-satisfiability. In Proceedings 1998 Design
+and Automation Conference. 35th DAC. (Cat. No.98CH36175), pages 528–533.
+Garey, M. R. and Johnson, D. S. (1979). Computers and intractability, volume 174.
+freeman San Francisco.
+Gibney, D., Hoppenworth, G., and Thankachan, S. V. (2020). Simple reductions from
+formula-sat to pattern matching on labeled graphs and subtree isomorphism. pages
+232–242.
+Hopfield, J. and Tank, D. (1989). Neural architecture and biophysics for sequence recog-
+nition. In Neural models of plasticity, pages 363–377. Elsevier.
+Iwata, Y. and Yoshida, Y. (2015). On the equivalence among problems of bounded width.
+pages 754–765.
+Karve, V. and Hirani, A. N. (2021). Graphsat - a decision problem connecting satisfiability
+and graph theory. ArXiv, abs/2105.11390.
+Kusper, G., Bir´o, C., and Balla, T. (2020). Investigation of the efficiency of conversion
+of directed graphs to 3-sat problems. 2020 IEEE 14th International Symposium on
+Applied Computational Intelligence and Informatics (SACI), pages 000227–000234.
+Lintzmayer, C. N. and Mota, G. O. (2020). An´alise de algoritmos e estruturas de dados.
+Centro de Matem´atica, Computac¸ ˜ao e Cognic¸ ˜ao.
+Lipton, R. J. (1995). Dna solution of hard computational problems. science,
+268(5210):542–545.
+Lucchesi, C. L. (1979). Aspectos te´oricos da computac¸ ˜ao, volume 8. Instituto de Ma-
+tem´atica Pura e Aplicada, CNPq.
+Mansor, M. A. and Sathasivam, S. (2016). Accelerating activation function for 3-
+satisfiability logic programming. International Journal of Intelligent Systems and Ap-
+plications, 8(10):44.
+Mansor, M. A., Sathasivam, S., and Kasihmuddin, M. S. M. (2018). 3-satisfiability lo-
+gic programming approach for cardiovascular diseases diagnosis. In AIP Conference
+Proceedings, volume 1974. AIP Publishing.
+Marchetti, K. and Bodily, P. (2022). Visualizing the 3sat to clique reduction process. 2022
+Intermountain Engineering, Technology and Computing (IETC), pages 1–5.
+Moreira, N. (2016). Classes de complexidade.
+Pan, H.-Y. and Chu, Z.-F. (2023). A semi-tensor product based all solutions boolean
+satisfiability solver. Journal of Computer Science and Technology, 38(3):702–713.
+Papadimitriou, C. H. (1994). Computational Complexity. Addison-Wesley, Reading,
+Massachusetts.
+Papadimitriou, C. H. (2003). Computational complexity. In Encyclopedia of computer
+science, pages 260–265.
+Papadimitriou, C. H. and Steiglitz, K. (2013). Combinatorial optimization: algorithms
+and complexity. Courier Corporation.
+Rocha, T. A. (2014). Complexidade descritiva de classes de complexidade probabil´ısticas
+de tempo polinomial e das classes p e np conp atrav´es de l´ogicas com quantificadores
+de segunda ordem.
+Saxena, D., Duro, J. A., Tiwari, A., Deb, K., and Zhang, Q. (2013). Objective reduction
+in many-objective optimization: Linear and nonlinear algorithms. IEEE Transactions
+on Evolutionary Computation, 17:77–99.
+Sinha, A., Saxena, D., Deb, K., and Tiwari, A. (2013). Using objective reduction and in-
+teractive procedure to handle many-objective optimization problems. Appl. Soft Com-
+put., 13:415–427.
+Sipser, M. (1996). Introduction to the theory of computation. ACM Sigact News,
+27(1):27–29.
+Tovey, C. A. (2002). Tutorial on computational complexity. Interfaces, 32(3):30–61.
+Zhang, Z., Paredes, R., Sundar, B., Quiroga, D., Kyrillidis, A., Duenas-Osorio, L., Pa-
+gano, G., and Hazzard, K. R. (2024). Grover-qaoa for 3-sat: Quadratic speedup, fair-
+sampling, and parameter clustering. arXiv preprint arXiv:2402.02585.

@@ -1,0 +1,615 @@
+Pág 1/20
+
+O uso de Inteligência Artificial aplicada à educação
+Silvanei Rodrigues Gonçalves¹, Géssica Bruna Freitas¹, Helio Rubens Soares¹
+¹Instituto de Informática – Centro Universitário do Triângulo (UNITRI)
+Uberlândia – MG – Brasil
+silvaneisrg@hotmail.com, gessica_brunaf@hotmail.com,
+helio.soares@asoec.com.br
+
+Resumo. O crescimento notável da World Wide Web alavancou também um
+crescimento na construção de aplicações web. Contudo cresceram a
+necessidade de ferramentas mais rápidas, de fácil entendimento, que sejam
+flexíveis, com alta produtividade e desempenho. Neste contexto surge o
+Watson Assistente, um software de tecnologia cognitiva, desenvolvido pela
+IBM (Internacional Business Machines), que possibilita criar aplicações
+cognitivas, utilizando processos de linguagem natural. Além de disponibilizar
+aos desenvolvedores a combinação de um ambiente de simplicidade,
+eficiência e escalabilidade, com poderosos recursos em uma sintaxe clara e
+legível. O artigo tem como finalidade demostrar o uso da inteligência
+aplicado na educação.
+Palavras-chave: Educação. Tecnologia. Inteligência artificial. Ferramenta
+estratégica.
+
+1. Introdução
+É notório que a tecnologia da informação já faz parte do cotidiano da sociedade em
+geral e, seus impactos são visíveis e expressivos, os quais inevitavelmente repercutem
+na vida das pessoas. Com efeito, na área da educação essa situação não é diferente.
+Entretanto, muito embora a tecnologia pregue que é imprescindível a
+modernização da escola, as mudanças muitas vezes assustam, considerando que os
+indivíduos em sua maioria resistem ao novo, optando, assim, pelo comodismo do que já
+existe. [JOLY, 2002].
+Nesse contexto, é importante buscar ferramentas tecnológicas que
+contribuam para que novas técnicas sejam aplicadas no processo de ensinoaprendizagem, de forma a colaborar para que o ensino instigue o aluno e transmita
+
+Pág 2/20
+
+conteúdos que lhe possibilite pensar e refletir, como também prepará-lo para a resolução
+de diversos problemas existentes atualmente em áreas como saúde, economia, clima,
+educação, dentre várias outras [RIBEIRO; MENIN, 2001].
+Neste cenário, tendo percepção da importância da tecnologia para a
+modernização dos métodos de ensino no Brasil, o objetivo desta pesquisa foi
+demonstrar de que maneira o uso da Inteligência Artificial pode ser utilizada como base
+para a construção de uma nova ferramenta que poderá ser utilizada por estudantes no
+processo de aprendizagem.
+Para tanto, a pesquisa foi desenvolvida a partir da análise do conceito de
+Inteligência Artificial, a fim de compreender como esta tecnologia tem sido usualmente
+empregada. Tal fato possibilitou a identificação e construção de uma ferramenta capaz
+de introduzir de maneira efetiva a tecnologia no processo de ensino-aprendizagem, ou
+seja, aplicada especificamente à área da educação.
+Para atingir os objetivos propostos, este trabalho foi organizado da seguinte
+maneira: a primeira seção apresenta o tema abordado, bem como sua relevância,
+objetivos e o método de pesquisa empregado; a segunda seção, por sua vez, abrange o
+referencial teórico, agregando conceitos essenciais para o esclarecimento do tema
+proposto; a terceira seção apresenta os mecanismos necessários para a construção da
+nova ferramenta; já na quarta seção há o esclarecimento dos passos seguidos na criação,
+e, por fim, na quinta e última seção foram desenvolvidas considerações finais acerca do
+trabalho, materializando as últimas contribuições da pesquisa.
+
+2. Conceitos Fundamentais
+A educação é uma importante engrenagem no que se refere à articulação das relações
+entre poder, conhecimento e tecnologias. Assim como a família desempenha uma
+função importante na formação da identidade pessoal do indivíduo, por meio da
+transmissão de valores e cultura, a instituição educacional também exerce sua
+autoridade quanto à forma de transmitir conhecimento por meio do uso da tecnologia,
+sendo que esta representa a ponte entre educadores e educandos, e o conteúdo a ser
+transmitido e aprendido pelos mesmos [KENSKI, 2007].
+A tecnologia é a ciência que trabalha procurando recursos e inovações para
+questões relativas aos problemas e necessidades humanas. Porém, é necessário salientar
+
+Pág 3/20
+
+que o ser humano tem resistência às mudanças, tendo em vista que o novo o obriga a
+sair da zona de conforto, gerando uma série de incertezas e consequentemente
+insegurança [GEBRAN, 2009].
+Dessa maneira, a tecnologia é significativa para mudanças rápidas e
+estratégicas. Assim, devido a isso, faz-se necessário elaborar novas maneiras de se
+pensar, estabelecer relações entre o homem e o trabalho e, principalmente, definir como
+o homem pode utilizar a sua capacidade de pensar, aliada às constantes mudanças,
+mediante a utilização da tecnologia ao seu favor [LÉVY, 1998].
+Neste contexto, em face da importância do uso de tecnologias para atender
+aos anseios dessas gerações, se insere a busca por ferramentas capazes de incentivar no
+processo de aprendizagem. Logo, é de grande relevância o papel da inteligência
+artificial, uma vez que esta possibilita à máquina pensar como os seres humanos.
+Contudo, atualmente existem tecnologias que podem ser utilizadas como
+base para a construção de novas ferramentas que poderão ser de grande valia para o
+processo educacional e, evidentemente, para o indivíduo que está aprendendo, uma vez
+que possuir uma ferramenta tecnológica que o auxilie nos estudos a qualquer momento
+de forma rápida, dinâmica, é certamente de grande utilidade.
+
+2.1 Inteligência Artificial
+A inteligência artificial é uma tecnologia trabalhada para reproduzir a inteligência
+humana e tem sido uma grande aliada às áreas computacionais de educação, medicina,
+logísticas, financeiras, comunicação, entre outras.
+O desenvolvimento da inteligência artificial iniciou-se após o término da
+Segunda Guerra Mundial, entre 1943 e 1950, com a publicação do artigo Computing
+Machinery and Inteligency, elaborado pelo inglês Alan Turing, no qual se mostrava um
+teste que objetivava a descoberta que tinha por finalidade identificar se uma máquina
+poderia ou não simular o pensamento do ser humano. O referido teste ficou conhecido
+como Teste de Turing. [LIMA; PINHEIRO; SANTOS, 2016].
+A inteligência artificial trabalha com a investigação, uma vez que examina a
+forma que o ser humano raciocina. Tal área visa transformar o pensamento em
+tecnologia, empenhando-se de forma a construir esclarecimentos algorítmicos dos
+
+Pág 4/20
+
+processos mentais humanos, que se dividem em quatro grupos: a) área de estudos
+neurais e do conexíssimo, os quais se associam com a capacidade dos computadores de
+identificarem e aprenderem modelos; b) segmento ligado à biologia molecular na
+tentativa de criar vida artificial; c) campo relativo à robótica em conjunto com a
+biologia, objetivando criar máquinas que hospedem inteligência artificial; d)
+ramificação compatível com a psicologia, epistemologia e sociologia que procura
+mostrar à máquina formas de raciocínio e procura. [FAVA, 2016].
+No aprendizado de máquinas existem dois tipos diferentes: o aprendizado
+supervisionado e o não supervisionado. No aprendizado supervisionado, o indutor
+recebe um conjunto de dados e treina-se um algoritmo que verifica o resultado previsto
+e o resultado esperado. Assim, conforme as informações são recebidas são feitos ajustes
+às informações até obter o resultado necessário [OLIVEIRA, 2003].
+Já no aprendizado não supervisionado, o indutor recebe um conjunto de
+dados, e possui, assim, uma prévia ideia para o resultado que deve ser apresentado.
+Dessa forma, os dados são agrupados e, com base em todas as informações recebidas, a
+máquina faz o tratamento e apresenta o melhor resultado [OLIVEIRA, 2003].
+Dentre os termos estrangeiros utilizados, o Machine Learning é um recurso
+da inteligência artificial que faz o uso de algoritmos programada para análise de dados
+[DOMINGOS, 2017]. Já o Deep Learning, é um subgrupo Machine learning este,
+acrescenta mais conhecimento com base em suas experiencias [DOMINGOS, 2017].
+
+2.2. Inteligência Artificial: ferramentas
+A denominação homo sapiens – homem sábio –, retrata de forma conectiva o quanto
+nossa inteligência é importante. Por meio de ferramentas ou plataformas é possível
+desenvolver modelagem cognitiva permitindo o processamento de linguagem natural
+em um programa. O uso de plataformas como Amazon Lex, Azure, Dialogflow e
+Bluemix torna possível a implementação destas entidades [NORVING; RUSSELL,
+2013].
+O serviço de desenvolvimento de aplicações cognitivas da Amazon Lex
+disponibiliza ao desenvolvedor uma plataforma com interface para criação de aplicações
+de voz e texto. Este conjunto contém recursos avançados de reconhecimento automático
+
+Pág 5/20
+
+de fala ASR (Automatic Speech Recognition) e NLU (Natural Language
+Understanding) ao qual trata do entendimento de linguagem natural [AMAZON, 2018].
+A plataforma cognitiva de inteligência artificial da Microsoft Bot
+Framework Azure disponibiliza para o desenvolvedor ferramentas para criação,
+implementação, teste e gerenciamento, por meio de estruturação modular e extensiva da
+SDK. Desse modo, o desenvolvedor terá como opção o uso de um ambiente estruturado
+ou ferramentas por linha de comando para criação do bot. Já existem SDKS para as
+linguagens de programação c #, JavaScript e Typscrit [AZURE, 2018].
+A plataforma disponibiliza para testes um emulador com denominação (Bot
+Framework Emulator). O emulador é
+
+um
+
+aplicativo
+
+desktop
+
+que
+
+permite
+
+aos
+
+desenvolvedores a execução de testes locais ou remotos. Durante os testes é possível
+inspecionar as mensagens de envio e entrada por meio de solicitações e respostas Json.
+Esta análise tem como pré-requisitos a instalação local do emulador e também de um
+software de encapsulamento NGROK [AZURE, 2018].
+Já a plataforma Dialogflow processa uma linguagem natural inserida por um
+usuário e as converte em intenções para o entendimento das linguagens de programação
+como Node.js, Java ou C#. Por meio dessa conversão é possível criar aplicações com
+ativação via voz para o Google home, Google Assistente e Google Auto. É possível
+afirmar que o que torna a Dialogflow uma ferramenta com diferenciais é a capacidade
+de processamento da linguagem natural por aprendizado de máquina e inteligência
+artificial, facilitando o desenvolvimento da interface [LEE, 2018].
+O Bluemix, por exemplo, é uma plataforma de nuvem aberta da IBM que
+concede aos desenvolvedores de web e mobile a entrada no software IBM para
+integração, segurança, transações e outras funcionalidades [STIFANI, 2015].
+Tal plataforma, fundamentada na tecnologia de código aberto do Cloud
+Foundry, colabora para com o desenvolvimento de aplicativos como Platform as service
+(PaaS). Os recursos do Bluemix englobam, por exemplo, o desenvolvimento de back
+end de Java, mobile, inspeção de aplicativos e recursos de parceiros de código aberto em
+um modelo como serviço na nuvem. O desenvolvimento desse projeto utiliza Api
+Watson, assistente que faz parte da plataforma Bluemix.
+
+2.3 Inteligência Artificial: Algumas aplicações
+
+Pág 6/20
+
+No Brasil, o Banco Bradesco realizou o desenvolvimento da inteligência artificial
+utilizando os serviços de Watson, recebendo essa ferramenta o nome de BIA (Bradesco
+Inteligência Artificial). Os clientes do banco podem usufruir da inteligência artificial
+por meio de um aplicativo, por um chatbot. Tal ferramenta é capaz de entender a
+linguagem natural e responder aos clientes. Essa evolução de Watson se deve ao fato do
+grande progresso dos algoritmos de aprendizado, podendo assim, até mesmo conversar
+com os clientes por telefone. [CAPUTO, 2017].
+Em 2016, a Sky também começou a utilizar a tecnologia Watson no Brasil.
+A empresa de televisão por assinatura via satélite que conta com milhares de assinantes
+de banda larga em diferentes estados brasileiros consegue obter do Watson feedbacks
+necessários e ao mesmo tempo de forma rápida. O diretor de banda larga da Sky,
+Fernando Otani, enfatiza que o Watson verifica o que de fato é de relevância para a
+manutenção da qualidade da rede [MARZOCHI; VALIM, 2016].
+O Hospital do Câncer gaúcho, Mãe de Deus, localizado em Porto Alegre,
+anunciou em 2017, por exemplo, que iria contar com a tecnologia Watson para amparar
+os médicos nas decisões quanto ao tratamento de seus pacientes. Essa tecnologia poderá
+indicar ao médico em um curto prazo de tempo – questão de segundos – métodos
+eficientes para tratamento das doenças, embasando-se em várias experiências e estudos
+do mundo todo.
+Por meio desse software o médico alimenta o sistema com informações
+sobre o doente, informando, assim, a espécie do tumor, bem como detalhando em qual
+fase está a doença. A ferramenta disponibilizará, ainda, uma relação constando as
+melhores formas de tratamento. É importante ressaltar que tal ação não visa, de forma
+alguma, substituir profissionais da área, mas sim oferecer informações que contribuam
+para um tratamento mais assertivo e em tempo hábil [CAMBRICOLI, 2017].
+Já na área da educação, deve ser destacada a escola de negócios Saint Paul,
+que em 2017 informou que iria disponibilizar uma plataforma de educação corporativa
+por assinatura que engloba o Watson com recursos de e-learning, vídeos e biblioteca. A
+plataforma que recebeu o nome de LIT pode ser acessada a qualquer momento por meio
+de aplicativo para celular, tablet ou desktop. Essa plataforma oferecerá material nas
+disciplinas de estratégia, finanças, gestão de negócios e marketing. Os discentes
+poderão, ainda, acessar conteúdos de dez MBAs, além de terem acesso também a mais
+
+Pág 7/20
+
+de mil atividades e uma biblioteca digital composta por sete mil livros [SORAIA,
+2017].
+Também na área da educação destaca o Mr Turing, uma ferramenta que usa
+a inteligência artificial para ensinar inglês. Pot meio de uma forma em que o chatbot
+interage com o usuário reorganizando o conteúdo de acordo com suas necessidades e
+baseando se no seu desempenho. A aplicação é disponibilizada no Facebook [DATAH,
+2017].
+Semelhante à Apple, a Amazon também possui inteligência artificial
+conhecida como Alexa, uma assistente virtual que transmite os comandos por meio de
+dispositivos. A tecnologia foi lançada em 2014, junto ao Amazon encho, uma caixa de
+som inteligente que responde aos comandos de voz [BHARGAVA, 2016].
+Atualmente, Alexa realiza por meio de seus dispositivos, desde tarefas
+corriqueiras até tarefas que fazem diferença no dia-a-dia dos humanos como, por
+exemplo, ajustar temperatura, trancar portas, abrir portões, entre outras. Entretanto, o
+diferencial de Alexa é que ela pode estar em vários dispositivos ao mesmo tempo,
+controlando desde o carro até a geladeira [BHARGAVA, 2016].
+Por fim, o exemplo da Microsoft, a qual lançou a Cortana como sua
+inteligência artificial para interação dos usuários com seus dispositivos, foi exibida pela
+primeira vez em San Francisco em uma convenção de desenvolvedores em Abril de
+2014. Tem por objetivo a assistência de usuários do Windows 10, interagindo por meio
+de comando de voz ou mensagens. Assim como Siri a Cortana requer uma configuração
+inicial e aprende com base em suas experiências [BHARGAVA, 2016].
+O desenvolvimento dessas soluções tecnológicas demanda, sobretudo,
+ferramentas que facilitem o processo de criação, bem como aplicações de computação
+cognitiva com recursos e funcionalidades que possibilitem a criação dos chatbots.
+Dentre as plataformas existentes, podem ser citadas algumas de referência no mercado
+como a Watson Assistente da IBM, a Amazon lex da Amazon, Dialogflow do Google e
+Microsoft Bot Framework da Microsoft [NATH, 2018].
+
+3. Watson Assistente
+Para compreendermos o assistente Watson, é possível denomina-lo como um software
+de tecnologia cognitiva, desenvolvido pela IBM (Internacional Business Machines), o
+qual se baseia no aprendizado por meio da análise de informações. Assim, Watson é um
+
+Pág 8/20
+
+serviço com interações de APIs disponibilizado na plataforma de cloud (IBM). Essas
+interações possibilitam criar aplicações cognitivas utilizando processos de linguagem
+natural em termos PNL (Natural Language Processing) [IBM; AZRAQ; BRAVO;
+2017].
+O processamento de linguagem natural define-se como técnicas da
+computação para uma análise linguística com o objetivo de entender textos, sendo eles
+de qualquer idioma, gênero ou modo, os quais podem ser orais ou escritos. O
+entendimento desta linguagem natural possibilita a interação do chatbot (sistema
+computacional de conversação que interage com humanos por meio de linguagem
+natural) com o usuário [LIDDY, 2001].
+O Watson, assim como o cérebro humano, é capaz de assimilar e responder
+embasando-se em uma abordagem semelhante à compreensão hierárquica humana,
+sendo que a análise estatística hierárquica é precisamente o que a mente humana faz ao
+solucionar
+
+possibilidades
+
+múltiplas
+
+fundamentadas
+
+na
+
+inferência
+
+estatística
+
+[KURZWEIL, 2015].
+Partindo do pressuposto de que nenhum indivíduo é capaz de dominar toda
+a Wikipédia, a qual representa somente uma parte dos recursos que a ferramenta possui,
+o conhecimento do Watson, em vários sentidos, é bem mais amplo em comparação ao
+do ser humano. Em contrapartida, o ser humano consegue alcançar níveis conceituais
+em graus superiores, ainda que não seja de forma permanente [KURZWEIL, 2015].
+É perceptível que o Watson evoluiu bastante e atualmente está disseminado
+numa nuvem composta por diversos servidores abertos IBM cloud, bem mais dinâmico,
+prático e percorrendo vários patamares de inteligência artificial no mesmo momento,
+sendo possível que pessoas o acessem de qualquer lugar do mundo utilizando
+notebooks, celulares, desktops, etc [KELLY, 2018].
+Como o Watson se aperfeiçoa continuamente conforme os usuários o
+utilizam, ele se torna cada vez mais genial, uma vez que o conteúdo aprendido em uma
+dada instância pode ser deslocado para outras de forma rápida. Assim, esse tipo de
+inteligência artificial é considerado um conjunto de vários sistemas operacionais
+[KELLY, 2018].
+
+Pág 9/20
+
+Todo processamento cognitivo é conduzido pelo Watson sendo este
+consumido por uma API (Application Programming Interface), utilizando JSON (Java
+Script Objetc Notation), conforme exemplificado na Figura 1 [IBM, 2018].
+
+Figura 1. Fluxograma de aplicação IBM Watson Assistant [azraq et al., 2017].
+
+A combinação de aprendizado de máquina, compreensão de linguagem
+natural e das ferramentas integradas criam o fluxo de conversação. Estas rotinas seguem
+algumas referências, a saber:
+1 - Autenticação é processada dentro de uma Identity and Access
+Management(IAM);
+2 - Na manipulação dos dados o Watson utiliza parâmetros especiais que são
+processados no headers em conjunto com a solicitação.
+3 – Há utilização de códigos em HTTP para a indicação de êxito na
+conclusão do método e as tratativas de chamadas das exceções são geradas pelo Java
+SDK.
+4 - Para processamento das respostas utiliza-se métodos de solicitações
+retornando o conteúdo.
+5 - Usando o Java JDK é possível a execução síncrona e assíncrona dos
+métodos de serviços.
+
+Pág 10/20
+
+6 - Instâncias de serviços limitam o fluxo de taxas para solicitações de Api
+[IBM, 2018].
+O serviço passou a ser conhecido mundialmente quando em 2011 foi
+apresentado na televisão americana. A ideia central era mostrar a surpreendente
+capacidade dos recursos. Na oportunidade, o Watson competiu com os dois maiores
+jogadores até aquele momento, Brad Rutter e Ken Jennings, e aproveitando-se de todos
+os seus recursos, conquistou a vitória, o que representou um fato histórico, já que uma
+máquina venceu o ser humano. O Watson acessava mais de 200 milhões de páginas da
+internet, formando sua própria base, preparando-se para responder aos mais diversos
+tipos de perguntas [KELLY, 2018].
+Assim, o computador Watson foi construído em 2007 pela (International
+Business Machines), IBM visando ir mais adiante em relação ao nível de
+questionamentos, respostas, para avaliar e compreender a linguagem natural de maneira
+informatizada, sendo caracterizado, desta forma, como uma máquina cognitiva
+[FRIEDMAN, 2016].
+
+4. Estudo de caso
+Para o desenvolvimento do estudo de caso sobre o uso da inteligência artificial aplicada
+à educação, que visa auxiliar os estudantes na complementação do ensino, foi criada
+uma nova ferramenta, um chatbot intitulado Jessy que responderá questionamentos
+sobre o tema informática básicos.
+
+4.1. Justificativa
+Os alunos do ensino fundamental são jovens que cada vez mais estão conectados por
+meio do uso de celulares e computadores, em redes sociais, blogs e canais de vídeos.
+Frequentemente, estes são responsáveis por uma série de mudanças na área da
+tecnologia como, por exemplo, a criação de celulares e computadores com mais
+recursos.
+Porém, há uma lacuna deixada pela falta de acesso a um conteúdo de
+informática básica nas instituições de ensino, que poderia contribuir para formação
+pessoal e profissional destes. Com isso, a dificuldade dos jovens em lidar com uma
+
+Pág 11/20
+
+simples formatação de texto, ou até mesmo saber qual é a função de uma determinada
+tecla do computador é evidente.
+Apesar de ter toda essa tecnologia à disposição, esses jovens não conseguem
+utilizar esses benefícios em favor do enriquecimento educacional e profissional, sendo o
+uso dessa tecnologia geralmente voltado para marketing pessoal ou na construção de
+relacionamentos. Diante deste contexto, está sendo proposta a criação de um chatbot,
+um tutor robô que utilize uma linguagem de conversação capaz de envolver os jovens ao
+conteúdo programático.
+Desse modo, o tutor utilizou a tecnologia da inteligência artificial para
+reproduzir um diálogo que aproxime a conversação humana, respondendo, assim, aos
+principais questionamentos da área de informática básica, mediante a apresentação de
+definições de temas moldados para a necessidade dos alunos, conceituando e
+exemplificando o conteúdo programático do curso.
+
+4.2. Criação do Tutor Jessy
+Para o desenvolvimento da Jessy, tutor do curso, foi necessária a definição do propósito
+para tal solução. Sendo assim, foram pesquisadas as principais dúvidas que os alunos do
+ensino fundamental teriam com relação ao tema informática básica. Uma outra pesquisa
+foi feita em instituições físicas e em plataformas que mestra o curso de informática
+básica para validar quais questionamentos o tutor responderia, além de orquestrar o que
+ele não responderia.
+Acessando à plataforma Bluemix, após o cadastro de uma conta préconfigurada, foi selecionado o serviço de conversação, o Watson assistente, que utiliza
+o emprego de Machine Learning e algoritmos de inteligência artificial.
+A utilização dos serviços do Bluemix propiciou todos os recursos
+necessários para construção do chatbot como: instâncias, memória por instância, banco
+de dados e serviço de monitoramento da aplicação.
+Durante o desenvolvimento do chatbot não foi necessária a programação via
+código, mas sim apenas os recursos de Watson.
+Jessy tem em sua base de conhecimento respostas para os questionamentos
+realizados pelos usuários, desde que estes estejam dentro do contexto para o qual a
+
+Pág 12/20
+
+tecnologia foi criada. Caso o usuário faça uma pergunta fora do contexto, ela
+simplesmente muda de assunto ou sugere uma outra pergunta. Para o processo de
+construção da base de conhecimento do Watson foi preciso entender todo o processo ao
+qual o Watson é caracterizado como uma API utilizada para a criação de Bots.
+A sua criação passa por três seções, a saber:
+1ª - Construção das Intenções: A etapa, mostrada na Figura 2, é ajustada conforme a
+necessidade de entrada de quem a utiliza e implica em identificar o que o usuário quer
+por trás do questionamento realizado. Em cada intenção formulada é preciso inserir
+possíveis exemplos de como as pessoas que irão utilizar a ferramenta se manifestarão.
+
+Figura 2. Amostra de algumas Intenções criadas na Jessy [Autoria própria, 2018].
+
+Quanto maior a quantidade de exemplos cadastrados possibilitará à tecnologia
+identificar o que de fato a pessoa precisa, permitindo assim, um atendimento mais
+rápido e consequentemente mais assertivo.
+2ª - Formação das Entidades: Nessa etapa, conforme mostrada na Figura 3, as
+Entidades tratam-se de uma subdivisão contida nas Intenções. Em cada intenção é
+cadastrada uma ou mais entidades, permitindo à ferramenta responder as perguntas dos
+usuários observando as entidades inseridas para uma determinada intenção.
+
+Pág 13/20
+
+Figura 3. Exemplos de entidades cadastradas na Jessy [Autoria própria, 2018].
+
+Figura 4. Demonstração do início do diálogo criado na Jessy [Autoria própria, 2018].
+
+Quanto maior a quantidade de entidades cadastradas para cada intenção, melhor será a
+interação com o usuário final, visto que a ferramenta poderá responder a diferentes
+formas que a mesma pergunta pode ser realizada.
+3ª - Criação dos Diálogos: Na Figura 4 é criado o diálogo, que se refere ao fluxo da
+comunicação existente entre a ferramenta e o usuário final, visando responder, assim, às
+suas perguntas, como também possibilitando certificar se uma determinada intenção foi
+
+Pág 14/20
+
+identificada; caso a intenção for encontrada, uma resposta é devolvida. Caso contrário, a
+ferramenta solicita maiores esclarecimentos para o questionamento realizado, imitando,
+dessa forma, o comportamento humano, característico da inteligência artificial.
+Conforme já mencionado anteriormente, para que aconteça este fluxo entre
+a ferramenta e o usuário final, são cadastradas rotinas que intercalam entre os nós
+criados. Caso tal nó seja compatível com a solicitação do usuário, o mesmo é ativado,
+mas caso não encontre nó compatível, o processamento é finalizado no último nó gerado
+pelo sistema anything_else.
+
+4.3. Construção da base de conhecimento: Jessy
+O desenvolvimento de Jessy, posterior a sua publicação, permitirá ao usuário ter acesso
+a uma base de conhecimento que engloba questões pertinentes à informática básica,
+tendo em vista que o chatbot responderá às principais dúvidas dentro deste contexto: a)
+conteúdo do curso; b) comandos básicos; d) componentes do computador; e) sistemas
+operacionais; f) descritivas de informática; e) processamento do computador; f)
+hardware e software; g) configuração de arquivos Word, Excel.
+Além disso, a importância da utilização de um diálogo seguindo um fluxo
+planejado, conforme ilustrado na Figura 5, atende uma situação em que o usuário irá
+manter o foco, até o fim do aprendizado. A figura 6 ilustra o fluxo de conversação entre
+o tutor e o aluno.
+
+Figura 5. Fluxograma do curso de informática básica [Autoria própria, 2018].
+
+Pág 15/20
+
+Figura 6. Diálogo entre o tutor e o aluno [Autoria própria, 2018].
+
+4.4. Análise de Resultado
+A partir dos resultados adquiridos, é possível afirmar que, com o uso do
+tutor, os alunos passam a contar com mais um canal específico para busca de
+conhecimento, sem a necessidade de se ter uma pessoa fisicamente para esclarecimentos
+de dúvidas.
+Uma vantagem observada ainda é que, apesar das restrições que o plano
+gratuito condiciona, foi possível ter uma solução que tenha um conteúdo conforme
+compõe o assunto informática básica, necessária para a criação do projeto.
+Outra vantagem observada é que, durante o processo de desenvolvimento a
+metodologia utilizada para sua criação, foi condicionada a uma análise dos principais
+assuntos inerentes à informática básica, por meio de pesquisas em canais de referências
+como sites e estruturas físicas que mestra este tipo de curso, observando, para tanto, a
+defasagem dos assuntos, suas atualizações ao longo do tempo e principalmente sua
+importância para o conhecimento do usuário. Posteriormente a esta análise, foi
+condicionado quais módulos teriam maior importância neste aprendizado, levando-se
+em conta as dúvidas que surgem durante a execução.
+
+Pág 16/20
+
+Dentre as desvantagens destaca-se o fato de que nem todas as questões
+levantadas pelo usuário foram respondidas devido ao conteúdo programático, levando
+em conta que o bot não tem tamanha inteligência pela qual o homem se diferencia.
+Outra desvantagem está relacionada ao custo de uso da Api, Watson
+assistente quando há necessidade de utilizar o plano standard ou premium.
+A utilização do Watson assistente possibilitou a criação de uma ferramenta
+sem necessidade de codificação, sem montagem de estruturas físicas já que todas as
+suas funcionalidades se encontram disponíveis nas nuvens de forma gratuita, sendo este
+formato considerando o uso de até 10 mil chamadas API mês, limitando a quantidade de
+5 áreas de trabalho, 25 entidades e 100 intenções no diálogo. Caso seja necessário um
+fluxo maior, há a possibilidade de um plano Standard, Premium ou Plus, observado o
+custo para o desenvolvimento.
+O uso do Watson assistente na plataforma Bluemix em conta gratuita,
+possibilitou a criação de um fluxo de diálogo contendo 5 (cinco) tópicos principais. Esta
+junção possibilitou uma variação de 67 diálogos entre o tutor e o usuário, sendo
+estimado um tempo de 42 minutos para a realização do curso, e destacando que este
+teve alterações dentre os cursos realizados.
+Para criar o diálogo que respondeu aos principais questionamentos foi
+necessário criar: 59 intenções e 9 entidades.
+A utilização do Watson assistente possibilitou a criação de conta sem
+custos, sem codificação, sem montagem de estruturas físicas já que todas as suas
+funcionalidades se encontram disponíveis nas nuvens de forma gratuita, sendo este
+formato considerando o uso de até 10 mil chamadas API mês, e limitando a quantidade
+de 5 áreas de trabalho, 25 entidades e 100 intenções no diálogo.
+
+5. Considerações finais
+Por meio do apresentado anteriormente neste texto, pode-se afirmar que a solução
+apresentada consegue atender as necessidades dos alunos em relação ao conteúdo
+programado, podendo este ser ampliado posteriormente. No entanto, as informações
+escolhidas permitem ao aluno uma visão ampla de conhecimento em informática.
+
+Pág 17/20
+
+Já com a utilização do chatbot, foi possível identificar alguns diferenciais
+que o curso ofereceu aos alunos, como, por exemplo o atendimento à individualidade de
+cada aluno, bem como aos seus objetivos em relação à busca do aprendizado e também
+a sua identificação com o formato do curso, dialogando.
+Dentre os diferenciais, pode-se destacar a facilidade de poder interromper e
+recomeçar o processo quando necessário, partindo de um ponto no assunto que se tenha
+maior interesse, bem como em qualquer lugar que se tenha acesso à ferramenta.
+As diretrizes nas respostas e questionamentos auxiliam muito no propósito
+da ferramenta, uma vez que se trata de um espaço inovador e propenso a uma
+aprendizagem rápida e dinâmica, com viabilidade e diferenciação de mercado.
+Como proposta de trabalhos futuros, a criação de um maior fluxo de diálogo
+com o aluno, envolvendo uma maior quantidade de assuntos e demonstração de mídias
+para auxiliar no conteúdo faz-se pertinente. Assim, num momento posterior, o aluno
+poderá conduzir o curso por meio de comandos de voz; mantendo, assim, a linha de
+diálogo que foi apresentada neste trabalho.
+
+Referências
+AMAZON, Disponível em: < https://aws.amazon.com/pt/lex> Acesso em: 04 de
+Novembro de 2018.
+AZRAQ, A.;AZIZ,H;NAPPE,N; BRAVO, CR;SRI, L. Building cognitive applications
+with IBM Watson services: Volume 2 conversation,redbooks, 2017. Disponivel em
+<http://www.redbooks.ibm.com/redbooks/pdfs/sg248394.pdf> Acesso em: 04 out,
+2018.
+AZURE, Microsoft Bot Framework. Disponível em: < https://dev.botframework.com/>
+Acesso em: 08 de Novembro de 2018
+BHARGAVA, Madhur. Alexa Skills Projects: Build exciting projects with Amazon
+Alexa and integrate it with Internet of Things. Birmingham B3 2PB, UK: Packt
+Publishing, 2016.
+CAMBRICOLI, Fabiana. Computador vai recomendar melhor tratamento para pacientes
+com câncer. Jornal O Estado de São Paulo, 24 de julho de 2017. Disponível em: <
+https://saude.estadao.com.br/noticias/geral,computador-vai-recomendar-melhor-
+
+Pág 18/20
+
+tratamento-para-pacientes-com-cancer,70001830660 > Acesso em 03 de outubro de
+2018.
+CAPUTO, Victor. Bradesco usa inteligência artificial no atendimento a clientes.
+Revista Exame, 19 de julho de 2017. Disponível em: < https://exame.abril.com.br/
+tecnologia/bradesco-usa-inteligencia-artificial-no-atendimento-a-clientes/ > Acesso em
+02 de outubro de 2018.
+DATAH<https://www.datah.com.br/single-post/2017/06/09/Bot-Mr-Turing-ensinaingl%C3%AAs-pelo-Facebook-Messenger> Acesso em 07 de outubro de 2018.
+DIALOGFLOW. Disponível em: < https://dialogflow.com/docs > Acesso em 30 de
+outubro de 2018.
+DOMINGOS, Pedro. Sistemas inteligentes: fundamentos e aplicações. São Paulo:
+Novatec, 2017.
+FAVA, Rui. Educação para o século 21: a era do indivíduo digital. São Paulo:
+Saraiva, 2016.
+FAVA, Rui. Trabalho, educação e inteligência artificial a era do indivíduo versátil.
+Porto Alegre: Penso, 2018.
+FRIEDMAN, Thomas L. Obrigado pelo atraso: um guia otimista para vencer na era
+da velocidade. Coimbra/Portugal: Conjuntura Actual Editora, 2016.
+GEBRAN, Maurício Pessoa. Tecnologias educacionais. Curitiva: Iesde, 2009.
+IBM, <https://console.bluemix.net/apidocs/assistant?language=node > Acesso 15 de
+Novembro de 2018.
+IBM, O que IBM Cloud pode fazer para seu negócio?
+Disponível em: <
+https://www.ibm.com/br-pt/marketplace/cloud-platform > Acesso em: 29 de setembro
+de 2018.
+IBM, <https://console.bluemix.net/apidocs/assistant?language=node > Acesso 15 de
+Novembro de 2018.
+
+Pág 19/20
+
+IBM, Disponível em: <https://www.ibm.com/watson/about/index.html > Acesso em 25
+de setembro 2018.
+JOLY, Maria Cristina Rodrigues Azevedo. A tecnologia no ensino: implicações para a
+aprendizagem. 1ª ed. São Paulo: Casa do psicólogo, 2002.
+KELLY, Kevin. Inevitável [recurso eletrônico]: as 12 forças tecnológicas que
+mudarão o nosso mundo. Rio de Janeiro: Alta Books, 2018.
+KENSKI, Vani Moreira. O novo ritmo da informação. 3. ed. São Paulo: Papirus,
+2007.
+KURZWEIL, Ray. Como criar uma mente: os segredos do pensamento humano. São
+Paulo: Aleph, 2015
+LEE, Henry. Voice User Interface Projects: Build voice-enabled applications using
+Dialogflow for Google Home and Alexa Skills Kit for Amazon Echo. Packt Publishing
+Ltd, 2018.
+LÉVY, Pierre. A inteligência coletiva. São Paulo: Loyola, 1998.
+LIDDY, Elizabeth D. Liddy, Natural Language Processing, Syracuse University, School
+of Information Studies.2001
+LIMA, Isaías; PINHEIRO, Carlos A. M. Inteligência artificial. Rio de Janeiro:
+Elsevier, 2016.
+MARZOCHI, Roger; VALIM, Carlos Eduardo. Mundo digital: elementar meu caro
+Watson. Revista ISTOÉ Dinheiro, 28 de outubro de 2016. Disponível em:
+NATH, Jhilam, Disponível em: <https://chatbotsmagazine.com/identifying-theplatform-for-your-chatbot-312e46ef9e8a> Acesso em 15 de outubro 2018.
+NORVING, Peter; RUSSELL, Stuart. Inteligência artificial: Trad. 3. Ed, 2003.
+OLIVEIRA, Solange. O Algoritmo Mestre: Como a busca pelo algoritmo de Machine
+Learning definitivo recriará o nosso mundo. São Paulo: Manole Ltda, 2003.
+
+Pág 20/20
+
+RIBEIRO, Ana Elisa et al. Linguagem, tecnologia e educação. São Paulo: Peirópolis,
+2012.
+RIBEIRO, Arilda Inês Miranda; MENIN, Ana Maria da Costa Santos. Formação do
+Professor. São Paulo: Arte e Ciência, 2001.
+SANTOS, Eliete Correia dos; SOUZA, Fábio Marques de; SOUSA, Kelly Cristina de.
+Tecnologias educacionais e inovação: diálogos e experiências. 1ª ed. Curitiba: Appris,
+2016.
+SIRI. Disponível em: < https://www.apple.com/br/siri/> Acesso em: 06 de Novembro
+de 2018.
+STIFANI, Raffaele. IBM Bluemix: the cloud platform for creating and delivering
+applications. 1ª ed. IBM Redbooks, 2015.
+YOSHIDA, Soraia. Saint Paul lança plataforma de ensino com Inteligência artificial
+IBM Watson. Revista Época Negócios, 14 de novembro de 2017. Disponível em: <
+https://epocanegocios.globo.com/Carreira/noticia/2017/11/saint-paul-lanca-plataformade-ensino-com-inteligencia-artificial-ibm-watson.html >. Acesso em 02 de outubro de
+2018.
+
+

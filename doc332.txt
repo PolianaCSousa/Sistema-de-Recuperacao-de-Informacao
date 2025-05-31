@@ -1,0 +1,156 @@
+﻿VIII Congresso Brasileiro de Informática na Educação (CBIE 2019)
+aprender, agir, além de gerar a autoconfiança, e também da obra de Vygotsky: uma
+perspectiva histórico-cultural da educação, onde defende que a aprendizagem surge a
+partir da interação entre os indivíduos, visando que as atividades lúdicas tenham como
+principal base a interação dos alunos [Rego 2013].
+Nessa perspectiva, o projeto teve como resultado o desenvolvimento do
+Pensamento Computacional e o compartilhamento do conhecimento entre alunos, a
+partir das atividades desenvolvidas. Essas atividades fizeram parte de um curso
+introdutório à informática, no qual foi considerado o reconhecimento das principais
+tecnologias presentes no dia a dia dos alunos, pois constatou-se a deficiência de
+conhecimento na área de informática por meio da atividade diagnóstica.
+A partir do trabalho de Rodrigues et al. (2018), o qual apresenta uma revisão
+sistemática sobre o assunto, foi possível ter acesso às literaturas que enfatizam o uso da
+computação desplugada, proporcionando a este projeto uma visão das mudanças que a
+computação desplugada pode oferece no ambiente onde é aplicada, mudança essa
+notada na comparação das atividades diagnóstica e final.
+2. Computação Desplugada
+A computação desplugada consiste em ensinar os fundamentos introdutórios à ciência
+da computação com atividades lúdicas, sem o uso de recursos computacionais, assim
+evitando possíveis distrações do ambiente computacional. Por se tratar de atividades
+simples e não ser necessário explicar detalhes técnicos dos funcionamentos dos
+computadores, o método pode ser desenvolvido a diversos públicos, desde crianças a
+adultos, não importando o seu nível de escolaridade. O destaque e que a computação
+desplugada não requer nenhum equipamento especializado, os alunos aprendem na
+prática e se divertem enquanto aprendem e cooperam entre si, as atividades podem ser
+utilizadas sem seguir uma ordem ou sequência, pois não dependem uma da outra para
+serem aplicadas.
+As atividades são separadas em três partes: “Representando as Informações”,
+“Algoritmos” e “Representando Procedimentos”. Assim, em cada uma é desenvolvida
+um conteúdo específico da computação, a partir do uso de materiais lúdicos, como
+cartões, ímãs, caixas, imagens, pintar, recorte de papel, entre outros. Bell et al. (2011)
+sugere diversas alternativas de aplicação das atividades, dar dicas de aplicação das
+mesmas para alunos mais avançados, ressalta as habilidades desenvolvidas e matérias a
+serem utilizados.
+Todas essas atividades são encontradas no livro Computer Science Unplugged,
+essas por sua vez estão sendo utilizadas em diferentes disciplinas como exemplo
+citamos a utilização da computação desplugada por Cunha e Nascimento (2018) no
+desenvolvimento do pensamento computacional na disciplina de robótica. A diversidade
+de adaptação das atividades é notada através do trabalho de Sousa e Lopes (2018), onde
+demonstram em seu artigo, o processo de estimular a construção do pensamento
+computacional e o raciocínio lógico, por com temática e simulados da Olimpíada
+Brasileira de Informática (OBI), com destaque da utilização da computação desplugada,
+quando não dispunham de laboratório de informática.
+1060
+Anais do XXV Workshop de Informática na Escola (WIE 2019)
+VIII Congresso Brasileiro de Informática na Educação (CBIE 2019)
+3. Metodologia
+O presente trabalho foi desenvolvido na turma do 9º ano do ensino fundamental, com 34
+alunos, com idade entre 14 a 17 anos, na Escola Comunitária de Augustinópolis no
+estado do Tocantins, no qual não tinham disciplina de informática nem mesmo
+laboratório para tal. Em um primeiro momento, foi realizada uma atividade diagnóstica
+junto aos estudantes para mensurar o nível de conhecimentos referente à computação. A
+atividade contou com aplicação de questionário, contendo 12 (doze) questões
+abrangendo diferentes temas da computação. A partir da obtenção das respostas deste
+questionário, foi identificada uma deficiência em conhecimentos básicos de informática.
+A título de exemplo, podemos citar a dificuldade que a maioria tinha em identificar um
+monitor ou um computador portátil.
+Tendo o diagnóstico da turma que seria assistida pelo projeto foram elaboradas
+atividades que pudessem contribuir para dirimir as deficiências encontradas no que
+tange aos conhecimentos sobre computação. No decorrer do projeto foram explorados
+diferentes espaços, como: a área de playground, que contava com árvores e sombra, a
+utilização desse ambiente possibilitou que fossem realizadas atividades ao ar livre com
+os estudantes. Vale destacar que a aplicação dos testes diagnósticos e teste final ocorreu
+em sala de aula. No sentido de avaliar a eficiência da intervenção proposta pelo projeto
+foi realizado um levantamento junto aos seus participantes como objetivo averiguar o
+nível de aprendizagem deles no que se refere à informática, por meio das atividades
+com a utilização da computação desplugada.
+3.1. Atividade 01 – Números Binários
+Utilizando cartões contendo pontos para representar um número, esse por sua vez é
+transformado em código binário como mostra na Figura 1.
+Figura 1. Atividade 01
+Através da atividade 01, foi possível desenvolver o conteúdo relacionado aos
+números binários. Foi possível, também, com ajuda dos cartões transformar símbolos
+em binário, transformar os binários em números e por fim, transformar os números em
+letras do alfabeto e assim decifrar uma mensagem. Demonstrando aos alunos de forma
+simples como é processado toda informação pelo computador.
+3.2. Atividade 12 – Linguagem de Programação
+A segunda atividade aplicada enfatizou como o computador executa as tarefas
+propostas. A Figura 2 mostra um exemplo de aplicação da atividade 12 do livro.
+1061
+Anais do XXV Workshop de Informática na Escola (WIE 2019)
+VIII Congresso Brasileiro de Informática na Educação (CBIE 2019)
+Figura 2. Atividade 12
+A atividade consiste em tornar os alunos capazes de gerar comandos simples
+para que seu colega interprete e faça vários desenhos apenas ouvindo os comandos.
+Utilizando apenas folha e papel, outro aluno fica com a figura na mão sem mostra para
+o outro, assim como o exemplo na Figura 2. Outro exemplo de utilização é percorrer um
+labirinto de olhos vendados apenas executando comandos simples, assim foi possível
+demonstrar aos alunos todo o processo que um computador interpreta os comandos para
+executar uma tarefa.
+4. Resultados e Discussões
+Na atividade diagnóstica os estudantes responderam aos 34 (trinta e quatro) testes com
+12 (doze) questões da atividade diagnóstica. Das 12 perguntas apresentadas foram
+obtidos 35,3% de acertos e 64,7% de erros. As alternativas que contaram com mais
+erros foram referentes as nomenclaturas das tecnologias e dispositivos, evidenciado o
+desconhecimento dos estudantes relacionados a assuntos básicos ligados à computação,
+com base nesta atividade foram desenvolvidas as aulas para se adequar ao nível de
+conhecimento dos alunos.
+Após a execução das atividades previstas pelo projeto, foi realizada uma
+atividade que serviu como ferramenta avaliativa dos conhecimentos obtidos por parte
+dos alunos, durante com a realização do projeto. Esse teste foi diferente, com menos
+questões a serem respondidas, usando o mesmo conteúdo da atividade diagnóstica, mas
+com perguntas diferentes, tentando averiguar se eles aprenderam ou apenas
+memorizaram as respostas. Foram aplicados 44 (quarenta e quatro) testes com a soma
+de 220 (duzentos e vinte) questões, onde é possível identificar um maior número de
+acertos de questões referente ao mesmo conteúdo da atividade diagnóstica.
+Durante as aulas com a utilização de técnicas da computação desplugada foi
+possível verificar, ainda, um maior interesse dos alunos em participarem das atividades
+propostas, diferente do que era notado no período de observação. Comprovando, dessa
+forma, que é possível deter sua atenção e despertar seu interesse com incorporação de
+atividades lúdicas no ambiente de ensino. Assim, com a interação dos estudantes diante
+do conteúdo apresentado foi possível alcançar um melhor resultado no quesito
+aprendizagem e desenvolver o conhecimento em computação mesmo sem o ambiente
+computacional.
+5. Considerações Finais
+O projeto apresentado propôs o desenvolvimento de atividades no contexto escolar com
+a adoção de práticas, que envolveram conceitos de computação desplugada. A partir dos
+1062
+Anais do XXV Workshop de Informática na Escola (WIE 2019)
+VIII Congresso Brasileiro de Informática na Educação (CBIE 2019)
+dados obtidos foi possível concluir que a iniciativa alcançou seu objetivo, tendo em
+vista que os estudantes que apresentaram, inicialmente, desconhecimento de assuntos
+básicos relacionados à informática, após a conclusão do curso oferecido pelo projeto
+sabiam diferenciar CPU (Unidade Central de Processamento) de gabinete, mouse gamer
+de mouse comum, diferenças entre notebooks e PC (computador pessoal) de mesa, o
+que é uma linguagem de programação, algoritmos computacionais e não
+computacionais, diferenças entre os tipos de armazenamentos que o computador utiliza.
+Foi possível, ainda, disseminar entre outros professores informações de sites que
+oferece vários conteúdos que envolve jogos educativos para que eles também pudessem
+usar em sala de aula. Como proposta para trabalhos futuros, acreditamos que pode ser
+avaliado o nível do pensamento computacional a partir da utilização de metodologias
+adequadas para essa finalidade.
+6. Referências
+Bell, T., Witten, I. e Fellows, M. (2011) “Computer Science Unplugged. Ensinando
+Ciência da Computação sem o uso do computador”, Tradução coordenada por
+Luciano Porto Barreto.
+Cunha, F. e Nascimento, C. (2018) “Uma Abordagem Baseada em Robótica e
+Computação Desplugada para Desenvolver o Pensamento Computacional na
+Educação Básica”. In: Brazilian Symposium on Computers in Education (SBIE). p.
+1845.
+De Souza, I. e De Souza, L. (2013) “O uso da tecnologia como facilitadora da
+aprendizagem do aluno na escola”. Revista Fórum Identidades.
+De Souza, J. e Lopes, A. (2018) “Estimulando o pensamento computacional e o
+raciocínio lógico no ensino fundamental por meio da OBI e computação
+desplugada”. In: Brazilian Symposium on Computers in Education (Simpósio
+Brasileiro de Informática na Educação-SBIE). p. 1893.
+Rodrigues, S., Aranha, E. e Silva, T. (2018) “Computação Desplugada no Ensino de
+Programação: Uma Revisão Sistemática da Literatura”. In: Brazilian Symposium on
+Computers in Education (Simpósio Brasileiro de Informática na Educação-SBIE). p.
+417.
+Rego, T. (2013) “Vygotsky: uma perspectiva histórico-cultural da educação”, Editora
+Vozes Limitada.
+Wing, J. (2006) “Computational thinking. Communications of the ACM”, v. 49, n. 3, p.
+33-35.
+1063
+Anais do XXV Workshop de Informática na Escola (WIE 2019)

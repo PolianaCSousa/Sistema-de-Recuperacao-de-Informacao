@@ -1,0 +1,771 @@
+          UNIVERSIDADE ESTADUAL DA PARAÍBA
+              CAMPUS I - CAMPINA GRANDE
+           CENTRO DE CIÊNCIAS E TECNOLOGIA
+           CURSO DE CIÊNCIA DA COMPUTAÇÃO
+
+
+
+
+           JOSÉ HENRIQUE RIBEIRO DE QUEIROZ
+
+
+
+
+       PEQUENOS DESENVOLVEDORES:
+despertando crianças para o mundo da Computação.
+
+
+
+
+                 CAMPINA GRANDE - PB
+                         2022
+                  UNIVERSIDADE ESTADUAL DA PARAÍBA
+                      CAMPUS I - CAMPINA GRANDE
+                   CENTRO DE CIÊNCIAS E TECNOLOGIA
+
+
+
+
+                  JOSÉ HENRIQUE RIBEIRO DE QUEIROZ
+
+
+
+
+Trabalho de Conclusão de Curso relacionado ao período de estágio obrigatório
+                                do discente.
+
+
+
+
+  PEQUENOS DESENVOLVEDORES: despertando crianças para o mundo da
+                               Computação.
+
+
+
+
+                                     Relatório de Trabalho de Conclusão de
+                                     Curso apresentado ao Curso de
+                                     Bacharelado em Ciência da Computação
+                                     do Centro de Ciências e Tecnologia da
+                                     Universidade Estadual da Paraíba, como
+                                     requisito parcial à obtenção do título de
+                                     Bacharel em Ciência da Computação.
+
+
+                                     Orientadora: Prof. Me. Cheyenne Ribeiro
+                                     Guedes Isidro.
+
+
+
+
+                          CAMPINA GRANDE - PB
+                                   2022
+                   JOSÉ HENRIQUE RIBEIRO DE QUEIROZ
+
+
+
+
+PEQUENOS DESENVOLVEDORES: DESPERTANDO CRIANÇAS PARA O MUNDO
+                              DA COMPUTAÇÃO
+
+
+
+
+                                      Relatório de Trabalho de Conclusão de
+                                      Curso apresentado ao Curso de
+                                      Bacharelado em Ciência da Computação
+                                      do Centro de Ciências e Tecnologia da
+                                      Universidade Estadual da Paraíba, como
+                                      requisito parcial à obtenção do título de
+                                      Bacharel em Ciência da Computação.
+
+
+                                      Área de concentração: Informática na
+                                      Educação.
+
+
+
+
+Aprovado em 05 de abril de 2022.
+
+
+
+
+                           BANCA EXAMINADORA
+
+
+            ______________________________________________
+            Prof. Me. Cheyenne Ribeiro Guedes Isidro (Orientadora)
+                   Universidade Estadual da Paraíba (UEPB)
+
+
+
+               _________________________________________
+                   Prof. Dr. Janderson Jason Barbosa Aguiar
+                   Universidade Estadual da Paraíba (UEPB)
+
+
+
+               _________________________________________
+                  Prof. Me. Alanna Camylla Coêlho Monteiro
+                   Universidade Estadual da Paraíba (UEPB)
+        Aos meus Pais Maria e Manoel e minha família na pessoa
+da minha tia Leandra Ribeiro por todo apoio, palavras de incentivo,
+                                   e intercessão a Deus, DEDICO.
+                                   RESUMO
+
+
+
+Este relatório aborda o projeto Pequenos Desenvolvedores, realizado durante o
+período de Estágio Supervisionado enquanto estudante do curso de Bacharelado em
+Ciência da Computação. O público-alvo em questão foram alunos de uma escola
+pública do Ensino Fundamental em Campina Grande – Paraíba. O principal objetivo
+do projeto foi estimular crianças a desenvolverem seu pensamento cognitivo a fim de
+aperfeiçoá-lo para resolução de problemas e, em contrapartida, auxiliá-las a
+melhorar seu desempenho no ensino regular. Também buscou-se apresentar a área
+da Computação às crianças com a finalidade de despertar interesse, e quem sabe
+poderem trilhar esse caminho em seu futuro profissional. Usando de atividades
+escritas, tablets, computadores, e ferramentas multimidiáticas, foram abordadas as
+metodologias e técnicas de algumas disciplinas estudadas na UEPB, adequadas ao
+objetivo do projeto, como também foram apontados e colocados em prática estudos
+de alguns autores sobre o pensamento computacional e o desenvolvimento
+cognitivo. Cerca de 150 crianças participaram das aulas do projeto em dois anos de
+estágio, onde puderam aprender um pouco sobre programação. Ao final do projeto,
+também foi montado um pequeno laboratório de informática na escola com alguns
+computadores doados pela cooperativa.
+
+
+Palavras-Chave:    Programação     Infantil.   Informática   na   Educação.   Estágio
+Supervisionado.
+                                    ABSTRACT
+
+
+
+
+This report addresses the Little Developers (Pequenos Desenvolvedores) project,
+carried out during the Supervised Internship period as a student of the Bachelor's
+Degree in Computer Science. The target audience in question were students from a
+public elementary school in Campina Grande - Paraíba. Our objective was to
+encourage children to develop their cognitive thinking in order to improve it for
+problem solving. Also to help them improve their performance in their regular
+education. We also sought to introduce the area of ​Computing to children so that it
+could arouse interest, and who knows, to be able to help them choose this path in
+their professional future. By using written activities, tablets, computers, and
+multimedia tools, methodologies and techniques of some subjects studied at UEPB,
+appropriate to the objective of the project, were also pointed out. In addition we have
+put into practice studies by some authors on computational thinking and cognitive
+development. Around 150 children attended the project classes in two years of
+internship, where they could learn a little bit about programming. At the end of the
+project, a small computer lab was also setted up in the school with a few computers
+donated by the cooperative..
+
+
+Keywords: Children's Programming. Informatics in Education. Supervised internship.
+                            SUMÁRIO
+
+
+
+
+1     INTRODUÇÃO ……………………………………………………………………… 7
+
+2     O PROJETO PEQUENOS DESENVOLVEDORES …………………………... 9
+
+2.1   A ESCOLA …………………………………………………………………….                     10
+
+3     METODOLOGIA ………………………………………………………………... 12
+
+3.1   TURMAS MÓDULO I …………………………………………………………                   13
+
+3.2   TURMAS MÓDULO II ………………………………………………………..                 16
+
+4     RESULTADOS …………………………………………………………………..                   18
+
+5     CONSIDERAÇÕES FINAIS …………………………………………………...              22
+
+      REFERÊNCIAS ………………………………………………………………….. 23
+
+      APÊNDICE A - AVALIAÇÃO DE RACIOCÍNIO LÓGICO ………………….. 24
+
+      APÊNDICE B - PERGUNTAS AVALIATIVAS SOBRE O PROJETO ……... 25
+                                                                                   7
+
+
+      1 INTRODUÇÃO
+
+
+      Esse relatório aborda o desenvolvimento e implementação do Projeto
+Pequenos Desenvolvedores, fruto da experiência do autor enquanto aluno da
+Universidade Estadual da Paraíba em seu estágio supervisionado realizado na
+Cooperativa de Crédito Sicredi localizada na cidade de Campina Grande – PB.
+      O estágio aconteceu na Sicredi, no intervalo de 2016-2018, e em parceria
+com uma Escola Municipal de um bairro de baixa renda de Campina Grande, a
+cooperativa promoveu um projeto de ação social, com base em um dos pilares do
+cooperativismo: o interesse pela comunidade.
+      O projeto surgiu em 2014 e foi assumido pelo discente em 2016. Denominado
+Pequenos Desenvolvedores, teve o intuito de dar oportunidade e acesso à
+tecnologia, além de agregar conhecimento, às crianças de 7 a 12 anos, através de
+aulas de introdução à área da Computação. O respectivo plano de aula apresentou
+aos alunos desde a origem dos computadores, passando por sua evolução até ao
+que estas máquinas são capazes de fazer. Abordando assuntos e conceitos de
+introdução à computação, algoritmos e paradigmas educacionais, as crianças
+puderam sair da sua zona de conforto, do ensino tradicionalista, para ingressar em
+um ensino paralelo, totalmente diferente do que se é visto no dia a dia.
+      Diante disso, Zanetti e Fantacini (2016) mencionam Vygotsky (1991) e dizem
+que “o brincar faz parte da infância da criança; por isso, é necessário explorar esse
+campo dentro da sala de aula, possibilitando aos estudantes criar, inventar e
+interagir com os colegas, permitindo-os descobrir suas próprias habilidades.”
+      Assim, foi trabalhado com as crianças exercícios de raciocínio lógico,
+exercícios em computadores e tablets com a finalidade de colocar em prática alguns
+dos conhecimentos teóricos aprendidos durante o curso de graduação do autor.
+Alguns conteúdos de componentes curriculares da graduação como Introdução à
+Computação, Algoritmos, Paradigmas Educacionais foram trabalhados com a
+finalidade de aplicar o que foi visto na universidade e trazer um bom resultado para
+as turmas formadas.
+      Wing (2006) diz que uma forma de resolver problemas é com a ajuda do
+pensamento computacional, o estudo em questão desenvolve um conjunto de
+habilidades que envolve a Ciência da Computação que podem ser desenvolvidas
+                                                                             8
+
+por qualquer pessoa, para além de somente os profissionais de computação. Estas
+habilidades consistem em abstrair problemas, reconhecer padrões e resolver
+problemas pensando de forma heurística.
+      Nas seções a seguir, apresentaremos os detalhes desse projeto, a
+metodologia aplicada e os resultados alcançados.
+                                                                                  9
+
+
+      2 O PROJETO PEQUENOS DESENVOLVEDORES
+
+      Em 2014, a Sicredi tomou a iniciativa de desenvolver um projeto social para a
+comunidade em que ela está inserida, atendendo a um dos princípios do
+cooperativismo: Interesse pela comunidade.
+      Este projeto intitulado Pequenos Desenvolvedores foi inspirado no “Ano do
+Código” (Year Of Code 2014). O “Ano do Código” foi uma campanha independente e
+sem fins lucrativos que teve o apoio da Locaweb e da Caelum e possuía o objetivo
+de aproximar a programação dos interessados por tecnologia, e foi a partir daí que
+pudemos trazer esse objetivo para atender as crianças de um bairro carente.
+      Muito embora essa campanha não deixa explícita as crianças como um
+público-alvo, se faz necessário estimular o pensamento computacional para este
+grupo de pessoas. É perceptível a necessidade desta área da computação, como
+incentivo às demais áreas, fazendo com que as crianças se sintam estimuladas à
+criação, inovação e melhorando o desempenho no pensamento cognitivo.
+      A Sociedade Brasileira de Computação (2017), lançou um documento em
+conjunto com professores e Direção da Educação que traz competências e
+habilidades nos eixos da Computação desde a Educação Infantil até o Ensino
+Médio. Ele também aponta que vários países como Alemanha, Japão, Grécia,
+Estados Unidos da América, Finlândia e Inglaterra já adotaram o ensino de
+Computação nas escolas para desenvolver habilidades relacionadas à resolução de
+problemas complexos, bem como para proporcionar aos alunos compreensão e
+fluência no mundo digital.
+      Nesse mesmo ano de 2017 um Projeto de Lei Nº 6885/2017 presente no site
+legislativo da Câmara de Deputados, de autoria de um Deputado Estadual de
+Tocantins, pretendia alterar o art. 26 da Lei nº 9.394, de 20 de dezembro de 1996. A
+mesma estabelece as diretrizes e bases da educação nacional, onde alteraria para
+implantar a disciplina de informática educativa como uma disciplina de caráter
+obrigatório em todos os níveis da educação básica. Porém no ano de 2021 o projeto
+foi arquivado.
+      Por outro lado, a Base Nacional Comum Curricular (BNCC), diz em sua
+competência geral de número 5:
+                                                                                             10
+
+
+
+                     “Compreender, utilizar e criar tecnologias digitais de informação e
+                     comunicação de forma crítica, significativa, reflexiva e ética nas diversas
+                     práticas sociais (incluindo as escolares) para se comunicar, acessar e
+                     disseminar informações, produzir conhecimentos, resolver problemas e
+                     exercer protagonismo e autoria na vida pessoal e coletiva.” (BNCC, 2018)
+
+
+      Ou seja, a partir do momento que colocamos isso no dia a dia dos alunos do
+ensino infantil, estamos colaborando no desenvolvimento das competências para o
+uso das Tecnologias Digitais da Informação e Comunicação (TDICs), mas não
+somente para seu uso, como também para a criação dessas TDICs.
+      Neste contexto, é possível entender a importância desse projeto em fazer a
+diferença na vida de um grupo de crianças em que muitas sequer tiveram acesso a
+um computador anteriormente.
+
+
+
+
+      2.1 A ESCOLA
+
+      A Escola Municipal de Ensino Fundamental Professora Luzia Dantas está
+localizada no Bairro Alto Branco, em Campina Grande, e recebe crianças daquela
+localidade.
+      A instituição possui um vasto espaço composto por um ginásio poliesportivo,
+uma grande área de lazer para o recreio das crianças, além de ser muito bem
+arborizada, cheia de cuidados e enfeites pensando sempre no meio ambiente
+através da reciclagem de materiais descartados, como também pensando no
+bem-estar dos colaboradores e alunos. Na Figura 1 a seguir é possível observar a
+área externa da escola e o zelo do local.
+                                                                             11
+
+                       Figura 1 - Foto da área externa da escola.
+
+
+
+
+                            Fonte: Arquivo pessoal do autor.
+
+
+      O ambiente possui um número de salas capaz de comportar os alunos
+daquela região, além de contar com um conjunto de profissionais que se mostraram
+à disposição para o que fosse necessário na realização dos Pequenos
+Desenvolvedores.
+      A E.M.E.F Professora Luzia Dantas foi escolhida por um dos diretores da
+Sicredi da época, sem nenhum pré-requisito além do fato de ser em uma região
+humilde de Campina Grande. O projeto foi realizado em uma das salas construídas
+para o ensino regular/tradicional com todos os seus materiais fornecidos pela
+cooperativa.
+      Descreveremos na próxima seção os detalhes de execução do projeto.
+                                                                                 12
+
+
+      3 METODOLOGIA
+
+      O público-alvo foram alunos na faixa etária de 7 a 12 anos que estudam na
+E.M.E.F Professora Luzia Dantas, onde os únicos pré-requisitos requeridos à escola
+é que eles soubessem pelo menos ler e escrever para que conseguissem lidar com
+os desafios propostos.
+      Foram formadas duas turmas de 10 (dez) alunos que durante três meses
+assistiram às aulas do projeto. Com o auxílio das professoras, a diretora formou as
+turmas onde os critérios de seleção foram inicialmente as boas notas, frequência
+escolar e o bom comportamento. Entretanto observou-se a necessidade de colocar
+alunos com baixo rendimento e que não fossem tão interessados no ensino regular,
+como forma de incentivá-los e assim servir de exemplo para os demais colegas.
+      As aulas foram ministradas no horário oposto às aulas da escola, duas vezes
+na semana, com duração de 90 (noventa) minutos cada turma, somando-se 36
+(trinta e seis) horas de curso. As turmas foram ministradas das 8h30min às
+10h00min e de 10h00min às 11h30min.
+      Para o plano de aula, criamos o Módulo I e o Módulo II. Um deles trouxe
+Introdução à Informática Básica e primeiras abordagens de Programação, enquanto
+o outro módulo mais avançado foi aplicado para alunos que obtiveram os melhores
+desempenhos do Módulo I.
+      Os instrumentos utilizados pelo instrutor foram datashow, notebooks, tablets e
+caixa de som fornecidos pela cooperativa, além do acesso à Internet já instalado no
+próprio prédio da Escola, fornecido pelo Governo Municipal.
+      Destes instrumentos citados, a cooperativa forneceu 05 (cinco) notebooks e
+10 (dez) tablets para as turmas, além de todo material impresso que foi necessário
+para atender à demanda. O instrutor em todos os dias de aula montava e
+desmontava a estrutura em uma das salas de aula, uma vez que a escola não
+possuía um laboratório de informática e desse modo era possível lecionar para todas
+as crianças participantes.
+      Um dos objetivos de utilizar apenas 05 (cinco) computadores tendo 10 (dez)
+alunos foi o fato de se trabalhar em duplas, pois o intuito é despertar nos alunos o
+companheirismo de que juntos podem crescer e com propriedade argumentar
+                                                                                           13
+
+quando os pensamentos forem diferentes, a fim de debatê-los. Veiga (2000) fala
+quanto a essas relações:
+                     “Nos grupos formados com objetivos educacionais, a interação deverá estar
+                     sempre provocando uma influência recíproca entre os participantes do
+                     processo de ensino, o que me permite afirmar que os alunos não
+                     aprenderão apenas com o professor, mas também através da troca de
+                     conhecimentos, sentimentos e emoções dos outros alunos.” (VEIGA, 2000,
+                     p.105).
+
+
+      Na Figura 2 é possível observar o registro de um dos momentos em que
+foram realizadas atividades em dupla com os alunos.
+
+
+                 Figura 2 - Turma trabalhando em dupla exercícios propostos.
+
+
+
+
+                               Fonte: Arquivo pessoal do autor.
+
+
+
+
+      3.1 TURMAS MÓDULO I
+
+      No Módulo I, a ementa iniciou com atividades de raciocínio lógico a fim de
+estimulá-los a pensar diferente do que é visto no dia a dia. Um exemplo dessas
+atividades está contido no Apêndice A. Para ilustrar as atividades desenvolvidas, na
+Figura 3 temos o registro da turma resolvendo exercícios de raciocínio lógico.
+                                                                              14
+
+               Figura 3 - Turma respondendo exercício de raciocínio lógico.
+
+
+
+
+                             Fonte: Arquivo pessoal do autor.
+
+      Em seguida apresentamos a história de como surgiu os computadores e sua
+evolução, bem como discutimos o que podemos fazer com o computador. Utilizamos
+uma forma lúdica ao público infantil, para que eles pudessem compreender da
+melhor forma toda essa novidade, conforme pode ser visto na Figura 4. Mostramos
+também como um computador é composto, destacando os periféricos, I/O e funções
+dos seus componentes.
+
+
+                    Figura 4 - Slides sobre introdução a computação.
+
+
+
+
+                             Fonte: Arquivo pessoal do autor.
+
+
+      A Figura 5 contém um exemplo dos slides utilizados na aula de conceito de
+algoritmos.
+                                                                                                  15
+
+                          Figura 5 - Slides sobre conceitos de algoritmos.
+
+
+
+
+                                  Fonte: Arquivo pessoal do autor.
+
+
+
+
+       Além desses temas, foram ensinados os conceitos de programação em
+blocos para que por fim pudessem produzir seus primeiros mini-projetos.
+       Os exercícios de atividades em blocos são desenvolvidos pelo Scratch1,
+conforme Figura 6.
+                               Figura 6 - Tela da Ferramenta Scratch.
+
+
+
+
+                                    Fonte: http://scratch.mit.edu/.
+
+
+       Através dessa ferramenta os alunos podem produzir histórias de acordo com
+sua criatividade. Pode-se modificar um plano de fundo, inserir os mais diversos
+personagens (pessoas, animais, objetos, transportes…), além de fazê-los se
+movimentar e colocar músicas de fundo durante o enredo. São trabalhados também,
+laços de repetição, condicionais, variáveis, cálculos matemáticos, ângulos de
+direção (onde fazem os personagens se locomover), dentre outras funcionalidades.
+
+
+1
+ MIT. Scratch. Massachusetts Institute of Technology. Disponível em: https://scratch.mit.edu/. Acesso
+em: 23 fev. 2022.
+                                                                                                   16
+
+        Para cada dia de aula um tema é debatido e apresentado no contexto real e
+aplicado com adaptações no contexto de programação.
+        Além dos computadores fornecidos pela cooperativa, ela fornece também
+tablets para enriquecer ainda mais o conhecimento dos alunos. Uma outra
+ferramenta utilizada neste módulo e que foi aplicada ao objeto em questão é o
+aplicativo Lightbot2.
+        Com ele é possível fazer um Robô (personagem do aplicativo) sair do seu
+ponto de origem, percorrer um caminho ultrapassando alguns obstáculos e
+resolvendo alguns problemas que vão se deparando na trilha. Nele é possível usar
+instruções de rotação para direita, rotação para esquerda, pular, além de pensar
+muito na busca de resolver a fase utilizando dois laços de repetição que surgem nas
+últimas fases para que possa “zerar” o jogo.
+        Por fim, concluímos o módulo I com um questionário avaliativo que pode ser
+consultado no Apêndice B.
+
+
+        3.2 TURMAS MÓDULO II
+
+        Depois dessa primeira fase, temos o MÓDULO II. Como pré-requisitos para
+fazer parte desta turma, é preciso que o aluno tenha concluído com um bom grau de
+aproveitamento, para que a própria criança não fique desestimulada a participar,
+pois o grau de dificuldade aqui é um pouco maior.
+        A seleção dos alunos parte do próprio instrutor do Projeto através de notas
+parciais obtidas, no decorrer dos exercícios feitos durante o período do módulo I.
+Essas notas são apenas para o conhecimento do instrutor de como anda o
+desempenho de cada aluno e observando como anda o nível de todos os demais da
+turma, a fim de dar uma atenção maior e procurar o porquê de não evoluir conforme
+esperado. Aqui a ferramenta trabalhada para a produção dos mini-projetos foi o
+AppInventor3, como pré-requisito para seu uso se faz necessária a conexão com a
+internet, pois a ferramenta está hospedada na WEB. Na Figura 7 podemos observar
+o exemplo da interface da ferramenta em questão.
+
+                                 Figura 7 - Tela da ferramenta AppInventor.
+
+2
+ LightBot. 2017. LightBot Inc. Disponível em: https://lightbot.com/. Acesso em: 23 fev. 2022.
+3
+ MIT. App Inventor. Massachusetts Institute of Technology. Disponível em: http://appinventor.mit.edu/.
+Acesso em: 10 jul. 2021.
+                                                                                17
+
+
+
+
+                           Fonte: https://appinventor.mit.edu/.
+
+
+
+      Nessa ferramenta é possível produzir telas para aparelhos mobile, neste caso,
+os tablets. As crianças puderam criar telas através do clicar-arrastar de elementos
+na tela (botões, campos de textos, animações, plano de fundo), e em background
+fazer a codificação de cada botão. Algumas das múltiplas funcionalidades é fazer
+com que a ferramenta transite com animação entre telas, integração com a internet,
+além de produzir tais projetos exclusivamente com a programação em blocos, dentre
+outros fatores.
+      O projeto final desse Módulo II se deu com a produção de uma calculadora
+simples e com trocas de tela e outros detalhes de acordo com a criatividade de cada
+um, desenvolvida para Android através da programação em blocos com interface
+bem intuitiva.
+                                                                                                  18
+
+
+      4 RESULTADOS
+
+
+      Ao final de cada formação de turmas, foi feita uma culminância com torta,
+guloseimas e certificados, com a finalidade de mostrar aos alunos que eles
+conseguiram chegar ao fim daquele desafio. Esta confraternização foi o ápice do
+projeto. Nela convidamos a gestora escolar, a inspetora, e como representante da
+Cooperativa, a secretária executiva. Na ocasião foi apresentado o projeto final dos
+alunos, onde os professores viram de perto o trabalho feito pelas crianças, conforme
+Figura 8. Na Figura 9 temos o registro da entrega dos certificados de conclusão do
+curso. Outros registros realizados ao longo do projeto podem ser observados na
+Figura 10.
+
+
+    Figura 8 - Alunos apresentando Projeto Final (Módulo I - Scratch, Módulo II - AppInventor).
+
+
+
+
+                                 Fonte: Arquivo pessoal do autor.
+
+
+
+                        Figura 9 - Entrega dos certificados para os alunos.
+
+
+
+
+                                 Fonte: Arquivo pessoal do autor.
+                                                                                         19
+
+                    Figura 10 - Compilado de fotos de outros momentos do Projeto.
+
+
+
+
+                            Fonte: Compilação do autor. Arquivo pessoal.
+
+
+
+         Em discurso, a gestão escolar afirmou o quão positivo foi o projeto para os
+alunos     mostrando    melhor     desempenho        em    outras    disciplinas,   melhoria
+comportamental, automotivação no que diz respeito a conseguir alcançar os
+desafios e superar suas próprias expectativas. O que antes parecia impossível para
+elas, pois muitas delas nunca tinham usado um computador, hoje pode-se dizer que
+conseguiram desenvolver uma história cheia de animações e de personagens que
+se conversam. O que antes estava adormecido pela falta de oportunidade, hoje
+consegue-se ver que são capazes de ir muito além do que imaginam.
+         Dois pontos negativos que podemos elencar nesta experiência é o fato de
+que não havia um espaço exclusivo para as aulas de informática. As mesas e
+cadeiras eram montadas em filas todas de frente pro quadro (uma sala de aula
+tradicional), além de que se fazia necessário montar e desmontar a infraestrutura de
+extensões de energia, carregadores, notebooks e data show, todos os dias de aula.
+Outro ponto é o fato de não ter registrado um “antes e depois” que pudesse mostrar
+o quão os alunos evoluíram, e o quão positivo foi para estes. Embora os
+depoimentos de diretora, professoras e dos próprios alunos nos deixassem com
+sentimento de objetivo alcançado, cabe deixar a observação para uma próxima
+                                                                                    20
+
+experiência articular algo mais concreto neste sentido. Pensa-se fazer uma
+avaliação quantitativa comparativa entre os alunos participantes e alunos não
+participantes, questionário objetivo e subjetivo quanto ao projeto, a área
+computacional, perspectivas e objetivos se foram alcançados.
+           No último ano do Projeto (dezembro de 2019), buscando sanar um dos
+pontos negativos, o instrutor articulou junto a cooperativa, de criar um pequeno
+laboratório de informática para a escola, com a finalidade de oportunizar ainda mais
+os alunos e professores para o desenvolvimento de suas atividades além de que
+pudesse dar prosseguimento ao projeto através desses computadores e não mais
+pelo notebooks. Aproveitamos um ambiente em que a escola não fazia uso, e
+computadores que estavam obsoletos, foram montados; peças e cabos que estavam
+faltando foram providenciados para que todos os computadores estivessem 100%
+operacional, naquela instituição de ensino. A partir dali existiria um laboratório para
+as aulas de programação e para demais fins de pesquisa e estudo, entretanto,
+acometeu-se a pandemia da COVID-19 o que nos foi impedido de iniciar novos
+trabalhos com as crianças. Na Figura 11 observamos o laboratório em sua fase
+inicial.
+
+
+                        Figura 11 - Laboratório em fase de instalações.
+
+
+
+
+                               Fonte: Arquivo pessoal do autor.
+
+
+           O Projeto Pequenos Desenvolvedores teve grande repercussão ao longo
+desses anos. No ano de 2015 ganhou 2º lugar na Premiação Grandes Ideias em um
+Evento de reconhecimento de projetos das Cooperativas Sicredi NNE. Em seguida,
+participamos de duas matérias de TV local, conforme registro na Figura 12. Além
+disso, fomos capa e matéria da Revista Sescoop em 2019 (revista de nível nacional
+que foi distribuída a todas as cooperativas), conforme Figura 13 com um compilado
+das páginas da revista. Também foi realizada uma matéria especial nas redes
+                                                                                 21
+
+sociais feita pelo OCB (Organização das Cooperativas Brasileiras) e por fim, houve a
+efetivação do estagiário na empresa após o término do contrato.
+                           Figura 12 - Entrevista sobre o Projeto.
+
+
+
+
+                         Fonte: Screenshot da matéria realizada pelo autor.
+
+
+
+                     Figura 13 - Capa e matéria de Revista do Sescoop.
+
+
+
+
+                 Fonte: https://diac.somoscooperativismo.coop.br/downloads.
+                                                                                 22
+
+
+       5 CONSIDERAÇÕES FINAIS
+
+       Através da programação, as crianças puderam descobrir o poder da Ciência
+da Computação, mudando sua maneira de pensar sobre o assunto e descobrindo
+mais uma área que poderão ingressar futuramente no mercado de trabalho.
+       A inclusão digital precisa estar cada vez mais presente na vida de todas as
+pessoas, especialmente das crianças. Essa era digital as torna mais dependentes
+das   tecnologias,   que   por   consequência   permite sua evolução mental e
+comportamental, e assim no seu dia a dia, auxilia na vida pessoal e futuramente
+profissional.
+       Diante disso, é preciso deixar claro que o ensino de programação e suas
+tecnologias é um ensino complementar, onde ajuda os alunos com a finalidade de
+que evoluam e consigam resolver seus problemas na vida real com estratégias, e
+em curto espaço de tempo.
+       O estágio e o Projeto Pequenos Desenvolvedores colaboraram não só para o
+crescimento profissional, como também pessoal do instrutor. Houve muito
+envolvimento de todo corpo escolar, apoio da cooperativa, e carinho por parte dos
+alunos para com o instrutor. O carinho das crianças expresso em uma bala, uma
+bola de gude, um abraço dado ao instrutor, pôde mostrar que o objetivo foi
+alcançado e superado as expectativas.
+       Esses 6 anos de existência do Projeto, sendo 4 anos do instrutor, plantou uma
+semente no aprendizado de cada aluno. Foi preciso encerrar suas atividades em
+2019 pelo momento pandêmico que acometeu devido à COVID-19. Ainda não se
+sabe se a cooperativa dará continuidade para formações de mais turmas. Em
+contrapartida, espera-se que com esse relatório que descreve o Projeto Pequenos
+Desenvolvedores, sirva de inspiração para muitas instituições, sejam elas públicas
+ou privadas, como forma de estimular alunos das mais diversas idades, do bairro
+mais nobre ao mais humilde, à prática da programação que tem muito a crescer e
+expandir-se ao redor do mundo.
+                                                                                 23
+
+
+
+
+                                  REFERÊNCIAS
+
+BNCC. Tecnologias Digitais da Informação e Comunicação no contexto
+escolar: possibilidades. 2018. Disponível em:
+<http://basenacionalcomum.mec.gov.br/implementacao/praticas/caderno-de-praticas/
+aprofundamentos/193-tecnologias-digitais-da-informacao-e-comunicacao-no-context
+o-escolar-possibilidades> Acesso em 17 de mar. 2022.
+
+
+Portal da Câmara dos Deputados. Projeto de Lei 6885/2017. 2017. Disponível em:
+<https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=21234
+40> Acesso em 17 de mar. 2022.
+
+
+Sociedade Brasileira de Computação. Referenciais de Formação em
+Computação: Educação Básica. 2017. Disponível em:
+<https://www.sbc.org.br/noticias/10-slideshow-noticias/1996-referenciais-de-formaca
+o-em-computacao-educacao-basica>. Acesso em 01 mar. 2022.
+
+
+VEIGA, I.P.A., Técnicas de Ensino: Por que não?. Campinas: Papirus, 2000.
+
+
+WING, JM. Pensamento computacional. 2006. Comunicações da ACM, 49 (3),
+33-35.
+
+
+ZANETTI, Monise; FANTACINI, Renata Andrea Fernandes. A importância do
+lúdico na educação infantil. 2016. Educação: Batatais, Minas Gerais, v.6, n.4,
+p.87-107.
+                                                                                        24
+
+
+
+
+              APÊNDICE A - AVALIAÇÃO DE RACIOCÍNIO LÓGICO
+
+
+1- DIDIIDID está para 49499494 como DIIDIIDD está para:
+   o 94944949                     o 49499494                         o   94494499
+   o 49949944                     o 49944949
+
+2- Eva tem 4 anos. A sua irmã mais velha, Ana, é 3 vezes mais velha que ela. Que idade terá
+    Ana quanto tiver o duplo da idade de Eva?
+   o 14                               o 16                          o 22
+   o 20                               o 18
+
+3- SACO está para ASCO como 7683 está para:
+   o 8376                      o 3678
+   o 6783                      o 8376
+
+4- Numa jaula onde há coelhos e pombos, podem contar-se 35 cabeças e 94 patas. Quantos
+    animais há de cada classe?
+   o 11 coelhos e 24 pombos                     o 10 coelhos e 26 pombas
+   o 10 coelhos e 25 pombas                     o 12 coelhos e 23 pombas
+
+5- Uma caixa está para os cereais como um envelope está para:
+
+     o   Uma carta                                  o   O carteiro
+     o   O selo                                     o   A caixa de correio
+
+ 6- Comprova se a seguinte dedução é correta:
+– Alguns brinquedos são pelúcias
+– Algumas pelúcias são verdes
+Logo podemos assegurar que todos os brinquedos são verdes
+
+     o   Não podemos ter a certeza                  o   Falso
+     o   Certo
+
+7- Temos 3 caixas. Dentro de cada uma das 3 caixas estão duas mais pequenas, e em cada
+    uma dessas estão quatro ainda mais pequenas. Quantas caixas há no total?
+   o 24                                            o 30
+   o 9                                             o 33
+
+8- Hoje fui comprar laranjas. No supermercado deram-me 6, comi uma, o meu pai comeu 2, e
+   outra caiu ao chão e estragou-se. Quantas laranjas ainda tenho eu?
+
+     o   4                                          o   Nenhuma
+     o   5                                          o   2
+
+9-    O João é mais rápido que a Sara e a Eva é mais lenta que o João. Qual das seguintes
+     afirmações é a certa?
+      o Não podemos saber se a Sara é mais rápida que a Eva
+      o A Eva é mais lenta que a Sara
+      o A Eva é mais rápida que a Sara
+      o A Eva é tão rápida como a Sara
+                                                                  25
+
+
+ APÊNDICE B - PERGUNTAS AVALIATIVAS SOBRE O PROJETO
+
+1. O que é software?
+2. O que é algoritmo?
+3. Conte um pouco sobre a história dos computadores.
+4. Dê alguns exemplos de hardware.
+5. Diga alguns componentes do computador.
+6. O que é hardware?
+7. Qual o nome do Projeto da Unicred?
+8. Escreva no quadro o nome do gatinho que usamos para fazer os
+   mini-projetos.
+9. O que você achou mais legal em aprender?
+10. Para que serve o computador?
+11. O que não se pode fazer no computador?
+12. O que você achou mais difícil em fazer durante o projeto?
+13. Qual a cor do Scratch?
+14. O que aprendemos no Code Studio?
+15. Foi bom os três meses que passamos juntos?
+

@@ -1,0 +1,935 @@
+Revista Brasileira de Informática na Educação – RBIE
+Brazilian Journal of Computers in Education
+(ISSN online: 2317-6121; print: 1414-5685)
+http://br-ie.org/pub/index.php/rbie
+Submission: 12/Apr/2023;
+Camera ready: 20/Dec/2024;
+1st round notif.: 18/Sep/2023;
+Edition review: 03/Mar/2025;
+New version: 20/Nov/2024;
+Available online: 09/Apr/2025;
+2nd round notif.: 18/Dec/2024
+Published: 09/Apr/2025;
+“O Jogo é a Prova!”: um relato sobre o uso de jogo educacional
+articulado ao raciocínio computacional nos Anos Finais do
+Ensino Fundamental
+Title: “The Game is the Test!”: a report on the use of educational games articulated to
+computational reasoning in basic education
+"¡El Juego es la Prueba!": un relato sobre el uso de un juego educativo articulado con el
+pensamiento computacional en los Años Finales de la Educación Primaria.
+Carla Adriana Ferreira da Silva
+Colégio Estadual Padre Palmeira (CEPP)
+Secretaria da Educação do Estado da Bahia
+ORCID: 0009-0005-6372-9864
+carlaportugues2017@gmail.comEcivaldo de Souza Matos
+Fac. de Filos., Ciências e Letras de Ribeirão Preto
+Universidade de São Paulo (USP)
+ORCID: 0000-0002-3294-8950
+ecivaldo@usp.br
+Diego Zabot
+Instituto de Computação
+Universidade Federal da Bahia (UFBA)
+ORCID: 0000-0002-2518-7073
+diego.zabot@ufba.brGracielle Oliveira Mota Dias
+Faculdade de Educação
+Universidade Federal da Bahia (UFBA)
+ORCID: 0009-0009-4662-4058
+gracielle.oliveira@ufba.br
+Juliana Maria Oliveira dos Santos
+Instituto de Computação
+Universidade Federal da Bahia (UFBA)
+ORCID: 0009-0009-1068-4825
+juliana.maria@ufba.br
+Resumo
+O ensino da Computação nas escolas é geralmente confundido com as aulas instrumentais de informática, em que
+são apresentadas tecnologias para uso cotidiano ou em outras disciplinas escolares. Sendo, portanto, aulas em que
+não há necessariamente construção de conceitos, mas compreensão de técnicas ou tecnologias. Porém, a
+Computação apresenta um conjunto de conceitos e métodos não limitantes, potencialmente favorecedores do
+desenvolvimento de importantes competências de formação humana. Parte desse conjunto conceitual e metodológico
+tem sido chamado de Raciocínio Computacional (RC). Este artigo apresenta uma experiência de como práticas
+didáticas minuciosamente construídas com suporte das habilidades do RC, e a construção de um jogo de tabuleiro
+utilizado para o ensino da Língua Portuguesa no 9 o ano do Ensino Fundamental de uma escola pública, puderam
+contribuir para a ampliação do repertório metodológico docente, bem como os efeitos da intencionalidade
+pedagógica quanto ao uso do RC no protagonismo discente. Nos resultados iniciais observados dessa experiência,
+encontramos evidências de que a proposta didática possibilitou, na perspectiva docente, desenvolvimento e uso de
+habilidades diretas e transversais do RC, e de habilidades da Base Nacional Comum Curricular (BNCC).
+Palavras-Chave: Intencionalidade Pedagógica; Habilidades e Competências; Ensino de Computação; Design de
+Jogos; Protagonismo Discente.
+Cite as: da Silva, C. A. F., de Souza Matos, E., Zabot, D., Mota Dias, G. O., dos Santos, J. M. O. (2023). “O Jogo é
+a Prova!”: um relato sobre o uso de jogo educacional articulado ao raciocínio computacional nos Anos
+Finais do Ensino Fundamental. Revista Brasileira de Informática na Educação - RBIE, Vol. 33, 130-151.
+DOI: 10.5753/rbie.2025.3323da Silva et al.
+RBIE V.33 – 2025
+Abstract
+Teaching Computer Science in schools is generally confused with instrumental computer classes, in which
+technologies for everyday use or in other school subjects are presented. Therefore, these are classes in which
+concepts are not necessarily constructed but the understanding of techniques or technologies. However, Computer
+Science presents a set of non-limiting concepts and methods, potentially favoring the development of important
+human formation competencies. Part of this conceptual and methodological set has been called Computational
+Reasoning (CR). This article presents an experience of how didactic practices meticulously constructed with the
+support of CR skills, and the construction of a board game used for the teaching of the Portuguese Language in the
+9th year of Elementary School in a public school, could contribute to the expansion of the teacher's methodological
+repertoire, as well as the effects of pedagogical intentionality regarding the use of CR in student protagonism. In the
+initial results observed from this experience, we found evidence that the didactic proposal made it possible, from the
+teacher's perspective, to develop and use direct and transversal CR skills, and skills from the BNCC.
+Keywords: Pedagogical Intentionality; Skills and Competencies; Computing Education; Game Design; Student
+Protagonism
+Resumen
+La enseñanza de la Computación en las escuelas suele confundirse con las clases instrumentales de informática, en
+las que se presentan tecnologías para su uso cotidiano o en otras asignaturas escolares. Estas, por lo tanto, son
+clases en las que no necesariamente hay una construcción de conceptos, sino más bien una comprensión de técnicas
+o tecnologías. Sin embargo, la Computación presenta un conjunto de conceptos y métodos no limitantes, que pueden
+favorecer potencialmente el desarrollo de importantes competencias para la formación humana. Parte de este
+conjunto conceptual y metodológico ha sido denominado Razonamiento Computacional (RC). Este artículo presenta
+una experiencia en la que prácticas didácticas meticulosamente diseñadas con el apoyo de las habilidades del RC,
+junto con la construcción de un juego de mesa utilizado para la enseñanza de la Lengua Española en el 9º año de la
+Educación Primaria en una escuela pública, contribuyeron a la ampliación del repertorio metodológico docente, así
+como a los efectos de la intencionalidad pedagógica respecto al uso del RC en el protagonismo estudiantil. En los
+resultados iniciales observados en esta experiencia, encontramos evidencias de que la propuesta didáctica permitió,
+desde la perspectiva docente, el desarrollo y uso de habilidades tanto directas como transversales del RC, además
+de habilidades contempladas en la Base Nacional Común Curricular (BNCC).
+Palabras clave: Intencionalidad Pedagógica; Habilidades y Competencias; Enseñanza de Computación; Diseño de
+Juegos; Protagonismo Estudiantil
+131da Silva et al.
+1
+RBIE V.33 – 2025
+Introdução
+Quando comparada a outras ciências, como a Física e a Química, por exemplo, a Computação
+pode ser considerada relativamente nova; porém, interdisciplinar, ainda que frequentemente
+relacionada às ciências exatas. No entanto, em sua conexão com as necessidades escolares, a
+Computação Escolar está para além dos artefatos tecnológicos utilizados para desenvolver ações
+pedagógicas ou de gestão escolar, envolve também aspectos epistemológicos e científicos que
+podem pautar o desenvolvimento de diversos conhecimentos necessários ao desenvolvimento
+humano e social.
+Desenvolver essa pauta, mais “científica” que tecnológica, tem sido um grande desafio no
+âmbito educacional, principalmente no que se refere a Computação ser pensada e tratada como
+uma ciência na escola, não apenas como conjunto de métodos ou recursos tecnológicos. O ensino
+da Computação nas escolas geralmente é confundido com as aulas instrumentais de informática,
+em que são apresentadas tecnologias para uso cotidiano ou em outras disciplinas escolares.
+Segundo Scaico (2012), e ainda bem atual, as escolas de modo geral ainda estão em estágio inicial
+no longo processo de ensino da Computação.
+Diante disso, a Computação nos apresenta um conjunto de habilidades, potencialmente
+favorecedoras do desenvolvimento de importantes competências de formação humana, intitulado
+de Pensamento Computacional (PC), evidenciada por Wing (2006), que o define como uma
+abordagem para resolução de problemas, projeto de sistemas e compreensão do comportamento
+humano baseando-se em conceitos e processos da ciência da computação. Com isso, atribui-se ao
+PC a mesma importância de competências básicas como ler, escrever e calcular.
+Por sua vez, o Raciocínio Computacional (RC) surge inspirado na proposta de habilidades do
+PC, potencializando e redefinindo suas habilidades ao relacioná-las a fenômenos do cotidiano, em
+que o sujeito tem elementos epistêmico-metodológicos para ler, entender, compreender,
+posicionar-se e criticar o mundo. E a sala de aula por meio do professor e da professora tem se
+tornado cada vez mais um lugar propício para tal.
+Diversos autores afirmam que o desenvolvimento do RC ou do PC pelo estudante favorece
+sua autonomia, a autopoiese, sua organização cognitiva e o aprendizado escolar; além de
+familiarizar o estudante com resolução de problemas e estimular a vontade de aprender, auxiliando
+no entendimento do conteúdo de modo mais intuitivo, ao tornar o abstrato em algo mais “simples”
+(Fernandes e Silveira, 2017; Alves et al., 2017; Cápay et al., 2017).
+O professor e a professora por meio da sua prática e atitude dentro da sala de aula,
+utilizando as habilidades do RC, podem promover e contribuir ricamente com um processo de
+ensino que seja significativo e protagonizante tanto para os docentes, como para os discentes. A
+Base Nacional Comum Curricular (BNCC) publicada em 2018 fundamenta a educação básica no
+conceito do ensino por meio de habilidades e competências. A BNCC trata de forma pouco
+expressiva algumas características do Pensamento Computacional em Matemática, mas nada fala
+sobre o potencial de desenvolvimento crítico da Computação.
+Apesar de o PC ter sido inserido de forma explícita no texto da BNCC (versão geral), em
+2022 foi publicada a Norma sobre Computação na Educação Básica – Complemento à BNCC.
+Nesse complemento, conhecido como BNCC-Computação, o PC figura com um dos seus eixos
+estruturantes. Sendo a BNCC um documento normativo, espera-se que ela seja seguida e aplicada
+durante a concepção das propostas curriculares dos mais diversos sistemas de ensino brasileiros.
+Nesse cenário, inúmeros desafios exigem do professor e da professora ações de ressignificação de
+suas práticas, ações didáticas e atitudes docente.
+132da Silva et al.
+RBIE V.33 – 2025
+Apesar da gama de iniciativas para desenvolvimento do PC por meio da criação de
+aplicativos, jogos, ambientes on-line, elas têm em sua maioria pouca ou nenhuma efetividade na
+escola, seja em escala, seja em custo-benefício, seja em aderência ao currículo escolar (e suas
+múltiplas variações contextuais e regionais), cujo foco está sobretudo na resolução de problemas.
+Para que o saber científico da Computação possa ser ensinado e utilizado enquanto
+estratégia, é preciso adequá-lo à linguagem e ao modus operandi da escola e, sobretudo, fazer
+interlocução com as disciplinas escolares, de modo a favorecer o desenvolvimento de
+conhecimentos disciplinares e interdisciplinares (Corlett, 2019). Nesse sentido, o professor e a
+professora são aliados na promoção de ações integrativas e interdisciplinares que podem ser mais
+efetivas, baratas e adequadas à realidade sócio-econômico-cultural brasileira dos estudantes,
+criativas e sem uso de computadores ou outras tecnologias digitais, pouco presentes nas escolas e
+inacessíveis aos estudantes. O que não significa que não devemos utilizar tecnologias na escola,
+longe disso, mas significa aumentar o potencial crítico, lógico e criativo do estudante, frente à
+realidade escolar brasileira que possui pouco investimento, tanto na sua estrutura per si quanto
+nos processos de ensino e de aprendizagem.
+No mundo atual são exigidas habilidades que permitam relacionar conceitos, categorias e
+valores de diferentes naturezas e áreas de conhecimento, com o intuito de promover melhoria
+significativa no processo de aprendizagem. O desenvolvimento dessas habilidades, e
+conhecimentos relacionados, proposto pelo RC requer a concepção de práticas educacionais
+situadas e contextualizadas sob perspectivas integradoras. Conexões interdisciplinares e a
+contextualização são uma necessidade constante em todo o currículo escolar, como apontam os
+Parâmetros Curriculares Nacionais (PCN) (Brasil, 1999) e, mais recentemente, a Base Nacional
+Comum Curricular (BNCC) (Brasil, 2018).
+Este relato apresenta uma experiência de como o exercício do protagonismo docente, com a
+concepção de práticas didáticas pautadas em habilidades do RC e minuciosamente construídas
+com intencionalidade pedagógica e a construção de um jogo de tabuleiro puderam contribuir para
+o despertar do protagonismo dos estudantes e, adicionalmente, para a ampliação do repertório
+metodológico da professora de Língua Portuguesa dos Anos Finais do Ensino Fundamental.
+O artigo está organizado em cinco seções: a seção 2 apresenta a fundamentação teórica e
+os trabalhos relacionados; a seção 3 apresenta a concepção da proposta didática. Na seção 4 é
+descrita a execução do jogo e na seção 5 estão os resultados e discussões.
+2
+Fundamentação Teórica e Trabalhos Relacionados
+Nesta seção, são apresentados alguns conceitos fundamentais, bem como trabalhos relacionados.
+2.1
+Raciocínio Computacional e as competências específicas de Linguagens para o
+Ensino Fundamental
+O RC surge como uma proposta de extensão ao/do PC, considerando a sua potencial perspectiva
+crítica e criativa em contato com os cotidianos e realidades dos sujeitos escolares. Dessa forma,
+oportunizando ao sujeito descobrir, ressignificar e desenvolver tais habilidades. A partir dos
+escritos de Barr e Stephenson (2011), o RC pode ser relacionado a algumas competências
+específicas de Linguagens para o Ensino Fundamental previstas na BNCC (Brasil, 2018, p. 65),
+da seguinte forma:
+● “Utilizar diferentes linguagens - verbal [...], corporal, visual, sonora e digital -, para se
+expressar e partilhar informações, experiências, ideias e sentimentos em diferentes
+contextos”. Essa competência está relacionada às habilidades de análise de padrões,
+133da Silva et al.
+RBIE V.33 – 2025
+criatividade e colaboração, pois para cumprir com essa competência podemos reconhecer
+padrões nas linguagens citadas, como por exemplo na linguagem corporal, para que assim
+se estabeleça comunicação por meio da linguagem, utilizar a criatividade nessa expressão
+da linguagem e a colaboração no momento de partilha. Podendo assim, conseguir escolher
+qual representação de linguagem que melhor se adeque.
+● “Utilizar diferentes linguagens para defender pontos de vista que respeitem o outro [...]
+atuando criticamente frente a questões do mundo contemporâneo”. Essa competência está
+relacionada às habilidades transversais de criticidade, objetividade e comunicação, em que
+o/a estudante é estimulado/a a se posicionar de maneira crítica e objetiva. Para isso, é
+preciso que ele/ela saiba analisar os dados e informações disponíveis e, fundamentalmente
+conceber perguntas logicamente adequadas, com estruturação do raciocínio para que
+consiga argumentar.
+● “Compreender e utilizar tecnologias digitais de informação e comunicação [...] para
+produzir conhecimentos, resolver problemas e desenvolver projetos autorais e coletivos”.
+Essa competência está relacionada às habilidades diretas de abstração e transversais de
+colaboração e tomada de decisão. Pode-se desenvolver colaboração no desenvolvimento
+e implementação dos seus projetos e a tomada de decisão para escolher as melhores
+estratégias de desenvolvimento.
+Assim como demonstrado com as competências específicas, em cada habilidade específica
+de Língua Portuguesa, há a possibilidade de se trabalhar uma ou mais habilidades do RC. No caso
+apresentado neste artigo, o/a professor/a definiu esse relacionamento no momento de
+planejamento da ação didática, como mostra o exemplo do Quadro 1.
+Quadro 1. Exemplo de habilidade específica de Língua Portuguesa na BNCC relacionada ao RC (grifos nossos)
+Habilidade
+(EF09LP11) Inferir
+efeitos de sentido
+decorrentes do uso de
+recursos de coesão
+sequencial (conjunções e
+articuladores textuais).
+Relação com habilidades do RC
+Esta habilidade pode se relacionar explicitamente com mecanismos de abstração,
+no sentido de identificar e concentrar os elementos de texto, bem como os recursos
+utilizados em sua confecção, incluindo os elementos de ligação e articulação
+textual. Também há possibilidade de articulação com as habilidades de análise de
+padrões tanto no tocante à interpretação semântica do texto quanto na
+identificação e correção de aspectos relacionados à coesão. Abrange a análise do
+emprego dos recursos em textos de todos os campos de atuação, pressupondo
+práticas de leitura e/ou produção nas quais a (re)construção dos sentidos do texto
+esteja relacionada aos efeitos produzidos pelo uso de recursos de coesão
+sequencial, como conjunções e articuladores textuais.
+Identifica-se nesse exemplo que a habilidade específica apresentada sugere articulação com
+as seguintes habilidades do RC: abstração e análise de padrões.
+As habilidades do RC podem contribuir para a articulação pedagógica de competências
+gerais e específicas da BNCC em si e no diálogo com outras competências e habilidades, tornando
+a construção do conhecimento uma prática mais ativa, crítica e lógica, em que o estudante assume
+o papel de protagonista. Acredita-se que a combinação desses elementos proporciona ao estudante
+o desenvolvimento de competências no que tange à leitura, oralidade, escrita e análise linguística
+ou de situações no dia a dia.
+2.2
+Jogos educacionais
+Os jogos educacionais, tanto digitais como analógicos, têm ganhado notoriedade recentemente
+nos estudos acadêmicos pela sua potencialidade em promover engajamento, ludicidade e
+protagonismo discente (Melo, Segato, Mombach, 2019) (Zabot, Andrade e Matos, 2018); pela
+possibilidade de sensibilizar os estudantes sobre temáticas sociais (Oliveira et al., 2017) (Fuchter
+et al., 2016); e pela utilização com/por estudantes com necessidades educacionais especiais
+134da Silva et al.
+RBIE V.33 – 2025
+(Dantas et al. 2019); (Zabot, Andrade e Matos, 2019) (Brandão, Joselli, 2015) (Aguiar et al.,
+2018) (Medeiros et al., 2018).
+O uso de jogos em sala de aula, assim como o design de jogos, pode ser um grande aliado
+dos professores; um jogo, dado o seu componente lúdico, tem o potencial de despertar interesse
+dos estudantes (Moratori, 2003). Esses jogos podem (i) ter sido adaptados para fins didáticos; (ii)
+criados especialmente para serem utilizados com fins didáticos (incluídos em uma planejamento
+didático); (iii) criados pelos estudantes a partir de atividades de design de jogos em sala de aula.
+O potencial didático de um jogo educacional sozinho é baixo; mas quando incluído em uma
+proposta de aula em combinação com outras práticas pedagógicas e/ou metodologias promotoras
+da autonomia discente (problematização, trabalhos de grupo, PBL), o seu potencial se torna
+notório (Pereira, Fusinato, Neves, 2009).
+Segundo Huizinga (1938), um jogo é uma atividade voluntária, com limites de espaço e
+tempo, com regras livremente consentidas, que - eventualmente - chega a um fim, envolvendo
+sentimentos de tensão e alegria nos jogadores, externo à vida cotidiana. Essa definição envolve
+características úteis para entender a possibilidade de incluir jogos na educação.
+Jogos permitem trabalhar conceitos importantes para o indivíduo na sociedade, os quais
+incluem regularidade, limite, respeito e disciplina, pelo fato de que as ações possíveis em um jogo
+são subordinadas às suas regras. No universo dos jogos, é frequente abordar o conceito de "bolha
+lúdica" ou "círculo mágico", que significa que as ações realizadas durante o jogo não possuem
+impacto direto no mundo real. Embora acredite-se que as consequências fiquem restritas ao
+âmbito do jogo, as habilidades e conhecimentos desenvolvidos durante a experiência podem ser
+usados em outras situações fora dele. A cada momento o/a jogador/a faz escolhas, planeja
+estratégias, raciocina e reconhece erros que o levam a replanejar as estratégias, sob o vínculo das
+regras, para alcançar os objetivos do jogo. Em um contexto educacional, isso leva o/a estudante a
+ser um sujeito ativo e participativo durante o jogo (Pereira, Fusinato, Neves, 2009).
+2.3
+Trabalhos relacionados
+O objeto deste artigo situa-se na interface tripartite que envolve o ensino de língua portuguesa; a
+Computação, por meio do Raciocínio Computacional; e a perspectiva metodológica de ensino
+com/por jogos. Desse modo, os trabalhos relacionados elencados abaixo apresentam perspectivas
+de diálogo entre alguns ou entre todos e; ou até mesmo, tangenciam com mais profundidade
+apenas uma dessas perspectivas.
+Nesse sentido, Nascimento et al. (2018) investigam as contribuições do Pensamento
+Computacional ao ensino da Língua Portuguesa na Educação Básica, integrando habilidades
+como abstração, pensamento algorítmico, decomposição e análise de padrões em sequências
+didáticas. As atividades pedagógicas propostas incluem a criação de jogos para trabalhar a
+formação de palavras, a produção de artigos de opinião e a elaboração de cartazes, todos
+concebidos para explorar as habilidades do PC no contexto da língua materna. Realizado em três
+escolas públicas com alunos do 9º ano do Ensino Fundamental e do 1º ano do Ensino Médio, o
+estudo utiliza uma metodologia qualitativa com dados coletados por meio de diários de bordo,
+gravações, entrevistas semiestruturadas e grupos focais. Os resultados mostram que a integração
+do PC promoveu engajamento dos alunos, colaboração efetiva em atividades de grupo e uma
+prática pedagógica mais organizada e reflexiva por parte dos professores, evidenciando o
+potencial do PC como estratégia de ensino na disciplina de Língua Portuguesa.
+A pesquisa de Silva et al. (2020) visou o desenvolvimento do Pensamento Computacional
+por meio da criação de narrativas digitais utilizando o software Scratch como mecanismo de
+ensino e de aprendizagem na disciplina de Língua Portuguesa. A investigação destacou a
+135da Silva et al.
+RBIE V.33 – 2025
+possibilidade de multidisciplinaridade ao integrar o Pensamento Computacional e as tecnologias
+digitais ao currículo, desenvolvendo compreensão aprofundada sobre o uso pedagógico de
+recursos digitais para o desenvolvimento de habilidades cognitivas e criativas dos estudantes.
+Greff (2019), por sua vez, discute a importância de integrar o Pensamento Computacional
+ao currículo da educação básica de modo interdisciplinar, com foco no ensino da Língua
+Portuguesa. A pesquisa, baseada em uma metodologia de pesquisa-ação, desenvolveu-se em três
+etapas. Inicialmente, realizou-se um diagnóstico teórico sobre o Pensamento Computacional;
+depois, uma oficina para professores, introduzindo conceitos e metodologias; e, por fim, a
+implementação de atividades práticas em sala de aula. Essas atividades incluiram exercícios que
+combinavam conceitos de Pensamento Computacional com a produção textual, como a criação
+de algoritmos narrativos e o uso de técnicas de decomposição para analisar e desenvolver
+narrativas. A abordagem é avaliada pela sua eficácia ao estimular o engajamento, a criatividade e
+a aprendizagem significativa, demonstrando ser uma forma inovadora de integrar o Pensamento
+Computacional ao ensino da Língua Portuguesa.
+Rodrigues et al. (2021) analisaram a implementação do Pensamento Computacional no
+ensino fundamental no município de Monte Carmelo/MG por meio de oficinas utilizando
+Computação Desplugada e Scratch. A iniciativa visou desenvolver habilidades cognitivas
+essenciais, como raciocínio lógico, criatividade e resolução de problemas, por meio de atividades
+práticas e dinâmicas. Os resultados indicam aumento significativo no engajamento dos alunos e
+na compreensão de conceitos computacionais, além de melhorias nas relações interpessoais.
+O estudo conduzido por Guarda e Pinto (2021) examinou a aplicação de jogos digitais
+educacionais como recursos pedagógicos na educação básica para desenvolver habilidades de
+Pensamento Computacional. Utilizando a abordagem da aprendizagem criativa, o trabalho
+realizado promoveu competências como raciocínio lógico, abstração, decomposição e
+sistematização, essenciais para a resolução de problemas. A implementação, realizada ao longo
+de três anos em uma escola do Distrito Federal, evidenciou que os jogos melhoram o desempenho
+acadêmico e estimulam um ambiente de aprendizagem colaborativo e inovador. Os resultados
+indicam que os estudantes demonstraram elevada aceitação dos jogos, sugerindo que essa
+abordagem parece ser eficaz à promoção das habilidades de PC e na construção de competências
+fundamentais ao contexto educacional contemporâneo.
+Matos e Rezende (2019) relatam uma experiência realizada em uma escola pública da
+cidade de Salvador/BA integrando o Raciocínio Computacional ao ensino de língua inglesa,
+utilizando a abordagem pedagógica BYOD ("Bring Your Own Device"). As intervenções didáticas
+foram planejadas para incluir o uso de mapas conceituais, podcasts e exercícios online, com o
+objetivo de desenvolver competências de leitura e escrita em inglês, com ênfase em habilidades
+de RC, como abstração e análise de padrões. A utilização dos dispositivos móveis dos próprios
+alunos revelou-se eficaz ao proporcionar novas concepções sobre o uso de tecnologias digitais na
+educação, estimulando o engajamento dos estudantes e favorecendo a construção colaborativa de
+conhecimento de modo prático e contextualizado.
+Os trabalhos relacionados apresentados evidenciam diferentes abordagens que, de alguma
+forma, dialogam com a experiência relatada neste artigo, seja na aplicação de habilidades de
+Pensamento Computacional/Raciocínio Computacional (RC) ao ensino de Língua Portuguesa,
+seja na utilização de jogos educacionais como ferramentas pedagógicas.
+Os estudos de Silva et al. (2020), Guarda e Pinto (2021) e Matos e Rezende (2020)
+apontam a eficácia dos jogos educacionais/tecnologias digitais no desenvolvimento de habilidades
+de PC. Enquanto Silva et al. destacam a criação de narrativas digitais e o uso de recursos como o
+Scratch, Guarda e Pinto destacam a aplicação de jogos digitais no ensino fundamental. Matos e
+Rezende, por sua vez, exploram atividades baseadas na abordagem BYOD (Bring Your Own
+136da Silva et al.
+RBIE V.33 – 2025
+Device), utilizando dispositivos móveis dos próprios estudantes. A principal distinção em relação
+ao presente trabalho está no tipo de tecnologia usada: enquanto esses estudos focalizaram
+tecnologias digitais, neste artigo explora-se a criação de um jogo analógico, ampliando a
+aplicabilidade para contextos escolares com infraestrutura computacional limitada, além de
+enfatizar a integração de elementos culturais e conhecimentos literários.
+O trabalho de Greff (2019) e o estudo de Nascimento et al. (2018) abordam o PC no ensino
+de Língua Portuguesa, destacando diferentes perspectivas metodológicas. Greff enfoca a
+interdisciplinaridade e o uso de algoritmos narrativos. Já Nascimento et al. destacam métodos
+analógicos e a intencionalidade pedagógica para desenvolver habilidades computacionais
+interdisciplinarmente. Contudo, o presente artigo expande essas abordagens ao introduzir um jogo
+de tabuleiro estruturado, projetado pela professora, que não apenas utiliza conceitos de PC, mas
+também promove a interação lúdica e colaborativa, ampliando as possibilidades de engajamento
+e protagonismo dos estudantes.
+Por fim, a pesquisa de Rodrigues et al. (2021), que utilizou Computação Desplugada e
+Scratch para ensinar conceitos computacionais, apresenta semelhanças com a proposta deste
+artigo ao destacar o uso de metodologias acessíveis para desenvolver habilidades críticas e
+criativas. No entanto, a experiência descrita neste artigo difere ao adaptar um jogo para o ensino
+presencial e remoto, contemplando um público diverso e lidando com os desafios impostos pela
+pandemia, além de evidenciar o protagonismo docente.
+De modo geral, ainda que pese as contribuições dos trabalhos anteriores verificados, a
+experiência relatada neste artigo distingue-se desses trabalhos ao combinar elementos de RC e
+competências da BNCC em um jogo de tabuleiro, portanto analógico, expande o uso de jogos
+educacionais para além do digital no ensino de Língua Portuguesa na escola, adaptando-se ao
+contexto educacional brasileiro e às limitações do ensino remoto. Tal proposta diferencia-se,
+especialmente, ao abordar explicitamente a intencionalidade pedagógica, o protagonismo discente
+e o protagonismo docente, características nem sempre exploradas de forma integrada nos
+trabalhos relacionados.
+3
+A concepção da proposta didática
+O projeto de pesquisa aplicada intitulado “Raciocínio Computacional em Prática”, financiado pelo
+Edital de fomento aos Anos Finais do Ensino Fundamental, por meio da parceria entre a Fundação
+Carlos Chagas e o Itaú Social, foi iniciado em agosto de 2019, com o objetivo de identificar
+elementos de práticas pedagógicas e de formação de professores de estímulo ao Raciocínio
+Computacional, em prol do desenvolvimento da criatividade, criticidade e logicidade por
+estudantes dos anos finais do ensino fundamental, considerando as competências gerais e
+específicas da Base Nacional Comum Curricular (BNCC). Para tal, foram realizados encontros de
+formação teórica para um grupo de professores de escolas públicas.
+Após esta etapa de formação, com estudos, discussões e experimentações, tanto nos
+encontros presenciais quanto nos virtuais, uma nova etapa se iniciou com o objetivo de “pôr a
+mão na massa”, articulando os conhecimentos apreendidos com o currículo escolar a partir da
+elaboração de propostas didáticas, relacionando as habilidades do RC com as habilidades previstas
+na BNCC. Durante encontros de mentoria com o grupo de pesquisadores, o segundo semestre de
+2020 foi dedicado ao desenvolvimento das propostas didáticas pelos professores em suas
+respectivas áreas de atuação.
+Um dos frutos deste período de produções foi a proposta didática intitulada “Descobrindo a
+coordenação e subordinação na Língua Portuguesa”, elaborada pela professora Carla Adriana
+Ferreira da Silva, uma das autoras deste artigo, para atender séries do 9º ano do Ensino
+137da Silva et al.
+RBIE V.33 – 2025
+Fundamental da área de Linguagens no componente curricular Língua Portuguesa. A proposta
+didática foi composta por 05 (cinco) aulas de 50 min cada uma e teve como objetivo inicial
+construir com os/as estudantes o conhecimento sobre o conceito e particularidades de frase, oração
+e período. Sendo ainda proposta posteriormente, a compreensão dos processos de formação do
+período composto por coordenação e subordinação.
+Esperava-se que o/a estudante fosse capaz de reconhecer as relações de sentido e suas
+particularidades que ocorrem na frase, oração e período. Os objetos de conhecimento
+desenvolvidos durante a proposta foram: fono-ortografia, morfossintaxe, período composto por
+coordenação e período composto por subordinação, os quais se relacionam diretamente com as
+habilidades específicas de Língua Portuguesa na BNCC: EF09LP04 - Escrever textos
+corretamente, de acordo com a norma-padrão, com estruturas sintáticas complexas no nível da
+oração e do período; EF09LP08 - Identificar, em textos lidos e em produções próprias, a relação
+que conjunções (e locuções conjuntivas) coordenativas e subordinativas estabelecem entre as
+orações que conectam; EF69LP56 - Fazer uso consciente e reflexivo de regras e normas da
+norma-padrão em situações de fala e escrita nas quais ela deve ser usada.
+As habilidades específicas já citadas anteriormente tratam desde a escrita de textos
+corretamente, de acordo com a norma-padrão, até a identificação tanto em textos lidos como em
+produções autorais. Além dessas habilidades, a relação que conjunções (e locuções conjuntivas)
+coordenativas e subordinativas estabelecem entre as orações que se conectam, assim como a sua
+utilização correta, também foram objeto da proposta didática. Também foram consideradas duas
+das competências gerais da BNCC, duas competências específicas da área de Linguagens e três
+competências específicas do componente de Língua Portuguesa.
+Na proposta didática também foram apontadas quatro habilidades importantes do RC
+(abstração, análise de padrões, raciocínio algorítmico e decomposição/recomposição) como
+habilidades propositivas, ou seja, a professora propôs previamente em seu planejamento que essas
+habilidades seriam desenvolvidas durante a aula (Figura 1). A estratégia metodológica proposta
+pela professora foi baseada na problematização.
+Figura 1. Excerto da proposta didática.
+O detalhamento da proposta contemplou os conhecimentos curricularmente previstos e
+descreveu a intencionalidade pedagógica docente ao articular cada etapa das aulas com as
+habilidades do RC, da BNCC e níveis da taxonomia de Bloom. A metodologia, os materiais e
+138da Silva et al.
+RBIE V.33 – 2025
+recursos utilizados, o(s) mecanismo(s) para coleta de evidências de aprendizagem e os critérios
+para avaliação da aprendizagem também foram apresentados e estão sumariamente apresentados
+na Figura 1.
+Inicialmente, a partir de problematizações e textos de apoio, a proposta didática foi
+surgindo. A professora optou, no primeiro momento das aulas, por utilizar uma abordagem
+problematizadora, que consistiu em escrever frases no quadro, elaboradas por ela mesma, e
+convidar os/as estudantes a sugerirem outras frases. Em seguida, as frases seriam examinadas para
+entender os conceitos de frase, oração e período. Para auxiliar os/as estudantes em caso de
+dificuldade, a professora definiu a apresentação de questões, de acordo com a sua proposta
+metodológica problematizadora, em vez de responder as dúvidas prontamente. Desse modo, o/a
+estudante não receberia respostas aos seus questionamentos, mas novas questões.
+Considerando a importância da intencionalidade pedagógica “por trás” das ações didáticas,
+a professora definiu um conjunto não exaustivo de possíveis perguntas problematizadoras, tais
+como: "Existem verbos nesta frase?", "Toda frase precisa ter um verbo?" e "O que é necessário
+para que uma frase também seja uma oração?". O mesmo processo foi adotado para distinguir
+períodos simples e compostos. Por meio dessa estratégia, a professora individualizou a
+possibilidade de estimular as habilidades de abstração e análise de padrões dos/as estudantes.
+Visando aprimorar o estudo e uso do período composto por coordenação e subordinação,
+bem como familiarizar os alunos com as características do texto jornalístico, foi proposto um
+exercício de leitura e interpretação de um texto opinativo intitulado "Sonhe grande, sonhe muito".
+O texto, figurativamente, faz uma analogia entre a escalada do Everest e a conquista de objetivos
+na vida, destacando a importância de dar um passo de cada vez em direção ao sucesso.
+Para explorar a subjetividade da palavra "Everest", cada aluno foi convidado a refletir
+sobre sua própria "montanha" pessoal, respondendo às perguntas "Você conhece o Everest?" e
+"Qual é o seu Everest?". Esta segunda proposta foi pensada também para estimular a habilidade
+de análise de padrões entre os alunos.
+Ainda sem a pretensão de criar um jogo, foi construído um fluxograma cujo objetivo foi
+perceber evidências de aprendizagem, usar as habilidades do RC e engajar os/as estudantes na
+aula. Durante as mentorias online, a concepção do fluxograma foi se aprimorando. Nesse ínterim,
+a professora e sua equipe de mentoria pensaram no desenvolvimento de um jogo de tabuleiro.
+O uso do jogo foi pensado para acontecer durante a terceira aula, começando com a
+apresentação da história e das regras, e observando o comportamento dos alunos: como eles
+reagem? Enfrentam dificuldades? Conseguem aplicar o conhecimento teórico na prática do jogo?
+Após isso, os alunos seriam convidados a avaliar o jogo e sugerir possíveis modificações
+ou adições de regras. Com esta proposta a professora gostaria de estimular as habilidades de
+raciocínio algorítmico, além da decomposição/recomposição.
+Durante o encerramento das atividades, os/as estudantes seriam submetidos a uma tarefa
+individual de avaliação, que consistiria na reescrita de um texto utilizando substituições de
+palavras de ligação sem alterar o sentido original. Após um período determinado para realização
+da tarefa, cada estudante deveria apresentar o seu próprio texto, permitindo que todos pudessem
+observar as diferentes escolhas feitas pelos colegas.
+Essa atividade teve o objetivo de desenvolver habilidades importantes como abstração e
+análise de padrões. Por meio de exercícios que substituem os conectivos, os/as estudantes foram
+estimulados a identificar relações lógicas e semânticas entre as ideias que aparecem no texto, bem
+como a identificar padrões recorrentes no uso dos conectivos.
+3.1
+Design do jogo
+139da Silva et al.
+RBIE V.33 – 2025
+Uma equipe de design dialogou com a professora sobre os objetivos do jogo, as formas de jogar,
+os obstáculos e as regras. Assim, o jogo foi concebido em conjunto durante a elaboração da
+proposta didática como um recurso educacional criado com o objetivo de aprimorar os
+conhecimentos dos/as estudantes no que diz respeito aos conteúdos de orações coordenadas e
+subordinadas, por meio do lúdico de forma leve e consciente, além de proporcionar a interação
+com as habilidades do RC. Nesse momento, como ainda existia a perspectiva de executar as
+propostas na escola de forma presencial no ano letivo de 20211, essa proposta foi desenvolvida
+para a modalidade presencial.
+Para o design do jogo foram utilizadas duas ferramentas: o Game Design Canvas (GDC),
+que ajuda a desenvolver o esqueleto de um jogo e o Game Design Document (GDD), para detalhar
+os elementos do GDC2. Os dois documentos ajudaram no gerenciamento do projeto e funcionam
+como documentos de referência para todos os envolvidos no processo de design.
+Seguindo as indicações da professora, foi preenchido o GDC explicitando mecânicas,
+objetivos, interações, obstáculos e regras do jogo. Essas informações foram estendidas e
+detalhadas de forma descritiva no GDD. O projeto inicial foi elaborado e modificado pela equipe
+de design e pela professora, visando responder aos principais questionamentos para a criação de
+um jogo: quem é o jogador, o que o jogador faz, como o jogador faz, por que o jogador faz
+(Brathwaite e Schreiber, 2009).
+A primeira versão do GDC definiu informações básicas para a criação de um jogo (Figura
+2). O jogo foi projetado para ser executado presencialmente e disponibilizado na modalidade
+Print&Play3 (PnP). Essa modalidade permite que as regras e componentes do jogo (tabuleiro,
+peões, dados) sejam disponibilizados online em formato PDF para que os jogadores possam
+imprimir e montar o jogo. Isso possibilita disponibilizar o jogo publicamente para que os/as
+estudantes possam jogar em casa e outros/as professores/as possam fazer uso do recurso.
+Figura 2. Extrato da primeira versão do GDC.
+1
+A pandemia da COVID-19 impossibilitou a execução da proposta conforme inicialmente planejado.
+Os modelos de GDC e GDD utilizados foram encontrados no site de John Haste,
+https://welcometogamedesign.com/pt/
+3
+https://bit.ly/sosterradoslivros
+2
+140da Silva et al.
+RBIE V.33 – 2025
+Inicialmente, o jogo foi projetado para ser competitivo, com a turma dividida em equipes
+de estudantes do 9º ano do Ensino Fundamental. Sua duração foi planejada para até 50 minutos
+(um período de aula). Nessa fase inicial, as mecânicas do jogo foram definidas, incluindo o uso
+de dados para se movimentar no tabuleiro e responder a perguntas (também conhecido como jogo
+de trívia). A história do jogo ainda não tinha sido definida, mas a professora responsável indicou
+que desejava imagens no tabuleiro relacionadas a temas de gramática e literatura, incluindo livros,
+e sugeriu a ideia de um baú com letras saindo dele. Ainda não haviam sido definidos os possíveis
+obstáculos, mas um conjunto de regras foi estabelecido. Em cada rodada, cada equipe joga o dado
+e avançava um número de casas. Dependendo da cor da casa, uma pergunta de nível de dificuldade
+diferente deveria ser respondida; em caso de acerto, a equipe ganhava uma determinada
+pontuação, de acordo com o nível de dificuldade da pergunta. Quando uma equipe chegasse à casa
+final, o jogo terminaria e a equipe com mais pontos venceria.
+O GDD incluiu, principalmente, exemplos de artes que a professora coletou e disponibilizou
+(Figura 3). Esse documento foi importante para o entendimento comum da proposta da professora,
+e as imagens fornecidas foram uma fonte de inspiração para o desenvolvimento gráfico do jogo.
+Figura 3. Extrato do GDD com as artes demonstrativas disponibilizadas pela professora.
+Durante a criação das perguntas do jogo pela professora (Figura 4), a equipe de design
+trabalhou nas ideias propostas, atualizando o GDC para a versão 2.0, com algumas mudanças
+propostas em uma reunião de mentoria. A mudança mais significativa foi transformar o jogo em
+uma experiência colaborativa, em que os times trabalham juntos para alcançar um objetivo em
+comum. Em consonância com essa nova mecânica, foi criada uma história e uma arena de jogo,
+situada em um mundo de livros chamado "Terra dos Livros", em que um monstro está devorando
+os livros e os times têm um tempo limitado para impedir a destruição do mundo. Cada resposta
+141da Silva et al.
+RBIE V.33 – 2025
+correta causa danos ao monstro, dependendo da sua dificuldade, até que o monstro seja destruído
+pelos danos.
+Outras mudanças incluíram transformar o percurso em uma trajetória cíclica, sem um
+ponto final, e a criação de rotas diferenciadas com perguntas de diferentes dificuldades para
+permitir que os jogadores escolham seu caminho.
+Figura 4. Extrato do documento de perguntas redigido pela professora.
+Também foram adicionados elementos estéticos ao jogo, como imagens de autores
+brasileiros em estilo HQ4, juntamente com títulos de livros e frases extraídas dos livros para criar
+um mundo imaginário com elementos de gramática e literatura, visando estimular o interesse
+dos/as estudantes pela leitura. Nesse período, também foi considerada a possibilidade de contratar
+uma gráfica no futuro, para produzir fisicamente o jogo após a conclusão do processo de criação
+e testes, o que foi realizado.
+Consequentemente, o GDD foi atualizado, incorporando as artes produzidas e detalhando
+as novas mecânicas introduzidas (Figura 5).
+Figura 5. Extrato da segunda versão do GDD com as artes iniciais.
+4
+História em quadrinhos.
+142da Silva et al.
+RBIE V.33 – 2025
+Com a aprovação do projeto de design pela professora, o design gráfico do jogo foi realizado
+utilizando os softwares livres GIMP5 e Inkscape6 para criação das cartas de perguntas (Figura 6)
+e da versão final do tabuleiro (Figura 7).
+Figura 6. Exemplos frente/verso de cartas com as perguntas.
+O relato trata de um jogo de tabuleiro que se passa em um universo literário onde os
+jogadores têm como missão derrotar o inimigo destruidor de livros. Consiste na combinação de
+um jogo tipo trivia - com perguntas sobre o conteúdo de orações coordenadas e subordinadas - e
+um jogo de percurso ou trilha - que permite a escolha de diferentes níveis de dificuldade das
+perguntas. Pode ser jogado em grupo, necessita de no mínimo dois jogadores.
+As cartas têm indicação, na frente e no verso, da cor da pergunta (associada às cores das
+casas do tabuleiro), da pontuação e, em alguns casos, uma ilustração representando a pergunta.
+Para os personagens do jogo foi escolhido um design inclusivo, com representações de diferentes
+raças, gênero e deficiências7.
+Figura 7. Versão final do tabuleiro.
+5
+https://www.gimp.org
+https://inkscape.org
+7
+Toda imagem utilizada é de autoria própria ou CC0 - Domínio Público.
+6
+143da Silva et al.
+RBIE V.33 – 2025
+Conforme mencionado, as propostas didáticas, e consequentemente o jogo aqui tratado,
+foram desenvolvidos para uso na modalidade presencial com um tabuleiro, peças e cartas físicas.
+Porém, dada a continuidade do status de distanciamento social em 2021, o jogo precisou ser
+adaptado para uso na modalidade online. Para tanto, realizamos uma busca por uma plataforma
+adequada e chegamos ao Genially8, que permitiu a criação de apresentações com elementos
+interativos e elementos arrastáveis (Figura 8). Na versão virtual9, optamos por colocar frases
+célebres dos autores, as quais aparecem ao passar o mouse sobre a imagem.
+Figura 8. Implementação do jogo na plataforma Genially.
+No final de 2021, com a perspectiva do retorno das aulas presenciais, a ideia de produzir
+uma versão física do jogo foi colocada em prática. Entramos em contato com uma gráfica que
+solicitou um determinado formato dos arquivos, e assim adequamos todas as artes para atender
+aos requisitos e produzimos algumas caixas do jogo (Figura 9).
+Figura 9. A versão produzida do jogo de tabuleiro.
+8
+9
+https://www.genial.ly
+https://view.genially.com/609e899cf39ed60d5b3bf166/interactive-content-jogo-de-carla-v2
+144da Silva et al.
+3.2
+RBIE V.33 – 2025
+Funcionamento do jogo
+Antes de iniciar a partida, o jogador deve escolher um dentre os nove personagens disponíveis
+para representá-lo na sua jornada. Feitas as escolhas e definida a ordem dos jogadores, cada
+jogador deve lançar o dado na sua vez. O número sorteado representa a quantidade de casas que
+o jogador deve avançar na trilha. Os jogadores se deslocarão pelas casas e caminhos do tabuleiro
+até que os jogadores ou o monstro ganhem o jogo.
+O jogo tem início na casa branca de onde todos os jogadores partem. Algumas casas
+possuem setas que permitem ao jogador escolher por qual caminho deseja avançar no tabuleiro.
+À exceção da casa de início, o tabuleiro possui casas em seis diferentes cores. As casas de cores
+mais claras estão associadas às cartas com perguntas mais fáceis e com pontuação que varia de 10
+a 30. Já as casas com cores mais escuras estão associadas a perguntas mais desafiadoras e com
+pontuação que varia de 40 a 60 pontos. Todas as perguntas das cartas do jogo são sobre orações
+coordenadas e subordinadas.
+O monstro, no início do jogo, já possui um determinado número de pontos, que pode variar
+a depender do nível de dificuldade desejado para a partida. A cada resposta certa do jogador para
+a pergunta selecionada, o monstro perde o número de pontos indicado na carta.
+O número de livros no tabuleiro representa o número de rodadas do jogo. Depois de cada
+rodada, o monstro avança um livro (“come” um livro). Quando o monstro consegue chegar ao
+último livro, o jogo acaba e ele ganha. Contudo, se os jogadores conseguirem ganhar uma
+quantidade de pontos igual ou superior aos pontos do monstro, antes de ele comer o último livro,
+os jogadores vencem.
+4
+A prática didática com o jogo
+O efetivo uso didático (e piloto) do jogo ocorreu no dia 17 de junho de 2021 na modalidade virtual,
+com a participação de três turmas do 9o ano do Colégio, uma escola pública da cidade de
+Salvador/BA. A atividade contou com o envolvimento de 54 estudantes. Foi utilizada a sala de
+videoconferência Google Meet e a atividade foi observada por duas membras da equipe de
+pesquisa. Uma auxiliar de pesquisa era responsável por anotar a observação de aula e a outra por
+intermediar a interação do jogo para utilização pela professora e estudantes.
+Inicialmente, a professora demonstrou preocupação pelo fato de a proposta ter sido
+concebida para a execução de forma presencial e ter precisado passar por adaptações para ser
+executada online. Além disso, a proposta original previa a aplicação em uma única turma e,
+consequentemente, com menos estudantes.
+A aula iniciou com a explicação da professora sobre a atividade do dia e anúncio sobre a
+presença das auxiliares de pesquisa e projeto de pesquisa do qual está participando. Em seguida,
+a professora encarregou-se de realizar a divisão da turma em 2 grupos de 13 estudantes e 2 grupos
+de 14 estudantes, totalizando os 54 estudantes que estavam presentes.
+Após o compartilhamento da tela com o jogo, a professora explicou o objetivo,
+funcionamento e elementos do jogo. Ao mencionar o grau de dificuldade associado às cartas, a
+professora destacou que o objetivo não era dificultar, mas exercitar o conhecimento construído
+(nível aplicar da taxonomia de Bloom) e revisá-lo para a avaliação que se aproximava.
+Na primeira rodada do jogo nenhum grupo conseguiu pontuar. A professora realizou
+algumas intervenções e deu explicações adicionais para familiarizar os/as estudantes com o
+objetivo do jogo. Já a partir da segunda rodada, os/as estudantes “pegaram a ideia” e o espírito de
+colaboração e articulação em grupo foi aumentando a cada rodada. À medida que o jogo era
+145da Silva et al.
+RBIE V.33 – 2025
+executado, a professora fazia o controle do placar, as trocas entre equipes e leitura dos desafios.
+Foram realizadas seis rodadas do jogo. A execução do jogo estava prevista para 110 min. Nessas
+seis rodadas e feedback levamos 80 minutos.
+Ao final, a professora elogiou a turma pela participação e maturidade e os/as estudantes
+deram feedback sobre o jogo e a aula, sendo que alguns dos feedbacks vieram naturalmente ainda
+durante a execução do jogo.
+5
+Discussões
+Executar um jogo que foi planejado para uso presencial de modo totalmente virtual foi um dos
+maiores desafios. O primeiro desafio foi a divisão dos grupos. Um/a estudante era chamado pela
+professora e deveria dizer o nome de outros sete colegas que fizessem parte de sua turma. O fato
+de estarem tendo aulas juntos, dificultava saber quem era de qual turma. Da mesma forma, ao
+longo da execução do jogo, os/as estudantes ficavam em dúvida sobre quem fazia parte de qual
+equipe. Em oportunidade posterior, as equipes já deveriam ter sido previamente definidas em aula
+anterior ou atividade de casa para que se organizassem melhor em relação a isso.
+No início do jogo, os/as estudantes estavam mais tímidos/as e interagiam menos. Apenas
+os/as estudantes chamados/as pela professora para formar as equipes se posicionaram nas duas
+primeiras rodadas. Eles mesmos escolhiam as cartas e respondiam o desafio, sem ao menos
+consultar os demais membros da equipe. Quando entenderam melhor a dinâmica do jogo e viram
+que precisavam ajudar um ao outro para vencer o jogo, passaram a consultar os colegas na escolha
+das cartas e na decisão de respostas. A colaboração, interação, trabalho em equipe e confiança
+surgiram naturalmente ao longo do processo.
+Levar novas metodologias, ainda mais protagonizadoras, para sala de aula também é
+desafiador. No momento da separação dos grupos, enquanto algumas meninas estavam ávidas por
+serem logo inseridas em uma equipe, um menino pediu para sair da equipe em que já estava e ser
+substituído por uma das meninas. Logo depois outro também pediu a remoção “aproveitando o
+embalo”. Ao final da execução, quando já conhecia a proposta, a turma se mostrou muito
+participativa, quem não teve a oportunidade de participar queria uma nova rodada do jogo,
+elogiavam e pediam o acesso ao jogo para usarem entre eles e inclusive para estudar para a prova.
+Aprendemos que nem sempre o novo vai surpreendê-los/as de início, mas podemos conquistá-
+los/as ao longo do processo como ocorreu neste caso.
+Ao longo do jogo, alguns/algumas estudantes não interagiam, mesmo quando
+incentivados/as por outros colegas. Às vezes também não interagiam no momento de escolher
+uma carta do tabuleiro, sendo preciso iniciativa da professora ou da auxiliar de pesquisa para a
+escolha. Acreditamos que esse é um dos ônus da interação virtual, ao não permitir avaliar a ação
+em sua integralidade. Presencialmente teríamos a oportunidade de observar o comportamento,
+reação e atitudes dos/as estudantes durante a aula e interação com o jogo e, consequentemente,
+entender as motivações da não interação. Virtualmente, o fato de não abrirem a câmera e até
+mesmo não ouvirmos as múltiplas vozes tão comuns em sala de aula, principalmente em propostas
+mais lúdicas, nos deixa sem saber se a não interação foi um sinal de desinteresse ou apenas receio
+de abrir o microfone e interromper o outro e/ou causar uma interferência ou até mesmo uma
+indisponibilidade técnica.
+Em contrapartida, aqueles que estavam bastante interessados/as no jogo tinham uma
+preocupação: “a senhora tá salvando os pontos né, professora?”. O controle de placar ficou a cargo
+da professora. Seria interessante que na modalidade virtual o tabuleiro tivesse um campo para
+controle do placar dos jogadores. Além disso, a manipulação do jogo virtual, de modo geral,
+precisa ser feita por um/a professor/a ou auxiliar de classe.
+146da Silva et al.
+RBIE V.33 – 2025
+Um aspecto desagradável foi o fato de, nessa versão, a remoção do tabuleiro de cartas já
+abertas ou algum marcador que identificasse que aquela carta não poderia ser novamente
+escolhida não estar implementada. Em dado momento da aula, tirar cartas repetidas era algo bem
+frequente. No momento de execução do jogo, este fato foi interessante, pois alguns/mas estudantes
+já deram a sugestão de fazer isso como melhoria do jogo. Outro aspecto observado pelos/as
+estudantes foi sobre o tempo que algumas equipes levavam para responder aos desafios, fazendo
+surgir comentários como: “vou contar de 1 até 5”, “tempo! 30 segundos”. Fica como sugestão a
+possibilidade de implementar um cronômetro para controle do tempo. Tais situações nos
+permitiram observar o engajamento dos/as estudantes, bem como o potencial do uso de jogos para
+estímulo à criticidade e criatividade dos/as estudantes.
+O uso do jogo permitiu trabalhar algumas habilidades como “entender as diferenças entre
+linhas e colunas”, provocadas intencionalmente pela professora a partir do seu entendimento da
+habilidade de análise de padrões do RC. A maioria dos/as estudantes, quando via a disposição das
+cartas, já fazia a sua escolha usando a localização por linha e coluna que, possivelmente,
+aprenderam em outras ocasiões. Entender essas diferenças parece ajudar na leitura, interpretação
+e representação de dados em tabelas e gráficos.
+No que concerne ao uso e desenvolvimento das habilidades do RC, pudemos observar
+diversas manifestações:
+● raciocínio algorítmico - conforme explicado na apresentação do jogo e na ilustração da
+Figura 7, a depender do caminho escolhido, é possível acessar cartas de maior pontuação
+no jogo. Ao longo do jogo um dos estudantes percebeu que a depender da sua escolha
+poderia acessar essas cartas e passaram a olhar o tabuleiro com mais cautela antes de suas
+escolhas. Logo depois, outros/as estudantes começaram a adotar a mesma estratégia com
+o objetivo de pontuar mais. O “espírito competitivo” surgiu e ouvimos até comentários
+como “Oiá, tá copiando minha estratégia, né?”.
+● decomposição/recomposição - já a partir da segunda rodada do jogo, os/as estudantes
+perceberam que era necessário colaborar entre si para que a equipe tivesse sucesso. Ao
+longo do jogo, vimos os/as estudantes utilizando a habilidade de
+decomposição/recomposição, mesmo que inconscientemente, algo a ser discutido. Cada
+um trazia seus próprios conhecimentos, experiências e habilidades ao analisar o desafio
+(decomposição) e, para chegar a resposta final, agrupavam os entendimentos segundo um
+padrão (recomposição).
+● análise de padrões - o processo de composição explicado anteriormente envolve a
+habilidade de análise de padrões, pois os/as estudantes precisaram analisar as
+convergências nos entendimentos para chegar a uma resposta. Além disso, essa habilidade
+também foi utilizada ao construir resposta a um desafio baseando-se em respostas
+anteriores no jogo.
+● abstração - para analisar o conjunto de conhecimentos expostos pelos membros da equipe,
+os/as estudantes precisaram realizar cada análise isolando outros detalhes do processo.
+Vale destacar que durante a execução da proposta didática, as habilidades do RC
+apresentaram-se de forma fluida e voluntária, sem a necessidade de explicar e/ou definir conceitos
+e habilidades do RC para os/as estudantes.
+Na sua concepção, o jogo tem um conjunto de regras, mas elas não são imutáveis. Os
+jogadores estão livres para alterá-las. E, foi o que aconteceu nesta experiência em decorrência do
+ambiente (virtual) e tempo disponível para execução. Não foi adotada uma pontuação inicial para
+o monstro. Criamos a regra que o monstro “comeria” um livro se, durante a rodada, o número de
+equipes perdedoras fosse maior que o número de equipes ganhadoras. Isso só aconteceu uma vez
+durante a execução do jogo e os/as estudantes venceram o jogo. Essa propriedade de mutabilidade
+do jogo é mais uma possibilidade de estímulo à criatividade dos jogadores.
+147da Silva et al.
+RBIE V.33 – 2025
+A interação com o jogo foi tão estimulante para os alunos que a aula precisou ser
+interrompida para que pudéssemos ter a avaliação do jogo no olhar dos/as estudantes. Os/As
+estudantes deram diversas opiniões de melhorias na dinâmica do jogo, de como seria interessante
+a possibilidade de interação dos jogadores com os personagens e elementos apresentados no jogo.
+Outras melhorias figuram em: adição de cartas surpresas; voltar uma casa se errar o desafio;
+remoção de cartas já tiradas e adição de fases com conteúdos diferentes ou de outras disciplinas.
+Esse retorno dos/as estudantes mostra que a utilização de jogos tem o potencial de estimular a
+criatividade, a autoria e o protagonismo estudantil. Um dos estudantes ficou muito interessado na
+proposta da professora e inclusive se ofereceu para melhorar o jogo utilizando ferramentas de
+modelagem 3D e implementando as melhorias sugeridas pelos colegas.
+Alguns/as estudantes viram o jogo como um recurso que poderia ser utilizado para estudar
+e revisar conteúdos da prova que se aproximava. Nesse sentido, tivemos alguns comentários como
+“Dá pra estudar pra prova pelo joguinho.” ou “Como eu faltei umas duas aulas, com esse jogo já
+consegui esclarecer na minha cabeça. Entender melhor.” ou “Não precisamos nem mais estudar
+para a prova, pois o jogo é a prova!” ou “Estudamos para a prova brincando!”. Além disso,
+destacaram que o fato de o jogo estar na internet permite que mais pessoas tenham acesso e não
+fique restrito para turma deles e, inclusive pediram o link do jogo para usarem entre si e
+compartilhar com outras pessoas.
+A professora que no início do jogo estava um pouco nervosa em circunstâncias das
+adaptações ao jogo, tranquilizou-se durante o processo ao perceber a interação e contribuições
+dos/as estudantes. A devolutiva sobre o envolvimento e engajamento com a proposta do jogo foi
+passada aos alunos em momento posterior, no qual a professora destacou o quanto foi
+emocionante vê-los descontraídos, colaborativos uns com os outros, receptivos e concentrados
+durante toda a dinâmica do jogo e da aula. Os/As estudantes se divertiram sem se preocuparem
+com o conceito em si do conteúdo estudado, sem falas de: “vale nota?” ou indagações de
+premiações a receber! O jogo trouxe a recompensa intrínseca.
+De acordo com a professora, “a elaboração minuciosa da proposta didática foi de suma
+importância, pois norteou todo o trabalho realizado em sala de aula. Infelizmente devido à
+pandemia não foi possível a execução de todo este projeto presencialmente, o que me deixou um
+pouco triste, mas nada que não pudéssemos nos adequar!”.
+O arcabouço teórico durante o período formativo foi de fundamental importância para o
+resultado apresentado. Nesse quesito, a professora enfatizou que: “durante toda a aplicação da
+proposta utilizei problematizações para introduzir o assunto durante as aulas, as quais
+necessitavam sempre de atitudes docentes. Foram também utilizadas metodologias ativas e o uso
+dos objetivos propostos da Taxonomia de Bloom com a intenção do aluno ser o protagonista nesse
+processo e desenvolver as habilidades e competências relacionadas ao RC sem necessariamente
+ter o conhecimento padrão dos termos técnicos e específicos”.
+Ainda sobre os medos e nervosismo, a professora relata o seguinte: “o meu medo era a
+bagunça e a desordem que poderia acontecer pela minha falta de controle e/ou ansiedade dos
+alunos durante o jogo. Mas o que ocorreu foi algo surpreendente, pois os alunos se comportaram
+de uma forma muito madura durante toda a dinâmica do jogo, contribuindo para melhorias e
+funcionalidades no jogo apresentado. Foram muitas falas que me deixaram muito feliz e com a
+sensação de dever cumprido e que valeu a pena as noites em claro, as madrugadas de estudos, as
+escritas refeitas diversas vezes e os encontros de tutoria”.
+A execução da proposta permitiu que os desafios, medos e receios fossem superados de
+forma leve pelo interesse, participação, troca de conhecimento, empatia e disciplina dos/as
+estudantes presentes. Nas palavras da professora, ela percebeu “(...) uma parceria e cumplicidade
+gratificantes diante de um trabalho que demandou muita dedicação. Me senti inteiramente
+148da Silva et al.
+RBIE V.33 – 2025
+recompensada como professora, sensibilizada como ser humano e agradecida por ter vivenciado
+esta experiência única na minha vida”.
+O presente artigo apresentou uma experiência de uso de jogo educacional autoral
+articulado ao raciocínio computacional no contexto escolar, utilizando como ferramenta um jogo
+de tabuleiro para o ensino da Língua Portuguesa no 9º ano do Ensino Fundamental. A proposta
+didática desenvolvida permitiu ampliar o repertório metodológico da docente e estimular o
+protagonismo discente, além de contribuir para o desenvolvimento de habilidades diretas e
+transversais do RC e da BNCC. Como consequência desse trabalho, serão analisados os resultados
+alcançados pelos/as estudantes na avaliação da aprendizagem. No que tange ao desenvolvimento
+das habilidades diretas e transversais, futuramente serão analisados os discursos discente e
+docente no tocante ao uso dessas habilidades durante a aula.
+Agradecimentos
+Agradecemos à Fundação Carlos Chagas e ao Itaú Social pelo financiamento da pesquisa original
+por meio do Edital de Pesquisa sobre os Anos Finais do Ensino Fundamental e a Giovanna
+Hemerly Gonçalves das Neves pelo design gráfico do jogo. Agradecemos ao Conselho Nacional
+de Desenvolvimento Científico e Tecnológico (CNPq) pelo apoio financeiro no âmbito do
+Programa Ciência na Escola (processo 441095/2019-4) e pela Bolsa de Produtividade em Pesquisa
+(processos 306717/2019-0 e 313159/2022-0).
+Artigo Premiado Estendido
+Esta publicação é uma versão estendida de artigo premiado no XXX Workshop sobre Educação
+em Computação (WEI 2022), intitulado “De “Vale nota?” a “Jogo é prova!”: raciocínio
+computacional e protagonismo docente como estímulo ao protagonismo discente no ensino de
+língua portuguesa”, DOI: 10.5753/wei.2022.223287.
+Referências
+Alves, N. C., Gresse von Wangenheim, C., Rodrigues, P. E., Hauck, J. C. R., Borgatto, A. F.
+(2017). “Ensino de Computação de forma multidisciplinar em disciplinas de história no
+Ensino Fundamental: um estudo de caso”. Revista Brasileira de Informática na Educação. v.
+24, n. 3, p. 31-46. DOI: https://doi.org/10.5753/RBIE.2016.24.03.31. [GS Search].
+Aguiar, E., Pedreira, L. O., Gomes, V., Sarinho, V. (2018). “Avaliando jogos digitais educativos
+para indivíduos portadores do transtorno do espectro autista”. In Anais do Simpósio Brasileiro
+de
+Informática
+na
+Educação-SBIE,
+v.
+29,
+p.
+1830-1834.
+DOI:
+https://doi.org/10.5753/cbie.sbie.2018.1830. [GS Search].
+Barr, V., Stephenson, C. (2011). “Bringing computational thinking to K-12: what is Involved and
+what is the role of the computer science education community?”. Inroads, v. 2, n. 1, p. 48-
+54. DOI: https://doi.org/10.1145/1929887.1929905. [GS Search].
+Brasil. (1999). MEC/Secretaria de Educação Média e Tecnológica. Parâmetros curriculares
+nacionais: ensino médio. Brasília, MEC. [GS Search].
+Brasil. (2018). Ministério da Educação. Base Nacional Comum Curricular: educação é a base.
+Disponível em: http://basenacionalcomum.mec.gov.br/abase/. Acesso em 19 jul. 2021.
+149da Silva et al.
+RBIE V.33 – 2025
+Brandão, A., Joselli, M. (2015). “Jecripe 2: estimulação da memória, atenção e sensibilização
+fonológica em crianças com Síndrome de Down”. In Proceedings of the XIV Brazilian
+Symposium on Games and Digital Entertainment, SBGAMES, v. 15, p. 518-525. [GS Search].
+Brathwaite, B., Schreiber, I. (2009). Challenges for Game Designer – Non-digital exercises for
+video game designers. Boston: Cengage Learning. [GS Search].
+Cápay, M., Skalka, J., Drlík, M. (2017). “Computer science learning activities based on
+experience”. In: Proceedings of IEEE Global Engineering Education Conference
+(EDUCON), Greece, p. 1363-1372. DOI: https://doi.org/10.1109/EDUCON.2017.7943025.
+[GS Search].
+Corlett, E. F. (2019). A construção do conceito de algoritmo em livros didáticos de Computação
+por meio da Transposição Didática Externa. Dissertação. Mestrado em Ciência da
+Computação. Universidade Federal da Bahia, Salvador, Brasil. [GS Search].
+Dantas, A. C., de Melo, S., Neves, L., Milessi, T., & do Nascimento, M. Z. (2019). “Michelzinho:
+Jogo sério para o ensino de habilidades emocionais em pessoas com autismo ou deficiência
+intelectual”. In Anais do Simpósio Brasileiro de Informática na Educação-SBIE, v. 30, n. 1,
+p. 644-653. DOI: https://doi.org/10.5753/cbie.sbie.2019.644. [GS Search].
+Fernandes, H. B., Silveira, I. F. (2017). “A plataforma code.org online: desenvolvendo o
+Pensamento Computacional e a Matemática”. Cuadernos de Educación y Desarrollo, v. 1, p.
+1-7. [GS Search].
+Fuchter, S. K., Pham, T., Perecin, A., Ramos, L. E., Fuchter, A. K., & Schlichting, M. S. (2016).
+“O uso do game como ferramenta de educação e sensibilização sobre a reciclagem de lixo”.
+Revista Educação e Cultura Contemporânea, v. 13, n. 31, p. 56-82. DOI:
+https://doi.org/10.5935/2238-1279.20160022. [GS Search].
+Greff, G. V. (2019). Pensamento computacional na educação básica: Uma proposta
+interdisciplinar de mobilização para o processo ensino-aprendizagem da língua portuguesa.
+Dissertação. Mestrado Profissional em Informática na Educação. Instituto Federal de
+Educação, Ciência e Tecnologia do Rio Grande do Sul, Porto Alegre, RS. [GS Search].
+Guarda, G. F., & Pinto, S. C. C. S. (2021). “O uso dos jogos digitais educacionais no processo no
+ensino-aprendizagem com ênfase nas habilidades do pensamento computacional:
+experiências no ensino fundamental”. Revista Brasileira de Pós-Graduação – RBPG, v. 17,
+n. 37, p. 1-35. DOI: https://doi.org/10.21713/rbpg.v17i37.1750. [GS Search].
+Huizinga, J. (1938). Homo ludens. Vom ursprung der kultur im spiel.
+https://books.google.com.br/books/about/Homo_Ludens.html?id=gmxfswEACAAJ&redir_
+esc=y.
+Matos, E. de S., & Rezende, F. C. de. (2020). “Raciocínio computacional no ensino de língua
+inglesa na escola: um relato de experiência na perspectiva BYOD”. Revista Eletrônica De
+Educação, v. 14, e3116073. DOI: https://doi.org/10.14244/198271993116.: . [GS Search].
+Medeiros, A., de Araújo Germano, E. V., Costa, A. L. G., & Alves, N. G. P. (2018). “Jogos
+Acessíveis: Proposta de Portal para Alunos com Necessidades Educacionais Especiais”. In
+Anais do Simpósio Brasileiro de Informática na Educação-SBIE. v. 29, n. 1, p. 1788-1792.
+DOI: https://doi.org/10.5753/cbie.sbie.2018.1788. [GS Search].
+de Melo, M. V. C., Segato, T., & Mombach, J. (2019). Apolo: Versão Digital de um Jogo de
+Tabuleiro para Apoio ao Ensino na Educação Básica. In Anais do Simpósio Brasileiro de
+Informática
+na
+Educação-SBIE.
+v.
+30,
+n.
+1,
+p.
+873-882.
+DOI:
+https://doi.org/10.5753/cbie.sbie.2019.873. [GS Search].
+150da Silva et al.
+RBIE V.33 – 2025
+Moratori, P. B. (2003). Por que utilizar jogos educativos no processo de ensino aprendizagem?
+Dissertação. Mestrado em Informática aplicada à Educação. Instituto de Matemática,
+Universidade Federal de Rio de Janeiro. Rio de Janeiro, Brasil.[GS Search].
+Nascimento, C. A., Dos Santos, D. A., Neto, A. T. (2018). “Contribuições do Pensamento
+Computacional para o Ensino e aprendizado de Língua Portuguesa”. Revista Novas
+Tecnologias na Educação, 16(2), p. 515-524. DOI: https://doi.org/10.22456/1679-
+1916.89245 .[GS Search].
+de Oliveira, W. C., Dourado, H. M., Zabot, D., de Souza Matos, E. (2017). “Serious game para
+conscientização social no contexto de mobilidade e acessibilidade urbana”. In Proceedings
+of the XVI Brazilian Symposium on Games and Digital Entertainment, SBGAMES. p. 406-
+409. [GS Search].
+Pereira, R. F., Fusinato, P. A., Neves, M. C. D. (2009). “Desenvolvendo um jogo de tabuleiro para
+o ensino de física”. In Anais do Encontro Nacional de pesquisa em educação em Ciências,
+Florianópolis, v. 8, p. 12-23. [GS Search].
+Rodrigues, A. K. M., Silva, A. P. M., & Carneiro, M. G. (2021). Ensino de Pensamento
+Computacional para alunos do ensino básico usando Computação Desplugada e Scratch. Em
+Extensão, 20 (2), p. 228-240. [GS Search].
+Silva, L., Isotani, S., & Toda, A. (2020). O Desenvolvimento do Pensamento Computacional na
+Construção de Narrativas Digitais no Ensino de Língua Portuguesa. Anais dos Trabalhos de
+Conclusão de Curso. Pós-Graduação em Computação Aplicada à Educação, Instituto de
+Ciências Matemáticas e de Computação, Universidade de São Paulo, p. 1-30. Link:
+https://especializacao.icmc.usp.br/documentos/tcc/luiza_silva.pdf.
+Scaico, P. D., Henrique, M. S., Cunha, F. O. M., Alencar, Y. M. (2012). “Um Relato de
+Experiências de Estagiários da Licenciatura em Computação com o Ensino de Computação
+para Crianças”. Revista Novas Tecnologias na Educação, v. 10, n. 3, p. 1-10. [GS Search].
+Wing, J. M. (2006). Computational thinking. Communications of the ACM, v. 49, n. 3, p. 33-35.
+[GS Search].
+Zabot, D., Andrade, S., Matos, E. S. (2018). Raciocínio Computacional e Jogos Digitais:
+categorias e mecânicas. In Anais do XXIX Simpósio Brasileiro de Informática na Educação-
+SBIE, p. 765-774. DOI: https://doi.org/10.5753/cbie.sbie.2018.765. [GS Search].
+Zabot, D., Andrade, S., Matos, E. S. (2019). Game design participativo com crianças surdas e com
+deficiência auditiva: uma experiência no ensino fundamental. In: Anais do Workshop sobre
+Interação e Pesquisa de Usuários no Desenvolvimento de Jogos-WIPlay, p. 49-58. DOI:
+https://doi.org/10.5753/wiplay.2019.7839. [GS Search].
+151

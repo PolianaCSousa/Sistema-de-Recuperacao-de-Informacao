@@ -1,0 +1,111 @@
+﻿ARTIGO ORIGINAL
+SANTOS, Wagner de Sousa [1], MARTINS, Ana Beatriz [2], SILVEIRA, Isadora Wenzel da [3], CASTILHO, Yuri [4], LENZI, Marcos Souza [5]
+SANTOS, Wagner de Sousa et al. Desenvolvimento de uma plataforma calculadora para análise dos níveis de ruído rodoviário. Revista Científica Multidisciplinar Núcleo do Conhecimento. Ano 09, Ed. 03, Vol. 01, pp. 74-89. Março de 2024. ISSN: 2448-0959, Link de acesso: https://www.nucleodoconhecimento.com.br/ciencia-da-computacao/plataforma-calculadora, DOI: 10.32749/nucleodoconhecimento.com.br/ciencia-da-computacao/plataforma-calculadora
+RESUMO
+Este estudo tem como objetivo o desenvolvimento de uma plataforma online dedicada à análise dos níveis de ruído rodoviário, utilizando modelos matemáticos e linguagem de programação. A metodologia utilizada tem como base a inserção de dados geoespaciais, combinados com as características das rodovias, tendo como principal parâmetro o fluxo de veículos alimentando modelos analíticos para previsão dos níveis de ruído rodoviário. O objetivo da plataforma é propor uma ferramenta para análise e mitigação dos efeitos sonoros com base nos modelos de avaliação do fluxo rodoviário. É fundamental destacar a relevância desse problema, já que o fenômeno do ruído rodoviário afeta significativamente a qualidade de vida das comunidades adjacentes. Como resultados deste estudo, foram ajustados e validados oito modelos com suas respectivas características por meio de testes feitos com os resultados calculados na plataforma Web.
+Palavras-chave: Ruído rodoviário, Plataforma, Calculadora.
+1. INTRODUÇÃO E CONTEXTUALIZAÇÃO
+O ruído ambiental tem grande relevância em áreas urbanas, seja pelo funcionamento de indústrias, a movimentação de multidões ou o tráfego de veículos. A elevada exposição ao ruído excessivo afeta a qualidade de vida de várias formas, prejudicando a qualidade do sono (Hume et al., 2012), diminuindo a capacidade auditiva (Passchier-Vermeer; Passchier, 2000) e aumentando a probabilidade de doenças cardiovasculares (Münzel et al., 2014).
+O problema do ruído rodoviário na cidade de Florianópolis se agrava a cada ano devido ao aumento do fluxo de carros e pessoas na cidade. A capital está situada no estado de Santa Catarina, no sul do Brasil. Esta cidade abrange a ilha principal, chamada Ilha de Santa Catarina, bem como uma porção continental e algumas ilhas menores ao redor. Com uma população estimada em 537.213 habitantes em 2022, de acordo com o Instituto Brasileiro de Geografia e Estatística (IBGE), Florianópolis é o segundo município mais populoso do estado, ficando atrás apenas de Joinville, e ocupa a 39ª posição no ranking das cidades mais populosas do Brasil. A Figura 1 mostra a localização geográfica da cidade de Florianópolis em Santa Catarina.
+Figura 1 – Mapa de Florianópolis
+Fonte: IBGE (2023).
+Com o aumento do fluxo de carros e pessoas na cidade, há um considerável aumento nos níveis de ruído produzidos. Essa elevação pode resultar em problemas na qualidade de vida dos cidadãos e causar problemas de saúde a longo prazo. Um dos meios existentes para controle de poluição sonora é a regulamentação acerca dos níveis permitidos de intensidade de sua emissão em áreas urbanas. Por exemplo, em Florianópolis, a Lei Complementar CMF Nº 003/99 é uma iniciativa governamental para controlar o ruído baseada no estabelecimento de um nível sonoro limite de acordo com as normas brasileiras, embora não seja específica para o ruído rodoviário (Florianópolis, 1999). Não obstante, também se faz necessário o controle e aplicabilidade da lei. Com tal propósito, a análise estatística e a fiscalização periódica da produção de ruído sonoro em vias públicas efetuaria a execução da lei vigente. Essa análise estatística é realizada com base em dados coletados, incluindo níveis de pressão sonora, quantidade de veículos, distância, velocidade, entre outros. Dispondo desses dados, são realizados cálculos para obter o Nível de Ruído Contínuo Equivalente (Leq) e outros índices estatísticos como L10, L50 e L90. A grande dificuldade em muitos casos é o acesso aos equipamentos que realizam as análises, e principalmente o tempo necessários para realizar os levantamentos em campo sem uma análise preliminar do problema.
+Figura 2 – Analisador de nível de pressão sonora tipo 2270 da Bruel e Kjaer
+Fonte:  Bruel e Kjaer (2023).
+Como uma alternativa para a utilização de equipamentos de escala profissional, há modelos analíticos que possibilitam a determinação de níveis de pressão sonora a partir de parâmetros da via, como a quantidade de carros, velocidade média e porcentagem de veículos pesados. A reunião dos modelos em apenas uma fonte que realiza os cálculos automaticamente com base nos parâmetros informados promove a facilitação de sua aplicação, consequentemente auxiliando autoridades locais a aplicar medidas de saúde pública relacionadas ao ruído rodoviário.
+2. OBJETIVOS E QUESTÃO PROBLEMA
+2.1 OBJETIVO GERAL
+Desenvolver um software destinado a automatizar a aplicação de modelos analíticos na avaliação de níveis de pressão sonora provenientes das rodovias, com o propósito de facilitar o levantamento de dados e, por conseguinte, promover a conscientização da população, bem como ampliar o acesso simplificado ao cálculo dos modelos matemáticos para controle do ruído proveniente do tráfego das estradas.
+2.2 OBJETIVOS ESPECÍFICOS
+* Implementar com auxílio de ferramentas computacionais e linguagem de programação (em específico uma aplicação Web) modelos analíticos de avaliação dos níveis de ruído rodoviário.
+* Disponibilizar uma plataforma de fácil acesso e gratuita acerca dos conceitos e modelos de Acústica e Ruído Ambiental, visando o bem-estar geral por meio do estudo de soluções para controlar a poluição sonora.
+* Validar medições manuais ou automatizadas de contagem de veículos e níveis de pressão sonora por meio da plataforma desenvolvida.
+3. METODOLOGIA
+3.1 ETAPA CRIATIVA DO DESIGN
+No estágio inicial, foi conduzida a elaboração do design das telas do software com o auxílio da plataforma Figma. Durante esse processo, várias alternativas foram concebidas e avaliadas, levando em consideração tanto a estética quanto a funcionalidade. A organização das telas foi debatida, priorizando a harmonização com a identidade visual desenvolvida. O protótipo final foi escolhido por sua simplicidade, praticidade e, especialmente, por seu potencial e capacidade de atrair os usuários, conforme exemplificado na Figura 3.
+Figura 3 – Tela inicial da plataforma
+Fonte: Autoria própria, 2023.
+3.2 FERRAMENTAS
+Após a etapa criativa do design e discussões sobre a funcionalidade, foi necessário escolher as ferramentas que seriam utilizadas no desenvolvimento da plataforma online. A linguagem de programação escolhida foi JavaScript,
+O framework para desenvolvimento web de sites escolhido foi React, que é uma ferramenta de código aberto amplamente utilizada para construir interfaces de usuário interativas e dinâmicas. A decisão de utilizar o React Next.js ocorreu em razão da facilidade de uso e à existência de ferramentas para a manipulação dinâmica de componentes.
+Como ambiente de desenvolvimento, foi utilizado o Visual Studio Code, que é um editor de código-fonte gratuito e de código aberto desenvolvido pela Microsoft. A documentação do framework React foi consultada para possibilitar o início do desenvolvimento e a criação de um repositório no GitHub (s.d.).
+3.3 PROCESSO DE DESENVOLVIMENTO DO SOFTWARE
+Para a criação e visualização dos capítulos na seção da Biblioteca Virtual, foi usado um Hook do Next.js chamado “useParams” que permite ler os parâmetros dinâmicos de uma rota preenchidos pela URL (Uniform Resource Locator) atual. Isso significa que, ao clicar em um capítulo, o valor do parâmetro id é passado para um componente por meio da URL.
+3.4 CRIAÇÃO DA BIBLIOTECA VIRTUAL
+Na etapa de produção do conteúdo expositivo da plataforma web, uma cuidadosa seleção dos tópicos e conceitos fundamentais foi realizada para a construção da seção de acervo (Figura 4). Esse processo envolveu a identificação dos principais temas que seriam essenciais para que os usuários compreendessem, de forma abrangente, os princípios da acústica e do ruído. Os capítulos foram escolhidos em uma ordem crescente de complexidade, levando em consideração uma progressão lógica e didática.
+Figura 4 – Tela da biblioteca com os capítulos
+
+Fonte: Autoria própria, 2023.
+Na etapa subsequente, no processo de desenvolvimento dos capítulos, foi incorporada uma página ao website na qual foram disponibilizados os diversos capítulos da biblioteca virtual (Figura 5). Essa biblioteca virtual aborda conceitos basilares da acústica e do ruído.
+Figura 5 – Tela de exemplo dos capítulos
+Fonte: Autoria própria, 2023.
+A biblioteca virtual tem o objetivo de proporcionar aos usuários um recurso educacional abrangente e acessível, facilitando a compreensão dos conceitos de acústica. Os conceitos apresentados na biblioteca virtual, desde “Som e Ruído” até “Potência Sonora” desempenham um papel fundamental na avaliação do impacto do ruído ambiental. Por meio desses capítulos, os usuários podem explorar tópicos como a natureza das ondas sonoras, a diferença entre ondas planas e esféricas, as características da forma da onda e a importância da intensidade sonora e potência sonora na análise acústica.
+3.5 LÓGICA E SELEÇÃO DOS MODELOS MATEMÁTICOS
+A lógica é a estrutura do programa que processa os dados fornecidos pelo usuário e mostra o resultado após as modificações desejadas. É nesta etapa que se realiza a aplicação dos modelos matemáticos. Como referências para a seleção dos modelos mais aplicáveis no software, foram utilizados os trabalhos de (Biff, 2017) e (Quartieri et al., 2009), por detalhar a utilização dos modelos analíticos mais relevantes na área de ruído rodoviário. Os modelos matemáticos são criados com foco principalmente no estudo do tráfego, abrangendo tanto veículos de menor porte quanto veículos pesados. Eles também consideram as características da superfície da estrada e a distância entre os pontos de transporte e os locais onde o som é percebido. É importante notar que, uma vez que esses modelos foram desenvolvidos em várias partes do mundo, existem diferenças significativas devido a particularidades locais, como as características das estradas e os tipos de veículos utilizados.
+Os modelos selecionados para implementação no programa foram:
+* HANC – Handbook of Acoustic Noise Control (1952)
+* Griffiths and Langdon Method (1968)
+* Johnson e Saunders (1968)
+* Galloway et al. (1969)
+* CSTB – Centre Scientifique et Technique du Batiment (1991)
+* Burguess (1977)
+* Johnson e Saunders (1968)
+* Bolt, Beranek e Newman (1952)
+O modelo matemático desenvolvido por Bolt, Beranek e Newman, demonstrado na Equação 2, foi o primeiro modelo matemático desenvolvido para predição do nível de pressão sonora, expresso em L50, onde sua aplicabilidade era sugerida para velocidades entre 35 e 45 mph (aproximadamente 50 a 70 km/h) e para distâncias de 6 a 9 m do centro da via até o receptor (aparelho de medição). O percentil 50 era dado por: (Biff, 2017).
+Onde Q é volume de tráfego (veículos/h) e D se refere à distância entre o centro da via ao receptor. (Alencar, 2016) Autor não consta referenciado e não encontrado o material ao pesquisar e (Quartieri et al., 2009) recordam que o modelo não leva em consideração os percentuais dos tipos de veículos e do tipo de pavimento utilizado. Na lógica adotada para a realização dos cálculos no software foi estabelecida uma correspondência direta entre as variáveis matemáticas e as variáveis no código, identificadas como “param_1” até “param_4”. Os parâmetros de distância e velocidade (2 e 3, respectivamente) são medidos na fórmula originalmente em pés e milhas. Para uma facilitação maior na parte do usuário em fornecer os dados necessários, foram feitas conversões das medidas para metros e quilômetros, sendo:
+* De metros para pés, multiplicou-se o valor do comprimento por 3,281.
+* De quilômetros para milhas, dividiu-se o valor de comprimento por 1,609.
+A partir dessa tradução, as variáveis são manipuladas de acordo com o modelo selecionado pelo usuário. Isso é alcançado por meio de uma estrutura de decisão if-else, que permite determinar qual modelo será utilizado e, posteriormente, executar o cálculo correspondente. Por exemplo, a função “calcHanc” representa um desses modelos matemáticos e, se selecionada, irá realizar o cálculo definido a ela. Através deste processo, o software oferece uma abordagem versátil para análise, permitindo que o usuário escolha o modelo mais apropriado às suas necessidades específicas. Essa flexibilidade é fundamental para atender a uma variedade de situações e cenários.
+4. RESULTADOS
+Esta seção é dedicada a demonstrar o produto do processo de desenvolvimento do software por meio de captura de tela da interface calculadora (Figura 6) e comprovar sua precisão através da comparação com os resultados obtidos em outros programas de cálculo, e medições de ruído realizadas em campo.
+Figura 6 – Tela exemplo da calculadora
+Fonte: Autoria própria, 2023.
+Para a validação dos dados do sistema foi utilizada a calculadora web Wolfram Alpha. Tanto o programa quanto a calculadora possuem os mesmos dados de entrada e a saída de cada modelo será então comparada, conforme evidencia a Tabela 1. Os dados utilizados foram os seguintes:
+Q = 3000 veículos
+d = 30 pés
+v = 60 mph
+P = 15%
+L = 10 metros
+Para a divisão de tipos de veículos no modelo (Fagotti et al., 1995) os valores de cada tipo serão:
+Q_L = 1500
+Q_M = 600
+Q_P = 450
+Q_BUS = 450
+Tabela 1 – Comparação de Resultados entre o Website e o Software Wolfram Alpha
+Fonte: Autoria própria, 2023.
+Como evidenciado na Tabela 1, os resultados obtidos por meio do website e do software de cálculo são consistentes para todos os modelos avaliados. Isso confirma a precisão e confiabilidade do sistema desenvolvido na reprodução dos cálculos realizados pela calculadora web Wolfram Alpha. A congruência entre os resultados valida a integridade das fórmulas matemáticas implementadas no sistema e a correta tradução das variáveis de entrada, proporcionando uma ferramenta eficaz e confiável para a análise de ruído rodoviário. Essa validação é essencial para assegurar a utilidade prática do website em aplicações do mundo real, permitindo uma avaliação precisa e consistente do impacto do ruído nas áreas urbanas.
+Em adição à pesquisa, foram realizadas medições externas na principal via da cidade. As medições foram realizadas utilizando o analisador de sinais apresentado na Figura 2 para comparar os resultados com a calculadora Web e poder analisar as limitações dos modelos matemáticos. O modelo escolhido para comparação foi o modelo (Griffiths e Langdon, 1968) devido a sua variedade de métricas disponíveis (L10, L50 e L90). Considerando que a medição ocorreu em uma pista com 3 faixas, em uma rodovia de pista dupla e durante um período de meia hora, os parâmetros da medição foram os seguintes:
+* Distância entre o ponto de observação e o centro da pista: 10 metros.
+* Quantidade de veículos: 700 veículos.
+* Porcentagem de veículos pesados em tráfego: 8.86%.
+Com base nos dados resultantes da medição em campo na tabela 2, podemos fazer uma comparação entre os resultados e analisar as diferenças.
+Tabela 2 – Comparação entre as Medições de NPS Externas e o Modelo Griffiths e Langdon
+  
+Fonte: Autoria própria, 2023.
+Os níveis de L10, L50 e L90 são indicativos dos níveis de ruído que servem de base para avaliar os impactos sonoros em ambientes urbanos e rodoviários.  A diferença entre os resultados obtidos nas medições externas e os valores previstos pelo modelo matemático (Griffiths e Langdon, 1968) permite tirar algumas conclusões importantes.
+5. CONCLUSÃO
+Este estudo culminou no desenvolvimento de um website que incorpora com sucesso oito modelos analíticos funcionais, bem como telas de contextualização. O objetivo central de criar uma ferramenta funcional capaz de processar os dados fornecidos pelo usuário e realizar cálculos em resposta a esses dados foi plenamente atingido. A utilidade dessa ferramenta facilitadora não se limita a um público restrito, mas, pelo contrário, tem um potencial de aplicação amplo e inclusivo. Ela está acessível a todos os profissionais que atuam na área de controle e análise de ruído em acústica, assim como àqueles que têm interesse em explorar seus recursos, tendo em mãos adicionalmente uma seção de aprendizado e base teórica no estudo da acústica. Os dados inferidos na ferramenta desenvolvida foram devidamente validados e testados por meio de métodos extra de verificação, como uso da calculadora Wolfram Alpha.
+A precisão dos modelos matemáticos do software foi testada, tendo o modelo de referência Griffiths como base, por meio da comparação com medições reais externas. Observou-se uma notável disparidade nos níveis de decibéis registrados, sugerindo uma tendência de superestimação dos níveis de ruído pelo modelo matemático. Essa diferença pode ser atribuída a vários fatores inerentes a ambientes rodoviários complexos, tais como as condições da estrada, variações na densidade do tráfego e velocidade dos veículos.
+Portanto, apesar do sucesso na criação da ferramenta analítica, é necessário reconhecer que as previsões dos modelos devem ser consideradas como uma referência inicial, a ser utilizada em conjunto com medidas efetivas para assegurar uma avaliação precisa. A combinação de abordagens analíticas e medições práticas fornece uma base mais sólida para a tomada de decisões relacionadas ao controle e mitigação do ruído em ambientes urbanos e rodoviários.
+REFERÊNCIAS
+ALENCAR, W. L. M., Obtenção de modelo matemático para a avaliação do ruído de tráfego veicular em Belém – PA. Dissertação (mestrado), Universidade Federal do Pará (UFPA), 2016.
+BIFF, P. Influência do Tráfego Veicular na Geração de Ruído em Praças Públicas de Florianópolis, SC. 2017. Trabalho de Conclusão de Curso. Centro Universitário Estácio São José, Santa Catarina, 2017.
+BRUEL & KJAER. Analisador manual de 2 canais. Bruel & Kjaer na HBK company, 2023.
+FAGOTTI, A. et al. Traffic Noise Abatement Strategies. The Analysis of Real Case not Really Effective, in Proc. of 18th International Congress for Noise Abatement, pp. 223-233, Bologna, Itália, 1995.
+FLORIANOPOLIS. Lei complementar CMF Nº 003/99.  Dispõe sobre ruídos urbanos e proteção do bem estar e do sossego público. Câmara Municipal de Florianópolis, em 05 julho de 1999.
+GITHUB. Início Rápido. GitHub Docs, [s.d.]. Disponível em: https://docs.github.com/pt/get-started/quickstart/hello-world. Acesso em: 09 out. 2023.
+GRIFFITHS I.D; LANGDON, F. Subjective Effects of Traffic Noise Exposure, II:
+Comparisons of Noise Indices, Responses Scales, and the Effects of Changes in Noise Levels. Journal of Sound and Vibration, England, v. 83, n. 2, p. 171-180, 1968.
+HUME, K. I. et al. Effects of environmental noise on sleep. Noise and health, v. 14, n. 61, 2012.
+IBGE – Instituto Brasileiro de Geografia e Estatística. Censo Brasileiro de 2023. Rio de Janeiro: IBGE, 2023.
+MÜNZEL, Thomas et al. Cardiovascular effects of environmental noise exposure. European heart journal, v. 35, n. 13, 2014.
+PASSCHIER-VERMEER, W.; PASSCHIER, W. F. Noise exposure and public health. Environmental health perspectives, v. 108, n. suppl 1, p. 123-131, 2000.
+QUARTIERI, J. et al. A Review of Traffic Noise Predictive Models. In Proceedings of the 5th WSEAS International Conference on Applied and Theoretical Mechanics, Puerto De La Cruz – Tenerife – Canary Islands – Spain, p. 72-80, 2009.
+[1] Orientador. Doutorado em Engenharia Mecânica, com Mestrado em Engenharia Mecânica, Pós-graduação em Docência do Ensino Superior e em Engenharia de Segurança do Trabalho, Bacharel em Engenharia Civil e Licenciado Pleno em Matemática. ORCID: 0000-0003-3054-6816. Currículo Lattes: http://lattes.cnpq.br/7824071698864565.
+[2] Técnico em Desenvolvimento de Sistemas. ORCID: 0009-0007-3258-0555.
+[3] Técnico em Desenvolvimento de Sistemas. ORCID: 0009-0003-9116-5483.
+[4] Técnico em Desenvolvimento de Sistemas. ORCID: 0009-0008-5209-5394.
+[5] Doutor em Engenharia Mecânica, Mestrado em Engenharia Mecânica, Graduação em Engenharia Mecânica. ORCID: 0000-0001-6174-0537. CURRÍCULO LATTES: http://lattes.cnpq.br/8109016507273997.
+Material recebido: 13 de dezembro de 2023.
+Material aprovado pelos pares: 20 de dezembro de 2023.
+Material editado aprovado pelos autores: 05 de março de 2024.

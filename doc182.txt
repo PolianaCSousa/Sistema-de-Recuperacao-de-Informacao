@@ -1,0 +1,884 @@
+South American Development Society Journal
+
+Edição Especial 01 | Ano: 2018 | ISSN: 2446-5763
+DOI: 10.24325/issn.2446-5763.vespi1p63-81
+Data de Submissão: 12/09/2018 | Data de Publicação: 20/11/2018
+
+
+
+
+USO DE BLOCKCHAIN EM SMART CONTRACTS LOGÍSTICOS: UMA REVISÃO
+SISTEMÁTICA
+
+
+Benedito Cristiano Ap. Petroni
+Pós-Graduação em Engenharia de Produção, Universidade Paulista – UNIP
+benedito.petroni@docente.unip.br
+
+
+Elisangela Monaco
+Pós-Graduação em Engenharia de Produção, Universidade Paulista – UNIP
+emonaco@unip.br
+
+
+Rodrigo Franco Gonçalves
+Pós-Graduação em Engenharia de Produção, Universidade Paulista – UNIP
+rofranco212@gmail.com
+
+
+
+
+RESUMO
+
+
+Revisões sistemática da literatura está se tornando cada vez mais comum nas mais
+variadas áreas de estudo. Este trabalho apresenta uma revisão sistemática da utilização da
+tecnologia Blockchain com Smart Contracts aplicado para a área de logística. A pesquisa foi
+baseada na execução de consultas através de strings de busca específicas em duas bases
+de conhecimentos renomadas na área científica. Verificou-se que, apesar da existência de
+um número considerado de artigos sobre o tema, especificamente a aplicação da tecnologia
+de Blockchain com Smart Contracts voltados para a área de logística ainda se apresenta
+com uma nova competência de estudos e aplicações empresariais. A pesquisa é baseada
+em buscas através de Strings mapeando especificamente a aplicação da tecnologia de
+Smart Contracts aplicados a logística.
+
+
+
+
+                                                                                    pag. 63
+USO DE BLOCKCHAIN EM SMART CONTRACTS LOGÍSTICOS: UMA REVISÃO SISTEMÁTICA
+
+
+
+
+Verificou-se que apesar dos artigos encontrados abordarem o mesmo tema, há um
+grande número de propostas para a aplicação da tecnologia e um número pequeno de
+artigos quando se trata de artigos focando exclusivamente a aplicação da tecnologia. A
+partir dos resultados apresentados pode-se concluir que, as aplicações de Smart
+Contracts voltados para a área logística é um campo fértil para o desenvolvimento de
+inúmeras aplicações para as empresas e de pesquisas acadêmicas.
+
+
+Keywords. Blockchain, Smart Contracts, Logistica.
+
+
+1. INTRODUCÃO
+
+
+A tecnologia Blockchain, pode ser utilizada de maneira única para autenticar
+determinada identidade de funções computacionais de maneira irrefutável e imutável
+através de sua chave ou cadeia de blocos. Criada em 2008 para apoiar a criação e
+troca da criptomoeda Bitcoin sem a necessidade de uma autoridade central
+controladora, tendo suas implementações lançadas em 2009, Magazzeni (2017).
+
+De acordo com Mougayar (2017), a tecnologia Blockchain oferece um novo paradigma
+para implementar a confiança tradicional em transações entre pares, podendo ser
+provada em qualquer tempo, através de operações, contratos e propriedades
+inteligentes, sua validade e funcionalidade.
+
+Em conformidade com sua evolução, a tecnologia Blockchain, através de sua
+versatilidade e serviços a serem habilitados, poderia reunir componentes individuais
+selecionados para soluções expandindo suas funcionalidades, Wright (2017) tendo seu
+foco e suporte direcionado para atividades específicas da área deLogística e seus
+processos.
+
+Abdellatif (2018) defende que, a tecnologia Blockchain pode ser aplicada a vários
+casos de uso de gerenciamento de ativos (por exemplo, gerenciamento da cadeia de
+fornecimento, mercado de energia) ou reconhecimento de dados (por exemplo,
+registro, gerenciamento de identidade) e com isso, a introdução de Smart Contracts ou
+contratos inteligentes que ampliou as funcionalidades desta tecnologia, expandindo
+para novas áreas e aplicações.
+
+
+
+                                      SADSJ – South American Development Journal Society | pag. 64
+                                  Benedito Cristiano Ap.Petroni, Elisangela Monaco, Rodrigo Franco Gonçalves
+
+
+
+
+A aplicação de Smart Contracts com a tecnologiaBlockchain tornou-seuma tecnologia
+conhecidapor suas características de integridade, confiança e segurança de dados,
+podendo ser aplicada a outros tipos de uso.
+
+Yli-Huumo (2016) destaca que, as aplicações do Blockchain não se limitam a
+criptomoedas, mas a uma tecnologia que pode ser possivelmente aplicada em várias
+outras áreas formas novas de transações.Assim a pesquisa sobre possibilidades de
+aplicações desta tecnologia em outras aplicações tornou-se uma área interessante e
+promissora para pesquisas futuras.
+
+O conceito de Logística e a Cadeia de Suprimentos – SCM, possuem ao logo do tempo
+muitas definições que evidenciamdiferentes ênfases e abordagens entre os
+profissionais em diferentes setores industriais, áreas geográficas e contextos funcionais
+(Stock, 2009).
+
+De acordo com o Conselho de Profissionais de Gerenciamento de Cadeia de
+Suprimentos dos Estados Unidos, (CSCMP, 2018), a maior associação de profissionais
+de Logística e SCM do mundo, com mais de 9.000 membros em vários países
+considera as seguintes definições: Enquanto oSCM planeja, implementa e controla o
+fluxo e armazenamento avançados, diretos e reversos de bens, serviços e informações
+relacionadas entre o ponto de origem e o ponto de consumo, a fim de atender aos
+clientes e requisitos, a Logística refere-se asatividades de gerenciamento logísticoque
+incluem gerenciamento de transporte de entrada e saída, gerenciamento de frota,
+armazenamento, manuseio de materiais, atendimento de pedidos, projeto de rede
+logística, gerenciamento de estoque, planejamento de oferta e / demanda e
+gerenciamento de provedores de serviços de logística terceirizados.
+
+Logística   e    SCM      são    áreas     frequentemente         consideradas        como      atividades
+principalmente operacionais, as abordagens contemporâneas na literatura têm um forte
+foco no que são consideradas questões estratégicas de longo prazo, com muita
+pesquisa em logística e SCM sendo publicada na literatura de gestão estratégica,
+(Sweeney, 2018).
+
+De acordo com o contexto e as definições anteriores observou-se que, a tecnologia
+Blockchain com a aplicação de Smart Contracts específicospossui potencial para
+
+
+
+                SADSJ – South American Development Society Journal | Edição Especial 01 | Ano 2018 | pag. 65
+USO DE BLOCKCHAIN EM SMART CONTRACTS LOGÍSTICOS: UMA REVISÃO SISTEMÁTICA
+
+
+
+
+implementar funcionalidades operacionais relacionadas a Logística por meio de
+programas que são executados entre os computadores da uma rede.
+
+Desta maneira, este trabalho tem a intenção de identificar em qual estado encontram-
+se as pesquisas e aplicaçõesque utilizam Smart Contracts aplicados a área Logística
+através de Blockchain.
+
+Este trabalho tem como objetivo definir algumas questões que permitam fornecer uma
+visão referentes a publicações voltadas a utilização de Smart Contracts aplicados a
+área de Logística através de Blockchain nas conceituadas bases de dados Scopus e
+IEEE. Justifica a escolha destas bases de dados pela referência e relevância de seus
+conteúdos.
+
+Para isso, foram considerados apenas artigos científicos no período de 2014 a 2018,
+com as seguintes questões:
+
+   1. O que existe na literatura acadêmica publicados que efetivamente demonstra a
+          aplicação de Smart Contracts aplicados a área de Logística através de
+          Blockchain?
+
+   2. Quantos trabalhos foram publicados.
+
+
+
+
+2. FUNDAMENTAÇÃO TEÓRICA
+
+2.1 BLOCKCHAIN
+
+De acordo com Mougayar (2017), Blockchains oferecem um novo paradigma para
+implementar a confiança tradicional em transações computacionais entre pares,
+podendo ser provada em qualquer tempo, através de operações configuradas em
+contratos e propriedades inteligentes de acordo com sua validade e funcionalidade. A
+tecnologia Blockchain se enquadra em uma área de pesquisa considerada nova no que
+diz respeito as formas e possibilidades para aplicações em sistemas transacionais.
+
+Sua funcionalidadeinicialmente é a que a tornou notória o funcionamento da tecnologia
+da critptomoeda Bitcoin criada por Satoshi Nakamoto, onde atravésde arquivos pode-se
+representar todas as transações realizadas e registradas em um livro razão, sendo este
+
+                                     SADSJ – South American Development Journal Society | pag. 66
+                                Benedito Cristiano Ap.Petroni, Elisangela Monaco, Rodrigo Franco Gonçalves
+
+
+
+
+o fundamento básico da tecnologia Blockchain, (Tapscott, 2016).Blockchains permite
+identificar dispositivos inteligentes com informações relevantes e programá-los para agir
+em circunstâncias definidas, sem risco de erro e adulteração.
+
+Em sua essência, o Blockchain é um livro público que contém informações sobre cada
+transação feita dentro de um sistema conhecido como peer to peer, ou ponto a ponto,
+(Sadouskaya, 2017), característica elementar de sistemas distribuídos.
+
+De acordo com o funcionamento do Blockchain, com a possibilidade armazenamento
+de registros, através da implementação de contratos inteligentes – Smart Contracts de
+todas as transações, é possível também que, para a área de Logística existam
+possibilidades paraconfigurar uma grande oportunidade para validação e controlede
+todos os seus processos de manufatura e não somente a distribuição.
+
+O processo de validação ocorre no compartilhamento dos “ledgers”, ou livro de registros
+que possibilitam a verificação de integridade e compatibilidade de informações entre os
+participantes das redes, com isso, obtem-se a confiança que é necessária para o seu
+funcionamento.
+
+A Tabela 1 a seguir apresenta algumas definições sobre o conceito de Blockchain,.
+
+Ano        Definição                                                                   Autor(es)
+2016       Blockchain é publico: qualque pessoa pode vê-lo a qualquer momento,         Tapscott
+           pois reside na rede e não dentro de uma única instituição encarregada
+           de operações de auditoria e manutenção de registros.
+2016       Blockchain pode ser definido como um ledger de transações continua-         Z. Zheng, S. Xie
+           mente crescente, distribuído e mantido em uma rede peer-to-peer
+2017       Blockchain restaurou a definição de confiança pelo mecanismo de crip-       Dai, et al.
+           tografia e consenso incorporado, proporcionando segurança, anonima-
+           to e integridade de dados sem a necessidade de qualquer terceiro.
+2017       Blockchain é uma tecnologia que grava transações permanentemente            Mougayar
+           de uma maneira que não podem ser apagadas depois, somente ser
+           atualizadas sequencialmente, mantendo um rastro de histórico sem
+           fim.
+2018       As tecnologias Blockchain são fundamentais para a entrega do modelo         Destefaniset al.
+           de confiança previsto pelos contratos inteligentes.
+
+
+
+
+              SADSJ – South American Development Society Journal | Edição Especial 01 | Ano 2018 | pag. 67
+USO DE BLOCKCHAIN EM SMART CONTRACTS LOGÍSTICOS: UMA REVISÃO SISTEMÁTICA
+
+
+
+
+FONTE – dos Autores
+
+
+
+
+Para Tapscott (2016), o Blockchain é um protocolo de confiança que estabelece um
+conjunto de regras – na forma de cálculos distribuídos – que asseguram por exemplo, a
+integridade dos dados trocados entre bilhões de dispositivos sem passar por uma
+terceira parte confiável.
+
+
+
+
+2.2 SMART CONTRACTS
+
+O conceito de Smart Contracts, ou contrato inteligente, são implementados em
+linguagem de programação e executados em rede – através de um sistema distribuído,
+podendo ser acessado por qualquer computador, uma vez que, a aplicação em rede da
+tecnologia Blockchain é pública.
+
+Contratos inteligentes representam a mesma ação que os procedimentos incorporados
+em bancos de dados: programas executados no Blockchain para gerenciar e transferir
+ativos digitais com segurança, (Bragagnolo, 2018).
+
+Tecnicamente Smart Contracts pode ser considerado como um protocolo criado para
+permitir facilidades e reforços em uma negociação, cuja principal funcionalidade é a de
+proporcionar confiança em transações online, permitindo que usuários criem
+possibilidades de negócios entre si.
+
+Smart Contracts ou contratos inteligentes vão além da máquina de venda, propondo a
+incorporação de contratos em todos os tipos de propriedades valiosos e controlados por
+meios digitais. Contratos inteligentes fazem referência a essa propriedade em uma
+forma dinâmica, muitas vezes aplicada de maneira proativa, e fornecem observação e
+verificação muito melhores quando as medidas proativas devem ser insuficientes,
+(Szabo, 1997).
+
+Os Smart Contracts em sua implementação computacional são scripts de execução
+automática que residem no Blockchain, podendo integrar conceitos e fluxos de trabalho
+
+
+
+
+                                       SADSJ – South American Development Journal Society | pag. 68
+                               Benedito Cristiano Ap.Petroni, Elisangela Monaco, Rodrigo Franco Gonçalves
+
+
+
+
+adequados, distribuídos e altamente automatizados em algumas áreas, (Christidis,
+2016)
+
+A seguir a Tabela 2 traz algumas definições sobre o contexto de Smart Contracts.
+
+
+
+
+TABELA 2 – Conceito das Definições de Smart Contracts
+
+Ano        Definição                                                                   Autor(es)
+
+
+
+2014       Um contrato inteligente é a forma mais simples de automação descen-         Buterin
+           tralizada e é definido da maneira mais fácil e precisa: um contrato inte-
+           ligente é um mecanismo que envolve ativos digitais e duas ou mais par-
+           tes, onde algumas ou todas as partes colocam ativos e ativos são au-
+           tomaticamente redistribuído entre essas partes de acordo com uma
+           fórmula baseada em certos dados que não são conhecidos no momen-
+           to em que o contrato é iniciado.
+
+
+2015       Contratos inteligentes nos proporcionam uma oportunidade de refletir        DuPont
+           sobre as forças necessárias para assegurar sua constituição ativa - em
+           parte, estas são vantagens técnicas, seguramente, mas importante, os
+           sistemas sociais e psicológicos que compõem o núcleo de quais con-
+           tratos inteligentes ditam o que eles são capazes de fazer.
+
+2016       Contratos inteligentes nos permitem ter computação de propósito geral       Christidis
+           ocorrer em Blockchains.
+
+2017       O contrato inteligente é um conjunto de condições e regras de negócios      Mougayar
+           que devem ser atendidas antes de uma transação ser incluída no Blo-
+           ckchain.
+
+2018       Mais recentemente, a introdução do contrato inteligente ampliou as fun-     Abdellatif
+           cionalidades das Blockchains.
+
+
+
+
+FONTE – dos Autores
+
+
+
+
+             SADSJ – South American Development Society Journal | Edição Especial 01 | Ano 2018 | pag. 69
+USO DE BLOCKCHAIN EM SMART CONTRACTS LOGÍSTICOS: UMA REVISÃO SISTEMÁTICA
+
+
+
+
+2.3 LOGÍSTICA
+
+Inicialmente aplicada no campo militar para designar atividadesde suprimentos,
+estocagem, movimentação e transporte de bens como remédios, equipamentos,
+armamentos, uniformes e tropas, a Logística se desenvolveu muito após a Segunda
+Guerra Mundial.
+
+Desde que as empresas passaram a fabricar produtos físicos, elas precisam
+providenciar a movimentação de matérias-primas para suas operações e produtos
+acabados a sua destinação, bem como organizar sua proteção, estocagem e controle
+de estoque, isso é denominado Logística (Slack, 2015).
+
+Observou-se neste trabalho que o conceito de Logística,dependendo da sua
+abordagem,causar certa confusão com o conceito de SCM, e por isso fora pontuada
+cada uma das definições, deixando claro que o foco é especificamente a área de
+Logística.
+
+Com o passar dos tempos fora observado que, a evolução tecnológica trouxe
+benefícios voltados a área da Logística, destacando-se a utilização da tecnologia RFID
+–Identificação por rádio frequencia.Da tecnologia RFID, Lechner (2017) a classifica com
+base no que está sendo localizado no processo fabril e também nas abordagens de
+localização do leitor ou da tag.
+
+Em sistemas de localização de leitores, o leitor é anexado ao objeto em movimento e as
+tags, ou seja, etiquetas quepossuem posições conhecidas fixas no ambiente.
+
+Continuamente com a evolução de novas tecnologias baseada em Blockchain para
+transporte e Logística ajudará a gerenciar e rastrear o rastro de dezenas de milhões de
+contêineres em todo o mundo digitalizando o processo da cadeia de fornecimento de
+ponta a ponta para aumentar a transparência e o compartilhamento altamente seguro
+de informações entre parceiros comerciais (IBM, 2017).
+
+A seguir a Tabela 3 traz algumas definições sobre o contexto de Logística.
+
+
+
+
+                                     SADSJ – South American Development Journal Society | pag. 70
+                               Benedito Cristiano Ap.Petroni, Elisangela Monaco, Rodrigo Franco Gonçalves
+
+
+
+
+TABELA 3 – Conceito das Definições de Logística
+
+Ano        Definição                                                                          Autor(es)
+
+
+2007       A logística é um fluxo de evento integrante do objeto material, fundo e infor-     Wei-huai
+           mação: é um processo físico móvel que o fluxo de material chega ao local de
+           recebimento do local de produção (lote) por um (lote) em estocastão depois
+           do serviço do sistema. e rede de transporte).
+
+2015       O objetivo da Logística é prover ao cliente os níveis de serviços por ele reque-   Faria
+           ridos, com a entrega do “produto certo, no lugar certo, no momento certo, nas
+           condições certas e pelo custo certo”.
+2015       Logística é o transporte colaborativo e consolidações em armazenamento,            Daoud
+           centros de transferência, caminhos, carregamento de veículos em um lado e
+           planos de suprimentos no outro lado, parecem constituir juntos uma alternati-
+           va promissora para modelar e otimizar.
+
+2016       Gerenciamento logístico engloba, portanto, os conceitos de fluxo de compras        Hong
+           de matérias-primas, operações de produção e transformação, controle de ma-
+           teriais e processos, bem como produtos acabados, compreendendo também
+           todo o gerenciamento de transporte e distribuição de produtos destinados a
+           vendas, desde depósitos intermediários até a chegada dos produtos aos con-
+           sumidores finais.
+
+2017       A grande evolução da Logística se deu quando as organizações começaram a           Banzato
+           dar uma maior importância no serviço ao cliente, sejam estas organizações
+           orientadas ao produto ou ao serviço. Logo, isto foi determinante para que es-
+           tas organizações repensassem todo o processo logístico, num enfoque mais
+           estratégio e menos operacional.
+
+
+
+
+FONTE – dos Autores
+
+
+
+
+3. METODOLOGIA DA PESQUISA
+
+A pesquisa realizada para este trabalho, possui a natureza quantitativa, no que diz
+respeito ao número de publicações referentes ao tema e qualitativa em relação à
+análise de conteúdo dos artigos encontrados, (Gil, 2008). É também de natureza
+exploratória, de acordo com Martins (2009), a partir de uma revisão sistemática na
+
+
+
+             SADSJ – South American Development Society Journal | Edição Especial 01 | Ano 2018 | pag. 71
+USO DE BLOCKCHAIN EM SMART CONTRACTS LOGÍSTICOS: UMA REVISÃO SISTEMÁTICA
+
+
+
+
+literatura, buscou identificar a utilização do protocolo Blockchain aplicados a área de
+Logística.
+
+O método de revisão sistemática utilizado conforme apontado por (Kitchenham, 2004)
+visa obter objetivamente todas as publicações relacionadas nas bases consultadas que
+mencionam os termos fundamentais do tema, a saber: smart contracts, blockchain e
+logistics, conforme mostra o diagrama de Venn da Figura 1. A análise de pertinência, no
+sentido de avaliar se, de fato, os artigos encontrados tratam do tema em questão é
+realizada qualitativamente, a partir da leitura dos resumos.
+
+
+
+
+                                           PUBLICAÇÕES
+
+
+
+
+                                         Foco da pesquisa
+
+
+FIGURA 1 – Diagrama de Venn das áreas da pesquisa a ser explorada.
+
+
+
+
+A análise da existência de utilização de Smart Contracts aplicados a área de Logística
+com uso de Blockchains será realizada por meio de uma revisão sistemática da
+literatura, utilizando-se para isto string’s de busca referentes as questões da pesquisa
+na língua inglesa, sendo o idioma dos artigos internacionais.
+
+Com referência aos procedimentos metodológicos realizados para a confecção deste
+trabalho buscou-se seguir os seguintes passos:
+
+    Passo1: Identificar conceitos e aplicações extraídas dos termos a respeito de
+       Smart Contracts aplicados a Logística com uso de Blockchains;
+
+
+
+                                          SADSJ – South American Development Journal Society | pag. 72
+                               Benedito Cristiano Ap.Petroni, Elisangela Monaco, Rodrigo Franco Gonçalves
+
+
+
+
+    Passo2: Realização de uma revisão sistemática da literatura, considerando
+      artigos em língua inglesa, de acordo com os conceitos do Passo anterior,
+      considerando a seguinte base de dados no período compreendido a partir do
+      ano 2014 a 2018:
+
+         o SCOPUS ELSEVIER;
+
+         o IEEE XPLORE;
+
+    Passo3: Apresentara utilização de aplicações envolvendo Smart Contracts
+      aplicados a Logística com uso de Blockchains.
+
+
+
+
+Importante ressaltar que, para a revisão sistemática em questão e o fato da área de
+Logística estar diretamente relacionada a área de SCM na literatura, será considerada
+somente buscas com o termo “logistics” e não com o termo “Supply Chain
+Management”, uma vez que o objetivo principal da pesquisa especificamente é Smart
+Contracts aplicados a Logística com uso de Blockchains.
+
+Em relação as questões de pesquisa levantadas, a Tabela 5 indica que os termos
+(Strings) pesquisados devem constar nos artigos em títulos, abstracts, keywords, sendo
+os termos Blockchain, Smart Contracts ou Logística nas bases Scholar Google, Web of
+Science, Scopus Elsevier e IEEEXplore.
+
+
+
+
+4. RESULTADOS E DISCUSSÃO
+
+Descritos a contextualização, objetivos e metodologia empregada passaremos na
+sequencia para a discussão dos resultados.
+
+Em geral, observou-se que, com a utilização das String’s de consulta, contidas na
+Tabela 5 a seguir e, em relação ao idioma, data de intervalo da pesquisa, um número
+interessante de artigos pré-selecionados de acordo com os resultados, nas referidas
+bases de consultas selecionadas.
+
+
+
+
+             SADSJ – South American Development Society Journal | Edição Especial 01 | Ano 2018 | pag. 73
+ USO DE BLOCKCHAIN EM SMART CONTRACTS LOGÍSTICOS: UMA REVISÃO SISTEMÁTICA
+
+
+
+
+ TABELA 5: RESULTADOS DAS BUSCAS REALIZADAS NAS BASES IEEE E
+ SCOPUS
+
+Bases                        String’s de consultas                                Quantidade de Arti-
+                                                                                  gos
+
+
+IEEE EXPLORE                 “blockchain” AND “smart contracts”                   293 artigos
+                             “smart contracts” AND “logistics”                    27 artigos
+                             “blockchain” AND “logistics”                         56 artigos
+                             “blockchain” AND “smart contracts" AND “logistics”   26 artigos
+
+
+
+SCOPUS                       “blockchain” AND “smart contracts”                   202 artigos
+                             “smart contracts” AND “logistics”                    23 artigos
+                             “blockchain” AND “logistics”                         68 artigos
+                             “blockchain” AND “smart contracts" AND “logistics”   22 artigos
+
+
+
+
+ FONTE – dos Autores
+
+
+
+
+ Dos números retornados da pequisa realizada, conforme aponta a Figura 1 a seguirm
+ Em geral, observou-se que, com a utilização das String’s de consulta, contidas na
+ Tabela 5 e, em relação ao idioma, data de intervalo da pesquisa,                          um número
+ interessante de artigos pré-selecionados de acordo com os resultados, nas referidas
+ bases de consultas selecionadas.
+
+ Numa análise pormenorizada dos resumos, destacaram-se algumas publicações, das
+ quais verificou-se a importância crescente da implementação da tecnologia de Smart
+ Contracts na área de logística com Blockchain, em aplicações consideradas críticas
+ para o setor, como segue:
+
+
+
+
+     Uma       aplicação    de    Smart       Contracts         com    Blockchain      registrando    o
+         armazenamento de suprimentos alimentícios como categoria, quantidade,
+         qualidade e origem através de um livro distribuído (livro razão ou ledger) onde
+         todo computador na rede – considerado um nó, possui uma cópia. Todas as
+
+
+                                            SADSJ – South American Development Journal Society | pag. 74
+                                   Benedito Cristiano Ap.Petroni, Elisangela Monaco, Rodrigo Franco Gonçalves
+
+
+
+
+      transações registradas no Blockchain são transparentes e abertas pesquisarem
+      e visualizarem os assuntos das transações devidamente criptografados, (Tse,
+      2017);
+
+    O uso de Blockchain ligando-o a cadeia de suprimentos para aumentar a
+      transparência e a prestação de contas, o que fora demonstrado através de
+      estudos de casos com empresas do ramo alimentício no sentido de evitar
+      fraudes substanciais relacionadas a produtos falsificados, como remédios, vinhos
+      finos e modas de luxo, e que é considerado como o primeiro papel de controle
+      que a aplicação de Smart Contracts específicos com Blockchains pode
+      proporcionar, compartilhando as responsabilidades de fornecedores no controle
+      da cadeia de suprimento, (Kshetri, 2018);
+
+    Uma solução com Blockchain permitindo propostas inteligentes em toda a cadeia
+      de suprimentos, atavés de paletes equipadas com etiquetas de identificação de
+      radiofrequência (RFID) que, através de Smart Contracts permite sua localização,
+      ao mesmo tempo em que ocorre o registro de todas as suas informações de
+      operações em um livro-razão, (Lee, 2017);
+
+    Desenvolvimento          de     uma      arquitetura     que     envolve     Blockchain       para     o
+      compartilhamento de informações e transações seguras, uma vez que considera-
+      se não ser confiáveis nas mãos de terceiros, sendo estes suscetíveis a furtos e
+      uso indevido, comprometendo todo o gerenciamento e controle da cadeia de
+      suprimentos pois é descentralizado, tornando assim um modelo mais seguro e
+      organizado para os pafticipantes como empresas e fornecedores, (Nakasumi,
+      2017).
+
+
+
+
+Em relação ao número de retorno conforme a quantidade de artigos, separados por
+strings, informados na Tabela 5 e analisados graficamente a seguir, verificou-se que,
+quando a busca:
+
+
+
+
+               SADSJ – South American Development Society Journal | Edição Especial 01 | Ano 2018 | pag. 75
+USO DE BLOCKCHAIN EM SMART CONTRACTS LOGÍSTICOS: UMA REVISÃO SISTEMÁTICA
+
+
+
+
+    Vincula diretamente Blockchain e Smart Contracts, naturalmente a aderência é
+      maior pois de maneira técnica, existe a dependência e coexistência de ambas,
+      sendo a princípio a necessidade existir uma plataforma (Blockchain) para aplicar
+      determinado contrato inteligente (Smar Contract), “blockchain” AND “smart
+      Contracts”;
+
+    Das aplicações específicas de Smart Contracts aplicados a logística, o número
+      torna-se reduzido por considerar ainda de se tratar de uma nova tecnologia,
+      sendo portanto, escasso o número de discussões bem como de aplicações
+      realizadas, “smart contracts” AND “logistics”;
+
+    A tecnologia Blockchain aplicada a logística ainda que no campo da discussão,
+      procuram adequar a uma futura transformação possível, uma vez que, através
+      dos livros razão, toda a área logística terá sua confiança e segurança
+      resguardada, “blockchain” AND “logistics”;
+
+    Verifica a aplicação de Smart Contracts na área de logística com a tecnologia
+      Blockchain, este número torna-se bem mais reduzido, pois, conforme as
+      publicações apontaram existem na prática ainda poucas iniciativas que busquem
+      de fato contemplar toda distribuição e controle em processos de manufatura,
+      “blockchain” AND “smart Contracts” AND “logistics”.
+
+
+
+                                      SADSJ – South American Development Journal Society | pag. 76
+                                Benedito Cristiano Ap.Petroni, Elisangela Monaco, Rodrigo Franco Gonçalves
+
+
+
+
+Por outro lado, verificou-se que o resultado das demais publicações, não menos
+importante, focam o conceito de autenticidade de propriedade de produtos físicos via
+Blockchain, mas não diretamente relacionando o uso de Smart Contracts para tal,
+apenas com relação da aplicação da tecnologia Blockchain e Smart Contracts propondo
+arquiteturas focadas na distribuição, controle e autenticidade de processos.
+
+
+
+
+5. CONCLUSÃO
+
+Os estudos de aplicações de Smart Contracts aplicados a logística com a utilização da
+tecnologia de Blockchain ainda são exíguos, tendo portanto, muitas pesquisas e
+aplicações para serem desenvolvidas.
+
+Conclui-se deste estudo realizado que, as publicações existentes ainda que em sua
+maioria no campo acadêmico, estão buscando entender o próprio funcionamento deste
+novo conceito de tecnologia pois, a identidade e a reputação online serão totalmente
+descentralizadas, as manufaturas sofrerão alterações e todas as interações de pessoas
+e negócios terão suas informações em um novo âmbito de segurança e confiança.
+
+A logística envolvendo manufaturas poderão controladas pelas empresas por uma
+tecnologia – Blockchain, sem nem sequer saber de sua existência, ao contrário do
+acontece atualmente com os sistemas empresariais.
+
+Empresas terão em suas aplicações de Smart Contracts controles necessários
+somente, uma vez que, as relações empresariais poderão ser descentralizadas e com
+grande potencial de troca de conexão com todas as outras.
+
+Como observado, os Smart Contracts aplicados a logística utilizando Blockchain
+permitirão a criação de uma rede com contratos inteligentes interagindo entre si e
+interconectados com sistemas cada vez mais integrados, controlando a produção e
+aumentando a produtividade.
+
+Por tudo isso tem-se um grande potencial para a criação de novos mercados,
+estratégias, modelos de negócio e o desenvolvimento da tecnologia.
+
+
+              SADSJ – South American Development Society Journal | Edição Especial 01 | Ano 2018 | pag. 77
+USO DE BLOCKCHAIN EM SMART CONTRACTS LOGÍSTICOS: UMA REVISÃO SISTEMÁTICA
+
+
+
+
+REFERÊNCIAS
+
+ABDELLATIF T., K. L. Brousmiche, "Formal Verification of Smart Contracts Based on
+Users and Blockchain Behaviors Models," 2018 9th IFIP International Conference on
+New Technologies, Mobility and Security (NTMS), Paris, France, 2018, pp. 1-5
+
+BANZATO, Eduardo, Tecnologia da Informação aplicada a Logística, São Paulo: IMAM,
+2017.BRAGAGNOLO S., H. et al., "SmartInspect: solidity smart contract inspector,"
+2018 International Workshop on Blockchain Oriented Software Engineering (IWBOSE),
+Campobasso, Italy, 2018, pp. 9-18.
+
+
+BUTERIN, V., “DAOs, DACs, DAs and More: An Incomplete Terminology Guide,”
+Ethereum Blog, 6 May 2014; https://blog.ethereum. org/2014/05/06/daos-dacs-das-and-
+more- an-incomplete-terminology-guide.Acessado em 08/04/2018.
+
+
+CHRISTIDIS,K., M. Devetsikiotis, "Blockchains and Smart Contracts for the Internet of
+Things," in IEEE Access, vol. 4, pp. 2292-2303, 2016.
+
+
+CSCMP 2018, “Council of Supply Chain Management Professionals”, available at:
+http://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms/CSCMP/E
+ducate/SCM_Definitions_and_Glossary_of_Terms.aspx?hkey=60879588-f65f-4ab5-
+8c4b-6878815ef921 (accesso em 12/04/2018).
+
+
+DAI, F., et al, "From Bitcoin to cybersecurity: A comparative study of blockchain
+application and security issues," 2017 4th International Conference on Systems and
+Informatics (ICSAI), Hangzhou, 2017, pp. 975-979.
+
+
+DAOUD, I., R. Mellouli, "Network design and planning with resource pooling: The
+context of merging two logistics entities," 2015 IEEE International Conference on
+Service Operations And Logistics, And Informatics (SOLI), Hammamet, 2015, pp. 24-30.
+
+
+DESTEFANIS G., M. Marchesi, M. Ortu, R. Tonelli, A. Bracciali and R. Hierons, "Smart
+contracts vulnerabilities: a call for blockchain software engineering?," 2018 International
+
+
+
+                                       SADSJ – South American Development Journal Society | pag. 78
+                                Benedito Cristiano Ap.Petroni, Elisangela Monaco, Rodrigo Franco Gonçalves
+
+
+
+
+Workshop on Blockchain Oriented Software Engineering (IWBOSE), Campobasso, Italy,
+2018, pp. 19-25.
+
+
+DUPONT, Q , B Maurer. 2015. iqdupont.com Kings Review (23 June 2015)
+http://kingsreview.co.uk/articles/ledgers-and-law-in-the-blockchain/                  Acessado        em
+08/04/2018
+
+
+FARIA, Ana Cristina de, Gestão de custos logísticos. 1.ed., São Paulo: Atlas, 2015
+
+
+GIL, A.C., Métodos e Técnicas de Pesquisa Social. 6ª ed. Editora Atlas. São Paulo,
+2008
+
+
+HARA, Celso M., Logística: armazenagem, distribuição e trade marketing. 3.ed. –
+Campinas SP: EditoraAlínea, 2009.
+
+
+HONG, YuhChing, Gestão de estoques na cadeia de logística integrada – Suply Chain,
+4.ed – São Paulo: Atlas, 2016.
+
+
+IBM News release, Maersk and IBM Unveil First Industry-Wide Cross- Border Supply
+Chain     Solution       on      Blockchain,         2017,        (available        at:     http://www-
+03.ibm.com/press/us/en/pressrelease/51712.wss) Acesso em 09/04/2018.
+
+
+KITCHENHAM B., Procedures for performing systematic reviews. Keele, UK,
+KeeleUniversity, v. 33, n. 2004, pp. 1-26.
+
+
+KSHETRI, N., 1 Blockchain's roles in meeting key supply chain management objectives
+(2018) International Journal of Information Management, 39, pp. 80-89.
+
+
+LECHNER, J., et al., "Context-based monitoring of logistic process events using passive
+UHF RFID technology," 2017 IEEE International Symposium on Robotics and Intelligent
+Sensors (IRIS), Ottawa, ON, 2017, pp. 260-265
+
+
+
+
+              SADSJ – South American Development Society Journal | Edição Especial 01 | Ano 2018 | pag. 79
+USO DE BLOCKCHAIN EM SMART CONTRACTS LOGÍSTICOS: UMA REVISÃO SISTEMÁTICA
+
+
+
+
+LEE, J. H, M. Pilkington, "How the Blockchain Revolution Will Reshape the Consumer
+Electronics Industry [Future Directions]," in IEEE Consumer Electronics Magazine, vol.
+6, no. 3, pp. 19-23, July 2017
+
+
+MAGAZZENI D., P. McBurney and W. Nash, “Validation and Verification of Smart
+Contracts: A Research Agenda,” Computer, vol. 50(9), pp. 50-57, 2017
+
+
+MARTINS, G. A., Theóphilo, C. R. (2009), Metodologia da Investigação Científica para
+Ciências Sociais Aplicadas. São Paulo: Atlas, 2ª. ed.
+
+
+MOUGAYAR, William. 2017. Blockchain para negócios: promessa prática e aplicação
+da nova tecnologia da internet. Rio de Janeiro: Alta Books.
+
+
+NAKASUMI, M. "Information Sharing for Supply Chain Management Based on Block
+Chain Technology," 2017 IEEE 19th Conference on Business Informatics (CBI),
+Thessaloniki, 2017, pp. 140-149.
+
+
+SADOUSKAYA, K. (2017), Adoption of Blockchain Technology in Supply Chain and
+Logistics,   UnpublishedBachelor’s    Thesis,    Kymenlaakso         University     of   Applied
+Sciences,Kotka, Finland.
+
+
+SLACK, Nigel, Administração da produção. 4.ed – São Paulo: Atlas, 2015
+
+
+STOCK, J.R., Boyer, S.L. (2009), “Developing a consensus definition of supply chain
+management: a qualitative study”, International Journal of Physical Distribution &
+Logistics Management, Vol. 39 No. 8, pp. 690-711.
+
+
+SWEENEY, E., David B. Grant, D. John Mangan, (2018) "Strategic adoption of logistics
+and supply chain management", International Journal of Operations & Production
+Management.
+
+
+
+
+                                      SADSJ – South American Development Journal Society | pag. 80
+                                  Benedito Cristiano Ap.Petroni, Elisangela Monaco, Rodrigo Franco Gonçalves
+
+
+
+
+Szabo,             N.:              ‘Smart              contracts’.               Available               at
+http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwin
+terschool2006/szabo.best.vwh.net/idea.html, 1997, accessadoem 29/03/2017.
+
+
+TAPSCOTT, Don, Alex T., Blockchain: como a tecnologia por trás do Bitcoin está
+mudando o dinheiro, os negócios e o mundo. – São Paulo: SENAI-SP Editora, 2016.
+
+
+TSE D., B. Zhang, Y. Yang, C. Cheng and H. Mu, "Blockchain application in food supply
+information security," 2017 IEEE International Conference on Industrial Engineering and
+Engineering Management (IEEM), Singapore, 2017, pp. 1357-1361
+
+
+WEI-HUAI, X., C. Zhi-ya, (2007) "Study on Logistics Concentrating Goods Operating
+Mechanism Based on Stochastic Service Process," 2007 International Conference on
+Management Science and Engineering, Harbin, 2007, pp. 808-812.
+
+
+WOLFGANG, K., Hannes Lämmermannb, Thomas Bauernhansla, An integrated
+logistics concept for a modular assembly system (2017), 27th International Conference
+on Flexible Automation and Intelligent Manufacturing, FAIM2017, 27-30 June 2017,
+Modena, Italy, pp. 957-964
+
+
+WRIGHT C., A. Serguieva, "Sustainable blockchain-enabled services: Smart contracts,"
+2017 IEEE International Conference on Big Data (Big Data), Boston, MA, 2017, pp.
+4255-4264.
+
+
+YLI-HUUMO J, Ko D, Choi S, Park S, Smolander K (2016) Where Is Current Research
+on Blockchain Technology?—A Systematic Review. PLOS ONE
+
+
+Z. Zheng, S. Xie, H-N. Dai, and H. Wang. Blockchain Challenges and Opportunities: A
+Survey. 2016.
+
+
+
+
+                SADSJ – South American Development Society Journal | Edição Especial 01 | Ano 2018 | pag. 81
+

@@ -1,9 +1,549 @@
-O mercado mobiliário brasileiro tem apresentado crescimento significativo nos últimos anos, impulsionado por diversos fatores econômicos e sociais. A busca por imóveis residenciais aumentou consideravelmente, especialmente em grandes centros urbanos, onde a demanda por moradia supera a oferta em várias regiões.
+              X X X I X SBPO                                                                         28 a 31/08/07 Fortaleza, CE
+              A Pesquisa Operacional e o Desenvolvimento Sustentável
 
-Entre os principais impulsionadores desse setor estão as taxas de juros mais acessíveis, os programas de financiamento habitacional e o aumento da renda familiar em determinadas faixas da população. Além disso, a pandemia da COVID-19 provocou mudanças no comportamento dos consumidores, que passaram a valorizar mais o conforto e a funcionalidade dos ambientes domésticos, impulsionando reformas, mudanças de residência e até a aquisição de imóveis maiores.
 
-Outro fator relevante é o crescimento das construções sustentáveis e inteligentes, que utilizam tecnologias para melhorar a eficiência energética e reduzir o impacto ambiental. Esses imóveis, muitas vezes chamados de “green buildings”, estão ganhando espaço no mercado e se tornando preferência entre compradores preocupados com a sustentabilidade.
 
-Apesar do otimismo, o setor ainda enfrenta desafios como a burocracia para aprovação de projetos, a variação nos custos dos materiais de construção e a instabilidade política e econômica que pode impactar diretamente a confiança dos investidores.
 
-No entanto, especialistas acreditam que, com a adoção de políticas públicas eficazes e incentivos ao crédito, o mercado mobiliário continuará a se expandir, representando uma importante fonte de geração de empregos e desenvolvimento urbano.
+              UMA METAHEURÍSTICA HÍBRIDA GRASP-ILS APLICADA À
+               SOLUÇÃO DO PROBLEMA DE CORTE BI-DIMENSIONAL
+                              GUILHOTINADO
+
+                                     Elias Carlos Correa Temponi
+                        Centro Federal de Educação Tecnológica de Minas Gerais
+             Av. Amazonas 7675 – Nova Gameleira – 30.510-000 – Belo Horizonte – MG – Brasil
+                                        e-mail: elias@uai.com.br
+
+                                       Flávio Antônio dos Santos
+                        Centro Federal de Educação Tecnológica de Minas Gerais
+             Av. Amazonas 7675 – Nova Gameleira – 30.510-000 – Belo Horizonte – MG – Brasil
+                                    e-mail: flavio@dppg.cefetmg.br
+
+
+                                                                  RESUMO
+                 Neste artigo, é abordado o problema de corte bidimensional. Por se tratar de um
+       problema de natureza NP-Difícil, o que significa que não existe um algoritmo exato eficiente que
+       o solucione em tempo polinomial, é proposta uma abordagem via metaheurística híbrida,
+       utilizando-se as metaheurísticas Greedy Randomized Adaptive Search Procedure (GRASP) e
+       Iterated local Search (ILS) para a resolução do Open Dimensional Problem (ODP) de forma
+       guilhotinada, no qual o objeto tem largura fixa e comprimento infinito. O objetivo é minimizar o
+       comprimento necessário para cortar os itens. Os resultados obtidos com diversos experimentos de
+       instâncias da literatura mostram que a metaheurística proposta apresenta bons resultados.
+       PALAVRAS CHAVE. Problema de Corte Bidimensional. Iterated Local Search. GRASP.
+       Área de classificação principal: MH-Metaheuristica.
+
+
+                                                                ABSTRACT
+                 This paper deals with the bidimensional cutting problem. Due to the fact of this
+       problem is NP-Hard, which means that does not exist any exact algorithm able to solve it in a
+       polinomial time, it is proposed a hybrid metaheuristic, using the Greedy Randomized Adaptive
+       Search Procedure (GRASP) and the Iterated local Search (ILS) method, for solving the
+       guilhotined Open Dimensional Problem (ODP). In this class of problem, the object has a fixed
+       width and infinite height, being the main objective to minimize the required height. The results
+       show that the proposed metaheuristic leads good performance.
+       KEYWORDS. Bidimensional                         Cutting         Problem.   Iterated   Local   Search.       GRASP.
+       Main area: MH-Metaheuristic.
+
+
+
+
+XXXIX SBPO                                                                                                                         [1708]
+             X X X I X SBPO                                                           28 a 31/08/07 Fortaleza, CE
+             A Pesquisa Operacional e o Desenvolvimento Sustentável
+
+
+
+
+       1. Introdução
+                 Diversas indústrias têm, como parte integrante de seus processos produtivos, o corte de
+       peças maiores para a obtenção de produtos intermediários ou finais, sendo que esta operação,
+       geralmente, implica em perdas de matéria prima. A diminuição dos gastos causados por estas
+       perdas pode ser fator decisivo para garantir a competitividade de determinada indústria, dentre as
+       quais as indústrias de madeira, tecidos, vidro, aço, espuma e a construção civil, dentre outras.
+                 Devido a sua importância econômica, os Problemas de Corte tornaram-se um tema
+       relevante para a Pesquisa Operacional. Trata-se de problemas que apresentam facilidades para
+       serem representados através de modelos matemáticos, mas que, devido à sua complexidade, são
+       difíceis de serem solucionados.
+                 Tal dificuldade se deve ao fato deste ser um problema classificado como NP-Difícil, o
+       que significa que não existe um algoritmo exato que o solucione em tempo polinomial. Uma
+       alternativa para solucionar estes problemas é a utilização de métodos heurísticos, que, se de um
+       lado não garantem a obtenção da solução ótima do problema, de outro podem dela se aproximar,
+       garantindo soluções subótimas com baixo esforço computacional, quando comparado à utilização
+       de métodos exatos.
+                 O Problema do Corte (PC) foi introduzido na literatura por Gilmore e Gomory (1961).
+       Inicialmente, eles estudaram o problema de corte unidimensional. Desde então, diversos métodos
+       para a resolução do problema de corte têm sido propostos, tanto para o caso unidimensional, bi-
+       dimensional e até mesmo tri-dimensional.
+                 Neste trabalho, é proposta, para a resolução do problema de corte bidimensional, uma
+       abordagem hibrida que utiliza a metaheurística Greedy Randomized Adaptive Search Procedure
+       (GRASP) como geradora da solução inicial e, posteriormente, a metaheurística Iterated Local
+       Search (ILS) para o refinamento desta solução. A metaheurística GRASP, implementada neste
+       trabalho, utiliza procedimentos parcialmente gulosos, baseados na construção de faixas para a
+       obtenção da solução inicial. O método de busca local usado, em todas as metaheurísticas, é o
+       método da descida randômico, utilizando várias estruturas de vizinhanças.
+                 Este artigo está organizado da seguinte forma: a seção 2 introduz a estrutura do
+       problema de corte e define o problema objeto deste artigo. Em seguida, na seção 3, é apresentada
+       a metodologia utilizada. Na seção 4, são apresentados os problemas-teste tratados. Na seção 5 são
+       mostrados os resultados obtidos com as metaheurísticas propostas. A seção 6 conclui o artigo.
+       2. Problema de corte
+                 De uma forma geral, os problemas de corte têm, como objetivo geral, combinar os itens
+       solicitados dentro do objeto, respeitando-se as restrições impostas, geralmente relacionadas ao
+       tipo de indústria e aos equipamentos de corte.
+                 Esse problema aparece em diversos processos industriais, nos quais os objetos, em geral
+       disponíveis em estoque, correspondem a barras de aço, bobinas de papel e alumínio, placas
+       metálicas e de madeira, chapas de vidro e fibra de vidro, peças de couro, etc., e os itens, com
+       dimensões especificadas, são em geral encomendados através de uma carteira de pedidos de
+       clientes.
+                 A motivação para estudá-lo é que, além de ser um problema de difícil solução exata,
+       devido a sua natureza combinatorial, é importante em diversos processos industriais de corte de
+       chapas retangulares, como, por exemplo, no corte de chapas de fibra de vidro (objetos) para
+       produção de placas de circuito impresso (itens) encomendadas por clientes (SILVEIRA, 1999).
+                 Em 1990, foi introduzida por Dyckhoff (1990) uma tipologia dos problemas de corte e
+       empacotamento, na qual o autor propõe quatro critérios para classificar os problemas de corte e
+       empacotamento:
+                  1. Dimensionalidade:
+                      • Unidimensional (1);
+                      • Bi-dimensional (2);
+                      • Tri-dimensional (3);
+
+
+
+
+XXXIX SBPO                                                                                                          [1709]
+              X X X I X SBPO                                                                    28 a 31/08/07 Fortaleza, CE
+               A Pesquisa Operacional e o Desenvolvimento Sustentável
+
+
+
+
+                       • N – dimensional, N >3 (N)
+                    2. Grau de Utilização dos Objetos:
+                       • Todos os objetos e uma parte dos itens (B)
+                       • Uma parte dos objetos e todos os itens (V)
+                    3. Classificação dos Objetos:
+                       • Um único objeto (O)
+                       • Objetos idênticos (I)
+                       • Objetos diferentes (D)
+                    4. Classificação dos itens:
+                       • Poucos itens com forma diferentes (F)
+                       • Muitos itens com formas muito diferentes (M)
+                       • Muitos itens com formas pouco diferentes (R)
+                       • Itens congruentes (C)
+
+                  Como o número de publicações na área de corte e empacotamento tem crescido
+       consideravelmente nas ultimas duas décadas, a tipologia de Dyckhoff tornou-se deficiente para
+       classificar a grande variedade de modificações que o problema de corte pode sofrer. Assim,
+       Gerhard et. al (2005) propõe uma nova tipologia, apresentada na Figura 1, baseada, contudo, nas
+       idéias iniciais de Dyckhoff.
+
+
+                                 Característica
+                                   dos itens
+                                                                  Pouco heterogêneos       Muito heterogêneos
+             Característica
+              dos objetos
+
+                                                                  Single Stock Size           Single Bin Size
+                                     Idênticos                  Cutting Stock Problem      Bin Packing Problem
+                                                                      (SSSCSP)                  (SBSBPP)
+
+                                                                 Multiple Stock Size         Multiple Bin Size
+             Dimensões               Pouco
+                                                                Cutting Stock Problem      Bin Packing Problem
+               fixas              heterogêneos
+                                                                      (MSSCSP)                  (MBSBPP)
+
+                                                                       Residual                  Residual
+                                     Muito
+                                                                Cutting Stock Problem      Bin Packing Problem
+                                  heterogêneos
+                                                                       (RCSP)                    (RBPP)
+
+             Um objeto com uma ou mais                                      Open Dimension Problem
+                dimensões variáveis                                                 (ODP)
+
+                                 Figura 1. – Tipologia apresentada por Gerhard et. al (2005)
+
+                 No presente artigo, é abordado o problema de corte bidimensional que, segundo
+       Dyckhoff, é classificado como 2/V/O/M, e, segundo Gerhard et. al (2005), é classificado como
+       Open Dimension Problem (ODP).
+                 Ao tratar o problema ODP, a maioria dos autores propõe a utilização de métodos
+       heurísticos. Exemplos disso podem ser encontrados em Jakobs (1996), que apresenta um
+       algoritmo genético para tratar esse problema; em Hopper e Turton (2001), que propõe uma
+       metaheuristica hibrida usando algoritmo genético, simulated annealing e naive evolution na
+
+
+
+
+XXXIX SBPO                                                                                                                    [1710]
+             X X X I X SBPO                                                           28 a 31/08/07 Fortaleza, CE
+             A Pesquisa Operacional e o Desenvolvimento Sustentável
+
+
+
+
+       resolução do problema de corte; e em Alvarez (2006), que desenvolve uma metaheuristica
+       Greedy Randomized Adaptive Search Procedure (GRASP) na resolução do problema de corte.
+                 Nos trabalhos acima apresentados, os autores tratam o ODP de forma não guilhotinada.
+       No presente artigo, porém, é proposta uma metodologia para a resolução do problema de corte
+       bidimensional guilhotinado (PCBG), ou seja, exige-se que os cortes no objeto sejam do tipo
+       guilhotina, isto é, devem ser paralelos a um de seus lados e devem se estender desde um lado do
+       objeto até o outro, formando dois novos retângulos a cada corte.
+                 O problema objeto de interesse é descrito como segue: considere que se tenha, em
+       estoque, um objeto retangular com largura fixa W e comprimento grande o suficiente para alocar
+       todos os itens. Considere também a necessidade de atendimento a um conjunto de pedidos, com
+       demanda conhecida di, i = 1, ..., m, de itens de dimensões (li , wi), para li o comprimento e wi a
+       largura das peças, sendo i, i = 1, ..., m. O PCBG consiste em determinar a melhor forma de cortar
+       o objeto, atendendo à demanda di, de modo a minimizar o comprimento do mesmo.
+       3. Metodologia Proposta
+                 As metaheurísticas são procedimentos destinados a encontrar uma boa solução,
+       eventualmente a ótima, consistindo na aplicação, em cada passo, de uma heurística subordinada,
+       a qual tem que ser modelada para cada problema específico. Estas técnicas diferem das
+       heurísticas convencionais, por terem um caráter mais geral e maiores condições de escapar de
+       ótimos locais. A diferença entre as metaheurísticas está no mecanismo usado para escapar de
+       ótimos locais, dividindo-se em duas categorias gerais: metaheurísticas de busca local e meta-
+       heurísticas de busca populacional, de acordo com o princípio usado para explorar o espaço de
+       soluções.
+                 Nas metaheurísticas baseadas em busca local, a exploração do espaço de soluções é
+       feita por meio de movimentos, os quais são aplicados a cada passo sobre a solução corrente,
+       gerando outra solução promissora em sua vizinhança. Exemplos de métodos que se enquadram
+       nesta categoria são as metaheurísticas Busca Tabu, Simulated Annealing, Greedy Randomized
+       Adaptive Search Procedure (GRASP), Iterated Local Search (ILS) e Variable Neighborhood
+       Search (VNS).
+                 As subseções a seguir apresentam, para o problema de interesse, a técnica de encaixe
+       dos itens dentro dos objetos; as estruturas de vizinhança adotadas; e as implementações das
+       metaheurísticas estudadas neste trabalho, quais sejam, ILS (Iterated Local Search) e GRASP
+       (Greedy Randomized Adaptive Search Procedure).
+       3.1 Técnica de encaixe
+                 Na literatura, podem ser encontrados alguns algoritmos para o encaixe dos itens no
+       objeto. Dentre esses algoritmos, os mais utilizados são: Next-Fit (NF), First Fit (FF), First Fit
+       Decreasing (FFD), Next Fit Decreasing (NFD), Bottom-Left (BL).
+                 Dentre estas, a heurística mais utilizada na resolução do ODP é a BL, que funciona
+       como segue: a solução se inicia pelo canto superior direito do objeto. Então, os itens são
+       deslocados verticalmente para baixo, até que se encoste em um outro item. Depois, o item é
+       deslocado horizontalmente para esquerda até que atinja outro item. Esse movimento para baixo e
+       para a esquerda se repete até que não seja mais possível movimentar o item (Liu e Teng, 1999). A
+       Figura 2 ilustra esse procedimento.
+
+
+
+
+XXXIX SBPO                                                                                                          [1711]
+             X X X I X SBPO                                                               28 a 31/08/07 Fortaleza, CE
+             A Pesquisa Operacional e o Desenvolvimento Sustentável
+
+
+
+
+                                   Figura 2. – Representação da heurística Bottom-Left.
+
+                 Neste trabalho, o procedimento adotado para o encaixe dos itens consiste em inserir os
+       itens na ordem na qual aparecem. O primeiro item é inserido no canto inferior direito do objeto.
+       O segundo item é inserido do lado direito do primeiro item; o terceiro item do lado do segundo e
+       assim em diante. Após um determinado número de inserções, o próximo item a ser inserido não
+       caberá no objeto no sentido do seu comprimento, então, neste caso, tenta-se inserir o maior item
+       que caiba nesse espaço, formando uma faixa, com comprimento correspondente ao comprimento
+       do item com a maior dimensão nesse sentido. Em seguida, após a formação da primeira faixa,
+       considerando-se o sentido do comprimento do objeto, são formadas outras faixas, até que a
+       demanda total de cada item seja satisfeita. A Figura 3 ilustra o procedimento proposto.
+
+
+
+
+                                      Figura 3. – Representação da heurística proposta.
+
+       3.2 Função de Avaliação
+               No presente trabalho, como o objetivo é minimizar o comprimento utilizado do objeto
+       de modo a alocar toda a demanda dos itens, então a função de avaliação utilizada é o somatório
+       dos comprimentos das faixas. Na figura 3, a variável H representa o valor da função de avaliação.
+       3.3 Estruturas de Vizinhanças
+                  Por se tratar de um problema de natureza combinatória, neste trabalho, optou-se por
+       utilizar cinco estruturas de vizinhança que, basicamente, executam uma permutação entre os itens
+       dentro do objeto. Neste sentido, as estruturas de vizinhanças consistem em realizar trocas
+
+
+
+XXXIX SBPO                                                                                                              [1712]
+             X X X I X SBPO                                                           28 a 31/08/07 Fortaleza, CE
+             A Pesquisa Operacional e o Desenvolvimento Sustentável
+
+
+
+
+       simultâneas dos itens dentro do objeto. A primeira estrutura de vizinhança consiste em realizar
+       apenas uma troca de dois itens; a segunda estrutura de vizinhança realiza duas trocas de dois
+       itens, e assim em diante, até a quinta estrutura de vizinhança, na qual são executadas cinco trocas
+       simultâneas de dois itens.
+       3.4 Busca Local
+                  Neste trabalho, foi utilizado o Método da Descida Randômico, que parte de uma
+       solução inicial qualquer e, a cada iteração, utilizando uma estrutura de vizinhança aleatória,
+       analisa um vizinho da solução corrente, movendo-se somente para o vizinho que representa uma
+       melhora no valor atual da função de avaliação. O método pára após IterMax iterações. A Figura 4
+       ilustra esse procedimento.
+
+       Procedimento DescidaRandomica( s, IterMax ):
+       1          Iter = 0
+       2          enquanto Iter < IterMax faça
+       3               Iter = Iter + 1
+       4               s’ Å GeraVizinhoAleatoriamente( s )
+       5               se ( f( s’ ) < f ( s ) ) então
+       6                         Iter = 0
+       7                         s Å s’
+       8               fim-se;
+       9          fim-enquanto;
+       10 Retorne s
+
+                                              Figura 4. - Algoritmo de Busca Local
+
+       3.5 Greedy Randomized Adaptive Search Procedure (GRASP)
+                 GRASP é um método iterativo, proposto inicialmente em Feo e Resende (1995), que
+       consiste de duas fases: uma fase de construção, na qual uma solução é gerada, elemento a
+       elemento; e uma fase de busca local, na qual um ótimo local, na vizinhança da solução
+       construída, é pesquisado. A melhor solução encontrada ao longo de todas as iterações GRASP
+       realizadas é retornada como resultado. A Figura 5 ilustra um procedimento GRASP.
+
+       Procedimento GRASP:
+       1          f*Å∞
+       2         para Iter = 1 até GRASPmax faça
+       3             s Å ConstruçãoParcialmenteGulosa
+       4             s’ Å BuscaLocal( s )
+       5             se ( f( s’ ) < f * ) então
+       6                       s * Å s’
+       7                       s * Å f(s’)
+       8             fim-se;
+       9         fim-para;
+       10        s Å s*
+       11        Retorne s
+
+                                                   Figura 5. - Algoritmo GRASP
+
+       3.6 Iterated Local Search (ILS)
+                 O método Iterated Local Search (ILS) é baseado na simples idéia de que um
+       procedimento de busca local pode ser melhorado, gerando-se novas soluções de partida, as quais
+       são obtidas por meio de perturbações na solução ótima local. A perturbação precisa ser
+
+
+
+
+XXXIX SBPO                                                                                                          [1713]
+             X X X I X SBPO                                                            28 a 31/08/07 Fortaleza, CE
+             A Pesquisa Operacional e o Desenvolvimento Sustentável
+
+
+
+
+       suficientemente forte para permitir que a busca local explore diferentes soluções, mas também
+       fraca o suficiente para evitar um reinício aleatório.
+                 O método ILS é, portanto, um método de busca local que procura focar a busca não no
+       espaço completo de soluções, mas em um pequeno subespaço, definido por soluções que são
+       ótimas locais de determinado procedimento de otimização (Lourenço et. al, 2002).
+                 Para aplicar um algoritmo ILS, três componentes têm que ser especificadas:
+              1. Procedimento GeraSolucaoInicial, que gera uma solução inicial para o problema.
+                  Neste trabalho, foram testados duas formas de gerar a solução inicial para o ILS: a
+                  primeira, é o procedimento descrito na subseção 3.1; a segunda, é utilizar a
+                  metaheurística GRASP para fornecer a solução inicial.
+              2. Procedimento BuscaLocal, que retorna uma solução melhorada. Neste trabalho, foi
+                  implementado a metodologia descrita na subseção 3.4 para a realização desse
+                  procedimento.
+              3. Procedimento Perturbação, que modifica a solução corrente, guiando-a a uma solução
+                  intermediária. O mecanismo de perturbação deve ser forte o suficiente para permitir
+                  escapar do ótimo local corrente e permitir, também, a exploração de diferentes regiões
+                  do espaço de soluções. Ao mesmo tempo, a modificação precisa ser fraca o suficiente
+                  para guardar características do ótimo local corrente. Neste trabalho, a perturbação da
+                  solução corrente é feita utilizando-se as estruturas de vizinhanças, expostas na
+                  subseção 3.3, de forma aleatória.
+                 Na Figura 6, mostra-se o pseudo-código do algoritmo ILS básico.
+
+       Procedimento ILS:
+       1         s0 Å GeraSolucaoInicial( );
+       2         s Å BuscaLocal( s0 )
+       3         enquanto Iter ≤ ILSmax faça
+       4             s’ Å Pertubacao( s );
+       5             s’’ Å BuscaLocal( s’ )
+       6             se ( f( s’’ ) < f( s ) ) então
+       7                       s Å s’’
+       8                       f( s ) Å f( s’’ )
+       9             fim-se
+       10        fim-enquanto
+       11        Retorne s
+
+                                          Figura 6: Algoritmo Iterated Local Search.
+
+       3.7 Metaheuristica Hibrida – GRASP e ILS
+                A metaheuristica ILS é fortemente dependente da solução inicial. Neste trabalho, então,
+       é proposta uma metaheuristica híbrida, que utiliza, como base, a metaheuristica ILS, sofrendo
+       modificações no procedimento de geração da solução inicial.
+                A modificação proposta consiste em se utilizar a metaheuristica GRASP para gerar a
+       solução inicial para a metaheuristica ILS. Essa modificação se justifica pelo fato do GRASP ser
+       um algoritmo que apresenta boas soluções em tempo computacional relativamente baixo. Sendo
+       assim, espera-se que a solução final dessa metaheuristica híbrida seja melhor do que as
+       metaheurísticas trabalhando de forma isolada, em termos de valor da função de avaliação.
+                Os demais procedimentos do ILS não serão modificados. Na Figura 7, mostra-se o
+       pseudo-código da metaheuristica híbrida proposta.
+
+
+       Procedimento GRASP_ILS:
+       1         s0 Å Acionar Meta-heuristica GRASP
+
+
+
+
+XXXIX SBPO                                                                                                           [1714]
+             X X X I X SBPO                                                                    28 a 31/08/07 Fortaleza, CE
+             A Pesquisa Operacional e o Desenvolvimento Sustentável
+
+
+
+
+       2             s Å BuscaLocal( s0 )
+       3             enquanto Iter ≤ ILSmax faça
+       4                 s’ Å Pertubacao( s );
+       5                 s’’ Å BuscaLocal( s’ )
+       6                 se ( f( s’’ ) < f( s ) ) então
+       7                           s Å s’’
+       8                           f( s ) Å f( s’’ )
+       9                 fim-se
+       10            fim-enquanto
+       11            Retorne s
+
+                                       Figura 7: Algoritmo da Meta-heurisitca híbrida.
+
+       4. Problema Teste
+                 Como não foi encontrado, na literatura, nenhum trabalho que trata o problema de corte
+       ODP de forma guilhotinada, foram realizados, então, experimentos utilizando-se os arquivos teste
+       de Hopper e Turton (2001), disponíveis na OR-Library (Beasley, 1990).
+                 Os arquivos testes estão divididos em sete categorias, de acordo com o tamanho do
+       problema, sendo que cada categoria foi sub-dividida em três instâncias. Cada categoria apresenta
+       número de itens, a largura do objeto e o comprimento da solução ótima. Neste artigo, foram
+       utilizados apenas os dados relativos à primeira instância de cada uma das 7 categorias, conforme
+       a Tabela 1.
+
+                                                                      Comprimento        Largura do Objeto
+                    Categoria                 Número de Itens
+                                                                       Ótimo (cm)              (cm)
+                       C1P1                             16                 20                   20
+                       C2P1                             25                 15                   40
+                       C3P1                             28                 30                   60
+                       C4P1                             49                 60                   60
+                       C5P1                             73                 90                   60
+                       C6P1                             97                120                  80
+                       C7P1                            196                240                  160
+                                           Tabela 1: Instâncias utilizadas nos testes.
+
+                Para avaliar o desempenho do algoritmo GRASP-ILS proposto, cada problema-teste,
+       formado pelas instâncias utilizadas, foi executado dez vezes. A Tabela 2 mostra os resultados
+       obtidos.
+                Os algoritmos foram desenvolvidos em linguagem JAVA e executados em um
+       computador AMD Sempron 3200+, tendo 1Gb de memória RAM e ambiente Windows XP.
+
+       5. Resultados
+                 A Tabela 2 apresenta os resultados da aplicação da metaheurística proposta para a
+       solução dos problemas-teste mostrados na Tabela 1. Além de representarem a média de dez
+       execuções, as tabelas mostram os valores do comprimento necessário do objeto que será cortado
+       para a obtenção dos itens requeridos nas instâncias.
+                 Observa-se que os resultados encontrados pela metaheurística, como já era de se
+       esperar, foram aquém daqueles associados à solução ótima. Cabe ressaltar que estes resultados
+       ótimos foram encontrados para problemas de corte não-gluilhotinados. Na figura 8, pode-se
+       observar claramente a diferença que esses dois procedimentos (guilhotinado e não-guilhotinado)
+
+
+
+XXXIX SBPO                                                                                                                   [1715]
+              X X X I X SBPO                                                                        28 a 31/08/07 Fortaleza, CE
+              A Pesquisa Operacional e o Desenvolvimento Sustentável
+
+
+
+
+       acarretam. O primeiro implica em perdas entre as faixas no objeto a ser cortado e, quanto maior o
+       número de itens a ser considerado, maior será esta perda de material. Isso explica o aumento na
+       distância entre a solução ótima não-guilhotinada e a solução subótima determinada, com o
+       aumento no número de itens nas instâncias estudadas.
+
+
+                                                                       Problemas Testes
+         Iterações
+                            C1P1              C2P1             C3P1         C4P1          C5P1     C6P1             C7P1
+               1             25                16               39            70           111      164              320
+               2             25                17               37            72           110      162              320
+               3             25                16               39            74           108      164              320
+               4             25                16               39            74           110      164              320
+               5             25                16               38            74           110      162              320
+               6             25                16               38            72           110      162              320
+               7             25                16               39            72           110      164              320
+               8             25                17               39            70           110      164              320
+               9             25                16               38            74           109      164              320
+              10             25                16               39            74           108      164              320
+             Média           25               16.2              39           72.6          110      164              320
+             Ótima           20                15               30            60            90      120              240
+
+                                 Tabela 2: Resultados obtidos pela metodologia proposta.
+
+
+
+
+                                                                                             (b)
+
+
+                                     (a)
+                     Figura 8: (a) Exemplo de solução para a metodologia GRASP-ILS proposta;
+                                 (b) Exemplo de solução ótima de uma instância teste.
+
+       6. Conclusão
+                Neste artigo, estudou-se o Open Dimension Problem guilhotinado, no qual os objetos
+       possuem forma retangular e têm, apenas, duas dimensões relevantes. Por se tratar de um
+       problema de natureza NP - Difícil, foi proposta, para sua resolução, uma abordagem híbrida via
+       metaheurística, utilizando-se as metaheurísticas GRASP (Greedy Randomized Adaptive Search
+       Procedure) e ILS (Iterated Local Search).
+                Pelo fato de não ter sido encontrada na literatura instâncias testes que tratam do
+       problema ODP de forma guilhotinada, comparamos os resultados da metodologia proposta com
+
+
+
+
+XXXIX SBPO                                                                                                                        [1716]
+             X X X I X SBPO                                                     28 a 31/08/07 Fortaleza, CE
+             A Pesquisa Operacional e o Desenvolvimento Sustentável
+
+
+
+
+       as instâncias de Hopper e Turton (2001), que trata o ODP de forma não guilhotinada. Apesar
+       disso, observa-se que os resultados encontrados neste trabalho encontram-se próximos aos
+       resultados das soluções ótimas das instâncias-testes.
+                 Sendo assim, a abordagem híbrida usando GRASP e ILS apresentou bons resultados,
+       mostrando uma forma de cortar um objeto atendendo à demanda de itens, de modo a minimizar o
+       comprimento do objeto. As evidências empíricas deste trabalho mostram que a metodologia
+       proposta pode ser apropriada para solucionar instâncias associadas a situações reais.
+       Agradecimentos
+               Este trabalho teve apoio da CAPES.
+       7. Referências
+       Alvarez-Valdes, R., Parreño, F., Tamarit, J.M. (2006), Reative GRASP for the strip-
+       packing problem, Computer & Operations Research, aceito para publicação, 2006.
+       Beasley, J.E.(1990), OR-Library: Distributing Test Problems by Eletronic Mail. Journal
+       Operations Research Society, Vol. 41, pp. 1069-1072.
+       Feo, T.A. e Resende, M.G.C. (1995), Greedy randomized adaptive search procedures,
+       Journal of Global Optimization, Vol. 6, pp. 109-133.
+       Gilmore, P. e Gomory, R. (1961), A linear programming approach to the cutting stock
+       problem, Operations Research, Vol. 9, pp. 849-859.
+       Hopper, E., Turton, B.C.H. (2001), An empirical investigation of meta-heuristic and
+       heuristic algorithms for a 2D packing problem, European Journal of Operational Research,
+       Vol. 128, pp. 34-57.
+       Jakobs, S. (1996), On genetic algorithms for the packing of polygons, European Journal of
+       Operations Research, Vol. 88, pp. 165-181.
+       Liu, D. e Teng, H. (1999), An improved BL-algorithm for genetic algorithm of the
+       orthogonal packing of rectangles, European Journal of Operational Research, Vol. 112, pp.
+       413-420.
+       Lourenço, H.R., Martin, O., Stützle, T.. Iterated Local Search. In F. Glover and G.
+       Kochenberger, editors, Handbook of Metaheuristics, pages 321–353. Kluwer Academic
+       Publishers, Norwell, MA, 2002.
+       Silveira, R. J. (1999), O Problema de Corte Bidimensional Guilhotinado e Restrito:
+       Aplicação na Indústria de Circuitos Impressos. Dissertação (Mestrado) – DEP, Universidade
+       Federal de São Carlos, São Carlos, Brasil, (1999).
+       Wäscher, G., Hauβner, H., Schuann, H. (2006), An improved typology of cutting and
+       packing problems, European Journal of Operations Research, aceito para publicação, 2006.
+
+
+
+
+XXXIX SBPO                                                                                                    [1717]
+

@@ -1,0 +1,783 @@
+48699
+
+Brazilian Journal of Development
+Inteligência Artificial na Educação: Survey
+Artificial Intelligence in Education: Survey
+DOI:10.34117/bjdv6n7-496
+Recebimento dos originais: 03/06/2020
+Aceitação para publicação: 20/07/2020
+
+Luis Antonio Tavares
+Discente de doutorado da Faculdade de Educação da UNICAMP
+Professor do Instituto Federal do Sul de Minas Gerais - Campus Pouso Alegre
+E-mail: luis.tavares@ifsuldeminas.edu.br
+Matheus Carvalho Meira
+Discente de doutorado da Faculdade de Educação da UNICAMP
+Professor do Instituto Federal de São Paulo - Campus Capivari
+E-mail: m108479@dac.unicamp.br
+Sergio Ferreira do Amaral
+Coordenador do Laboratório de Inovação Tecnológica Aplicada na Educação - LANTEC e
+Professor da Faculdade de Educação da UNICAMP
+E-mail: amaral@unicamp.br
+RESUMO
+Com o avanço significativo da ciência e tecnologia, a aplicação da Inteligência Artificial é uma
+realidade presente em vários campos, desde automação na indústria até diagnósticos na área médica.
+Contudo, o impacto na Educação destas novas mudanças, provocadas pela Inteligência Artificial,
+parece ser menos presente em relação ao seu potencial. Neste contexto, o trabalho apresenta uma
+revisão exploratória com o objetivo de detectar caminhos e estudos de Inteligência Artificial na
+Educação nos últimos anos. A exploração foi determinada a partir de parâmetros bibliométricos e
+buscas no Web of Science para compreensão dos caminhos que a IA vem tomando na Educação. A
+análise dos resultados ocorreu a partir da categorização das principais vertentes abordadas dentre os
+artigos mais citados de IA na Educação. As principais vertentes que permeiam Tutores Inteligentes
+a Machine Learning na Educação são apresentadas. Em conclusão, o trabalho pretende apresentar
+as principais linhas de pesquisas de IA na Educação e assim evidenciar tendências de estudos.
+Palavras-chave: Inteligência artificial, Inteligência Artificial na Educação, Tecnologia na
+Educação, Sistemas Tutores Inteligentes.
+ABSTRACT
+With the significant advance of science and technology, the impact of Artificial Intelligence is a
+reality present in several fields, from the industry automation to medical diagnostics. However, the
+impact of these new changes caused by Artificial Intelligence seems to be less present on Education,
+despites to their potential. In this context, the work presents an exploratory review in order to detect
+paths and studies of Artificial Intelligence in Education in recent years. The research was based on
+bibliometric parameters and searches on the Web of Science platform. The objective was to
+understand the paths that AI has been taking in Education. The analysis of the results occurred from
+the categorization of the main aspects addressed among the most cited articles of AI in Education.
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48700
+
+Brazilian Journal of Development
+The main subjects from Intelligent Tutoring to Machine Learning in Education are presented. In
+conclusion, the work intends to present the main lines of AI research in Education and thus show
+trends in studies.
+Keywords: Artificial intelligence, Artificial intelligence in education, Technology in education,
+Intelligent tutoring systems.
+1 INTRODUÇÃO
+O significativo avanço tecnológico abre possibilidades a uma era em que a Inteligência
+Artificial (IA) está transformando a sociedade e essas transformações estão ficando cada vez mais
+nítidas. Sistemas de localização, sistemas de entretenimento por stream, bots em canais de
+atendimento, redes sociais e smartphones são apenas alguns dos exemplos nos quais podemos notar
+sua influência.
+A tecnologia também tem provocado grandes mudanças na economia com a automatização
+de serviços, automação industrial, transações eletrônicas, comunicação, entre outros. No entanto,
+apesar do impacto dessas mudanças na nossa sociedade, as atividades educacionais ainda se
+apropriam da tecnologia em passos lentos.
+O objetivo deste trabalho é realizar uma revisão exploratória do tema Inteligência Artificial
+na Educação buscando identificar os caminhos que os estudos de IA na Educação têm tomado nos
+últimos anos. O estudo pretende identificar e apresentar as vertentes que têm sido exploradas, artigos
+importantes, autores e outros dados relevantes no estudo deste campo do conhecimento.
+Assim, neste contexto, serão discutidas sobre algumas das linhas de pesquisa principais da
+IA na Educação, procurando compreender como este campo tem se desenvolvido. Pois os diferentes
+campos dos saberes têm se apropriado da IA em suas tarefas, alguns de forma mais intensa, outros
+de forma mais gradativa. Realizar pesquisas e estudos da IA na educação irá propiciar uma
+apropriação da IA de forma mais amigável para educação.
+Estudar o uso da IA na educação é uma forma de buscar soluções que possam agregar valor
+para o processo de ensino-aprendizagem, para apoiar professores e alunos, porém, sem negligenciar
+o aspecto humano, sem esquecer habilidades como ética e responsabilidade, trabalho em equipe e
+flexibilidade, habilidades de pensamento (pensamento crítico, resolução de problemas e
+criatividade) e gestão do conhecimento, habilidades citadas por Bates (2015) como essenciais para
+a sociedade da informação.
+
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48701
+
+Brazilian Journal of Development
+2 REFERENCIAL TEÓRICO
+Neste trabalho foram exploradas as principais linhas de pesquisa dentro dos estudos da
+Inteligência Artificial aplicada à Educação. As vertentes identificadas, aqui descritas, foram
+resultado de uma pesquisa bibliográfica. De modo a privilegiar a leitura e organização lógica textual
+do trabalho, neste primeiro instante, são apresentados e definidos os principais conceitos, das
+vertentes, representando as linhas de aplicação de IA na Educação. Nas seções subsequentes, será
+detalhado e explicado o estudo exploratório, apresentando os critérios bibliométricos para seleção e
+análise textual dos artigos obtidos a partir da base do Web Of Science.
+2.1 IA NA EDUCAÇÃO
+Bates (2015) define a inteligência artificial como a representação em software dos processos
+mentais usados na aprendizagem de humanos. Segundo Bates, as tentativas de replicar o processo
+de ensino usando a inteligência artificial (IA) começaram por volta dos anos 1980, inicialmente no
+ensino da aritmética. Apesar de muitas pesquisas em IA para o ensino nas últimas 3 décadas, os
+resultados não têm sido satisfatórios. Mostrou-se difícil para as máquinas lidar com a grande
+variedade de formas pelas quais os estudantes aprendem (ou não conseguem aprender) e, apenas
+recentemente temos observado maiores avanços, como por exemplo, na aprendizagem adaptativa.
+O uso de IA na educação (no inglês, Artificial Intelligence in Education - AIED) também é
+controverso, uma vez que a aplicação de inteligência artificial tende a substituir tarefas humanas, se
+isso for tomado por uma perspectiva objetivista, pode-se ter o errôneo pensamento da máquina como
+substituta do professor. No entanto, há muito potencial no uso de inteligência artificial como suporte
+para tarefas de aprendizagem, tanto na perspectiva do aluno como na perspectiva dos professores.
+Alguns exemplos de aplicação de IA na educação são: aprendizagem adaptativa, tutores
+inteligentes, ferramentas de diagnósticos, sistemas de recomendação, classificação de estilos de
+aprendizagem, mundos virtuais, gamificação e mineração de dados aplicada à educação.
+2.2 SISTEMAS TUTORES INTELIGENTES
+Atualmente, após completar cerca de 5 (cinco) décadas de evolução, os esforços na
+utilização dos Sistemas de Tutoria Inteligente (Intelligent Tutoring Systems - ITS) vem sendo
+considerados amplamente aceitos como assistentes curriculares. Sua notoriedade foi
+consideravelmente aumentada nos anos 90 (noventa) a medida em que a popularização dos
+computadores passou a disponibilizar aplicativos educacionais e métodos considerados mais
+inteligentes foram utilizados para melhorar a eficácia instrucional dos ITS conforme explicam
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48702
+
+Brazilian Journal of Development
+Cooper, Nam e Si (2012). O ITS está fundado nas concepções que combinam a IA, a instrução
+auxiliada por computador (CAI) e a psicologia cognitiva (CHEN e ZHANG, 2019). Com objetivo
+de posicionamento, o ITS pertence ao arcabouço da área de IA e subárea de Sistemas Especialistas.
+Em tempos contemporâneos, as ações com envolvimento dos ITS admitem um crescimento
+acelerado. Em busca da exploração, com finalidade em tornar os tutores virtuais mais humanos,
+pesquisadores investigam paradigmas de tutoria, modelagem dos alunos, modelagem de instrução,
+planejamento curricular adaptativo e interfaces com o usuário (YANG, 2012).
+“Sistema Inteligente de Tutoria (ITS): Um ITS é um sistema de computador que fornece
+instrução personalizada ou feedback aos alunos sem muita intervenção de professores humanos”
+(COOPER, NAM e SI, 2012, p. 138).
+Um ITS pode apresentar vários benefícios com objetivo de permitir instruções eficazes: (1)
+apresentar instrução individualizada que permite que todos os alunos acessem o mesmo currículo
+com diferentes pontos de entrada e tarefas de aprendizado que são adaptadas às necessidades dos
+alunos; (2) capacitar os alunos a atingirem níveis de proficiência similares de maneira mais eficiente;
+e (3) A partir de um design apropriado, o ITS pode capacitar professores a se concentrarem em um
+pequeno subconjunto de alunos que precisam de ajuda extra e, assim, fornecer instruções mais
+eficazes (COOPER, NAM e SI, 2012).
+Cada vez mais tem sido dada maior atenção a fim de exibir a importância do ITS para
+modificar o modelo e o ambiente de ensino considerado tradicional. Com referências relacionadas
+a um sistema de ensino inteligente e em tecnologias, como a mineração de dados, as iniciativas que
+envolvem os ITS ganham, a cada instante, maior grau de destaque em se tratando de bibliotecas e
+recursos para o enriquecimento do ensino e aprendizagem (CHEN e ZHANG, 2019).
+2.3 SISTEMAS DE ENSINO ADAPTATIVO OU APRENDIZAGEM PERSONALIZADA E
+ESTILOS DE APRENDIZAGEM
+Soflano, Connolly e Hainey (2015) caracterizam como adaptativo a habilidade de um
+sistema de identificar preferências ou característica do usuário e, baseado nessas informações,
+customizar suas tarefas. No contexto pedagógico, uma aprendizagem adaptativa visa usar tecnologia
+para atender as necessidades individuais de aprendizagem dos discentes.
+Segundo Tseng et tal. (2008), para prover uma aprendizagem adaptativa efetiva ao discente
+é importante entender os comportamentos de aprendizagem dos estudantes. Neste contexto,
+observamos a aprendizagem adaptativa frequentemente relacionada ao conceito de estilos de
+
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48703
+
+Brazilian Journal of Development
+aprendizagem (TSENG et al., 2008; MULWA, 2010; MUSTAFA e SHARIF, 2011; ÖZYURT et
+al., 2013).
+O conceito de estilo de aprendizagem é explicado por Akkoyunluo e Soylu (2008) como
+sendo a preferência dos estudantes por métodos de aprendizagem específicos, pois as pessoas
+aprendem de diferentes formas. Por exemplo, algumas pessoas são mais visuais, outras têm uma
+percepção auditiva mais forte. Para Özyurt et al. (2013), conhecer os estilos de aprendizagem e
+desenvolver atividades relacionadas a esses estilos provou que muitos estudantes considerados com
+dificuldade no aprendizado, ao trabalhar em um ambiente adequado a seus estilos, conseguem
+aprender facilmente.
+Neste sentido, há o desenvolvimento de vários projetos que procuram desenvolver soluções
+tecnológicas com base em IA para identificar os perfis de aprendizagem do aluno e/ou promover
+uma trilha de aprendizagem adaptativa às suas necessidades (ALMOHAMMADI et al., 2017; DE
+MELO et al., 2014).
+2.4 APRENDIZADO DE MÁQUINA
+Aprendizado de Máquina (no inglês, Machine Learning) é, basicamente, o conceito de
+máquinas com a capacidade de aprenderem sozinhas a partir de volumes de dados, reconhecendo
+padrões e criando relações entre estes. Um dos usos mais comuns para as técnicas de aprendizado
+de máquina é utilizar os algoritmos de Machine Learning para, a partir de situações já conhecidas,
+prever ou classificar novas situações dentro do mesmo contexto.
+Todos os métodos de aprendizado de máquina podem ser divididos em aprendizado
+supervisionado e aprendizado não supervisionado. Segundo Quin e Chiang (2019), o aprendizado
+supervisionado usa situações conhecidas para predizer novas situações, enquanto no aprendizado
+não supervisionado os dados são analisados sem treinamento prévio, apenas buscando correlações
+no próprio conjunto de dados. Um exemplo de aprendizado não supervisionado seria uma situação
+de clusterização, que procura agrupar elementos com uma maior semelhança dentro de um conjunto
+de dados.
+Um aspecto que difundiu o uso do Machine Learning é que há várias bibliotecas alto nível,
+o que torna seu uso fácil e intuitivo e aplicável para fazer predições e classificações nas diversas
+áreas do conhecimento. Trata-se de uma técnica muito utilizada nas últimas décadas em vários
+campos, que ganhou novas perspectivas com a concepção do Deep Learning, um novo estado da
+arte do aprendizado de máquina que une conceitos de redes neurais aos conceitos de Machine
+Learning. Alguns pesquisadores consideram a mineração de dados sinônimo de aprendizado de
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48704
+
+Brazilian Journal of Development
+máquina. Não há dúvida de que algumas técnicas de Mineração de Dados (Data Mining) usam
+apropriadamente algoritmos de aprendizado de máquina. Essas técnicas podem ser usadas para
+classificações ou predições dentro do contexto da aprendizagem escolar.
+2.5 MINERAÇÃO DE DADOS
+Considerando que as ferramentas estatísticas convencionais possam ser utilizadas para
+analisar dados de pesquisas, torna-se um desafio quando se deseja realizar análises mais profundas
+em grandes volumes de dados, destacando o Big Data. Para o Gartner Inc (2015), o Big Data é
+definido como “alto volume, velocidade e variedade de ativos de informações que exigem formas
+inovadoras de processamento para melhores percepções na tomada aprimorada de decisão”. Neste
+contexto, se apresenta a Mineração de Dados (no inglês, Data Mining) como uma abordagem de
+busca em grandes bancos de dados que permite a exploração e a descoberta de informações que
+podem revelar estruturas de conhecimento.
+O Data Mining surge como um processo de preparação e extração de conhecimentos em
+grandes bases de dados de modo sistemático, interativo e iterativo. Antes mesmo do processo de
+Data Mining, existe a necessidade de compreensão das terminologias correspondentes aos dados,
+informação e conhecimento. Os dados são considerados não estruturados, números ou valores de
+uma determinada tabela, signos ou simbologias. As informações podem ser consideradas como uma
+fonte que permitem agregar significado e proficiência aos dados, como um determinado valor
+compreendido em uma descrição. E finalmente o conhecimento, proporciona aspectos para tomadas
+de decisões que permitem agregar valor (HAN, KAMBER e PEI, 2012).
+Considerado um como assunto interdisciplinar, uma definição comumente compartilhada
+para Data Mining consiste no processo de descoberta de “modelos” para elucidar os padrões
+significativos, apresentar novas perspectivas. Data Mining trata da solução de problemas com base
+da análise de dados presentes em um banco, como por exemplo, analisar padrões de comportamentos
+de clientes ou estudantes. O Data Mining integra um processo mais abrangente, Descoberta de
+Conhecimento de Bases de Dados (no inglês, Knowledge Discovery from Databases – KDD). O
+KDD sintetiza quatro partes distintas: (1) Base de Dados, valores qualitativos ou quantitativos de
+uma coleção de dados; (2) Preparação dos dados, inclui remoção de dados inconsistentes,
+formatação dos dados ou combinação de múltiplas fontes para determinação de análises eficientes;
+(3) Mineração de Dados, algoritmos com a capacidade de extrair conhecimento; (4) Validação,
+avaliação dos resultados da mineração com o objetivo de identificação de conhecimento
+significativos e não triviais (SHMUELI et al., 2019; WITTEN et al., 2016).
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48705
+
+Brazilian Journal of Development
+Na área da Educação existe a teoria da Mineração de Dados Educacionais (no inglês,
+Educational Data Mining - EDM) que consiste no domínio do conhecimento em relação aos dados
+de instituições educacionais. A EDM utiliza abordagens computacionais para analisar dados
+educacionais em busca de informações relacionadas ao contexto das atividades de ensino e
+aprendizagem. A EDM está relacionada ao desenvolvimento de métodos para explorar o cenário
+educacional, como compreender melhor os estudantes em seu ambiente de aprendizado
+(HIDAYAT, WARDOYO e AZHARI, 2018).
+2.6 SERIOUS GAME
+Os jogos modernos de computador mostram potencial não apenas para envolver e divertir
+usuários, mas também para promover o aprendizado. No instante em que agregam aprendizado são
+ressignificados como Jogos Sérios (no inglês, Serious Games - SGs). Os SGs foram projetados com
+objetivos que transcendem o conceito de jogo, enquadrado apenas como entretenimento. Serious
+Games, como jogos digitais, apresentam objetivos de educar e entreter. Os SGs apresentam
+conceitos para desenvolver competências, construir conhecimentos e promover atitudes em
+situações reais ou simuladas. De modo a explorar a simulação e a visualização de tecnologias, os
+SGs são capazes de contextualizar a experiência do jogador com desafios em ambientes realistas,
+apoiando a cognição com apresentação de situações com propósitos lúdicos (GEE, 2007;
+PRENSKY, 2003).
+Em um contexto histórico, a primeira incidência do termo Serious Games, com uso do
+significado próximo ao contemporâneo, apareceu em 1970 em um livro escrito por Clark C. Abt de
+mesmo nome, “Serious Games”. Abt é um pesquisador que trabalhou em um laboratório de pesquisa
+nos EUA durante a Guerra Fria. Um dos seus objetivos foi a utilização de jogos para treinamento e
+educação de militares para estudar a Guerra Fria no contexto de conflito em escala mundial (ABT,
+1970). Abt exibe uma definição clara, em seu livro, para Serious Games, apresentada em tradução
+livre do inglês: “Estamos preocupados com Jogos Sérios, que tenham propósito educacional e
+cuidadosamente pensado e não destinados a serem jogados principalmente por entretenimento. Isso
+não significa que problemas sérios ou jogos não são ou não deveriam ser divertidos”
+(ABTASSOCIATES, 2020).
+Serious Games têm por objetivo a simulação ou desenvolvimento de processos do mundo
+real formulados com propostas para resolver problemas. Estes problemas, que podem ser
+representados sob a forma de desafios em jogos digitais, suportam relacionamentos com diversas
+áreas como: educação; finalidades militares (como apresentada inicialmente na proposta de Clark
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48706
+
+Brazilian Journal of Development
+C. Abt); saúde; indústria; ambiente corporativo; engenharias; política; comunicação; marketing,
+dentre várias outras. Citando a área educacional, a resolução destes problemas suportados nos
+Serious Games pode trazer benefícios ao estudante como aprimoramento da memorização em
+desenvolvimento da frequência de interações entre um jogo e um ambiente realista, fornecendo
+contexto para aprendizagem (KAPP, 2012; SAWYER, 2008).
+Embora os Serious Games e a IA na Educação compartilhem objetivos semelhantes na
+questão de promover a aprendizagem profunda, as técnicas empregadas podem ser diferentes. As
+abordagens de IA na Educação podem complementar e aprimorar as técnicas de desenvolvimento
+de Serious Games. Em Serious Games educacionais, os desafios são garantir que a IA do jogo
+ofereça suporte aos objetivos educacionais e que possa introduzir funções da IA na Educação, de
+acordo com a demanda, sem comprometer os princípios de design de jogos, para maximizar a
+promoção do aprendizado. Esse comportamento do IA no SG pode se materializar como um sistema
+de tutoria inteligente para apoiar, por exemplo, eventuais dificuldades dos estudantes na resolução
+do desafio durante o jogo (JOHNSON, VILHJÁLMSSON e MARSELLA, 2005).
+2.7 INTERATIVIDADE
+Alguns trabalhos unem IA com recursos interativos, somando o potencial dessas duas
+abordagens. Por exemplo, a pesquisa de Dogmus, Erdem e Patoglu (2015), na qual propõe uma
+ferramenta educacional interativa para aplicação de IA com robótica. Portanto, citamos também a
+interatividade como um possível diferencial para somar valor às aplicações educacionais com IA.
+Diaz, Moro e Carrión (2015) apresentam a interatividade como um dos eixos que permeiam
+a educação do futuro. Bates (2015) destaca que através de intensa interação com recursos de
+aprendizagem os estudantes passam mais tempo aprendendo, o que colabora para aumentar a
+aprendizagem.
+A interatividade promove um maior dinamismo com o usuário, uma vez que o tempo de
+resposta para muitas ações pode ser imediato. De acordo com Tori (2010), o uso de tecnologias
+interativas também pode colaborar para diminuir a sensação de distância dos estudantes ao usar um
+ambiente online.
+3 MATERIAIS E MÉTODOS
+Este trabalho apresenta um estudo exploratório do tema Inteligência Artificial na Educação.
+Os critérios que utilizamos para seleção dos artigos e para análise dos mesmos foram critérios
+bibliométricos. Segundo Kurtz e Bollen (2010), a bibliometria é geralmente definida como estudo
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48707
+
+Brazilian Journal of Development
+quantitativo de publicações com base em citações e análise de texto, mas também pode incluir
+estudos baseados em dados de uso.
+Para Bornmann e Daniel (2008), análises bibliométricas são adequadas para a avaliação de
+resultados científicos, uma vez que muitos estudos têm mostrado que o número de citações de
+publicações de cientistas está correlacionado com outras avaliações de impacto ou influência dos
+mesmos. A bibliometria também tem sido utilizada para avaliar tendências de estudos nos mais
+diversos campos, como exemplo temos os trabalhos de Martin et al. (2011), de Kajikawa et al.
+(2008) e de Li, Wang e Ho (2011).
+Com o intuito de buscar parâmetros bibliométricos para entender os caminhos que a IA está
+tomando na educação, foram realizadas buscas na base Web of Science, uma base muito usada
+internacionalmente, de natureza multidisciplinar e que abrange por volta de 12.000 journals de alto
+impacto (CHEN, CHIANG e STOREY, 2012; PELICIONI et al., 2018).
+Para não restringir a um assunto específico dentro do tema IA na Educação, procuramos
+definir termos mais abrangentes para a busca. Os artigos pesquisados deveriam apresentar os termos
+Inteligência, Artificial, Educação ou Inteligência, Artificial, Ensino (no inglês). Foi evitado o termo
+Aprendizagem, pois há uma conotação técnica forte para este termo dentro da área da computação
+e, portanto, um filtro com esse termo poderia resultar em artigos puramente da computação. No
+filtro de pesquisa também restringimos os resultados às áreas de conhecimento de Educação ou da
+Ciência da Computação.
+Na busca, foram analisadas publicações de encontros, revisões, editoriais e artigos
+(principalmente). Devido ao caráter tecnológico do tema e, portanto, altamente mutável e
+inconstante, o range de busca foi limitado em um período de aproximadamente 6 anos (janeiro de
+2014 a julho de 2020). A Figura 1 exibe os passos da metodologia adotada.
+
+Fig. 1 Metodologia de pesquisa.
+
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48708
+
+Brazilian Journal of Development
+Ao analisar os artigos encontrados, houve priorização em relação aos artigos mais citados
+no período. Desta forma, foram levantados artigos cientificamente consolidados para futuras
+referências e estudos. Através dos artigos, foi realizada uma análise textual para identificar
+tendências de estudo de IA em Educação. Com este intuito, durante a análise textual foram definidas
+algumas vertentes e feita a contagem dos artigos que abordam essas vertentes, para identificação de
+quais poderiam ser mais significativas.
+A identificação de tendências não se trata de um critério exclusivo, mas de um importante
+critério para identificar relevância de temas de pesquisa. Ao final, também, foram apresentados
+alguns outros dados extraídos da plataforma Web Of Science, considerados pertinentes ao estudo
+exploratório, para fins de completação das discussões.
+4 ANÁLISE DE RESULTADOS
+Através da base Web Of Science, foram filtrados os 60 artigos mais citados de IA na
+Educação, no período de janeiro de 2014 a junho de 2020 com o intuito de identificar as principais
+vertentes que têm sido abordadas por esses artigos e consequentemente destacar temas importantes
+que, na atualidade, estão sendo discutidos em pesquisas científicas abordando IA na educação.
+Após o levantamento dos artigos, foi realizada uma análise textual para verificar as vertentes
+cobertas em cada artigo. Cabe ressaltar que alguns artigos tangenciam mais de um tema e, que o
+primeiro tema (IA na Educação), trata-se de um enfoque mais geral de IA na Educação, sem adentrar
+muito especificamente em uma vertente. A lista dos temas identificados na análise textual pode ser
+observada na Tabela 1.
+Tabela 1. Lista de vertentes identificadas de IA na Educação
+Vertentes
+
+Ocorrências
+
+IA na Educação
+
+39
+
+Tutores Inteligentes
+
+17
+
+Machine Learning na Educação
+
+6
+
+Ensino e Inovação
+
+5
+
+Ensino Adaptativo
+
+5
+
+Data Mining em Educação
+
+4
+
+Gaming em Educação
+
+3
+
+Robótica e IA na Educação
+
+3
+
+IA em Educação Médica
+
+2
+
+Diagnósticos com IA em Educação
+
+2
+
+Estilos de Aprendizagem com IA
+
+2
+
+IoT e IA na Educação
+
+2
+
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48709
+
+Brazilian Journal of Development
+IA, Política e Educação
+
+1
+
+Mundos Virtuais na Educação
+
+1
+
+O gráfico apresentado na Figura 2 exibe, em ordem decrescente, as vertentes de IA com pelo
+menos duas ocorrências em nossa análise. Através da visualização do gráfico, obteve-se como
+resultado, três conclusões principais: A) Uma quantidade significativa de artigos trazem uma
+abordagem mais geral de IA em Educação; B) O estudo do conceito de Tutores Inteligentes é um
+tendência forte dentro do tema IA na Educação; e C) Há vários outros temas que derivam ou se
+relacionam com IA na Educação, mas os quais não identificamos uma quantidade suficiente para
+posicioná-los como tendência.
+
+Fig. 2 Tendências de Estudos de IA na Educação
+
+A tabela 2 exibe a lista dos dez artigos mais citados no período pesquisado apresentando
+título, autores, ano e número de citações. Apesar de os artigos mais novos terem potencial menor de
+citação, isto não descaracteriza o número de citação como um parâmetro de relevância importante
+a ser considerado. Foi feito um cruzamento de referências entre estes dez artigos e pôde-se constatar
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48710
+
+Brazilian Journal of Development
+que não há referências centrais que fundamentam esses artigos, mas sim uma variedade de fontes e
+referências.
+Tabela 2. Dez artigos de IA na Educação mais citados no período 2014 - jun/2020
+Título
+
+Autores
+Johnson, W. Lewis;
+Lester, James C.
+
+Ano
+
+Citações
+
+2016
+
+36
+
+1
+
+Face-to-Face Interaction with Pedagogical Agents,
+Twenty Years Later
+
+2
+
+Research-Based Design of Pedagogical Agent Roles: a Kim, Yanghee; Baylor,
+Review, Progress, and Recommendations
+Amy L.
+
+2016
+
+29
+
+3
+
+A Survey of Artificial Intelligence Techniques
+Employed for Adaptive Educational Systems Within
+E-Learning Platforms
+
+Almohammadi, Khalid;
+Hagras, Hani;
+Alghazzawi, Daniyal;
+Aldabbagh, Ghadah
+
+2017
+
+27
+
+4
+
+Technology Support for Discussion Based Learning:
+From Computer Supported Collaborative Learning to
+the Future of Massive Open Online Courses
+
+Rose, Carolyn Penstein;
+Ferschke, Oliver
+
+2016
+
+25
+
+5
+
+Design and Implementation of Intelligent Systems
+With LEGO Mindstorms for Undergraduate Computer Cuellar, M. P.; Pegalajar,
+Engineers
+M. C.
+
+2014
+
+23
+
+6
+
+Next-Generation of Virtual Personal Assistants
+(Microsoft Cortana, Apple Siri, Amazon Alexa and
+Google Home)
+
+Kepuska, Veton;
+Bohouta, Gamal
+
+2018
+
+21
+
+7
+
+Fuzzy cognitive mapping of LMS users' Quality of
+Interaction within higher education blended-learning
+environment
+
+Dias, Sofia B.;
+Hadjileontiadou, Sofia J.;
+Hadjileontiadis, Leontios
+J.; Diniz, Jose A.
+
+2015
+
+21
+
+8
+
+SMILI (sic): a Framework for Interfaces to Learning
+Data in Open Learner Models, Learning Analytics and
+Related Fields
+Bull, Susan; Kay, Judy
+
+2016
+
+20
+
+2017
+
+19
+
+2016
+
+18
+
+9
+
+UTiLearn: A Personalised Ubiquitous Teaching and
+Learning System for Smart Societies
+
+Mehmood, Rashid; Alam,
+Furqan; Albogami,
+Nasser N.; Katib, Iyad;
+Albeshri, Aiiad;
+Altowaijri, Saleh M.
+
+10
+
+Letting Artificial Intelligence in Education Out of the
+Box: Educational Cobots and Smart Classrooms
+
+Timms, Michael J.
+
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48711
+
+Brazilian Journal of Development
+Através da pesquisa, identificou-se congressos e revistas em que houve maior espaço para
+as discussões sobre IA na Educação. A tabela mostra as três de fontes de pesquisa com maior número
+de registros de publicações de IA na Educação. Pode-se notar que essas fontes representam, cada
+uma, entre 4,5 e 6% das publicações do tema IA na Educação no período, considerando as bases
+pesquisadas.
+Tabela 3. Principais fontes de publicação
+Títulos da Fonte
+
+Registros
+
+%
+
+ADVANCES IN INTELLIGENT SYSTEMS AND COMPUTING
+
+31
+
+6.15
+
+LECTURE NOTES IN ARTIFICIAL INTELLIGENCE
+
+24
+
+4.76
+
+INTERNATIONAL JOURNAL OF ARTIFICIAL INTELLIGENCE IN
+EDUCATION
+
+23
+
+4.56
+
+5 CONCLUSÕES
+A revisão exploratória possibilitou a detecção, classificação e descrição de diversas vertentes
+com a possibilidade de apresentação de uma visão ampla do tema de IA na Educação. O trabalho
+permitiu a definição de diferentes linhas de pesquisa que puderam evidenciar tendências de estudos.
+Foi possível ter uma compreensão de quais conceitos de IA na educação estão consolidados. É
+esperado que o presente estudo possa contribuir para novas pesquisas, considerando papel
+fundamental na busca por maiores compreensões da IA na Educação.
+A IA está sendo inserida em todos os setores de nossa sociedade, mas na educação é
+fundamental que essa apropriação seja planejada, gradativa, com um enfoque maior de suporte e
+não de robotização do ensino. Foi observado, neste estudo, que umas das principais aplicações de
+IA na Educação são a partir dos Sistemas de Tutores Inteligentes, mas muitas outras linhas de IA
+estão caminhando para construir e consolidar seus caminhos na educação.
+Acredita-se que ferramentas inteligentes possam trabalhar como apoio na coleta de
+informações durante os processos de ensino-aprendizagem em ambientes educacionais. Desta
+forma, pode auxiliar na seleção de conteúdo e subsidiar métodos de avaliação discente. E esse
+suporte inteligente de informações poderá gerir estratégias de modo identificar padrões, realizar
+
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48712
+
+Brazilian Journal of Development
+diagnósticos e intervir na comunicação entre professor e aluno para subsidiar tomadas de decisão
+no processo de ensino-aprendizagem.
+REFERÊNCIAS
+ABT, C. C. Serious Games. New York: Viking Press, 1970.
+ABTASSOCIATES. Clark C. Abt, Ph.D. Abt Associates Founder, President and Treasurer (19651985), Chairman of the Board (1986-2006) and Chairman Emeritus. Disponível em:
+<https://www.abtassociates.com/who-we-are/our-people/clark-c-abt-phd>. Acesso em: 17 jun.
+2020.
+AKKOYUNLU, B.; SOYLU, M. Y. A study of student’s perceptions in a blended learning
+environment based on different learning styles. Educational Technology and Society, v. 11, n. 1, p.
+183–193, 2008.
+ALMOHAMMADI, K. et al. A Survey of Artificial Intelligence Techniques Employed for Adaptive
+Educational System Within E-Learning Platforms. Journal Of Artificial Intelligence And Soft
+Computing Research, v. 7, n. 1, p. 47–64, jan. 2017.
+BATES, A. W. Teaching in a Digital Age: Guidelines for Designing Teaching and Learning
+Vancouver BC: Tony Bates Associates Ltd, 2015.
+BORNMANN, L.; DANIEL, H.-D. What do citation counts measure? A review of studies on citing
+behavior. Journal of Documentation, v. 64, n. 1, p. 45–80, 2008.
+CHEN, H.; CHIANG, R. H. L.; STOREY, V. C. Business Intelligence And Analytics: From Big
+Data To Big Impact. Mis Quartely, v. 36, n. 4, p. 1165–1188, 2012.
+CHEN, Y.; ZHANG, Y. Research on Intelligent Tutoring System Based on Data-Mining
+Algorithms. Proceedings - 2019 International Conference on Intelligent Transportation, Big Data
+and Smart City, ICITBS 2019, p. 443–446, 2019.
+COOPER, S.; NAM, Y. J.; SI, L. Initial results of using an intelligent tutoring system with Alice. p.
+138, 2012.
+DE MELO, F. R. et al. Computational organization of didactic contents for personalized virtual
+learning environments. Computers & Education, v. 79, p. 126–137, out. 2014.
+DIAZ, J. C. T.; MORO, A. I.; CARRION, P. V. T. Mobile learning: perspectives. Rusc-universities
+And Knowledge Society Journal, v. 12, n. 1, p. 38–49, jan. 2015.
+DOGMUS, Z.; ERDEM, E.; PATOGLU, V. REACT!: An Interactive Educational Tool for AI
+Planning for Robotics. IEEE Transactions On Education, v. 58, n. 1, p. 15–24, fev. 2015.
+
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48713
+
+Brazilian Journal of Development
+GARTNERINC.
+Big
+Data
+Basics
+for
+Digital
+Marketers.
+Disponível
+em:
+<https://www.gartner.com/en/marketing/insights/articles/big-data-basics-for-digital-marketers>.
+Acesso em: 18 jun. 2020.
+GEE, J. P. What Video Games Have to Teach Us About Learning and Literacy. 2. ed. New York:
+St. Martin’s Griffin, 2007.
+HAN, J.; KAMBER, M.; PEI, J. Data mining : concepts and techniques. 3. ed. Waltham: Elsevier,
+2012.
+HIDAYAT, N.; WARDOYO, R.; AZHARI, S. . Educational Data Mining ( EDM ) as a Model for
+Students ’ Evaluation in Learning Environment. 2018 Third International Conference on
+Informatics and Computing (ICIC), p. 16–19, 2018.
+JOHNSON, W. L.; VILHJÁLMSSON, H. H.; MARSELLA, S. Serious games for language
+learning: How much game, how much AI? Aied, v. 125, n. June 2014, p. 306–313, 2005.
+KAJIKAWA, Y. et al. Tracking emerging technologies in energy research: Toward a roadmap for
+sustainable energy. Technological Forecasting And Social Change, v. 75, n. 6, p. 771–782, jul. 2008.
+KAPP, K. M. The Gamification of Learning and Instruction: Game-Based Methods and Strategies
+for Training and Education. 1. ed. San Francisco: Pfeiffer & Company, 2012.
+KURTZ, M. J.; BOLLEN, J. Usage Bibliometrics. Annual Review Of Information Science And
+Technology, v. 44, p. 3–64, 2010.
+LI, J.; WANG, M.-H.; HO, Y.-S. Trends in research on global climate change: A Science Citation
+Index Expanded-based analysis. Global And Planetary Change, v. 77, n. 1–2, p. 13–20, 2011.
+MARTIN, S. et al. New technology trends in education: Seven years of forecasts and convergence.
+Computers & Education, v. 57, n. 3, p. 1893–1906, nov. 2011.
+MULWA, C.; LAWLESS, S.; SHARP, M.; ARNEDILLO-SANCHEZ, I.; WADE, V. Adaptive
+Educational Hypermedia Systems in Technology Enhanced Learning: A Literature Review.
+Proceedings of the 2010 ACM Conference on Information Technology Education. Anais SIGITE
+2010.
+New
+York,
+NY,
+USA:
+ACM,
+2010.
+Disponível
+em:
+<http://doi.acm.org/10.1145/1867651.1867672> Acesso em 12 jun 2020.
+MUSTAFA, Y. E. A.; SHARIF, S. M. An approach to adaptive e-learning hypermedia system based
+on learning styles (AEHS-LS): Implementation and evaluation. International Journal of Library and
+Information Science, v. 3, n. 1, p. 15-28, 2011.
+ÖZYURT, Ö.; ÖZYURT, H.; BAKI, A.; GÜVEN, B. Integration into mathematics classrooms of
+an adaptive and intelligent individualized e-learning environment: Implementation and evaluation
+of UZWEBMAT. Computers in Human Behavior, v. 29, n. 3, p. 726–738, 2013.
+PELICIONI, L. C. et al. Application of a bibliometric tool for studying space technology trends.
+Journal of Aerospace Technology and Management, v. 10, 2018.
+
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+48714
+
+Brazilian Journal of Development
+PRENSKY, M. Digital Game-Based Learning. ACM Computers in Entertainment, v. 1, n. 1, p. 1–
+4, 2003.
+QIN, S. J., CHIANG, L. H. Advances and opportunities in machine learning for process data
+analytics. Computers & Chemical Engineering. v. 126, p. 465-473, 2019. Disponível em:
+<http://www.sciencedirect.com/science/article/pii/S0098135419302248> Acesso em 12 jun 2020.
+SAWYER, B. From Cells to Cell Processors: The Integration of Health and Video Games. in IEEE
+Computer Graphics and Applications, v. 28, n. 6, p. 83–85, 2008.
+SHMUELI, G. et al. Data mining for business analytics : concepts, techniques and applications in
+Python. 1. ed. Hoboken: Wiley, 2019.
+SOFLANO, M.; CONNOLLY, T. M.; HAINEY, T. An application of adaptive games-based
+learning based on learning style to teach SQL. Computers & Education, v. 86, p. 192–211, 2015.
+TORI, R. Educação sem Distância: As Tecnologias Interativas na Redução de Distâncias em Ensino
+e Aprendizagem. São Paulo: Editora Senac, 2010.
+TSENG, J. C. R.; CHU, H. C.; HWANG, G. J.; TSAI, C. C. Development of an adaptive learning
+system with two sources of personalization information. Computers & Education, v. 51, n. 2, p.
+776–786, 2008.
+WITTEN, I. H. (IAN H. . et al. Data mining : practical machine learning tools and techniques. [s.l.]
+Morgan Kaufmann, 2016.
+YANG, F.-J. The ideology of intelligent tutoring systems. ACM Inroads, v. 1, n. 4, p. 63, 2012.
+
+Braz. J. of Develop., Curitiba, v. 6, n. 7, p. 48699-48714 jul. 2020.
+
+ISSN 2525-8761
+
+

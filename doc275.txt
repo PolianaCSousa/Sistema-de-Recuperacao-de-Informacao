@@ -1,0 +1,90 @@
+Definição de firewall: O que é firewall de rede?
+Um firewall é um dispositivo de segurança de rede projetado para monitorar, filtrar e controlar o tráfego de rede de entrada e saída com base em regras de segurança predeterminadas. O objetivo principal de um firewall é estabelecer uma barreira entre uma rede interna confiável e redes externas não confiáveis.
+
+Os firewalls vêm em formas de hardware e software, e funcionam inspecionando pacotes de dados e determinando se os permitem ou os bloqueiam com base em um conjunto de regras. As organizações podem configurar essas regras para permitir ou negar tráfego com base em vários critérios, como endereços IP de origem e destino, números de porta e tipo de protocolo. 
+
+Entendendo firewalls e segurança de rede
+Os firewalls são o alicerce da segurança da rede, protegendo a rede contra acesso não autorizado. Eles impedem que criminosos — hackers, bots e outras ameaças — sobrecarreguem ou se infiltrem em uma rede privada para roubar dados confidenciais.
+
+Tradicionalmente, os firewalls regulam o tráfego formando um perímetro seguro em torno de uma rede ou computador. Isso impede que qualquer pessoa acesse recursos de rede se não estiver autorizada a fazê-lo. Sem essa proteção, praticamente qualquer pessoa poderia entrar e fazer o que quiser.
+
+O cenário atual de segurança cibernética exige uma abordagem em camadas. Embora os firewalls continuem sendo a base da defesa da rede, as ameaças avançadas exigem medidas de segurança adicionais. O aumento da computação em nuvem e dos ambientes de trabalho híbridos destaca ainda mais a necessidade de soluções de segurança abrangentes.
+
+Felizmente, tecnologias de firewall de ponta com serviços alimentados por IA estão trazendo a segurança de rede à velocidade. Combinando os pontos fortes das ferramentas tradicionais com os recursos inovadores das novas soluções, os fornecedores modernos de firewall ajudam as organizações a se defender até mesmo contra as estratégias de ataque mais complexas.
+
+O que um firewall faz?
+Os firewalls protegem contra tráfego malicioso. Eles estão estrategicamente posicionados na borda da rede ou em um data center, permitindo que eles monitorem de perto qualquer coisa que tente cruzar esse limite.
+
+Essa visibilidade também permite que um firewall de rede inspecione e autentique granularmente pacotes de dados em tempo real. Isso envolve verificar o pacote de dados em relação a critérios predefinidos para determinar se ele representa uma ameaça. Se ele não atender aos critérios, o firewall o impedirá de entrar ou sair da rede.
+
+Os firewalls regulam o tráfego de entrada e saída, protegendo a rede contra:
+
+Ameaças externas, como vírus, backdoors, e-mails de phishing e ataques de negação de serviço (DoS). Os firewalls filtram fluxos de tráfego de entrada, impedindo o acesso não autorizado a dados confidenciais e impedindo possíveis infecções por malware.
+
+Ameaças internas, como agentes mal-intencionados conhecidos ou aplicativos arriscados. Um firewall pode impor regras e políticas para restringir certos tipos de tráfego de saída, o que ajuda a identificar atividades suspeitas e mitigar a exfiltração de dados.
+Explicação sobre firewall vs. antivírus
+Qual é a diferença entre firewall e software antivírus? Os firewalls se concentram no controle do tráfego de rede e na prevenção de acesso não autorizado. Por outro lado, os programas antivírus visam e eliminam ameaças no nível do dispositivo. Mais especificamente, suas principais diferenças incluem:
+
+Escopo: O software antivírus é principalmente uma solução de endpoint, o que significa que está instalado em um dispositivo individual. Os firewalls são implantados principalmente no nível da rede, mas algumas organizações instalam firewalls hospedados diretamente em um endpoint para proteção extra.
+
+Funcionalidade: Os firewalls monitoram o tráfego, bloqueando dados maliciosos antes que eles entrem na rede (ou endpoint). As ferramentas antivírus verificam o ambiente local em busca de sinais de malware, ransomware e outros ataques infecciosos.
+As empresas normalmente implantam firewalls e programas antivírus. Como soluções complementares, cada uma delas fornece camadas de proteção essenciais para proteger ativos de negócios.
+
+Funções do firewall: NAT e VPN
+A Network Address Translation (NAT) e a Virtual Private Network (VPN) são duas tecnologias distintas, cada uma com seu próprio conjunto de funções relacionadas à segurança e conectividade de rede. Embora o NAT esteja associado principalmente à tradução de endereços para fins de roteamento, as VPNs são usadas para criar conexões seguras e criptografadas pela internet.
+
+NAT
+O NAT altera o destino ou os endereços de origem dos pacotes de dados à medida que eles passam por um firewall. Isso permite que vários dispositivos se conectem à internet usando o mesmo endereço IP, o que ajuda a proteger a rede privada contra exposição direta a ameaças externas.
+
+Em um ambiente de escritório, cada funcionário usa seu próprio computador ou dispositivo móvel para acessar a internet para navegar, enviar e-mails e acessar serviços em nuvem. Apesar de cada dispositivo ter seu próprio endereço IP privado dentro da rede interna da empresa, todo o tráfego de saída aparece para redes externas como originário do mesmo endereço IP público atribuído à empresa. Como resultado, é mais difícil para possíveis invasores identificar e direcionar dispositivos individuais.
+
+VPN
+Uma VPN é um tipo deservidor de  proxy. Portanto, ele serve como uma barreira entre um computador ou rede e a internet, recebendo todas as solicitações da web antes de encaminhá-las para a rede.
+
+As VPNs são  comuns e estendem a rede privada em uma rede pública, como a internet. Isso permite que os usuários transmitam dados com segurança como se seus dispositivos estivessem diretamente conectados à rede privada. A conexão estabelece um túnel criptografado entre dispositivos remotos e a rede corporativa, permitindo acesso seguro.
+
+Essa função é especialmente útil em um ambiente híbrido. Os funcionários remotos podem aproveitar VPNs para acessar redes corporativas e aplicativos críticos, independentemente de onde ou como estejam trabalhando.
+Os firewalls evoluíram em quatro fases distintas:
+
+Os firewalls de primeira geração começaram em 1989 com a abordagem de filtragem de pacotes. Esses firewalls examinam pacotes de dados individuais, tomando decisões para permitir ou bloqueá-los com base em regras predefinidas. No entanto, eles não conseguiram identificar se esses pacotes continham código malicioso (ou seja, malware).
+
+Os firewalls de segunda geração começaram no início dos anos 2000. Caso contrário, conhecidos como firewalls com estado, eles rastreiam o estado das conexões ativas. Ao observar o tráfego de rede, eles usam contexto para identificar e agir sobre comportamento suspeito. Infelizmente, essa geração também tem suas limitações.
+
+Os firewalls de terceira geração surgiram na última metade do início dos anos 2000. Muitas vezes chamados de firewalls proxy ou gateways no nível do aplicativo, eles atuam como intermediários entre um cliente e um servidor, encaminhando solicitações e filtrando respostas.
+
+O firewall de quarta geração, também conhecido como next-generation firewall (NGFW), começou em 2010. Os NGFWs combinam recursos tradicionais com recursos novos e avançados, como prevenção de intrusão (IPS), filtragem na camada do aplicativo e detecção avançada de ameaças.
+Embora cada geração tenha melhorado na última, muitas iterações anteriores ainda estão em uso hoje. Vamos analisar os benefícios de cada firewall em mais detalhes. 
+Firewalls sem estado
+Um firewall sem estado protege a rede analisando o tráfego no protocolo da camada de transporte — o local onde os dispositivos se comunicam entre si. Em vez de armazenar informações sobre o estado da conexão de rede, ela inspeciona o tráfego de pacote a pacote.
+
+Em seguida, ele decide bloquear ou permitir o tráfego com base nos dados localizados no “cabeçalho do pacote”. Isso pode incluir endereços IP de origem e destino, números de porta, protocolos e outras informações. Ao todo, esse processo é chamado de filtragem de pacotes.
+
+Apesar de serem rápidos e baratos, os firewalls sem estado têm suas vulnerabilidades. Criticamente, eles têm visibilidade zero no sequenciamento de pacotes. Isso significa que eles não podem detectar pacotes ilegítimos, que podem conter vetores de ataque ou não ter uma solicitação correspondente.
+
+Da mesma forma, eles só têm informações sobre o cabeçalho do pacote, não sobre seu conteúdo real. Isso impossibilita que um firewall sem estado detecte malware oculto dentro da carga útil de um pacote.
+
+Firewalls com estado
+Firewalls com estado rastreiam o status mais recente ou imediato das conexões ativas. O monitoramento do estado e do contexto das comunicações de rede pode ajudar a identificar ameaças com base em informações mais perspicazes.
+
+Por exemplo, firewalls com reconhecimento de estado bloqueiam ou permitem o tráfego analisando de onde ele vem, para onde vai e o conteúdo de seus pacotes de dados. Além disso, eles avaliam o comportamento de pacotes de dados e conexões de rede, catalogando padrões e usando essas informações para melhorar a detecção de ameaças futuras.
+
+Essa abordagem oferece mais proteção em comparação com a filtragem de pacotes, mas afeta ainda mais o desempenho da rede porque conduz uma análise mais aprofundada. Pior ainda, os invasores podem enganar firewalls de inspeção com estado para permitir que conexões prejudiciais escapem. Eles exploram regras de rede e enviam pacotes maliciosos usando protocolos que o firewall acredita serem seguros.
+
+Gateways no nível da aplicação
+Os gateways no nível da aplicação, ou firewalls proxy, atuam como intermediários entre sistemas internos e externos. Notavelmente, eles operam na Camada 7 domodelo deInterconexão de Sistemas  Abertos (Open Systems Interconnection, OSI)  — a camada de aplicação.OSI Como a camada mais próxima do usuário final, os aplicativos da Camada 7 incluem navegadores da web, clientes de e-mail e ferramentas de mensagens instantâneas.
+
+Os firewalls proxy interceptam e analisam todo o tráfego de entrada e saída, aplicando políticas de segurança granulares para controlar o acesso e proteger a rede. Eles oferecem filtragem de pacotes, inspeção no nível da aplicação, filtragem de URL e muito mais. 
+Os NGFWs protegem as empresas contra ameaças cibernéticas emergentes. Eles combinam todas as melhores partes das tecnologias de firewall anteriores com os recursos avançados necessários para mitigar ataques cibernéticos modernos. Por exemplo, isso inclui:
+
+Inspeção profunda de pacotes (DPI), um método de examinar o conteúdo dos pacotes de dados à medida que eles passam pelos pontos de verificação da rede. A DPI analisa uma gama maior de informações, permitindo que ela encontre ameaças ocultas de outra forma.
+Intrusion Prevention (IPS), um sistema que monitora o tráfego em tempo real para identificar proativamente ameaças e automatizar a resposta.
+Prevenção de perda de dados (DLP), uma solução de segurança cibernética que bloqueia divulgações de dados intencionais e acidentais.
+Os NGFWs combinam a proteção das gerações anteriores com os recursos avançados de segurança mencionados acima. Eles podem ser implantados como software ou hardware e podem ser dimensionados para qualquer local: escritório remoto, filial, campus, centro de dados e nuvem. Os NGFWs podem simplificar, unificar e automatizar a proteção de nível empresarial com gerenciamento centralizado que se estende por ambientes distribuídos. Esses recursos incluem:
+
+Segurança da Internet das Coisas (IoT) para descobrir dispositivos BYOD, invasores ou sombreados de TI.
+Sandboxing de rede para monitorar e analisar objetos suspeitos em um ambiente isolado
+Acesso de rede Zero-Trust (ZTNA) para gerenciar o acesso à rede para usuários e aplicativos com base em identidade e contexto
+Segurança de tecnologia operacional (OT) para proteger ambientes de OT com inteligência de ameaças, IPS e aplicativos SCADA e inspeção de ameaças
+Segurança do Sistema de nomes de domínio (DNS) para monitorar, detectar e prevenir recursos contra ataques à camada DNS
+Arquitetura de WAN definida por software (SD-WAN) para fornecer seleção dinâmica de caminho, com base na política de negócios ou aplicativos, política centralizada e gerenciamento de appliances, rede privada virtual (VPN) e configuração de toque zero.
+ 

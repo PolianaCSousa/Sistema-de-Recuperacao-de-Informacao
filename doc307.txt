@@ -1,0 +1,486 @@
+Capítulo 3 |
+ AbordagensTeóricas em IHC    47
+no top o  da tela é, em mé dia, em torno de cinco ve zes mais rápido do que um menu 
+s emelhante em uma aplicaçãoWindows (Figura 3.4).
+Posicionamento do menu no topo da tela e no topo da janela.
+Figura 3.4   
+Um menu p op-up circ ular (
+pie  me nu
+) tem como vant agem s obre um menu p op-up 
+horizont al o fato  de que to das as op çõ es est ão e quidist antes e próx imas do p onto em 
+que o menu foi acionado (Figura 3.5).
+M enu pop -up circular.
+Figura 3.5   
+ 
+3.3 Psicologia Cognitiva Aplicada
+C ard, Moran e Ne well (1983) propus eram uma psicologia aplicada de pro c ess amento 
+de infor mação. S e gundo eles, a interação humano-comput ador consiste em o usuário 
+
+e o comput ador s e engajarem num diálogo comunicativo com o objetivo de re alizar 
+
+alguma t arefa. E to dos os me canismos ut i lizados ness e diálogo const ituem a inter-
+
+face: os disp osit ivos f ísicos, como os te clados e as telas, assim como os prog ramas 
+
+comput acionais que cont rolam a interação. S eu objetivo era criar uma psicologia ba-
+
+s e ada em anális e de t arefas, cálc u los e aproximaçõ es, p ara que o desig ner do sistema 
+
+pudess e a lcançar um e qui líbr io ent re p arâmet ros comput acionais de des emp en ho 
+
+humano e out ras variáveis de engen har ia.
+Para eles, a anális e da estr utura da t arefa ofere c e grande par te do conteúdo pre di-
+t ivo  da psicolog ia. Uma ve z que con he ç amos os obj et ivos das p ess o as, e consideran-
+
+48    I nteração Humano - Computador
+do suas limit açõ es de p erc ep ção e de pro c ess amento de infor mação, de vemos p o der 
+forne cer resp ost as a p ergunt as do tip o: aproximadamente qu anto temp o le va para 
+
+uma p ess oa re alizar as t arefas f ísicas pre deﬁ
+nidas que lhe p ermitem alcançar s eus 
+objetivos? 
+ 
+3.3.1 Processador Humano de Informação
+C om bas e na psicologia de pro c ess amento de informaçõ es, C ard, Moran e Ne well 
+(1983) propus eram o“pro cess ador humano mo delo” de informaçõ es (
+Model Human 
+Processor
+, MHP). S e gundo eles, o us o de mo delos que ve em o s er humano como um 
+pro c ess ador de infor maçõ es forne c e um arcab ouço comum nos qu ais mo delos de 
+memória, de res olução de problemas, de p erc ep ção e de comp or t amento p o dem s er 
+
+integ rados uns com os out ros. C onsiderando a mente humana como um sistema de 
+
+pro c ess amento de informaçõ es, é p ossível fazer pre diçõ es aproximadas de par te do 
+
+c o mp o r t a m e nt o  hu m a n o. 
+O MHP é comp osto de três subsistemas, cada qu al com suas própr ias memórias 
+e pro c ess adores, junt amente com alguns pr incípios de op eração (Figura 3.6): o p er-
+cept ivo, o motor e o cognit ivo.
+M odelo do Processador Humano de I nformações (adaptado de Card 
+Figura 3.6   
+et al.
+,1983).
+O sistema  
+p erc e ptivo
+ transmite as sensações do mundo físico detectadas pelos sis-
+temas s ens or iais do cor p o (vis ão, audição, t ato, olfato, paladar) para repres ent açõ es 
+ment ais internas.A vis ão cent ral, a vis ão p eriférica, os movimentos dos ol hos e os 
+
+movimentos da cab e ça op eram como um sistema integ rado p ara nos forne cer uma 
+
+Capítulo 3 |
+ AbordagensTeóricas em IHC    49
+repres ent ação cont ínua da cena visual de interess e. Ess as s ens açõ es s ão ar mazenadas 
+temp orar iamente em áreas de memória s ens or ial (princip almente nas memórias vi-
+
+sual e auditiva), ainda co diﬁ
+ cadas ﬁ
+sicamente e com um temp o de de caimento (ou 
+es que c imento) rápido, confor me a intensidade do est ímu lo. Em s e guida, algumas 
+
+dess as s ens açõ es s ão co diﬁ
+ cadas simb olicamente e ar mazenadas na memória de tra-
+balho. 
+O pro c ess ador cognit ivo p o de esp e ciﬁ
+ car qu ais conteúdos das memórias s ens o-
+riais de vem s er co diﬁ
+ cadas simb olicamente e ar mazenadas na memória de trab alho, 
+pr incipalmente qu ando o conteúdo da memória p erc eptiva for complexo ou p erc e-
+
+bido ap enas p or um p erío do de temp o muito c ur to. O  
+sistem a c o g nitivo
+ re c e b e  a  
+informação co diﬁ
+cada simb olicamente dos ar mazenamentos s e ns or iais na sua me-
+mória de trab alho e utiliza informaçõ es pre v iamente ar mazenadas na memória de 
+longo prazo para tomar de cis õ es s obre como resp onder aos estímu los re cebidos. 
+Noss o p ens amento é t r aduzido em ação at ravés da at ivação de p adrõ es de mús-
+c u los volunt ár ios, em uma s érie de micromovimentos dis cretos re alizados p elo 
+sis-
+te m a  m o tor
+.
+C om relação às memórias, os p arâmet ros a s erem considerados s ão: a cap acida-
+de de ar mazenamento em número de itens, o temp o de de caimento  (no cas o, o temp o 
+
+para o es que cimento) de um item e o tip o de có digo pr incipal (f ísico, ac ústico, visual 
+
+ou s emânt ico). Já com relação aos pro c ess adores, o parâmetro mais imp or t ante é o 
+
+temp o do ciclo.
+Para algumas t arefas, uma p ess o a  pre c is a s e  comp or t ar como um pro c ess ador 
+s erial, ou s eja, re alizar uma t arefa de cada ve z. Um exemplo dess e tip o de t arefa é pres-
+
+sionar uma te cla em resp ost a a um estímu lo visual, t a l como o acendimento de uma 
+
+lâmp ada. Para outras t arefas, é p ossível que haja uma op eração inte grada e paralela 
+
+dos t rês subsistemas, com infor mação ﬂ
+ uindo cont inuamente da ent rada à s aída, em 
+um p erío do de temp o t ão c ur to que to dos os pro c ess adores trab alham simu lt anea-
+mente. Por exemplo, dig it ação, leitura e t r adução simu lt âne a s ão t arefas dess e t ip o  
+(C ard 
+et  al .
+, 1983).
+Nas tarefas mais simples, o sistema cognit ivo ser ve ap enas para conectar as en-
+t r adas do sistema p erc eptu al às s aídas ade qu adas do sistema motor. Mas a maior i a 
+
+das t arefas é complexa e envolve aprendizado, re c up eração de fatos ou s olução de 
+
+problemas.A memória de trab alho retém informaçõ es em us o, e a memória de longo 
+
+prazo ar mazena conhe cimento para us o f uturo. Os elementos at ivados da memória 
+
+de longo prazo consistem em símb olos ou  g r up os de símb olos, chamados de 
+chunk s
+ 
+(elementos de infor mação). O conteúdo de um 
+chunk  
+dep ende da tarefa, da p ess oa e 
+do conteúdo da sua memória de longo prazo. Quando um 
+chunk  
+na memór i a de lon-
+
+50    I nteração Humano - Computador
+go prazo é at ivado, ess a at ivação s e espalha para 
+chunk s
+ relacionados (e.g., de um livro 
+para a livraria onde foi comprado, para a viagem em que foi comprado, para as fotos 
+que foram tiradas etc.). Miller (1956) mostrou que a capacidade da memória de tra-
+
+balho é limit ada a 7 ± 2 
+chunk s
+. C omo ela é limit ada, à me dida que novos 
+chunk s
+ são 
+at ivados, out ros 
+chunk s
+ que s e encont ram na memória de trab alho tornam-s e menos 
+acessíveis. Os itens ar mazenados têm uma deter minada prob abi lidade de p o derem 
+
+s er re c up erados mais t arde da memória de longo prazo. Quanto mais ass o ciaçõ es um 
+
+item t iver ao s er ar mazenado, maior é a prob abi lidade de ele s er re c up erado. S e  uma 
+
+p ess o a  quer p o der s e  lembrar de alguma cois a mais t arde, a mel hor est ratég ia é tent ar 
+
+ass o ciá-la a itens que já est ão na memória de longo prazo.
+C ard e coautores (1983) calc ularam o p erío do de temp o aproximado do ciclo 
+t
+ 
+para divers as t arefas comuns re alizadas p or p ess oas com diferentes níveis de habi li-
+dades. E les most raram como sua ab ordagem p ermite calc u l ar  a t axa de qu adros em 
+
+uma animação ne cess ár ia para criar a ilus ão de movimento, a t axa máxima de re-
+
+cep ção de có digo Mors e para p ermit ir a sua de co diﬁ
+ cação p or uma p ess oa, o temp o 
+entre dois e ventos para manter uma ilus ão de caus alidade e o temp o que uma p ess oa 
+le va p ara ler um texto.Ainda com b as e  no MHP, eles elab oraram um mo delo de de-
+
+comp osição de t arefas chamado GOMS, amplamente ut i lizado até hoj e  em aná lis e 
+
+e desig n da interação humano-comput ador. O mo delo GOMS é des crito na S e ção 
+
+6.4.2.
+3.3.2 Princípios de G estalt
+S e gundoWare  (2003), muito da noss a inteligência p o de s er carac terizada p ela noss a 
+
+cap acidade de ident iﬁ
+car padrõ es, e o sistema visual é o noss o me canismo de re co-
+n he c imento de p adrõ es mais s oﬁ
+ st icado.Ware  dest aca que um obj e t ivo  pr imár io do 
+desig n de repres ent açõ es visuais de ve  s er map e ar  dados numa forma visual comp at í-
+
+vel com as noss as cap acidades p erc ept ivas.
+A es cola de psicologia gest áltica foi f undada em 1912, e dent re s eus pr incipais 
+p es quis adores encont ram-s eWesheimer, Ko
+  a e Kohler (Ware, 2003). Eles pro du-
+ziram um conjunto  de leis de p erc ep ção de padrõ es, denominadas leis gest álticas ou  
+simplesmente de G est alt (Figura 3.7):
+proximidade
+ 
+: as ent idades visuais que est ão próx imas umas das out r as s ão 
+p
+erc ebidas como um g r up o ou  unidade;
+b o a continuidade
+ 
+: t r aços cont ínuos s ão p erc ebidos mais pront amente do 
+q
+ue contor nos que mudem de dire ç ão rapidamente;
+simetria
+ 
+: objetos simétricos s ão mais pront amente p erc ebidos do que obje-
+tos assimét
+r icos;
+
+Capítulo 3 |
+ AbordagensTeóricas em IHC    51
+similaridade
+ 
+: objetos s emelhantes s ão p erc ebidos como um gr up o;
+d
+estino comum
+ 
+: objetos com a mesma dire ç ão de movimento s ão p erc ebi-
+dos co
+mo um gr up o;
+fe c h o
+ 
+: a mente tende a fe char contor nos para complet ar ﬁ
+ guras 
+re gu lares, 
+“c omplet ando as fal has” e aument ando a re gu laridade.
+ proximidade
+ continuidade
+ simetria
+ similaridade
+ destino comum
+ fecho
+I lustração de princípios gestálticos comumente considerados.
+Figura 3.7   
+D e  acordo comWare  (2003), p o demos considerar como adiçõ es re centes às leis de 
+G est alt as s e guintes (Figura 3.8):
+re gião comum
+ 
+: obj e tos dent ro de uma re g i ão esp acia l conﬁ
+ 
+nada s ão p erc e-
+bidos como um gr up o (Palmer, 1992);
+cone ctiv idade
+ 
+: objetos cone c t ados p or traços cont ínuos s ão p erc ebidos 
+co
+mo relacionados (Palmer e Ro ck, 1994).
+região comum
+conec tividade
+I lustração dos princípios gestálticos de 
+Figura 3.8   
+região comum e conec tividade.
+
+52    I nteração Humano - Computador
+ 
+3.3.3 Percepção de Cores
+Estudos s obre a p erc ep ção de cores e luminância result aram em divers as diretrizes de 
+desig n que p o dem s er ut i lizadas no proj eto de interfaces com usuário.
+C om relação à p erc ep ção de luminância, que, 
+g ross o  modo
+, é a noss a capacidade 
+de p erc eb er padrõ es de tons de cinza, aprendemos que o cont raste ideal para texto 
+de ve resp eit ar uma razão de 10:1 entre cl aro e es c uro. O conceito de cores op ost as 
+
+explica p or que as cores vermelho, verde, amarelo, azul, preto e branco s ão esp e ciais 
+
+em to das as s o cie dades invest igadas. Iss o  sig niﬁ
+ca que, caso seja ne cessário utilizar 
+có digos de cores para cate gorizar informaçõ es visuais, ess as cores de vem s er utili-
+zadas em pr imeiro lugar. Entret anto, a s emânt ica at ribuída a uma determinada cor 
+
+varia ampl amente. Por exemplo,“vermelho” p o de signiﬁ
+car um aler t a de p erigo ou 
+b o a s or te (Ware, 2003).
+Ware  ress alt a  que algumas carac teríst icas visuais s ão pront amente entendidas 
+s em t reinamento pré v io. S e  p e dirmos p ara divers as p ess o as ordenarem um conjunto 
+
+de amostras de diferentes tons de cinza, to das utilizarão a mesma ordenação (ou a 
+
+ordenação cont rária), s em qu alquer instr ução adicional (Figura 3.9).
+Ordenação de valores carac terizada por diferentes tons de cinza.
+Figura 3.9   
+C or, forma, movimentos simples e prof undidade estere os cópica s ão carac teríst icas 
+
+pré-atencionais, ou s eja, carac terísticas pro c ess adas antes que uma p ess oa volte sua 
+
+atenção a elas, antes que s e tornem cons cientes. Ess as carac terísticas s ão pro c ess adas 
+
+simu lt ane amente, fazendo com que alguns elementos visuais s e  dest aquem ime dia-
+
+t amente de sua vizinhança. C omo há limit açõ es s obre o que p o de s er p erc ebido de 
+
+mo do pré-atencional, é imp or t ante  que um símb olo que de va s er dest acado tenha al-
+
+gum at ributo b ásico dist into dos s eus símb olos vizin hos (Ware, 2003). C onsiderando 
+
+a s  l e i s  d e  G e s t a l t ,Wa re  s u g e re  qu e  a  apre s e nt
+ação de dados s eja  elab orada de mo do a 
+tornar padrõ es fáceis de s e p erc eb er, para facilit ar a res olução de problemas. No en-
+t anto, ele obs er va que, além dos me canismos p erc eptivos inatos aos s eres humanos, 
+
+existem fatores c u lturais que inﬂuenciam a p erc ep ção de elementos visuais.Além 
+diss o, diferentes repres ent açõ es p o dem envies ar  a inter pret ação das p ess o as na dire-
+
+ção de cer t as s oluçõ es p ara um problema, em det r imento a out r as. Por exemplo, uma 
+
+t ab ela, um g r afo  e um map a  enfo cam diferentes asp e c tos de uma re g i ão ge og ráﬁ
+ ca.
+
+Capítulo 3 |
+ AbordagensTeóricas em IHC    53
+ 
+3.4   Engenharia Cognitiva
+A engenharia cognit iva foi concebida p or D onald Norman em 1986 como uma ten-
+t at iva de aplicar con he cimentos de ciênciacognit iva, psicologia cognit iva e fatores 
+
+humanos ao desig n e const r ução de sistemas comput acionais. Os pr incip ais obj et ivos 
+
+d e  Nor m an  e r am :
+entender os pr incípios f undament ais da ação e des emp en ho humano rele-
+ 
+vantes p ara o des envolvimento de pr incípios de desig n;
+ela
+b orar sistemas que s ejam ag radáveis de us ar  e que engajem os usuários 
+ 
+até de forma prazeros a.
+Em o
+ut r as p a lavras, Nor man  vis ava a entender as questõ es envolvidas no desig n de 
+sistemas comput acionais, most rar como fazer mel hores es col has de desig n e most rar 
+qu ais s ão os 
+tradeo
+ s
+ qu ando uma mel horia em um asp e c to le va a uma piora em 
+out ro.
+Na base da engenhar ia cognit iva está a discrepância entre os objetivos expressos 
+psicolog icamente
+ e os cont roles e variáveis 
+f í sicos
+ de uma t arefa. Uma p ess o a  inicia 
+com objetivos e intençõ es, que s ão  
+variáveis psicológic as
+, p ois existem ap enas na 
+mente da p ess o a  e s e  relacionam diret amente às suas ne cessidades e à sua situ ação 
+atual. Entret anto, a t arefa de ve s er re alizada em um sistema 
+físico
+, com cont roles f ísi-
+cos a s erem manipu lados, result ando em mudanças nas  
+variáveis físi c as
+ e no  
+estad o 
+d o  sistem a
+.Assim, uma p ess o a  pre c is a inter pret ar as variáveis f ísicas em termos re -
+le vantes aos obj et ivos psicológ icos, e pre c is a t r aduzir as suas intençõ es psicológ icas 
+em açõ es f ísicas s obre os cont roles e me canismos do sistema. Iss o  sig niﬁ
+ ca que de ve 
+haver um est ág io de inter pret ação que relaciona as variáveis f ísicas e psicológ icas, 
+
+assim como f unçõ es que relacionem a manipu lação das variáveis f ísicas e a mudança 
+
+result ante no est ado f ísico (Figura 3.10).
+ 
+Discrepância entre o mundo psicológico e o mundo físico.
+Figura 3.10   
+Em muit as situ açõ es, as variáveis que p o dem s er facilmente cont roladas não s ão 
+aquelas p elas qu ais a p ess oa s e  interess a. Por exemplo, numa torneira convencional, 
+
+54    I nteração Humano - Computador
+as variáveis f ísicas que p o dem s er manipu ladas s ão: ﬂ
+ uxo de água f r ia e ﬂ
+ uxo de água 
+quente. No ent anto, o usuário quer cont rolar du as variáveis dist int as: o ﬂ uxo tot a l de 
+água e a temp eratura da água. Ness e cas o, p o demos le vant ar  as s e guintes questõ es:
+ 
+ 
+problemas de mapeamento
+ (Figura 3.11a):
+ Qual é o cont role de água quen-
+te e qu al é o de água f r ia? D e que maneira cada cont role de ve s er girado para 
+aument ar ou re duzir o ﬂ
+ uxo da água?
+ 
+ 
+diﬁ
+ 
+ culdade de controle
+ (Figura 3.11b): Para aument ar a temp eratura da 
+água mantendo o ﬂ
+ uxo const ante, é ne cess ár io manipu lar simu lt aneamente 
+as du as torneiras.
+ 
+ 
+diﬁ
+ culdade
+ deavaliaç ão
+ (Figura 3.11c): Quando há dois bicos de torneira, 
+às ve zes s e torna dif ícil avaliar s e o result ado des ejado foi alcançado.
+I lustrações de diferentes torneiras para exempliﬁ
+ car problemas de mape -
+Figura 3.11   
+amento, diﬁ
+ 
+ culdade de controle e diﬁ
+ culdade de avaliação.
+Hoj e  em dia, há torneiras com um cont role único, em que uma dimens ão de movi-
+mento cont rola o ﬂ
+uxo tot a l da água e outra dimens ão (or togonal) cont rola a sua 
+temp eratura (Figura 3.12).Ap es ar  de o map e amento não s er óbvio — é ne cess ár io 
+ainda aprender qu al dimens ão cont rola qu al variável —, é uma s olução melhor, p ois 
+
+as variáveis s endo manipu ladas ﬁ
+ sicamente s ão as mesmas variáveis de interess e.
+I lustração de uma torneira com monocomando.
+Figura 3.12   
+Mapeamento, controle e avaliação em diálogos para seleção de cor.
+Ex
+emplo 3.1 – 
+Em sistemas computacionais, temos problemas semelhantes. Suponha que queiramos escolher 
+uma cor de fundo para uma ilustração, e que o diálogo apresentado seja o da Figura 3.13a. Para 
+deﬁ
+ nir uma cor de fundo, é necessário indicar os valores das componentes vermelha (
+re d
+ –  R), verde 
+
+Capítulo 3 |
+ AbordagensTeóricas em IHC    55
+(
+green
+ – G) e azul (
+blue
+ – B). No entanto, a Figura 3.13a não deixa claro qual controle está associado a 
+qual componente, o que consiste num 
+problema de mapeamento
+. Além disso, geralmente estamos 
+interessados na matiz da cor (
+hue 
+– H), na sua saturação (
+saturation 
+– S, grau de mesclagem da matiz 
+com a cor branca, também denominado grau de pureza) e na sua luminosidade (
+luminance 
+– L, fra-
+ção da cor que vai do completamente escuro ao completamente claro). Como não podemos deﬁ
+ nir 
+valores para essas propriedades, identiﬁ
+camos também um problema de diﬁ
+ culdade de 
+controle
+. 
+Finalmente, não há uma resposta visual da cor resultante, o que diﬁ
+ cultaa 
+avaliação
+ do resultado.
+A Figura 3.13b apresenta o diálogo modiﬁ
+ cado. Nele, obser vamos claramente o mapeamen-
+to, por proximidade, das componentes R, G e B aos controles correspondentes, assim como uma 
+
+indicação visual da cor resultante, reduzindo então os problemas de mapeamento e avaliação. A 
+
+diﬁ
+ culdade de controle das variáveis de interesse (H, S, L), no entanto, permanece. 
+(a)
+(b)
+Diálogos para escolha de cores ilustrando problemas de mapeamento, 
+Figura 3.13   
+controle e avaliação.
+A F
+igura 3.14 apresenta o diálogo padrão da ferramenta M icrosof tVisual Studio® para a escolha de 
+cores. Podemos obser var que esse diálogo permite a deﬁ
+nição de cores utilizando tanto as com-
+ponentes R, G e B, quanto as componentes H, S e L, reduzindo o problema de mapeamento. Além 
+disso, é possível selecionar diretamente nos quadros de cores as componentes H (através do des-
+locamento horizontal no quadro maior), S (através do deslocamento ver tical no quadro maior) e L 
+(através do deslocamento na barra ver tical), reduzindo assim a diﬁ
+ culdade de controle.
+  
+Diálogo padrão da ferramenta M icrosof tVisual Studio® para a escolha de 
+Figura 3.14   
+co re s.
+

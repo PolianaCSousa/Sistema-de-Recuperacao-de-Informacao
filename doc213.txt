@@ -1,0 +1,724 @@
+UNIVERSIDADE FEDERAL DE SANTA CATARINA
+DEPARTAMENTO DE INFORMATICA E ESTAT ´ ´ISTICA
+PROGRAMA DE POS-GRADUAC¸ ´ AO EM CI ˜ ENCIA DA COMPUTAC¸ ˆ AO˜
+Introduc¸ao˜ a Criptografia P ` os-Qu ´ antica: Um Estudo ˆ
+Focado no Sphincs+
+Wellington Fernandes Silvano
+wellington.fernandes@posgrad.ufsc.br
+Professor: Ricardo Felipe Cust´otio
+Novembro 2023
+1 Introdu¸c˜ao
+Este trabalho foi desenvolvido para a disciplina ”P´os-quantum Cryptography”no Programa de P´osGradua¸c˜ao em Ciˆencias da Computa¸c˜ao da Universidade Federal de Santa Catarina. Foi elaborado
+com a inten¸c˜ao de divulga¸c˜ao posterior, visando tornar o material acess´ıvel para leitores iniciantes
+em criptografia p´os-quˆantica, especialmente sobre o Sphincs+. O objetivo ´e que este material
+sirva como um recurso valioso para estudantes, pesquisadores, desenvolvedores ou qualquer pessoa
+interessada no tema. Por isso, foi escrito em portuguˆes, dada a escassez de materiais desse tipo
+na l´ıngua. Ressalta-se que este deve ser entendido apenas como um material introdut´orio, capaz
+de proporcionar insights, curiosidades sobre o tema ou mesmo um conhecimento inicial. Para um
+aprofundamento adequado, ´e essencial consultar os trabalhos originais citados ao longo do texto,
+j´a que muitas informa¸c˜oes foram suprimidas, interpretadas e selecionadas de forma particular.
+A seguir, apresenta-se a introdu¸c˜ao sobre o Sphincs+.
+Os esquemas de assinatura baseados em hash est˜ao entre os designs mais antigos para construir
+assinaturas digitais. Introduzido pela primeira vez por Lamport [7] e refinado por Merkle [9] em
+1979, quarenta anos depois as constru¸c˜oes b´asicas permanecem praticamente as mesmas. Com seguran¸ca bem compreendida e suposi¸c˜oes m´ınimas, s˜ao frequentemente consideradas a op¸c˜ao mais
+conservadora dispon´ıvel. No entanto, foi necess´aria a constru¸c˜ao potencialmente iminente de um
+computador quˆantico para que ganhassem popularidade e fossem considerados para aplica¸c˜oes no
+mundo real [?].
+O NIST (National Institute of Standards and Technology) atualmente reconhece trˆes esquemas de
+assinatura baseados em hash, como parte do desenvolvimento de criptografia p´os-quˆantica: XMSS,
+LMS e Sphincs+. E portanto reconhece que estes esquemas de assinatura baseados em hash s˜ao
+seguros contra o desenvolvimento de computadores quˆanticos. O XMSS (eXtended Merkle Signature Scheme) foi especificado em maio de 2018, no RFC 8391. O LMS (Leighton-Micali Signature
+system), foi Especificado em abril de 2019, no RFC 8554. No entanto, identificou-se que o XMSS
+e o LMS n˜ao s˜ao adequados para uso geral, pois sua seguran¸ca depende cuidados meticuloso com
+rela¸c˜ao ao ”estado”, e por isso s˜ao conhecidos como stateful-hash-based-signatures. Em sintese
+isso ocorre porque ´e necess´ario saber quais chaves j´a foram utilizadas, afim de n˜ao utiliz´a-las novamente, pois seu reuso implica em vazamento de parte da chave privada. [10]
+Isso levou o NIST na busca de esquemas sem estado (ou stateless). Em agosto de 2023 foi criada
+a FIPS 205 para um esquema de assinatura baseada em Hash sem estado (Stateless Hash-Based
+Digital Signature) baseado no Sprincs+. Este trabalho busca apresentar o Sphincs+, com Toy
+example, discuss˜oes de seguran¸ca, avalia¸c˜ao de uma implementa¸c˜ao real e considera¸c˜oes finais.
+2 Apresenta¸c˜ao do Sphincs+
+Essa sess˜ao busca apresentar o Sphincs+ e suas primitivas criptogr´aficas. O Sphincs+ ´e um esquema de assinatura baseado em hash sem estado, que foi submetido ao projeto de criptografia
+p´os-quˆantica do NIST. Seu design avan¸ca em rela¸c˜ao ao esquema de assinatura Sphincs, que foi
+1
+apresentado no EUROCRYPT 2015.
+Os esquemas de assinatura baseados em hash s˜ao os primeiros esquemas de assinatura p´os-quˆantica
+formalmente definidos em duas RFCs [6, 8]. O desempenho de assinaturas baseadas em hash, tanto
+em termos de velocidade quanto de tamanho, tem sido tradicionalmente um obst´aculo `a ado¸c˜ao.
+Os desenvolvimentos na ´ultima d´ecada deram passos significativos em dire¸c˜ao `a praticidade [2].
+Indiscutivelmente, o maior obst´aculo `a praticidade, ´e de ordem mais fundamental, quase todos os
+esquemas de assinatura baseados em hash na literatura s˜ao stateful; eles precisam acompanhar
+todas as assinaturas produzidas. Isso foi abordado na pr´atica com o Sphincs [1] em 2015, com
+base no trabalho te´orico de Goldreich [3, 4]. A estrutura nos designs que seguem Goldreich ´e t˜ao
+grande que, grosso modo, pode-se escolher uma chave de assinatura aleatoriamente a cada vez e
+razoavelmente assumir que ela n˜ao foi usada antes.
+As constru¸c˜oes de assinatura baseadas em hash, giram em torno de uma ´arvore Merkle com pares
+de chaves de assinatura ´unica em seus n´os folha. A constru¸c˜oes SPHINCS utiliza uma hiper´arvore:
+uma ´arvore de ´arvores, interligadas por meio de assinaturas ´unicas (OTS). Como os n´os folha da
+´arvore SPHINCS s˜ao selecionados aleatoriamente, h´a um compromisso a ser feito entre o tamanho
+da ´arvore e a probabilidade de selecionar o mesmo n´o folha duas vezes. Para influenciar essa
+compensa¸c˜ao no sentido de permitir ´arvores menores, o SPHINCS usa um esquema de assinatura
+de tempo curto (few-time signature scheme - FTS) na parte inferior da ´arvore. A constru¸c˜ao
+gen´erica de tal hiper´arvore ´e ilustrada na Figura 1.
+Entre as principais contribui¸c˜oes distintivas do Sphincs+ est´a a introdu¸c˜ao de um novo esquema
+de assinatura de tempo curto (FTS), FORS. Outra mudan¸ca importante do SPHINCS para o
+Sphincs+ ´e a forma como os n´os folhas s˜ao escolhidos. Sphincs+ usa sele¸c˜ao de ´ındice publicamente verific´avel. Essas duas mudan¸cas juntas tornam mais dif´ıcil atacar o Sphincs+ por meio do
+esquema de assinatura de tempo curto e, com isso, permitem escolher parˆametros menores.
+2.1 Fun¸c˜oes Hash
+O Sphincs+ aplica a t´ecnica de mitiga¸c˜ao multi-alvo (multi-target mitigation technique) usando
+a abstra¸c˜ao de fun¸c˜oes de hash ajust´aveis. O Sphincs+ tamb´em faz uso de duas Fun¸c˜oes pseudo
+aleat´orias (pseudorandom function PRF PRFs) e uma fun¸c˜ao de hash com chave keyed hash
+function (keyed hash function). O comprimento de entrada e sa´ıda s˜ao dados em termos do
+parˆametro de seguran¸ca n e do comprimento do Hash da mensagem m.
+2.1.1 Fun¸c˜oes de Hash Ajust´aveis
+Fun¸c˜oes de hash ajust´avel s˜ao uma variante especial de uma fun¸c˜ao de hash que, al´em dos dados
+de entrada normais, aceita dois parˆametros adicionais: um tweak e um comprimento de entrada.
+• Tweak: Um tipo de configura¸c˜ao ou parˆametro que modifica o comportamento da fun¸c˜ao
+de hash.
+2
+Figura 1: [1]
+• Comprimento de Entrada: Refere-se ao tamanho dos dados de entrada que a fun¸c˜ao de
+hash processar´a.
+No Sphincs+, um conjunto de fun¸c˜oes de hash ajust´aveis ´e usado, e compartilhando um parˆametro
+p´ublico comum.
+• Defini¸c˜ao dos Parˆametros:
+– P = {0, 1}
+n
+: Define um espa¸co para o primeiro parˆametro da fun¸c˜ao de hash.
+– T = {0, 1}
+256: Define o espa¸co para o tweak.
+• Comprimento da Mensagem: Limita-se o comprimento da mensagem a m´ultiplos de n.
+• Nota¸c˜ao de Fun¸c˜ao de Hash Ajust´avel:
+– Thℓ
+: {0, 1}
+n × {0, 1}
+256 × {0, 1}
+ℓn → {0, 1}
+n
+– Th1 e Th2: Casos especiais da fun¸c˜ao, com comprimentos de entrada n e 2n, respectivamente.
+3
+A fun¸c˜ao de hash ajust´avel Thℓ ´e definida como:
+Thℓ
+: {0, 1}
+n × {0, 1}
+256 × {0, 1}
+ℓn → {0, 1}
+n
+Onde:
+• Thℓ
+: Nome da fun¸c˜ao de hash ajust´avel.
+• {0, 1}
+n
+: Primeiro conjunto de entrada (parˆametro p´ublico).
+• {0, 1}
+256: Segundo conjunto de entrada (tweak).
+• {0, 1}
+ℓn: Dados a serem hasheados.
+• → {0, 1}
+n
+: Resultado da fun¸c˜ao de hash.
+As fun¸c˜oes de hash ajust´aveis no Sphincs+ proporcionam flexibilidade e adaptabilidade para diferentes aplica¸c˜oes dentro do esquema de assinatura, permitindo ajustes finos em seu comportamento
+por meio de parˆametros adicionais.
+2.1.2 Fun¸c˜oes Pseudoaleat´orias (PRFs)
+O esquema de assinatura Sphincs+ utiliza fun¸c˜oes pseudoaleat´orias (PRFs) e uma fun¸c˜ao de hash
+com chave espec´ıfica para comprimir mensagens.
+1. Fun¸c˜oes Pseudoaleat´orias (PRFs): S˜ao fun¸c˜oes que produzem sa´ıdas que parecem aleat´orias
+para qualquer observador que n˜ao conhe¸ca a chave secreta. Formalmente, uma PRF no contexto do Sphincs+ ´e definida como:
+PRF : {0, 1}
+n × {0, 1}
+256 → {0, 1}
+n
+onde {0, 1}
+n
+representa um conjunto de strings bin´arias de comprimento n e {0, 1}
+256 um
+conjunto de strings bin´arias de comprimento 256.
+2. PRF para Compress˜ao de Mensagens (PRFmsg): Usada para gerar aleatoriedade
+durante a compress˜ao da mensagem, ´e definida como:
+PRFmsg : {0, 1}
+n × {0, 1}
+n × {0, 1}
+∗ → {0, 1}
+n
+Aqui, {0, 1}
+∗
+representa um conjunto de strings bin´arias de qualquer comprimento.
+2.1.3 Message digest
+3. Fun¸c˜ao de Hash com Chave para Resumo da Mensagem (Hmsg): Para comprimir
+a mensagem a ser assinada, o Sphincs+ utiliza a fun¸c˜ao Hmsg, definida como:
+Hmsg : {0, 1}
+n × {0, 1}
+n × {0, 1}
+n × {0, 1}
+∗ → {0, 1}
+m
+Esta fun¸c˜ao recebe quatro entradas, sendo trˆes strings de comprimento n e uma de comprimento vari´avel, e produz um resumo da mensagem de comprimento m.
+As fun¸c˜oes PRF garantem a seguran¸ca na gera¸c˜ao de chaves e na compress˜ao de mensagens,
+enquanto a fun¸c˜ao Hmsg permite a compress˜ao eficiente da mensagem original para facilitar o
+processo de assinatura no Sphincs+.
+4
+2.2 Merkle Signature Scheme
+Um dos problemas que as assinaturas de uso ´unico tˆem ´e que, para assinar um grande n´umero de
+mensagens, ter´ıamos que armazenar e enviar um grande n´umero de chaves p´ublicas ou gerar uma
+nova a cada vez que uma assinatura fosse solicitada. O primeiro m´etodo requer grandes quantidades de espa¸co e o segundo seria suscet´ıvel a ataques onde um atacante poderia se passar como o
+detentor da chave e enviar chaves p´ublicas falsas.
+Merkle propˆos um protocolo chamado ”Merkle Tree”que pode ser usado para autenticar um n´umero
+fixo de chaves p´ublicas enquanto utiliza espa¸co m´ınimo. Esta ´arvore ´e constru´ıda como uma ´arvore
+bin´aria [9]. A ideia por tr´as da autentica¸c˜ao por ´arvore ´e trancar n´os atr´as de fun¸c˜oes hash, onde
+cada n´o ´e o hash da concatena¸c˜ao de seus filhos. Os n´os folha s˜ao gerados criando e hashando uma
+chave p´ublica WOTS.
+O pre¸co que pagamos por este esquema pode ser visto na assinatura, n˜ao ´e mais necess´ario apenas
+transmitir uma tupla contendo a chave p´ublica e a assinatura, mas agora tamb´em deve incluir o
+caminho de autentica¸c˜ao. Exemplificamos isso usando uma ´arvore com 4 assinaturas WOTS na
+figura.
+Figura 2: Autentica¸c˜ao com Merkle Tree
+R = F(H5 ⊕ H6)
+H5 = F(H1 ⊕ H2), H1 = F(y1), H2 = F(y2)
+H6 = F(H3 ⊕ H4), H3 = F(y3), H4 = F(y4)
+Um dos inconvenientes deste m´etodo de autentica¸c˜ao e de outros semelhantes ´e que, para gerar a
+chave p´ublica (n´o raiz), devemos primeiro gerar todos os n´os folha sem exce¸c˜ao. Isso leva a um
+grande aumento no tempo de gera¸c˜ao de chaves, aumentando exponencialmente com a profundidade da ´arvore. Uma vez que todos os n´os folha tenham sido gerados, podemos subir pela ´arvore,
+gerar e at´e mesmo publicar nossa chave p´ublica raiz.
+Outro problema que surge com a introdu¸c˜ao de tal esquema ´e que, se n˜ao mantivermos todos os
+n´os armazenados, precisamos reconstruir parte da ´arvore para gerar o caminho da ´arvore, que ´e
+5
+parte da assinatura. Isso significa que estamos pagando o custo da gera¸c˜ao de chave toda vez que
+queremos assinar uma mensagem. Por exemplo, se desejarmos usar H2 na figura 4, precisar´ıamos
+calcular e enviar junto (H1, H2, H6), mas para calcular H6 precisar´ıamos gerar (H3, H4) novamente.
+Figura 3: Caminho da autentica¸c˜ao com Merkle Tree
+2.3 WOTS+
+O WOTS+ [5] ´e um esquema de assinatura de uso ´unico: uma chave privada deve ser usada para
+assinar exatamente uma mensagem. Quando ´e reutilizada para assinar m´ultiplas mensagens, a
+seguran¸ca se degrada rapidamente.
+O WOTS+ tem dois parˆametros n e w. n ´e o parˆametro de seguran¸ca; ele ´e o comprimento
+da mensagem, assim como o comprimento de um elemento de chave privada, elemento de chave
+p´ublica e elemento de assinatura em bits. w ´e o parˆametro Winternitz; pode ser usado para fazer
+um trade-off entre o tempo de assinatura e o tamanho da assinatura: um valor mais alto implica
+uma assinatura menor e mais lenta. w ´e tipicamente restrito a 4, 16 ou 256.
+Defina len1 = ⌈
+n
+log(w)
+⌉ e len2 = ⌊log(len1 · (w − 1))/ log(w)⌋ + 1. A soma desses, len, representa
+o n´umero de valores em bits n em uma chave privada, chave p´ublica e assinatura WOTS+ n˜ao
+comprimida.
+O par de chaves WOTS+
+No contexto do Sphincs+, a chave privada WOTS+ ´e derivada de uma semente secreta SK.seed que
+faz parte da chave privada Sphincs+, e do endere¸co do par de chaves WOTS+ dentro da hipertree,
+usando PRF.
+A chave p´ublica correspondente ´e derivada aplicando F iterativamente por w repeti¸c˜oes a cada
+um dos valores em bits n na chave privada, construindo efetivamente len cadeias de hash. Aqui,
+F ´e parametrizado pelo endere¸co do par de chaves WOTS+, bem como pela altura da invoca¸c˜ao
+de F e sua cadeia espec´ıfica, al´em de uma semente PK.seed que faz parte da chave p´ublica Sphincs+.
+6
+Assinatura e verifica¸c˜ao WOTS+
+Uma mensagem de entrada m ´e interpretada como len1 inteiros mi
+, entre 0 e w − 1. Calculamos um checksum C =
+Plen1
+i=1 (w − 1 − mi) sobre esses valores, representado como string de len2
+valores base-w C = (C1, . . . , Clen2). Esse checksum ´e necess´ario para prevenir falsifica¸c˜ao de mensagem: um aumento em pelo menos um mi
+leva a uma diminui¸c˜ao em pelo menos um Ci e vice-versa.
+Usando esses len inteiros como comprimentos de cadeia, a fun¸c˜ao de encadeamento F ´e aplicada
+aos elementos da chave privada. Isso leva a len valores em bits n que comp˜oem a assinatura. O
+verificador pode ent˜ao recomputar o checksum, derivar os comprimentos das cadeias e aplicar F
+para completar cada cadeia at´e seu comprimento total. Isso leva `as cabe¸cas das cadeias que s˜ao
+hashadas usando Thlen para computar a chave p´ublica em bits n.
+2.4 Hypertree
+Uma assinatura baseada em ´arvore hash ´unica que ´e essencialmente equivalente `a constru¸c˜ao
+XMSS. Em seguida, estendemos isso para um cen´ario multi-´arvore, no mesmo estilo que XMSSMT.
+Uma Arvore ´ Unica ´
+Para ser capaz de assinar 2h
+′ mensagens, o assinante deriva 2h
+′
+chaves p´ublicas WOTS+. Usamos
+essas chaves como n´os folha. Para construir uma ´arvore bin´aria, aplica-se repetidamente H em
+pares de n´os, parametrizado com o endere¸co ´unico desta aplica¸c˜ao de H bem como a semente
+p´ublica PK.seed. Consideramos tal ´arvore de altura h
+′
+, correspondendo ao n´umero de aplica¸c˜oes
+de H para mover das folhas para a raiz. A raiz desta ´arvore servir´a brevemente como a chave
+p´ublica do esquema de ´arvore ´unica.
+Um dos n´os folha WOTS+ ´e usado para criar uma assinatura em uma mensagem de n bits.
+Simplesmente publicar a assinatura WOTS+ n˜ao ´e suficiente, pois o verificador tamb´em requer
+informa¸c˜oes sobre o resto da ´arvore. Para isso, o assinante inclui o chamado ’caminho de autentica¸c˜ao’ (ver Figura 5). O verificador primeiro deriva a chave p´ublica WOTS+ da assinatura e,
+em seguida, usa os n´os inclu´ıdos no caminho de autentica¸c˜ao para reconstruir o n´o raiz.
+Figura 4: O caminho de autentica¸c˜ao para autenticar a quinta folha
+7
+Uma Arvore de ´ Arvores ´
+Para tornar suficientemente improv´avel que a sele¸c˜ao aleat´oria de um n´o folha resulte repetidamente no mesmo n´o folha sendo selecionado, uma ´arvore SPHINCS precisa ser consideravelmente
+grande.
+Em vez de aumentar h
+′
+(e incorrer no custo intranspon´ıvel de calcular 2h
+′
+chaves p´ublicas WOTS+
+por opera¸c˜ao de assinatura), cria-se uma hipertree. Esta constru¸c˜ao serve como uma ´arvore de certifica¸c˜ao. Os n´os folha WOTS+ das ´arvores na camada inferior s˜ao usados para assinar mensagens
+(ou, nesse caso, chaves p´ublicas FTS), enquanto os n´os folha de ´arvores em todas as outras camadas s˜ao usados para assinar os n´os raiz das ´arvores abaixo. As assinaturas WOTS+ e os caminhos
+de autentica¸c˜ao de uma folha na base da hipertree at´e a raiz da ´arvore mais alta constituem um
+caminho de autentica¸c˜ao.
+Crucialmente, todos os n´os folha de todas as ´arvores intermedi´arias s˜ao chaves p´ublicas WOTS+
+geradas deterministicamente que n˜ao dependem de nenhuma das ´arvores abaixo dela. Isso significa
+que a hipertree completa ´e puramente virtual: nunca precisa ser computada por completo. Durante
+a gera¸c˜ao de chaves, apenas a sub´arvore mais alta ´e computada para derivar a chave p´ublica.
+Definimos a ´arvore total a ser de altura h e o n´umero de camadas intermedi´arias a ser d, definindo
+retroativamente h
+′ para ser h/d.
+2.5 FORS
+No contexto do Sphincs+, o FORS ´e utilizado na parte mais baixa da ´arvore de assinaturas, que
+´e uma estrutura hier´arquica crucial no esquema de assinatura. O uso do FORS ´e motivado pela
+necessidade de um equil´ıbrio entre eficiˆencia e seguran¸ca em assinaturas baseadas em hash. Em um
+esquema de assinatura de uso ´unico como o WOTS+, a reutiliza¸c˜ao de chaves pode comprometer a
+seguran¸ca. O FORS permite m´ultiplas utiliza¸c˜oes (mas ainda um n´umero limitado) de uma chave,
+oferecendo mais flexibilidade e eficiˆencia.
+Para compreender melhor sua motiva¸c˜ao ´e interessante compara-lo com seu antecessor, o RORS.
+O FORS ´e uma melhoria do HORST. A nova no¸c˜ao de seguran¸ca fortalece o conceito de resiliˆencia
+de subconjunto alvo. O FORS ´e definido em termos dos inteiros k e t = 2a
+, e pode ser usado para
+assinar cadeias de ka bits.
+A chave privada FORS consiste em kt valores aleat´orios de n bits, agrupados em k conjuntos
+de t valores cada. No contexto do Sphincs+, esses valores s˜ao derivados deterministicamente de
+SK.seed usando PRF e o endere¸co da chave na hipertree. Para construir a chave p´ublica FORS,
+primeiro constru´ımos k ´arvores bin´arias de hash em cima dos conjuntos de elementos da chave
+privada. Cada um dos t valores ´e usado como um n´o folha, resultando em k ´arvores de altura a.
+Usamos H, endere¸cado usando a localiza¸c˜ao do par de chaves FORS na hipertree e a posi¸c˜ao ´unica
+da chamada da fun¸c˜ao hash dentro das ´arvores FORS. Como no WOTS+, comprimimos os n´os
+raiz usando uma chamada para T hk. O valor resultante de n bits ´e a chave p´ublica FORS.
+8
+Assinaturas FORS
+Dada uma mensagem de ka bits, extra´ımos k cadeias de a bits. Cada uma dessas cadeias de bits ´e
+interpretada como o ´ındice de um ´unico n´o folha em cada uma das k ´arvores FORS. A assinatura
+consiste nestes n´os e seus respectivos caminhos de autentica¸c˜ao (ver Figura 3). O verificador
+reconstr´oi cada um dos n´os raiz usando os caminhos de autentica¸c˜ao e usa T hk para reconstruir a
+chave p´ublica. Como parte do Sphincs+, uma assinatura FORS nunca ´e verificada explicitamente.
+Em vez disso, a chave p´ublica resultante ´e usada como uma mensagem, para ser implicitamente
+verificada juntamente com uma assinatura WOTS+.
+2.6 Como tudo funcionada no Sphincs+?
+A partir dos componentes apresentados anteriormente pode-se descrever como ele s˜ao utilizados.
+A chave p´ublica consiste em dois valores de n-bits: o n´o raiz da ´arvore superior no hipertree, e uma
+semente p´ublica aleat´oria PK.seed. Al´em disso, a chave privada consiste em mais duas sementes
+aleat´orias de n-bits: SK.seed, para gerar as chaves secretas WOTS+ e FORS, e SK.prf, usada
+abaixo para o message digest randomizado.
+A assinatura consiste em uma assinatura FORS em um resumo da mensagem, uma assinatura
+WOTS+ na chave p´ublica FORS correspondente, e uma s´erie de caminhos de autentica¸c˜ao e
+assinaturas WOTS+ para autenticar essa chave p´ublica WOTS+. Para verificar essa cadeia de
+caminhos e assinaturas, o verificador reconstr´oi iterativamente as chaves p´ublicas e n´os raiz at´e que
+o n´o raiz no topo do Sphincs+ hipertree seja alcan¸cado. Dois pontos ainda n˜ao foram abordados:
+o c´alculo do resumo da mensagem, e a sele¸c˜ao da folha. O Sphincs+ difere do Sphincs original em
+detalhes sutis mas importantes.
+Omitimos as chamadas ´unicas para Hmsg, P RFmsg, eT hk para assinatura e chamadas ´unicas para
+Hmsg e T hk para verifica¸c˜ao, pois s˜ao negligenci´aveis ao estimar a velocidade.
+keypair sign verify
+F
+2h
+d·w
+· len kt + d(
+2h
+d
+) · len k + dw · len
+H 2h
+d − 1 k(t − 1) + d(
+2h
+d − 1) k log t + h
+P RF 2h
+d
+· len kt + d(
+2h
+d
+) · len + 1
+T hlen
+2h
+d
+d
+2h
+d
+d
+Tabela 1: N´umero de chamadas necess´arias para cada opera¸c˜ao
+O NIST aprovou 12 conjuntos de parˆametros que juntamente com as contagens de ciclos fornecidas
+na Tabela anterior, os parametros ilustram como essas compensa¸c˜oes podem ser usadas para obter
+conjuntos de parˆametros concretos otimizando o tamanho da assinatura e conjuntos de parˆametros
+concretos otimizando a velocidade. Um conjunto de parˆametros consiste em parˆametros para
+WOTS+ (n e lgw), XMSS e a hipertree (h e d), e FORS (k e a), bem como instancia¸c˜oes para as
+fun¸c˜oes Hmsg, P RF, P RFmsg, F, H e Tl
+.
+9
+A Tabela abaixo lista os conjuntos de parˆametros aprovados para uso. Cada nome de conjunto
+de parˆametros indica a fam´ılia de fun¸c˜ao de hash utilizada (SHA2 ou SHAKE), o comprimento
+em bits do parˆametro de seguran¸ca n, e se o conjunto de parˆametros foi projetado para criar
+assinaturas relativamente pequenas (’s’) ou para ter gera¸c˜ao de assinaturas relativamente r´apida
+(’f’). Existem seis conjuntos de valores para n, lgw, h, d, k e a aprovados para uso.
+n h d h’ a k lgw m sec level pk bytes sig bytes
+SHA2-128s 16 63 7 9 12 14 4 30 1 32 7856
+SHA2-128f 16 66 22 3 6 33 4 34 1 32 17088
+SHAKE-128f 16 66 22 3 6 33 4 34 1 32 17088
+SHA2-192s 24 63 7 9 14 17 4 39 3 48 16224
+SHAKE-192f 24 66 22 3 8 33 4 42 3 48 35664
+SHA2-256s 32 64 8 14 22 4 47 5 64 29792
+SHA2-256f 32 68 17 4 9 35 4 49 5 64 49856
+Tabela 2: Especifica¸c˜oes dos algoritmos de assinatura digital.
+Usando esta abordagem, a for¸ca da seguran¸ca n˜ao ´e descrita por um ´unico n´umero, como “128
+bits de seguran¸ca”. Em vez disso, cada conjunto de parˆametros ´e considerado pelo menos t˜ao seguro quanto uma cifra de bloco gen´erica com um tamanho de chave prescrito. Mais precisamente,
+afirma-se que os recursos computacionais necess´arios para quebrar s˜ao maiores ou iguais aos recursos computacionais necess´arios para quebrar a cifra de bloco quando esses recursos computacionais
+s˜ao estimados usando qualquer modelo realista de computa¸c˜ao.
+Diferentes modelos de computa¸c˜ao podem ser mais ou menos realistas e, consequentemente, levar a
+estimativas mais ou menos precisas da for¸ca da seguran¸ca. Alguns modelos comumente estudados
+s˜ao discutidos em. Concretamente, os conjuntos de parˆametros com n = 16 s˜ao considerados na
+categoria de seguran¸ca 1, os conjuntos de parˆametros com n = 24 s˜ao considerados na categoria de
+seguran¸ca 3 e os conjuntos de parˆametros com n = 32 s˜ao considerados na categoria de seguran¸ca
+5.No nosso caso, pr´oximo de 128 para o n´ıvel de seguran¸ca 1, perto de 192 para o n´ıvel de seguran¸ca
+3 e perto de 256 para o n´ıvel de seguran¸ca 5.
+3 Toy example
+Para criar um exemplo detalhado do Sphincs+, come¸caremos com a defini¸c˜ao de parˆametros b´asicos
+e simplificados, seguidos de uma explica¸c˜ao conceitual de cada passo, com pseudo-c´odigo para
+ilustrar o funcionamento do algoritmo e algum formalismo matem´atico para `as fun¸c˜oes de hash e
+a gera¸c˜ao de chaves.
+3.1 Parˆametros Simplificados
+Devido `a complexidade do SPHINCS, o Toy Exemple demonstra como esses componentes podem
+ser estruturados. Este n˜ao ser´a um exemplo completo do SPHINCS, mas dar´a uma ideia de como os
+10
+componentes se encaixam. Ser´a demonstrado como construir a estrutura b´asica de uma ´arvore de
+Merkle e demonstrar o conceito do Winternitz. O c´odigo que ser´a apresentado ´e escrito em phyton.
+Os parˆametros utilizados s˜ao:
+- Altura da ´arvore de Merkle (h): 5, Isso significa que a ´arvore ter´a 25 = 32 folhas. Cada folha
+representa um poss´ıvel valor de hash;
+- Tamanho do valor de hash (n): 256 bits, Isso ´e t´ıpico para muitos esquemas de hash;
+- Parˆametro Winternitz (w): 4, est´a relacionado ao esquema de assinatura Winternitz, uma parte
+fundamental do SPHINCS. Ele determina o n´umero de bits processados por vez durante a assinatura e a verifica¸c˜ao;
+- N´umero de ´arvores de Merkle no hypertree (d): 2, no Sphincs+ um hypertree ´e usado para aumentar a eficiˆencia, dividindo a tarefa de assinar com uma ´arvore de Merkle enorme em v´arias
+´arvores menores.
+import hashlib
+def hash_function(data):
+"""Funcao de hash simplificada usando SHA-256."""
+return hashlib.sha256(data).digest()
+def merkle_tree(height, n):
+"""
+Constroi uma arvore de Merkle de altura especificada e tamanho de hash.
+"""
+# Inicializa a arvore com valores zero.
+tree = [b’\x00’ * (n // 8) for _ in range(2 ** height)]
+# Preenche as folhas da arvore com valores de hash.
+for i in range(len(tree)):
+tree[i] = hash_function(bytes([i % 256]))
+# Constroi a arvore, nivel por nvel.
+for level in range(height - 1, -1, -1):
+for i in range(2 ** level):
+tree[i] = hash_function(tree[2*i] + tree[2*i + 1])
+return tree
+def winternitz_signature(message, w):
+11
+"""
+Exemplo simplificado de assinatura Winternitz.
+"""
+# Calcula um checksum simples da mensagem.
+checksum = sum([ord(char) for char in message]) % (2 ** w)
+# Gera a assinatura para cada caractere da mensagem.
+signature = [hash_function(bytes([ord(char)])) for char in message]
+# Adiciona o checksum a assinatura.
+signature.append(hash_function(bytes([checksum])))
+return signature
+# Parametros
+h = 5 # Altura da arvore de Merkle
+n = 256 # Tamanho do valor de hash (em bits)
+w = 4 # Parametro Winternitz
+d = 2 # Numero de arvores de Merkle no hypertree
+# Uso de exemplo
+tree = merkle_tree(h, n) # Constroi a arvore de Merkle
+signature = winternitz_signature("mensagem de exemplo", w) # Gera a assinatura
+Este c´odigo ´e exemplo simplificado de como uma assinatura baseada em hash e uma ´arvore de
+Merkle poderiam ser usadas em conjunto, seguindo uma l´ogica parecida com a do Sphincs+ e
+FORS.
+4 Avalia¸c˜ao de uma implementa¸c˜ao real do algoritmo
+A submiss˜ao do NIST conta com um c´odigo escrito em C++ de uma implementa¸c˜ao do Sphincs+.
+O c´odigo apresenta um total de 36 instˆancias bem descritas. Com defini¸c˜oes das fun¸c˜oes hash e os
+parˆametros espec´ıficos para garantir diferentes n´ıveis de seguran¸ca, conforme mencionado na sess˜ao
+2.6. Estes parˆametros incluem as dimens˜oes da ´arvore criptogr´afica, configura¸c˜oes do WOTS+ e
+do FORS, que s˜ao componentes do esquema.
+Nesta implementa¸c˜ao de referˆencia, ´e poss´ıvel especificar os parˆametros atrav´es de um arquivo
+chamado ”params.h”. Os conjuntos de parˆametros sugeridos est˜ao pr´e-definidos nos arquivos localizados em ref/params/params − ∗.h. A fun¸c˜ao hash pode ser alterada utilizando diferentes
+implementa¸c˜oes de hash.h, como hashharaka.c, hashsha2.c e hashshake.c, que pode ser identificado no arquivo Makefile.
+Os parˆametros s˜ao desenhados para atender `as categorias de seguran¸ca 1, 3 e 5 definidas pelo NIST.
+12
+Para cada categoria de seguran¸ca, h´a um conjunto de parˆametros que se concentra ou em assinaturas menores ou na gera¸c˜ao r´apida de assinaturas, novamente conforme j´a descrito na sess˜ao 2.6
+Ao rodar a aplica¸c˜ao pode-se testar os diferentes parˆametros, para diferentes mensagens. O c´odgo
+do projeto pode ser encontrado no arquivo de submiss˜ao do NIST em: https://sphincs.org/data/Sphincs+-
+submission-nist.zip
+Alternativamente com c´odigo desenvolvido em python complementa o c´odigo submetido ao NIST
+com um benchmark. O reposit´orio encontra-se em: https://github.com/sphincs/sphincsplus
+4.1 Execu¸c˜ao do c´odigo
+Para rodar o benchmark, ´e preciso ter python3 e preferencialmente OpenSSL 3.x. Ap´os clonar o
+reposit´orio basta rodar o comando ”python3brenchmark” na pasta raiz. Por´em, modificou-se os arquivos de benchmark de cada uma sa´ıdas de benchmark par entregar o resultado em milissegundos.
+Os testes foram feitos em um notebook com sistema operacional Ubuntu 12.04 com as seguintes
+caracter´ısticas: 12ª gera¸c˜ao Intel® Core™ i7-1255U com 16 Gb de mem´oria ran.
+4.1.1 Resultados
+Os resultados s˜ao dados para uma m´edia de 10 itera¸c˜oes. S˜ao apresentados abaixo os resultados
+para as m´etricas de seguran¸ca definidas pelo NIST.
+Tabela 3: Resultados do Benchmark sphincs-sha2-128s robust usando sha2
+Opera¸c˜ao Tempo M´edio Ciclos (Mediana, 1x)
+Gera¸c˜ao de Chaves 30.54 ms 89,588,410
+- WOTS pk gen 8x 0.48 ms 1,397,546 (64x: 89,442,944)
+Assinatura 228.87 ms 666,729,780
+- FORS assinatura 18.26 ms 53,566,091
+- WOTS pk gen x8 0.47 ms 1,359,927 (448x: 609,247,296)
+Verifica¸c˜ao 0.41 ms 1,203,559
+Tamanho da Assinatura 7856 (7.67 KiB)
+Tamanho da Chave P´ublica 32 (0.03 KiB)
+Tamanho da Chave Secreta 64 (0.06 KiB)
+13
+Tabela 4: Resultados do Benchmark sphincs-sha2-128f robust usando sha2
+Opera¸c˜ao Tempo M´edio Ciclos (Mediana, 1x)
+Gera¸c˜ao de Chaves 0.49 ms 1,374,172
+- WOTS pk gen 8x 0.47 ms 1,352,695
+Assinatura 11.43 ms 33,222,095
+- FORS assinatura 0.78 ms 2,281,060
+- WOTS pk gen x8 0.48 ms 1,390,333 (22x: 30,587,326)
+Verifica¸c˜ao 1.06 ms 3,083,799
+Tamanho da Assinatura 17088 (16.69 KiB)
+Tamanho da Chave P´ublica 32 (0.03 KiB)
+Tamanho da Chave Secreta 64 (0.06 KiB)
+Tabela 5: Resultados do Benchmark sphincs-shake-128f robust usando shake
+Opera¸c˜ao Tempo M´edio Ciclos (Mediana, 1x)
+Gera¸c˜ao de Chaves 0.79 ms 2,274,446
+- WOTS pk gen 4x 0.39 ms 1,128,064 (2x: 2,256,128)
+Assinatura 18.70 ms 52,745,524
+- FORS assinatura 0.98 ms 2,864,552
+- WOTS pk gen x4 0.39 ms 1,128,497 (44x: 49,653,868)
+Verifica¸c˜ao 1.41 ms 4,108,984
+Tamanho da Assinatura 17088 (16.69 KiB)
+Tamanho da Chave P´ublica 32 (0.03 KiB)
+Tamanho da Chave Secreta 64 (0.06 KiB)
+Tabela 6: Resultados do Benchmark sphincs-sha2-192s simple usando sha2
+Opera¸c˜ao Tempo M´edio Ciclos (Mediana, 1x)
+Gera¸c˜ao de Chaves 22.41 ms 64,707,823
+- WOTS pk gen 8x 0.35 ms 1,035,373 (64x: 66,263,872)
+Assinatura 213.13 ms 622,415,673
+- FORS assinatura 52.59 ms 152,873,199
+- WOTS pk gen x8 0.35 ms 1,006,455 (448x: 450,891,840)
+Verifica¸c˜ao 0.30 ms 854,871
+Tamanho da Assinatura 16224 (15.84 KiB)
+Tamanho da Chave P´ublica 48 (0.05 KiB)
+Tamanho da Chave Secreta 96 (0.09 KiB)
+14
+Tabela 7: Resultados do Benchmark sphincs-shake-192f robust usando shake
+Opera¸c˜ao Tempo M´edio Ciclos (Mediana, 1x)
+Gera¸c˜ao de Chaves 1.14 ms 3,300,529
+- WOTS pk gen 4x 0.57 ms 1,645,338 (2x: 3,290,676)
+Assinatura 28.82 ms 83,852,681
+- FORS assinatura 3.82 ms 11,156,720
+- WOTS pk gen x4 0.56 ms 1,645,588 (44x: 72,405,872)
+Verifica¸c˜ao 1.99 ms 5,820,177
+Tamanho da Assinatura 35664 (34.83 KiB)
+Tamanho da Chave P´ublica 48 (0.05 KiB)
+Tamanho da Chave Secreta 96 (0.09 KiB)
+Tabela 8: Resultados do Benchmark sphincs-sha2-256s robust usando sha2-avx2
+Opera¸c˜ao Tempo M´edio Ciclos (Mediana, 1x)
+Gera¸c˜ao de Chaves 64.03 ms 187,307,687
+- WOTS pk gen 8x 1.97 ms 5,729,077 (32x: 183,330,464)
+Assinatura 674.82 ms 1,969,070,070
+- FORS assinatura 166.76 ms 484,791,190
+- WOTS pk gen x8 2.02 ms 5,890,204 (256x: 1,507,892,224)
+Verifica¸c˜ao 1.50 ms 4,368,211
+Tamanho da Assinatura 29792 (29.09 KiB)
+Tamanho da Chave P´ublica 64 (0.06 KiB)
+Tamanho da Chave Secreta 128 (0.12 KiB)
+Tabela 9: Resultados do Benchmark sphincs-sha2-256f robust usando sha2
+Opera¸c˜ao Tempo M´edio Ciclos (Mediana, 1x)
+Gera¸c˜ao de Chaves 4.07 ms 11,797,417
+- WOTS pk gen 8x 2.02 ms 5,884,440 (2x: 11,768,880)
+Assinatura 76.38 ms 223,357,430
+- FORS assinatura 8.43 ms 24,373,160
+- WOTS pk gen x8 2.02 ms 5,886,513 (34x: 200,141,442)
+Verifica¸c˜ao 2.90 ms 8,460,718
+Tamanho da Assinatura 49856 (48.69 KiB)
+Tamanho da Chave P´ublica 64 (0.06 KiB)
+Tamanho da Chave Secreta 128 (0.12 KiB)
+15
+O Sphincs+ possui chaves p´ublicas e privadas curtas, mas possui uma assinatura muito mais longa
+que Dilithium e Falcon. Para o mesmo n´ıvel de seguran¸ca, Sphincs+ possui uma assinatura de 49
+KB em compara¸c˜ao com apenas 4K para Dilithium e 1 KB para Falcon. No geral, o Sphincs+
+possui um par de chaves pequeno, mas a assinatura ´e bastante grande.
+5 Apresenta¸c˜ao da prova de seguran¸ca do algoritmo
+A seguran¸ca do Sphincs+ ´e determinada pela combina¸c˜ao das seguran¸cas de seus componentes.
+Se cada componente ´e suficientemente seguro contra seus respectivos tipos de ataque, ent˜ao o
+Sphincs+ como um todo tamb´em ser´a seguro.
+Nesse caso F e H s˜ao apenas renomea¸c˜oes de T h para comprimentos de mensagem n e 2n.
+Teorema Para parˆametros n, w, h, d, m, t, k conforme descritos
+n — comprimento do hash em WOTS/HORST (em bits)
+w — Parˆametro Winternitz usado para assinatura WOTS+
+h — altura da hiper´arvore
+d - camadas da hiper´arvore
+m — comprimento do hash da mensagem (em bits)
+t — camadas na ´arvore HORST (2t ´e o n´umero de elementos de chave secreta)
+k — n´umero de elementos de chave secreta revelados por assinatura HORST
+O Sphincs+ ´e seguro se,
+• T h (e, portanto, tamb´em F e H) ´e resistente a colis˜oes multi-alvo de fun¸c˜ao ´unica p´os-quˆantica
+para ajustes distintos (com conselho de ajuste),
+• F ´e resistente a segunda imagem decis´oria multi-alvo de fun¸c˜ao ´unica p´os-quˆantica para
+ajustes distintos (com conselho de ajuste),
+• P RF e P RFmsg s˜ao fam´ılias de fun¸c˜oes pseudoaleat´orias p´os-quˆanticas, e
+• Hmsg ´e resiliente a subconjunto de alvo entrela¸cado p´os-quˆantico.
+Mais concretamente,
+InSecP Q−EU−CMA(Sphincs+; ξ, qs) ≤ InSecP Q−P RF (PRF; ξ, q1) + InSecP Q−P RF (PRFmsg; ξ, qs)
++ InSecP Q−IT SR(Hmsg; ξ, qs) + InSecP Q−SM−T CR(Th; ξ, q2)
++ 3 · InSecP Q−SM−T CR(F; ξ, q3) + InSecP Q−SM−DSP R(F; ξ, q3),
+16
+onde q1 < 2
+h+1(kt + len), q2 < 2
+h+2(w · len + 2kt), e q3 < 2
+h+1(kt + w · len).
+A parte esquerda da equa¸c˜ao indica a ”inseguran¸ca”(InSec) do Sphincs+ em um cen´ario p´osquˆantico (pq) contra um tipo espec´ıfico de ataque chamado ”existential forgery under chosen
+message attack”(eu-cma). Isso mede a vulnerabilidade do Sphincs+ a um advers´ario que tenta
+forjar uma assinatura digital v´alida. Os termos ξ e qs representam vari´aveis que influenciam essa
+medida, como o ambiente de seguran¸ca ou o n´umero de consultas que um atacante pode fazer.
+O lado direito da equa¸c˜ao soma v´arias medidas de inseguran¸ca de diferentes componentes usados
+no Sphincs+. Cada termo come¸ca com ”InSec”e identifica um componente espec´ıfico e o tipo de
+ataque a que ele ´e suscet´ıvel, como a inseguran¸ca de uma ”fun¸c˜ao pseudoaleat´oria”(PRF) em um
+cen´ario p´os-quˆantico. Os termos q1, q2 e q3 s˜ao n´umeros que representam limites ou condi¸c˜oes
+espec´ıficas para essas medidas de inseguran¸ca.
+1. InSecPQ-PRF(PRF; ξ,q1): Refere-se `a inseguran¸ca de uma fun¸c˜ao pseudoaleat´oria (PRF) em
+um contexto p´os-quˆantico. Mede a dificuldade de distinguir a sa´ıda da PRF de uma sequˆencia
+verdadeiramente aleat´oria. O termo (q1) indica o limite de tentativas de um atacante.
+2. InSecPQ-PRF(P RFmsg; ξ,qs): Semelhante ao primeiro, mas aplicado `a PRF usada para processar mensagens (P RFmsg). Tamb´em avalia a seguran¸ca em um contexto p´os-quˆantico com
+o termo (qs) representando um limite de consultas ou tentativas de ataque.
+3. InSecPQ-ITSR(Hmsg; ξ,qs): Avalia a inseguran¸ca da fun¸c˜ao hash ”Hmsg”sob a m´etrica de resiliˆencia de subconjunto de alvo entrela¸cado p´os-quˆantico. Mede a dificuldade de encontrar
+colis˜oes ou prever sa´ıdas da fun¸c˜ao hash.
+4. InSecPQ-SM-TCR(Th; ξ,q2): Mede a inseguran¸ca da fun¸c˜ao hash ”Th”contra ataques de colis˜ao
+em um cen´ario p´os-quˆantico. O termo (q2) ´e um limite para o n´umero de tentativas do
+atacante.
+5. 3 · InSecPQ-SM-TCR(F; ξ,q3): Uma medida triplicada da inseguran¸ca da fun¸c˜ao hash ”F”. O
+fator 3 indica a importˆancia cr´ıtica deste aspecto para a seguran¸ca do sistema. O termo (q3)
+´e um limite para tentativas de ataque.
+6. InSecPQ-SM-DSPR(F; ξ,q3): Mede a inseguran¸ca da fun¸c˜ao hash ”F”sob a m´etrica de resistˆencia
+a segunda imagem para alvos distintos em um cen´ario p´os-quˆantico. Relacionado `a dificuldade de encontrar uma segunda entrada que produza uma sa´ıda hash espec´ıfica.
+Isso implica que a seguran¸ca da Constru¸c˜ao no Sphincs+ pode ser reduzida a certas suposi¸c˜oes ou
+propriedades. Em termos criptogr´aficos, uma redu¸c˜ao de seguran¸ca ´e uma forma de mostrar que a
+seguran¸ca de um sistema pode ser baseada na dificuldade assumida de um problema criptogr´afico
+17
+ou na seguran¸ca de outro sistema. A seguran¸ca do esquema depende n˜ao apenas da for¸ca te´orica
+dessas fun¸c˜oes, mas tamb´em de suas implementa¸c˜oes espec´ıficas
+N˜ao existem ataques estruturais contra as implementa¸c˜oes espec´ıficas das fun¸c˜oes criptogr´aficas
+usadas. Um ataque estrutural ´e aquele que explora a estrutura interna ou fraquezas espec´ıficas
+de um algoritmo criptogr´afico. Nesse sentido, o Sphincs ´e avaliado contra ataques baseados em
+computa¸c˜ao tradicional (cl´assica) e quˆantica. Isso ´e crucial para a criptografia p´os-quˆantica, pois
+os computadores quˆanticos tˆem o potencial de quebrar muitos sistemas criptogr´aficos atuais.
+A an´alise de seguran¸ca inclui a considera¸c˜ao do tempo de execu¸c˜ao dos advers´arios, ou seja, quanto
+tempo levaria para um atacante quebrar o sistema. Isso ´e medido em termos de chamadas para as
+fun¸c˜oes criptogr´aficas usadas no Sphincs+. As considera¸c˜oes de seguran¸ca e limites s˜ao resumidos
+na tabela a seguir que fornece uma referˆencia r´apida para as for¸cas e limita¸c˜oes de seguran¸ca do
+Sphincs+ sob v´arios cen´arios e suposi¸c˜oes.
+Limites para ataques quˆanticos e cl´assicos gen´ericos contra propriedades de fun¸c˜oes utilizadas.
+Para X =
+P
+y
+(1 − (1 −
+1
+y
+)
+k
+) · (qs) · (1 −
+1
+2
+h )
+qsy−1
+·
+1
+2
+hy
+.
+Tabela 10: Limites para ataques cl´assicos e quˆanticos
+SPR/ PRF DSPR ITSR
+cl´assico Θ
+
+(q+1)2
+2n
+
+Θ
+
+(q+1)2
+2n
+
+Θ((q + 1)X)
+quˆantico Θ
+
+(q+1)1/2
+2n
+
+Θ
+
+(q+1)1/2
+2n
+
+Θ((q + 1)1/2X)
+O Multi-target second-preimage resistant - SPR ´e um termo t´ecnico de criptografia. A
+resistˆencia a segunda pr´e-imagem ´e uma propriedade de uma fun¸c˜ao de hash criptogr´afica que
+torna invi´avel encontrar duas entradas distintas que resultem no mesmo hash. A varia¸c˜ao ”multitarget”dessa propriedade significa que a fun¸c˜ao de hash permanece resistente mesmo quando v´arios
+alvos (ou seja, sa´ıdas de hash) est˜ao sob ataque ao mesmo tempo. Isso ´e particularmente importante
+em um cen´ario onde um atacante pode tentar encontrar entradas que correspondam a qualquer
+um de um conjunto de hashes conhecidos, aumentando assim as chances de encontrar uma colis˜ao.
+O termo Decisional Second-Preimage Resistance (DSPR): refere-se a uma no¸c˜ao mais
+espec´ıfica onde o desafio para o advers´ario n˜ao ´e encontrar uma segunda pr´e-imagem, mas apenas
+decidir se tal pr´e-imagem existe. Isso ´e importante em alguns cen´arios de seguran¸ca onde o mero
+fato de saber da existˆencia de uma segunda pr´e-imagem pode ter implica¸c˜oes de seguran¸ca.
+O termo Interleaved Target Subset Resilience - ITSR refere-se a uma propriedade de seguran¸ca relacionada a como as fun¸c˜oes hash s˜ao usadas no Sphincs+. Especificamente, refere-se `a
+capacidade de uma fun¸c˜ao hash em lidar com m´ultiplas instˆancias (ou ”instˆancias entrela¸cadas”)
+de uma maneira segura. Isso ´e importante no Sphincs+ porque ele usa v´arias instˆancias de fun¸c˜oes
+hash em sua estrutura, e cada uma dessas instˆancias precisa ser segura contra ataques, tanto
+individualmente quanto no conjunto.
+18
+A seguran¸ca do Sphincs+ baseia-se na propriedades padr˜ao das fam´ılias de fun¸c˜oes utilizadas e
+na suposi¸c˜ao de que a Fun¸c˜ao de Pseudoaleatoriedade (PRF) empregada nas instancia¸c˜oes das
+fun¸c˜oes hash ajust´aveis pode ser modelada como um or´aculo aleat´orio. Em termos criptogr´aficos,
+um or´aculo aleat´orio ´e uma idealiza¸c˜ao que produz respostas completamente imprevis´ıveis, como
+se fossem aleat´orias. No contexto do Sphincs+, a suposi¸c˜ao ´e que a PRF, quando usada para gerar
+m´ascaras de bits, comporta-se de uma maneira que ´e indistingu´ıvel de aleat´oria. Essa suposi¸c˜ao ´e
+importante para garantir que as m´ascaras de bits geradas n˜ao possam ser previstas ou manipuladas
+por um atacante, mantendo assim a seguran¸ca geral do sistema.
+Na redu¸c˜ao de seguran¸ca do Sphincs+, combina-se a redu¸c˜ao de seguran¸ca original do Sphincs, a
+redu¸c˜ao de seguran¸ca do XMSS-T e an´alise de seguran¸ca para o FORS multi-instˆancia. Na redu¸c˜ao
+de seguran¸ca cada chamada `a fun¸c˜ao hash usada para instanciar o hash ajust´avel possui uma chave
+com um valor diferente e as entradas s˜ao combinadas com uma m´ascara de bits antes de serem
+processadas. Ademais, presume-se que as m´ascaras de bits s˜ao geradas usando uma terceira PRF
+chamada P RFBM , que ´e a ´unica fun¸c˜ao assumida para se comportar como um or´aculo aleat´orio.
+Por fim, faz-se uma suposi¸c˜ao estat´ıstica sobre a fun¸c˜ao hash F, requerendo-se que cada elemento
+na imagem de F tenha pelo menos duas pr´e-imagens.
+6 Conclus˜ao
+O Sphincs+ se destaca como uma solu¸c˜ao no campo da criptografia p´os-quˆantica, especialmente
+por sua base na complexidade computacional das fun¸c˜oes hash. Sua abordagem de seguran¸ca, que
+se apoia em hip´oteses robustas sobre essas fun¸c˜oes, proporciona uma defesa eficaz tanto contra
+ataques tradicionais quanto contra amea¸cas quˆanticas. Os m´etodos de ataque mais eficazes at´e
+o momento, incluindo aqueles potencializados por t´ecnicas quˆanticas, s˜ao bem compreendidos e
+permitem uma avalia¸c˜ao precisa dos n´ıveis de seguran¸ca oferecidos pelo Sphincs+.
+Uma das principais vantagens do Sphincs+ ´e a utiliza¸c˜ao de blocos de constru¸c˜ao estabelecidos,
+como SHA-256 e SHAKE256. Isso significa que qualquer melhoria nessas fun¸c˜oes hash pode aumentar diretamente a eficiˆencia do Sphincs+, seja em termos de velocidade ou na possibilidade
+de produzir assinaturas menores. Al´em disso, a compatibilidade com o hardware existente para
+fun¸c˜oes hash ´e um fator que favorece sua implementa¸c˜ao pr´atica.
+No entanto, ´e necess´ario reconhecer algumas limita¸c˜oes do Sphincs+. Comparado a m´etodos baseados em lattice, ele apresenta um desempenho mais lento e produz assinaturas significativamente
+maiores. Apesar disso, suas chaves p´ublicas e privadas reduzidas, aliadas ao fato de ser um esquema de assinatura baseado em hash sem estado, tornam-no uma op¸c˜ao atraente em diversos
+contextos de aplica¸c˜ao. A aceita¸c˜ao recente do Sphincs+ pelo NIST para padroniza¸c˜ao refor¸ca sua
+importˆancia e potencial no panorama atual da criptografia.
+Contudo, ´e importante salientar que, em termos pr´aticos, o tamanho e a velocidade das assinaturas do Sphincs+ ainda est˜ao aqu´em dos padr˜oes estabelecidos por RSA ou ECDSA. Apesar dessas
+19
+considera¸c˜oes, suas caracter´ısticas distintas e a robustez em um contexto p´os-quˆantico sugerem
+um futuro promissor para a evolu¸c˜ao da seguran¸ca cibern´etica.
+Referˆencias
+[1] Daniel J Bernstein, Daira Hopwood, Andreas H¨ulsing, Tanja Lange, Ruben Niederhagen,
+Louiza Papachristodoulou, Michael Schneider, Peter Schwabe, and Zooko Wilcox-O’Hearn.
+Sphincs: practical stateless hash-based signatures. In Annual international conference on the
+theory and applications of cryptographic techniques, pages 368–397. Springer, 2015.
+[2] Johannes Buchmann, Erik Dahmen, and Andreas H¨ulsing. Xmss-a practical forward secure
+signature scheme based on minimal security assumptions. In Post-Quantum Cryptography: 4th
+International Workshop, PQCrypto 2011, Taipei, Taiwan, November 29–December 2, 2011.
+Proceedings 4, pages 117–129. Springer, 2011.
+[3] Oded Goldreich. Two remarks concerning the Goldwasser-Micali-Rivest signature scheme.
+Springer, 1987.
+[4] Oded Goldreich. Foundations of cryptography: volume 2, basic applications. Cambridge
+university press, 2009.
+[5] Andreas H¨ulsing. W-ots+–shorter signatures for hash-based signature schemes. In Progress
+in Cryptology–AFRICACRYPT 2013: 6th International Conference on Cryptology in Africa,
+Cairo, Egypt, June 22-24, 2013. Proceedings 6, pages 173–188. Springer, 2013.
+[6] Andreas H¨ulsing, Denis Butin, Stefan Gazdag, Joost Rijneveld, and Aziz Mohaisen. Xmss:
+extended merkle signature scheme. Technical report, 2018.
+[7] Leslie Lamport. Constructing digital signatures from a one way function. 1979.
+[8] David McGrew, Michael Curcio, and Scott Fluhrer. Leighton-micali hash-based signatures.
+Technical report, 2019.
+[9] Ralph C Merkle. A certified digital signature. In Conference on the Theory and Application
+of Cryptology, pages 218–238. Springer, 1989.
+[10] National Institute of Standards and Technology (NIST). Stateful hash-based signature schemes: Sp 800-208. https://csrc.nist.gov/Projects/stateful-hash-based-signatures/news, 2020.
+Accessed: 2023-12-05.
+20

@@ -1,0 +1,247 @@
+﻿Sistemas de Cache para Web: Um Estudo de Caso Utilizando 
+MySQL e MongoDB 
+
+Heron Y. Inouye, Luís H. C. N. Ferreira, Rafael M. Coutinho, Alexandre C. B. Ramos 
+
+Departamento de Matemática e Computação - Universidade Federal de Itajubá (UNIFEI) - 
+Av. BPS, 1330 - Bairro Pinheirinho - 37500-903 - Itajubá, MG, Brasil 
+
+heron.inouye@gmail.com, luisconrado@hotmail.com, 
+
+rafaelmcoutinho@yahoo.com.br, ramos@unifei.edu.br 
+
+Abstract. This article presents a comparison in the use of relational databases 
+and document oriented database in a cache system in a web application. There 
+will be a review of both systems, their origins, purposes and characteristics. Then, 
+we present a case study of applying these systems to provide cached information 
+in a web application. We will analyze their performance and we will show a 
+comparison between the technologies to our case. 
+
+Resumo.  Este artigo apresenta um comparativo na utilização de bancos de dados 
+relacionais e bancos de dados orientados a documentos em um sistema de cache 
+para um aplicativo web. Será feita uma revisão sobre ambos os sistemas, suas 
+origens, finalidades e suas características. Em seguida, será apresentado um 
+estudo de caso da aplicação desses sistemas para prover cache de informações 
+em um aplicativo web. Serão analisados seus desempenhos e será exibido um 
+comparativo entre as tecnologias para o caso citado. 
+
+1. Introdução 
+
+Um sistema de gerenciamento de bancos de dados (SGBD) é uma coleção de dados 
+inter-relacionados e um conjunto de programas para acessar esses dados. A coleção de 
+dados, comumente chamada de banco de dados, geralmente contém informações essenciais 
+para as organizações, pessoas e empresas [SILBERSCHATZ, 2006], e esses sistemas tem 
+cada vez ficado mais frequentes na vida das pessoas [ELMASRI, 2004]. 
+
+Ao final da década de 90 mais de 90% do mercado de banco de dados corporativos 
+eram dominados por produtos relacionais [MELO, 1997]. Além disso, o market share desse 
+tipo de banco de dados tem crescido muito ao longo dos anos [JOINVISION, 2006]. 
+
+Uma alternativa aos SGBD’s relacionais que tem ganhado grande destaque nos 
+últimos anos são os sistemas NoSQL (Not Only SQL). Essa classe de sistemas gerenciadores 
+de bancos de dados tendem a não exigir tabelas com estruturas fixas, geralmente evitam 
+operações de joins e são construídas visando-se a performance e a escalabilidade 
+[LAKSHMAN, 2009]. Dentre as diversas implementações NoSQL destacamos a categoria 
+
+
+
+dos bancos de dados orientados a documentos, responsáveis pelo armazenamento, obtenção 
+e gerenciamento de documentos ou informações semi-estruturadas, com grande 
+preocupação na consistência dos dados armazenados [XIANG 2010].  
+
+Nesse artigo, será feito um estudo de caso com um comparativo entre um SGBD 
+relacional (MySQL) e um SGBD NoSQL orientado a documentos (MongoDB). Os dois 
+sistemas serão utilizados como mecanismo de cache de informações em um aplicativo web. 
+Mecanismos para armazenamento temporário (caching) de documentos web, conhecidos 
+como web caches são sistemas que armazenam cópias das informações, retornando-as para 
+requisições subsequentes, caso certas condições sejam satisfeitas [HUSTON, 2009]. Serão 
+comparadas as estruturas, o desempenho e os tamanhos de ambos os sistemas. 
+
+ 
+
+2. O Aplicativo 
+
+Os SGBD’s foram testados em um aplicativo web cuja finalidade é servir como um 
+sistema agregador de informações em PHP sobre propriedades (casas e terrenos) a venda.  
+
+As informações sobre essas propriedades estavam espalhadas em diversos bancos de 
+dados, fabricantes e tecnologias diferentes. Visando evitar as múltiplas conexões 
+necessárias para se exibir todas as informações, foi criada uma interface temporária, que 
+agregava as informações e exibia aos usuários, funcionando como um cache para as 
+informações reais.  Inicialmente essa interface foi criada em um banco de dados MySQL, e 
+o aplicativo obtinha as informações e montava a interface para os usuários. Posteriormente, 
+essa interface foi modificada, implantando-se MongoDB em substituição ao MySQL.  
+
+3. As Diferenças Estruturais 
+
+Após analisar as informações que deveriam ser agregadas, foi proposta uma 
+estrutura  de tabela para MySQL (Figura 2) que atendia aos requisitos necessários e supria 
+as necessidades propostas.  
+
+ 
+
+
+
+Figura 2. Estrutura da Tabela no MySQL 
+
+ 
+
+ Como esse SGBD possui estrutura de tabela fixa, os campos que não possuem valor 
+são inseridos no banco de dados com valores nulos. Como o MongoDB não possui estrutura 
+de tabela fixa, a estrutura varia de acordo com os dados a serem inseridos. Caso algum 
+campo não esteja presente, a estrutura da tabela é alterada, e o campo é removido de sua 
+estrutura, como por exemplo na Figura 3, onde uma propriedade foi inserida sem os campos 
+property_lot_square_foot, property_building_square_foot e property_age_of_the_building. 
+Além disso, alguns campos foram agrupados, melhorarando a organização do documento. 
+
+ 
+
+ 
+Figura 3. Exemplo de estrutura do MongoDB 
+
+ 
+
+ Afim de se medir e comparar a diferença entre as implantações dos dois sistemas 
+gerenciadores de bancos de dados ao sistema proposto, foram feitas algumas medidas e  
+levantados alguns pontos, detalhados a seguir. 
+
+4. O Tempo de Execução das Queries 
+
+Os SGBD’s foram configurados para armazenar em um log todas as queries que 
+demorassem mais do que uma fatia de tempo considerada grande o suficiente para 
+prejudicar a utilização do aplicativo por parte dos usuários. Essa fatia foi fixada em 2 
+segundos, já que as queries mais complexas do sistema eram executadas nessa média de 
+
+
+
+tempo. Esses dados foram coletados durante 15 dias, juntamente com a quantidade total de 
+queries executadas no aplicativo em cada dia. Em seguida, foi feita a razão entre a 
+quantidade de queries consideradas lentas e a quantidade total de queries dos dois SGBD’s, 
+e esse número foi multiplicado por cem, para se calcular a porcentagem de queries lentas 
+por dia para cada SGBD. O resultado pode ser visualizado no gráfico da Figura 4. 
+
+ 
+Figura 4. Porcentagem de Queries lentas por dia para cada SGBD. 
+
+ 
+
+Apesar de, no terceiro dia a porcentagem de queries lentas registradas pelo MySQL 
+ser menor do que as registradas pelo MongoDB, em geral observa-se o contrário. Ao 
+implantar-se o MongoDB, percebeu-se uma grande queda na quantidade de queries 
+gravadas no log. Ao final dos 15 dias, o MySQL apresentou média de 2,69% de queries 
+lentas por dia, enquanto o MongoDB registrou 1,12% no mesmo período. 
+
+5. O Tempo de Geração das Páginas 
+
+Com a finalidade de medir e comparar o tempo de carregamento das páginas foi 
+adicionado ao aplicativo a ferramenta Xdebug, uma extensão capaz de prover capacidades 
+de debug e profiling para aplicativos escritos em PHP [MCARTHUR, 2008]. Com essa 
+ferramenta foi possível medir o tempo necessário para gerar as páginas (obter os dados 
+necessários do banco de dados e inseri-los nas páginas).  
+
+Foi medido o tempo de geração de cada página em cada acesso de todos os usuários. 
+Antes da implantação da interface de cache, o tempo médio de carregamento das páginas 
+era de 3,85 segundos. Ao se observar mais atentamente o tempo de geração dessas páginas, 
+pode-se perceber que esse tempo alto se deve principalmente à necessidade das múltiplas 
+
+
+
+conexões aos bancos de dados. Essa foi a principal motivação para a implantação dos 
+caches utilizados nesse artigo. 
+
+Com a utilização da interface de cache implementada com o MySQL, o tempo 
+médio de carregamento das páginas caiu para 1,2 segundos. Além da eliminação das 
+múltiplas conexões, o fato dos dados estarem disponíveis, agregados em um único 
+resultado, também contribuiu para a queda desse valor. Após a implantação do cache 
+MongoDB, esse tempo diminuiu ainda mais, chegando ao valor de 0,95 segundos. 
+
+6. O Tamanho das Bases de Dados 
+
+ Antes da implantação do sistema de cache, somando-se todos os registros dos 
+diversos bancos de dados utilizados pelo aplicativo, chegava-se ao valor de 5.839.193 
+registros. Grande parte desses registros estava espalhado em outros bancos de dados, 
+contendo apenas referências (chaves estrangeiras) para a tabela principal de propriedades. 
+Após a implantação dos caches, essa quantidade caiu para 1.251.730 registros. Ao se 
+analisar o tamanho ocupado pelas bases de dados, somando-se os registros de todos os 
+antigos SGBD’s utilizados chegou-se ao valor de 714,84 MB. Com a utilização do cache 
+MySQL esse valor caiu para 503,47 MB. Com a migração para o MongoDB esse valor 
+diminuiu ainda mais para 478,12 MB, devido principalmente à sua estrutura variável de 
+armazenamento de dados. 
+
+7. Problemas Identificados 
+
+ Uma grande dificuldade encontrada foi o tratamento dos dados vindos da estrutura 
+de documentos variável do MongoDB. Como os campos que não possuem valor não são 
+inseridos no documento a ser armazenado, ao se obter esse documento, não se sabe com 
+certeza quais campos estarão presentes, o que torna essa estrutura heterogênea. Esse 
+problema teve que ser resolvido em nível de aplicação. 
+
+ Outro problema identificado foi a pouca maturidade dos SGBD’s NoSQL. Ao 
+contrário dos SGBD’s relacionais, que dominam o mercado a muitos anos, os sistemas 
+NoSQL ainda são relativamente novos, não possuem uma comunidade de usuários forte, e 
+existem poucas empresas que oferecem soluções de suporte. Assim, todos os problemas 
+encontrados na implantação do MongoDB tomaram mais tempo para serem solucionados. 
+
+    Além disso, os controles e a rigidez exigidas por um sistema de bancos de dados 
+relacional fizeram muita falta na implantação da interface de cache utilizando MongoDB. 
+As estruturas de controle necessárias para se garantir a integridade dos dados teve que ser 
+inserida em nível de aplicação. Isso aumentou o tempo necessário para sua implantação. 
+
+ 
+
+ 
+
+
+
+8. Conclusão 
+
+Apesar da dificuldade para se coletar as informações necessárias para se montar os 
+sistemas de cache, constatou-se que a sua implantação resultou em uma melhoria no 
+aplicativo como um todo. A geração dos indicadores e sua análise foi de suma importância 
+para a avaliação do processo. A análise desses indicadores comprou a eficácia do sistema 
+de cache, em ambos os SGBD’s utilizados. A satisfação dos usuários do aplicativo, 
+expressa através de formulários de contato e de emails, também indica um acerto na 
+decisão da utilização das interfaces de caches. 
+
+As dificuldades impostas pelo uso do MongoDB implicaram em um tempo maior 
+para o término do processo de implantação desse SGBD. Porém os ganhos trazidos, 
+principalmente pelo tempo de execução das queries e pelo tempo de carregamento das 
+páginas, justificaram a sua implantação de forma permanente.  
+
+Assim conclui-se que, o agregamento das informações e a implantação dos sistemas 
+de cache trouxeram ganhos significativos para o aplicativo, e que o acompanhamento dos 
+indicadores gerados pode trazer ainda mais benefícios para os usuários. Além disso, 
+conclui-se que a diminuição no tempo de carregamento das páginas contribuiu diretamente  
+para melhoria da experiência de uso do aplicativo por parte dos usuários. 
+
+9. Referencias Bibliográficas 
+
+Codd, E.F. (1990) “The Relational Model for Database Management”, Addison Wesley 
+nd
+
+Publishing Company, 2  Edition. 
+
+Joinvision, E-Services GmbH (2006), disponível em http://bit.ly/w3jBs9 
+
+Melo, R.N.; Silva, S.D.; Tanaka, A.K. (1997) “Banco de Dados em Aplicações Cliente - 
+Servidor”, Editora Infobook. 
+
+Elmasri, R.; Navathe, S.B. (2004) “Fundamentals of Database Systems”, Pearson 
+th
+
+Education Inc, 4  Edition.  
+
+Lakshman, A.; Malik, P. (2009) “Cassandra – A decentralized Structured Storage System”, 
+Cornell University 
+
+Huston, G. (2009) “Web Caching”, Cisco. The Internet Protocol Journal – Volume 2, No. 
+3, disponível em http://bit.ly/vRn8Tc 
+
+McArthur, K. (2008) “Testing, Development, and Continuous Integration”, New York City, 
+New York. Apress Inc. 
+
+Xiang P., Hou, R., Zhou, Z. “Cache and consistency in NOSQL”, Computer Science and 
+Information Technology ICCSIT 2010, 3rd IEEE International Conference  
+
+Silberschatz, A.; Korth, H.F.; Sudarshan, S. (2006) “Database System Concepts”, 
+McGraw-Hill Companies, Inc.

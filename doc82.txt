@@ -1,0 +1,588 @@
+﻿Revista	JRG	de	Estudos	Acadêmicos,	Ano	7,	Vol.	VII,	n.14,	jan.-jul.,	2024	
+	
+
+	
+Listas	de	conteúdos	disponıv́eis	em Portal	de	Periódicos	CAPES	
+
+	
+Revista	JRG	de	Estudos	Acadêmicos	
+
+	
+B1                 ISSN: 2595-1661 
+
+Página	da	revista:	
+ARTIGO	DE	REVISA,O	 															https://revistajrg.com/index.php/jrg	
+
+ 
+Crescimento e expansão no uso de software como serviço (SaaS): estratégias e 
+obstáculos para empresas de tecnologia 
+ 
+Growth and expansion in the use of software as a service (SaaS): strategies and obstacles for 
+technology companies 
+ 
+ 
+
+DOI: 10.55892/jrg.v7i13.902 
+ 
+
+ARK: 57118/JRG.v7i13.902 
+ 
+
+Recebido: 20/12/2023 | Aceito: 11/01/2024 | Publicado on-line: 12/01/2024 
+
+ 
+Geovanni dos Santos Correia1 
+
+ https://orcid.org/0009-0000-7581-3856 
+ https://lattes.cnpq.br/7283751229290160 
+
+Centro Universitário Mario Pontes Jucá – UMJ, AL, Brasil 
+E-mail: geovanni-dsc@hotmail.com 
+  
+Gabriel Santos de Lima Barreto2 
+
+ https://orcid.org/0009-0009-6033-7610 
+ http://lattes.cnpq.br/9157818462781432 
+
+Centro Universitário Mario Pontes Jucá – UMJ, AL, Brasil 
+E-mail: gabriel.barret015@hotmail.com 
+ 
+Nathalia de Meneses Alves3 
+
+ https://orcid.org/0009-0007-4097-1927 
+ http://lattes.cnpq.br/5973912449873430 
+
+Centro Universitário Mario Pontes Jucá – UMJ, AL, Brasil 
+E-mail: nathalia.alves@umj.edu.br 
+  
+Resumo  
+Introdução: na recente era da informação, a dinâmica empresarial é impulsionada 
+por avanços tecnológicos que redefinem modelos e desafiam convenções 
+estabelecidas. Objetivo: analisar estratégias de empresas de tecnologia para 
+impulsionar o crescimento do SaaS, propondo soluções inovadoras para otimizar a 
+implementação no mercado empresarial. Metodologia: a abordagem metodológica 
+baseou-se em revisão periódica mediante pesquisa descritiva, sob uma perspectiva 
+qualitativa, conduzida por meio da consulta a periódicos científicos disponíveis na 
+plataforma online da Scientific Electronic Library Online (SciELO). Resultados e 
+Discussão: ressalta-se a importância crucial da segurança da informação e da 
+conformidade regulatória no contexto da expansão do SaaS, traduzindo-se em uma 
+abordagem integradora. Conclusão: o Software como Serviço (SaaS) não é apenas 
+um traço provisório da evolução tecnológica, mas sim um fenômeno resiliente e 
+adaptativo que perpetuará sua influência no pioneirismo do modelo digital. 
+ 
+Palavras-chave: Software como Serviço. Empresas de Tecnologia. Segurança da 
+Informação. Nova Era Digital. Soluções Inovadoras. 
+
+ 
+1 Graduando em Análise e Desenvolvimento de Sistemas pelo Centro Universitário Mario Pontes Jucá – UMJ. 
+2 Graduando em Análise e Desenvolvimento de Sistemas pelo Centro Universitário Mario Pontes Jucá – UMJ. 
+3 Graduada em Ciência da Computação pela Universidade Federal de Alagoas – UFAL (2012); Mestra pelo Programa de Pós-
+graduação em Informática (PPGI) da Universidade Federal de Alagoas – UFAL (2015).	
+
+www.periodicoscapes.gov.br         1                    Revista JRG de Estudos Acadêmicos · 2024;14:e14902 
+
+
+
+Crescimento e expansão no uso de software como serviço (SaaS): estratégias e obstáculos para empresas de tecnologia 
+ 
+
+Abstract 
+Introduction: At the heart of this discussion is an exploration of the environment that 
+fosters the exponential growth of Software as a Service (SaaS), emphasizing its ability 
+to synergistically align with the dynamic demands of organizations and end users. 
+Objective: to analyze the strategies of technology companies to boost the growth of 
+SaaS, proposing innovative solutions to optimize implementation in the business 
+market. Methodology: the methodological approach comprises a literature review 
+using descriptive research from a qualitative perspective, conducted by consulting 
+scientific journals available on the Scientific Electronic Library Online (SciELO) online 
+platform. Results and Discussion: the crucial importance of information security and 
+regulatory compliance in the context of SaaS expansion is highlighted, translating into 
+an integrative approach aimed at mitigating inherent risks. Conclusion: Software as a 
+Service (SaaS) is not just a temporary facet of technological evolution, but a resilient 
+and adaptive phenomenon that will perpetuate its influence at the forefront of the digital 
+paradigm. 
+ 
+Keywords: Software as a Service. Technology companies. Information Security. New 
+Digital Age. Innovative Solutions. 
+ 
+1. Introdução 
+
+Na recente era da informação, a dinâmica empresarial é impulsionada por 
+avanços tecnológicos que redefinem modelos e desafiam convenções estabelecidas. 
+Nesse contexto, o Software como Serviço (SaaS) oferece um enfoque transformador 
+para a entrega e consumo de aplicações de software. A adopção exponencial do SaaS 
+destaca-se como um fenômeno representativo, ultrapassando as fronteiras 
+corporativas. Esse modelo disruptivo remodela a forma como organizações e 
+indivíduos interagem com ferramentas digitais (YANG, 2020). 
+
+Pondera-se a potencialização contínua do SaaS como um vetor proeminente 
+no pioneirismo da revolução digital, instigando reflexões prospectivas sobre o quadro 
+tecnológico e empresarial. Decodificando o interior da arquitetura SaaS, pode-se 
+deparar com um ambiente complexo, onde a infraestrutura de software é 
+disponibilizada remotamente aos usuários finais, liberando-os das limitações 
+associadas à gestão e manutenção interna (PISONI, 2021). 
+
+Este modelo, caracterizado por sua acessibilidade via navegador web, 
+representa uma transmutação nos métodos tradicionais de aquisição e 
+implementação de softwares, atribuindo uma flexibilidade notável aos usuários que, 
+agora, podem desfrutar de atualizações instantâneas, sem as ineficiências temporais 
+e os encargos operacionais correlatos, alinhando-se de maneira congruente a 
+economia de custos e a agilidade desejadas por organizações de variados portes 
+(GARCIA, 2022).  
+
+A transição para um modelo de negócios baseado em assinatura desencadeia 
+uma metamorfose financeira e, também, propaga uma democratização do acesso a 
+ferramentas tecnológicas de última geração, permitindo que empresas, 
+independentemente de sua envergadura, abracem a inovação de forma mais 
+equitativa. Assim, a ascensão do SaaS permeia setores amplamente heterogêneos, 
+como serviços financeiros, saúde, educação e logística (TOSCHI, 2023). 
+
+Esboça-se, pois, um cenário versátil, onde as adaptações específicas a cada 
+domínio refletem a capacidade adaptativa inerente ao modelo. No campo da saúde, o 
+SaaS catalisa avanços na gestão de registros médicos eletrônicos, promovendo uma 
+integração sinérgica entre profissionais e pacientes. Do mesmo modo, no contexto 
+
+www.periodicoscapes.gov.br         2                    Revista JRG de Estudos Acadêmicos · 2024;14:e14902 
+
+
+
+Crescimento e expansão no uso de software como serviço (SaaS): estratégias e obstáculos para empresas de tecnologia 
+ 
+
+educacional, a implementação do SaaS otimiza os processos administrativos e 
+potencializa métodos de aprendizagem inovadores (FERREIRA, 2023). 
+
+A ubiquidade do SaaS não está isenta de desafios e implicações éticas, ela se 
+destaca, ainda, por questões relativas à segurança da informação, conformidade 
+regulatória e dependência de fornecedores. Analisando criticamente esses aspectos, 
+pode-se enriquecer a compreensão do fenômeno SaaS e, também, delimitar áreas de 
+aprimoramento e pesquisa futura, visando à sustentabilidade e resiliência desse 
+modelo perante os desafios em constante evolução (CARLOS, 2023). 
+
+Haja vista essas concepções, considera-se que o SaaS é, assim, contemplado 
+em um cenário dinâmico e impelido por avanços tecnológicos, demandas do mercado 
+e a constante busca por eficiência operacional. A adoção generalizada do SaaS 
+sugere uma transformação tangível nas práticas empresariais e um catalisador para 
+a emergência de ambientes interconectados, onde a colaboração e a 
+interoperabilidade tornam-se categorias inalienáveis (GOLDFARB, 2022). 
+
+À medida que a jornada do SaaS se desdobra, compreende-se a profundidade 
+do impacto do SaaS, antecipando as nuances de um futuro digital no qual a inovação 
+frequente se torna a norma, moldando inexoravelmente a paisagem empresarial 
+global. A transição para o modelo SaaS não está isenta de desafios enredados que 
+exigem uma análise aprofundada. A questão da segurança da informação, em 
+particular, surge como um elemento crucial, dada a transferência de dados sensíveis 
+para ambientes remotos (ALBUQUERQUE, 2022).  
+
+O estabelecimento de protocolos sólidos de criptografia, monitoramento 
+contínuo e práticas de conformidade regulatória tornam-se indispensáveis para 
+atenuar riscos inerentes. Além do mais, a dependência de fornecedores exige uma 
+diligência cuidadosa na seleção de parceiros, considerando a longevidade e a 
+estabilidade de suas ofertas. Paralelamente aos desafios, a adoção generalizada do 
+SaaS inaugura um horizonte de oportunidades inexploradas (SANTOS, 2022). 
+
+A eficiência, transparência na gestão de dados e responsabilidade corporativa 
+são essenciais para garantir a trajetória do SaaS no meio social. Assim, a questão 
+norteadora deste estudo foi formulada da seguinte forma: “Como as empresas de 
+tecnologia otimizam o crescimento no uso de SaaS e superam os obstáculos durante 
+a transição empresarial?”. Portanto, este trabalho visa a analisar estratégias de 
+empresas de tecnologia para impulsionar o crescimento do SaaS, propondo soluções 
+inovadoras para otimizar a implementação no mercado empresarial. 
+
+ 
+2. Metodologia 
+
+A abordagem metodológica deste estudo baseou-se na análise de periódicos 
+científicos disponíveis na base de dados da Scientific Electronic Library (SciELO). A 
+pesquisa foi conduzida por meio da utilização dos seguintes descritores: "Software 
+como Serviço", "Empresas de Tecnologia", "Segurança da Informação", "Nova Era 
+Digital" e "Soluções Inovadoras". Inicialmente, realizou-se uma triagem dos periódicos 
+utilizando critérios de inclusão e exclusão, seguida de uma análise mais detalhada 
+para garantir a conformidade com os critérios estabelecidos. Os critérios de inclusão 
+para os artigos abrangiam periódicos científicos que explorassem o crescimento e a 
+expansão no uso de Software como Serviço (SaaS). Por outro lado, os critérios de 
+exclusão envolviam artigos em idiomas diferentes do inglês ou que não estivessem 
+centrados no uso de Software como Serviço. Além disso, a pesquisa enfrentou 
+dificuldades devido à abundância de estudos obsoletos, datados de anos anteriores a 
+2018. 
+ 
+
+www.periodicoscapes.gov.br         3                    Revista JRG de Estudos Acadêmicos · 2024;14:e14902 
+
+
+
+Crescimento e expansão no uso de software como serviço (SaaS): estratégias e obstáculos para empresas de tecnologia 
+ 
+
+3. Resultados e Discussão 
+O presente estudo versa sobre as complexidades inerentes ao crescimento e 
+
+expansão no uso de Software como Serviço (SaaS) relativas às estratégias e os 
+obstáculos para empresas de tecnologia. O propósito desta pesquisa consiste em 
+examinar as estratégias e os obstáculos de empresas de tecnologia para impulsionar 
+o crescimento do SaaS. Ressalta-se, pois, a importância basilar da segurança da 
+informação e da conformidade regulatória no contexto da expansão do SaaS, 
+traduzindo-se em uma abordagem integradora. 
+
+ 
+Impulsionando o Desenvolvimento de Empresas de Tecnologia Mediante 
+Estratégias na Adoção de SaaS 
+
+A transição para modelos de SaaS é uma tendência marcante no mundo 
+empresarial contemporâneo, impulsionada pela necessidade de versatilidade e 
+eficiência operacional. O modelo do Software como Serviço (SaaS) transformou a 
+paisagem empresarial, oferecendo uma alternativa dinâmica e escalável às 
+tradicionais soluções de software. No entanto, para empresas de tecnologia, a adoção 
+bem-sucedida de SaaS exige implementação e formulação de estratégias que 
+permitam o crescimento sustentável e a expansão contínua (FENERICH, 2023). 
+
+Empresas devem buscar diferenciação, oferecendo soluções SaaS que não 
+apenas atendam aos requisitos gerais, mas também se alinhem com as 
+particularidades de cada cliente.  
+
+Quanto a isso, Pisoni (2021) destaca um exemplo de software pertinente: 
+ 
+
+Quando se fala sobre os valores de uma determinada plataforma nova no 
+mercado, pode-se acabar gerando alguma insegurança para muitos dos 
+usuários [...]. Porém, com AWS Lambda o usuário pode realizar os testes 
+desejados pagando apenas por um valor baixo, ou seja, ele irá pagar apenas 
+o que utilizará sem a necessidade de contratar o serviço. Em alguns casos é 
+possível realizar alguns testes de forma gratuita, para isso é necessário 
+verificar na documentação se as funções que precisará executar se encaixam 
+nos requisitos. 
+
+ 
+A implementação de modelos de preços flexíveis é uma estratégia inteligente 
+
+para atrair uma gama diversificada de clientes. A oferta de opções como assinaturas 
+mensais, anuais ou por usuário permite que as empresas se adaptem às 
+necessidades variáveis do mercado (PISONI, 2021). 
+
+Identificar oportunidades de oferecer produtos ou serviços adicionais que 
+complementem as necessidades do cliente contribui para o crescimento contínuo. A 
+inovação constante é a espinha dorsal do sucesso a longo prazo em SaaS. 
+Estabelecer alianças estratégicas com outras empresas, especialmente aquelas que 
+operam em setores complementares, pode abrir novas oportunidades de mercado e 
+acelerar a expansão (CARLOS, 2023).   
+
+Ao personalizar soluções, adotar modelos de preços flexíveis, buscar 
+integração e inovação constante, as organizações podem não apenas sobreviver, mas 
+prosperar nesse ambiente desafiador. A adoção destas estratégias impulsionará o 
+sucesso a curto prazo, garantindo uma posição sustentável no futuro. Para alcançar 
+uma expansão sustentável em um ambiente SaaS, as empresas de tecnologia devem 
+considerar cuidadosamente a escalabilidade de suas soluções (YANG, 2020).  
+
+A automação de processos operacionais, a adoção de arquiteturas em nuvem 
+e a implementação de práticas DevOps são estratégias vitais nesse contexto. A 
+agilidade empresarial é uma necessidade inadiável em um cenário onde as demandas 
+do mercado podem mudar rapidamente. A construção de uma presença online rígida, 
+www.periodicoscapes.gov.br         4                    Revista JRG de Estudos Acadêmicos · 2024;14:e14902 
+
+
+
+Crescimento e expansão no uso de software como serviço (SaaS): estratégias e obstáculos para empresas de tecnologia 
+ 
+
+a implementação de campanhas direcionadas e a utilização eficaz de marketing de 
+conteúdo são essenciais para atrair e envolver clientes potenciais (GARCIA, 2022). 
+
+No ambiente SaaS, em que a compreensão das vantagens e funcionalidades 
+específicas é crucial, as empresas devem investir em programas de educação do 
+mercado. Em razão disso, esforços para aumentar a conscientização sobre os 
+benefícios tangíveis do SaaS educam potenciais clientes e contribuem para a criação 
+de um ambiente favorável à aceitação e adoção mais ampla dessa tecnologia 
+inovadora (GOLDFARB, 2022).  
+
+Enquanto se delineiam as estratégias, não se podem ignorar os desafios que 
+as empresas de tecnologia enfrentam. A competição acirrada, a segurança da 
+informação e a gestão eficaz da mudança são questões pertinentes. Encarando esses 
+desafios como oportunidades de refinamento e inovação, as organizações podem 
+desenvolver resiliência e, assim, solidificar sua posição no mercado SaaS. O cenário 
+do Software como Serviço oferece um terreno fértil para o crescimento e a expansão 
+de empresas de tecnologia (BOSAK, 2021).  
+
+Estratégias bem elaboradas, diferenciação e flexibilidade são os pilares do 
+sucesso nesse ambiente dinâmico. À medida que as empresas abraçam a inovação, 
+investem, também, em parcerias estratégicas e mantêm uma abordagem centrada no 
+cliente: elas não apenas superam obstáculos, mas também forjam um caminho para 
+a liderança sustentável no universo SaaS.  
+
+ 
+Uma vez que o mercado de biotérios é de nicho restrito, o desafio consistiu 
+em encontrar uma empresa de TI com interesse em investir na ferramenta 
+com know-how para desenvolver melhorias e prestar assistência técnica para 
+os biotérios contratantes. [...] Uma empresa de equipamentos para biotérios 
+testou o software e investiu recursos para fomentar o desenvolvimento da 
+ferramenta em troca de divulgação de sua marca na plataforma do BioterC 
+(FERREIRA et al., 2023). 
+
+ 
+A adoção dessas estratégias é uma necessidade definitiva para aqueles que 
+
+buscam prosperar na era digital em constante evolução (CARLOS, 2023). 
+A implementação de aprendizado de máquina e inteligência artificial permite a 
+
+personalização ainda mais refinada das soluções, garantindo uma experiência do 
+usuário excepcional e criando laços mais sólidos com a base de clientes existente. 
+Outrossim, a agilidade empresarial se estende à capacidade de se adaptar 
+rapidamente a mudanças nas condições econômicas e de mercado. A resiliência 
+organizacional, permite que as empresas superem obstáculos imprevistos e 
+prosperem em um ambiente empresarial dinâmico (GARCIA, 2022).  
+
+A inovação, como supracitado, é uma peça basilar na composição do 
+crescimento em SaaS. Apesar disso, é importante diferenciar inovação incremental e 
+disruptiva. A primeira envolve melhorias graduais nas soluções existentes, enquanto 
+a segunda abraça mudanças radicais que transformam a forma como os serviços são 
+entregues. Encontrar um equilíbrio entre essas duas formas de inovação é essencial 
+para garantir a relevância contínua e a liderança no mercado (BOSAK, 2021). 
+
+A expansão bem-sucedida no SaaS é intrinsecamente ligada à qualidade da 
+equipe. Uma equipe qualificada impulsiona a inovação e favorece a implementação 
+de estratégias delimitadas, promovendo o crescimento desejado. Em um mundo onde 
+a única constante é a mudança, as empresas de tecnologia devem adotar uma 
+abordagem integradora: desde estratégias de marketing inovadoras até a gestão de 
+talentos e a evolução tecnológica, cada aspecto é interdependente e contribui para a 
+construção de uma narrativa de sucesso (GOLDFARB, 2022). 
+
+www.periodicoscapes.gov.br         5                    Revista JRG de Estudos Acadêmicos · 2024;14:e14902 
+
+
+
+Crescimento e expansão no uso de software como serviço (SaaS): estratégias e obstáculos para empresas de tecnologia 
+ 
+
+ 
+Obstáculos e Soluções na Transição para SaaS em Empresas de Tecnologia 
+
+O avanço vertiginoso do Software como Serviço (SaaS) promete uma 
+revolução na entrega de soluções tecnológicas. Apesar disso, para as empresas que 
+almejam expansão nesse domínio, a jornada é marcada por desafios complexos e 
+diversificados. Destacando nuances críticas que permeiam a implementação e a 
+evolução do SaaS, considera-se que uma das barreiras imediatas reside nas 
+complexidades tecnológicas associadas à transição para o SaaS (YANG, 2020). 
+
+A implementação de ferramentas avançadas de análise financeira contribui 
+para a tomada de decisões em ambientes de negócios fluidos.  
+
+Ferreira et al. (2023) relata que a análise dos obstáculos enfrentados por 
+empresas de tecnologia na busca pelo crescimento e expansão no SaaS determina 
+desafios e oportunidades para aprimoramento: 
+
+ 
+[...] os benefícios do uso de softwares, principalmente dentro do contexto do 
+setor público, necessitam de um ambiente externo, que abrange o 
+financiamento público e privado de pesquisas e demandas tecnológicas do 
+mercado. Igualmente necessitam de um ambiente interno, que permeia o uso 
+da estrutura de P&D, com a necessidade de recursos humanos dedicados e 
+com planejamento estratégico direcionado. 
+
+ 
+Abraçando estratégias resolutivas, as empresas podem superar obstáculos 
+
+para enfrentar as demandas ininterruptas da atualidade.  
+A transferência de dados para ambientes em nuvem demanda solidez em 
+
+políticas de segurança, criptografia eficaz e monitoramento contínuo. As empresas 
+enfrentam o desafio de equilibrar a necessidade de compartilhamento eficiente de 
+informações com a garantia de proteção adequada contra ameaças cibernéticas em 
+constante evolução. A mudança para modelos SaaS muitas vezes encontra 
+resistência dentro das estruturas organizacionais tradicionais (ALBUQUERQUE, 
+2022).  
+
+A adaptação de equipes a novos fluxos de trabalho, a revisão de funções e a 
+redefinição de papéis podem gerar desconforto e, em alguns casos, resistência. A 
+gestão eficaz da mudança, portanto, surge como um desafio crucial para lideranças, 
+exigindo estratégias de comunicação e treinamento cuidadosamente planejadas. A 
+transição para o SaaS frequentemente redefine modelos de receita, impactando 
+diretamente a sustentabilidade financeira (FENERICH, 2023).  
+
+A mudança de paradigma, de vendas pontuais para modelos de assinatura, 
+exige uma reavaliação cuidadosa das estratégias financeiras. A gestão de fluxo de 
+caixa, a previsão de receitas recorrentes e a adaptação a períodos de incerteza 
+financeira tornam-se obstáculos cruciais na jornada de crescimento. A exploração 
+aprofundada dos obstáculos no caminho do crescimento e expansão do SaaS para 
+empresas de tecnologia revela uma complexidade diversificada (PALOSCHI, 2022).  
+
+A superação dos desafios tecnológicos associados à integração de sistemas e 
+plataformas exige uma abordagem sistematizada. Outrossim, a implementação de 
+arquiteturas de microsserviços pode facilitar a transição suave, permitindo a 
+coexistência harmoniosa entre sistemas legados e soluções SaaS. A implementação 
+de práticas de Segurança como Serviço (SECaaS) e a utilização de tecnologias de 
+inteligência artificial para detecção precoce de anomalias são estratégias eficazes 
+(PISONI, 2021). 
+
+Programas de treinamento e inclusão dos funcionários no processo de decisão 
+proporcionam uma transição mais amena e engajamento ativo na nova realidade 
+
+www.periodicoscapes.gov.br         6                    Revista JRG de Estudos Acadêmicos · 2024;14:e14902 
+
+
+
+Crescimento e expansão no uso de software como serviço (SaaS): estratégias e obstáculos para empresas de tecnologia 
+ 
+
+empresarial. A redefinição dos modelos de receita requer também uma mentalidade 
+financeira inovadora. Assim, empresas de tecnologia podem explorar estratégias, 
+como a diversificação de fontes de receita e a flexibilização de modelos de preços 
+para atender às necessidades variáveis dos clientes (ALBUQUERQUE, 2022). 
+
+A integração eficiente de sistemas legados, muitas vezes enraizados nas 
+estruturas corporativas, manifesta-se como uma tarefa desafiadora (FERREIRA, 
+2023). A coexistência entre plataformas existentes e novas soluções SaaS implica em 
+esforços consideráveis em termos de desenvolvimento, gerando um ambiente 
+propenso a falhas se não gerido adequadamente. Isso posto, a segurança da 
+informação surge como uma preocupação intrínseca à adoção do SaaS. 
+
+ 
+A AWS Lambda permite que as empresas executem código sem a 
+necessidade de manterem seus servidores. Os desenvolvedores tornam-se 
+responsáveis apenas pela execução do código e os valores cobrados são 
+referentes ao número de instâncias que foram utilizadas após a execução dos 
+mesmos [sic]. Ele possui uma grande gama de linguagens já pré-definidas 
+que são aceitas, [...] (PISONI, 2021). 
+
+ 
+A resiliência diante desses desafios é uma necessidade operacional. Além dos 
+
+aspectos tecnológicos e organizacionais, desafios jurídicos e regulatórios surgem 
+como obstáculos cruciais. A transição para o SaaS pode implicar em preocupações 
+relacionadas à privacidade dos dados, conformidade com regulamentações locais e 
+internacionais, bem como a elaboração de contratos e acordos que reflitam as 
+complexidades inerentes aos serviços baseados em assinatura (TOSCHI, 2023). 
+
+A colaboração com especialistas jurídicos e a observância contínua são 
+necessárias para abrandar riscos legais e assegurar a conformidade operacional. A 
+implementação de soluções SaaS muitas vezes redefine a dinâmica de 
+gerenciamento de relacionamento com o cliente. Logo, a personalização e adaptação 
+de sistemas CRM para se alinharem às novas estratégias de assinatura e modelos de 
+entrega exigem considerações cuidadosas (GARCIA, 2022). 
+
+ 
+4. Considerações Finais 
+
+Em uma época onde a tecnologia é a força propulsora da transformação, a 
+superação dos obstáculos na esfera do SaaS reforça o compromisso das empresas, 
+bem como as posiciona como líderes visionárias, capacitadas a navegar nas 
+complexidades do presente e definir as fronteiras do futuro digital. Este é um convite 
+à reflexão, adaptação e busca incessante pela excelência, onde cada empecilho é 
+uma oportunidade velada, aguardando ser desvendada pela engenhosidade e 
+ousadia das mentes empresariais. 
+
+Os obstáculos tecnológicos demandam soluções pragmáticas mediante uma 
+visão estratégica que antecipe e se adapte a cenários dinâmicos. A gestão eficaz de 
+mudanças, a liderança transformacional e a conscientização cultural surgem como 
+suportes necessários na mitigação dos obstáculos organizacionais. A coexistência de 
+modelos de receita flexíveis, alinhados a uma compreensão globalizada das 
+necessidades do mercado, forja um caminho financeiro robusto e sustentável. 
+
+A evolução contínua das estratégias de segurança cibernética torna-se 
+indispensável, uma vez que a vulnerabilidade às ameaças digitais é inerente à 
+exposição contínua dos serviços SaaS. Consequentemente, a conclusão desta 
+análise reside na compreensão de que, para empresas de tecnologia, o caminho para 
+o crescimento no ecossistema SaaS não é um destino fixo, mas uma jornada contínua 
+de adaptação, aprendizado e superação. 
+
+www.periodicoscapes.gov.br         7                    Revista JRG de Estudos Acadêmicos · 2024;14:e14902 
+
+
+
+Crescimento e expansão no uso de software como serviço (SaaS): estratégias e obstáculos para empresas de tecnologia 
+ 
+
+ 
+Referências 
+ 
+
+1. ALBUQUERQUE, Sheyla Mara C. C. Inovação no Modelo de Negócio por meio da 
+Computação em Nuvem: uma perspectiva dos profissionais de TI de instituições 
+públicas. Dissertação (Mestrado em Governança, Tecnologia e Inovação) - Pró-
+Reitoria Acadêmica Programa de Pós-Graduação Stricto Sensu em Governança, 
+Tecnologia e Inovação, Universidade Católica de Brasília, Brasília, 2022. Disponível 
+em: https://bdtd.ucb.br:8443/jspui/handle/tede/3094 
+ 
+
+2. BOSAK, Nathália Prestes. O Impacto do Parque Tecnológico no Perfil Comercial 
+das Empresas de Software como Serviço: um estudo de caso sobre o Tecnosinos. 
+Trabalho de Conclusão de Curso (Graduação em Administração) - Unisinos - Campus 
+Porto Alegre Escola de Gestão e Negócios, Porto Alegre, 2021. Disponível em: 
+http://repositorio.jesuita.org.br/handle/UNISINOS/10855 
+ 
+
+3. CARLOS, Sarah Fonseca. Estudo sobre as Competências dos Profissionais de 
+Customer Success em uma Empresa de Software como Serviço. Monografia 
+(Bacharelado em Engenharia de Produção) - Universidade Federal de Ouro Preto - 
+Instituto de Ciências Exatas e Aplicadas, João Monlevade, 2023. Disponível em: 
+https://monografias.ufop.br/handle/35400000/6018 
+ 
+
+4. FENERICH, Bruno Munaretti. Arquitetura Orientada a Serviços e sua integração 
+com Software as a Service. Monografia (Tecnologia em Análise e Desenvolvimento 
+de Sistemas) - Faculdade de Tecnologia de São Paulo, Centro Estadual de Educação 
+Tecnológica Paula Souza, São Paulo, 2023. Disponível em: 
+https://ric.cps.sp.gov.br/handle/123456789/14369 
+ 
+
+5. FERREIRA, E. et al. Desenvolvimento de Software para Gestão de Biotérios: parceria 
+ICT-empresa para inovação. Cadernos de Prospecção, [S. l.], v. 16, n. 5, p. 1619–
+1635, 2023. DOI: 10.9771/cp. v16i5.51758. Disponível em: 
+https://periodicos.ufba.br/index.php/nit/article/view/51758 
+ 
+
+6. GARCIA, Matheus Teixeira. Gerenciamento da Experiência do Cliente da Empresa 
+Beta na Prestação de Serviços de Software Jurídico: as estratégias de customer 
+success para gerar valor aos negócios. Trabalho de Conclusão de Curso 
+(Bacharelado em Administração) - Centro Socioeconômico Departamento de Ciências 
+da Administração, Universidade Federal de Santa Catarina, Florianópolis, 2022. 
+Disponível em: https://repositorio.ufsc.br/handle/123456789/233417 
+ 
+
+7. GOLDFARB, Manuela Mizrahi. Cláusulas de Limitação de Responsabilidade em 
+Contratos SaaS: uma análise da sua extensão e importância. Monografia 
+(Bacharelado em Direito) - Centro de Ciências Jurídicas e Econômicas Faculdade de 
+Direito, Universidade Federal do Rio de Janeiro, Rio de Janeiro, 2022. Disponível em: 
+https://pantheon.ufrj.br/handle/11422/20195 
+ 
+
+8. PALOSCHI, Gustavo. Funções de Controladoria de Uma Startup SaaS de Alto 
+Crescimento em Seus 3 Primeiros Anos: estudo de caso. Trabalho de Conclusão 
+de Curso (Bacharelado em Ciências Contábeis) - Centro Socioeconômico, 
+
+www.periodicoscapes.gov.br         8                    Revista JRG de Estudos Acadêmicos · 2024;14:e14902 
+
+
+
+Crescimento e expansão no uso de software como serviço (SaaS): estratégias e obstáculos para empresas de tecnologia 
+ 
+
+Universidade Federal de Santa Catarina, Florianópolis, 2022. Disponível em: 
+https://repositorio.ufsc.br/handle/123456789/234399 
+ 
+
+9. PISONI, Yasmin Oliveira. Análise da Plataforma AWS Lambda em Ambientes de 
+Nuvens Computacionais. Revista Ubiquidade, ISSN 2236-9031 – v.4, n.2 – jul. a dez. 
+de 2021. Disponível em: 
+https://revistas.anchieta.br/index.php/RevistaUbiquidade/article/view/1858 
+ 
+
+10. SANTOS, Luana Cruz. Análise da Área de Customer Success de Empresa SaaS: 
+estudo de caso de uma startup SaaS de Brasília. Monografia (Bacharelado em 
+Administração) - Faculdade de Economia, Administração, Contabilidade e Gestão de 
+Políticas Públicas - Departamento de Administração - Universidade de Brasília, 
+Brasília – DF, 2022. Disponível em: https://bdm.unb.br/handle/10483/31658 
+ 
+
+11. TOSCHI, Caio Salzado. A Tributação dos Softwares como Serviços: aspectos do 
+ICMS e do ISSQN. Dissertação (Mestrado em Direito) - Pontifícia Universidade 
+Católica de São Paulo, São Paulo, 2023. Disponível em: 
+https://tede2.pucsp.br/handle/handle/39355 
+ 
+
+12. YANG, Hugo Borges. Práticas e Benefícios de Stakeholders em Comunidades 
+Online de Empresas SaaS: o caso da empresa Fabapp. Dissertação (Mestrado em 
+Administração) - Universidade INSPER, São Paulo, 2020. Disponível em: 
+https://repositorio.insper.edu.br/handle/11224/2664 
+ 
+ 
+
+www.periodicoscapes.gov.br         9                    Revista JRG de Estudos Acadêmicos · 2024;14:e14902

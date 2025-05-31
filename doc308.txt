@@ -1,0 +1,725 @@
+Capítulo 6 |
+ Organização do Espaço de Problema    191
+imp or t ante tornar explícit as as p ergunt as que p ermitem elab orar a met amens agem 
+desig ner–usuár io, p ara que elas ﬁ
+quem re g ist radas e s ejam resp ondidas em algum 
+momento do pro c ess o de desig n.A lém diss o, a leitura de um cenár io p o de, p or sua 
+ve z, le vant ar  novas questõ es a s e re m incor p or adas ao conjunto de questõ es e resp on -
+
+didas naquele ou  em out ros cenários.
+ Análise de 
+6.4   Tarefas
+Uma anális e de t arefas é utilizada para s e ter um entendimento s obre qu al é o tra-
+balho dos usuários, como eles o re alizam e p or quê. Ness e tip o de anális e, o trab a-
+
+lho é deﬁ
+ nido em ter mos dos obj et ivos que os usuár ios querem ou  pre c is am  at ing ir. 
+S e gundo Diap er (2003), a anális e de t arefas é“a express ão utilizada no camp o da 
+
+ergonomia, que inclui IHC, para repres ent ar to dos os méto dos de colet ar, cl assiﬁ
+ car 
+e inter pret ar dados s obre o des emp enho de um sistema que p ossua ao menos uma 
+p ess oa como comp onente” (p. 14).A quest ão cr ucial pass a a s er como deﬁ
+ nir um 
+“des emp enho s atisfatório” para um sistema e s eus comp onentes. Tr at a-s e não ap enas 
+
+de list ar  açõ es, mas entender como um sistema de trab alho (comp osto ao menos de 
+
+um sistema comput acional e uma p ess oa) afet a  o domínio de aplicação e como, em 
+
+cont rapar t ida, o domínio de aplicação afet a o sistema de trab alho.
+Em IHC, a anális e de t arefas p o de s er ut i lizada nas t rês at ividades habitu ais: p ara 
+anális e da situ ação atual (ap oiada ou não p or um sistema comput acional), para o 
+
+(re)desig n de um sistema comput aciona l ou  p ara a ava liação do resu lt ado de uma 
+
+inter venção que inclua a int ro dução de um (novo) sistema comput aciona l. Q u ando 
+
+vis a a avaliar um sistema comput acional existente, a anális e de t arefas p o de s er b em 
+
+concret a, des cre vendo o comp or t amento de forma det al hada. Já  numa situ ação de 
+
+desig n, a aná lis e de t arefas gera lmente s erá re a lizada num nível maior de abst ração, 
+
+p ois divers os p ontos ainda não terão sido deﬁ
+ nidos no início da at ividade de desig n.
+Um  dos pr imeiros p ass os numa anális e de t arefas é colet armos um conjunto de 
+objetivos, deﬁ
+nidos em ter mos psicológ icos, ou  s eja, obj et ivos das p ess o as. É claro 
+que organizaçõ es t amb ém p o dem p ossuir obj et ivos, como, p or exemplo,“aument ar 
+o lucro”, mas estes não costumam s er endere çados em anális es de t arefa. Para cada 
+
+objetivo, elab oramos uma list a das açõ es re alizadas (no mundo f ísico e at ravés do 
+
+sistema comput acional) p or um agente para alcançar ess e objetivo. Quando há mú l-
+
+t iplos agentes, Diap er re comenda repres ent ar as açõ es de cada agente numa coluna 
+
+diferente.
+Diap er (2003) ress alt a que, indep endentemente da forma como os dados para 
+uma anális e de t arefas forem colet ados, s ó  teremos uma 
+simulação
+ das verd adeiras 
+t are fas de interess e. Pr imeiro, há um nú mero p otencialmente inﬁ
+ nito de t arefas re ali-
+
+192    I nteração Humano - Computador
+zadas p or diferentes p ess o as, mas ap enas algumas p o dem s er s ele cionadas p ara a aná-
+lis e. S e gundo, ap enas uma p e quena p orç ão do t r ab al ho p o de s er obs er vada, e, p or t an -
+
+to, os dados das t arefas s ão s empre  incompletos. Finalmente, o própr io ato de colet ar 
+
+dados costuma alterar o que est á s endo estudado. Emb ora um insumo imp or t ante  
+
+da aná lis e de t arefas s eja a obs er vação do 
+des empenho
+, Diap er aﬁ
+ rma que ela envolve 
+t amb ém dados obt idos at ravés de ent re v ist as, quest ionár ios, do c ument ação, prog ra-
+mas de t reinamento e sistemas existentes.A aná l is e de t are fas de ve  bus c ar  ident iﬁ
+ car 
+dados conﬂ
+ it antes e disp ar idades ent re o relato oﬁ
+ cial e a prát ica do trabalho.
+D ent re  os méto dos de anális e de t arefas mais comuns , p o demos dest acar aAná-
+lis e Hierárquica de Tarefas (HTA – 
+Hi e rarchi c al  Ta sk An aly si s , 
+Annett, 2003;Annett 
+e Duncan, 1967), o GOMS (
+G oal s, O perators, Method s, and S elec tion Rules
+, Kieras, 
+2003) e o C onc urTaskTre es (CT T; Paternò, 2000), des critos a s e guir.
+Análise Hierárquica de 
+6.4.1  
+Tarefas
+AAnális e Hierárquica de Tarefas (HTA – 
+Hi e rarchi c al  Ta sk An aly si s
+) foi des envolv ida 
+na dé cada de 1960 p ara entender as comp etências e habi lidades exibidas em t arefas 
+complexas e não rep etitivas, b em como para auxiliar na identiﬁ
+cação de problemas 
+de des emp enho (Annett, 2003;Annett e Duncan, 1967). Ela ajuda a relacionar 
+o que
+ 
+as p ess oas fazem (ou s e re comenda que façam), 
+por que
+ o fazem, e qu ais as 
+con s equ -
+ências
+ cas o não o façam corret amente. Ela s e bas eia em psicologia f uncional, e não 
+comp or t ament al, como eram as ab ordagens da ép o c a em que foi criada.
+Um a  
+tarefa
+ é qu alquer par te do trabalho que pre cis a s er re alizada. To da t arefa 
+p o de s er deﬁ
+ nida em termo de s eu(s) objetivo(s). Tarefas complexas s ão deﬁ
+ nidasem 
+ter mos de obj e t ivo s e sub obj e t ivo s, nu m des dobramento hierárquico. Ess e des dobra-
+
+mento é chamado de de comp osição de t arefas ou  
+re d e s c r i ç ã o
+ (Diap er, 2003). Obs er ve 
+que ess a deﬁ
+nição é mais ampl a e difere da deﬁ
+nição adot ada p elo desig n b as e ado 
+em obj et ivos e considerada nas s e çõ es anteriores, s e gundo a qu al uma t arefa é um 
+meio para s e at ingir um objetivo (C o op er 
+et  al .
+, 2007). Em HTA, t arefa s e aproxima 
+do conceito de at ividade.
+Uma anális e f uncional de t arefas come ça p ela deﬁ
+ nição dos objetivos das p ess o-
+as, antes de considerarmos as açõ es at ravés das qu ais a t arefa p o de s er re alizada e o 
+objetivo ser at ingido. Um 
+obj e tivo
+ é um est ado esp e cíﬁ
+ co de cois as, um est ado ﬁ
+ na l. 
+Ess e est ado p o de s er deﬁ
+ nido p or um ou  mais e ventos ou  p or va lores ﬁ
+ sicamenteob-
+s er váveis de uma ou mais variáveis, que atuam como critério de alcance do objetivo 
+
+e, em ú lt ima inst ância, do des emp en ho do sistema. Em ve z de ident iﬁ
+ car uma list a de 
+açõ es, a HTA inicia com uma deﬁ nição dos objetivos das p ess oas. 
+
+Capítulo 6 |
+ Organização do Espaço de Problema    193
+A HTA examina pr imeiramente os objetivos de alto  nível (p or  exemplo, marc ar  
+uma reunião), de comp ondo-os em sub objetivos (p or  exemplo, de cidir a dat a , de cidir 
+o lo cal, conv idar os p ar t icip antes etc.), bus c ando ident iﬁ
+car qu ais sub objetivos s ão 
+mais dif íceis de at ingir (ou que geram mais erros) e que, p or t anto, limit am ou  mesmo 
+imp e dem o at ingimento do objetivo maior. 
+Os sub obj e t ivo s de um obj e t ivo  e as relaçõ es ent re eles é denominada de plano. 
+Um  
+pl ano 
+deﬁ
+ ne os sub objetivos ne cess ár ios para alcanç ar um outro objetivo maior, 
+e a ordem em que ess es sub objetivos de vem s er alcançados. Os  pl anos p o dem deﬁ
+ nir 
+divers as relaçõ es ent re os sub obj et ivos: s e quência ﬁ
+ xa (um objetivo de ve s er at ingido 
+antes do próximo); re gra de s ele ção ou de cis ão (quais objetivos que de verão s er at in-
+gidos dep endem das circ unst âncias); ou em paralelo (mais de um objetivo de ve s er 
+
+at ing ido ao mesmo temp o).
+No nível mais baixo da hierarquia de objetivos, cada sub objetivo é alcançado 
+p or uma 
+op er aç ão
+, que é a unidade f undament al em HTA.A Figura 6.1 apres ent a os 
+elementos de um diag rama HTA.
+Elementos de um diagrama HTA.
+Figura 6.1   
+Um a  
+op er aç ão
+ é esp e ciﬁ
+cada p elas circ unst âncias nas qu ais o objetivo é at ivado 
+(
+input  
+ou
+ entrada
+), p elas at ividades ou açõ es (
+ac tion s
+) que cont ribuem para at ingi-lo 
+e p elas condiçõ es que indicam o s eu at ingimento (
+feedback
+). Uma 
+aç ão
+ p o de s er en-
+tendida como uma instr ução para fazer algo s ob cer t as circ unst âncias, o 
+input
+ como 
+est ados e o 
+feedback
+ como testes ou  ava liação do est ado ﬁ
+ nal.A ação p o de s er vist a 
+formalmente como uma re gra de transformação entre est ados. Por exemplo, em um 
+
+sistema de agenda, é p o ssível ter a s e guinte tupla de <
+input s
+, a ç õ e s , 
+feedback
+>: <[dat a, 
+lo cal, par t icipantes], [convidar os par t icipantes], [pres ença dos par t icipantes conﬁ
+ r-
+mada]>. Em outras palavras, as pr incipais carac terísticas de uma op eração s ão as 
+
+divers as açõ es que de vem s er des emp enhadas para at ingir um objetivo e as condiçõ es 
+
+que o s atisfazem. D ess a maneira, a anális e vis a ident iﬁ
+ car pr incip a lmente como um 
+sistema p o ssibi l it a ou  imp e de as p e ss o a s de a l c anç arem s e us obj e t ivos. E ss a  aná lis e 
+p ermite ainda ident iﬁ
+ car problemas p otenciais de cada ação, b em como elab orar re -
+comendaçõ es para e v it á-los.
+A Figura 6.2 ilustra um diagrama HTA para o cadastro de um proj eto ﬁ
+ nal em 
+um sistema acadêmico, e a Tab ela 6.3 apres ent a a t ab ela e quivalente ao diag rama.
+
+194    I nteração Humano - Computador
+Diagrama HTA, para o objetivo de cadastrar um projeto ﬁ
+ nal em um siste -
+Figura 6.2   
+ma acadêmico.
+ 
+Exemplo de representação das tarefas da HTA em tabela
+Tabela 6.3   
+objetivos / operações
+problemas e recomendações
+0. Cadastrar projeto ﬁ
+ nal1>2
+input
+: formulário de cadastro de projeto ﬁ
+ nal, com título, 
+orientador(es) e formato do trabalho
+feedback
+: novo projeto aparece para a secretária na lista de 
+projetos cadastrados como pendente enquanto os envol-
+
+vidos não conﬁ
+ rmarem
+plano
+: informar dados do projeto 
+e depois
+ enviar mensa-
+gem de conﬁ
+ rmação do cadastramento
+recomendação
+: permitir que o aluno efetue o cadastro 
+on-line
+1. I nformar dados do projeto 1+2
+plano
+: informar aluno, título, formato, orientador principal 
+
+e
+ informar coorientador
+1.1. I nformar aluno, título, formato, 
+orientador principal
+1.2 I nformar coorientador 1/2
+plano
+: informar coorientador já cadastrado 
+ou
+ informar 
+nome, CPF e e -mail do orientador
+1.2.1. I nformar coorientador já 
+cadastrado
+
+Capítulo 6 |
+ Organização do Espaço de Problema    195
+objetivos / operações
+problemas e recomendações
+1.2.2. I nformar nome, CPF e e -mail 
+do coorientador
+problema
+: ao cadastrar novo orientador, perde os dados já 
+
+cadastrados do projeto, caso haja
+recomendação
+: incluir o CPF de orientadores ex ternos no 
+formulário preenchido pelo aluno
+2. Enviar mensagem de conﬁ
+ rma-
+ção do cadastramento
+ação
+: cadastro deve ser conﬁ
+ rmado em até sete dias
+recomendação 1
+: tornar a conﬁ rmação mais eﬁ
+ ciente
+recomendação 2
+: aler tar sobre o prazo de conﬁ
+ rmação
+Um  mesmo obj et ivo  p o de s er at ing ido de diferentes maneiras, dep endendo de cir-
+c unst âncias p e c u liares a cada situ ação. E uma ação p o de s er utilizada como par te 
+
+do alcance de diferentes obj et ivos. Por exemplo, consu lt ar os compromiss os em uma 
+
+agenda p o de fazer p ar te de um obj et ivo  de marc ar  uma reunião, de um obj et ivo  de 
+
+s ab er o que tem de s er feito em um determinado dia, ou divers os outros. S endo as-
+
+sim, ap enas list ar  as açõ es s e m entender p ara que s e r vem p o de caus ar  inter pret açõ es 
+
+e quivo cadas (Diap er, 2003).
+Uma quest ão re corrente  em de comp osição de t arefas diz resp eito  à de cis ão s o -
+bre qu ando p arar de de comp or. Em geral, a de comp osição termina qu ando já s e tem 
+
+to das as informaçõ es ne cess ár ias para at ingir os objetivos da anális e. Um critério de 
+
+parada é o critério 
+p 
+ c
+ (Annett e Duncan, 1967), que signiﬁ
+ ca parar qu ando o pro-
+duto da prob abi lidade de fal ha (
+p
+) e o c usto da falha (
+c
+) for ju lgado aceit ável. Uma 
+outra razão para a parada o c or re qu ando a or igem de um erro ou problema já tiver 
+sido ident iﬁ
+ cada e, p or t anto, o analista já p o de prop or uma correção, s eja em termos 
+de desig n de sistema, pro c e dimentos op eracionais ou  t reinamento.
+S e gundo Diap er (2003), umaAnális e Hierárquica de Tarefas consiste nos s e guin-
+tes pass os:
+D e c i dir  os  objetivos  da  an áli s e
+1. 
+. Em geral, envolvem proj et ar  um sistema 
+no
+vo, mo diﬁ
+car um sistema existente e des envolver t reinamento p ara os 
+op eradores.
+Obter consenso entre as par tes interess adas na deﬁ
+ nição dos objetivos da tare -
+2. 
+fa  e medidas de sucess o
+.
+ D e vem s er deﬁ
+ nidos os resu lt ados de des emp en ho 
+des ejados, t a l como f re quência de erros, e as formas como ess es resu lt ados 
+s erão aferidos. Para cada objetivo, as questõ es-chave s ão:“qual e v idência ob-
+
+jetiva indicará que ess e objetivo foi at ingido?” e“quais as cons e quências da 
+
+falha em at ingir ess e objetivo?”.
+Id e n t i ﬁ
+ car as fontes  de infor mações das tarefas e selecionar as for mas de aqui -
+3. 
+sição de dados
+.
+ Emb ora a obs er vação diret a s eja ampl amente utilizada como 
+forma de aquisição de dados, geralmente cont ribui p ouco s obre e ventos in-
+comuns que p oss am s er ess enciais. Ent re v ist as com esp e cialist as, re gistros 
+
+196    I nteração Humano - Computador
+do des emp en ho re al e relatos de incidentes costumam t razer infor maçõ es 
+pre cios as para a HTA.
+C oletar dados e esboçar uma tabela ou  diag rama de decomposição
+4. 
+. N u m a  d e -
+co
+mp osição, os sub obj e t ivo s de ve m s e r mutu amente exclusivos e exaust ivos, 
+ou s eja, de vem deﬁ
+ nir complet amente o objetivo  a que est ão sub ordinados, 
+s em que haja s obrep osiçõ es entre os sub objetivos.A de comp osição é esb o-
+çada em um diag rama hierárquico (Figura 6.2) e em uma t ab ela, que con-
+
+tém mais det alhes s obre as circ unst âncias (
+input s
+) que disparam o objetivo, 
+açõ es e 
+feedback s
+ de cada objetivo (Tab ela 6.3).
+Ve r i ﬁ
+car a validade da decomposição
+5. 
+ junto às p ar tes interess adas, vis ando 
+ass
+egurar a conﬁ
+ abi lidade da aná lis e.
+Id e n t i ﬁ
+car operações sig niﬁ
+ cativa s
+6. 
+, tendo em vist a o objetivo da anális e, ge-
+ralmen
+te utilizando o critério 
+p 
+ c
+.
+Gerar e, se possível, testar  hipóteses relacionadas aos fatores  que afetam  o 
+7. 
+aprendizado e o desempenho
+.
+ Ness a et ap a, p o de s er útil utilizar as cl assiﬁ
+ -
+caçõ es de erro humano prop ost as p or Reas on (1990): des emp enho bas e ado 
+
+em 
+habi lidades
+, e m  
+re g ra s
+, o u  e m  
+conhec imento
+.
+O des emp en ho b as e ado em 
+habilidades 
+envolve padrõ es de instr uçõ es pré-progra-
+madas. Erros ness e nível est ão relacionados a variaçõ es de forç a e de co ordenação 
+espaço–temp o das p ess oas para op erar e atuar s obre os disp osit ivos. O des emp enho 
+
+b as e ado em 
+re g ra s
+ envolve res olver problemas familiares c ujas s oluçõ es s ão governa-
+das p or re gras do tip o“e–s e”. Erros ness e nível est ão relacionados com a cl assiﬁ
+ cação 
+e quivo cada de situ açõ es, le vando à aplicação de re g r as ou  pro c e dimentos errados. 
+Finalmente, o des emp en ho b as e ado em 
+conhec imento
+ o c or re  em situ açõ es novas p ara 
+as qu ais as açõ es ainda pre cis am s er pl anejadas, utilizando pro c ess os analít icos cons-
+cientes. Erros ness e nível s e  de vem a limit açõ es de re c urs os e conhe cimento  incom-
+
+pleto ou incorreto (Reas on, 1990).
+  
+6.4.2 GOMS
+ (
+Goals, O perators, Methods, and S elec tion Rules
+)
+Card 
+et  al .
+ (1983) propus eram um conjunto de mo delos chamado de família GOMS 
+(
+G oal s, O perators, Method s, and S elec tion Rules
+ — Objetivos, Op eradores, Méto dos e 
+Regras de S ele ção) para analis ar o des emp enho de usuários comp etentes de sistemas 
+
+comput acionais, re alizando t arefas dent ro da sua comp etência e s em cometer erros. 
+
+Muitos sistemas s ão proj et ados considerando que as p ess o as s e  tor nam  habi lidos as 
+
+no s e u us o e, p or t anto, vão querer formas eﬁ
+ cientes de re alizar t arefas rotineiras. Os 
+mo delos GOMS têm s e mostrado úteis para pre ver o des emp enho, ou s eja, pre dizer o 
+
+imp ac to de de cis õ es de desig n no des emp en ho comp etente ( John, 2003).
+
+Capítulo 6 |
+ Organização do Espaço de Problema    197
+O GOMS é um méto do para des cre ver uma t arefa e o conhe cimento do usuário 
+s obre como re alizá-la em termos de objetivos (
+goal s
+), op eradores (
+op e rator s
+), méto-
+dos (
+method s
+) e re gras de s ele ção (
+s elec tion r ules
+). Os 
+obj e tivo s
+ repres ent am o que 
+o usuário quer re alizar utilizando o s o
+ ware (e.g., e dit ar um texto). Os 
+op er a d ore s
+ 
+s ão pr imit ivas internas (cognitivas) ou externas (as açõ es concret as que o s o
+ ware  
+p ermite que os usuários façam, t a l como um comando e s eus parâmetros digit ados 
+num te cl ado; a s ele ção de menus; o clique de um b ot ão). Os  
+méto d os
+ s ão s e quên-
+cias b em conhe cidas de sub objetivos e op eradores que p ermitem at ingir um objetivo 
+
+maior. Quando há mais do que um méto do para at ingir um mesmo objetivo, s ão ne-
+
+cess árias 
+regras de seleç ão
+, que repres ent am tomadas de de cis ão dos usuários s obre 
+qu al méto do utilizar numa determinada situ ação. Em suma, o GOMS carac teriza o 
+
+conhe cimento  pro c e diment a l de uma p ess oa ao re alizar t arefas num determinado 
+
+disp osit ivo (Kieras, 2003).
+A anális e GOMS s e aplica pr incipalmente a situ açõ es em que os usuários re-
+alizam t arefas que já dominam. Ess es usuários não est ão res olvendo problemas ou  
+
+tent ando ident iﬁ
+ car o que pre c is am  fazer em s e guida. Ess a anális e pressup õ e  que eles 
+s ab em o que fazer, e s ó pre cis am fazê-lo. Em geral, o GOMS é utilizado ap ós uma aná-
+lis e básica de t arefas, com o objetivo  de forne cer uma repres ent ação formalizada que 
+
+p o de s er utilizada para pre ver o des emp enho da t arefa, de mo do que p oss a substituir 
+
+par te dos testes empíricos com usuários. Iss o  é feito at ribuindo um temp o est imado 
+
+de exe c ução para cada op erador pr imit ivo. Um op erador cognit ivo toma aproxima-
+
+damente 50 ms, ao pass o que o temp o ass o ciado a op eradores externos é bas e ado em 
+
+dados de obs er vação. Para efeitos de engen har ia, o mo delo psicológ ico ofere c ido p elo 
+
+GOMS forne ce result ados bast ante  robustos e informat ivos.
+O GOMS p o de s er utilizado t anto qu antit ativamente, de mo do a forne cer pre v i-
+s õ es s obre o temp o ne cess ár io para re alizar t arefas, como qu alit at ivamente, no s ent i-
+do de auxi liar na elab oração de prog ramas de t reinamento, sistemas de ajuda e siste-
+
+mas tutores inteligentes, p ois um mo delo GOMS contém uma des crição det alhada do 
+
+conhe cimento ne cess ár io para re alizar cada t arefa. Tamb ém p o de s er utilizado para 
+
+reproj et ar  um sistema: p o de re velar um objetivo  f re quente ap oi ado p or um méto do 
+
+muito ineﬁ
+ ciente; p o de most rar que alguns obj et ivos não s ão ap oi ados p or nen hum 
+méto do; e p o de re velar onde objetivos s emelhantes s ão ap oi ados p or méto dos incon-
+sistentes, uma situ ação em que os usuários p o dem ter problemas para lembrar o que 
+
+fazer ( John, 2003). 
+A anális e com GOMS re quer que o desig ner come ce com uma list a de obj et ivos 
+de usuário (ou t arefas de alto nível), que p o de s er obtida de entre v ist as de usuários 
+p otenciais, obs er vaçõ es de usuár ios de sistemas existentes ou  s e mel hantes.A pr incí-
+
+198    I nteração Humano - Computador
+pio, uma anális e GOMS não re vela objetivos que o analist a tenha deixado de ident i-
+ﬁ
+ car, nem corrige uma formulação equivo cada dos objetivos dos usuários. O GOMS 
+t amb ém p o de s er ut i lizado como ferrament a de desig n numa avaliação format iva, 
+re a lizada ao longo de to do pro c ess o de desig n p ara ava liar as s oluçõ es a lter nat ivas 
+
+elab oradas a cada iteração. 
+D ent re os mo delos da família GOMS, dest acamos: KLM (C ard 
+et al.,
+ 1983), 
+CMN-GOMS (C ard 
+et al.,
+ 1983) e CPM-GOMS ( John e Gray, 1995), des critos a s e-
+guir.
+  KLM
+O KLM é a té cnica mais simples de GOMS, limit ada a um conjunto pre deﬁ
+ nido de 
+op eradores pr imit ivos: K para pressionar uma te cl a ou b ot ão; P para ap ont ar com 
+o mous e um alvo num disp osit ivo visual; H para mover as mãos para o te cl ado ou 
+
+out ro disp osit ivo; D p ara des en har um s e g mento de ret a  em um 
+grid
+; M para s e pre-
+parar ment almente para re alizar uma ação ou uma s érie de açõ es pr imitivas for te-
+
+mente relacionadas entre si; e R para o temp o de resp ost a do sistema, durante o qu al 
+
+o usuário pre cis a esp erar (Tab ela 6.4). 
+Algumas operações do KLM - GOMS e suas durações médias (K ieras, 1993)
+Tabela 6.4   
+operação
+duração média
+K : pressionar e soltar uma tecla do teclado
+exímio digitador (135 ppm)
+0,08 s
+bom digitador (90 ppm)
+0,12 s
+digitador mediano (55 ppm)
+0,20 s
+digitador inexperiente (40 ppm)
+0,28 s
+digitação de letras aleatórias
+0,50 s
+digitação de códigos complexos
+0,75 s
+digitador não familiarizado com o teclado
+1,20 s
+P: apontar o cursor do mouse num objeto da tela 
+1,10 s
+B: pressionar ou soltar o botão do mouse
+0,10 s
+H: levar a mão do teclado ao mouse ou vice -versa
+0,40 s
+M: preparação mental
+1,20 s
+T (n): digitação de cadeia de carac teres
+n x K s
+W(t): espera pela resposta do sistema
+depende do sistema
+O KLM t amb ém inclui um conjunto  de heurísticas s obre como p osicionar op eradores 
+
+ment ais durante a preparação.A estimativa de temp os de exe c ução p o de s er utilizada 
+
+para comp arar ideias em t arefas de 
+benchmark
+, fazer uma avaliação paramétrica para 
+
+Capítulo 6 |
+ Organização do Espaço de Problema    199
+explorar o esp aço deﬁnido p or imp or t antes var i áveis (e.g., o t aman ho de nomes de 
+arquivos em uma linguagem de comando) e fazer anális es s obre as sup osiçõ es feit as 
+
+(e.g., velo cidade de digit ação do usuário) ( John, 2003). 
+O E xemplo 6.6 ilustra o tip o de anális e que p o de s er feit a com o KLM.
+ Análise do desempenho com o KLM
+Exemplo 6.6 – 
+A nálise da Tarefa: S alvar arquivo
+método
+operador descrição
+tempo (em s)
+menu 
+Arquivo > S alvar
+M preparação
+1,20
+H levar a mão do teclado ao mouse 0,40
+P levar cursor até menu Arquivo
+1,10
+B pressionar o botão do mouse
+0,20
+B soltar o botão do mouse
+0,20
+P levar cursor até menu Salvar
+1,10
+B pressionar o botão do mouse
+0,20
+B soltar o botão do mouse
+0,20
+TOTAL 4,60
+botão S alvar na 
+barra de ferramentas
+M preparação
+1,20
+H levar a mão do teclado ao mouse 0,40
+P levar cursor até botão Salvar
+1,10
+B pressionar o botão do mouse
+0,20
+B soltar o botão do mouse
+0,20
+TOTAL 3,10
+teclas de atalho 
+(Ctrl+S)
+, considerando 
+
+um digitador mediano
+M preparação
+1,20
+K teclar Ctrl
+0,20
+K teclar S
+0,20
+TOTAL 1,60
+Essa análise evidencia que usar as teclas de atalho é quase duas vezes mais eﬁ
+ ciente do que usar o 
+botão correspondente na barra de ferramentas, e quase três vezes mais eﬁ
+ ciente do que usar o item 
+de menu correspondente.
+CMN- GOMS
+O CMN-GOMS s e refere à prop ost a or iginal de GOMS, elab orada p or C ard, Moran 
+e Ne well. No CMN-GOMS, há uma hierarquia estrit a de objetivos, os op eradores s ão 
+
+exe c ut ados est r it amente em ordem s e quencia l, e os méto dos s ão re pres ent ados nu ma 
+
+not ação s e mel hante a um ps eudo có digo, que inclui subméto dos e condicionais. O 
+
+200    I nteração Humano - Computador
+E xemplo 6.7 apres ent a um mo delo GOMS parcial repres ent ando as t arefas envol-
+vidas em des cobrir a dire ç ão de tráfe go de uma r u a utilizando o G o og le® Maps.
+1
+ Os  
+objetivos e méto dos foram numerados para facilit ar sua ident iﬁ
+ cação. Algarismos 
+indicam s e quência, e let ras indicam alternat ivas.
+Modelo GOMS sem detalhes
+Exemplo 6.7 – 
+GOAL 0: descobrir direção de tráfego de uma rua
+GOAL 1: encontrar a rua
+ME THOD 1.A: zoom até o nível de ruas 
+(SEL. RULE: a região em que se situa a rua está visível no mapa e o usuário conhece o 
+local)
+ME THOD 1.B: fazer busca pelo nome da rua
+
+(SEL.RULE: o usuário não conhece o local ou o mapa visível está longe de lá)
+GOAL 2: identiﬁ
+ car a direção do tráfego na rua
+Ao  elab orar um mo delo GOMS, de vemos deﬁ
+ nir c uidados amente o que repres ent ar e 
+o que não repres ent ar. Tarefas ment ais p o dem s er complexas, mas ap enas aquelas que 
+estejam relacionadas ao desig n do sistemade vem s er incluídas no mo delo (Kieras, 
+
+2003).Além diss o, o nível de det alhes utilizado de ve  atender aos objetivos da anális e. 
+
+Em et ap as iniciais, costumamos repres ent ar as est ratég ias alternat ivas que o usuário 
+
+p o derá s e guir p ara at ing ir s eus obj et ivos (E xemplo 6.7). Já  p ara uma anális e mais 
+
+pre c is a do des emp enho, os pass os s ão mais det alhados (E xemplo 6.8).
+Modelo GOMS detalhado
+Exemplo 6.8 – 
+GOAL 0: descobrir direção de tráfego de uma rua
+GOAL 1: encontrar a rua
+ME THOD 1.A: zoom até o nível de ruas 
+
+(SEL. RULE: o local está visível no mapa e o usuário sabe onde ﬁ
+ ca a rua)
+ME THOD 1.A.A: zoom utilizando roda do mouse 
+
+(SEL. RULE: rua não centralizada no mapa, cursor distante da escala e preferência 
+do usuário)
+OP. 1.A.A.1: deslocar o cursor do mouse para a rua desejada
+OP. 1.A.A.2: girar a roda do mouse para a frente
+
+OP. 1.A.A.3: veriﬁ
+ car enquadramento da rua no mapa
+ME THOD 1.A.B: zoom utilizando o menu pop -up 
+
+(SEL. RULE: rua centralizada no mapa, cursor distante da escala e pref. do usuário)
+OP. 1.A.B.1: clicar com o botão direito do mouse
+
+OP. 1.A.B.2: deslocar o mouse para a opção“
+zoom in
+”
+OP. 1.A.B.3: clicar com o botão esquerdo do mouse
+
+OP. 1.A.B.4: veriﬁ
+ car enquadramento da rua no mapa
+ME THOD 1.A.C: zoom utilizando régua de escala 
+(SEL. RULE: cursor próximo da escala e preferência do usuário)
+1 http://maps.go og le.com.
+

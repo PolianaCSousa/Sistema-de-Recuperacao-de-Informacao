@@ -1,0 +1,605 @@
+1
+Introdução
+Objetivos do Capítulo
+Objetivos do Capítulo
+Discutir a impor tância da área de I nteração Humano - Computador (IHC ) consideran-
+ 
+do o impac to das tecnologias de informação e comunicação no nosso cotidiano.
+Apr
+esentar diferentes visões da Computação sobre a construção de sistemas compu-
+ 
+tacionais interativos.
+Descr
+ever os objetos de estudo de IHC.
+ 
+Discutir a impor tância da multidisciplinaridade em IHC.
+ 
+Apresentar alguns benefícios proporcionados por incorporar práticas de IHC no de -
+ 
+senvolvimento de sistemas computacionais interativos.
+
+2    I nteração Humano - Computador
+As te cnologias de informação e comunicação (TICs) ofere c em maneiras eﬁ
+ cientes 
+de pro c ess ar e tro c ar informaçõ es com divers os objetivos. Elas p ermitem criar sis-
+temas comput acionais embut idos nos mais diferentes disp osit ivos elet rônicos, que 
+
+combinam p o der comput acional e meios de comunicação (telefonia, rádio, T V, Inter-
+
+net etc.). Neste livro, nos concent r amos nos sistemas comput acionais 
+inte rativ os
+ qu e  
+comp õ e m as TICs, isto é, sistemas comput acionais comp ostos p or hardware, s o
+ ware  
+e meios de comunicação des envolvidos p ara
+ interag irem com pess oas
+.
+O Impac to dasTecnologias de Informação e Comunicação no Cotidiano 
+1.1 
+As TICs est ão s e des envolvendo em ritmo acelerado, e cada ve z mais fazem par te das 
+noss as v idas p ess o ais e proﬁ
+ssionais.A e volução e a diss eminação dess as te cnolo-
+gias alcançaram um nível em que é dif ícil encont rar p ess oas que ainda não tiveram 
+diret a ou  indiret amente cont ato com elas, indep endente de class e s o cial, do nível de 
+
+es colaridade e do lo cal onde moram.A mídia tem apres ent ado vários exemplos de 
+
+indígenas br asi leiros, comunidades dist antes dos g r andes cent ros e moradores de co-
+
+munidades de b aixa renda nas g r andes cidades com acess o à Internet onde moram. 
+Vo cê já parou para p ens ar s obre como as TICs est ão pres entes na sua vida e na 
+noss a s o cie dade? Em que áreas elas est ão pres entes? Em que qu antidade? Que im-
+
+p or t ância elas adquiriram? O que signiﬁ
+ ca ter t ant a te cnologia na vida das p ess oas? 
+Quais s ão as cons e quências diss o para as p ess oas que utilizam e para as p ess oas que 
+
+des envolvem ess as te cnolog ias?Vamos come çar analis ando algumas áre as que em-
+
+pregam ess as te cnologias atualmente.
+Faz temp o que s omente comput adores p ess oais ou de grande p or te (como 
+main -
+frames
+ e s er v idores) eram capazes de pro c ess ar informaçõ es. Já é p ossível encont rar 
+vários pro dutos elet rônicos“ inteligentes”, t ais como máquinas fotog ráﬁ
+cas que s e 
+conﬁ
+ guram automat icamente de acordo com a luminosidade do ambiente e que s ão 
+cap azes de re con he c er faces e express õ eshumanas como o s orris o; máquinas de lavar 
+
+louç as que detectam o nível de sujeira na água e indicam o melhor prog rama para a 
+
+lavagem; ou ainda condicionadores de ar que re gulam automaticamente a temp eratu-
+
+ra, velo cidade e dire ç ão da ventilação de acordo com a temp eratura ambiente. 
+As  TICs est ão re volucionando a áre a  de ent retenimento. Jogos elet rônicos es-
+t ão ﬁ
+ c ando mais s oﬁ
+ st icados, com enre dos mais elab orados, mel hores g r áﬁ
+ cos e com 
+maior aplicação de inteligência ar t iﬁ
+cial. Est ão surg indo novos disp osit ivos de in-
+terface com o j ogador : cont roles s em ﬁ
+ o e com s ens or de movimento (como os con-
+troles doWii®), e câmerasque detectam os movimentos do jogador (projeto Natal 
+
+para o Xb ox®).Além diss o, jogos em re de p ermitem a interação entre p ess oas como 
+
+p ar te do ent retenimento.A T V  dig it al interat iva (T VDI) t amb ém est á mudando a 
+
+Capítulo 1 |
+ I ntrodução    3
+forma de pro duzir e consumir conteúdos na T V. Na T V analógica, a emiss ora era 
+capaz de transmitir ap enas um conteúdo p or ve z para to dos os telesp ectadores, e eles 
+
+nor ma lmente re cebiam o conteúdo numa at itude p assiva, s ent ados no s ofá de cas a. 
+
+A te cnologia p or trás da T VDI p ermite à emiss ora enviar mais de um conteúdo si-
+
+mu lt aneamente. Dessa forma, cab e ao 
+telesp ectador escolher a 
+qu al desses conteúdos 
+enviados ele irá assistir, no disp osit ivo e lo cal des ejados.A T V DI  t amb ém p ermite ao 
+
+usuário interagir com a emiss ora numa at itude mais at iva, p or exemplo, emit indo al-
+
+guma opinião ou re alizando alguma vot ação (S o ares e B arb os a, 2009). E ainda temos 
+
+a rádio digit al, que est á come çando a s er dis c ut ida no Brasil.
+As TICs t amb ém transformaram a no ção de dist ância e temp o na comunicação 
+entre p ess oas. E-mail, programas para tro c a de mens agens, como MSN e GTalk, e 
+
+comunidades vir tuais, como Orkut e Faceb o ok, p ermitem que p ess o as esp al hadas 
+
+ge ograﬁ
+ camente p oss am  s e  comunicar us ando texto, víde o e s om, de forma síncrona 
+ou  assíncrona. Ess as te cnolog ias p ermitem t ro c ar  rapidamente arquivos de divers os 
+
+formatos, como música, fotos, víde os etc. O própr io telefone celu lar ofere c e um canal 
+
+de comunicação individua l disp onível em pr at icamente qu a lquer lugar do mundo. 
+
+Hoje, um grande número de p ess oas carrega consigo um ap arelho eletrônico que 
+
+inte gra telefonia, câmera digit al, acess o à Internet, jogos, repro dutor de música e de 
+
+víde os, GPS e T VDI.
+O acess o a infor mação vem s of rendo g r andes t r ansformaçõ es com a e volução 
+te cnológ ica. Na  e ducação, p or exemplo, um profess or não p o de mais considerar que 
+
+ele e os livros s ão as únicas fontes de con he c imento disp oníveis aos alunos.A Internet 
+
+disp onibiliza uma enorme qu antidade de informação que os alunos p o dem acess ar 
+
+qu ando e onde des ejarem. Diferentemente de out r as mídias, como p ap el e qu adro-
+
+negro, as TICs p ermitem criar materiais dinâmicos e interativos que p o dem favo-
+
+re cer o aprendizado, como víde os, simu lação de fenômenos naturais, exploração de 
+
+re alidades vir tuais, comunicação e colab oração ent re alunos e profess ores com ap oio 
+
+comput acional, e assim p or diante. S e  unirmos a ofer t a  de conteúdo didát ico em meio 
+
+comput acional a uma comunidade vir tual disp ers a ge ograﬁ
+ c amente, p o d emos explo-
+rar o ensino a dist ância utilizando as TICs. Já  existem divers os c urs os a dist ância dis-
+p oníveis no Br asil e no mundo, inclusive c urs os de nível sup erior.A Organização das 
+
+Naçõ es Unidas (ONU) acab a  de criar uma universidade on-line de ensino a dist ância 
+
+em es cala mundial: a 
+Univ e r sit y  of  the  Pe opl e
+.
+1
+No camp o da p olítica, as TICs t amb ém est ão mudando a relação entre eleitores 
+e p olít icos, s ejam ainda candidatos ou  aqueles que ten ham assumido algum cargo 
+1 http://w w w.uop e ople.org/. E xceto qu ando indicado explicit amente, to dos osWeb sites 
+mencionados neste livro foram acess ados em junho de 2010.
+
+4    I nteração Humano - Computador
+público.Antes, a comunicação em larga es cala dos p olíticos era geralmente restrit a 
+à prop aganda p olítica obrigatória com dat a marc ada e horário limit ado na T V e no 
+
+rádio, que s ão canais de comunicação unidire c ionais.A Internet ofere c e novos canais 
+
+de comunicação bidire c ionais, comoWeb sites dos p ar t idos, blogs dos p olít icos e dos 
+
+eleitores, víde os noYouTub e, dent re out ros.Agora, um g r ande nú mero de eleitores 
+
+disp ers os ge og raﬁ
+camente p o de consult ar, opinar e questionar na Internet as pro-
+p ost as e ideias dos p olíticos qu ando e onde des ejarem.Vários p olíticos no Brasil e no 
+mundo mantêm cont ato com os eleitores p ela Internet, como, p or exemplo, alguns 
+
+prefeitos de g r andes cidades br asi leiras. O própr io ato de vot ar nos repres ent antes 
+
+brasi leiros mudou drast icamente com a ut i lização das urnas eletrônicas. Hoje o re-
+
+sult ado de eleiçõ es fe derais p o de s er apurado em horas. 
+Muit as relaçõ es do Est ado com a p opu lação s ão atualmente me diadas p elas TICs, 
+o que tem sido chamado de gove r no elet rônico (
+e-gov
+). No Brasil, matrículas em es-
+colas públicas já s ão feit as exclusivamente p ela Internet ou p or telefone; a maior par te 
+das de cl araçõ es de imp osto de renda é entregue p ela Internet; e já é p ossível consult ar 
+
+informaçõ es s obre pro c ess os jurídicos t amb ém p ela re de.Algumas prefeituras fazem 
+
+us o de sistemas de infor maçõ es ge og ráﬁ
+ cas na gest ão de s eus municípios, como o us o 
+de imagens de s atélites para veriﬁ
+ car constr uçõ es irregulares, para analisar o ﬂ
+ uxode 
+veíc ulos e re estr uturar o tráfe go nas vias.
+As TICs est ão afet ando o comércio e a noss a relação com dinheiro e bancos. 
+B o a par te das trans açõ es ﬁ
+nanceiras já não manipu la mais pap el-mo e da. C ar tõ es e 
+op eraçõ es on-line est ão ganhando cada ve z mais espaço no noss o cotidiano. Muit as 
+op eraçõ es bancárias p o dem s er re alizadas at ravés de prat icamente qu alquer disp o-
+
+sit ivo  com acess o à Internet, onde e qu ando des ejarmos, s em a ne cessidade de ir a 
+
+uma agência bancária. O comércio t amb ém ganhou vers ão on-line. S em s air de cas a, 
+
+as TICs nos p ermitem comprar o que des ejarmos, comp arar pre ç os de pro dutos em 
+
+diferentes lojas on-line com ap oio comput acional, e obter mais informaçõ es s obre os 
+
+pro dutos des ejados direto com os fabr icantes, e ter acess o às opiniõ es e exp eriências 
+de us o de outras p ess oas s obre os pro dutos des ejados.
+Grande par te do transp or te atual é cont rolada com ajuda das TICs: cont role de 
+tráfego aére o, metrô, trens urbanos, o ﬂ
+ uxo de ônibus em cada linha, e assim p or dian-
+te.Até o própr io carro p ossui muit a te cnologia embutida para e v it ar acidentes, us ar o 
+c ombust ível  d e  for ma  e ﬁ
+ ciente e ajudar a est acionar, p or exemplo.As TICs já s ão ca-
+p a zes de conduzir ve íc u los s e m ajuda do s e r hu mano no mo do de pi loto automát ico, 
+em av iõ es e carros. Tamb ém p o dem ajudar a monitorar a emiss ão de gas es p oluentes, 
+
+cont ribuindo para a pres er vação do meioambiente.
+
+Capítulo 1 |
+ I ntrodução    5
+Na área da s aúde, as TICs vêm s e tornando f undament ais para o diag nóstico e 
+trat amento de do enças. Muitos ap arelhos utilizados em Me dicina s ão cont rolados 
+com ajuda da comput ação, t ais como ap arelhos de ress onância magnética, de to-
+
+mog r aﬁ
+a comput adorizada e de radioterapia. E xistem rob ôs que re alizam cir urg ias 
+s endo manipu lados p or mé dicos muito dist antes do paciente. Já  existe uma cápsula 
+programada para lib erar remé dio dent ro do cor p o humano no lo cal, na qu antidade 
+
+e no ﬂ
+uxo cer tos para trat ar do enças de forma mais eﬁ
+ ciente.
+2
+Além diss o, as TICs 
+p er mitem que o histór ico de s aúde de um p aciente esteja on-line à disp osição dos 
+
+mé dicos, incluindo resu lt ados de exames que acab aram de ﬁ
+car prontos em um la-
+b oratório dist ante. E p es quis as em comput ação gráﬁ
+ca e re alidade aument ada vêm 
+cont ribuindo com novas formas de visualizar os result ados dos exames.
+Ao  analis ar mos ess es exemplos de divers as áreas, p erc eb emos que as TICs est ão 
+o c up ando esp aço imp or t ante nas noss as vidas. Quando as incor p or amos no noss o 
+cot idiano, não est amos ap enas t ro c ando de inst r umentos, como quem t ro c a de garfo, 
+
+canet a ou  ré gua.As  mo diﬁ
+ caçõ es s ão mais prof undas e signiﬁ
+ cat ivas, p ois mo diﬁ
+ cam 
+t amb ém a noss a forma de trab alhar, de prest armos s er v iços, de nos relacionarmos 
+com out r as p ess o as e inst ituiçõ es, de ensinarmos e aprendermos, de p ar t icip ar mos 
+
+da p olít ica, de lidarmos com o din heiro, de c uidarmos da s aúde, e assim p or diante. É 
+
+imp or t ante  re conhe cermos que as TICs est ão mo diﬁ cando não ap enas 
+o que 
+s e faz e 
+como
+ s e faz, mas t amb ém 
+qu e m  
+as faz, 
+qu an d o
+, 
+onde  
+e até mesmo 
+por quê
+. 
+Tomando como exemplo a transição da vot ação em cé du la de pap el para a vo-
+t ação na urna eletrônica, a mudança foi além da forma 
+como
+ o eleitor manifest a s e u 
+voto. Quant as p ess oas (
+qu e m
+) s ab em vot ar nu lo (
+o que
+) na urna eletrônica? S erá que 
+a motivação para o voto nu lo (
+por que votar nulo ou  não
+) foi mo diﬁ
+ cada na t ransição 
+da cé du la de pap el para a urna eletrônica (Figura 1.1)?
+ Urna eletrônica.
+Figura 1.1   
+3
+2 http://uk.reuters.com/ar t icle/idUKTRE4AA53S20081111.
+3 http://w w w.ts e.gov.br/internet/eleico es/urna_eletronica/simulacao_vot acao/2008/
+SimUrnaBR .html.
+
+6    I nteração Humano - Computador
+B o a par te das p ess oas que não s ab e vot ar nu lo na urna eletrônica s abi a vot ar nu lo 
+na cé du la de pap el. Não existe um b ot ão exclusivo para vot ar nu lo, s emelhante ao 
+
+que existe para vot ar em branco. Para vot ar nu lo, o eleitor pre cis a digit ar um número 
+
+de candidato inválido e conﬁ rmar o s eu voto. Obs er vamos que a urna eletrônica foi 
+proj et ada, intenciona lmente ou  não, p ara des est imu lar o voto nu lo, diﬁ
+ c u lt andouma 
+at itude de protesto dos eleitores. Na  cé du la de p ap el, os eleitores p o diam es cre ver o 
+que quis ess em, até vot ar no macaco Ti ão.
+4
+Há outros exemplos de como a intro dução de TICs afet a o comp or t amento hu-
+mano. Os jap ones es não costumam s orrir muito como os br asi leiros. Ess a carac terís-
+
+t ica c u ltural faz diferença no atendimento ao público. Para s e  tornarem mais simp át i-
+
+cos (
+por que
+), os f uncionár ios do met rô de Tó quio (
+qu e m
+) est ão s endo conv idados a 
+exercit ar o s orris o (
+o que
+) diante de um sistema interat ivo  cap az de ident iﬁ
+ carexpres-
+s õ es faciais. O exercício é re alizado antes do exp e diente  (
+qu an d o
+) como uma esp é cie 
+de jogo, no qual quem sorrir melhor ganha mais pontos (
+como
+). Ess e é um exemplo 
+cl aro de como as TICs est ão s endo utilizadas para inter v ir no comp or t amento das 
+pess oas de forma bast ante signiﬁ
+ cativa, p ois atuam s obre s eu jeito de s er e sua c u ltura. 
+Q u a lquer inter venção na c u ltura, nas habi lidades e nos con he c imentos das p ess o as 
+
+de ve  s er re alizada com c uidado e resp eito às individualidades de cada uma, não im-
+
+p or t a qu ant a inovação e te cnologia estejam s endo utilizadas. 
+As  TICs t amb ém vêm afet ando a noss a vida p ess oal. Por exemplo, Jo ão p ossui 
+um 
+smar tphone
+ que ag re ga um canal de comunicação de um telefone celu lar com 
+alguns re c urs os comput acionais de um noteb o ok, em um disp osit ivo que cab e  no 
+
+b ols o. Enquanto ele faz sua caminhada matinal (
+onde  
+e 
+qu an d o
+), ele est á acessível 
+(
+por que
+) at ravés de s eu 
+smar tphone  
+para re ceb er notícias de cas a (
+o que
+), como a 
+notícia de que ele pre cis a comprar algo antes de volt ar ou que s eu ﬁ
+ lho está pass ando 
+mal. Entret anto, ess e mesmo disp osit ivo p ermite re ceb er telefonemas s obre algo do 
+trab alho no meio da caminhada, trazendo problemas para um momento de exercício 
+
+e relaxamento. Nem s empre o que um sistema interativo p ermite fazer é des ejável e 
+
+b om. Por iss o, t amb ém é imp or t ante  p ens ar mos no mau us o da te cnologia. Por exem-
+
+plo, s e  Jo ão s oub er quem est á ligando antes de atender a ligação, ele p o de es col her 
+
+atender ou  não. S e  for um colega de trab alho que costuma s er inconveniente, ele p o de 
+
+s er ignorado naquele momento. S e  for um colega que s ó  liga antes do exp e diente  cas o 
+
+s eja um assunto  s ério e urgente, Jo ão p o dees col her atender a ligação.Ali mesmo, ele 
+
+t amb ém p o de consult ar e re ajust ar a sua agenda da s emana no 
+smar tphone  
+e enviar 
+alguns e-mai ls p ara come çar a res olver o problema urgente do t r ab al ho.
+4 Em 1988, o Macaco Ti ão do zo ológico do Rio de Janeiro re ceb eu 400 mil votos para prefei-
+to da cidade em sinal de protesto. http://veja.abr il.com.br/200897/p_093b.html.
+
+Capítulo 1 |
+ I ntrodução    7
+Diante diss o, o des envolve dor  de TICs de ve  est ar ciente de que o resu lt ado do 
+s eu t r ab al ho vai mo diﬁ
+ car a vida de muit as p ess oas (inclusive a sua própr ia) de forma 
+pre v isível e impre v isível. S e mpre  qu e p o ssível, de ve mos tent ar pre ver ess as mo diﬁ
+ ca-
+çõ es e encaminhá-las da melhor forma p ossível. Para os cas os em que não é p ossível 
+pre ver os efeitos das novas te cnolog ias, é imp or t ante que o des envolve dor  t amb ém 
+
+crie s a lvaguard as p ara os usuários, p or exemplo, forne cendo maneiras fáceis de des-
+
+fazer açõ es e maneiras alternat ivas de re alizar as cois as s em dep ender da te cnolog ia 
+
+des envolv ida. Quem des envolve te cnologia pre c is a s empre  s e  p ergunt ar : o que acon-
+
+te ce s e  o usuário errar, a te cnolog ia fal har ou  p ermane cer indisp onível p or algum 
+
+temp o?As  s a lvaguard as s erão des envolv idas de acordo com as resp ost as a p ergunt as 
+
+como essa.
+DiferentesVisões sobre a Construção de Sistemas Interativos
+1.2 
+E x istem divers os atores envolv idos no des envolv imento e us o dos sistemas compu-
+t acionais interativos: fabr icantes de hardware, de s o
+ w a re, ve n d e d ore s , proﬁ
+ ssionais 
+de sup or te e manutenção, prove dores de acess o à Inter net, pro dutores de conteúdo, 
+usuár ios, organizaçõ es, dent re out ros. To das ess as p ar tes interess adas costumam s er 
+
+denominadas  
+stakehol d e rs
+. C ada um enxerga a te cnologia s ob um p onto de vist a di-
+ferente, enfat izando alguns asp e c tos em det r imento de out ros. 
+Por exemplo, um usuár io costuma est ar mais interess ado no acess o à Inter net 
+que um disp osit ivo p ossibilit a e como iss o p o de s er útil para ele do que interess ado 
+
+nas p e ças que comp õ em o disp osit ivo ou  como elas foram mont adas.Ap es ar  de as 
+
+du as p ersp e c t ivas s erem s obre o mesmo disp osit ivo, a s e gunda p ersp e c t iva é mais 
+
+comum a um des envolve dor  de hardware  e a um proﬁ
+ ssiona l de sup or te. 
+Em outro exemplo, p ens e em uma organização que utiliza s o
+ ware  como inst r u -
+mento de trab alho. Para ap oi ar os pro c ess os de trab alho da organização, um gerente 
+
+encomenda um sistema a uma empres a de des envolv imento de s o
+ ware. Os des en-
+volve dores costumam s e  concent r ar  nas f u nciona lidades do s o
+ ware  e em como ele 
+é est r uturado internamente. Já  os f uncionários da organização geralmente s e  pre o -
+
+c upam em como vão aprender e utilizar o s o
+ ware para re alizar o s eu trabalho com 
+eﬁ
+ ciência. E x iste uma diferença sut i l, p oré m imp or t ante, ent re o que um sistema in-
+terat ivo  de ve  p er mit ir fazer (vis ão do cliente, resp ons ável p ela aquisição do sistema), 
+o que ele de fato p ermite fazer (vis ão de quem pro duz, fo cada nas f uncionalidades do 
+
+so
+ ware) e a maneira como ele é utilizado (vis ão dos usuários, fo cada no impac to do 
+so
+ ware  no s eu trab alho ou  na sua vida).A ident iﬁ
+ cação dos diferentes atores envol-
+vidos e a ar tic u lação dos s eus interess es e p ontos de vist a s ão imp or t antes des aﬁ
+ osno 
+des envolv imento de te cnolog ia.
+
+8    I nteração Humano - Computador
+S e  nas relaçõ es entre p ess oas ainda encont ramos t antos problemas (mal-entendi-
+dos, dis córdias, br igas, guerras etc.) dep ois de mi lênios de exp eriência, imag ine qu an -
+tos problemas p o demos encont rar nas interaçõ es entre p ess oas e sistemas comput a-
+
+cionais, considerando que a C omput ação ainda não completou um s é c u lo.Além do 
+
+p ouco temp o de conv ív io, p ess oas s ão b em diferentes dos sistemas comput acionais 
+
+que s ab emos const r uir atualmente. Os sistemas comput acionais s ão const r uídos p ara 
+
+sempre executarem um conjunto predeﬁ
+ nido de inst r uçõ es. Tudo o que um sistema é 
+capaz de fazer foi deﬁ
+ nido na sua const r ução. C ons e quentemente, os sistemas s e mpre  
+“ inter pret am” as açõ es do usuário de uma forma pre deﬁ
+ nida. Iss o traz grandes diﬁ
+ -
+c u ldades p ara os sistemas lidarem com a criat ividade e a reinter pret ação das cois as 
+p elas p ess oas. 
+As  divers as áre as de con he c imento p ossuem p ersp e c t ivas dist int as s obre o pro-
+blema, com diferentes exp eriências, est ratég ias de s olução e con he c imentos est ab ele-
+cidos. C ada áre a  analis a os sistemas interat ivos de acordo com critérios de qu alidade 
+
+par t ic ulares, cada qu al assumindo diferentes graus de imp or t ância. Grande par te da 
+
+C omput ação e, em p ar t ic u l ar, a sub áre a  de Engen har ia de S o
+ ware, est á interess ada 
+na const r ução de sistemas interat ivos mais eﬁ
+cientes, robustos, livres de erros, e de 
+fácil manutenção. Por outro lado, a área de Interação Humano-C omput ador (IHC) 
+
+est á interess ada na qu a lidade de us o dess es sistemas e no s eu imp ac to na vida dos 
+
+s eus usuár ios.Ap es ar  de for temente relacionados, a 
+con str ução  
+e o 
+uso 
+de um ar tefa-
+to o c or rem em contextos dist intos e s e guem lóg icas diferentes, envolvendo p ess o as 
+
+divers as. Ess as diferenças p ermitem que um sistema interat ivo  com alt a  qu alidade 
+
+de constr ução p oss a ter baixa qu alidade de us o, e vice-vers a. Por exemplo, é p ossível 
+
+que um sistema s eja útil e ag radável ao usuário, mas com manutenção b em dif ícil. 
+
+Tamb ém é p ossível que um sistema s eja robusto e livre de erros, mas dif ícil de s er 
+
+compre endido p elo usuário e p ouco útil para ele. 
+Ess a du alidade ent re const r ução e us o t amb ém o c or re  em out r as at ividades en-
+volvendo diferentes p ess oas, como na pro dução e consumo, na es crit a e leitura, e 
+
+em outras áreas de conhe cimento como, p or exemplo, entre a Engenharia Civil e a 
+
+Arquitetura.A pr imeira enfatiza a constr ução de ambientes f ísicos, fo cando asp e c tos 
+
+como c usto, durabi lidade, est r utura e méto dos de const r ução, enquanto a s e gunda 
+
+enfatiza o us o destes ambientes, fo cando as p ess oas e suas interaçõ es entre elas e com 
+
+o  ambiente. 
+Por ter a qu alidade de const r ução como pr iorit ária, g rande p ar te da C omput a-
+ção costuma conceb er um sistema interativo de“dentro para fora”, isto é, conceb er 
+pr imeiro (ou p elo menos com ênfas e b em maior em) repres ent açõ es de dados, algo-
+
+ritmos que pro c ess am ess es dados, arquitetura do sistema e tudo mais que p ermite 
+
+Capítulo 1 |
+ I ntrodução    9
+um sistema interativo f uncionar (Figura 1.2a). Pouca ou nenhuma atenção é de fato 
+de dicada ao que ﬁ
+ca fora do sistema e a como ele s erá utilizado. Pare ce haver um 
+pressup o sto de que tudo o que for externo ao sistema vai, s e m esforço, adapt ar-s e a ele 
+
+e s er capaz de tirar proveito  dele da melhor forma p ossível. Infelizmente, nem s empre  
+
+o mundo fora de um sistema interativo  s e  adapt a a ele e o aproveit a de maneira t ão 
+
+fáci l, simples e rápida qu anto alguns des envolve dores go st ar iam que aconte cess e. S e  
+
+s e guirmos uma ab ordagem de“dent ro p ara fora”, corremos um g rande ris co de con-
+
+ceb ermos um sistema interativo  inapropr iado para o mundo que o cerca, p ois a noss a 
+
+compre ens ão do mundo p o de s er e quivo cada.
+ Abordagem de 
+Figura 1.2   
+desenvolvimento (a) de“dentro para fora” e (b) de“fora para dentro”.
+Para conceb er um sistema interat ivo  mais ade qu ado ao mundo onde s erá ins er ido, 
+
+a áre a de IHC (e, s ob alguns asp e c tos, t amb ém a áre a de Engen har ia de Re quisitos) 
+
+bus c a s e guir uma ab ordagem de“fora p ara dent ro” (Figura 1.2b). Ness a ab ordagem, o 
+
+proj eto de um sistema interat ivo  come ça invest igando os atores envolv idos, s eus in-
+
+teress es, obj et ivos, at ividades, resp ons abi lidades, mot ivaçõ es, os ar tefatos ut i lizados, 
+
+o domínio, o contexto de us o, dent re out ros, p ara dep ois ident iﬁ
+ car op or tunidades de 
+inter venção na situ ação atual, a forma que a inter venção tomará na interface com o 
+usuário e, ﬁ
+ nalmente, como o sistema viabiliza ess a forma de inter venção. Tomando 
+como exemplo du as áre as da C omput ação, a áre a  de Engen haria de Re quisitos pr i-
+vi leg ia os critérios de qu alidade da Engen haria de S o
+ ware, enquanto a área de IHC 
+pr iv ilegia a qu alidade de us o dos sistemas interativos.
+D ent ro da C omput ação, outras áreas auxiliam a concep ção de uma s olução 
+interat iva com alt a qu alidade de us o, como a Engen haria de S o
+ ware, Inteligência 
+Ar t i ﬁ
+cial e Trab alho C o op erativoAp oi ado p or C omput ador (
+Computer-Suppor ted  
+Cooperative Work
+). Por exemplo, té cnicas de inteligência ar t iﬁ
+cial s ão utilizadas em 
+interfaces em linguagem natural e t amb ém em adapt açõ es da interface ao contexto 
+
+de us o. Emb ora IHC utilize conhe cimentos e té cnicas de diferentes áreas dent ro e 
+
+10    I nteração Humano - Computador
+fora da C omput ação, IHC s e distingue delas p or fo car o 
+us o 
+de sistemas interat ivo s 
+(Shar p  
+et  al .
+, 2007).
+Objetos de 
+1.3 
+Estudo em IHC
+Aﬁ
+nal, a área de IHC trat a de qu ais assuntos? Qual é o s eu es cop o? Quais s ão s eus 
+objetos de estudo? IHC é uma dis ciplina interess ada no proj eto, implement ação e 
+avaliação de sistemas comput acionais interativos para us o humano, junt amente  com 
+
+os fenômenos relacionados a ess e us o (He wett 
+et  al .
+, 1992). D e acordo com He wett 
+e s eus colegas (1992), os objetos de estudo de IHC p o dem s er ag r upados em cinco 
+tópicos inter- relacionados: a nature za da interação humano-comput ador ; o us o de 
+
+sistemas interativos situ ado em contexto; carac terísticas humanas; arquitetura de sis-
+
+temas comput acionais e da inter face com usuár ios; e pro c ess os de des envolvimento 
+
+pre o c upados com us o (Figura 1.3).
+Objetos de estudo em IHC (adaptado de Hewett 
+Figura 1.3   
+et al.
+, 1992).
+Estudar a 
+nature za da inter a ç ã o
+ envolve invest igar o que o c or re  enquanto as p ess o as 
+ut i lizam sistemas interat ivos em suas at ividades. É p ossível des cre ver, explicar e pre-
+ver ess e fenômeno e algumas de suas cons e quências na vida das p ess o as.
+O  
+contexto de us o
+ inﬂ
+uencia a interação de p ess oas com sistemas interativos, 
+p ois elas est ão ins eridas em determinada c u ltura, s o cie dade e organização, p ossuem 
+mo do própr io de re alizar suas at ividades, p ossuem con he c imentos e concep çõ es pró-
+

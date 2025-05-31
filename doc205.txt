@@ -1,0 +1,4192 @@
+VIVIANE TAVARES DE MORAES
+RECUPERAÇÃO DE METAIS A PARTIR DO PROCESSAMENTO
+MECÂNICO E HIDROMETALURGICO DE PLACAS DE CIRCUITO
+IMPRESSOS DE CELULARES OBSOLETOS
+São Paulo
+2011
+VIVIANE TAVARES DE MORAES
+RECUPERAÇÃO DE METAIS A PARTIR DO PROCESSAMENTO
+MECÂNICO E HIDROMETALURGICO DE PLACAS DE CIRCUITO
+IMPRESSOS DE CELULARES OBSOLETOS
+Tese apresentada à Escola Politécnica da
+Universidade de São Paulo para obtenção
+do título de Doutor em Engenharia.
+Área de concentração: Engenharia
+Metalúrgica e de Materiais.
+Orientador: Prof. Dr. Jorge Alberto Soares
+Tenório
+São Paulo
+2011
+Este exemplar foi revisado e alterado em relação à versão original, sob
+responsabilidade única do autor e com a anuência de seu orientador.
+São Paulo, 19 de janeiro de 2011.
+Assinatura do autor ____________________________
+Assinatura do orientador _______________________
+FICHA CATALOGRÁFICA
+Moraes, Viviane Tavares de
+Recuperação de metais a partir do processamento mecânico
+e hidrometalurgico de placas de circuito impressos de
+celulares obsoletos/ V.T. de Moraes. -- São Paulo, 2010.
+119 p.
+Tese (Doutorado) - Escola Politécnica da Universidade de
+São Paulo. Departamento de Engenharia Metalúrgica e de Materiais.
+1. Placas 2. Resíduos 3. Hidrometalurgia I. Universidade de
+São Paulo. Escola Politécnica. Departamento de Engenharia
+Metalúrgica e de Materiais II. t.
+Aos meus amores
+ Jefferson e Fabricinho
+AGRADECIMENTOS
+Agradeço ao meu orientador Prof Dr Jorge Alberto Soares Tenório por ter me
+recebido no seu grupo de pesquisa e pela confiança depositada em mim, durante
+estes anos. É um orgulho fazer parte do Larex, pois são poucos os privilegiados que
+têm a oportunidade de conviver com uma pessoa com caráter, honestidade e
+perseverança como a sua.
+Também agradeço imensamente a Profa Dra Denise Crocce Romano
+Espinosa por sempre me ajudar a encontrar outros caminhos de pesquisa, através
+da sua dedicação e paixão pelo trabalho.
+À Profa Dra Andrea Moura Bernardes por me receber em seu laboratório para
+que eu pudesse concluir este trabalho.
+Aos meus amigos de laboratório Adriana, Beatriz, Denis, Eduardo, Girley,
+Hugo, Kameoka, Kellie e Luis por suportar meu mau humor, minhas reclamações, e
+brincadeiras durante tanto tempo. Em especial, agradeço aos meus superamigos
+Daniella, Flávia, Luciana e Victor Bridi por “quebrar galhos” e muitas vezes até
+“árvores” para me ajudar tanto no trabalho quanto no pessoal.
+Aos meus pais José e Lourdes por sempre me apoiar e me ajudar no que eu
+precisasse para seguir o sonho de ser Doutora em Engenharia.
+As minhas irmãs e agregados por sempre estarem presentes e me
+incentivarem. Ao meu afilhado Andrezinho por ser a minha inspiração nos meus
+momentos de fraqueza.
+Ao meu marido Jefferson pelo amor, apoio e incentivo; por entender as
+minhas ausências e cansaço que foram muitos, durante estes anos de doutorado.
+Ao meu filho Fabrício que está para chegar e que já tem que agüentar o que
+eu apronto com ele.
+À minha enteada Isabella pela doçura da sua presença.
+A Escola Politécnica da Universidade de São Paulo e a Capes pelo incentivo
+a pesquisa.
+Agradeço também a todos que me ajudaram, pois sem eles a minha trajetória
+teria sido muito mais difícil.
+“Não se pode ensinar tudo a alguém, pode-se
+ apenas ajudá-lo a encontrar por si mesmo
+ o caminho” (Galileu Galilei)
+RESUMO
+O avanço da tecnologia de aparelhos eletro-eletrônicos favorece a troca
+constante dos equipamentos. O freqüente descarte de aparelhos obsoletos se torna
+um problema de sustentabilidade e também um problema ambiental devido ao seu
+acúmulo em aterros. A solução para minimizar estes impactos é a reciclagem de
+seus componentes. Por esta razão, o principal objetivo deste trabalho é estudar o
+processamento das placas de circuito impresso de telefones celulares através de
+operações unitárias de Tratamento de Minérios e Hidrometalurgia a fim de se
+recuperar o cobre contido nas placas. Para isso, inicialmente, placas de circuito
+impresso foram processadas em moinho de martelos, a fim de liberar os materiais,
+em seguida foi feita a separação magnética do material cominuído. Com a fração
+não magnética foi feita a separação eletrostática e o material foi separado em: fração
+condutora, mista e não condutora, com cada fração foi feita a classificação
+granulométrica e, posteriormente, realizaram-se ensaios de caracterização como
+pirólise, digestão em água régia e análise química de espectroscopia de emissão
+óptica por indução de plasma. Os processos hidrometalúrgicos aplicados para a
+recuperação de cobre nas placas de circuito impresso de aparelhos celulares
+obsoletos envolvem etapas de lixiviação com ácido sulfúrico na ausência e na
+presença de peróxido de hidrogênio. Os resultados da caracterização mostraram
+que as placas de circuito impresso de celulares após a moagem possuem 24% de
+cerâmicas; 12,7% de polímeros e 63,3% de metais. Além disso, após a classificação
+granulométrica e a separação eletrostática os materiais não se concentraram em
+nenhuma fração específica, portanto o processamento mecânico visando a
+recuperação de metais deve contemplar a moagem e a separação magnética.
+Palavras-chave: Reciclagem; placas de circuito impresso; hidrometalurgia.
+ABSTRACT
+The technology advancement of electro-electronics devices favors the
+constant equipment exchange. The frequent disposal of obsolete equipment
+becomes a sustainability problem and also an environmental problem due to their
+accumulation in landfills. One possible solution to minimize these impacts is the
+recycling of their components. For this reason the aim goal of this study is processing
+of printed circuit boards of mobile phones utilizing unit operation of ore treatment and
+hydrometallurgy to recover the copper contained in the printed. Therefore, initially
+printed circuit boards were processed on a hammer mill to release the materials, then
+it was made magnetic separation of comminuted material. With the non-magnetic
+fraction was made electrostatic separation in which the material was separated into:
+conductive, mixed and non-conductive fraction, with each fraction was made grain
+sized classification and then assays were performed analysis of characterize as
+pyrolysis, digestion in aqua regia and chemical analysis of inductively coupled
+plasma atomic emission spectroscopy. Hydrometallurgical processes applied to the
+cooper recovery in printed circuit boards of obsolete mobile phones, involve steps
+leaching with sulfuric acid in the absence and presence of hydrogen peroxide. The
+characterization results showed that the printed circuit boards of mobile phones after
+grinding have ceramics 24%, polymers 12.7% and metals 63.3%. Moreover, after
+grain sized classification and electrostatic separation the materials didn´t concentrate
+in no specific fraction, therefore the mechanical processing in order to recover metals
+should include grinding and magnetic separation.
+Keywords: Recycling; printed circuit board; hydrometallurgy.
+SUMÁRIO
+1. Apresentação........................................................................................... 1
+2. Objetivos .................................................................................................. 3
+3. Introdução teórica .................................................................................... 4
+3.1. Resíduos eletro-eletrônicos ............................................................... 4
+3.2. Placas de circuito impresso ............................................................... 7
+3.2.1. Metais das placas de circuito impresso ....................................... 10
+3.3. Processo de fabricação das placas de circuito impresso. ............... 14
+3.4. Métodos de tratamento de placas de circuito impresso .................. 16
+3.4.1. Processamento mecânico ........................................................... 17
+3.4.2. Processamento pirometalúrgico .................................................. 20
+3.4.3. Processamento hidrometalúrgico ................................................ 21
+3.5. Legislação ambiental sobre resíduos eletro-eletrônicos ................. 33
+4. Materiais e Métodos .............................................................................. 37
+4.1. Processamento mecânico ............................................................... 37
+4.1.1. Moagem ...................................................................................... 38
+4.1.2. Separação magnética .................................................................. 39
+4.1.3. Separação eletrostática ............................................................... 40
+4.1.4. Classificação granulométrica ....................................................... 41
+4.2. Caracterização ................................................................................ 44
+4.2.1. Pirólise ......................................................................................... 45
+4.2.2. Digestão em água régia .............................................................. 45
+4.2.3. Espectrometria de emissão óptica por indução de plasma ICPOES................ .................................................................................................... 47
+4.3. Processamento hidrometalúrgico .................................................... 48
+4.3.1. Lixiviação ácida ........................................................................... 50
+4.3.2. Lixiviação ácida em meio oxidante .............................................. 52
+5. Resultados e discussão ......................................................................... 56
+5.1. Processamento mecânico ............................................................... 56
+5.1.1. Moagem ...................................................................................... 56
+5.1.2. Separação magnética .................................................................. 57
+5.1.3. Separação eletrostática ............................................................... 58
+5.1.4. Classificação granulométrica ....................................................... 58
+5.2. Caracterização ................................................................................ 61
+5.2.1. Pirólise ......................................................................................... 61
+5.2.2. Digestão em água régia .............................................................. 65
+5.2.3. Espectrometria de emissão óptica por indução de plasma ICPOES.......................... .......................................................................................... 72
+5.3. Processamento hidrometalúrgico .................................................... 86
+5.4. Valor agregado dos metais presentes nas placas de circuito
+impresso................... ........................................................................................... 109
+6. Conclusões .......................................................................................... 111
+LISTA DE FIGURAS
+Figura 1- Esquema da classificação das placas de circuito impresso ......................... 8
+Figura 2 – Esquema de diagrama E/pH ................................................................... 22
+Figura 3 – Diagrama E/pH do sistema cobre-água a 25ºC . ...................................... 24
+Figura 4 – Diagrama E/pH do sistema cobre-água a 50ºC . ...................................... 25
+Figura 5 – Diagrama E/pH do sistema cobre-água a 75ºC . ...................................... 25
+Figura 6 - Diagrama E/pH do sistema ferro-água a 25ºC ......................................... 26
+Figura 7 – Placas de circuito impresso de aparelhos celulares obsoletos ................ 37
+Figura 8 – Moinho de martelos, modelo 18/18, marca Astecma ............................... 38
+Figura 9 – Separador magnético, modelo HFP-RE 15x12, marca Inbrás ................. 39
+Figura 10 – Separador eletrostático de rolo, modelo ES14/01S, marca Inbrás ......... 40
+Figura 11 – Processamento mecânico e suas frações .............................................. 42
+Figura 12 – Fluxograma simplificado dos ensaios de caracterização ....................... 44
+Figura 13 – Quarteador utilizado para fracionar o material não magnético para
+lixiviação ácida e lixiviação ácida em meio oxidante ................................................. 49
+Figura 14 – Esquema da aparelhagem utilizada no processo hidrometalúrgico ....... 50
+Figura 15 – Esquema simplificado da sequência da lixiviação ácida ........................ 51
+Figura 16 – Exemplo simplificado da rota do resíduo de placa de circuito impresso da
+lixiviação ácida para a lixiviação ácida em meio oxidante ......................................... 52
+Figura 17 - Exemplo simplificado da rota do resíduo de placa de circuito impresso da
+lixiviação ácida em meio oxidante ............................................................................. 53
+Figura 18 – Fluxograma completo do processamento hidrometalúrgico ................... 54
+Figura 19 - Balanço de massa após a separação magnética .................................... 57
+Figura 20 – Balanço de massa após a separação eletrostática ................................ 58
+Figura 21 – Distribuição granulométrica após moagem ............................................ 59
+Figura 22 – Distribuição granulométrica do não magnético e magnético .................. 60
+Figura 23 – Distribuição granulométrica do material condutor, misto, não condutor . 60
+Figura 24 – Porcentagem dos materiais provenientes da moagem e suas frações
+granulométricas após pirólise .................................................................................... 61
+Figura 25 – Porcentagem do material magnético e suas frações granulométricas
+após pirólise .............................................................................................................. 62
+Figura 26 – Porcentagem do material não magnético e suas frações granulométricas
+após pirólise .............................................................................................................. 63
+Figura 27 – Porcentagem do material condutor e suas frações granulométricas após
+pirólise ....................................................................................................................... 63
+Figura 28 – Porcentagem do material misto e suas frações granulométricas após
+pirólise ....................................................................................................................... 64
+Figura 29 – Porcentagem do material não condutor e suas frações granulométricas
+após pirólise .............................................................................................................. 65
+Figura 30 – Porcentagem do material proveniente da moagem e suas frações
+granulométricas após digestão em água régia .......................................................... 66
+Figura 31 – Porcentagem do material magnético e suas frações granulométricas
+após digestão em água régia .................................................................................... 67
+Figura 32 – Porcentagem do material não magnético e suas frações granulométricas
+após digestão em água régia .................................................................................... 68
+Figura 33 – Porcentagem do material condutor e suas frações granulométricas após
+digestão em água régia ............................................................................................. 69
+Figura 34 – Porcentagem do material misto e suas frações granulométricas após
+digestão em água régia ............................................................................................. 70
+Figura 35 – Porcentagem do material não condutor e suas frações granulométricas
+após digestão em água régia .................................................................................... 71
+Figura 36 – Resultados de caracterização de placas de circuito impresso moídas e
+suas frações granulométricas.................................................................................... 72
+Figura 37 – Porcentagem de metais das placas após moagem e suas frações
+granulométricas ......................................................................................................... 73
+Figura 38 – Resultados de caracterização de material magnético de placas de
+circuito impresso moídas e suas frações granulométricas ........................................ 74
+Figura 39 – Porcentagem de metais no material magnético e suas frações
+granulométricas ......................................................................................................... 75
+Figura 40 – Resultados de caracterização de material não magnético de placas de
+circuito impresso moídas e suas frações granulométricas ........................................ 77
+Figura 41 – Porcentagem de metais no material não magnético e suas frações
+granulométricas ......................................................................................................... 78
+Figura 42 – Resultados de caracterização de material condutor de placas de circuito
+impresso moídas e suas frações granulométricas .................................................... 79
+Figura 43 – Porcentagem de metais no material condutor e suas frações
+granulométricas ......................................................................................................... 80
+Figura 44 – Resultados de caracterização da fração mista obtida por separação
+eletrostática de placas de circuito impresso moídas e suas frações granulométricas
+ .................................................................................................................................. 81
+Figura 45 – Porcentagem de metais no material misto e suas frações
+granulométricas ......................................................................................................... 82
+Figura 46 – Resultados de caracterização de material não condutor de placas de
+circuito impresso moído e suas frações granulométricas .......................................... 83
+Figura 47 – Porcentagem de metais no material não condutor e suas frações
+granulométricas ......................................................................................................... 84
+Figura 48 - Diagrama E/pH do cobre - água a 25ºC ................................................. 87
+Figura 49 - Diagrama E/pH do ferro - água a 25ºC .................................................. 88
+Figura 50 - Diagrama E/pH do níquel - água a 25ºC ................................................ 89
+Figura 51 - Diagrama E/pH do zinco - água a 25ºC ................................................. 90
+Figura 52 - Diagrama E/pH do estanho - água a 25ºC ............................................. 90
+Figura 53 - Diagrama E/pH do alumínio - água a 25ºC ............................................ 91
+Figura 54 - Diagrama E/pH do prata - água a 25ºC ................................................. 92
+Figura 55 - Diagrama E/pH do chumbo - água a 25ºC ............................................. 92
+Figura 56 - Diagrama E/pH do bário - água a 25ºC .................................................. 93
+Figura 57 - Diagrama E/pH do cálcio - água a 25ºC ................................................ 93
+Figura 58 – Resultados da cromatografia iônica dos liquores da lixiviação ácida de
+pH 0,5 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de extração de metais por
+tempo ........................................................................................................................ 95
+Figura 59 – Resultados da cromatografia iônica dos liquores da lixiviação ácida de
+pH 1,0 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de extração de metais por
+tempo ........................................................................................................................ 97
+Figura 60 – Resultados da cromatografia iônica dos liquores da lixiviação ácida de
+pH 1,5 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de extração de metais por
+tempo ........................................................................................................................ 98
+Figura 61 – Diagrama E/pH do ferro - água a 75ºC ............................................... 100
+Figura 62 – Resultados da cromatografia iônica dos liquores da lixiviação ácida em
+meio oxidante de pH 0,5 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de
+extração de metais por tempo ................................................................................. 101
+Figura 63 – Resultados da cromatografia iônica dos liquores da lixiviação ácida em
+meio oxidante de pH 1,0 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de
+extração de metais por tempo ................................................................................. 102
+Figura 64 – Resultados da cromatografia iônica dos liquores da lixiviação ácida em
+meio oxidante de pH 1,5 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de
+extração de metais por tempo ................................................................................. 104
+Figura 65 – Esquema da concentração de metais considerando como variáveis a
+temperatura, pH e tempo ........................................................................................ 105
+Figura 66 – Fluxograma do processamento mecânico e hidrometalúrgico como rota
+de recuperação de metais a partir de placas de circuito impresso de celulares ..... 107
+LISTA DE TABELAS
+Tabela 1 – Composição dos resíduos eletro-eletrônicos ............................................ 6
+Tabela 2 – Composição de placas de circuito impresso de computador, rádio, TV e
+vídeo ........................................................................................................................... 6
+Tabela 3 – Composição de placas de circuito impresso de computadores, televisores
+e celulares .................................................................................................................. 7
+Tabela 4 – Comparação da caracterização das placas de circuito impresso. ........... 10
+Tabela 5 – Potenciais padrões de alguns metais ..................................................... 30
+Tabela 6 – Parâmetros de regulagem do separador eletrostático ............................ 41
+Tabela 7 - Nomenclatura das frações que foram caracterizadas .............................. 43
+Tabela 8 – Determinação dos materiais através dos ensaios de pirólise e digestão
+em água régia ........................................................................................................... 46
+Tabela 9 – Faixa de comprimento de onda de cada metal na preparação do padrão
+do ICP-OES ............................................................................................................... 48
+Tabela 10 – Porcentagem dos metais na placa após moagem (MM), no material
+magnético (MMA), não magnético (MNMA), condutor (MCD), misto (MMI) e nãocondutor (MNC) ......................................................................................................... 85
+Tabela 11 – Porcentagem elementar do material não lixiviado pela solução oxidante,
+analisado por EDS .................................................................................................. 108
+Tabela 12 – Valores dos metais em uma tonelada de placa de circuito impresso .. 109
+1
+1. Apresentação
+Os resíduos eletro-eletrônicos são compostos de equipamentos ou parte
+deles, que são descartados por deixarem de funcionar ou por se tornarem obsoletos
+com relação à tecnologia.
+Estes resíduos muitas vezes possuem metais, que podem ser prejudiciais a
+saúde, como o chumbo, ou são metais preciosos ou base que possuem valor
+agregado, como o ouro e o cobre, respectivamente.
+As placas de circuito impresso de celulares usados são consideradas
+resíduos eletro-eletrônicos, que são compostas de materiais cerâmicos, poliméricos
+e metálicos.
+Porém, a composição das placas pode variar de acordo com o modelo de
+equipamento, pois a placa pode ser fabricada em celulose ou fibra de vidro com
+resina epóxi ou fenólica e camadas de cobre que podem variar de uma a dezesseis
+camadas. A tecnologia também influencia na composição, pois os aparelhos mais
+antigos continham soldas com liga de estanho e chumbo, enquanto que atualmente
+observa-se uma tendência na substituição desta liga por estanho e prata e estanho
+bismuto, sendo estas consideradas “lead free”, isto é, isento de chumbo.
+Esta composição heterogênea entre os tipos de placas dificulta os processos
+de reciclagem, pois a composição de metais pode variar de acordo com os modelos.
+Devido a esta variação da composição das placas a etapa de caracterização
+dos materiais é essencial para se definir os processos mecânicos, hidrometalúrgicos
+e pirometalúrgicos que podem ser utilizados isoladamente ou em conjunto visando à
+recuperação e reciclagem de materiais.
+Os processos mecânicos podem envolver etapas de desmantelamento,
+moagem, separação magnética e eletrostática, classificação granulométrica,
+separação em meio denso, elutriação.
+Já os processos hidrometalúrgicos podem ocorrer através de lixiviação
+química, extração por solvente, biolixiviação, precipitação química e eletro-obtenção.
+Nos processos pirometalúrgicos o aquecimento das placas até a temperatura
+de degradação térmica dos polímeros pode ser utilizada a fim de se concentrar os
+metais, porém esta técnica não é muito interessante no ponto de vista ambiental,
+2
+pois os polímeros presentes nas placas possuem compostos orgânicos a base de
+bromo e cloro, conhecidos como antichama, que ao serem queimados formam
+substâncias tóxicas como os organoclorados.
+O tratamento das emissões gasosas contendo bromo e organoclorados
+inviabiliza o processo de reciclagem, devido ao alto custo de manutenção e ao risco
+ambiental.
+Contudo os processos mecânicos, hidrometalúrgicos e pirometalúrgicos têm
+como objetivo principal a reciclagem de materiais com valor agregado, favorecendo
+com isso a minimização do consumo de recursos naturais, além de aumentar a vida
+útil de aterros, pois os materiais reciclados não seriam mais descartados.
+
+3
+2. Objetivos
+Realizar processamento mecânico das placas de circuito impresso de
+aparelhos celulares obsoletos, através de operações unitárias de Tratamento de
+Minérios, visando à liberação e concentração de materiais.
+• Avaliar a concentração de materiais do processo de moagem através
+da comparação das placas cominuídas em moinho de martelos com
+grelha de 6mm, 4mm e 2mm.
+• Avaliar a separação dos materiais magnéticos e não magnéticos do
+processo de separação magnética e dos materiais condutores e não
+condutores do processo de separação eletrostática através das
+análises de caracterização.
+• Avaliar a concentração de materiais em faixas granulométricas
+específicas após a moagem, separação magnética e eletrostática.
+Caracterizar as placas de circuito impresso de aparelhos celulares obsoletos
+a fim de se determinar a composição das placas.
+• Realizar pirólise e digestão em água régia do material cominuído;
+magnético, não magnético, condutor, misto e não condutor, assim
+como suas frações granulométricas, a fim de se quantificar a massa de
+material polimérico, cerâmico e metálico presente nas placas de
+circuito impresso de celulares obsoletos.
+• Realizar análise química para identificar e quantificar os metais
+presentes nos liquores de lixiviação provenientes da digestão em água
+régia.
+Desenvolver metodologia de processamento hidrometalúrgico visando à
+recuperação de cobre.
+• Avaliar a dissolução de metais em solução de lixiviação ácida e de
+lixiviação ácida em meio oxidante, controlando as variáveis: pH,
+temperatura e tempo evidenciando este processo com análise dos
+liquores por cromatografia iônica.
+
+4
+3. Introdução teórica
+3.1. Resíduos eletro-eletrônicos
+Os resíduos eletro-eletrônicos são conhecidos como qualquer componente,
+periférico e equipamentos eletrônicos como refrigeradores, formos elétricos,
+televisores, calculadoras, aparelhos de DVD, rádio, MP3, aparelhos de telefonia
+celular, computadores e peças de reposição destes equipamentos que não tenham
+mais utilidade em sua forma original (1) (2)
+.
+Cada avanço que surge a favor do desenvolvimento tecnológico de produtos
+eletrônicos é um incentivo para a troca de equipamentos que muitas vezes não se
+esgotaram, mas sim se tornam ultrapassados. Um exemplo claro deste avanço
+tecnológico são os equipamentos de som que até a década de 80 era comum os
+encontrar na forma de discos de vinil, enquanto que atualmente se passa pela
+transição de mídias de CD e aparelhos de MP3, outro exemplo é o aparelho de
+vídeo cassete que foi substituído por equipamentos de DVD; televisores de tubo de
+raio catódico por telas de cristal líquido e plasma (3).
+Os equipamentos eletro-eletrônicos são segregados em dois grandes grupos:
+a chamada linha branca composto de geladeiras, fogões, microondas e lavadoras e
+a linha marrom constituído por televisores, aparelhos de DVD e som. Porém, dentro
+desta classificação, não se encontram as pilhas, as baterias, as lâmpadas e os
+aparelhos de telefonia celular que são produtos eletrônicos de fácil acesso a
+população e conseqüentemente com maior descarte quando comparados às linhas
+branca e marrom (4)
+.
+A preocupação ambiental que permeia estes resíduos está relacionada à
+quantidade de metais existentes nestes equipamentos e à disposição final destes
+aparelhos. Os equipamentos eletro-eletrônicos de uso doméstico acabam em aterros
+sanitários onde os metais presentes nos aparelhos sofrem um processo de lixiviação
+provocado pelos ácidos orgânicos provenientes da degradação anaeróbia da
+matéria orgânica (5)
+.
+O resíduo eletro-eletrônico apresenta mais de 1000 substâncias diferentes,
+muitas delas tóxicas, tais como mercúrio, chumbo, arsênio, cádmio, selênio, cromo
+hexavalente, e retardantes de chama que geram emissões de dioxinas quando
+5
+queimados. Cerca de 70% dos metais pesados presentes nos aterros sanitários dos
+EUA são provenientes do resíduo eletro-eletrônico (1)
+.
+Estima-se que a produção global de resíduos eletro-eletrônicos está em torno
+de 20 a 25 milhões de toneladas por ano, sendo que a maioria é produzida na
+Europa, EUA e Austrália. Estima-se que a China, a Europa Oriental e a América
+Latina se tornarão os maiores produtores de resíduos eletrônicos nos próximos 10
+anos (6)
+.
+Em 1994, foi estimado que aproximadamente 7 milhões de toneladas de
+computadores se tornaram obsoletos em todo o mundo, enquanto que em 2004 foi
+estimada uma quantidade equivalente a 35 milhões de toneladas. Este aumento
+pode estar associado ao tempo de duração de um computador, pois em 1994 a
+durabilidade de um computador estava em torno de 5 anos enquanto que
+atualmente dura 2 ou 3 anos, além da popularização deste tipo de equipamento e
+diminuição do preço (1)
+.
+A vida útil de um telefone celular é de aproximadamente um ano e estima-se
+que cerca de 100 milhões de aparelhos de telefonia celular são descartados
+anualmente no mundo devido ao não funcionamento ou porque aparelhos com
+novos recursos foram lançados no mercado (7; 8)
+.
+Supondo-se que a massa de um telefone celular está em torno de 100g,
+pode-se concluir que cerca de 10.000t destes aparelhos são descartados em
+aterros (9)
+.
+Além de possuírem resíduos tóxicos estes equipamentos ocupam espaço em
+aterros, que muitas vezes estão esgotando sua capacidade de disposição de
+resíduos.
+Esta forma de disposição não trata e nem recupera materiais passíveis de
+reciclagem.
+Para se viabilizar o processo de reciclagem de resíduos eletrônicos é
+importante conhecer os materiais que os compõem a fim de se direcionar
+tecnologias para conseguir a recuperação destes materiais.
+A composição dos resíduos eletro-eletrônicos são listados com suas
+respectivas porcentagens na Tabela 1 (1)
+.
+6
+Tabela 1 – Composição dos resíduos eletro-eletrônicos (1)
+Composição % em peso
+Ferro e aço 47,9
+Plástico sem retardante de chama 15,3
+Cobre 7,0
+Vidro 5,4
+Plástico com retardante de chama 5,3
+Alumínio 4,7
+Placas de circuito impresso 3,1
+Outros 4,6
+Madeira 2,6
+Cerâmica 2,0
+Outros metais não ferrosos 1,0
+Borracha 0,9
+Esta composição é dividida em telas de cristal líquido, tubos de raios
+catódicos, baterias e cabos elétricos, linha branca e linha marrom, contudo a
+porcentagem em peso ainda pode variar de acordo com o equipamento (1)
+.
+Por esta razão é interessante separar os resíduos eletrônicos pelo tipo de
+equipamento para se determinar a composição dos resíduos eletrônicos em
+materiais cerâmicos, poliméricos e metálicos de equipamentos específicos (10)
+,
+conforme apresentado na Tabela 2, no qual são consideradas placas de circuito
+impresso de computador, rádio, TV e vídeo.
+Tabela 2 – Composição de placas de circuito impresso de computador, rádio,
+TV e vídeo (10)
+Materiais % média
+Óxidos 39,1
+Metais 23,4
+Plásticos 37,5
+Dentro desta classificação dos metais presentes nestas placas tem-se ainda a
+denominação de metais ferrosos, cerca de 11,4% e não ferrosos aproximadamente
+7
+89,6%, isto é, do total de metais (23,4%) somente 2,7% é de metais ferrosos e
+20,4% é de metais não ferrosos (1; 10)
+.
+Outra forma de minimizar a variação da composição entre os equipamentos
+eletrônicos é segregar os materiais dos equipamentos conforme suas
+características, por exemplo, segregar dos equipamentos pilhas e baterias ou ainda
+remover os tubos de raios catódicos e telas de cristal líquido; as carcaças metálicas
+e plásticas, os cabos elétricos e as placas de circuito impresso (11; 12)
+.
+A maioria dos produtos eletroeletrônicos possui placas de circuito impresso
+em seu interior que podem chegar a representar até 30% em massa do peso do
+produto e a presença de metais é essencial para o funcionamento desta tecnologia.
+Por esta razão, cada vez mais estudos visando à recuperação de metais das placas
+de circuito impresso estão sendo realizados (13; 14; 15; 16)
+.
+Considerando que um resíduo eletrônico tenha sido segregado de acordo
+com o tipo de equipamento e com a sua característica, tem-se um estudo
+comparativo da composição das placas de circuito impresso de aparelhos de
+televisão, computadores e celulares, conforme apresenta a Tabela 3.
+Tabela 3 – Composição de placas de circuito impresso de computadores,
+televisores e celulares (12)
+Computadores
+% em peso
+Televisores
+% em peso
+Celulares
+% em peso
+Metais e fibras de vidro 32,0 32,1 83,1
+Orgânico 68,0 67,9 16,9
+A variação entre a composição de metais e fibras de vidro de computadores e
+televisores está associada à composição das placas que difere para cada
+equipamento, isto é, nos computadores e televisores as placas são face simples ou
+dupla (possuem uma ou duas películas de cobre) enquanto que os celulares são
+produzidos com placas multicamadas (que possuem pelo menos quatro camadas de
+cobre entre as fibras de vidro) (17; 18)
+.
+3.2. Placas de circuito impresso
+8
+As placas de circuito impresso podem ser classificadas quanto a sua
+tecnologia, isto é, são utilizadas placas de face simples (somente uma face da placa
+é revestida com cobre), face dupla (os dois lados da placa são revestidos de cobre)
+e multicamadas (de 4 a 16 camadas de cobre entre as camadas de fibra de vidro),
+conforme Figura 1 (17; 18)
+.
+Figura 1- Esquema da classificação das placas de circuito impresso
+A classificação ainda pode ser associada ao tipo de material ou laminado,
+denominados FR-1, FR-2, FR-4 (FR significa retardante de chama), teflon,
+espessuras críticas, CEM-1 (17)
+.
+O FR-1 e o FR-2 são fabricadas em celulose impregnada com resina fenólica
+recoberta com folha de cobre, porém absorvem mais água que as FR-4. As FR-4
+são compostas de fibra de vidro com resina epóxi e as CEM-1 são formadas por
+materiais compósitos como fibras de vidro e celulose com resina epóxi (19)
+.
+Os laminados utilizados em aparelhos de televisão são os FR-2, que são
+formados de uma camada simples enquanto que as placas de celulares são
+compostas de multicamadas (19; 17)
+.
+9
+As placas que compõem os computadores em geral são feitas com os
+laminados FR-1, FR-2 e CEM-1 enquanto que os telefones celulares são de fibras de
+vidro reforçadas com resina epóxi, denominada FR-4. Já as placas de televisores
+são compostas por celulose reforçada com resina fenólica, conhecidas como
+FR-2 (2; 11; 12)
+.
+O laminado FR-4 de aparelhos celulares pode variar de 4 a 16 camadas de
+fibra de vidro com resina epóxi (0,075mm a 3,2mm) intercaladas com microfilmes de
+cobre, que podem variar de 0,018mm a 0,070mm, resistente a água e bloqueadora
+de ultravioleta, enquanto que as FR-1 e FR-2 (computadores e TVs) são
+exclusivamente face simples ou dupla (17; 19)
+.
+As placas de circuito impresso são compostas de resinas fenólicas e epóxi
+com retardante de chama. Estas resinas com o retardante de chama podem ser
+fabricadas com poliimidas, polietileno tereftalato ou naftalato de polietileno, incluindo
+bisfenol A, resinas contendo fenol, cresol e ésteres de cianato, assim como resinas
+termofixas como a dicianodiamida, 4,4 sulfona diaminodifenil e 4,4 diaminodifenil
+metano (12)
+.
+Os materiais orgânicos normalmente encontrados nas placas são derivados
+destes polímeros e papel. Os principais metais que compõem as placas de circuito
+impresso são: cobre, ferro, alumínio, estanho, tântalo, gálio, ouro, prata, cromo,
+mercúrio, cádmio, zinco, níquel e chumbo. Os materiais cerâmicos normalmente
+encontrados nestas placas são a sílica, alumina, mica e titanato de bário (20)
+.
+Diversos estudos foram feitos sobre as placas de circuito impresso e parte
+destes estudos envolve a caracterização das placas. Os resultados diferem, pois as
+origens das placas são de diferentes produtos (21; 22; 23; 24; 25). Os estudos de
+caracterização foram realizados através de análises de espectrometria de emissão
+óptica por indução de plasma (ICP-OES), após a digestão das placas em água régia,
+conforme Tabela 4.
+10
+Tabela 4 – Comparação da caracterização das placas de circuito impresso.
+Elementos
+% em peso
+(23; 25)
+% em peso (22) % em peso (24) % em peso (21)
+Ag 0,06 0,5 0,003 0,02
+Al 3,2 18,1 0,71 -
+Au - - - 0,01
+Cu 26,0 0,24 8,5 96,9
+Fe 3,40 14,8 8,3 -
+Ni 1,50 1,1 2,0 0,01
+Pb 3,0 12,7 3,2 1,3
+Sn 4,9 16,0 0,0007 1,7
+Zn 2,6 2,7 8,0 -
+Pode-se notar (Tabela 4) que de maneira geral, os resultados diferem um dos
+outros, o motivo para isso está na heterogeneidade e a diferença de origem das
+placas.
+Basicamente as placas de circuito impresso são compostas de três partes:
+camada não condutora (também chamada de substrato), circuitos impressos
+condutores e componentes elétricos.
+3.2.1. Metais das placas de circuito impresso
+Estima-se que 50.000 toneladas de placas de circuito impresso são geradas
+todos os anos no Reino Unido e na União Européia, 300.000 toneladas (26)
+.
+Cada placa de circuito impresso (excluindo os componentes como resistor,
+capacitor, diodo e transistor) possui uma quantidade de metal de aproximadamente
+30% em peso (21; 27). Os metais presentes em grande parte das placas de circuito
+impresso podem ser divididos em metais preciosos, metais base e metais
+tóxicos (28):
+11
+• Metais preciosos: ouro, prata, paládio e platina;
+• Metais base: cobre, alumínio, níquel, estanho, zinco e ferro;
+• Metais tóxicos: mercúrio, berílio, índio, chumbo, cádmio, arsênio,
+antimônio.
+Os metais preciosos contidos nas placas de circuito impresso correspondem a
+80% do valor intrínseco, porém não chegam a 1% do peso total (26). Atualmente, a
+maioria dos processos foca na recuperação de metais preciosos como ouro e
+prata (21)
+.
+Alguns estudos mostraram que o valor do equipamento é proporcional ao
+valor dos metais preciosos. Os metais preciosos compreendem 70% do valor total
+das placas de TV e 40% do valor das placas de circuito impresso de aparelhos de
+DVD (29). Os metais preciosos são os principais impulsionadores do mercado de
+reciclagem de eletroeletrônicos, seguidos do cobre e zinco (30)
+.
+Com a crescente produção e consumo de equipamentos o descarte de
+resíduos eletro-eletrônicos se torna um problema ambiental e cada vez mais estudos
+com este tipo de resíduo estão sendo desenvolvidos.
+No Departamento de Engenharia Metalúrgica e de Materiais da Escola
+Politécnica da Universidade de São Paulo existe um grupo de pesquisa coordenado
+pelos Professores Jorge Alberto Soares Tenório e Denise Crocce Romano Espinosa
+que desde 1995 apresentam estudos com relação à recuperação de materiais a
+partir de resíduos eletro-eletrônicos.
+Este grupo de pesquisa desenvolve trabalhos sobre caracterização (31; 32)
+,
+processamento mecânico (33; 34), pirometalúrgico (35; 36) e hidrometalúrgico (37)
+(precipitação seletiva (38; 39), lixiviação ácida (40), biolixiviação, eletrorefino (33) e
+extração por solvente) de resíduos eletro-eletrônicos visando à recuperação de
+materiais poliméricos, cerâmicos e metálicos (41; 42; 43) (metais preciosos (44) como o
+ouro e a prata; metais base como o cobre, alumínio, zinco e manganês (45; 46)) de
+baterias de íons de lítio (47), níquel metal hidreto (48) e niquel cádmio (49; 50; 51; 52);
+pilhas alcalinas (53); fios e cabos elétricos (54; 55); telas de cristal líquido (3) e placas de
+circuito impresso (56; 57)
+.
+A quantidade de cada metal pode ser diferente conforme o tipo de
+equipamento e tecnologia (58)
+.
+O chumbo tem destaque nas placas, principalmente devido a seu uso como
+liga de estanho e chumbo da solda dos componentes. Entretanto, com a adoção da
+12
+normativa européia (RoHS- Restriction of Certain Hazardous Substances), novas
+tecnologias de soldas isentas de chumbo foram incentivadas. As soldas sem
+chumbo utilizam principalmente estanho, cobre, prata, bismuto, índio, zinco e
+antimônio, porém são baseadas principalmente em estanho, prata e cobre (59)
+.
+3.2.1.1. Cobre
+Atualmente, o cobre e suas ligas são um dos metais comerciais mais
+importantes, tornando-se o terceiro metal mais produzido e consumido, atrás apenas
+de ferro/aço e alumínio. Seu uso se deve à boa condutividade elétrica e térmica,
+resistência à corrosão e boa resistência mecânica e à fadiga (60)
+.
+O cobre é utilizado em cabos e fios, contatos elétricos, e outros usos que
+exigem passagem de corrente elétrica (60)
+.
+O cobre é encontrado principalmente na forma de minério de sulfeto de cobre
+e ferro (calcopirita, bornita e calcocita) ou em minérios oxidados.
+ Os minérios de cobre normalmente possuem cerca de 1 a 2% de cobre em
+minas profundas. Outras fontes de cobre são as sucatas contendo cobre e ligas de
+cobre (60)
+.
+As principais formas de extração de cobre de minério são através dos
+processos pirometalúrgicos e hidrometalúrgicos.
+Para o processo de recuperação de cobre a partir de resíduos
+eletroeletrônicos pode-se utilizar das mesmas técnicas de extração de cobre a partir
+do minério (pirometalúrgico e hidrometalúrgico). Porém para se definir uma rota de
+recuperação é importante conhecer o fluxo de material que originou a sucata
+(resíduos eletro-eletrônicos) (61):
+As sucatas contendo cobre podem ser divididas nas categorias: gerada na
+fonte, nova e velha (61)
+.
+A sucata gerada na fonte é aquela gerada na própria produção primária,
+englobam anodos, catodos, barras e vigas que estão fora de especificação.
+Normalmente os produtos fora de especificação retornam ao conversor e novamente
+passam por refino eletrolítico, ou no caso de barras e vigas são refundidos e
+refeitos (61)
+.
+A sucata nova é aquela gerada na manufatura do produto. A principal
+diferença deste para a sucata gerada na fonte é que ela é gerada na preparação de
+13
+uma liga, ou por aplicações de revestimentos. O caminho da reciclagem depende
+muito da composição química e o quanto se misturou com outros materiais. O
+volume de metais contidos em produtos obsoletos e que teoricamente torna-se
+disponível para reciclagem pode ser conhecido como sucata velha, que pode ser
+dividida em cinco categorias (62):
+• Produtos elétricos e eletrônicos;
+• Setor de construção civil;
+• Equipamentos e maquinário industrial;
+• Equipamentos de transporte;
+• Produtos de consumo geral;
+Estima-se que no ano de 2004, os cinco setores geraram aproximadamente
+1,92 milhões de toneladas de cobre nos Estados Unidos. Os equipamentos elétricos
+e eletrônicos correspondem à geração de aproximadamente 532.000 toneladas de
+cobre, sendo menor somente que o do setor de construção civil que produziu
+563.000 toneladas (62)
+.
+Em 2004, foram recuperados cerca de 772.000 toneladas de cobre nos
+Estado Unidos, o que corresponde a aproximadamente 40% do total de cobre das
+sucatas velhas (62)
+.
+As principais dificuldades em reciclar as sucatas velhas são (61):
+• O cobre presente nas sucatas sempre está misturado com outros
+materiais;
+• Imprevisibilidade (a entrega de materiais e objetos depende da origem,
+data de fabricação dos produtos obsoletos e tecnologia dos aparelhos, o que pode
+dificultar o processo de recuperação);
+Cerca de 2/3 dos componentes eletrônicos utilizam cobre como metal base.
+Se não forem considerados os metais preciosos, o cobre se torna o metal com maior
+interesse econômico para recuperação, pois sua quantidade encontrada nos
+resíduos é maior que dos minérios e também devido ao seu valor econômico (63)
+.
+14
+Antigamente as minas de cobre economicamente interessantes para
+exploração tinham cerca de 4% de cobre, atualmente tem somente 1%, isto é a cada
+tonelada de minério somente 10kg são de cobre (64; 65)
+.
+Nas placas de circuito impresso de aparelhos de telefonia celular o metal em
+maior concentração é o cobre, que pode chegar em torno de 33% em massa, isto é,
+em 1 tonelada de resíduos de PCI de celular tem-se cerca de 330kg de cobre (66)
+.
+A maioria dos produtos eletroeletrônicos possui placas de circuito impresso
+em seu interior que podem chegar a representar até 30% em massa do peso do
+produto. Por esta razão cada vez mais estudos visando a recuperação de metais das
+placas de circuito impresso estão sendo pesquisados (14; 15; 16; 67);
+.
+As pesquisas relacionadas à recuperação de materiais de produtos
+eletroeletrônicos envolvem em geral a recuperação destes materiais através de
+processamento mecânico, pirometalúrgico e hidrometalúrgico (11; 12)
+.
+3.3. Processo de fabricação das placas de circuito impresso.
+Existem dois processos mais comuns de fabricação de placas de circuito
+impresso: o processo subtrativo e o processo aditivo (17; 18)
+.
+O processo aditivo se baseia na eletrodeposição das trilhas de cobre sob a
+chapa de base sem cobre na superfície. Este processo tem a vantagem de consumir
+menos cobre do que o processo subtrativo, que utiliza de chapa recoberta de uma
+fina camada de cobre em uma ou em ambas as faces, sob as quais transfere-se
+uma imagem do circuito por processo serigráfico ou por laminação de filmes, e
+através da corrosão química retira-se o excesso de cobre da chapa a fim de se
+formar a trilha.
+Apesar do processo subtrativo consumir mais cobre do que o processo
+aditivo, ele ainda é o processo mais utilizado para a fabricação de placas de circuito
+impresso pois pode ser aplicado a qualquer número de camadas, que são formadas
+de um conjunto de placas dupla face e duas placas de face simples externas (18)
+.
+As principais etapas que envolvem o processo subtrativo de fabricação de
+placas de circuito impresso são:
+a) Prensagem das camadas: as fibras de celulose ou fibras de vidro ou
+subtrato são dispostas na forma de uma folha recobertas com resina fenólica ou
+15
+epóxi, ainda entre as laminas são prensadas lâminas de cobre. As placas são
+aquecidas e prensadas (18; 19)
+.
+b) Adição dos furos posicionadores: são feitos furos fora da área útil das
+placas para servir de coordenadas de calibração dos painéis nas etapas
+seguintes (18)
+.
+c) Banho de desengraxe: a placa passa por um banho de desengraxe
+para remover impurezas da superfície do cobre. Esta camada acaba se tornando
+áspera para facilitar a adesão do filme fotossensível.
+d) Sensibilização e revelação do traçado: a placa é exposta a luz branca
+para sensibilizar o filme fotossensível. Em seguida se aplica um revelador, faz-se um
+banho de limpeza e aplica-se um fixador.
+e) Primeira decapagem: nesta etapa é retirada a película de filme das
+trilhas e ilhas.
+f) Deposição de estanho e chumbo: é feita a deposição da liga de
+estanho e chumbo sobre as trilhas, permitindo o isolamento delas para o segundo
+processo de decapagem.
+g) Segunda decapagem: esta etapa remove o filme fotossensível do
+restante da placa, onde o cobre fica exposto novamente.
+h) Corrosão: a placa recebe jatos de amônia líquida que corrói o cobre,
+assim somente as trilhas protegidas com ligas de estanho e chumbo sobre o cobre
+permanecem na placa. O excesso da amônia é retirado com água.
+i) Decapagem do estanho e chumbo: através de processo químico a
+camada de estanho e chumbo é removida para expor o cobre das trilhas.
+j) Deposição de cobre: é feita a deposição de cobre para regularizar o
+cobre das trilhas. Este processo é feito através de eletrodeposição química de cobre.
+k) Montagem das camadas: as placas são montadas externamente com
+duas placas de face simples e os laminados são colocados entre as placas externas,
+sendo posicionadas conforme a furação realizada no início do processo de
+fabricação das placas. Assim é feita a compressão em prensas até a espessura
+desejada. Esta placa é considerada como laminado dupla face.
+l) Furação: são feito furos nas placas onde serão posicionados os
+componentes do circuito impresso.
+m) Metalização dos furos: é feita a deposição química do cobre nos furos.
+16
+n) Aplicação da máscara de solda: aplica-se um verniz fotossensível em
+seguida é feito o processo de revelação e limpeza para revelar as trilhas.
+o) Deposição de estanho e chumbo nos furos: as placas são mergulhadas
+em banho com liga de estanho e chumbo fundida. Quando a placa é retirada do
+banho é passado ar quente para remover o excesso de estanho e chumbo da placa.
+p) Adição do silkscreen: é feita a aplicação de um processo serigráfico
+simples.
+q) Colocação dos componentes: são instalados os componentes dos
+circuitos em seguida são soldados com liga de estanho e chumbo (18)
+.
+No processo aditivo as principais etapas são:
+a) Seleção de chapa com superfície aderente: deve ser uma chapa com
+superfície .rugosa que permita a eletrodeposição química do cobre.
+b) Furação e acabamento de superfície : semelhantes aos itens “b” e “c”
+do processo subtrativo.
+c) Transferência da imagem das trilhas: a imagem das trilhas é transferida
+por um processo serigráfico, no qual somente as regiões que o cobre será
+depositado fica exposto.
+d) Deposição eletrolítica de cobre: depositada nas trilhas isenta de tinta
+serigráfica através de eletrodeposição.
+e) Trasnferencia da imagem da mascara de solda: é a aplicação de tinta
+onde será feita a solda.
+f) Aplicação de liga de estanho/chumbo: semelhante ao item “o” do
+processo subtrativo.
+3.4. Métodos de tratamento de placas de circuito impresso
+O métodos de tratamento de placas de circuito impresso envolvem a
+reciclagem de materiais que podem ser resumidos em 3 estágios: pré-tratamento,
+separação/concentração e refino mecânico/químico. O pré-tratamento é composto
+basicamente pela análise e separação dos componentes passíveis de recuperação
+ou dos metais tóxicos (20)
+.
+17
+Outros estudos apresentam detalhes das etapas específicas dos estágios de
+reciclagem das placas de circuito impresso e outros resíduos eletro-eletrônicos. A
+reciclagem de eletro-eletrônicos pode ser dividida nos seguintes estágios (11; 29; 68):
+• Desmontagem: separação seletiva dos componentes tóxicos e outros
+materiais;
+• Beneficiamento: utilização de processos mecânicos/físicos e/ou
+processos metalúrgicos para concentrar os materiais;
+• Refino: este é o último estágio, no qual os materiais são recuperados.
+A desmontagem visa a etapa de caracterização dos materiais que compõem
+as placas com o objetivo de otimizar os processos mecânicos e metalúrgicos a fim
+de se concentrar os materiais. Com a caracterização é possível identificar os
+processos que melhor concentram os materiais.
+Estes processos podem ser utilizados isoladamente ou em conjunto.
+3.4.1. Processamento mecânico
+O processamento mecânico envolve essencialmente operações unitárias de
+tratamento de minérios visando a separação física ou a concentração de materiais a
+partir de sucatas de equipamentos eletro-eletrônicos.
+Este processamento envolve principalmente etapas como desmantelamento,
+moagem, classificação granulométrica, separação em meio denso, flotação, atrição,
+separação magnética e separação eletrostática.
+3.4.1.1. Desmantelamento
+O processo de desmantelamento consiste na separação de componentes
+tóxicos ou valiosos da sucata dos equipamentos eletro-eletrônicos a fim de otimizar
+as etapas subseqüentes de tratamento. Este processo ocorre geralmente de forma
+manual para os resíduos de equipamentos eletro-eletrônicos (2)
+.
+18
+Em geral as sucatas de equipamentos e produtos eletro-eletrônicos são
+desmanteladas em baterias, tubos de raio catódico, cartuchos e toner, placas de
+circuito impresso, telas de cristal líquido e carcaças metálicas e plásticas (2; 11)
+.
+3.4.1.2. Moagem
+O processo de moagem é um método de cominuição ou redução de tamanho
+para promover a liberação de materiais presentes em minérios, resíduos e sucatas
+através da ação mecânica (11; 69; 70)
+.
+Um exemplo de equipamento de impacto utilizado em tratamento de resíduos
+de equipamentos eletro-eletrônicos são os moinhos de martelos, que são
+equipamentos de impacto nos quais os materiais a serem cominuídos passam por
+um mecanismo de compressão e abrasão (71)
+.
+O mecanismo de fratura dos materiais é diferente em cada tipo de moinho, o
+que influi na liberação dos materiais e no processo de abrasão e desgaste do
+equipamento (71)
+.
+Contudo, o processo de desgaste do equipamento pode incorporar ao resíduo
+de moagem, componentes não presentes em sua composição original, isto é, o
+resíduo após moagem pode ficar contaminado com o material que foi desgastado do
+moinho. Assim, o tempo que o resíduo permanece em processamento na parte
+interna do moinho pode interferir na sua contaminação, além de se considerar as
+características do material que se deseja moer (71)
+.
+Quando se trata de processos de moagem de resíduos abrasivos que
+geralmente são formados de substâncias silicosas é importante avaliar o tempo de
+moagem para não ter problemas associados a contaminação (70)
+.
+As placas de circuito impresso são resíduos compostos basicamente de fibra
+de vidro, polímeros e metais, isto é, com exceção dos polímeros os materiais que
+compõem as placas são abrasivos e, portanto o tempo de processamento destes
+materiais deve ser o mínimo possível dentro do moinho (70; 71)
+.
+19
+Apesar das placas de circuito impresso serem compostas de materiais
+abrasivos e, portanto, pouco recomendável para se utilizar em moinhos, os
+equipamentos mais utilizados e que apresentam liberação dos materiais são os
+moinhos de martelos e facas (72)
+.
+Após o processo de moagem se iniciam os processos de concentração de
+materiais, que podem ser, por exemplo: separação granulométrica, separação
+magnética, separação eletrostática, lixiviação e separação gravimétrica.
+3.4.1.3. Classificação granulométrica
+A classificação granulométrica é uma técnica utilizada para separar
+populações de partículas com tamanhos diferentes, mediante a passagem desta
+população por uma ou uma série de gabaritos com aberturas fixas e prédeterminadas, conhecidas como peneiras (71)
+.
+Os equipamentos que promovem o peneiramento de materiais após a
+cominuição podem ser divididos genericamente em peneiras fixas, peneiras
+vibratórias inclinadas e horizontais e grelhas (71)
+.
+Para resíduos eletro-eletrônicos a classificação granulométrica é realizada em
+peneiras vibratórias horizontais por permitir a separação por tamanho de partícula e
+facilitar a etapa de caracterização dos materiais através de análises químicas
+possibilitando a identificação das frações que concentram metais, cerâmicos e
+polímeros (11)
+.
+3.4.1.4. Separação magnética
+A separação magnética é um método de concentração para o beneficiamento
+de minérios e remoção de materiais de sucatas, no qual a fração magnética é
+separada (69)
+.
+Os materiais podem ser classificados em três categorias, segundo suas
+respostas ao campo magnético: aqueles que são atraídos e os que são repelidos
+pelo campo magnético, isto é, existem os materiais ferromagnéticos, que são
+20
+atraídos fortemente pelo campo magnético; os paramagnéticos, que são fracamente
+atraídos e os diamagnéticos, que são repelidos pelo campo (69)
+.
+A separação magnética pode ser feita com equipamentos de baixa e alta
+intensidade, assim como equipamentos de correia cruzada, que contemplam as
+duas faixas de intensidade de campo magnético (11)
+.
+3.4.1.5. Separação eletrostática
+A separação eletrostática é um processo de concentração de minérios e
+materiais que considera algumas propriedades como a condutividade elétrica;
+susceptibilidade em adquirir cargas elétricas superficiais; forma geométrica e
+densidade (69)
+.
+Existem dois fatores que influenciam na separação eletrostática: a intensidade
+do campo elétrico para ter a capacidade de desviar uma partícula eletricamente
+carregada e carga elétrica superficial das partículas (69)
+.
+Assim o resíduo ou minério é separado em material condutor e não condutor,
+contudo ainda pode ser obtida uma fração mista, na qual parte do resíduo condutor
+e não condutor ficam juntos devido a algum tipo de deficiência na liberação do
+material (70)
+.
+3.4.2. Processamento pirometalúrgico
+Os processos pirometalúrgicos se caracterizam pelo uso de alta temperatura
+para o processamento de materiais (73)
+.
+O mecanismo do processo pirometalúrgico é promover a concentração de
+uma fase metálica e uma fase contendo escória. Na fase metálica os metais estarão
+em maior concentração, pois os materiais cerâmicos ficam concentrados na escória
+e os polímeros são degradados termicamente através da quebra de ligações
+químicas das cadeias orgânicas através do calor (74; 73)
+.
+21
+A desvantagem dos processos pirometalúrgicos para a concentração de
+metais a partir de placas de circuito impresso está associada às emissões gasosas,
+pois os polímeros que constituem as placas quando submetidos à degradação
+térmica podem formar dioxinas e furanos, que são substâncias tóxicas.
+3.4.3. Processamento hidrometalúrgico
+Os processos hidrometalúrgicos são processos entre a interface de uma fase
+sólida com uma fase líquida que pode variar de 10ºC a 300ºC (75)
+.
+Estes processos inicialmente envolvem operações unitárias de lixiviação de
+materiais, sucata, resíduos ou minérios nos quais ocorre a dissolução de metais pela
+ação de soluções aquosas ou agentes lixiviantes (76). A ação dos agentes lixiviantes
+pode ou não ser seletiva com relação aos materiais que serão solubilizados (76)
+.
+Após as etapas de lixiviação é comum se utilizar de outras técnicas
+hidrometalúrgicas como a extração por solvente, precipitação e refino eletrolítico,
+favorecendo a seletividade dos materiais.
+3.4.3.1. Lixiviação
+Esta técnica permite a transferência de metais presentes em minérios e em
+sucatas de equipamentos eletro-eletrônicos utilizando como agente lixiviante
+soluções ácidas, alcalinas e salinas (75)
+.
+Um dos princípios da lixiviação é a avaliação dos aspectos termodinâmicos
+que envolvem a dissolução de metais representados por diagramas relacionando pH
+e potencial (diagramas E/pH).
+22
+Os diagramas E/pH são construídos em sistemas de metais e água a uma
+determinada temperatura nos quais são determinadas regiões de estabilidade das
+diversas fases condensadas e solúveis (na forma iônica) (76)
+.
+Estes diagramas são conhecidos também como Diagrama de Pourbaix. A
+Figura 2 apresenta um exemplo de diagrama E/pH, identificando as diversas
+regiões (77)
+.
+Figura 2 – Esquema de diagrama E/pH (76)
+Observando a Figura 2, foi possível identificar áreas que representam a
+estabilidade termodinâmica dos diferentes compostos metálicos em função do pH e
+potencial eletroquímico para uma dada temperatura. A região descrita como “metal
+na forma insolúvel” é a zona na qual o metal apresenta um comportamento inerte ou
+se mantém em sua forma metálica (77)
+.
+A zona de dissolução de metais é a zona na qual as reações de lixiviação são
+possíveis e, portanto o metal se encontra na forma iônica estável.
+A área de metal na forma insolúvel é a zona na qual ocorrem as reações de
+formação de óxidos ou de hidróxidos insolúveis (77)
+.
+A região delimitada pelas linhas “a” e “b” é a região de estabilidade da água,
+isto é, acima da linha “b” tem-se a evolução de O2 (potencial oxidante) e abaixo da
+linha “a” tem-se a liberação de H2 (potencial redutor) (77)
+.
+Entre as linhas de equilíbrio da água tem-se as reações representadas pelas
+eq.1, 2 e 3.
+23
+ + 
+ +  →  (1)
+
+ +  →  (2)
+ +  →  + 
+
+ (3)
+No potencial negativo ocorre um processo de redução e abaixo da linha “a”
+ocorre a decomposição da água liberando hidrogênio, enquanto que no potencial
+positivo (oxidação) acima da linha “b” a decomposição da água libera oxigênio.
+Este comportamento de oxidante e redutor define quando um metal é nobre,
+isto é, quando um metal não sofre dissolução sem ter a ação de um agente oxidante
+externo (76)
+.
+O diagrama de Pourbaix do cobre-água a 25°C (conforme Figura 3) apresenta
+as espécies do cobre, mostrando as regiões que nas quais cobre se apresenta na
+forma iônica ou solúvel. Por exemplo, o campo de estabilidade de Cu2+ se localiza
+em pH de 0 a 4 no potencial (Eh) 0,4V a 2,0V. Conseqüentemente, o uso de um
+agente oxidante pode facilitar a dissolução de metais, pois este agente tende
+aumentar o potencial (potencial positivo) de modo a provocar a reação de cobre
+metálico se transformando em íon de cobre solúvel (Cu2+), conforme eq.4.
+
+ → 
+ +  (4)
+24
+Figura 3 – Diagrama E/pH do sistema cobre-água a 25ºC (78)
+.
+A Figura 4 e Figura 5 apresentam os diagramas de Pourbaix para o sistema
+cobre-água a 50 e 75ºC, respectivamente. Nota-se que o campo de estabilidade do
+Cu2+ diminui com o aumento da temperatura e o potencial permanece praticamente
+inalterado com a temperatura. Portanto, com o aumento da temperatura a lixiviação
+do cobre ocorre em pHs mais baixos (77)
+.
+0 2 4 6 8 10 12 14
+2.0
+1.5
+1.0
+0.5
+0.0
+-0.5
+-1.0
+-1.5
+-2.0
+Cu - H2O - System at 25.00 C
+File: C:\HSC3\CU25.IEP pH
+Eh (Volts)
+Cu
+CuH3
+CuO
+Cu2O
+Cu(+2a)
+0 2 4 6 8 10 12 14
+2.0
+1.5
+1.0
+0.5
+0.0
+-0.5
+-1.0
+-1.5
+-2.0
+Cu - H2O - System at 50.00 C
+File: C:\HSC3\CU50.IEP pH
+Eh (Volts)
+Cu
+CuH3
+CuO
+Cu2O
+Cu(+2a)
+25
+Figura 4 – Diagrama E/pH do sistema cobre-água a 50ºC (78)
+.
+Figura 5 – Diagrama E/pH do sistema cobre-água a 75ºC (78)
+.
+Esta área de solubilidade varia de metal para metal (Figura 6) o que pode
+facilitar a escolha do pH e potencial ideal para se desenvolver o processo de
+lixiviação (77)
+.
+0 2 4 6 8 10 12 14
+2.0
+1.5
+1.0
+0.5
+0.0
+-0.5
+-1.0
+-1.5
+-2.0
+Cu - H2O - System at 75.00 C
+File: C:\HSC3\CU75.IEP pH
+Eh (Volts)
+Cu
+CuH3
+CuO
+Cu2O
+Cu(+2a)
+0 2 4 6 8 10 12 14
+2.0
+1.5
+1.0
+0.5
+0.0
+-0.5
+-1.0
+-1.5
+-2.0
+Fe - H2O - System at 25.00 C
+File: C:\HSC3\FE25.IEP pH
+Eh (Volts)
+Fe
+Fe2O3
+Fe3O4 Fe(+2a)
+26
+Figura 6 - Diagrama E/pH do sistema ferro-água a 25ºC (78)
+Comparando os sistemas ferro-água e cobre-água a 25ºC é possível notar
+esta diferença na região de solubilidade dos metais. Sendo que para desenvolver
+um processo de lixiviação contendo cobre e ferro poderia ser feita a lixiviação do
+cobre em pH 3,0 até 3,8 com potencial superior a 0,4V, assim somente o cobre será
+solubilizado e o ferro ficará insolúvel na forma de Fe2O3
+(77)
+.
+Após a lixiviação ou dissolução dos metais existem métodos de purificação ou
+seletividade para recuperação dos metais. Estes processos são: biolixiviação,
+extração por solvente, precipitação e refino eletrolítico.
+3.4.3.2. Processamento biohidrometalúrgico
+Os processos biohidrometalúrgicos também conhecido como biolixiviação
+envolvem lixiviação de metais com a ação dos micoorganismos. Esta lixiviação se dá
+por meio de reações de oxi-redução (79)
+.
+A lixiviação bacteriana de metais possui algumas vantagens com relação aos
+processos hidrometalúrgicos convencionais, dos quais se destacam a economia de
+insumos básicos e, pois a bactéria é o agente oxidante que gera ácido; simplicidade
+nas instalações; não necessita de mão de obra especializada (79)
+.
+O processo biológico de lixiviação promove a oxidação dos sulfetos metálicos,
+que pode ocorrer de forma direta ou indireta. No processo direto o oxigênio é o
+agente oxidante, enquanto que o processo indireto tem como agente oxidante o íon
+férrico (80)
+.
+Os processos biohidrometalúrgicos foram inicialmente registrados em
+drenagens ácidas de minas de carvão e em minas de cobre. Nas minas de carvão as
+bactérias isoladas foram as Thiobacillus (Acidithiobacillus) ferrooxidans e T.
+thiooxidans, sendo que a primeira também foi encontrada em minas de cobre (80)
+.
+27
+Por esta razão estudos com estes microorganismos aplicados à recuperação
+de metais de placas de circuito impresso tem avaliado a biolixiviação de metais
+nobres como o ouro e metais base como o cobre (81; 82)
+.
+O mecanismo de biolixiviação pode ser exemplificado a partir da lixiviação do
+mineral calcocita (Cu2S), no qual o cobre é lixiviado em meio ácido eq. 5formando a
+covelita (CuS - solúvel), ou pelo íon férrico formado pela oxidação biológica do íon
+ferroso, conforme descrito na eq.6 (82)
+.
+
+
+ + 
+ +  → 
+
+ + 
+
+ +  (5)
+
+
+ +  (
+) +  → 
+
+ + 
+ + 
+ (6)
+Assim, esta reação pode ser adaptada para a biolixiviação de cobre nas
+placas de circuito impresso, através da oxidação do cobre, zinco e chumbo com a
+ação do íon férrico eq. 7, 8 e 9 respectivamente (81; 83)
+.
+
+ +  → 
+ +  (7)
+ +  →  +  (8)
+ +  →  +  (9)
+O íon férrico é originário da lixiviação indireta provocada pelo metabolismo
+das bactérias. As bactérias se utilizam do íon ferroso presente no minério ou no meio
+de cultura como fonte de energia transformando-o em íon férrico, conforme a
+descrição do mecanismo na eq. 10 (80; 81; 84; 85)
+.
+ +
+
+
+ + 
+
+é
+  +  + 
+
+ (10)
+Tanto o pH quanto o potencial devem ser monitorados e controlados durante
+o processo de biolixiviação, pois, em geral, durante o processo de biolixiviação o pH
+aumenta e o potencial diminui, podendo haver a formação de outros subprodutos
+dependendo da composição da solução como, por exemplo, arsenito férrico,
+28
+hidróxido férrico, sulfeto férrico básico e jarositas, conforme mostra as eq. 11, 12, 13
+e 14 respectivamente.
+ 
+ +  →  ! + "
+ (11)
+" +  → () + "
+ (12)
+() + 
+
+
+ → ()(
+) +  (13)
+" + 
+
+
+ +   → [(
+). () + 
+ (14)
+Além do pH e do potencial redox, os principais parâmetros que são
+controlados no processo de lixiviação bacteriana são: tempo de contato,
+temperatura, disponibilidade de O2 e CO2, concentração dos íons metálicos e de
+nutrientes minerais na lixívia, composição do mineral e tamanho das partículas,
+interação galvânica entre os minerais presentes e estrutura química e cristalina
+destes, além da presença de agentes químicos estranhos ao processo (81; 85; 86)
+.
+Para a aplicação desta técnica para a recuperação de metais a partir de
+placas de circuito impresso, alguns estudos apresentaram solubilização de metais de
+40% a 60% de cobre; de 40% a 80% de chumbo e de 50% a 90% de zinco, sendo
+que os melhores resultados foram com uma cultura mista composta de A.
+ferroxidans e A. thiooxidans em concentração de 7,8g/L de resíduo de placa de
+circuito impresso com tamanho de partículos entre 0,5 e 1,0mm. Sendo que a
+desvantagem associada a esta tecnologia está relacionada ao tempo de biolixiviação
+que em geral leva semanas (81)
+.
+Além disso, pesquisas estão sendo conduzidas para avaliar a biolixiviação de
+placas de circuito impresso com microorganismos mesofílicos (temperatura de
+crescimento de 30 a 40ºC) termofílicos (ideal entre 40 a 55ºC), visando a
+recuperação de metais (82)
+.
+29
+3.4.3.3. Extração por solvente
+A extração por solvente é um processo de separação líquido-líquido que
+utiliza de solventes orgânicos para a recuperação de metais de forma seletiva
+podendo formar compostos complexos com os sais de alguns metais (75)
+.
+Esta operação unitária envolve a transferência de massa a fim de separar um
+ou mais componentes de uma mistura de líquidos, através do contato direto com
+outro líquido imiscível a mistura.
+Nestas operações a solução mista, contendo vários metais solúveis, sofre o
+processo de extração por um líquido chamado de solvente orgânico. Após o contato
+da mistura com o solvente, um dos componentes da mistura que possui mais
+afinidade com o solvente se separa formando um organometálico, formando duas
+fases, onde o solvente com o metal agregado é conhecido como extrato e a solução
+residual é conhecida como fase aquosa (87; 88; 89)
+.
+A reação genérica que representa a formação do organometálico formado na
+extração por solvente pode ser interpretada pela eq.15.
+ % + & → %& + 
+ (15)
+Onde “R” simboliza o solvente orgânico e “M” representa um metal em contato
+com o solvente. “R2M” é a representação do organometálico formado após a
+extração por solvente, conhecido como extrato.
+A extração por solvente envolve duas etapas principais, a extração e a reextração. No processo de extração a fase orgânica (solvente) é carregada com o
+metal de interesse que estava na fase aquosa; enquanto que na re-extração o metal
+carregado na fase orgânica é devolvido para uma nova solução aquosa (90)
+.
+A extração por solvente como técnica seletiva de recuperação de metais
+apresenta melhores resultados quando se faz o controle do pH durante o processo
+de extração.
+3.4.3.4. Precipitação/Cementação
+30
+O processo de precipitação química é um processo que envolve reações
+químicas de dupla troca entre o metal na forma solúvel e uma substância (um álcali,
+um sal ou um óxido) formando um sólido deste metal (75; 76)
+.
+Nas reações de oxi-redução ou reações eletroquímicas um metal é utilizado
+para precipitar um segundo metal, onde este processo é mais conhecido como
+cementação (76)
+.
+As reações de dupla troca em geral ocorrem com a variação de pH, isto é,
+adicionando um ácido (H2S) ou uma base (NaOH) a uma solução de sais metálicos
+(Mz+), ocorrerá a formação de um precipitado metálico como mostram as eq.16 e17.
+
+ + &' → &'
+ + 
+ (16)
+( + &' → &' + ( (17)
+Na eq. (16 tem-se a precipitação de um metal, na forma de sulfeto metálico
+(MzS) após a adição de um ácido. Neste caso o elemento que formará o precipitado
+é o ânion associado ao ácido, neste exemplo é o enxofre (S).
+A precipitação que ocorre na eq. 17 é provocada pela ação da hidroxila (OH-
+)
+formando um precipitado (MzOH).
+No caso da cementação, isto é, a redução do metal que está em solução
+aquosa, é necessário que o potencial do sistema de redução seja mais negativo que
+o potencial de redução do metal de interesse (76)
+.
+Este processo também é conhecido pelas reações de deslocamento e assim
+se utiliza os potenciais padrões dos metais, conforme Tabela 5.
+Tabela 5 – Potenciais padrões de alguns metais (91)
+
+Sistema E
+0
+(volts)
+  +  →  +1,450
+ +  →  +1,200
+) +  → ) +0,920
+ * +  → * +0,799
+%+ +  → %+ +0,700
+
+ +  → 
+ +0,337
+31
+ +  →  0,0 – Padrão de referência
+ +  → 
+-0,126
+
+ +  → 
+
+-0,140
+( +  → (
+-0,250
+
+, +  → 
+,
+-0,280
+
+) +  → 
+)
+-0,402
+ +  → 
+-0,440
+ +  → 
+-0,763
+ - +  → -
+-1,660
+&* +  → &*
+-2,370
+Se considerar uma reação de deslocamento ou cementação onde o cobre que
+se encontra na forma solúvel em uma solução aquosa (Cu2+) entre em contato com
+ferro metálico (Fe0
+) ocorrerão duas reações, uma anódica, onde o metal se dissolve
+no meio; e outra catódica, onde ocorrerá a redução do metal inicialmente solúvel no
+sistema, como pode ser interpretado pelas eq.18 e 19.
+Reação anódica  →  +  -0,440 (18)
+Reação catódica 
+ +  → 
+ +0,337 (19)
+Reação global  + 
+ →  + 
+ +0,337 (20)
+A eq. (18) demonstra a dissolução do ferro ao entrar em contato com o cobre
+solúvel presente inicialmente na solução, representado pela eq.19. A eq. 20
+apresenta a reação global entre as reações anódicas e catódicas, isto é, o ferro (Fe0
+)
+entra em contato com o cobre solúvel (Cu2+) provocando uma reação de oxiredução, onde o cobre solúvel ficará em seu estado reduzido (Cu0
+) e o ferro ficará
+em seu estado oxidado (Fe2+).
+Quanto maior a diferença entre os potenciais dos metais maior será a
+facilidade em se provocar uma reação de oxi-redução e, portanto o processo de
+cementação.
+32
+3.4.3.5. Eletroobtenção
+O processo de eletroobtenção é um processo de purificação metálica, onde
+um sal metálico em solução sofre redução através de um catodo usando corrente
+contínua (densidade de corrente por área). A eletroobtenção é um processo
+realizado com eletrólitos aquosos ou sais fundidos (74; 72; 76)
+.
+Na eletroobtenção são utilizados catodos e anodos, onde um deles é inerte e
+o outro é feito do metal a ser recuperado. Este metal a ser recuperado pode ser
+derivado de um processo de lixiviação preliminar ou pela adição de sais metálicos na
+solução da célula de eletroobtenção (76)
+.
+As reações dos anodos geralmente são provocadas pelo desprendimento de
+gás oxigênio e gás cloro, conforme as eq.21 e 22.
+  → 
+ +  +   (21)
+ 
+-
+ → 
+- +   (22)
+Nas eq. 21 e 22 a letra “e” simboliza os elétrons liberados em solução que
+serão responsáveis pela redução do metal de interesse.
+Os anodos devem ser preferencialmente insolúveis para evitar contaminação
+da solução lixiviada com outros metais além de poder formar precipitados com os
+metais derivados da lixiviação, interferindo no processo de eletrodeposição do metal
+de interesse (76)
+.
+Os catodos são formados de laminas finas do metal a ser eletrodepositado.
+As reações são reversas às reações que ocorrem nos anodos, isto é os metais em
+solução são atraídos eletricamente pelo catodo e se reduzem segundo a eq.23.
+&-' + ' → &- )'), (23)
+A eq.23 apresenta um metal na forma solúvel recebendo elétrons para se
+reduzir, onde no processo de refino eletrolítico os elétrons fornecidos para a redução
+são provenientes da corrente contínua ligada nos eletrodos (catodo e anodo).
+33
+3.5. Legislação ambiental sobre resíduos eletro-eletrônicos
+O crescimento da quantidade de resíduo eletro-eletrônico tem chamado a
+atenção das agências governamentais e dos fabricantes.
+Na União Européia foi criada a Diretriz Européia dos WEEE (Waste Eletric
+and Eletronic Equipment – Resíduo de Equipamentos Eletro-eletrônicos). Esta
+diretiva define algumas restrições do uso de determinadas substâncias consideradas
+perigosas em novos equipamentos eletro-eletrônicos e em processos de produção,
+assim como a determinação das concentrações permitidas destas substancias em
+determinados equipamentos.
+As substâncias consideradas nesta diretiva são: mercúrio, chumbo, cádmio,
+cromo hexavalente, éter de difenilo polibromato (PBDE) e polibromobifenilo (PBB),
+onde os dois últimos são retardadores de chama.
+A restrição do uso destas substâncias foi sugerida para viabilizar os
+processos de reciclagem de resíduos eletrônicos e diminuir o seu impacto negativo
+sobre a saúde dos trabalhadores das instalações de reciclagem.
+Esta diretiva está relacionada ao princípio da precaução que visa minimização
+dos impactos ambientais negativos através da proibição de substâncias perigosas e
+a sua substituição por substâncias menos nocivas ao meio ambiente.
+Esta Diretriz dividiu os resíduos de equipamentos eletro-eletrônicos em 10
+diferentes categorias (60; 61; 63; 92):
+• Grandes eletrodomésticos (refrigeradores/freezers, máquinas de lavar
+roupa, máquinas de lavar louça);
+• Pequenos eletrodomésticos (torradeiras, cafeteiras, ferro de passar
+roupa, secadores de cabelo);
+• Equipamentos de telecomunicações (computadores, telefones,
+aparelhos de celular, impressoras, scanners, fotocopiadoras);
+• Equipamentos de consumo (televisões, equipamentos de som, escovas
+de dente elétricas, rádios);
+• Equipamentos de iluminação (lâmpadas fluorescentes);
+34
+• Ferramentas elétricas e eletrônicas (brocas portáteis, serra);
+• Brinquedos;
+• Equipamentos médicos (com exceção de todos os produtos
+implantados e contaminados);
+• Instrumentos de monitoração e controle.
+Além desta Diretriz, foram criadas outras diretrizes na União Européia. A
+RoHS (Restriction of Certain Hazardous Substances – Restrição de Certas
+Substâncias Perigosas) que impõe limites quanto ao uso de certas substâncias
+tóxicas, e bane do mercado qualquer aparelho novo que possua níveis superiores
+dos padrões estabelecidos na normativa, de chumbo, cádmio, mercúrio, cromo
+hexavalente, éter de difenilo polibromato (PBDE) e polibromobifenilo (PBB),
+retardantes de chama. Alguns segmentos receberem exceções da RoHS, como
+áreas militares, aeroespaciais e médicas (61)
+.
+A principal diferença entre a Diretriz Européia WEEE e a ROHS, que
+estabelecem os valores permitidos de substâncias a serem utilizadas em eletroeletrônicos, é que a ROHS ainda fundamenta-se nos princípios do poluidor pagador,
+preocupação e na responsabilidade estendida do produtor.
+Em 1992, a Convenção da Basiléia de 1989 (que define a organização e o
+movimento de resíduos sólidos e líquidos perigosos) ganhou força para combater a
+exportação indevida de resíduos tóxicos de países desenvolvidos para países em
+desenvolvimento, que estava ocorrendo nos anos de 1970 e 1980. Apenas o
+Afeganistão, Haiti e EUA deram sua assinatura. Entretanto, a convenção não
+regulava sobre produtos de segunda mão e resíduos eletroeletrônicos. Com este
+problema, foi proposta uma emenda que bane todas as importações de resíduos
+tóxicos inclusive se o motivo for a reciclagem, porém ainda não foi realizado um
+acordo (28)
+.
+Mesmo com a Convenção da Basiléia ganhando forças e impondo algumas
+restrições, diversos países, principalmente aqueles em desenvolvimento ou em
+processo de industrialização, importam grande quantidade de resíduo
+eletroeletrônico. China, Índia e outros países ajustaram recentemente suas leis para
+evitar a importação de resíduos eletroeletrônicos. Entretanto, como estes países são
+grandes produtores de eletroeletrônicos, eles devem mostrar interesse inerente
+35
+neste tipo de resíduo e no seu ciclo de vida, já que pode servir como futura matériaprima (93)
+.
+Vários países, dentre eles o Japão, possuem leis que responsabilizam os
+fabricantes e varejistas sobre os resíduos eletroeletrônicos de uso doméstico. Os
+principais alvos são os equipamentos de ar condicionado, televisões de tubo de raio
+catódico, refrigeradores e máquinas de lavar. Os motivos da escolha destes alvos
+são: dificuldade na administração deste tipo de resíduos pelos governos locais, a
+viabilidade econômica, a viabilidade em promover o eco-design, e os programas de
+responsabilidade estendida do produtor (61)
+.
+A logística reversa tornou-se uma estratégia para a proteção ambiental e
+consiste na responsabilidade do fabricante no ciclo de vida do produto. Esta
+estratégia visa principalmente diminuir custos administrativos de coleta de resíduos
+urbanos dos municípios e o incentivo à industria para o desenvolvimento de
+tecnologia que reduza a utilização de recursos naturais, aumentem o uso de
+materiais secundários e mudanças de design para a redução de geração de
+resíduos. Aproximadamente 25 países possuem programas de responsabilidade
+estendida e são aplicadas principalmente para baterias, produtos eletrônicos,
+produtos de aplicação elétrica e automóveis (60; 94)
+.
+Torna-se interessante aplicar a responsabilidade estendida do produtor no
+Brasil, pois as poucas iniciativas já lançadas não foram suficientes, por exemplo,
+para a solução do problema da reciclagem resíduos eletro-eletrônicos. Uma maneira
+de aplicar este programa é a partir da implantação de uma organização de
+responsabilidade do produtor (95). Esta organização, conhecida com a sigla PRO
+(Producer Responsibility Organization), é uma cooperativa industrial que auxilia as
+cooperativas membros e apresentam suas responsabilidades. As PROs dão suporte
+operacional, para gerenciar os resíduos, auxiliando na administração financeira,
+coleta, transporte e sistemas de controle. Este sistema foi aplicado na Suíça, e em
+2007, já existiam 4 PROs, que auxiliam na gestão dos produtos eletroeletrônicos
+domésticos, além dos equipamentos de iluminação e baterias (60)
+.
+Como as produtoras de aparelhos celulares são companhias globais, elas já
+se confrontaram com estas políticas de gestão de resíduos em muitos países,
+incluindo o Brasil (95)
+.
+A Política Nacional de Resíduos Sólidos é uma lei que institui metas para
+eliminação e recuperação dos lixões além de determinar a responsabilidade das
+36
+indústrias sobre a destinação dos resíduos. Esta Política prevê consórcios entre
+municípios, estados e empresas privadas, além da inclusão social, com a previsão
+de orçamento para organizações de catadores (95)
+.
+De maneira simples, alguns destaques da lei estão na responsabilidade
+compartilhada pelo ciclo de vida dos produtos pelos fabricantes, importadores,
+distribuidores, comerciantes e consumidores; e na obrigação de se estruturar e se
+implementar sistemas de logística reversa para agrotóxicos, pneus, óleos
+lubrificantes, lâmpadas fluorescentes e produtos eletro-eletrônicos e seus
+componentes (96)
+.
+Um sistema de gerenciamento de resíduos eletro-eletrônicos para ser
+desenvolvido e caracterizado deve passar por cinco parâmetros gerais (93):
+• Regulamentação legal - se refere à legislação e o quanto ela é
+específica em um sistema operacional de gerenciamento;
+• Cobertura de sistema - um aspecto que deve ser considerado é se o
+sistema atende a todas as categorias de produtos ou trabalham com apenas um tipo
+ou mais de categoria;
+• Financiamento do sistema - este parâmetro se refere a quem paga, a
+quantidade e a quem recebe o investimento;
+• Responsabilidade do produtor - é importante determinar como a
+responsabilidade será colocada em prática. Existem sistemas nos quais cada
+produtor coleta seu próprio produto, e sistemas em que as empresas formam um
+único sistema de gerenciamento. Há também a possibilidade de formar sistemas
+flexíveis, nos quais é possível conciliar a coleta individual, assim como a criação de
+uma coleta coletiva pelos produtores;
+• Garantia de cumprimento - é necessário verificar se existe um
+cumprimento das tarefas e aplicar punições.
+
+37
+4. Materiais e Métodos
+Para o estudo de reciclagem de placas de circuito impresso foi solicitada a
+doação de um lote com cerca de 30kg de aparelhos de telefonia móvel obsoletos,
+parcialmente desmantelados, pois poucos aparelhos possuíam baterias e carcaça
+plástica, praticamente todos possuíam telas de cristal líquido e além disso pode-se
+verificar a presença de 3 modelos principais de placas de circuito impresso, cuja
+especificação técnica indicava a fabricação das placas em 1997. Destes aparelhos
+foram segregadas telas de cristal líquido (LCDs), baterias, carcaças de plástico e
+placas de circuito impresso (PCI).
+Somente as placas de circuito impresso (Figura 7) foram utilizadas para dar
+sequência ao processamento mecânico, caracterização e processamento
+hidrometalúrgico, com o objetivo de se recuperar metais.
+Figura 7 – Placas de circuito impresso de aparelhos celulares obsoletos
+4.1. Processamento mecânico
+O processamento mecânico de produtos eletro-eletrônicos envolveu
+operações unitárias de Tratamento de Minérios como: moagem, separação
+magnética, separação eletrostática e classificação granulométrica.
+38
+4.1.1. Moagem
+Após o desmantelamento manual da sucata de aparelhos de telefonia celular
+e segregação das placas de circuito impresso, objeto desta tese, foi realizada a
+etapa de moagem. A moagem foi escolhida como primeira etapa do processamento
+mecânico, pois tem por objetivo primordial a liberação dos materiais das placas de
+circuito impresso, possibilitando, assim, a otimização da recuperação de metais.
+Com a finalidade de se determinar a grelha a ser utilizada no moinho para
+promover a liberação dos materiais, foi realizado ensaio de digestão em água régia a
+25ºC (conforme descrito no capítulo de caracterização, subitem 4.2.2. digestão em
+água régia), durante 24h com 3 placas de circuito impresso (54g) sem passar pela
+cominuição; com 10g de placas de circuito impresso cominuídas utilizando grelha de
+6mm (após moagem de 2kg de placas); com 10g de placas de circuito impresso
+cominuídas utilizando grelha de 4mm (após moagem de 2kg de placas) e com 10g
+de placas cominuídas utilizando grelha de 2mm (após moagem de 2kg de placas) no
+moinho de martelos, marca Astecma, modelo MDM 18/18 (Figura 8).
+Na sequência, foi realizada a moagem de 10 kg de placas de circuito
+impresso para serem processados em moinho de martelos, com grelha de 4mm.
+Figura 8 – Moinho de martelos, modelo 18/18, marca Astecma
+39
+O material moído proveniente da moagem em moinho de martelos foi
+identificado com a sigla MM. Este material foi pesado e a perda de massa do
+processo de moagem foi calculada pela diferença entre a massa inicial da amostra e
+a massa obtida ao final da moagem.
+Do material moído foi feito o quarteamento até se obter frações com
+aproximadamente 100g, sendo assim cerca de 100g foram separados para a
+classificação granulométrica e 100g para os ensaios de caracterização, o restante do
+material seguiu para a etapa de separação magnética.
+4.1.2. Separação magnética
+Com a placa de circuito impresso moída proveniente do moinho, foi realizada
+a separação magnética em separador de tambor via seca, potencia do motor 0,75cv,
+marca Inbrás, modelo HFP – RE 15x12 (Figura 9) do Laboratório de Tratamento de
+Minérios do Departamento de Engenharia de Minas e Petróleo da Escola Politécnica
+da Universidade de São Paulo.
+Figura 9 – Separador magnético, modelo HFP-RE 15x12, marca Inbrás
+A regulagem do equipamento foi: 27,6 rpm para o rolo magnético e 25% de
+vibração de alimentação. A velocidade de rotação do rolo foi selecionada a menor
+regulagem do equipamento, assim como a vibração da alimentação, a fim de se
+obter a separação dos materiais, e com isso evitar que o material tivesse que ser
+40
+repassado no separador ou ainda ter a necessidade de processar o material em um
+separador magnético de baixo campo, para facilitar a separação dos materiais
+fracamente magnéticos (69)
+.
+Após a separação magnética, as frações separadas foram denominadas
+material magnético (MA) e material não magnético (NMA).
+Cerca de 100g de cada fração foram enviados para classificação
+granulométrica e 100g para os ensaios de caracterização.
+4.1.3. Separação eletrostática
+A separação eletrostática foi feita somente com o resíduo não magnético, pois
+é nesta fração que metais como o cobre, alumínio, zinco e estanho se concentram.
+O material não magnético (NMA) proveniente da moagem de cada moinho foi
+submetido à separação eletrostática de rolo, marca Inbrás, modelo ES-14/01S
+(Figura 10) do Laboratório de Tratamento de Minérios do Departamento de
+Engenharia de Minas e Petróleo da Escola Politécnica da Universidade de São
+Paulo.
+Figura 10 – Separador eletrostático de rolo, modelo ES14/01S, marca Inbrás
+Os parâmetros para a regulagem do equipamento de separação eletrostática
+estão descritos na Tabela 6.
+41
+Tabela 6 – Parâmetros de regulagem do separador eletrostático (72)
+Itens Parâmetros
+ELETRODO IONIZANTE
+Distância do rotor 25 cm
+Ângulo 80°
+ELETRODO ESTÁTICO
+Distância do rotor 25 cm
+Ângulo 52,5°
+Rotação do rotor 85 rpm
+Fonte de alta tensão 45-46 kV
+SLIPER CONDUTOR 45°
+Não condutor 45°
+Estes parâmetros foram definidos segundo Veit (72) para possível comparação
+de recuperação de materiais após a separação eletrostática.
+O material não magnético após separação eletrostática foi classificado em
+material condutor, misto e não-condutor.
+A sigla que identifica os materiais classificados na separação eletrostática são
+CD para material condutor; MI para material misto e NC para material não condutor.
+Cerca de 100g de cada fração foram enviados para classificação
+granulométrica e 100g para os ensaios de caracterização.
+4.1.4. Classificação granulométrica
+Cerca de 100g de cada fração obtida nas diversas etapas do processamento
+foram submetidos à classificação granulométrica com peneiras vibratórias com
+malhas de 2,00mm (ASTM 10, Mesh/Tyler 9); 1,00mm (ASTM 18, Mesh/Tyler 16);
+0,5mm (ASTM 35, Mesh/Tyler 32); 0,25mm (ASTM 60, Mesh/Tyler 60); 0,106mm
+(ASTM 140, Mesh/Tyler 150) e fundo.
+Desta forma, uma fração que passou por moinho de martelos, separação
+magnética (material magnético) e que foi passante na peneira de 2,00mm e ficou
+retido na peneira de 1,00mm foi identificado como MMA+1,0-2,0; se o material
+passou pela peneira de 1,00mm e ficou retido na peneira de 0,5mm então a
+42
+identificação ficou MMA+0,5-1,0. Esta nomenclatura foi adotada para todos os
+materiais e frações granulométricas.
+As etapas do processamento mecânico e as frações que passaram pela
+classificação granulométrica estão destacadas na Figura 11:
+Figura 11 – Processamento mecânico e suas frações
+A Figura 11 apresenta linhas em cinza que representam o processamento
+mecânico, enquanto que os quadros em branco sobre estas linhas representam as
+frações de cada material separado nas etapas do processamento.
+Cada uma destas frações foi submetida a classificação granulométrica, na
+qual os materiais foram identificados como segue a Tabela 7.
+Separação
+eletrostática
+Separação magnética
+Moagem PCI
+MM
+MMA MNMA
+MCD MMI MNC
+43
+Tabela 7 - Nomenclatura das frações que foram caracterizadas
+Nomenclatura das frações caracterizadas
+Material moído
+(MM)
+Material magnético
+(MMA)
+Material não
+magnético –
+condutor
+(MCD)
+Material não
+magnético – misto
+(MMI)
+Material não
+magnético – não
+condutor
+ (MNC)
+MM MMA MCD MMI MNC
+MM +2.0 MMA +2,0 MCD +2,0 MMI +2,0 MNC +2,0
+MM +1.0-2.0 MMA +1,0-2,0 MCD +1,0-2,0 MMI +1,0-2,0 MNC +1,0-2,0
+MM +0.5-1.0 MMA +0,5-1,0 MCD +0,5-1,0 MMI +0,5-1,0 MNC +0,5-1,0
+MM +0.25-0.5 MMA +0,25-0,5 MCD +0,25-0,5 MMI +0,25-0,5 MNC +0,25-0,5
+MM +0.106-0.25 MMA +0,106-0,25 MCD +0,106-0,25 MMI +0,106-0,25 MNC +0,106-0,25
+MM -0.106 (fundo) MMA -0,106 (fundo) MCD -0,106 (fundo) MMI -0,106 (fundo) MNC -0,106 (fundo)
+43
+44
+4.2. Caracterização
+Após a classificação granulométrica, foi realizado ensaio de caracterização
+para todas as frações (Tabela 7) a fim de se identificar as frações que concentram
+metais para dar sequência ao processamento do material na etapa de processos
+hidrometalúrgicos.
+Os métodos utilizados para a caracterização envolvem pirólise, ensaios de
+digestão em água régia e espectrometria de emissão óptica por indução de plasma
+(ICP-OES), modelo 710, marca Varian.
+Um fluxograma simplificado das etapas de caracterização está descrito na
+Figura 12.
+Figura 12 – Fluxograma simplificado dos ensaios de caracterização
+Os ensaios de caracterização estão destacados em cinza na Figura 12 e
+somente a análise química de ICP-OES depende do material proveniente da
+digestão em água régia. Enquanto que os ensaios de pirólise e digestão em água
+régia são realizados indepedentes, pois as amostras submetidas a estes ensaios já
+passaram pelo quarteamento e, portanto são homogêneas.
+CARACTERIZAÇÃO
+Pirólise
+Material não volátil Material volátil
+Digestão em
+água régia
+Material Lixiviado
+ICP-OES
+Material não
+lixiviado
+45
+4.2.1. Pirólise
+Todas as frações caracterizadas de placas de circuito impresso (Tabela 7)
+foram analisadas através de ensaio de pirólise, em forno tipo mufla a 800°C durante
+1 hora em atmosfera inerte com argônio.
+A temperatura de 800ºC foi escolhida devido algumas resinas epóxis
+apresentarem temperatura de degradação térmica de 750ºC e a atmosfera de
+argônio foi utilizada para evitar a entrada de oxigênio no forno favorecendo a
+oxidação de metais durante a pirólise (97; 98; 99)
+.
+De cada fração foi quarteada uma amostra de aproximadamente 2g e
+colocada em navícula de porcelana, previamente identificada e pesada.
+As navículas contendo as frações foram colocadas na parte interior do forno,
+no qual se iniciou o processo de purga com argônio sem prévio aquecimento durante
+3h. A tubulação de saída de argônio do forno foi colocada imersa em um recipiente
+com água, para evitar a entrada de oxigênio no forno durante o processo de pirólise,
+assim as amostras não sofreriam oxidação.
+Após este período, o aquecimento do forno foi ligado para atingir 800ºC, ainda
+com fluxo constante de argônio ligada. A taxa de aquecimento foi de 10ºC/minuto.
+Assim que o forno atingiu os 800ºC, foi cronometrada 1h, após este período o
+forno foi desligado, e permaneceu fechado com fluxo constante de argônio durante
+cerca de 12h, para resfriamento até aproximadamente 25ºC.
+As navículas foram pesadas e a perda de massa possibilitou o cálculo do
+balanço de massa.
+O material não volatilizado na navícula corresponde aos materiais metálicos e
+cerâmicos presentes na fração estudada, enquanto que a diferença entre a massa
+de material inicial e do material calcinado corresponde ao material volátil e, portanto,
+os polímeros presentes na placa de circuito impresso.
+4.2.2. Digestão em água régia
+Foi preparada solução de água régia (relação de 3:1 para HCl : HNO3) e
+adicionado o material processado de placas de circuito impresso na proporção de 1g
+46
+de resíduo para 20mL de água régia, portanto 10g de material foi colocado em
+contato direto com 200mL de solução ácida.
+A digestão em água régia foi feita em temperatura ambiente durante 24 h.
+Após este período, o resíduo sólido não lixiviado foi segregado do liquor
+lixiviado através de filtração simples utilizando-se papel de filtro quantitativo de
+porosidade 7,5 µm. O papel de filtro foi pesado antes da filtração para possibilitar a
+determinação da massa do material após a digestão.
+Foi coletada alíquota de 5mL do liquor lixiviado para análise química em
+ICP-OES para determinação de metais.
+O material não lixiviado após a digestão, retido no papel de filtro foi lavado
+com água deionizada e em seguida foi mantido em estufa a 60°C +/- 5°C durante
+24h para secar.
+O material não lixiviado corresponde à fração de cerâmicos e de polímeros,
+enquanto que o lixiviado é composto dos metais solúveis em água régia.
+A caracterização dos tipos de materiais foi concluída após a junção dos
+resultados obtidos nos ensaios de pirólise e digestão em água régia, conforme
+Tabela 8 e eq.24.
+Tabela 8 – Determinação dos materiais através dos ensaios de pirólise e
+digestão em água régia
+Ensaio Materiais identificados
+após ensaio
+Materiais
+Pirólise (PF) Metálico (Me) + Cerâmico
+(Ce)
+Não volátil
+Polimérico (Po) Volátil
+Digestão em água régia
+(HR)
+Metálico (Me) Lixiviado
+Cerâmico (Ce) + Polimérico
+(Po)
+Não lixiviado
+Ce = {[Me+Ce (PF)] – Me (HR)} ou {[Ce+Po (HR)] – Po (PF)} (24)
+O material cerâmico é calculado pela diferença entre o material não volátil da
+pirólise (metais + cerâmicos) com o material lixiviado da digestão em água régia
+47
+(metais) ou pela diferença entre o material volátil da pirólise (polímeros) com o
+material não lixiviado da digestão em água régia (cerâmicos + poliméricos).
+Com este cálculo foi possível determinar o balanço de massa para identificar
+a quantidade de materiais cerâmicos, poliméricos e metálicos existentes nas placas
+de circuito impresso de celulares obsoletos.
+Com esta caracterização dos materiais cerâmicos, poliméricos e metálicos
+associados com os resultados de ICP-OES foi possível fazer o balanço de massa
+global e identificar os metais que se apresentam em maior concentração em cada
+fração a fim de seguir para os processos hidrometalúrgicos de recuperação de
+metais.
+4.2.3. Espectrometria de emissão óptica por indução de plasma ICP-OES
+As alíquotas de cada fração de liquor lixiviado em água régia (Tabela 7) foram
+analisadas por ICP-OES.
+Foram realizadas diluições de 30, 300, 3000 e 30000 vezes com água milli-q,
+para determinação de metais, a fim de que a leitura de cada metal ficasse dentro da
+concentração da curva de calibração.
+Foram preparadas 5 soluções padrão multi-elementares contendo os metais:
+cobre, estanho, chumbo, níquel, alumínio, prata, zinco e ferro, para definir a curva de
+calibração (cujas concentrações de cada metal estão descritas na Tabela 9) que
+serve para determinar a concentração de metais da amostra analisada e definir o
+comprimento de onda utilizado na leitura observando a possível interferência de
+outros metais na mesma faixa espectral conforme Tabela 9.
+48
+Tabela 9 – Faixa de comprimento de onda de cada metal na preparação do
+padrão do ICP-OES
+Metal
+Comprimento
+de onda (nm)
+Padrão
+1
+(mg/L)
+Padrão
+2
+(mg/L)
+Padrão
+3
+(mg/L)
+Padrão
+4
+(mg/L)
+Padrão
+5
+(mg/L)
+Cobre 327,395 0,063 0,125 0,25 1,25 2,5
+Estanho 189,925 0,25 0,5 1 5 10
+Chumbo 220,353 0,125 0,25 0,5 2,5 5
+Níquel 231,604 0,125 0,25 0,5 2,5 5
+Alumínio 396,152 0,5 1 2 10 20
+Prata 328,068 0,063 0,125 0,25 1,25 2,5
+Zinco 213,857 0,125 0,25 0,5 2,5 5
+Ferro 238,204 0,25 0,5 1 5 10
+Bário 455,403 0,5 1 2 10 20
+Cálcio 396,847 1,25 2,5 5 25 -
+Estes comprimentos de onda são escolhidos de forma a não coincidir com
+outro metal que esta sendo analisado para os picos não se sobreporem durante a
+análise química.
+Além dos padrões foi analisada uma alíquota da água milli-q utilizada na
+diluição das amostras, considerada como “branco”.
+4.3. Processamento hidrometalúrgico
+Após a caracterização, foi identificado que o material não magnético era a
+fração que apresentava maiores concentrações de cobre e, portanto a fração ideal
+para ser submetida ao processamento hidrometalúrgico visando a recuperação de
+cobre.
+Contudo, ainda na caracterização foi identificado que a fração de finos, isto é,
+a fração com granulométrica menor que 0,106mm, possuía maiores concentrações
+de material cerâmico e polimérico do que metálico, portanto esta fração foi
+49
+segregada do restante do material que seguiu para quarteamento, lixiviação ácida e
+lixiviação ácida em meio oxidante.
+Somente a fração não magnética foi submetido ao quarteamento com
+quarteador modelo QTR nº 10 da marca Renard (Figura 13) até formação de frações
+com cerca de 20g +/- 5g.
+Figura 13 – Quarteador utilizado para fracionar o material não magnético para
+lixiviação ácida e lixiviação ácida em meio oxidante
+O processamento hidrometalúrgico envolveu duas etapas de lixiviação em
+meio ácido.
+A primeira etapa foi realizada deixando o material não magnético quarteado,
+em contato com soluções de ácido sulfúrico, sendo esta etapa denominada lixiviação
+ácida.
+A segunda etapa utilizava o material não lixiviado da primeira etapa,
+deixando-o em contato com soluções de ácido sulfúrico e peróxido de hidrogênio,
+sendo esta etapa denominada lixiviação ácida em meio oxidante.
+Para ambas as etapas foi utilizada chapa de aquecimento com agitação
+magnética, barra magnética, termômetro, pHmetro e condensador, conforme
+apresentado na Figura 14.
+50
+Figura 14 – Esquema da aparelhagem utilizada no processo hidrometalúrgico
+O uso do condensador se fez necessário para evitar a evaporação da solução
+ácida, diminuindo a variação na relação massa/solução lixiviante.
+O pHmetro foi colocado antes e depois da retirada de alíquotas nos
+determinados tempos para evitar que o eletrodo ficasse impregnado de material
+(placas cominuídas) evitando erro de leitura do equipamento.
+4.3.1. Lixiviação ácida
+As frações quarteadas (20g +/-5g) foram submetidas a lixiviação em ácido
+sulfúrico com relação sólido: líquido de 1:10.
+Foi escolhido o ácido sulfúrico por ser barato comparado com o ácido nítrico e
+clorídrico, além de ser um ácido forte e não volátil a temperatura ambiente (25ºC).
+As soluções de ácido sulfúrico utilizadas tinham pH 0,5; 1,0 e 1,5, cada
+lixiviação ácida tinha três ajustes de temperatura: 25ºC, 50ºC e 75ºC, na qual eram
+coletadas alíquotas de 5mL após 30min; 1h; 2h; 3h; 4h e 24h (esta última somente
+para lixiviações a 25ºC), sob agitação durante a lixiviação, para análise química.
+Cada alíquota foi filtrada em papel de filtro quantitativo previamente pesado.
+A Figura 15 apresenta um esquema simplificado da lixiviação ácida.
+51
+Figura 15 – Esquema simplificado da sequência da lixiviação ácida
+Ao final das coletas das alíquotas, o restante do material em contato com a
+solução ácida foi filtrado. O filtrado foi armazenado como contra-prova e o resíduo
+retido no papel de filtro foi lavado com água deionizada e colocado em estufa a 60ºC
++/- 5ºC por 24h para secagem e pesagem.
+Em seguida, cada resíduo seco proveniente da lixiviação ácida foi
+encaminhado para a lixiviação ácida em meio oxidante em seu pH respectivo,
+conforme esquema simplificado apresentado na Figura 16.
+Ácido sulfúrico
+pH 0,5
+25ºC
+Alíquotas
+-30min
+-1h
+-2h
+-3h
+-4h
+-24h
+50ºC
+Alíquotas
+-30min
+-1h
+-2h
+-3h
+-4h
+75ºC
+Alíquotas
+-30min
+-1h
+-2h
+-3h
+-4h
+Ácido sulfúrico
+pH 1,0
+25ºC
+Alíquotas
+-30min
+-1h
+-2h
+-3h
+-4h
+-24h
+50ºC
+Alíquotas
+-30min
+-1h
+-2h
+-3h
+-4h
+75ºC
+Alíquotas
+-30min
+-1h
+-2h
+-3h
+-4h
+Ácido sulfúrico
+pH 1,5
+25ºC
+Alíquotas
+-30min
+-1h
+-2h
+-3h
+-4h
+-24h
+50ºC
+Alíquotas
+-30min
+-1h
+-2h
+-3h
+-4h
+75ºC
+Alíquotas
+-30min
+-1h
+-2h
+-3h
+-4h
+52
+Figura 16 – Exemplo simplificado da rota do resíduo de placa de circuito
+impresso da lixiviação ácida para a lixiviação ácida em meio oxidante
+Todas as alíquotas são filtradas no mesmo papel de filtro para que se possa
+fazer o balanço de massa no final da lixiviação.
+4.3.2. Lixiviação ácida em meio oxidante
+O material não lixiviado obtido após a lixiviação ácida foi submetido ao ensaio
+de lixiviação ácida em meio oxidante, com ácido sulfúrico e peróxido de hidrogênio
+nas mesmas condições de temperatura e relação sólido: líquido que a lixiviação
+ácida.
+Foram adicionados 10mL de peróxido de hidrogênio a cada 30 minutos de
+lixiviação, totalizando 80mL ao final das 4h, sendo que para as lixiviações de 24h
+foram adicionados no total 90mL de peróxido de hidrogênio, pois a última adição foi
+realizada após 4h de lixiviação.
+A Figura 17 apresenta um exemplo simplificado do processo de lixiviação ácida
+em meio oxidante de um resíduo proveniente da lixiviação ácida.
+Processo
+Após 24h de
+lixiviação
+Processo de
+lixiviação ácida
+Ácido sulfúrico
+pH 0,5 a 25ºC
+Liquor lixiviado
+Cromatografia
+iônica
+Material não
+lixiviado
+Lixiviação
+ácida em meio
+oxidante
+pH 0,5 a 25ºC
+53
+Figura 17 - Exemplo simplificado da rota do resíduo de placa de circuito
+impresso da lixiviação ácida em meio oxidante
+O peróxido de hidrogênio foi utilizado visando a dissolução do cobre, uma vez
+que este apresenta baixa solubilidade em ácido sulfúrico de acordo com o Diagrama
+de Pourbaix (77)
+.
+A quantidade de peróxido foi estimada em excesso a partir da estequiometria
+da reação de oxido-redução entre cobre metálico e o agente oxidante, adotando
+neste cálculo que o resíduo a ser lixiviado continha somente cobre metálico,
+conforme eq. 25.
+
+ +  
+ +  +   → 
+
+ . . + 
+(25)
+
+Considerando que 20g de amostra fosse composta somente de cobre, fez-se
+o cálculo estequiométrico da eq.25.
+A massa atômica do cobre é 63,5g e a massa atômica do peróxido de
+hidrogênio é 34g, na reação para síntese de sulfato de cobre a partir de cobre
+metálico com ácido sulfúrico e peróxido de hidrogênio, são consumidos 127g de
+cobre metálico com 34g de peróxido de hidrogênio para formar o sulfato de cobre,
+portanto para 20g de cobre metálico serão utilizados 5,4g de peróxido de hidrogênio.
+Processo
+Após 24h de
+lixiviação
+Processo de
+lixiviação ácida em
+meio oxidante
+Ácido sulfúrico
+e peróxido de
+hidrogênio
+pH 0,5 a 25ºC
+Liquor lixiviado
+Cromatografia
+iônica
+Material não
+lixiviado
+Pesagem
+54
+A densidade do peróxido de hidrogênio é de 1,476g/mL e sabendo que a
+densidade é a relação entre a massa do soluto com o seu volume, tem-se que o
+volume necessário de peróxido de hidrogênio necessário para oxidar os 20g +/- 5g
+de cobre metálico é de aproximadamente 4mL +/- 1mL.
+Porém com a agitação e o aquecimento das soluções durante o processo de
+lixiviação pode-se ter o desprendimento do oxigênio do peróxido e a reação não se
+efetivar, por esta razão se trabalhou com o excesso de peróxido.
+As alíquotas de 5mL retiradas durante o processo de lixiviação ácida em meio
+oxidante foram enviadas para análise química.
+O fluxograma completo do processamento hidrometalúrgico que inclui a
+lixiviação ácida e lixiviação em meio oxidante, conforme Figura 18.
+Figura 18 – Fluxograma completo do processamento hidrometalúrgico
+Na Figura 18 onde aparecem liquor lixiviado antes da cromatografia iônica
+correspondem as alíquotas de 30min, 1h, 2h, 3h, 4h e 24h.
+Processo
+Após tempo de
+lixiviação
+0,5h; 1h; 2h; 3h; 4h e
+24h
+Após tempo de
+lixiviação
+0,5h; 1h; 2h; 3h; 4h e
+24h
+Processo de
+lixiviação ácida
+Lixiviação ácida
+pH, Temperatura
+Liquor
+lixiviado
+Cromatografia
+iônica
+Resíduo
+Lixiviação ácida em meio
+oxidante
+pH, Temperatura
+Liquor
+lixiviado
+Cromatografia
+iônica
+Resíduo
+Pesagem
+55
+4.3.2.1. Análise química do liquor de lixiviação
+Os liquores de lixiviação dos processos em meio ácido e em meio oxidante
+foram analisados por cromatografia iônica, modelo CS3000, marca Dionex, do
+Laboratório de Corrosão, Proteção e Reciclagem de Materiais (LACOR) da
+Universidade Federal do Rio Grande do Sul.
+Neste equipamento foi utilizada a coluna de metais de transição, no qual foi
+possível determinar a concentração do ferro, cobre, níquel e zinco presentes em
+cada liquor.
+A técnica de cromatografia iônica envolve a determinação de metais através
+de espectroscopia de ultravioleta visível, na qual foi utilizado para a leitura dos
+padrões e amostras comprimento de onde de 530nm, com diluente MetPac PAR e
+eluente concentrado MetPac PAR PDCA, marca Dionex.
+4.3.2.2. Microscopia eletrônica de varredura equipado com sistema de
+dispersão de energia
+O microscópio eletrônico de varredura (MEV) equipado com sistema de
+dispersão de energia (EDS) é capaz de detectar raios-X emitidos pelas espécies
+durante a excitação de um feixe de elétrons.
+O EDS foi utilizado para avaliar o material não lixiviado após lixiviação ácida
+em meio oxidante, a fim de se identificar os precipitados dos sulfatos insolúveis de
+cálcio, bário, chumbo, prata e estanho.
+A amostra foi seca em estufa a 60°C +/-5ºC por 24h e, por não serem
+condutoras de corrente elétrica, precisaram ser previamente metalizadas. A
+metalização consiste na precipitação a vácuo de uma película micrométrica de ouro
+sobre a superfície da amostra, possibilitando a condução da corrente elétrica.
+
+56
+5. Resultados e discussão
+As placas de circuito impresso dos celulares obsoletos que foram segregadas
+das telas de cristal liquido, das baterias e das carcaças de plástico pesam cerca de
+18g +/- 2g.
+Considerando que um aparelho celular tenha em média 100g, com bateria, e
+a massa das placas deste lote recebido é cerca de 18g, pode-se concluir que a
+placa de circuito impresso corresponde a aproximadamente 18% do aparelho
+celular.
+5.1. Processamento mecânico
+5.1.1. Moagem
+As placas de circuito impresso antes do processo de moagem, que foram
+submetidas a digestão em água régia, apresentaram cerca de 32% de material
+lixiviado, que corresponde aos metais presentes nas placas.
+Com as placas cominuídas utilizando grelha de 6mm, foi possível determinar
+48% de metais presentes nas placas, após a digestão em água régia.
+Para as placas cominuídas com grelha de 4mm e 2mm foi possível determinar
+63% e 64% de metais, respectivamente.
+A diferença entre a lixiviação das placas inteiras e cominuídas deve-se ao fato
+de que parte do cobre fica entre as camadas de fibra de vidro e resina epóxi que
+formam a placa (FR-4) e, portanto, não entra em contato com a água régia.
+A pequena diferença entre os resultados de lixiviação dos materiais moídos
+em grelha abaixo de 4mm e abaixo de 2mm mostra que a moagem abaixo de 2mm
+não libera significativamente os metais para lixiviação. Assim, a moagem com grelha
+de 4mm foi escolhida para os ensaios posteriores, pois o material cominuído nesta
+grelha apresentou granulometria menor que 2mm.
+As placas de circuito impresso possuem fibra de vidro, que é um material
+abrasivo para o moinho, portanto este eventual ganho de 1% na recuperação de
+metais (63% para materiais que passaram na grelha de 4mm e 64% para grelha de
+57
+2mm) pode por outro lado ser causado pelas perdas de material nas poeiras
+geradas e consumo de corpos moedores.
+No processamento de 10kg de placas de circuito impresso de celulares
+obsoletos, não se observou material retido na grelha (4mm) do moinho, portanto
+todo o material foi considerado passante.
+5.1.2. Separação magnética
+Foi realizado o balanço de massa a fim de se determinar a porcentagem de
+material magnético e não magnético presente nas placas de circuito impresso de
+celulares.
+A Figura 19 apresenta um fluxograma simplificado do balanço de massa após
+a separação magnética das placas de circuito impresso de celular após a moagem.
+Figura 19 - Balanço de massa após a separação magnética
+Somente o material não magnético (MNMA) foi enviado para a separação
+eletrostática a fim de se concentrar o cobre.
+Contudo, o material magnético pode ter a presença de cobre, zinco e outros
+metais condutores presentes, pois durante o processo de moagem alguns materiais
+podem não ter sido totalmente liberados. Por outro lado, o material não magnético
+também pode conter ferro como contaminante. Considera-se importante fazer a
+separação magnética a fim de evitar a interferência do ferro durante as etapas de
+lixiviação ácida subseqüentes.
+Sepração magnética
+Moagem MM
+100%
+MMA
+19,0%
+MNMA
+80,5%
+Perdas
+0,5%
+58
+5.1.3. Separação eletrostática
+Somente o material não magnético passou pela separação eletrostática, pois
+é neste material que espera-se ter o cobre em maior concentração.
+A Figura 20 apresenta o balanço de massa global das frações que passaram
+pelo processamento mecânico até a separação eletrostática.
+Figura 20 – Balanço de massa após a separação eletrostática
+O material condutor (MCD) que apresentou 50,1% de material retido pode
+concentrar cobre, enquanto que o material não condutor (MNC) deve concentrar os
+materiais poliméricos e cerâmicos.
+O material misto (MMI) deve conter uma mistura de materiais não liberados
+no processo de moagem.
+A identificação dos metais em cada fração separada será apresentada mais
+adiante neste trabalho.
+5.1.4. Classificação granulométrica
+Os ensaios de classificação ou separação granulométrica foram realizados
+para verificar a eventual concentração de materiais em alguma faixa granulométrica.
+Assim, todos as faixas granulométricas dos materiais apresentados neste tópico
+foram submetidas a posterior caracterização por análise química. Neste capitulo
+Separação
+eletrostática
+Sepração magnética
+Moagem MM
+100%
+MMA
+19,0%
+MNMA
+80,5%
+MCD
+50,1%
+MMI
+8,8%
+MNC
+21,1%
+Perdas
+0,5%
+Perdas
+0,5%
+59
+serão apresentados apenas os resultados de análises granulométricas e mais
+adiante neste trabalho serão apresentados os resultados das análises químicas.
+A distribuição granulométrica do material após a moagem usando grelha de
+4mm está representada na Figura 21.
+Figura 21 – Distribuição granulométrica após moagem
+A classificação granulométrica feita com peneira é um processo mais simples
+e barato do que uma separação magnética e eletrostática.
+A possível identificação da concentração de ferro em uma faixa
+granulométrica pode ser uma alternativa para eliminar, por exemplo, a separação
+magnética, assim como a identificado da concentração de cobre em uma
+determinada faixa granulométrica poderia evitar a separação eletrostática.
+Analogamente foram realizados ensaios de separação ou classificação
+granulométrica dos materiais obtidos no processo de separação magnética, portanto
+foram caracterizadas também as frações magnética e não magnética do material
+moído. O mesmo procedimento foi feito com os materiais resultantes da separação
+eletrostática.
+A distribuição granulométrica dos materiais magnéticos e não magnéticos;
+condutores, mistos e não condutores estão representados na Figura 22 e Figura 23,
+respectivamente.
+0
+20
+40
+60
+80
+100
+0,000 0,001 0,010 0,100 1,000 10,000
+% Acumulada
+Fração granulométrica em escala log (mm)
+60
+Figura 22 – Distribuição granulométrica do não magnético e magnético
+O material magnético (MMA) e o material não magnético (MNMA) apresentam
+distribuição granulométrica semelhantes, e portanto, apresentam a tendência de
+acumular material em frações mais grossas.
+Figura 23 – Distribuição granulométrica do material condutor, misto, não
+condutor
+O material misto (MMI) e o material condutor (MCD) apresentam distribuições
+granulométricas semelhantes, podendo indicar que o material misto tende a ter
+composição semelhante a composição do material condutor.
+0
+20
+40
+60
+80
+100
+0,000 0,001 0,010 0,100 1,000 10,000
+% Acumulada
+Fração granulométrica em escala log (mm)
+MMA
+MNMA
+0
+20
+40
+60
+80
+100
+0,000 0,001 0,010 0,100 1,000 10,000
+% Acumulada
+Fração granulométrica em escala log (mm)
+MCD
+MMI
+MNC
+61
+Contudo o material não condutor apresenta concentração de materiais em
+frações mais finas. O que indica que nestas frações eventualmente poderiam se
+concentrar as fibras de vidro e a resina epóxi presentes nas placas.
+5.2. Caracterização
+Os ensaios de caracterização associados aos balanços de massa permitem a
+análise das alternativas de processamento e identificação da concentração dos
+metais em cada produto gerado.
+5.2.1. Pirólise
+Os ensaios de pirólise permitiram a determinação das quantidades de
+materiais poliméricos para o material após moagem (Figura 24); material magnético
+(Figura 25), material não magnético (Figura 26), material condutor (Figura 27),
+material misto (Figura 28), material não condutor Figura 29, assim como para suas
+frações granulométricas.
+Figura 24 – Porcentagem dos materiais provenientes da moagem e suas
+frações granulométricas após pirólise
+Com os resultados da pirólise das placas de circuito impresso após
+cominuição (Figura 24), foi possível identificar que cerca de 12,7% do material é
+0,0
+20,0
+40,0
+60,0
+80,0
+100,0
+MM
+% de materiais
+Metais e
+cerâmicos
+(%)
+Polímeros
+(%)
+0,0
+10,0
+20,0
+30,0
+% de materiais
+Frações granulométricas (mm)
+62
+composto de polímeros e portanto o restante, 87,3%, das mesmas é composta de
+material cerâmico e metálico.
+Willian e Willians (12) usando a metodologia de pirólise de placas de circuito
+impresso de celulares apresentaram resultados semelhantes aos observados.
+Segundo esses autores (12) a concentração de metais e cerâmicos correspondem a
+83% e de polímeros cerca de 17%.
+A distribuição granulométrica não apresentou faixa específica de
+concentração de materiais poliméricos, isto indica que a separação granulométrica
+pode não ser uma técnica interessante para a concentração de materiais quando se
+utiliza moinho de martelos para o processamento de placas de circuito impresso de
+telefones celulares.
+A Figura 25 apresenta o percentual do material magnético e suas frações
+granulométricas após pirólise.
+Figura 25 – Porcentagem do material magnético e suas frações
+granulométricas após pirólise
+Na fração magnética foi possível fazer a concentração dos metais e materiais
+cerâmicos, pois somente 0,3% do material magnético das placas era composto de
+material polimérico. Porém para confirmar a concentração específica de um
+determinado metal foi necessário associar os resultados da pirólise com a digestão
+de água régia e análise química.
+A Figura 26 apresenta o percentual do material não magnético e suas frações
+granulométricas após pirólise.
+0,0
+20,0
+40,0
+60,0
+80,0
+100,0
+MMA
+% de materiais
+Metais e
+cerâmicos
+(%)
+Polímeros
+(%)
+0,0
+10,0
+20,0
+30,0
+% de materiais
+Frações granulométricas (mm)
+63
+Figura 26 – Porcentagem do material não magnético e suas frações
+granulométricas após pirólise
+O material não magnético contem cerca de 65,7% de metais e de cerâmicas
+enquanto que os materiais poliméricos constituem cerca de 14%.
+Na distribuição granulométrica os materiais metálicos e cerâmicos não se
+concentram em uma faixa granulométrica específica.
+A Figura 27 apresenta o percentual do material condutor e suas frações
+granulométricas após pirólise.
+Figura 27 – Porcentagem do material condutor e suas frações granulométricas
+após pirólise
+A avaliação do ensaio de pirólise do material condutor mostrou que não houve
+concentração de materiais cerâmicos e metálicos ou poliméricos em nenhuma faixa
+granulométrica específica, porém é possível visualizar uma pequena tendência dos
+0,0
+20,0
+40,0
+60,0
+80,0
+100,0
+MNMA
+% de materiais
+Metais e
+cerâmicos
+(%)
+Polímeros
+(%)
+0,0
+10,0
+20,0
+30,0
+% de materiais
+Frações granulométricas (mm)
+0,0
+20,0
+40,0
+60,0
+80,0
+100,0
+MCD
+% de materiais
+Metais e
+cerâmico
+s (%)
+Polímeros
+(%) 0,0
+10,0
+20,0
+30,0
+% de materiais
+Frações granulométricas (mm)
+64
+materiais poliméricos se acumularem nas frações mais grossas. Na faixa
+granulométrica acima de 2,0mm, o que corresponde a 1,7% de materiais
+poliméricos, no entanto 4,3%, que era o restante do material polimérico encontrado
+no material condutor, ficou distribuído em praticamente todos as outras faixas
+granulométricas.
+A Figura 28 apresenta o percentual do material misto e suas frações
+granulométricas após pirólise.
+Figura 28 – Porcentagem do material misto e suas frações granulométricas
+após pirólise
+O material misto apresentou concentração de material cerâmico e metálico
+acima de 20% na faixa granulométrica de 0,106mm a 0,5mm. Se os ensaios de
+digestão em água régia e análise química identificarem a concentração de um metal
+específico pode-se estudar a possibilidade de aproveitamento destas frações para a
+recuperação de metais.
+A Figura 29 apresenta o percentual do material não condutor e suas frações
+granulométricas após pirólise.
+0,0
+20,0
+40,0
+60,0
+80,0
+100,0
+MMI
+% de materiais
+Metais e
+cerâmicos
+(%)
+Polímeros
+(%) 0,0
+10,0
+20,0
+30,0
+% de materiais
+Frações granulométricas (mm)
+65
+Figura 29 – Porcentagem do material não condutor e suas frações
+granulométricas após pirólise
+Comparando o material não condutor com o material misto e condutor,
+observa-se que a porcentagem de material polimérico do não condutor é
+aproximadamente quatro vezes maior do que o valor encontrado no material misto
+(6,7%) e aproximadamente o dobro do valor do material condutor. Isto já era
+esperado, pois a técnica de separação eletrostática tem a função de separar os
+materiais condutores dos não condutores concentrando os metais na fração
+condutora (69)
+.
+A separação dos materiais poliméricos é uma etapa importante, pois os
+polímeros podem ser considerados contaminantes do processo de lixiviação para a
+recuperação de metais, pois podem formar adutos metálicos (100)
+.
+Os adutos metálicos são substâncias orgânicas que podem se ligar com
+metais formando complexos, impedindo sua recuperação (100)
+.
+5.2.2. Digestão em água régia
+Com os ensaios de digestão em água régia, foi possível determinar a
+quantidade de metais presentes nas placas de circuito impresso, assim como a sua
+concentração em cada tipo de material separado no processamento mecânico.
+A quantidade de metais presentes nas placas após moagem, no material
+magnético, não magnético, condutor, misto e não condutor estão apresentadas na
+0,0
+20,0
+40,0
+60,0
+80,0
+100,0
+MNC
+% de materiais
+Metais e
+cerâmicos
+(%)
+Polímeros
+(%) 0,0
+10,0
+20,0
+30,0
+% de materiais
+Frações granulométricas (mm)
+66
+Figura 30, na Figura 31, na Figura 32, na Figura 33, na Figura 34 e na Figura 35,
+respectivamente como porcentagem de material solúvel.
+Figura 30 – Porcentagem do material proveniente da moagem e suas frações
+granulométricas após digestão em água régia
+Após a moagem das placas de circuito impresso, foi identificado, através da
+digestão em água régia, que cerca de 63% das placas são compostas de materiais
+metálicos representada como material solúvel e cerca de 37% de material não
+solúvel, isto é, materiais cerâmicos e poliméricos.
+Na classificação granulométrica das placas após moagem, pode-se verificar
+que os metais tendem a se concentrar em frações acima de 0,25mm, concentrando
+cerca de 48% de todos os metais existentes nas placas, lembrando-se que nas
+placas tem-se 63% de metais. Porém nesta mesma faixa granulométrica tem-se 20%
+dos materiais poliméricos e cerâmicos das placas, de um total de 37%, que são
+contaminantes na recuperação de metais, portanto a separação granulométrica não
+é uma técnica eficaz para a recuperação de metais.
+Além disso, nas frações menores que 0,25mm, ainda tem cerca de 15% dos
+metais, de 63% possíveis, indicando novamente que a classificação granulométrica
+não é eficaz na concentração de materiais em uma faixa granulométrica específica.
+A Figura 31 apresenta a porcentagem de material solúvel e não solúvel em
+água régia no material magnético e em suas frações granulométricas.
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+MM
+% de materiais
+%
+SOLUVEL
+% NÃO
+SOLÚVEL
+0
+5
+10
+15
+20
+% de materiais
+Fração granulométrica (mm)
+67
+Figura 31 – Porcentagem do material magnético e suas frações
+granulométricas após digestão em água régia
+O material magnético, que corresponde a 19% das placas de circuito
+impresso, apresentou 16,5% dos metais contidos nas placas, enquanto que os
+materiais poliméricos e cerâmicos corresponderam a 2,5%.
+Da mesma forma que no caso anterior, a separação granulométrica não
+apresentou concentração de metais em uma fração específica favorecendo os
+processos de recuperação metálica.
+A Figura 32 apresenta a porcentagem de material solúvel e não solúvel em
+água régia no material magnético e em suas frações granulométricas.
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+MMA
+%de materiais
+%
+SOLUVEL
+% NÃO
+SOLÚVEL
+0
+5
+10
+15
+20
+% de materiais
+Fração granulométrica (mm)
+68
+Figura 32 – Porcentagem do material não magnético e suas frações
+granulométricas após digestão em água régia
+O material não magnético corresponde a 80% das placas de circuito
+impresso. A partir desta base, 43,1% dos metais estão presentes no material não
+magnético, enquanto que os materiais cerâmicos e poliméricos correspondem a
+36,9%.
+Na distribuição granulométrica é observada uma pequena tendência em se
+acumular metais nas frações mais finas. Ou seja, na fração abaixo de 0,106mm
+tem-se cerca de 8,8% de metais contra 4,5% de materiais cerâmicos e poliméricos;
+na fração acima de 2,00mm tem-se 3,5% de metais e 9,9% de cerâmicas e
+polímeros.
+A Figura 33 apresenta a porcentagem de material solúvel e não solúvel em
+água régia no material magnético e em suas frações granulométricas.
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+MNMA
+% de materiais
+%
+SOLUVEL
+% NÃO
+SOLÚVEL 0
+5
+10
+15
+20
+% de materiais
+Fração granulométrica (mm)
+69
+Figura 33 – Porcentagem do material condutor e suas frações granulométricas
+após digestão em água régia
+Dos 50,1% de material condutor, 36% é composto de material solúvel (metais)
+e 14,1% de material não solúvel (materiais cerâmicos e poliméricos).
+Observa-se uma tendência de se concentrar metais nas frações mais finas, o
+que pode estar associado a multilayer que formam as placas de circuito impresso
+destes aparelhos celulares, pois o cobre somente será liberado da multilayer após a
+cominuição das fibras de vidro com a resina epóxi. Na fração abaixo de 0,106mm,
+tem-se 7,4% de metais. Por outro lado, na faixa +0,106-0,250mm, tem-se 6,8%,
+enquanto que na fração acima de 2,00mm tem-se 2,9% de metais.
+Como a classificação granulométrica não apresentou concentração de metais
+em uma faixa granulométrica específica, esta técnica conjugada à separação
+eletrostática não pode ser utilizada para a recuperação de cobre. Porém, se os
+resultados da análise química indicarem a seletividade de metais por faixa
+granulométrica pode-se utilizar da separação granulométrica como uma técnica para
+a recuperação de metais.
+A Figura 34 apresenta a porcentagem de material solúvel e não solúvel em
+água régia no material magnético e em suas frações granulométricas.
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+MCD
+% de materiais
+%
+SOLUVEL
+% NÃO
+SOLÚVEL 0
+5
+10
+15
+20
+% de materiais
+Fração granulométrica (mm)
+70
+Figura 34 – Porcentagem do material misto e suas frações granulométricas
+após digestão em água régia
+O material misto apresenta 4,4% de metais e 4,4% de material cerâmico e
+polimérico.
+A distribuição granulométrica do material misto é semelhante à distribuição do
+material condutor, pois apresenta tendência em acumular metais em frações mais
+finas.
+Na faixa abaixo de 0,106mm, tem-se 1,1% de metais e 0,3% de polímeros e
+cerâmicas, enquanto que na faixa acima de 2,00mm tem-se 0,2% de metais e 1,4%
+de polímeros e cerâmicas.
+Como a distribuição granulométrica para o material misto também não
+apresentou concentração de metais em uma fração específica, esta técnica não
+pode ser utilizada para a recuperação de metais.
+Além disso, o material misto ainda contem 4,4% de metais, que pode ser
+composto principalmente de cobre (será confirmado na análise química), podendo
+ser uma fração importante para a recuperação de cobre, isto pode indicar que a
+separação eletrostática não é um processo ideal para a concentração de metais,
+neste caso.
+A Figura 35 apresenta a porcentagem de material solúvel e não solúvel em
+água régia no material magnético e em suas frações granulométricas.
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+MMI
+% de materiais
+%
+SOLUVEL
+% NÃO
+SOLÚVEL 0
+5
+10
+15
+20
+% de materiais
+Fração granulométrica (mm)
+71
+Figura 35 – Porcentagem do material não condutor e suas frações
+granulométricas após digestão em água régia
+O material não condutor apresentou cerca de 2,7% do total de metais, que
+fica distribuído nas faixas granulométricas, não apresentando portanto concentração
+de metais.
+Contudo observa-se que cerca de 18,4% de materiais cerâmicos e
+poliméricos ficam retidos na fração não condutora, o que corresponde a metade do
+material polimérico e cerâmico presentes nas placas após moagem.
+Com os resultados da pirólise e da digestão em água régia foi possível
+caracterizar as placas de circuito impresso de celulares obsoletos quanto aos tipos
+de materiais: metálicos, cerâmicos e poliméricos em cada material separado no
+processamento mecânico, isto é, placas após moagem (MM - Figura 36); material
+magnético (MMA - Figura 38); não magnético. (MNMA - Figura 40); condutor (MCD -
+Figura 42); misto (MMI - Figura 44) e não condutor (MNC - Figura 46). Estes
+resultados serão descritos juntamente com os resultados da espectrometria de
+emissão óptica por indução de plasma ICP-OES (item 5.2.3) para facilitar o
+entendimento da caracterização completa dos materiais encontrados nas placas de
+circuito impresso de aparelhos celulares.
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+MNC
+% de materiais
+%
+SOLUVEL
+% NÃO
+SOLÚVEL 0
+5
+10
+15
+20
+% de materiais
+Fração granulométrica (mm)
+72
+5.2.3. Espectrometria de emissão óptica por indução de plasma ICP-OES
+Com o liquor lixiviado de cada material separado no processamento
+mecânico, foi realizada análise química quantitativa dos metais, assim como em
+cada fração granulométrica, a fim de se verificar a seletividade das técnicas de
+separação.
+A Figura 36 apresenta os resultados da caracterização dos materiais das
+placas após a moagem e a Figura 37 apresenta a porcentagem de metais
+identificados por ICP-OES.
+Figura 36 – Resultados de caracterização de placas de circuito impresso
+moídas e suas frações granulométricas
+As placas de circuito impresso de celulares obsoletos possuem cerca de
+63,3% de metais; 24% cerâmicas e 12,7% polímeros, enquanto que nas placas de
+circuito impresso de computadores tem-se no máximo 32% de metais, esta diferença
+pode estar associada ao tipo de placa utilizada, pois nos aparelhos celulares é mais
+comum encontrar placas multilayers (com camadas de cobre intercalando as
+camadas de fibra de vidro e resina), enquanto que em computadores é mais comum
+placas com camadas simples ou duplas de cobre (1; 10; 12)
+.
+Na distribuição granulométrica, 14,2% de metais foi concentrado na faixa
+granulométrica +1,00-2,00mm, porém nas outras frações o restante dos metais
+(49,1%) ficaram divididos, demonstrando que a classificação granulométrica visando
+a concentração de materiais não se mostrou eficaz para a recuperação de metais.
+0,0
+20,0
+40,0
+60,0
+80,0
+100,0
+MM
+%
+Me
+Ce
+Po 0
+5
+10
+15
+%
+Fração granulométrica (mm)
+73
+O mesmo pode ser observado para os materiais cerâmicos e poliméricos, pois
+não se concentram em faixa granulométrica específica.
+Figura 37 – Porcentagem de metais das placas após moagem e suas frações
+granulométricas
+Nas placas de circuito impresso de celulares obsoletos que contém cerca de
+63,3% de metais, 35,5% é composto de cobre; 12,5% é ferro; 6,2% de estanho;
+4,01% é níquel; 2,9% de zinco; 1,5% de chumbo; 0,5% de alumínio, 0,1% de bário;
+0,05% de cálcio e 0,05% de prata.
+O ferro, o estanho, o níquel, o zinco, o chumbo, o alumínio, o bário, o cálcio e
+a prata são metais contaminantes com relação ao objetivo de recuperar cobre, pois
+a maioria destes metais tem maior facilidade de se dissolver em soluções fortemente
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+40%
+Ag Al Ba Ca Fe Ni Pb Zn Cu Sn
+% de metais
+Metais
+0%
+5%
+10%
+15%
+20%
+25%
+0,01 0,1 1 10
+% de metais
+Fração granulométrica em escala logarítmica (mm)
+Ag
+Al
+Ba
+Ca
+Fe
+Ni
+Pb
+Zn
+Cu
+Sn
+74
+ácidas e alcalinas do que o cobre. Como o processo hidrometalúrgico utiliza
+soluções ácidas ou alcalinas, a tendência em se dissolver estes contaminantes
+antes de se obter a dissolução do cobre é maior.
+Após a dissolução do cobre, a tendência de se recuperar este metal é por
+processo de eletroobtenção e a presença de metais como o ferro, o níquel e o zinco
+podem interferir na eletrodeposição, pois também são eletrodepositados e, portanto
+diminuem a pureza dos eletrodos recuperados de cobre.
+A faixa granulométrica que concentra cobre está entre 0,106 a 1,00mm,
+todavia a presença de ferro indica a necessidade da separação magnética.
+Comparando os resultados encontrados da quantidade de metais nas placas
+de circuito impresso de celulares com Park e Fray (101), que não especificou o tipo de
+placa de circuito impresso utilizada na caracterização foi possível observar que a
+somatória de metais chega a 33% da placa, e que o cobre corresponde a 16% dos
+metais. No presente estudo, estas quantidades foram aproximadamente o dobro das
+encontradas por Park e Fray.
+Por outro lado, Meskers e Hageluken (102) encontraram cerca de 23% de
+metais em placas de circuito impresso de celulares.
+Estas divergências entre os valores de metais encontrados nestes estudos
+podem estar relacionados à diferença entre os tipos de placas estudadas, modelo,
+ano de fabricação e tecnologia dos aparelhos.
+A Figura 38 apresenta os resultados da caracterização do material magnético
+e a Figura 39 apresenta a porcentagem de metais identificados por ICP-OES.
+Figura 38 – Resultados de caracterização de material magnético de placas de
+circuito impresso moídas e suas frações granulométricas
+0,0
+20,0
+40,0
+60,0
+80,0
+100,0
+MMA
+% de materiais
+Me
+Ce
+Po 0
+5
+10
+15
+% de materiais
+Fração granulométrica (mm)
+75
+A fração magnética possui cerca de 16,5% dos metais das placas, 2,2% de
+cerâmicas e 0,3% de polímeros, que demonstra que a separação magnética foi
+eficaz na separação de materiais magnéticos.
+Sendo que a fração granulométrica -0,106mm concentrou 0,1% de polímeros
+e as outras frações concentraram menos do que 0,5% de polímeros.Cerca de 2%
+dos materiais cerâmicos se concentraram na faixa +0,5-1,0mm.
+Enquanto que a faixa +2,00mm, que apresentou o maior valor de
+concentração de metais, se aproximou de 3,4%, o que indica que a classificação
+granulométrica não é uma técnica que favorece a concentração de materiais
+magnéticos em uma faixa específica.
+Figura 39 – Porcentagem de metais no material magnético e suas frações
+granulométricas
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+40%
+Ag Al Ba Ca Fe Ni Pb Zn Cu Sn
+% de metais
+Metais da fração magnética
+0%
+5%
+10%
+15%
+20%
+25%
+0,01 0,1 1 10
+% de metais
+Fração granulométrica em escala logarítmica (mm)
+Ag
+Al
+Ba
+Ca
+Fe
+Ni
+Pb
+Zn
+Cu
+Sn
+76
+No material magnético foi possível observar a concentração de ferro igual a
+10,5%. Para entender este valor da concentração de ferro, deve-se lembrar que 19%
+da massa de placas é composta de material magnético, e 16,5% do material
+magnético corresponde a metais, e finalmente 10,5% é ferro, ou seja, todos os
+valores tomam por base de cálculo a massa total de placas moída.
+Neste processo, fica retido junto ao material magnético cerca de 3,6% de
+cobre, que é um contaminante na recuperação do ferro. Esta contaminação de cobre
+é devida a alguma deficiência na liberação do material durante o processo de
+moagem ou ao arraste.
+O cobre que passa para a fração magnética corresponde a cerca de 10% de
+todo o cobre presente na placa de circuito impresso.
+Observa-se a concentração de 1,23% de níquel que tem alto valor agregado e
+que pode ser usado como elemento de liga em aços. Além disso, existe ainda 0,52%
+de estanho; 0,37% de chumbo; 0,14% de zinco; 0,08% de bário; 0,03% de alumínio;
+0,03% de prata e 0,01% de cálcio, que também são considerados metais
+contaminantes no processo de recuperação do ferro.
+Nas frações granulométricas acima de 0,5mm tem-se a presença
+predominante de ferro, porém também arrastam outros metais, mostrando que a
+classificação granulométrica após a separação magnética não se mostra eficaz para
+a concentração de ferro.
+Na fração granulométrica acima de 1,0mm, verifica-se a concentração de
+6,3% de ferro e contaminação menor de 0,9% da somatória dos outros metais
+Portanto, a recuperação de ferro pode ser feita utilizando o material
+magnético (após a separação magnética) com as frações acima de 1,0mm.
+Enquanto que as frações menores que 1,0mm podem ser submetidas a dissolução
+de metais por processamento hidrometalúrgico em meio ácido, seguido de extração
+por solvente com pH específico para promover a seletividade na recuperação de
+cada metal, seja ele contaminante como o cobre ou produto como o ferro (no
+material magnético).
+A Figura 40 apresenta os resultados da caracterização do material não
+magnético e a Figura 41 apresenta a porcentagem de metais identificados por ICPOES.
+77
+Figura 40 – Resultados de caracterização de material não magnético de placas
+de circuito impresso moídas e suas frações granulométricas
+O material não magnético possui 43,2% de metais, 22,5% de cerâmicas e
+14,3% de polímeros, sendo que a fração -0,106mm concentrou 8,8% de metais
+(maior concentração entre as frações granulométricas), 0,7% de cerâmicas e 1,2%
+de polímeros (menores concentração entre as frações).
+Portanto, a fração -0,106mm tem seletividade de materiais metálicos, no
+entanto, não se pode desprezar 34,3% de metais que ficaram retidos nas outras
+frações.
+0
+20
+40
+60
+80
+100
+MNMA
+% de materiais
+Me
+Ce
+Po 0
+5
+10
+15
+% de materiais
+Fração granulométrica (mm)
+78
+Figura 41 – Porcentagem de metais no material não magnético e suas frações
+granulométricas
+Observa-se que o material não magnético não contém ferro, pois este ficou
+retido na fração magnética, porém 1,4% de níquel ficou presente no material não
+magnético, isto ocorreu porque o níquel é fracamente magnético e portanto não é
+removido totalmente como material magnético.
+A Figura 42 apresenta os resultados da caracterização do material condutor e
+a Figura 43 apresenta a porcentagem de metais identificados por ICP-OES.
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+40%
+Ag Al Ba Ca Fe Ni Pb Zn Cu Sn
+% de metais
+Metais da fração não magnética
+0%
+5%
+10%
+15%
+20%
+25%
+0,01 0,1 1 10
+%
+Fração granulométrica em escala logarítmica (mm)
+Ag
+Al
+Ba
+Ca
+Fe
+Ni
+Pb
+Zn
+Cu
+Sn
+79
+Figura 42 – Resultados de caracterização de material condutor de placas de
+circuito impresso moídas e suas frações granulométricas
+O material condutor concentra cerca de 36% de metais, 8,1% de cerâmicas e
+6,0% de polímeros, sendo que os metais tendem a se concentrar em frações mais
+finas. Os polímeros tendem a se concentrar nas frações mais grossas.
+E o material cerâmico fica distribuído entre as faixas granulométricas sem
+apresentar concentração em uma faixa específica.
+0
+20
+40
+60
+80
+100
+MCD
+% de materiais
+Me
+Ce
+Po 0
+5
+10
+15
+% de materiais
+Fração granulométrica (mm)
+80
+Figura 43 – Porcentagem de metais no material condutor e suas frações
+granulométricas
+Dos 36% de metais presentes no material condutor cerca de 24% é composto
+de cobre, que se concentra nas frações entre 0,25 a 1,00mm. Porém, as outras
+frações contém cerca de 3,6% de cobre, o que equivale a 10% de todo o cobre
+presente na placa. Este resultado reitera que a classificação granulométrica não é
+uma técnica que pode ser utilizada para se otimizar a concentração de cobre após a
+separação eletrostática.
+A Figura 44 apresenta os resultados da caracterização do material misto e a
+Figura 45 apresenta a porcentagem de metais identificados por ICP-OES.
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+40%
+Ag Al Ba Ca Fe Ni Pb Zn Cu Sn
+% de metais
+Metais da fração condutora
+0%
+5%
+10%
+15%
+20%
+25%
+0,01 0,1 1 10
+% de metais
+Fração granulométrica em escala logarítmica (mm)
+Ag
+Al
+Ba
+Ca
+Fe
+Ni
+Pb
+Zn
+Cu
+Sn
+81
+Figura 44 – Resultados de caracterização da fração mista obtida por separação
+eletrostática de placas de circuito impresso moídas e suas frações
+granulométricas
+O material misto concentra 4,4% de metais, 2,8% de cerâmicas e 1,7% de
+polímeros, sendo que a distribuição granulométrica se assemelha o comportamento
+do material condutor.
+0
+20
+40
+60
+80
+100
+MMI
+% de materiais
+Me
+Ce
+Po
+0
+5
+10
+15
+% de materiais
+Fração granulométrica (mm)
+82
+Figura 45 – Porcentagem de metais no material misto e suas frações
+granulométricas
+Cerca de 4,1% de cobre é concentrado no material misto, enquanto que os
+outros metais constituem menos de 0,1% da fração metálica.
+A classificação granulométrica não apresentou concentração de cobre
+superior a 1,7% na fração +0,50-1,00mm.
+A Figura 46 Figura 44apresenta os resultados da caracterização do material
+não condutor e a Figura 47 apresenta a porcentagem de metais identificados por
+ICP-OES.
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+40%
+Ag Al Ba Ca Fe Ni Pb Zn Cu Sn
+% de metais
+Metais da fração mista
+0%
+5%
+10%
+15%
+20%
+25%
+0,01 0,1 1 10
+%de metais
+Fração granulométrica em escala logarítmica (mm)
+Ag
+Al
+Ba
+Ca
+Fe
+Ni
+Pb
+Zn
+Cu
+Sn
+83
+Figura 46 – Resultados de caracterização de material não condutor de placas
+de circuito impresso moído e suas frações granulométricas
+A fração não condutora, como esperado, tende a concentrar materiais não
+metálicos, como os polímeros e cerâmicas.
+Nesta fração, a concentração de metais não ultrapassou 2,7%, 11,7% de
+cerâmicas e 6,7% de polímeros.
+O material cerâmico tende a se concentrar nas frações mais finas.
+Contudo, a somatória dos metais presentes nas frações mista e não
+condutora chega a 7,1% o que não poderia ser desprezada quando o objetivo é a
+recuperação de metais, portanto a separação eletrostática não é uma técnica eficaz
+para a concentração de metais na fase condutora, pois parte dos metais ficam
+retidos no material misto e não condutor.
+0
+20
+40
+60
+80
+100
+MNC
+% de materiais
+Me
+Ce
+Po 0
+5
+10
+15
+% de materiais
+Fração granulométrica (mm)
+84
+Figura 47 – Porcentagem de metais no material não condutor e suas frações
+granulométricas
+O material não condutor apresentou cerca de 2,5% de cobre, que se somado
+ao material misto totaliza cerca de 6,6% de cobre não recuperado na separação
+eletrostática.
+Portanto, a separação eletrostática pode ser eliminada como técnica de
+concentração de cobre (em sua fração condutora), no caso de placas de circuito
+impresso de aparelhos celulares, pois se perde cobre na fração mista e não
+condutora. Como o valor do cobre é de US$ 8540.00 por tonelada de metal é
+interessante utilizar-se da fração que contenha a maior quantidade de cobre
+possível, para tornar o processo de reciclagem economicamente viável. Além disso,
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+40%
+Ag Al Ba Ca Fe Ni Pb Zn Cu Sn
+% de metais
+Metais da fração não condutora
+0%
+5%
+10%
+15%
+20%
+25%
+0,01 0,1 1 10
+% de metais
+Fração granulométrica em escala logarítmica (mm)
+Ag
+Al
+Ba
+Ca
+Fe
+Ni
+Pb
+Zn
+Cu
+Sn
+85
+evitar o uso do separador eletrostático pode contribuir na economia de energia e
+tempo de processamento do material.
+O resumo dos resultados da porcentagem dos metais presentes nos materiais
+após moagem, magnético, condutor, misto e não condutor, utilizados para fazer os
+gráficos das FigurasFigura 37,Figura 39,Figura 41,Figura 43,Figura 45 e Figura 47,
+estão apresentados na Tabela 10.
+Tabela 10 – Porcentagem dos metais na placa após moagem (MM), no material
+magnético (MMA), não magnético (MNMA), condutor (MCD), misto (MMI) e nãocondutor (MNC)
+MM
+(MMA+MNM
+A)
+MMA
+MNMA
+(MCD+MMI+MN
+C)
+MCD MMI MNC
+Elemento
+s
+% % % % % %
+Ag 0,21 0,02 0,19 0,16 0,01 0,02
+Al 0,26 0,03 0,23 0,20 0,01 0,02
+Ba 0,16 0,08 0,08 0,06 0,01 0,01
+Ca 0,09 0,01 0,08 0,02 0,01 0,05
+Fe 12,49 10,51 0,06 0,05 0,00 0,01
+Ni 3,41 1,23 1,40 1,34 0,04 0,02
+Pb 1,87 0,37 1,50 1,39 0,08 0,03
+Zn 5.92 0,14 5,78 5,75 0,02 0,01
+Cu 35,50 3,58 30,91 24,32 4,09 2,50
+Sn 3,39 0,52 2,87 2,72 0,12 0,03
+Total de
+metais
+63,30 16,50 43,10 36,00 4,40 2,70
+O material após moagem (MM) apresenta a somatória dos metais, deste
+material será segregado o material magnético (MMA) e não magnético (MNMA) após
+86
+a separação magnética, portanto a somatória destes dois (MMA e MNMA)
+corresponde ao valor do material após moagem (MM).
+O material não magnético (MNMA) por sua vez é segregado após a
+separação eletrostática em material condutor (MCD), material misto (MMI) e material
+não condutor (MNC), cuja somatória do MCD, MMI e MNC corresponde ao valor de
+MNMA.
+Em todos os materiais, é notável que o cobre se apresenta em concentração
+maior que outros metais, com exceção do material magnético, no qual apresenta o
+ferro em concentração maiores.
+Verificando a concentração de metais em cada material, pode-se concluir que
+após a separação eletrostática o material condutor apresenta 24% de cobre,
+enquanto que o material misto e não condutor apresentam 4,09% e 2,50% de cobre,
+respectivamente, portanto esta técnica de separação deixa de recuperar 6,59% de
+cobre.
+A separação magnética é recomendada como técnica de processamento de
+placas de circuito impresso de celulares, pois no material não magnético possui no
+máximo 0,06% de ferro e 30,91% de cobre, enquanto que 10,51% de ferro fica retido
+na fração magnética.
+5.3. Processamento hidrometalúrgico
+Na lixiviação em meio ácido analisou-se o Diagrama de Pourbaix para os
+metais presentes nas placas de circuito impresso de celulares.
+Os diagramas dos metais avaliados foram: cobre (Figura 48); ferro (Figura
+49); níquel (Figura 50); zinco (Figura 51); estanho (Figura 52); alumínio (Figura 53);
+prata (Figura 54); chumbo (Figura 55); bário (Figura 56) e cálcio (Figura 57) e a área
+na qual o cátion é estável está destacada em cinza em cada diagrama.
+87
+Figura 48 - Diagrama E/pH do cobre - água a 25ºC (78)
+Para que ocorra a dissolução do cobre por processo hidrometalúrgico, a
+solução de lixiviação deve apresentar características ácidas (pH abaixo de 4) e o
+potencial da reação deve estar acima de 0,4V, que pode ser conseguido através da
+adição de um agente oxidante, como por exemplo o peróxido de hidrogênio (77)
+.
+88
+Figura 49 - Diagrama E/pH do ferro - água a 25ºC (78)
+O ferro se encontra na forma solúvel em pH menor do que 4 em potencial
+zero, isto indica que o ferro estará na forma solúvel em ácido sulfúrico nas soluções
+de pH 0,5; 1,0 e 1,5, como foi realizado os ensaios de lixiviação ácida (77)
+.
+Quanto mais ácida a solução de lixiviação, maior será a solubilização do ferro,
+considerando que não tenha alteração do potencial da reação.
+Se o potencial da reação ficar acima de 0,5V observa-se uma tendência a
+diminuir a solubilidade do ferro, que praticamente só será possível a sua dissolução
+em pH zero.
+No entanto em condições redutoras (potencial abaixo de -0,4V) observa-se a
+dissolução de ferro em pH abaixo de 5.
+89
+Figura 50 - Diagrama E/pH do níquel - água a 25ºC (78)
+O níquel também se encontra solúvel no potencial zero com pH abaixo de 6,
+indicando que o níquel estará solúvel em solução de lixiviação ácida (77)
+.
+A solubilização de níquel também ocorre em meio oxidante (potencial de oxiredução acima de zero), porém observa-se que ao aumentar o potencial (meio
+oxidante) o pH de solubilização do níquel tende a diminuir, portanto quanto mais
+ácido, maior a dissolução de níquel.
+90
+Figura 51 - Diagrama E/pH do zinco - água a 25ºC (78)
+A lixiviação ácida que mantém o potencial em zero também possibilita a
+solubilização do zinco em pH abaixo de 5,5. Contudo, também se observa a
+dissolução de zinco em meio oxidante e redutor (até -0,7V) (77)
+.
+Figura 52 - Diagrama E/pH do estanho - água a 25ºC (78)
+91
+Para promover a solubilização do estanho o pH deve estar próximo de zero
+assim como o potencial de oxi-redução, observando-se uma tendência de ocorrer a
+solubilização em meio redutor (77)
+.
+Figura 53 - Diagrama E/pH do alumínio - água a 25ºC (78)
+O alumínio possui uma área de solubilidade ampla, pois se apresenta na
+forma solúvel em meio redutor e oxidante (potencial de -1,0 a 2,0V) com pH abaixo
+de 8,5.
+92
+Figura 54 - Diagrama E/pH do prata - água a 25ºC (78)
+A área de dissolução da prata está em meio oxidante (de 0,7V a 1,3V) e pH
+ácido (abaixo de 6). Portanto, a prata não é solubilizada em soluções de ácido
+sulfúrico pH 0,5; 1,0 e 1,5 (77)
+.
+Figura 55 - Diagrama E/pH do chumbo - água a 25ºC (78)
+93
+O chumbo se apresenta na forma solúvel do potencial -0,1V a 1,5V, sendo
+que quanto mais ácido (pH abaixo de 5), mais fácil é a sua dissolução (77)
+.
+Figura 56 - Diagrama E/pH do bário - água a 25ºC (78)
+O bário se apresenta na forma solúvel em pH abaixo de 12 e potencial de
+-1,2V a 2,0V (77)
+.
+Figura 57 - Diagrama E/pH do cálcio - água a 25ºC (78)
+
+94
+A área de dissolução do cálcio ocorre em pH menor que 11,5 no potencial
+-1,2V a 2,0V (77)
+.
+Observando os diagramas de Pourbaix dos metais presentes nas placas de
+circuito impresso de celulares, pode-se verificar que o ferro, o níquel, o zinco, o
+alumínio, o chumbo, o bário e o cálcio se apresentam na forma solúvel em pH ácido
+e potencial zero, isto é, para as soluções de lixiviação ácida estudadas (pH 0,5; 1,0 e
+1,5) estes metais se apresentam na forma solúvel.
+Observa-se que o cobre, o estanho e a prata não se apresentam solúveis nas
+soluções de lixiviação ácida estudadas (pH 0,5; 1,0 e 1,5).
+Além de considerar a área de solubilidade de cada metal, foi verificada a
+solubilidade de cada um quando formam os sulfatos metálicos, tendo em vista que
+alguns sulfatos metálicos são insolúveis.
+Os metais que são insolúveis na forma de sulfato são: estanho, prata,
+chumbo, bário e cálcio (103)
+.
+Os resultados da cromatografia iônica dos liquores da lixiviação ácida, com
+solução de ácido sulfúrico pH 0,5 a 25ºC; 50ºC e 75ºC estão apresentados na Figura
+58; para a lixiviação ácida de pH 1,0 a 25ºC, 50ºC e 75ºC os resultados estão na
+Figura 59 e para a lixiviação ácida de pH 1,5 a 25ºC, 50ºC e 75ºC, tem-se a Figura
+60.
+95
+Figura 58 – Resultados da cromatografia iônica dos liquores da lixiviação ácida
+de pH 0,5 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de extração de metais
+por tempo
+Neste capítulo, a base de cálculo é a porcentagem de extração com relação a
+massa de metal contido na amostra.
+Na lixiviação ácida com pH 0,5 a 25ºC, foi possível observar que o cobre fica
+praticamente insolúvel durante 4h de lixiviação e 0,2% fica solúvel após 24h de
+lixiviação. Ou seja, apenas 0,2% de todo o cobre que estava na amostra foi lixiviado.
+Observa-se ainda que 15% do níquel foi lixiviado após 30min, chegando até
+74,2% após 24h. Por sua vez, o zinco variou de 47% (com 0,5h) até 66,7% (com
+4h). No entanto, o aumento da concentração de zinco na solução começa a se
+manter estável a partir de 3h de lixiviação onde a extração chega a 64%.
+A partir de 3h de lixiviação também é possível observar que 37% do ferro foi
+lixiviado, sendo que a sua extração máxima em 4h chega a 45%.
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4 24
+% de extração de metais
+t(h)
+pH 0,5 - 25ºC
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4
+% de extração de metais
+t(h)
+pH 0,5 - 50ºC
+0
+20
+40
+60
+80
+100
+%
+0,5 1 2 3 4
+de extração de metais
+t(h)
+pH 0,5 - 75ºC
+Cobre Níquel Zinco Ferro total
+96
+Considerando somente a lixiviação do zinco e do ferro, o tempo de lixiviação
+que poderia ser utilizado para solubilizá-los é de 3h. Por outro lado, para o níquel o
+tempo de extração é de 24h.
+Como o objetivo da lixiviação ácida é remover os metais (ferro, níquel, zinco)
+das placas de circuito impresso cominuídas, o tempo ideal para solubilização
+máxima de metais é de 24h, a 25ºC em pH 0,5.
+Não houve extração do cobre em solução ácida de pH 0,5 a 50ºC ou a 75ºC.
+Observa-se que a partir de 2 horas de lixiviação, o ferro não apresentou aumento
+gradativo.
+A lixiviação ácida com pH 0,5 a 75ºC apresentou melhor extração dos metais
+com exceção do cobre, onde cerca de 99% de ferro, níquel e zinco foram
+solubilizados a partir de 4h de lixiviação.
+Pode-se concluir que para lixiviação ácida de pH 0,5, o tempo ideal é de 4h
+de lixiviação a 75ºC.
+O liquor proveniente da lixiviação ácida após 24h, que contém ferro, níquel e
+zinco pode passar por um processo hidrometalúrgico de extração por solvente, para
+promover a separação seletiva de cada metal. Já o material rico em cobre (material
+após lixiviação ácida e filtração) foi encaminhado para lixiviação ácida em meio
+oxidante para extração do cobre.
+Os resultados da cromatografia iônica dos liquores da lixiviação ácida, com
+solução de ácido sulfúrico pH 1,0 a 25ºC, 50ºC e 75ºC estão apresentados na Figura
+59.
+97
+Figura 59 – Resultados da cromatografia iônica dos liquores da lixiviação ácida
+de pH 1,0 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de extração de metais
+por tempo
+Após 24h de lixiviação ácida em pH 1,0 foi possível solubilizar cerca de 17%
+de zinco e níquel, e 44% de ferro.
+Quando comparado os valores de solubilização de metais em solução de
+pH 1,0 a 25ºC com solução de pH 0,5 a 25ºC verificou-se que quanto mais ácido o
+pH maior solubilidade dos metais ferro, zinco e níquel.
+Na lixiviação ácida de pH 1,0 a 50ºC, após 2 horas nota-se que o ferro e o
+zinco atingiram cerca de 57% de extração, enquanto que o níquel apresentou 6,1%.
+Conclui-se que o tempo máximo para obter o liquor lixiviado concentrado de
+metais é de 4h, uma vez que 21% do níquel foi extraído após 4h de lixiviação.
+0
+20
+40
+60
+80
+100
+%
+0,5 1 2 3 4 24
+de extração de metais
+t(h)
+pH 1,0 - 25ºC
+0
+20
+40
+60
+80
+100
+%
+0,5 1 2 3 4
+de extração de metais
+t(h)
+pH 1,0 - 50ºC
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4
+%de extração de metais
+t(h)
+pH 1,0 - 75ºC
+Cobre Níquel Zinco Ferro total
+98
+Com relação ao tempo de solubilização do zinco, ferro e níquel, observou-se
+que a lixiviação ácida de pH 1,0 a 75ºC apresentou o mesmo comportamento que a
+lixiviação de pH 1,0 a 50ºC. Porém, a extração máxima destes metais após 4h de
+lixiviação foi de 64% para a zinco, 68% para o ferro e 47% para o níquel. Sendo
+essas extrações maiores do que as obtidas a partir da lixiviação a 50ºC.
+Os resultados da cromatografia iônica dos liquores da lixiviação ácida, com
+solução de ácido sulfúrico pH 1,5 a 25ºC, 50ºC e 75ºC estão apresentados na Figura
+60.
+Figura 60 – Resultados da cromatografia iônica dos liquores da lixiviação ácida
+de pH 1,5 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de extração de metais
+por tempo
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4 24
+% de extração de metais
+t(h)
+pH 1,5 - 25ºC
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4
+% de extração de metais
+t(h)
+pH 1,5 - 50ºC
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4
+% de extração de metais
+t(h)
+pH 1,5 - 75ºC
+Cobre Níquel Zinco Ferro total
+99
+Na lixiviação ácida de pH 1,5 a 25ºC foi possível observar que 1,7% de cobre
+foi extraído após 24h de lixiviação, enquanto que nas temperaturas de 50ºC e 75ºC
+não houve extração deste metal. Este resultado pode ser explicado através do
+comportamento do cobre a 25ºC, já que nesta temperatura sua solubilidade pode
+estar associada ao oxigênio dissolvido. Sabe-se ainda, que compostos no estado
+gasoso têm maior solubilidade quando a solução encontra-se em menor
+temperatura.
+Após 24h de lixiviação a 25ºC observa-se solubilidade de 13,8% de níquel,
+16,6% de zinco e 39,4% de ferro. Ao comparar com a lixiviação a 50ºC a 4h,
+pode-se verificar que os valores máximos de extração de cada um destes metais
+chega a 16,7% para o níquel, 48,8% para o zinco e 51,3% para o ferro.
+Porém, ao comparar os valores de extração a 50ºC com a 75ºC notou-se que
+22,7% de níquel, 49,9% de zinco e 42% de ferro foram extraídos após 4h de
+lixiviação. Esses resultados mostram que o aquecimento a partir de 75ºC não
+apresenta vantagens na solubilização dos metais com relação a lixiviação a 50ºC.
+Este comportamento pode ser explicado através do Diagrama de Pourbaix
+(Figura 61) do ferro, por exemplo. Nele, verifica-se a diminuição da área de
+solubilidade do ferro com o aumento da temperatura para 75ºC (comparando com o
+Diagrama a 25ºC - Figura 6), pois em pH 1,5 o ferro se encontra próximo do limite da
+sua área de solubilidade.
+100
+Figura 61 – Diagrama E/pH do ferro - água a 75ºC (78)
+Portanto, para a lixiviação de pH 1,5  	
+  	
+  
+    
+  
+Os resultados da cromatografia iônica dos liquores da lixiviação ácida em
+meio oxidante, com solução de ácido sulfúrico pH 0,5 a 25ºC; 50ºC e 75ºC estão
+apresentados na Figura 62; para a lixiviação ácida de pH 1,0 a 25ºC, 50ºC e 75ºC os
+resultados estão na Figura 63 e para a lixiviação ácida de pH 1,5 a 25ºC, 50ºC e
+75ºC, tem-se a Figura 64.
+101
+Figura 62 – Resultados da cromatografia iônica dos liquores da lixiviação ácida
+em meio oxidante de pH 0,5 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de
+extração de metais por tempo
+Foi possível extrair cerca de 87% de cobre, 25,5% de níquel, 33% de zinco e
+54,6% de ferro após 24h de lixiviação a 25ºC, enquanto que a 50ºC em 4h se obteve
+98,2% de cobre, 17,6% de níquel, 9,1% de zinco e 24,8% de ferro extraídos.
+Observa-se que, na lixiviação a 75ºC, extraiu-se 99,4% de cobre, 1,4% de
+níquel, 0,8% de zinco e 2,2% de ferro após 4h. Comparando esta lixiviação com a de
+50ºC, verifica-se que a 75ºC o processo mostra-se mais eficaz para recuperação de
+cobre.
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4 24
+% de extração de metais
+t(h)
+pH 0,5 e H2O2
+ - 25ºC
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4
+% de extração de metais
+t(h)
+pH 0,5 e H2O2
+ - 50ºC
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4
+% de extração de metais
+t(h)
+pH 0,5 e H2O2
+ - 75ºC
+Cobre Niquel Zinco Ferro total
+102
+Os resultados da cromatografia iônica dos liquores da lixiviação ácida em
+meio oxidante, com solução de ácido sulfúrico pH 1,0 a 25ºC, 50ºC e 75ºC estão
+apresentados na Figura 63.
+Figura 63 – Resultados da cromatografia iônica dos liquores da lixiviação ácida
+em meio oxidante de pH 1,0 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de
+extração de metais por tempo
+Na lixiviação em pH 1,0 a 25ºC observa-se 69% de extração de cobre após
+24h de lixiviação. Após 3h, tem-se a extração máxima de níquel, 21%, e de zinco,
+16%, enquanto que o ferro apresentou 12% de extração após 4h.
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4 24
+% de extração de metais
+t(h)
+pH 1,0 e H2O2 - 25ºC
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4
+% de extração de metais
+t(h)
+pH 1,0 e H2O2
+ - 50ºC
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4
+%de extração de metais
+t(h)
+pH 1,0 e H2O2
+ - 75ºC
+Cobre Niquel Zinco Ferro total
+103
+A extração de zinco, níquel e ferro mantive-se constante após 3 e 4h de
+lixiviação a 25ºC.
+A 50ºC, após 3h, a extração de cobre manteve-se a 75%, de zinco a 28% e
+de ferro a 24%, enquanto que 33% de níquel foi extraído após 4h.
+Na lixiviação a 75ºC, observa-se que a concentração de cobre torna-se
+constante a partir de 3h com extrações de 75% e 43% de níquel. Já, após 2h de
+lixiviação, observa-se extrações constantes de 34% de zinco e 27% de ferro.
+Portanto, para a recuperação de cobre pode-se considerar lixiviação com pH
+1,0 a 50ºC ou 75ºC após 3h de lixiviação.
+Os resultados da cromatografia iônica dos liquores da lixiviação ácida em
+meio oxidante, com solução de ácido sulfúrico pH 1,5 a 25ºC, 50ºC e 75ºC estão
+apresentados na Figura 64.
+104
+Figura 64 – Resultados da cromatografia iônica dos liquores da lixiviação ácida
+em meio oxidante de pH 1,5 a 25ºC; 50ºC e 75ºC, expressa em porcentagem de
+extração de metais por tempo
+Na lixiviação ácida em meio oxidante em pH 1,5 a 25ºC, observa-se 20% de
+extração de cobre a partir de 4h de lixiviação, enquanto que a 50ºC obteve-se
+extração de 22% a partir de 3h e de 24% em 4h.
+A 75ºC, observa-se extração de 20% de cobre, 15% de níquel, 17% de zinco
+e 4% de ferro após 4h de lixiviação.
+Como o material proveniente da lixiviação ácida de pH 1,5 a 75ºC (Figura 60)
+ainda apresentava níquel, zinco e ferro acima de 50%, durante a lixiviação ácida em
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4 24
+%de estração de metais
+t(h)
+pH 1,5 e H2O2
+ - 25ºC
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4
+%de extração de metais
+t(h)
+pH 1,5 e H2O2
+ - 50ºC
+0
+20
+40
+60
+80
+100
+0,5 1 2 3 4
+% de extração de metais
+t(h)
+pH 1,5 e H2O2 - 75ºC
+Cobre Níquel Zinco Ferro total
+105
+meio oxidante ocorreu preferencialmente a solubilização destes metais e portanto a
+solubilização de cobre ficou deficiente.
+De uma forma geral, pode-se concluir que a extração de cobre, níquel, zinco e
+ferro tende a ser maior, quanto mais ácido for o meio (pH 0,5) e quanto maior for a
+temperatura (75ºC) e quanto mais tempo o material ficar em contato com o ácido (a
+partir de 4h), conforme mostra o esquema da Figura 65.
+Figura 65 – Esquema da concentração de metais considerando como variáveis
+a temperatura, pH e tempo
+As setas em vermelho indicam o sentido que apresenta maior extração de
+metais, portanto o pH ideal para se obter metais na forma solúvel de sulfato é em pH
+0,5, a 75ºC, após 4h de lixiviação ácida. Este comportamento pode ser observado na
+solubilização de ferro, níquel e zinco. Porém, quando alterado o potencial da reação
+com peróxido de hidrogênio observa-se que a extração do cobre em pH 0,5 a 75ºC a
+partir de 2h de lixiviação apresenta o mesmo comportamento supracitado. Após 2h,
+o cobre presente no material esgotou-se e, portanto, a concentração de cobre
+solúvel permaneceu constante até 4h de lixiviação.
+Conclui-se que o processamento mecânico para recuperação de metais a
+partir de placas de circuito impresso de aparelhos celulares deve seguir a moagem
+com grelha de 4mm; seguida de separação magnética, para se obter um material
+com granulometria abaixo de 2mm.
+Ácido sulfúrico
+pH 0,5
+25ºC
+Alíquotas
+-30min.
+-1h
+-2h
+-3h
+-4h
+-24h
+50ºC
+Alíquotas
+-30min.
+-1h
+-2h
+-3h
+-4h
+75ºC
+Alíquotas
+-30min.
+-1h
+-2h
+-3h
+-4h
+Ácido sulfúrico
+pH 1,0
+25ºC
+Alíquotas
+-30min.
+-1h
+-2h
+-3h
+-4h
+-24h
+50ºC
+Alíquotas
+-30min.
+-1h
+-2h
+-3h
+-4h
+75ºC
+Alíquotas
+-30min.
+-1h
+-2h
+-3h
+-4h
+Ácido sulfúrico
+pH 1,5
+25ºC
+Alíquotas
+-30min.
+-1h
+-2h
+-3h
+-4
+-24h
+50ºC
+Alíquotas
+-30min.
+-1h
+-2h
+-3h
+-4h
+75ºC
+Alíquotas
+-30min.
+-1h
+-2h
+-3h
+-4h
+106
+O material magnético pode ser utilizado em siderurgia na recuperação de
+ferro e níquel, enquanto o material não magnético é submetido ao processamento
+hidrometalúrgico em meio ácido.
+O processamento hidrometalúrgico visando a recuperação de cobre deve
+seguir uma etapa de lixiviação com ácido sulfúrico em pH 0,5 a 75ºC, durante 4h, no
+qual pode-se obter um liquor de lixiviação concentrado em ferro, níquel e zinco, que
+pode passar por etapa de extração por solvente para recuperação seletiva.
+O material não lixiviado desta etapa deve ser submetido a lixiviação com
+ácido sulfúrico em meio oxidante de pH 0,5 a 75ºC, após 2h de lixiviação.
+A partir do liquor da lixiviação ácida em meio oxidante, com 99% do cobre
+pode-se realizar um processo de refino eletrólito para a redução do cobre (72)
+.
+A Figura 66 apresenta um fluxograma do processamento mecânico e
+hidrometalúrgico como rota de recuperação de metais a partir de placas de circuito
+impresso de celulares.
+107
+Figura 66 – Fluxograma do processamento mecânico e hidrometalúrgico como
+rota de recuperação de metais a partir de placas de circuito impresso de
+celulares
+Desmantelamento
+dos celulares
+Baterias, carcaças
+e LCDs
+Placas de circuito
+impresso
+Moinho de
+martelos -
+grelha de 4mm
+Separação
+magnética
+Material
+magnético
+Recuperação de
+ferro e níquel
+Material não
+magnético
+Lixiviação ácida
+H2SO4
+ - pH 0,5
+75ºC após 4h
+Liquor lixiviado
+(Concentrado de ferro,
+zinco e níquel)
+Extração por solvente
+(Recuperação seletiva
+de metais)
+Material não lixiviado
+(Concentrado de cobre)
+Lixiviação ácida em
+meio oxidante
+H2SO4
+ e H2O2
+pH 0,5 - 75ºC após 2h
+Material não
+lixiviado (cerâmico e
+polimérico)
+Liquor
+(Concentrado de
+cobre)
+Eletroobtenção
+108
+5.3.1.1. Microscopia eletrônica de varredura equipado com sistema de
+dispersão de energia
+Com o EDS foi possível fazer a análise semi-quantitativa do oxigênio, do
+cobre, do alumínio, do chumbo, do silício, do estanho, do bário, do cálcio e do níquel
+no material não lixiviado pela solução ácida em meio oxidante. As suas
+concentrações estão apresentadas na Tabela 11
+A porcentagem elementar de carbono não foi considerada, pois foi utilizada
+para fixação da amostra, fita de carbono, o que poderia influenciar na quantidade
+real de carbono presente na amostra.
+Tabela 11 – Porcentagem elementar do material não lixiviado pela solução
+oxidante, analisado por EDS
+Elementos %
+O 21,41
+Al 1,86
+Si 1,95
+S 2,05
+Pb 12,07
+Sn 49,46
+Ca 1,79
+Ba 1,58
+Ni 0,35
+Cu 7,48
+A presença de oxigênio e enxofre indica a formação de sulfatos, o silício está
+associado as fibras de vidro presentes nas placas de circuito impresso, que
+compõem o material não lixiviado.
+O chumbo, estanho, cálcio e bário foram identificados pelo EDS e
+provavelmente estão na forma de sulfatos, pois são encontrados no precipitado
+branco, presente no material não lixiviado pela solução oxidante.
+O cobre, níquel e alumínio estão presentes em baixas concentrações, pois
+corresponde aos metais que possivelmente ainda não foram solubilizados.
+109
+5.4. Valor agregado dos metais presentes nas placas de circuito impresso
+Considerando o valor de cada metal presente nas placas e associando com
+as suas concentrações determinadas após a caracterização é possível estimar a
+quantia que se pode lucrar se recuperar 100% dos metais contidos em 1t de placa
+de circuito impresso, conforme apresentado na Tabela 12
+Tabela 12 – Valores dos metais em uma tonelada de placa de circuito impresso
+Elementos
+% de metais nas
+placas
+Toneladas de
+metais nas
+placas
+US$/t de
+metal
+US$ em 1
+tonelada
+de placa
+Cu 35,50 0,561 8540 4789,41
+Ni 3,41 0,054 23167 1248,01
+Sn 3,39 0,054 23167 1240,69
+Ag 0,21 0,003 1000000 3317,53
+Zn 5,92 0,094 2153,6 201,41
+Pb 1,87 0,030 2270,5 67,07
+Al 0,26 0,004 2288,6 9,40
+Fe 12,49 0,197 18 3,55
+Total 63,30 10877,1
+Do total de 63,3% dos metais presentes nas placas de circuito impresso de
+aparelhos celulares, 35,5% corresponde ao cobre, o que equivale a US$ 4789,41
+por tonelada de placa.
+Considerando que no processo mecânico seguido do hidrometalúrgico
+obteve-se 99% de recuperação de cobre, o valor agregado seria de US$ 4741,51
+por tonelada de placa de circuito impresso processada.
+Se aproximadamente 10.000t de aparelhos celulares são descartados e que
+3550t corresponde ao cobre presente nos aparelhos, se for realizado o
+processamento hidrometalúrgico descrito neste trabalho pode-se estimar que 99%
+do cobre pode ser recuperado e portanto US$ 30.013,83 pode ser obtido somente
+com o cobre (9)
+.
+Contudo ainda deve-se considerar os gastos com equipamento, reagentes e
+energia elétrica para este processamento.
+110
+111
+6. Conclusões
+A partir dos resultados apresentados conclui-se que:
+1. Telefones celulares são compostos por cerca de 18% em peso de
+placas de circuito impresso;
+2. A cominuição em moinho de martelos para liberação e recuperação de
+metais deve ser feita até grelha de 4mm, para se obter um material
+com granulometria menor que 2mm.
+As placas de circuito impresso de celulares são compostas de 63,3% de
+materiais metálicos, 24% de materiais cerâmicos e 12,7% de materiais poliméricos;
+3. Não há concentração significativa de materiais em nenhuma fração
+granulométrica específica;
+4. As placas de circuito impresso de celulares estudadas possuem 63%
+de metais sendo 36% cobre; 12,5% ferro; 6,2% estanho; 2,9% zinco;
+1,5% chumbo; 0,5% alumínio; 0,1% bário; 0,05% cálcio e 0,05% prata;
+5. O processamento hidrometalúrgico visando a recuperação de cobre
+deve seguir uma etapa de lixiviação com ácido sulfúrico em pH 0,5 a
+75ºC durante 4h, no qual pode-se obter um liquor de lixiviação
+contendo 99% de extração de ferro, de níquel e de zinco.
+6. A lixiviação com ácido sulfúrico em meio oxidante e pH 0,5 a 75ºC após
+2h de lixiviação, promove uma recuperação de 99% de cobre.
+
+112
+Referências Bibliográficas
+1. WIDMER, R., KRAPF, H. O. e KTHETRIWAL. D. S., SCHNELLMANN, M.;
+BONI, H. Global perspective on e-waste. Environmental Impact assessment
+review. v. 25, p. 436-458, 2005.
+2. LI, J., SHRIVASTAVA, P.,ZONG, G. e ZHANG, H. C.. Printed circuit board
+recycling: a state of the art survey. IEEE Transaction on electronics packaging
+manufacturing. v. 27, n. 1, p. 33-42, 2004.
+3. MORAES, V. T., ESPINOSA, D. C. R. e TENÓRIO, J. A. S. LCD (liquid
+crystal display) separation aiming recycling. TMS, EPD Congress 2009. In: EPD
+Congress 2009 TMS 2009: São Francisco. p. 1127-1130, 2009.
+4. ESPINOSA, D. C. R.. Reciclagem de baterias de níquel-cádmio. Tese de
+doutorado - Escola Politécnica da Universidade de São Paulo, São Paulo, SP, 2002.
+5. TENÓRIO, J. A. S. e ESPINOSA, D. C. R.. Capítulo 5: Controle
+Ambiental de Resíduos. A, Roméro, M. A., Bruna, G. C. Philippi Jr. Curso de
+Gestão Ambiental. Manole, p. 155-211, 2004.
+6. ROBINSON, B. H. E-waste: an assessment of global production and
+environmental impacts. Science of the environment. v.408, p. 183-191, 2009.
+7. GEYER, R. e BLASS, V. D.. The economics of cell phone reuse and
+recycling. Int. Adv. Manuf. Technol. p. 1-11, 2009.
+8. PARSONS, D. Printed circuit board recycling In Australia. 5ª Australian
+Conference on life cycle assessment. 2006.
+9. BERTUOL, D. A., VEIT, H. e BERNARDES, A. M. ESPINOSA, D. C. R.;
+TENÓRIO, J. A. S. Resíduos urbanos tecnológicos - desafios e tendências. Revista
+metalurgica e metais. v. 61, n 554, p. 167 - 170, 2005.
+10. MENETTI, R. P., CHAVES, A. P. e TENÓRIO, J. A. S..Obtenção de
+concentrados metálicos não-ferrosos a partir de sucata eletrônica. In: Anais do 51º
+Congresso Anual da ABM. Porto Alegre, RS. Associação Brasileira de Metalurgia e
+Materiais. v.4, 1996.
+11. CUI, J. and FORSSBERG, E.. Mechanical recycling of waste electric and
+electronic equipment: a review. Journal of hazardous Materials. v. B99, p. 243 -
+263, 2003.
+113
+12. WILLIAM, J. H. e WILLIAMS, P.T. Separation and recovery of materials
+from scrap printed circuit boards. Resources Conservation and Recycling. v. 51, p.
+691-709. 2007.
+13. TENÓRIO, J. A. S. Production of non ferrous metallic concentrates from
+electronic scrap. Minerals, metals and materials society/AIME (USA). p. 505-509,
+1997.
+14. TOMASEK, K., VADASZ, P. e RABATIN, L. Gold extration from the
+electronical scrap. Slovak Republic. v. 6, n. 2, p. 116-124, 2000.
+15. VEIT, H. M., PEREIRA, C. D. e BERNARDES, A. M. Using mechanical
+processing in recycling a printed wiring boards. JOM. v. 54, n. 6, p. 45-47. 2002.
+16. KOZLOWSKI, J., MAZUREK, T. e CZYZYK, H.. The recovering metals
+and alloys from the electronic scrap. Metall. v. 54, n. 11, p. 645-649, 2000.
+17. ABRACI, Associação Brasileira de Circuitos Impressos. Ampliando
+mercado de placa de circuitos impressos através da certificação. ABRACI.
+[Online] ABRACI. http://www.abraci.org.br/arquivos/ICI.pdf.
+18. ANDRADE, R.. Caracterização e classificação de placas de circuito
+impresso de computadores como resíduos sólidos. Dissertação de Mestrado -
+Unicamp, Campinas, SP, 2002.
+19. Fórmica. Prepeg formiline (FR-4). Fórmica. [Online] [Citado em: 10 de 06
+de 2010.] http://www.formica.com.br/produtos/laminadoprepegs.htm.
+20. BURKE, M.. The gadget scrap heap. ChemWord. v. 4, p. 45-48, 2007.
+21. MECUCCI, A. and SCOTTt, K.. Leaching and electrochemical recovery of
+copper, lead and tin from scrap printed circuit boards. Journal of Chemical
+Technology and Biotechnology. v. 77, p. 449 - 457, 2002.
+22. OGUNNIYI, O., VERMAAK, M. K. G. e GROOT, D. R.. Chemical
+composition and liberation characterization of printed circuti board comminution fines
+for beneficiation investigations. Waste management. v. 29, p. 2140-2146, 2009.
+23. OISHI, T., KOYAMA, K e ALAM, S. TANAKA, M.; LEE, J-C. Recovery of
+high purity copper cathode from printed circuit boards using ammoniacal sulfate or
+chloride solutions. Hydrometallurgy. v. 89, n 1-2, p. 82-87, 2007.
+24. ILYAS, S., ANWAR, M. A. e NIAZI, S. B.. Bioleaching of metals from
+electronic scrap by moderately thermophilic acidophilic bacteria. Hydrometallurgy.
+v. 88, p.180-188, 2007.
+114
+25. ERNST, T., POPP, R. e WOLF, M. ELDIK, R.V. Analysis of eco-relevant
+elements and noble metals in printed wiring boards using AAS, ICP-AES and
+EDXRF. Anal. Bioanal. Chem. v. 375, p. 805-814, 2003.
+26. DARBY, L. e OBARA, L.. Housejold recycling behaviour and attitudes
+towards the disposal of small electrical and electronic equipment. Resources,
+conservation and recycling. v. 44, p. 17-35, 2005.
+27. Abraci. Orientações para fornecimento de componentes para
+montagem de placas de circuito impressos. [Citado em: 29 de 11 de 2010.]
+http://www.abraci.org.br/arquivos/MANUAL_MONTAGEM.PDF.
+28. SHINKUMA, T. e HUONG, N. T. M. The flow of e-waste material in the
+Asian region and a reconsideration of international trade policies on e-waste.
+Environmental impact assessment review. v. 29, p. 25-31, 2009.
+29. CUI, J. e ZHANG, L.. Metallurgical recovery of emtals from electronic
+waste: a review. Journal of hazardous materials. v. 158, p. 228-256, 2008.
+30. DAVENPORT, W. G., KING, M. e SCHLESINGER, M. BISWAS, A. K..
+Extractive metallurgy of copper. Pergamon, 2002.
+31. ESPINOSA, D. C. R. e TENÓRIO, J. A. S. . Caracterização de pilhas e
+baterias proveniente de programa de devolução voluntária. Revista Brasileira de
+Ciências Ambientais , v. 14, p. 33-39, 2009.
+32. SOUZA, C. C. M. B., OLIVEIRA, D. C. e TENÓRIO, J. A. S. .
+Characterization Of Used Alkaline Batteries Powder And Analysis Of Zinc Recovery
+By Acid Leaching. Journal of Power Sources , v. 103, n. 1, p. 120-126, 2001.
+33. VEIT, H. M., BERNARDES, A. M. e Ferreira, J. Z. TENÓRIO, J. A. S. .
+Recovery of copper from printed circuit boards scraps by mechanical processing and
+electrometallurgy. Journal of Hazardous Materials , v. B137, p. 1704-1709, 2006.
+34. BERTUOL, D. A., BERNARDES, A. M. e TENÓRIO, J. A. S. . Spent NiMH
+batteries: Characterization and metal recovery through mechanical processing.
+Journal of Power Sources , v. 160, p. 1465-1470, 2006.
+35. ESPINOSA, D. C. R. e TENÓRIO, J. A. S. . Thermal behavior of mixed
+household portable batteries. In: EPD Congress 2009 TMS 2009, 2009, San
+Grancisco. EPD Congress 2009 TMS 2009, p. 1075-1078, 2009.
+36. SILVA, M. C., ESPINOSA, D. C. R. e TENÓRIO, J. A. S. BERGMANN, C.
+P.; BERNARDES, A. M. Pyrometallurgical processing of Eaf Dusts Through the
+Distillation of Metals. In: Rewas'04 - Global Symposium on Recycling, Waste
+115
+Treatment and Clean Technology,. Warrendale / San Sebastián : TMS / Inasmet,
+2004. v. 3. p. 2785-2787.
+37. GONCALVES, C. K., ESPINOSA, D. C. R. e TENÓRIO, J. A. S. . Efeito
+dos parâmetros de lixiviação no processamento hidrometalúrgico de baterias Ni-Cd.
+In: 10 Seminário de metais não ferrosos, 2002, São Paulo. 10º Seminário de
+metais não ferrosos, p. 24, 2002.
+38. BERTUOL, D. A., BERNARDES, A. M. e TENÓRIO, J. A. S. . Spent NiMH
+batteries The role of selective precipitation in the recovery of valuable metals.
+Journal of Power Sources , v. 193, p. 914-923, 2009.
+39. ESPINOSA, D. C. R. e TENÓRIO, J. A. S. . Precipitação seletiva de
+compostos contendo metais a partir de liquor lixiviado de pilhas e baterias. In: 18º
+Cbecimat Congresso Brasileiro de Ciência e Engenharia de Materiais, 2008,
+Recife. 18º Cbecimat Congresso. Brasileiro de Ciência e Engenharia de Materiais,
+2008, Recife. 18º Cbecimat Congresso Brasileiro de Ciência e Engenharia de
+Materiais, p. 9219-9228, 2008.
+40. TAVARES, V., MAIOLI, M. F. e ESPINOSA, D. C. R. TENÓRIO, J. A. S.
+Recuperação de cobre a partir de placas de circuito impresso obsoletas de
+aparelhos de telefonia celular. In: 18º Cbecimat Congresso Brasileiro de Ciência
+e Engenharia de Materiais. 2008.
+41. ESPINOSA, D. C. R., BERNARDES, A. M. e TENÓRIO, J. A. S. . Brazilian
+policy on battery disposal and its practical effects on battery recycling. Journal of
+Power Sources , v. 137, n. 1, p. 134-139, 2004.
+42. ESPINOSA, D. C. R. e TENÓRIO, J. A. S. . Reciclagem de Baterias:
+Análise da Situação Atual no Brasil, v. 1, p. 14-20, 2004.
+43. BERNARDES, A. M., ESPINOSA, D. C. R. e TENÓRIO, J. A. S. .
+Collection and recycling of portable batteries: a worldwide overview compared to the
+Brazilian Situation. Journal of Power Sources , AMSTERDAM, v. 214, n. 2, p. 586-
+592, 2003.
+44. MENETTI, R. P. e TENÓRIO, J. A. S. . Reciclagem de metais preciosos a
+partir de sucata eletrônica. Metalurgia e Materiais , São Paulo, v. 52, p. 531-534,
+1996.
+45. BERNARDES, A. M., ESPINOSA, D. C. R. e TENÓRIO, J. A. S. .
+Recycling of batteries: a review of current processes and technologies. Journal of
+Power Sources , Estados Unidos, v. 130, n. 1-2, p. 291-298, 2004.
+116
+46. ESPINOSA, D. C. R., BERNARDES, A. M. e TENÓRIO, J. A. S. . An
+overview on the current processes for the recycling of batteries. Journal of Power
+Sources , v. 135, n. 1-2, p. 311-319, 2004.
+47. KAMEOKA, F., ESPINOSA, D. C. R. e TENÓRIO, J. A. S. .
+Sustentabilidade em Indústria Eletrônica: Reciclagem de Cobre e Alumínio de
+Baterias de Ions de Lítio. Tecnologia em Metalurgia e Materiais (São Paulo) , v. 5,
+p. 219-223, 2009.
+48. TENÓRIO, J. A. S. e ESPINOSA, D. C. R. . Recovery of Ni-based alloys
+from spent NiMH batteries. Journal of Power Sources , v. 108, n. 1-2, p. 70-73,
+2002.
+49. ESPINOSA, D. C. R. e TENÓRIO, J. A. S. . Recycling of nickel cadmium
+batteries using coal as reducing agent. Journal of Power Sources , Holanda, v.
+157, n. 1, p. 600-604, 2006.
+50. ESPINOSA, D. C. R. e TENÓRIO, J. A. S. . Recycling of nickel cadmium
+batteries Thermogravimetric behavior of electrodes. Journal of Power Sources , v.
+160, p. 744-751, 2006.
+51. ESPINOSA, D. C. R. e TENÓRIO, J. A. S. . Fundamental aspects of the
+recycling of nickel-cadmium batteries through vacuum distillation. Journal of Power
+Sources , v. 135, n. 1-2, p. 320-326, 2004.
+52. ESPINOSA, D. C. R. e TENÓRIO, J. A. S. . Use of nitrogen in the
+recycling of nickel cadmiun batteries. Journal of Power Sources , v. 136, n. 1, p.
+186-190, 2004.
+53. SOUZA, C. C. M. B. e TENÓRIO, J. A. S. . Simultaneous recovery of zinc
+and manganese dioxide from household alkaline batteries through hydrometallurgical
+processing. Journal of Power Sources , v. 136, n. 1, p. 191-196, 2004.
+54. ARAUJO, M. C. P. B., CHAVES, A. P.; ESPINOSA, D. C. R.; TENÓRIO, J.
+A. S. . Reciclagem de fios e cabos elétricos cabo paralelo. Revista da Escola de
+Minas , v. 61, p. 391-396, 2008.
+55. ARAUJO, M. C. P. B., CHAVES, A. P.; ESPINOSA, D. C. R.; TENÓRIO, J.
+A. S. . Electronic scraps Recovering of valuable materials from parallel wire cables.
+Waste Management (Elmsford) , v. 28, p. 2177-2182, 2008.
+56. VEIT, H. M., SALAMI, A. P. e RODRIGUES, J. S. BERNARDES, A. M.;
+TENÓRIO, J. A. S. . Utilization of magnetic and electrostatic separation in the
+117
+recycling of printed circuit boards scrap. Waste Management (Elmsford) , v. 25, p.
+67-74, 2005.
+57. TAVARES, V., ESPINOSA, D. C. R. e TENÓRIO, J. A. S. . METALS
+RECOVER OF OBSOLETE MOBILE ELECTRONICS. In: EPD Congress 2009 TMS
+2009, 2009, San Francisco. EPD Congress 2009 TMS 2009, p. 2095-1099, 2009.
+58. KYTZIA, S.. Key drivers of the e-waste recycling system: assessing and
+modelling e-waste processing in the informal sector in Delhi. Environmental impact
+assessment review. v. 25, p. 472-491, 2005.
+59. EU. EU Directive 2002/96/EC of the European Parliament and of the
+council of 27 january 2003 on waste electronic equipment (WEEE). 2002.
+60. KHETRIWAL, D. S., KRAEUCHI, P. e WIDMER, R. Producer
+responsability for e-wate management: Key issues for consideration – Learning from
+the Swiss experience. Journal of Environmental Management. v. 9, p. 153-165.
+2009.
+61. AIZAWA, H., YOSHIDA, H. e SAKAI, S. Current results and future
+perspectives for Japanese recycling of home electrical appliances. Resources,
+Conservation and Recycling. v. 52, p. 1399-1410. 2008.
+62. HAGELUKEN, C. Improving metal returns and eco-efficiency in electronics
+recycling – A holistic approach for interface optimisation between pre-processing and
+integrated metals smelting and refining. IEEE International Symposium on
+Electronics and the Environment. p. 218-223. 2006.
+63. BADU, B. R., PARANDE, A. K. e A., BASHA C. Electrical and eletronic
+waste: a global environmental problem. Waste Management & Research. v. 25, p.
+307, 2007.
+64. VEIT, H. M. Emprego do processamento mecânico na reciclagem de
+sucatas de placas de circuito impresso. Dissertação de Mestrado. Universidade
+Federal do Rio Grande do Sul. p. 1-9 e 87, 2001.
+65. KROWINKEL, J. M. e DALMIJN, W. L. Processing of televisions by
+mechanical separation techniques. Implications for future work in product design and
+recycling. In: Fourth International Symposium on Recycling of Metals and
+Engineered Materials. v. 22-25, p. 47-59, 2000.
+66. RHEE, K-I, LEE, J-C and LEE, C-K. JOO, K-H; YOON, J-K; KANG, H-R;
+KIM, Y-S; SOHN, H-J. A recovery of gold from electronic scrap by mechanical
+separation,. acid leaching and electrowinning. TMS - The mineral, Metals &
+118
+Materials Society. Alabama, USA.In: Third International Symposium Recycling of
+Metals and Engineered Materials. p. 469-478, 1999.
+67. TENORIO, J. A. S., MENETTI, R. P., CHAVES, A. P. Production of nonferrous metallic concentrates from electronic scrap. In: Minerals, Metals and
+Materials Society/AIME (USA). p. 505-509, 1997.
+68. HALL, W. J. e WILLIAMS, P. T.. Processing waste printed circuit boards
+for material recovery. Eneergy and Resources Research Institute. v. 33, n. 4, p.43
+- 50, 2007.
+69. LUZ, A. B. da, COSTA, L. S. N. e POSSA, M. V.. ALMEIDA, S. L. M. de.
+Tratamento de Minérios. CETEM/CNPq, p. 155, 174, 187-200, 332-258, 1995.
+70. LUZ, A. B. da, SAMPAIO, J. A. e ALMEIDA, S. L. M. de. Tratamento de
+minérios. 4ª Edição Revisada e Ampliada. Rio de Janeiro : CETEM-MCT, p. 113 -
+117, 168 - 169, 2004.
+71. CHAVES, A. P.; PERES, A. E. C.. Teoria e prática do tratamento de
+minérios: britagem, peneiramento e moagem. Signus, São Paulo, v.3, p. 563,
+511, 523 - 529, 1999.
+72. VEIT, H. M. Reciclagem de cobre de sucatas de placas de circuito
+impresso. Tese de doutorado - Universidade Federal do Rio Grande do Sul, 2005.
+73. CAPONERO, J.. Reciclagem de pneus. Tese de doutorado - Escola
+Politécnica, Universidade de São Paulo, SP, 2002.
+74. HOFFMANN, J. E.. Recovering precious metals from electronic scrap.
+JOM. v. 44, n. 7, p. 43-48, 1992.
+75. VOLSKY, A. e SERGIEVSKAYA, E. Theory of metallurgical processes.
+Mir Publishers: Moscow. p. 12-19, 1978.
+76. JACKSON, E.. Hydrometallurgical extraction and reclamation. Ellis
+Horwood Limited, New York, p. 29-39, 1986.
+77. POURBAIX, M. Atlas of electrochemical equilibria in aqueous
+solutions. Pergammon Press, NY. 1966.
+78. HSC Chenistry. OutoKumpu Research Oy versão 3.02.
+79. GARCIA Jr., O.. Utilização de microorganismos em processos
+biometalúrgicos. I e II Encontros de metalurgia, mineração e materiais da
+Universidade Federal de Minas Gerais. Belo Horizonte, MG, 1992.
+80. EHRLICH, H. L.. Past, present and future of biohydrometallurgy.
+Hydrometallurgy. v. 59, p. 127-134, 2001.
+119
+81. WANG, J., BAI, J. e XU, J. LIANG, B. Bioleaching of metals from printed
+wire boards by Acidithiobacillus ferroxidans and Acidithiobacillus thiooxidants and
+their mixture. Journal of hazardous materials. v. 172, p. 1100-1105. 2009.
+82. OLSON, G. J., BRIERLEY, J. A. e BRIERLEY, C. L. Bioleaching review
+part B: progress in bioleaching: applications of microbial processes by the minerals
+industries. Appl. Microbio. Biotechnol. v. 63, p.249-257, 2003.
+83. CHANCEREL, P. e ROTTER, S..Recycling-oriented characterization of
+small waste electrical and electronic equipment. Waste management. v. 29, p. 2336-
+2352, 2009.
+84. VALDIVIA, D. N. U. Lixiviação bacteriana de minérios refratários de
+ouro. Tese de doutorado. Departamento de Engenharia Mineral da Escola
+Politécnica da Universidade de São Paulo. p. 25-27. 2003.
+85. URENTHA, L. C. Metodologia para pesquisas de lixiviação bacteriana.
+Dissertação de Mestrado da Escola Politécnica da Universidade de São Paulo.
+Departamento de Engenharia de Minas. p. 13 - 17, 1991.
+86. BOSECKER, K.. Bioleaching: metal solubilization by microorganisms.
+IEMS Microbiology Reviews. v. 20, n. 3-4, p. 591-604, 1997.
+87. TREYBAL, R.E. Operaciones de Transferencia de Masa. Mexico, p.
+529-530, 1996.
+88. AGUILAR, M. e CORTINA, J.L.. Solvent extraction and liquid
+membranes: fundamentals and applications in new materials. T.F. Group, New
+York, p.142-143, 2008.
+89. MIHOVILOVIC, E.M.D.. Hidrometalurgia: fundamentos, procesos y
+aplicaciones. Domic, Santiago de Chile. p. 1000, 2001.
+90. ROSENQVIST, T. Principles of extractive metallurgy. MacGraw-Hill,
+New York. p. 332-333, 1974.
+91. ATKINS, P. e LORETTA, J. Princípios de Química: Questionando a
+vida moderna e o meio ambiente. 2ed. Porto Alegre: Bookman, p. 815, 2001.
+92. 2002/96/EC, EU Directive. EU Directive 2002/96/EC of the European
+Parliament and of the Coubcil of 27 January 2003 on waste electrical and
+electronic equipment (WEEE). 2002.
+93. WIDMER, R. et. al. Global perspectives on e-waste. Environmental
+Impact Assessment Review. 2005, Vol. 25, pp. 436-458.
+120
+94. MARTINS, A.H.. Recuperação de estanho e cobre a partir da reciclagem
+de placas de circuito eletrônico de microcomputadores sucatados. Estudos
+Tecnológicos. v. 3, n. 2, p. 124-131, 2007.
+95. AMBIENTE, MINISTÉRIO DO MEIO. Política Nacional de Resíduos
+Sólidos é sancionada pelo presidente Lula.
+<http://www.mma.gov.br/sitio/index.php?ido=ascom.noticiaMMA&idEstrutura=8&codi
+go=6021> . [Online] [Citado em: 07 de agosto de 2010.]
+96. Brasil. Disponível em: <http://www.planalto.gov.br/ccivil_03/_Ato2007-
+2010/2010/Lei/L12305.htm>. Lei nº 12.305, de 2 de agosto de 2010. [Online]
+[Citado em: 07 de agosto de 2010.]
+97. RAHMAN, F., et al. Polybrominated diphenyl ether (PBDE) flame
+retardants. The science of the total environment. v. 275, p.1-17, 2001.
+98. GRAUSE, G., et al. Pyrolysis of tetrabromobisphenol-A containing paper
+laminated printed circuit boards. Chemosphere. v. 71, p.872-878, 2008.
+99. ZUO, X. and ZHANG, L. Green Combustion of Waste Printed Wiring
+Boards. TMS - The Minerals, Metals & Materials Society. p. 1063 - 1068. 2009.
+100. MENAD, N., BJORKMAN, B. e ALLAIN, E. G..Combustion of plastic
+contained in electric and electronic scrap. Resources, conservation and recycling.
+v. 24, p.65-85, 1998.
+101. PARK, Y. J.; FRAY, D. J. Recovery of high purity precious metals from
+printed circuit boards. Journal of Hazardous Materials. v. 164, P. 1152 - 1158,
+2009.
+102. MESKERS, C. E. M. e HAGELUKEN, C.. Closed loop WEEE recycling?
+Challenges and oportunities for a global recycling society. EPD Congress in TMS
+(The Minerals, Metals & Materials Society). p. 1049-1054, 2009.
+103. VOGEL, A. I.. Química analítica qualitativa. Editora Mestre Jou. São
+Paulo, p. 218, 1981. 

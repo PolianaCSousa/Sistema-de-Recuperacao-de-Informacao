@@ -1,1011 +1,579 @@
- INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
-                 DO RIO GRANDE DO SUL
-                   CAMPUS RESTINGA
-        ANÁLISE E DESENVOLVIMENTO DE SISTEMAS
-
-
-
-
-ARMAZENAMENTO SEGURO DE ARQUIVOS ATRAVÉS DA
-COMBINAÇÃO DE CRIPTOGRAFIA ASSIMÉTRICA, SMART
-                 CONTRACTS E IPFS
-
-
-
-
-               GIORDANO GOLLIN BUFFON
-
-
-
-
-                    PORTO ALEGRE
-                        2018
-                  GIORDANO GOLLIN BUFFON
-
-
-
-
-ARMAZENAMENTO SEGURO DE ARQUIVOS ATRAVÉS DA COMBINAÇÃO DE
-     CRIPTOGRAFIA ASSIMÉTRICA, SMART CONTRACTS E IPFS
-
-
-
-                             Trabalho de Conclusão de Curso apresentado
-                             como requisito parcial para obtenção do grau
-                             de Tecnólogo em Análise e Desenvolvimento de
-                             Sistemas do Instituto Federal de Educação, Ciência
-                             e Tecnologia do Rio Grande do Sul - IFRS, Campus
-                             Restinga.
-
-                             Orientador: Prof. Me. Régio Antônio Miche-
-                             lin
-
-
-
-
-                        Porto Alegre
-                            2018
-                        GIORDANO GOLLIN BUFFON
-
-
-
-
-ARMAZENAMENTO SEGURO DE ARQUIVOS ATRAVÉS DA COMBINAÇÃO DE
-     CRIPTOGRAFIA ASSIMÉTRICA, SMART CONTRACTS E IPFS
-
-                                       Trabalho de Conclusão de Curso apresentado
-                                       como requisito parcial para obtenção do grau
-                                       de Tecnólogo em Análise e Desenvolvimento de
-                                       Sistemas do Instituto Federal de Educação, Ciência
-                                       e Tecnologia
-                                       do Rio Grande do Sul - IFRS, Campus Restinga.
-
-
-
-
-   Data de Aprovação: 17/12/2018
-
-
-
-
-                             Banca Examinadora
-
-
-
-           Prof. Me. Régio Antônio Michelin - IFRS - Campus Restinga
-                                   Orientador
-
-
-
-           Prof. Me. Roben Castagna Lunardi- IFRS- Campus Restinga
-                              Membro da Banca
-
-
-
-          Prof. Me. Jezer Machado de Oliveira- IFRS- Campus Restinga
-                              Membro da Banca
-INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO RIO GRANDE DO SUL
-Reitor: Prof. Júlio Xandro Heck
-Pró-Reitora de Ensino: Prof. Lucas Coradini
-Diretor do Campus Restinga: Prof. Gleison Samuel do Nascimento
-Coordenador do Curso de Ciência da Computação: Prof. Régio Antônio Michelin
-Bibliotecária-Chefe do Campus Restinga: Paula Porto Pedone
-Se você pensa que pode ou se pensa que não
-pode, de qualquer forma você está certo.
-
-                               Henry Ford
-                                          RESUMO
-
-Praticidade e segurança no armazenamento e compartilhamento de arquivos são necessidades
-cada vez maiores no dia-a-dia das pessoas e das organizações. As soluções de armazenamento
-de arquivos em nuvem possibilitam o armazenamento e compartilhamento de arquivos com um
-alto grau de eficiência, porém a segurança dessas informações fica dependente do provedor de
-nuvem e não há formas práticas para a realização de auditorias sobre a integridade dos dados.
-Com o intuito de suprir esta lacuna, este trabalho propõe um sistema que emprega as tecnolo-
-gias de criptografia assimétrica, smart contracts e IPFS para armazenar e compartilhar arquivos
-garantindo a data de armazenamento, a segurança e a integridade dos dados. Os arquivos en-
-criptados são armazenados no IPFS, um sistema de arquivos distribuídos peer-to-peer, e as hash
-resultantes são enviadas para a Ethereum Blockchain através dos smart contracts. Neste trabalho
-são apresentadas a solução proposta e avaliações sobre sua aplicação prática.
-
-Palavras-chave: blockchain, smart contracts, ethereum, peer-to-peer, ipfs.
-                                          ABSTRACT
-
-Practical and secure storage and file sharing are increasingly needed by people and organizati-
-ons on a daily basis. Cloud storage solutions enable high-efficiency file storage and sharing, but
-the security of this information is dependent on the cloud provider, and there are no practical
-ways to perform audits of data integrity. In order to fill this gap, this paper proposes a system
-that uses asymmetric cryptography, smart contracts and IPFS technologies to store and share
-files, ensuring data storage, security and data integrity. Encrypted files are stored in IPFS, a
-peer-to-peer distributed file system, and the resulting hashes are sent to Ethereum Blockchain
-through smart contracts. In this paper the proposed solution and evaluations about its practical
-application are presented.
-
-Keywords: blockchain, smart contracts, ethereum, peer-to-peer, ipfs.
-                                      LISTA DE FIGURAS
-
-Figura 1   –   Arquitetura do sistema. . . . . . . . . . . . . . . . . . . . . . . . . . . . .     20
-Figura 2   –   Upload de arquivos - diagrama de sequência. . . . . . . . . . . . . . . . . .       25
-Figura 3   –   Download de arquivos - diagrama de sequência. . . . . . . . . . . . . . . .         26
-Figura 4   –   Compartilhamento de arquivos - diagrama de sequência. . . . . . . . . . . .         28
-Figura 5   –   Resultado experimental do tempo de conversão do arquivo original para buffer.       31
-Figura 6   –   Resultado experimental do tempo de encriptação do buffer. . . . . . . . . .         31
-Figura 7   –   Resultado experimental do tempo de conversão do arquivo encriptado em
-               um buffer. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    32
-Figura 8 –     Resultado experimental do tempo de adição do buffer no IPFS. . . . . . . .          32
-Figura 9 –     Resultado experimental do tempo de envio da hash do arquivo à blockchain.           33
-Figura 10 –    Resultado experimental do tempo total de execução do processo de upload
-               de arquivos. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    34
-Figura 11 –    Resultado experimental do tempo de busca da hash do arquivo encriptado
-               no IPFS. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    35
-Figura 12 –    Resultado experimental do tempo de decriptação do buffer recuperado do
-               IPFS. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   35
-Figura 13 –    Resultado experimental do tempo de conversão do dado decriptado em um
-               arquivo. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    36
-Figura 14 –    Resultado experimental do tempo total de execução do processo de down-
-               load de arquivos. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   37
-Figura 15 –    Resultado experimental do tempo de envio dos dados de compartilhamento
-               à blockchain. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   38
-Figura 16 –    Resultado experimental do tempo total de execução do processo de compar-
-               tilhamento de arquivos. . . . . . . . . . . . . . . . . . . . . . . . . . . . .     38
-Figura 17 –    Resultado experimental do tempo de identificação da conta do usuário na
-               Metamask. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     39
-Figura 18 –    Resultado experimental do tempo de busca da quantidade total de arquivos
-               do usuário na blockchain. . . . . . . . . . . . . . . . . . . . . . . . . . . .     40
-Figura 19 –    Resultado experimental do tempo de recuperação de cada arquivo do usuário
-               da blockchain. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    41
-Figura 20 –    Resultado experimental do tempo total de execução do processo de busca de
-               todos os arquivos do usuário na blockchain. . . . . . . . . . . . . . . . . .       41
-                                  LISTA DE TABELAS
-
-Tabela 1 – Comparação de soluções existentes com o sistema proposto. . . . . . . . . .   15
-                                          SUMÁRIO
-
-1           INTRODUÇÃO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         14
-2           TRABALHOS RELACIONADOS . . . . . . . . . . . . . . . . . . . . .                   15
-3           REFERENCIAL TEÓRICO . . . . . . . . . . . . . . . . . . . . . . . . .              18
-3.1         Blockchain . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   18
-3.2         Ethereum . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   18
-3.3         Smart Contracts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    18
-3.4         IPFS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   19
-4           MODELO CONCEITUAL . . . . . . . . . . . . . . . . . . . . . . . . .                20
-5           SOLUÇÃO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        22
-5.1         IMPLEMENTAÇÃO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          22
-5.1.1       Implementação dos smart contracts . . . . . . . . . . . . . . . . . . . . . .      22
-5.1.2       Controle de acesso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   23
-5.1.3       Ropsten Testnet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    23
-5.1.4       Metamask . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     24
-5.2         PRINCIPAIS FUNCIONALIDADES . . . . . . . . . . . . . . . . . . . . .               24
-5.2.1       Upload de arquivos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     24
-5.2.2       Download de arquivos . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     26
-5.2.3       Compartilhamento de arquivos . . . . . . . . . . . . . . . . . . . . . . . .       27
-6           AVALIAÇÃO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        30
-6.1         RESULTADOS EXPERIMENTAIS DO PROCESSO DE UPLOAD DE AR-
-            QUIVO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    30
-6.2         RESULTADOS EXPERIMENTAIS DO PROCESSO DE DOWNLOAD DE
-            ARQUIVO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      34
-6.3         RESULTADOS EXPERIMENTAIS DO PROCESSO DE COMPARTILHA-
-            MENTO DE ARQUIVO . . . . . . . . . . . . . . . . . . . . . . . . . . . .           36
-6.4         RESULTADOS EXPERIMENTAIS DO PROCESSO DE BUSCA DE TO-
-            DOS OS ARQUIVOS DO USUÁRIO NA BLOCKCHAIN . . . . . . . . .                         39
-7           CONCLUSÕES E TRABALHOS FUTUROS . . . . . . . . . . . . . . .                       42
-REFERÊNCIAS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        43
-                                                                                            14
-
-
-1 INTRODUÇÃO
-
-
-A garantia de disponibilidade e a velocidade acesso à dados é de extrema importância em um
-mundo de grande avanço tecnológico. O número de pessoas conectadas à internet cresce a cada
-dia e, na mesma proporção, o tráfego de informações na rede. Em um modelo centralizado de
-acesso (cliente-servidor), um servidor responde a requisições de clientes de diversos pontos,
-muitas vezes do outro lado do mundo. Essa arquitetura torna o sistema suscetível a ataques
-e falhas no ponto de origem (VIEIRA, 2010). Com isso, rotas e servidores acabam ficando
-sobrecarregados e, muitas vezes, indisponíveis.
-       De outro lado, há a necessidade de segurança dos dados armazenados remotamente.
-Ao enviar e acessar dados sensíveis na internet, o usuário espera que esses dados sejam ar-
-mazenados de forma segura, ficando inacessíveis à outros usuários que não tenham as devidas
-permissões.
-       Em bancos de dados tradicionais, o controle de acesso é feito por uma autoridade desig-
-nada, que é responsável por autenticar e prover acesso de um cliente ao banco de dados. Uma
-vez que a segurança dessa autoridade administradora estiver em risco, todos os dados também
-estarão, podendo ser alterados ou excluídos (RAY, 2017).
-       Em ascensão desde o surgimento do Bitcoin, a tecnologia de blockchain surgiu como
-alternativa ao modelo centralizador de armazenamento de dados e de administração dessas in-
-formações. A principal característica da tecnologia da blockchain é a garantia da integridade e
-transparência dos dados. Cada usuário pode ter a certeza de que os dados estão incorrompidos
-e inalterados desde o momento em que foram registrados na base, bem como podem verificar
-todo o histórico de operações ao longo do tempo (RAY, 2017).
-       Tendo em vista as limitações de segurança nos modelos tradicionais de armazenamento
-de dados e a proposta que a tecnologia de armazenamento distribuído aliado à blockchain ofe-
-rece, o presente trabalho propõe uma solução que emprega as tecnologias de criptografia assi-
-métrica, smart contracts e IPFS para armazenar e compartilhar arquivos garantindo a data de
-armazenamento, a segurança e a integridade dos dados. Os arquivos encriptados são armaze-
-nados no IPFS, um sistema de arquivos distribuídos peer-to-peer, e as hashes resultantes são
-enviadas para a Ethereum Blockchain através dos smart contracts.
-                                                                                               15
-
-
-2 TRABALHOS RELACIONADOS
-
-
-As pesquisas sobre as aplicações da blockchain tem se desenvolvido constantemente no meio
-científico nos últimos anos, devido às características dessa tecnologia e aos benefícios que ela
-pode proporcionar nas mais diversas áreas de atuação. Desta forma, já foram propostos sistemas
-para a área da saúde (COSTA et al., 2018), eleições (MCCORRY et al., 2017), IoT (CHRIS-
-TIDIS; DEVETSIKIOTIS, 2016), educação (GRÄTHER et al., 2018), entre outros. A Tabela 1
-faz um comparativo de soluções existentes com o sistema proposto e, na sequência, são apre-
-sentadas estas soluções.
-
-           Tabela 1 – Comparação de soluções existentes com o sistema proposto.
-                                                                  Permite
-                                             Método de                            Utiliza
-                              Público                         armazenamento
-       Sistema                               proteção                           autoridade
-                               alvo                              de dados
-                                             dos dados                         certificadora
-                                                                dos usuários
-  Sistema proposto           Qualquer        Criptografia
-                                                                   Sim              Não
-   neste trabalho             usuário         assimétrica
-                                             Criptografia
-        DSHR               Setor de saúde       baseada            Sim              Sim
-                                             em atributos
-   Blockchains and
-                             Setor de
-  Smart Contracts                            Criptografia
-                           Internet das                        Não se aplica        Não
-   for the Internet                         homomórfica
-                           Coisas (IoT)
-       of Things
-      Open Vote                             Criptografia de
-                             Eleições                          Não se aplica        Não
-       Network                              curva elíptica
-    Blockchain for
-      Education:             Setor de
-                                            Dados abertos          Sim              Sim
-  Lifelong Learning          educação
-       Passport
-
-
-       Assim como este trabalho, diversas soluções propostas, que também têm a necessidade
-de armazenar uma grande quantidade de dados, fazem o uso do IPFS em conjunto com a block-
-chain. Isso porque o armazenamento de grandes quantidades de dados em blockchains é inviável
-devido aos altos custos de processamento, energia e, consequentemente, de criptomoedas para
-executar essa tarefa. Com a cotação atual do ETH (moeda da Ethereum) - aproximadamente
-$85.75 USD - o custo aproximado por kB armazenado é de $0.27 USD, o que equivale a R$
-1,06. Com o emprego do IPFS, é possível potencializar o uso da tecnologia da blockchain com
-um baixo custo.
-       O DSHR (COSTA et al., 2018) é um protocolo para o compartilhamento seguro de ar-
-                                                                                             16
-
-
-quivos de saúde, que tem como principal contribuição a garantia da integridade dos arquivos,
-que envolve alteração e a deleção indevida destes. Para garantir a segurança e a escalabilidade,
-foram empregados criptografia baseada em atributos (CBA), redes IPFS e blockchain. As prin-
-cipais diferenças para o sistema proposto é que o método de criptografia utilizado pelo DSHR
-exige a participação de autoridades certificadoras online e de atributos. No que se refere ao
-desempenho do armazenamento e compartilhamento de dados, há uma proximidade entre as
-soluções.
-       McCorry, Shahandashti e Hao (MCCORRY et al., 2017) propuseram o Open Vote Network:
-a implementação de um smart contract executado na Ethereum blockchain, que visa garantir a
-privacidade total do voto em eleições, sem a necessidade de qualquer autoridade confiável con-
-troladora. O Open Vote Network não objetiva o armazenamento de arquivos, apenas registra
-votos com o uso de criptografia de curva elíptica e contabiliza o resultado de votações, não
-empregando o IPFS na solução, diferentemente do sistema proposto. Entretanto, o uso de smart
-contracts autônomos sem a necessidade de uma autoridade controladora confiável é uma carac-
-terística semelhante à proposta deste trabalho.
-       Christidis e Devetsikiotis (CHRISTIDIS; DEVETSIKIOTIS, 2016) analisaram como o
-uso de smart contracts e blockchain podem facilitar o compartilhamento de serviços e recursos
-entre dispositivos no setor de Internet das Coisas (IoT), além de permitir a automação verificá-
-vel criptograficamente de fluxos de trabalho existentes. Também destacaram alguns problemas
-que o uso da blockchain pode trazer para o setor, desde a privacidade transacional até o valor
-esperado dos ativos digitalizados negociados na rede. Diferentemente do sistema proposto, o
-setor de IoT não objetiva armazenar arquivos, mas sim registrar ações e informações que per-
-mitam o rastreamento de um determinado item em uma cadeia. Como os dispositivos de IoT
-normalmente dispõe de pouco recurso computacional, a privacidade de informações pode ser
-comprometida, pois técnicas de criptografia tradicionais demandam cálculos intensivos. Como
-alternativa, os autores sugerem o uso da criptografia homomórfica e técnicas de intercalo de uso
-entre blockchains distintas.
-       Blockchain for Education (GRÄTHER et al., 2018) é uma plataforma que propõe o
-uso de blockchain para o armazenamento de certificados educacionais, de modo a garantir sua
-inviolabilidade e disponibilidade a longo prazo. A plataforma pode ser usada por certificado-
-res, alunos e terceiros, como empregadores. Com a participação de autoridades certificadoras,
-os usuários podem atestar a autenticidade de um determinado certificado, ficando esses docu-
-mentos disponíveis no sistema sem nenhum tipo de criptografia. Diferentemente do sistema
-                                                                                         17
-
-
-proposto, Blockchain for Education não tem o objetivo de manter os arquivos privados, pois
-estes contém informações públicas sobre os usuários e devem ser acessados por terceiros para
-cumprir o seu propósito.
-                                                                                              18
-
-
-3 REFERENCIAL TEÓRICO
-
-
-3.1   BLOCKCHAIN
-
-A blockchain é uma estrutura de dados distribuída que é replicada e compartilhada entre os
-membros de uma rede (CHRISTIDIS; DEVETSIKIOTIS, 2016). É composta por uma lista
-crescente de registros, chamados blocos, que são vinculados e protegidos por criptografia. Cada
-um desses blocos contém uma lista de transações, um registro de data e hora de assinatura e um
-hash que aponta para o bloco anterior (PRATHYUSHA et al., 2018), formando uma cadeia.
-       Para ser adicionado na cadeia, um bloco precisa ser validado mutuamente pelos nodos
-vizinhos (os chamados mineiros) na rede, passando por um mecanismo de consenso. Uma vez
-validado, ele é assinado, adicionado na cadeia e retransmitido para a rede; caso seja invalidado,
-é descartado (CHRISTIDIS; DEVETSIKIOTIS, 2016). Ao ser adicionado na cadeia, esse bloco
-torna-se imutável, não permitindo edições ou deleção de qualquer informação contida nele.
-Além disso, toda essa cadeia de informações é pública, o que garante transparência e confiabi-
-lidade, pois pode ser auditada a qualquer momento.
-
-
-3.2   ETHEREUM
-
-Ethereum é uma plataforma open source que foi especificamente construída para executar smart
-contracts utilizando a tecnologia blockchain (CHRISTIDIS; DEVETSIKIOTIS, 2016). Tem por
-objetivo fornecer ao desenvolvedor final um sistema integrado para construção de softwares em
-um paradigma de computação até então inexplorado, capaz de garantir que um acordo será
-executado exatamente como pretendido entre indivíduos consentidos (WOOD, 2014).
-       Na Ethereum, todas as transações de Ether ou de Tokens, assim como as operações
-computacionais realizadas por smart contracts tem um custo de gas, uma unidade de medição
-do trabalho computacional dos mineiros (WOOD, 2014). O gas por sua vez normalmente é
-pago com Gwei, uma fração do Ether (ETH) - a criptomoeda da Ethereum - que tem um valor
-monetário real.
-
-
-3.3   SMART CONTRACTS
-
-Os smart contracts (ou contratos inteligentes) são protocolos de transação informatizados que
-executam os termos de um contrato, como condições de pagamento, penhor, confidencialidade
-e cumprimento, minimizando exceções maliciosas ou acidentais e a necessidade de intermediá-
-                                                                                             19
-
-
-rios confiáveis (SZABO, 1994).
-       No contexto da Ethereum, os smart contracts são escritos como códigos de programação
-utilizando-se a linguagem Solidity (que é baseada em C++, Python e Javascript) e, uma vez
-escritos e compilados, são imutáveis. Eles operam como atores autônomos, cujo comportamento
-é completamente previsível. Como tal, eles podem ser confiáveis para impulsionar qualquer
-lógica que possa ser expressa como uma função de entradas de dados na cadeia, desde que
-os dados que eles precisam gerenciar estejam dentro do seu próprio alcance (CHRISTIDIS;
-DEVETSIKIOTIS, 2016).
-
-
-3.4   IPFS
-
-O IPFS (InterPlanetary File System) é um sistema de arquivos distribuídos peer-to-peer, que
-se propõe como alternativa ao paradigma centralizado cliente-servidor do modelo HTTP (BE-
-NET, 2014). No IPFS, cada navegador pode ser um nó na rede, que insere e armazena dados.
-Ao tentar acessar um arquivo que não está armazenado localmente, o peer faz a busca em seus
-“vizinhos” mais próximos sem, necessariamente, ter que requisitar à um data center muito dis-
-tante. Assim, uma rede de websites completamente descentralizados tem o potencial de acelerar
-a transferência de arquivos e os tempos de streaming (PRATHYUSHA et al., 2018).
-       No IPFS é possível ler e adicionar arquivos, que são referenciados na rede por uma hash
-única calculada a partir de seu conteúdo. Essa característica garante a imutabilidade do arquivo
-em relação à uma determinada hash, visto que a mudança de um bit do seu conteúdo gera uma
-hash diferente da original, e evita a duplicidade, pois arquivos idênticos são referenciados por
-uma mesma hash.
-                                                                                            20
-
-
-4 MODELO CONCEITUAL
-
-
-Buscando garantir a disponibilidade, a segurança e a autenticidade e permitir o compartilha-
-mento dos dados armazenados por um usuário, a proposta do sistema utiliza a combinação
-entre o IPFS, onde os dados são armazenados, e a blockchain através dos smart contracts, onde
-as hashs dos arquivos encriptados são armazenadas e gerenciadas. Esta arquitetura permite o
-acesso destes dados de qualquer local através da internet, uma vez que ficam distribuídos, mas
-somente por usuários autorizados, de acordo com o controle de acesso implementado no smart
-contract.
-       Há também a opção de compartilhamento dos dados com outros usuários que têm acesso
-ao sistema, todos eles criptografados com as chaves públicas de cada usuário, utilizando-se
-criptografia assimétrica. Após a hash do arquivo ser armazenada na blockchain, o smart contract
-é o responsável por permitir o compartilhamento e o gerenciamento das propriedades das hashs
-dos arquivos entre os usuários.
-       A Figura 1 apresenta a estrutura da solução proposta, mostrando os principais módulos
-e tecnologias empregadas para o funcionamento do sistema.
-
-                              Figura 1 – Arquitetura do sistema.
-
-
-
-
-       A interação do usuário com o sistema se dá pelo front-end desenvolvido em React (1),
-onde o usuário pode fazer upload de novos arquivos, compartilhar com outros usuários e fazer
-download desses arquivos.
-       Ao adicionar ou compartilhar arquivos, o usuário precisa pagar aos mineradores da Ethe-
-reum blockchain pelas operações executadas. A Metamask (2) é uma carteira Ethereum que
-permite a comunicação direta entre a blockchain e o usuário para que o mesmo possa aceitar ou
-                                                                                         21
-
-
-recusar transações, além de fornecer informações para o front-end React (1) sobre o endereço
-atual da conta usada pelo usuário para operar com a blockchain.
-       O front-end React comunica-se com o IPFS (5) através da Infura (4), uma API que
-proporciona uma eficiente comunicação entre os sistemas, e com a Ethereum (3) por meio
-da biblioteca web3.js. Quando o usuário adiciona um novo arquivo no sistema, o front-end
-(1) o encripta e envia o código inelegível resultante para o IPFS (5), que retorna uma hash
-identificando esse código na rede. Na sequência, a hash do novo arquivo é enviada à Ethereum
-blockchain (4), onde ficará armazenada com segurança. Para fazer o download do arquivo, o
-fluxo é invertido.
-                                                                                           22
-
-
-5 SOLUÇÃO
-
-
-A implementação do sistema foi feita com base em tecnologias atuais, conforme a definição do
-modelo conceitual apresentado na seção 4. Esta seção apresenta em detalhes a implementação
-e as principais funcionalidades propostas pelo sistema.
-
-
-5.1     IMPLEMENTAÇÃO
-
-Os dados enviados à Ethereum blockchain são visíveis para qualquer usuário, característica in-
-trínseca da tecnologia blockchain. Deste modo, o armazenamento de dados sensíveis (no caso
-da proposta deste trabalho, de arquivos privados) fica prejudicado. Mesmo que fossem armaze-
-nados na blockchain apenas as hashes do IPFS correspondentes aos arquivos, qualquer usuário
-externo ao sistema poderia ter acesso a esses dados e chegar até os arquivos originais. Tam-
-bém por essa característica, qualquer algoritmo de criptografia que pudesse ser implementado
-em um smart contract não surtiria o efeito pretendido, pois os dados originais enviados como
-parâmetros ainda assim estariam expostos.
-         Como medida para garantir a segurança e a privacidade dos arquivos armazenados no
-sistema, adotou-se o algoritmo de criptografia assimétrica RSA, também conhecida como crip-
-tografia de chave pública. Este algoritmo utiliza-se de duas chaves: a chave pública e a chave
-privada. A chave pública é utilizada para criptografar os dados, que somente poderão ser de-
-criptografados pela chave privada. A chave privada deve ser mantida em sigilo pelo detentor,
-ao contrário da chave pública, que pode ser divulgada sem prejuízos à segurança das informa-
-ções. Deste modo, o mecanismo de criptografia assimétrica foi aplicado ao arquivo original no
-front-end React, antes mesmo do envio deste à rede IPFS. Essa abordagem proporciona maior
-segurança ao garantir que, mesmo que um usuário externo ao sistema tiver acesso à hash do ar-
-quivo na blockchain e buscar no IPFS o arquivo armazenado, ele não será capaz de decodificar
-o seu conteúdo.
-
-5.1.1    Implementação dos smart contracts
-
-Os smart contracts podem ser escritos em qualquer editor de texto e compilados usando ter-
-minais em máquinas locais. Como forma alternativa, há o Remix, um sistema online onde é
-possível criar o código e compilar os contratos, opção utilizada neste trabalho. Ao fazer im-
-plantação (deploy), o smart contract é adicionado à Ethereum blockchain e recebe um endereço
-específico na rede, através do qual é possível acessá-lo e interagir com o mesmo.
-                                                                                              23
-
-
-        Para utilizar o smart contract em uma aplicação, é preciso ter o seu endereço e a sua
-ABI - Application Binary Interface. A ABI é um arquivo JSON que descreve o contrato imple-
-mentado e suas funções, permitindo ao desenvolvedor contextualizar o contrato e chamar suas
-funções. Na presente solução proposta, essas informações são utilizadas pelo front-end React
-para acessar o smart contract na blockchain por meio de métodos disponibilizados pela API
-da web3.js, uma coleção de bibliotecas que permitem a interação com a Ethereum usando uma
-conexão HTTP.
-
-5.1.2   Controle de acesso
-
-Uma das características importantes da privacidade das informações é o controle de acesso
-através do smart contract, evitando que, via front-end da aplicação, um usuário não cadastrado
-possa acessar o sistema - embora pela blockchain seja possível visualizar os dados armazenados.
-Deste modo, optou-se por utilizar um meio simplista para fazer este controle: o smart contract
-foi implementado com uma lista de usuários já cadastrados, o que impede a adição de novos
-usuários ao sistema. Essa abordagem é limitante para a maior parte das aplicações reais, mas
-foi suficiente para o demonstrar a solução proposta.
-        A lista de usuários cadastrados no smart contract contém o nome, o que facilita a identi-
-ficação do usuário, uma vez que o endereço da conta é muito extenso e de difícil memorização;
-o endereço da conta, este que é a chave de acesso às funções do smart contract: somente usuários
-que estejam na lista conseguem chamá-las; e a chave pública (previamente gerada) do usuário,
-que é utilizada para encriptar os arquivos, tanto ao adicionar um novo quanto ao compartilhar
-um existente com outros usuários. Deste modo, não é preciso informar a chave pública de um
-usuário em nenhum momento durante o uso do sistema.
-
-5.1.3   Ropsten Testnet
-
-Para evitar custos monetários na interação com a Ethereum blockchain durante o desenvolvi-
-mento do sistema, utilizou-se a Ropsten Ethereum. Esta rede, mais conhecida como Ropsten
-Testnet, é uma rede que executa o mesmo protocolo da rede principal da Ethereum (Mainnet),
-porém com a diferença de que nesta as criptomoedas não tem nenhum valor real. Todas as
-transações e operações computacionais realizadas por smart contracts também são pagas com
-gas, assim como na Mainnet, entretanto é possível requisitar Ether das Faucets - carteiras da
-Ethereum que repassam Ether gratuitamente mediante requisição.
-                                                                                            24
-
-
-5.1.4    Metamask
-
-Todas as operações com a blockchain requerem um endereço de uma carteira na blockchain,
-conhecidas como wallets, e que são utilizadas para enviar e receber as criptomoedas. Ela tam-
-bém serve para checar o saldo, além de armazenar chaves públicas e privadas e interagir com
-a blockchain. No sistema proposto, foi utilizado a Metamask, uma carteira Ether que pode ser
-instalado como uma extensão nos navegadores Google Chrome e Mozilla Firefox.
-         A cada interação com a blockchain em que hajam custos - transações ou operações
-computacionais, como a adição de novos arquivos ou o compartilhamento dos existentes com
-outros usuários - a Metamask atua como meio para o usuário confirmar ou rejeitar os valores
-envolvidos na operação, podendo inclusive aumentá-los ou diminui-los. Essas ações impactam
-diretamente no desempenho da operação, uma vez que o valor pago aos mineradores por uma
-determinada operação é o "atrativo"para eles concentrarem mais ou menos esforço para concluir
-o trabalho de mineração e adicionar as transações na blockchain.
-         Além de atuar como meio para o usuário aceitar ou recusar o pagamento por transações,
-a Metamask também é o meio pelo qual o usuário gerencia sua carteira, podendo utilizar diver-
-sas contas e definir uma para ser utilizada no momento pelas aplicações em operações com a
-blockchain. Para fazer requisições, é preciso sempre enviar à blockchain o endereço da carteira
-que requisitante, e é através do Metamask que o front-end em React é capaz de detectar a conta
-que o usuário está usando no momento.
-
-
-5.2     PRINCIPAIS FUNCIONALIDADES
-
-5.2.1    Upload de arquivos
-
-Para armazenar seus arquivos com segurança, o usuário seleciona a opção de upload no sistema
-e seleciona um arquivo do seu computador, conforme é apresentado em detalhes na Figura 2.
-Ao carregar o arquivo no navegador, o método convertToBuffer(file) é executado e faz a con-
-versão do arquivo em um buffer. Este procedimento é necessário para adicionar o arquivo à
-rede do IPFS. Na sequência, por meio da web3.js, o método getAccounts() é utilizado para
-obter o endereço da conta em uso na Metamask, informação que servirá de parâmetro para
-getUser(account). Este método acessa o smart contract para buscar a chave pública do usuário.
-         Com a chave pública do usuário, o sistema faz a criptografia do buffer do arquivo em
-encrypt(pubKey, buffer). Em seguida, o dado criptografado é convertido novamente em um buf-
-fer em convertToBuffer(fileEncrypted) e enviado à rede do IPFS através da API da Infura, por
-                                                                                         25
-
-
-                   Figura 2 – Upload de arquivos - diagrama de sequência.
-
-
-
-
-meio do ipfsAdd(buffer), que estende o chamado ao IPFS com addFile(buffer). Como retorno
-desse chamado, a Infura encaminha a hash gerada pelo IPFS ao front-end React, que executa o
-método addFile(hash, name), enviando o arquivo para a blockchain.
-       Ao receber a requisição de armazenamento de informações - execução de um método do
-smart contract que tem um custo de processamento - a Ethereum chama confirmTransaction()
-na Metamask, que então abre um pop-up na tela para que o usuário possa confirmar ou recusar
-a transação. Se o usuário aceitar a transação, a hash e o nome do arquivo são armazenados na
-blockchain, ligados ao endereço da sua conta. Caso contrário, a operação é cancelada.
-                                                                                          26
-
-
-5.2.2   Download de arquivos
-
-O download de arquivos é a meio pelo qual o usuário acessa o conteúdo dos seus arquivos
-armazenados no sistema. Esta funcionalidade está representada na Figura 3.
-
-                  Figura 3 – Download de arquivos - diagrama de sequência.
-
-
-
-
-        Ao acessar o sistema, o método getAllMyFiles() é executado no front-end React, desen-
-cadeando outros métodos que serão responsáveis por apresentar ao usuário todos os arquivos
-aos quais ele tem acesso. O primeiro deles é o getAccounts(), que obtém o endereço da conta
-em uso na Metamask. Em seguida, getFilesUser() é chamado no smart contract e retorna uma
-                                                                                              27
-
-
-lista com os identificadores de todos os arquivos aos quais o usuário tem acesso. Com essa
-lista, o front-end React cria um loop para requisitar ao smart contract cada um deles, através
-do getFile(id). Essa abordagem se fez necessária porque, até o presente momento, uma função
-em Solidity não pode retornar listas com objetos complexos, apenas tipos primitivos (mesmo
-assim, com algumas limitações), impossibilitando que com apenas uma requisição o usuário
-pudesse ter acesso a todas as informações de todos os seus arquivos.
-        Após ter acesso aos seus arquivos, o usuário faz upload de um arquivo .txt contendo
-a sua chave privada em uploadPrivKey(), a qual é lida pelo método readPrivKey(file). Em se-
-guida, o usuário seleciona o arquivo e clica na opção de download, que executa downloadFile()
-no front-end React. O método ipfsGet(hash) é chamado na Infura, que estende ao IPFS com
-getFile(hash) enviando como parâmetro a hash do arquivo armazenada na blockchain. Como
-retorno do método, o front-end recebe um buffer do arquivo encriptado. O processo segue com
-a decriptação do buffer em decrypt(privKey, fileEncrypted), usando a chave privada fornecida
-pelo usuário anteriormente. Para finalizar, convertToFile(buffer) é utilizado para conversão do
-buffer em um arquivo, e o download é concluído.
-
-5.2.3   Compartilhamento de arquivos
-
-Compartilhar os arquivos que o usuário tem acesso com outros usuários cadastrados é uma
-das principais funcionalidades do sistema. A parte inicial do processo de compartilhamento
-de arquivos é muito semelhante à da funcionalidade de download de arquivos, conforme o
-detalhamento da Figura 4. Para apresentar todos os arquivos aos quais o usuário tem acesso, o
-seguinte fluxo é seguido: ao acessar o sistema, o front-end React detecta o endereço da conta que
-o usuário está utilizando, faz um chamado ao smart contract para obter a lista de identificadores
-dos arquivos aos quais o usuário tem acesso e cria um loop para buscar cada um deles na
-blockchain. Em seguida, o usuário faz upload de um arquivo .txt contendo a sua chave privada
-e o front-end faz a leitura desse arquivo. Esta chave será utilizada na sequência, durante o
-procedimento de decriptação do arquivo.
-        A partir deste ponto, as funcionalidades se diferem. O usuário seleciona o arquivo e
-digita o endereço da conta do usuário com o qual ele deseja fazer o compartilhamento (ente-
-rAccountForShare()) e o sistema faz uma validação se a sequência digitada corresponde à um
-endereço válido da Ethereum através do validateAccount(account).
-        Com o método shareFile() o front-end React dá início ao principal procedimento da
-funcionalidade de compartilhamento de arquivos. Este procedimento consiste no acesso ao buf-
-                                                                   28
-
-
-Figura 4 – Compartilhamento de arquivos - diagrama de sequência.
-                                                                                           29
-
-
-fer do arquivo codificado através da Infura com o método ipfsGet(hash) estendido ao IPFS
-com getFile(hash), enviando como parâmetro a hash armazenada na blockchain; decriptação
-do código com a chave privada do usuário com o método decrypt(privKey, fileEncrypted);
-busca da chave pública do usuário que receberá o acesso ao arquivo na blockchain, execu-
-tando getUser(account) no smart contract com o endereço digitado como parâmetro; encrip-
-tação do buffer do arquivo original com a chave pública do usuário que acaba de receber o
-acesso, em encrypt(pubKey, buffer); conversão do dado criptografado em um buffer em con-
-vertToBuffer(fileEncrypted); adição deste buffer no IPFS, através de ipfsAdd(buffer) na Infura
-e addFile(buffer) no IPFS; chamado do método shareFile(id, account, hash) no smart contract,
-que recebe como parâmetros o identificador do arquivo a ser compartilhado na blockchain, o
-endereço da conta do usuário que receberá o acesso e a hash da codificação do arquivo original
-com a sua chave pública; confirmação da transação pelo confirmTransaction(), chamado que
-parte da Ethereum para a Metamask e é estendido para o usuário através de um pop-up na tela
-para que o usuário possa confirmar ou recusar a transação.
-                                                                                            30
-
-
-6 AVALIAÇÃO
-
-
-O sistema proposto utiliza blockchain, IPFS e criptografia para garantir a segurança. Para ava-
-liar o impacto do tamanho dos arquivos no desempenho do sistema durante os processos de
-upload, download e compartilhamento de arquivos, foram executados testes utilizando-se cinco
-arquivos com a extensão .txt de tamanhos 1kB, 10kB, 100kB, 1MB e 10MB. No processo de
-busca dos arquivos do usuário na blockchain foram executados testes com 10, 50 e 100 arquivos
-armazenados, objetivando-se avaliar o impacto da quantidade de arquivos armazenada no tempo
-de carregamento inicial do sistema. Cada teste foi executado 15 vezes em um computador com
-processador Intel Core i5 e 3,7 GB de RAM, sistema operacional Ubuntu 18.04.1 LTS, no na-
-vegador Google Chrome e com conexão à internet com velocidade de 48,04 Mbps de download
-e 25,89 Mbps de upload. Os gráficos apresentados a seguir foram construídos com a média de
-tempo dos resultados obtidos de cada conjunto.
-
-
-6.1   RESULTADOS EXPERIMENTAIS DO PROCESSO DE UPLOAD DE ARQUIVO
-
-No processo de upload de arquivo, foram avaliados os tempos de execução das etapas de conver-
-são do arquivo em um buffer, encriptação do buffer do arquivo original, conversão do arquivo
-encriptado novamente em um buffer, adição deste buffer no IPFS e envio da hash resultante à
-blockchain, bem como o tempo total de execução da funcionalidade de upload do arquivo.
-       Na etapa de conversão do arquivo original para um buffer ilustrado pela Figura 5, o
-arquivo de 1kB teve um tempo médio de 115 ms, o de 10kB 126 ms, o de 100kB 129 ms, o
-de 1MB 143 ms e o de 10MB 158 ms. Os resultados obtidos revelam que houve um aumento
-no tempo de conversão à medida que o tamanho do arquivo aumentou, porém não na mesma
-proporção.
-       Durante a etapa de encriptação do buffer do arquivo original, ficou evidente o impacto
-do tamanho do arquivo no tempo de execução da codificação, como ilustrado na Figura 6. Partiu
-de 82 ms no arquivo de 1kB, passando por 114 ms no de 10kB, 174 ms no de 100kB, 556 ms
-no de 1MB e saltou para 9.074 ms no arquivo de 10MB - um aumento de 8,52 s em relação ao
-arquivo de 1MB, o que representou 16,32 vezes. Diante dos números apresentados, foi possível
-concluir que o a etapa upload de arquivos maiores do que 1MB pode prejudicar o desempenho
-do sistema, com percepção direta do usuário.
-       O tempo transcorrido durante a etapa de conversão do arquivo encriptado em um buffer
-também apresentou um aumento à medida que se aumentou o tamanho do arquivo, tendência
-                                                                                         31
-
-
-  Figura 5 – Resultado experimental do tempo de conversão do arquivo original para buffer.
-
-
-
-
-            Figura 6 – Resultado experimental do tempo de encriptação do buffer.
-
-
-
-
-semelhante à etapa anterior. Entretanto, a diferença entre o arquivo de 1MB e o de 10MB foi
-de apenas 0,78 s, um impacto muito menor no desempenho ainda quando comparado à etapa
-de encriptação. Os resultados obtidos foram: 53 ms de conversão para o arquivo de 1kB, 60 ms
-para o de 10kB, 67 ms para o de 100kB, 169 ms para o de 1MB e 949 ms para o de 10MB,
-conforme apresentado na Figura 7.
-       Nos testes executados durante a etapa de adição do buffer do arquivo encriptado no
-IPFS, apresentados na Figura 8, obtiveram-se os tempos de 3.128 ms para o arquivo de 1kB,
-3.586 ms para o de de 10kB, 3.990 ms para o de 100kB, 4.924 ms para o de 1MB e 9.829 ms
-                                                                                         32
-
-
-Figura 7 – Resultado experimental do tempo de conversão do arquivo encriptado em um buffer.
-
-
-
-
-para o de 10MB. Esta etapa depende, quase que na sua totalidade, de um serviço externo ao
-front-end desenvolvido. Com isso, o tempo de duração da adição pode variar de acordo com
-a velocidade de conexão à internet que o usuário dispõe e com a disponibilidade e velocidade
-de resposta da Infura e do IPFS. De qualquer forma, foi possível observar-se que houve um
-aumento significativo no tempo de duração da etapa quando o tamanho do arquivo foi superior
-a 1MB.
-
-          Figura 8 – Resultado experimental do tempo de adição do buffer no IPFS.
-
-
-
-
-       Durante a etapa de envio da hash do arquivo à blockchain, os tempos de duração men-
-                                                                                            33
-
-
-surados foram de 4.490 ms para o arquivo de 1kB, 5.039 ms para o de de 10kB, 4.717 ms
-para o de 100kB, 4.905 ms para o de 1MB e 5.006 ms para o de 10MB, conforme a Figura 9.
-Diferentemente das tendências dos resultados obtidos em outras etapas, os testes executados de-
-monstraram que o tempo de envio da hash do arquivo à blockchain não tem relação direta com
-o tamanho do arquivo adicionado. E isto é compreensível, uma vez que, independentemente do
-conteúdo e do tamanho do arquivo adicionado ao IPFS, a hash resultante é sempre do mesmo
-tamanho. Com isso, o valor sugerido de pagamento para a mineração na blockchain também
-é sempre o mesmo, porém pode ser alterado pelo usuário, o que provavelmente modificará os
-tempos. Da mesma forma que a etapa de adição do buffer ao IPFS, o tempo de envio da hash
-à blockchain é dependente da performance de um sistema externo e da conexão com a rede so-
-mado a interação com o usuário - através da Metamask, com o aumento ou diminuição do valor
-ofertado para mineração e com a aprovação ou rejeição das transações na Ethereum blockchain.
-
-   Figura 9 – Resultado experimental do tempo de envio da hash do arquivo à blockchain.
-
-
-
-
-       Ao encerrar o processo de upload de arquivos no sistema, obtiveram-se os tempos totais
-de execução para cada caso de teste, apresentados na Figura 10. O arquivo de 1kB apresentou
-um tempo médio total de 8.662 ms, o de 10kB 9.856 ms, o de 100kB 10.603 ms, o de 1MB
-12.145 ms e o de 10MB 27.803 ms. Com os resultados obtidos, foi possível observar-se que
-o desempenho da funcionalidade de upload variou relativamente pouco para arquivos de até
-aproximadamente 1MB - 3,48 s foi a diferença de tempo de um arquivo de 1kB para um arquivo
-de 1MB. Já para arquivos com tamanhos superiores a 1MB, o tempo de conclusão tendeu a subir
-consideravelmente - 15,66 s foi a diferença de tempo de um arquivo de 1MB para um arquivo
-                                                                                        34
-
-
-de 10MB, o que representou um aumento de aproximadamente 228,93%.
-
-Figura 10 – Resultado experimental do tempo total de execução do processo de upload de ar-
-            quivos.
-
-
-
-
-6.2   RESULTADOS EXPERIMENTAIS DO PROCESSO DE DOWNLOAD DE ARQUIVO
-
-No processo de download de arquivo, foram avaliados os tempos de execução das etapas de
-busca da hash do arquivo encriptado no IPFS, decriptação do buffer recuperado e conversão
-deste dado decriptado em um arquivo, bem como o tempo total de execução do processo.
-       Na etapa de busca da hash do arquivo encriptado no IPFS ilustrado pela Figura 11, o
-arquivo de 1kB apresentou um tempo médio de 177 ms, o de 10kB 179 ms, o de 100kB 200
-ms, o de 1MB 1.247 ms e o de 10MB 7.569 ms. Como dependem do desempenho de um
-sistema externo ao front-end desenvolvido, os resultados obtidos podem sofrer consideráveis
-variações, todavia demonstraram que houve um impacto do tamanho do arquivo recuperado do
-IPFS no tempo de execução. Isto ocorreu porque, quanto maior o arquivo armazenado, maior
-será também o dado resultante da sua encriptação.
-       Durante a etapa de decriptação do buffer recuperado do IPFS, os tempos de duração
-mensurados foram de 42 ms para o arquivo de 1kB, 43 ms para o de de 10kB, 94 ms para o de
-100kB, 418 ms para o de 1MB e 4.318 ms para o de 10MB, conforme a Figura 12. Da mesma
-forma que na etapa de encriptação do arquivo, observou-se um aumento significativo do tempo
-de execução da etapa de decriptação para arquivos maiores do que 1MB: 3,9 s foi a diferença
-                                                                                          35
-
-
-Figura 11 – Resultado experimental do tempo de busca da hash do arquivo encriptado no IPFS.
-
-
-
-
-de tempo de um arquivo de 1MB para um arquivo de 10MB, o que representou um aumento de
-aproximadamente 1.033%.
-
- Figura 12 – Resultado experimental do tempo de decriptação do buffer recuperado do IPFS.
-
-
-
-
-       Nos testes executados durante a etapa de conversão do dado decriptado em um arquivo,
-apresentados na Figura 13, obtiveram-se os tempos de 14 ms para o arquivo de 1kB, 15 ms para
-o de de 10kB, 17 ms para o de 100kB, 18 ms para o de 1MB e 79 ms para o de 10MB. Os
-resultados obtidos revelam que, para arquivos com tamanho de até 1MB, o tempo de execução
-da etapa de reconstrução do arquivo praticamente não varia. Para arquivos maiores aqui repre-
-                                                                                            36
-
-
-sentados pelo arquivo de 10MB, o tempo de execução teve um aumento de 61 ms em relação
-ao arquivo de 1MB, porém este é inexpressivo em relação ao tempo total do processo.
-
-Figura 13 – Resultado experimental do tempo de conversão do dado decriptado em um arquivo.
-
-
-
-
-       Ao encerrar o processo de download de arquivos no sistema, obtiveram-se os tempos
-totais de execução para cada caso de teste, apresentados na Figura 14. O arquivo de 1kB apre-
-sentou um tempo médio total de 293 ms, o de 10kB 304 ms, o de 100kB 382 ms, o de 1MB
-1.787 ms e o de 10MB 13.213 ms. Da mesma forma que foram constatados pelas etapas do
-processo, observou-se um impacto significativo quando o tamanho do arquivo superou 1MB. A
-diferença entre o arquivo de 1MB e o arquivo de 10MB ficou na casa dos 11,43 s, um aumento
-de aproximadamente 7,39 vezes.
-
-
-6.3   RESULTADOS EXPERIMENTAIS DO PROCESSO DE COMPARTILHAMENTO DE
-      ARQUIVO
-
-No processo de compartilhamento de arquivos, foram avaliados o tempo de execução da etapa
-de envio dos dados de compartilhamento à blockchain e o tempo total de execução do processo.
-As demais etapas que compõe este processo já foram mensuradas nos processos anteriores e,
-por isso, não foram novamente apresentadas, mas estão compreendidas nos resultados do tempo
-total de execução. São elas: busca da hash do arquivo encriptado no IPFS, decriptação do buffer
-recuperado do IPFS, encriptação do buffer com chave pública do usuário que receberá o acesso,
-conversão do arquivo encriptado em um buffer e adição do buffer no IPFS.
-                                                                                          37
-
-
-Figura 14 – Resultado experimental do tempo total de execução do processo de download de
-            arquivos.
-
-
-
-
-       Durante a etapa de envio dos dados de compartilhamento à blockchain, os tempos de
-duração mensurados foram de 4.465 ms para o arquivo de 1kB, 4.563 ms para o de de 10kB,
-4.557 ms para o de 100kB, 4.611 ms para o de 1MB e 4.607 ms para o de 10MB, conforme a Fi-
-gura 15. Assim como verificou-se na etapa de envio da hash do arquivo à blockchain (processo
-de upload), o tempo de execução da etapa de envio dos dados de compartilhamento à blockchain
-não sofreu impactos relacionados ao tamanho do arquivo original devido à arquitetura do sis-
-tema proposto. Independentemente do tamanho do arquivo, o tamanho dos dados enviados para
-a função correspondente no smart contract e a complexidade para executá-la serão sempre do
-mesmo grau. De qualquer modo, é importante frisar que estas etapas dependem do desempenho
-de um sistema externo ao front-end desenvolvido, sofrendo variações de acordo com a conexão
-com a rede, com a interação com o usuário e com o valor pago pela execução da operação na
-Ethereum blockchain.
-       O tempo total de execução do processo de compartilhamento de arquivos, que com-
-preende algumas etapas em comum com os processos de upload e download de arquivos, está
-representado na Figura 16. Obtiveram-se os tempos de 8.200 ms para o arquivo de 1kB, 8.654
-ms para o de de 10kB, 9.093 ms para o de 100kB, 11.587 ms para o de 1MB e 33.080 ms para
-o de 10MB. Com os resultados obtidos, observou-se que o impacto do tamanho do arquivo em
-relação ao tempo de execução do processo foi significativo, especialmente para arquivos maio-
-res do que 1MB. A diferença de tempo entre o arquivo de 1kB e o de 1MB foi de 3,39 s, o que
-                                                                                        38
-
-
-Figura 15 – Resultado experimental do tempo de envio dos dados de compartilhamento à block-
-            chain.
-
-
-
-
-representa 140,30% de aumento. Já a diferença de tempo entre o arquivo de 1kB e o de 1MB
-foi de 21,49 s, o que representa 285,49% de aumento.
-
-Figura 16 – Resultado experimental do tempo total de execução do processo de compartilha-
-            mento de arquivos.
-                                                                                            39
-
-
-6.4   RESULTADOS EXPERIMENTAIS DO PROCESSO DE BUSCA DE TODOS OS AR-
-      QUIVOS DO USUÁRIO NA BLOCKCHAIN
-
-O processo de busca dos arquivos do usuário na blockchain é o primeiro a ser executado toda
-vez que o sistema é carregado no navegador. Como resultado, são apresentados na tela todos os
-arquivos aos quais o usuário tem acesso. A avaliação deste processo compreendeu as etapas de
-identificação da conta do usuário na Metamask, busca da quantidade total de arquivos aos quais
-o usuário tem acesso na blockchain e recuperação de cada um deles, além do tempo total de
-execução do processo.
-       Diferentemente das avaliações dos processos anteriores, optou-se por utilizar neste pro-
-cesso a quantidade de arquivos armazenada ao invés de arquivos com tamanhos originalmente
-distintos. O motivo foi a estrutura dos dados armazenados na blockchain, que apresenta o
-mesmo tamanho e complexidade para retorno ao front-end independentemente do tamanho do
-arquivo originalmente enviado à blockchain. Já a quantidade de total de arquivos armazenados
-pode provocar alterações maiores no desempenho, como será apresentado nos gráficos a seguir.
-       Conforme visto na Figura 17, a quantidade total de arquivos armazenados não influencia
-na identificação da conta do usuário na Metamask. Durante a execução desta etapa, a comuni-
-cação direta entre o front-end e a Metamask apresentou os resultados de 121 ms para os testes
-com 10 arquivos, 111 ms para 50 arquivos e 119 ms para 100 arquivos armazenados.
-
-Figura 17 – Resultado experimental do tempo de identificação da conta do usuário na Meta-
-            mask.
-
-
-
-
-       Na etapa de busca da quantidade total de arquivos do usuário na blockchain ilustrado
-                                                                                           40
-
-
-pela Figura 18, 43 ms foi o tempo médio de resposta para os testes com 10 arquivos, 50 ms para
-50 arquivos e 54 ms para 100 arquivos armazenados. Com os resultados obtidos, pode-se afirmar
-que a quantidade total de arquivos armazenados praticamente não influencia no desempenho do
-processo como um todo. Embora tenha apresentado um aumento, o tempo de execução para
-100 arquivos foi apenas 1,24 vezes maior do que o tempo utilizado para 10 arquivos, mesmo
-esta quantidade sendo 10 vezes maior, e essa diferença foi de 11 ms.
-
-Figura 18 – Resultado experimental do tempo de busca da quantidade total de arquivos do usuá-
-            rio na blockchain.
-
-
-
-
-       O tempo transcorrido durante a etapa de recuperação de cada arquivo do usuário da
-blockchain apresentou um aumento à medida em que se aumentou a quantidade de arquivos
-armazenados no sistema. Obtiveram-se os tempos de 43 ms com 10 arquivos, 56 ms com 50
-arquivos e 84 ms nos testes com 100 arquivos armazenados. Estes resultados tem um impacto
-significativo no tempo total de execução do processo, visto que os resultados de tempo obtidos
-são multiplicados pela quantidade de arquivos a serem recuperados. Esta relação representa um
-tempo total de recuperação de 430 ms para 10 arquivos, 2.880 ms para 50 arquivos e 8.400
-ms para 100 arquivos. Os resultados registrados representam um aumento de aproximadamente
-19,53 vezes no tempo total de recuperação na comparação entre os testes de 10 e 100 arquivos,
-enquanto a diferença na quantidade de arquivos é de 10 vezes.
-       Ao encerrar o processo de busca dos arquivos do usuário na blockchain, obtiveram-se
-os tempos totais de execução para cada caso de teste, apresentados na Figura 20. Os tempos de
-duração mensurados foram de 638 ms para 10 arquivos, 3.018 ms para 50 arquivos e 8.735 ms
-                                                                                         41
-
-
-Figura 19 – Resultado experimental do tempo de recuperação de cada arquivo do usuário da
-            blockchain.
-
-
-
-
-para 100 arquivos armazenados. Os resultados analisados demonstram claramente o impacto da
-quantidade de arquivos armazenados na inicialização do sistema, representado pelo aumento de
-13,69 vezes (1.369,04%) no tempo total de busca quando comparados os testes com 10 e 100
-arquivos.
-
-Figura 20 – Resultado experimental do tempo total de execução do processo de busca de todos
-            os arquivos do usuário na blockchain.
-                                                                                           42
-
-
-7 CONCLUSÕES E TRABALHOS FUTUROS
-
-
-Este trabalho apresentou um sistema para armazenamento e compartilhamento de arquivos atra-
-vés da combinação de smart contracts e IPFS, que garante a segurança dos arquivos através do
-emprego de criptografia assimétrica. Embora todos os dados armazenados na Ethereum block-
-chain sejam visíveis para qualquer usuário da rede, a solução proposta garante que estes dados
-não sejam legíveis para qualquer usuário que não seja detentor da chave privada correspondente
-à chave pública empregada na encriptação do arquivo. Além disso, armazenar a massa de dados
-no IPFS e adicionar apenas a hash correspondente na blockchain garante custos de mineração
-viáveis, considerando os benefícios apresentados.
-       Os resultados obtidos nas avaliações demonstram que os tempos de espera para upload,
-compartilhamento e download aumentam consideravelmente quando o tamanho dos arquivos
-ultrapassa a casa de 1MB. Dependendo das circunstâncias em que o sistema for empregado,
-o uso de arquivos maiores que este podem ser comuns. Portanto, como trabalhos futuros,
-pretende-se melhorar a eficiência do sistema nas etapas de encriptação e decriptação e im-
-plementar um mecanismo de paginação para exibição dos arquivos do usuário, permitindo-se
-assim o armazenamento eficiente de arquivos maiores. Pretende-se ainda desenvolver novas
-funcionalidades como remoção do acesso de um usuário à um determinado arquivo e exclusão
-de arquivos armazenados.
-                                                                                         43
-
-
-                                     REFERÊNCIAS
-
-BENET, J. Ipfs-content addressed, versioned, p2p file system. arXiv preprint ar-
-Xiv:1407.3561, 2014.
-
-CHRISTIDIS, K.; DEVETSIKIOTIS, M. Blockchains and smart contracts for the internet of
-things. IEEE Access, v. 4, p. 2292–2303, 2016. ISSN 2169-3536.
-
-COSTA, L. da; PINHEIRO, B.; ARAÚJO, R.; ABELÉM, A. Compartilhamento Seguro de
-Arquivos de Saúde usando Criptografia Baseada em Atributos e Redes Descentralizadas. ago.
-2018. Disponível em: <http://portaldeconteudo.sbc.org.br/index.php/sbcas/article/view/3682/
-3634>. Acesso em: 30 out. 2018.
-
-GRÄTHER, W.; KOLVENBACH, S.; RULAND, R.; SCHÜTTE, J.; TORRES, C.;
-WENDLAND, F. Blockchain for education: Lifelong learning passport. In: EUROPEAN
-SOCIETY FOR SOCIALLY EMBEDDED TECHNOLOGIES (EUSSET). Proceedings of 1st
-ERCIM Blockchain Workshop 2018. [S.l.], 2018.
-
-MCCORRY, P.; SHAHANDASHTI, S. F.; HAO, F. A smart contract for boardroom voting
-with maximum voter privacy. In: SPRINGER. International Conference on Financial
-Cryptography and Data Security. [S.l.], 2017. p. 357–375.
-
-PRATHYUSHA, T.; KAVYA, M.; AKSHITA, P. S. L. Block chain technology. 2018.
-
-RAY, S. Blockchains versus Traditional Databases. nov. 2017. Disponível em: <https:
-//hackernoon.com/blockchains-versus-traditional-databases-c1a728159f79>. Acesso em: 30
-out. 2018.
-
-SZABO, N. Smart contracts. Unpublished manuscript, 1994. Disponível em: <http://www.
-fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/
-szabo.best.vwh.net/smart.contracts.html>. Acesso em: 01 out. 2018.
-
-VIEIRA, A. B. Transmissão de mídia contínua ao vivo em p2p: modelagem, caracterização e
-implementação de mecanismo de resiliência a ataques. UFMG, 2010.
-
-WOOD, G. Ethereum: A secure decentralised generalised transaction ledger. Ethereum
-project yellow paper, v. 151, p. 1–32, 2014.
+  Análise de Metodologias e Ambientes de Ensino para Algoritmos, Estruturas
+    de Dados e Programação aos iniciantes em Computação e Informática*
+
+                                           Rodrigo Pereira dos Santos1
+                                          Heitor Augustus Xavier Costa2
+
+                                     UFLA – Universidade Federal de Lavras
+                                  DCC – Departamento de Ciência da Computação
+                                   Cx Postal 37 – CEP 37200-000 – Lavras (MG)
+                                              1
+                                                rpsantos@comp.ufla.br
+                                                   2
+                                                     heitor@ufla.br
+
+
+
+      Resumo. Este artigo tem o objetivo de apresentar a importância de um bom ensino de fundamentos de
+      algoritmos e programação em cursos de graduação em Computação e Informática. Para isso, serão
+      listados alguns problemas de ensino de tais conteúdos, juntamente com algumas estratégias pesquisadas
+      na literatura para tentar saná-los. Dessa forma, tenta deixar uma contribuição à literatura e aos
+      docentes da área.
+      Palavras-chaves: Metodologias de Ensino de Computação, Algoritmos e Estruturas de Dados,
+      Programação.
+
+
+
+   Methodologies Analysis and Environment of Teaching for Algorithms, Data
+           Structures and Programming to beginners in Computing
+
+      Abstract. This paper has the objective to present the importance of a good teaching of algorithms and
+      programming foundations in graduation courses in Computing. For that, some problems of teaching of
+      such contents will be presented, together with some strategies researched in the literature to try solving
+      them. In that way, it tries to leave a contribution to the literature and the teachers of the field.
+      Key-words: Computing Teaching Methodologies, Algorithms and Data Structures, Programming.
+
+                               (Received December 07, 2005 / Accepted January 24, 2006)
+
+
+1. Introdução                                               abstratos em concretos, através de produtos de software
+                                                            que possibilitem melhor compreensão dos tópicos
+       A crescente quantidade de informação e a             abordados e maior interação entre aluno-objeto de
+  tecnologia gerada atualmente tornam necessária a          trabalho (neste caso, o computador). Isso encontra sua
+  presença de profissionais de caráter persuasivo e         maior barreira nos estágios iniciais dos cursos
+  inovador, que sejam capazes de unir inteligência e        relacionados, quando do contato com o estudo de
+  dinamismo na busca por melhores soluções de               algoritmos, raciocínio lógico e programação.
+  problemas. Isso encontra sua principal base nas                 Segundo [6], algoritmo é a descrição de uma
+  metodologias de ensino aplicadas durante o estágio        seqüência de passos que deve ser seguida para a
+  universitário, principalmente na área de Computação e     realização de uma tarefa e ação é um acontecimento que,
+  Informática, que envolve tecnologias em constante         a partir de um estado inicial, após um período de tempo
+  desenvolvimento.                                          finito, produz um estado final previsível e bem definido.
+       Com o intuito de produzir melhores resultados no     Assim, um algoritmo é a descrição de um conjunto de
+  processo de aprendizagem nessas áreas, faz-se constante   comandos que, obedecidos, resultam em uma sucessão
+  a necessidade de atualização das didáticas de ensino de   finita de ações.
+  forma geral. O objetivo disso é transformar processos
+*
+  Apoio PBIICT/FAPEMIG
+      Atualmente, o ensino de algoritmos busca nas           Computação e Informática, listando alguns problemas de
+Ciências Exatas seu pilar de sustentação, pois disciplinas   ensino de tais conteúdos, juntamente com algumas
+nessa área despertam o raciocínio matemático-lógico          estratégias pesquisadas na literatura para tentar saná-los.
+para resolução de problemas. A título de exemplo,            Isso possibilita maior disseminação do conhecimento e
+conforme [14], alguns autores preconizam a necessidade       promove a interatividade entre docentes e graduandos da
+de domínio de habilidades matemáticas prévias ou ao          área, enriquecendo a pesquisa com críticas e sugestões.
+menos integradas, ou pelo menos desejável, sendo             Para alcançar este objetivo, são relatados alguns
+considerado até um bom indicador de sucesso para o           ambientes existentes de ensino a distância.
+processo. Para outros, o próprio nível de conhecimento             O artigo está organizado da seguinte forma: a seção
+prévio de lógica matemática é discutido. Mas, isso deve      2 apresenta a importância da programação e dos
+ser mais uma das ferramentas para o estudante e não a        algoritmos no ensino de Computação; a seção 3
+sua única fonte, pois a sua formação futura será muito       apresenta um breve relato sobre os problemas acerca do
+ampla.                                                       ensino de Computação, listando algumas pesquisas, com
+      O conceito de programação, segundo [26], é a arte      soluções e considerações; a seção 4 retrata a importância
+ou a técnica de construir e formular algoritmos de uma       do uso de ferramentas computacionais no ensino, com
+forma sistemática. Esse conceito induz que o ingresso        suas vantagens; e a seção 5 detalha algumas ferramentas
+tem um dom (arte) de programar ou ele pode aprender as       disponíveis atualmente para o ensino de algoritmos,
+técnicas necessárias a aprimorar seu conhecimento.           estruturas de dados e programação. Por fim, na seção 6,
+Logo, ao ingressar em um curso superior na área, ele         são apresentadas conclusões.
+deve ter sua base bem sedimentada, para que fique apto
+a prosseguir de maneira positiva durante os seus             2. Programação         e   Algoritmos:     a   Base     da
+estudos. Com isso, professores de disciplinas                Computação
+relacionadas à programação e coordenadores de curso
+sentem a grande responsabilidade de buscar e                       Segundo a estrutura curricular constante nas
+aperfeiçoar sua maneira de conduzir a estrutura              Diretrizes Curriculares do MEC ([1]), a matéria de
+disciplinar e curricular dos graduandos em seus estágios     Programação faz parte da área de formação básica em
+iniciais da universidade.                                    Ciência da Computação, juntamente com as matérias
+      Com toda esta bagagem a ser assimilada, uma linha      Computação e Algoritmos e Arquitetura de
+de pesquisa, visando melhorias no ensino básico em           Computadores. Seu conteúdo abrange, além do ensino
+Computação e Informática, é aquela direcionada para a        de linguagens de programação propriamente ditas, os
+tendência de utilizar ferramentas computacionais como        conceitos, os princípios e os modelos de programação e
+ambientes de estudo. Segundo [24], a partir de               o estudo de estruturas de dados e de métodos de
+observações dentro de disciplinas de graduação,              classificação e pesquisa de dados. Conforme consta na
+percebe-se também um melhor resultado no aprendizado         caracterização da matéria programação, entendida como
+por meio de atividades práticas de desenvolvimento de        programação de computadores, ela é uma atividade
+simuladores e ferramentas visuais didáticas de               voltada à solução de problemas. Nesse sentido, ela está
+representação de conceitos abstratos. Além disso,            relacionada com uma variada gama de outras atividades
+acompanhando esse desenvolvimento, a linha acopla            como especificação, projeto, validação, modelagem e
+contribuições dos pesquisadores para novas estratégias       estruturação de programas e dados, utilizando as
+de transmissão de conhecimentos. Isso promove a              linguagens de programação como ferramentas.
+ampliação do acervo existente, a melhor organização de             Ao contrário do que se apregoava há alguns anos, a
+currículos para o mercado de trabalho e o acesso             atividade de programação deixou de ser uma arte para se
+facilitado de tais recursos inovadores através de suporte    tornar uma ciência, envolvendo um conjunto de
+via web.                                                     princípios, técnicas e formalismos que visam ao
+      No entanto, a elaboração de uma ferramenta             desenvolvimento de produtos de software bem
+computacional didática deve tornar o ensino do               estruturados e confiáveis. Cite-se, dentre estes, os
+conteúdo abordado mais prático e abrangente, de forma        princípios da abstração e do encapsulamento e as
+a despertar o interesse do aluno, o seu espírito de          técnicas de modularização e de programação
+pesquisa e a busca de informações que possam torná-lo        estruturada.
+um profissional crítico e de opinião sólida. Assim, seu            Portanto, o estudo de programação não se restringe
+rendimento ao longo do curso aumentaria, melhorando o        ao estudo de linguagens de programação. As linguagens
+seu desempenho em disciplinas mais específicas. Além         de programação constituem-se em uma ferramenta de
+disso, deve despertar a atenção dos alunos, pela             concretização de produto de software, que representa o
+inovação e dinamização injetadas às aulas, com sua           resultado da aplicação de uma série de conhecimentos
+utilização ([20]).                                           que transformam a especificação da solução de um
+      Este artigo tem por objetivo apresentar a              problema em um programa de computador que
+importância de um bom ensino de fundamentos de               efetivamente resolve aquele problema.
+algoritmos e programação em cursos de graduação em
+      No estudo de linguagens de programação, deve ser     de educadores para o ensino médio. Os cursos de
+dada ênfase aos seus aspectos funcionais e estruturais,    Ciência da Computação e Engenharia de Computação
+em detrimento aos detalhes de sintaxe. Conceitos como      são voltados para a formação de recursos humanos para
+o significado de associação, avaliação, atribuição,        o desenvolvimento científico e tecnológico da
+chamada de procedimento, envio de mensagens,               computação. Embora conhecedores da matéria, não
+passagem de parâmetros, herança, polimorfismo e            necessariamente devem sair dos cursos com o perfil de
+encapsulamento devem ser enfatizados. O estudo de          programadores. Os cursos de Sistemas de Informação
+linguagens de programação deve ser precedido do            incluem a formação de programadores entre seus
+estudo dos principais paradigmas de programação,           objetivos. Nesse sentido, em um curso de Licenciatura
+notadamente a programação imperativa, a funcional, a       em Computação, o aluno poderá ter uma carga de
+baseada em lógica e a orientada a objetos.                 prática de programação menor do que a exigida nos
+      O desenvolvimento de algoritmos e o estudo de        demais cursos, sem prejuízo da parte conceitual da
+estruturas de dados devem receber especial atenção na      matéria. Deve haver uma diferenciação entre os casos de
+abordagem do tema programação. Igualmente, deve ser        cursos de atividade fim e de atividade meio. Para este
+dada ênfase ao estudo das técnicas de especificação,       último, recomenda-se uma ênfase maior no
+projeto e validação de programas. Um excelente campo       conhecimento de linguagens de programação e
+para o exercício da programação é constituído pelo         atividades práticas.
+estudo de pesquisa em tabelas e de técnicas de                   Assim, a programação é, pois, um dos pontos
+ordenação (deve-se acrescentar o uso de estruturas de      chaves em um curso de Computação, pois é a atividade
+dados para o exercício da programação).                    que supre o computador com meios para servir ao
+      Dessa forma, deve-se entender que ensinar            usuário. Seu uso adequado e o entendimento de
+programação não é simplesmente ensinar uma                 conceitos, princípios, teorias e tecnologias podem
+linguagem de programação. Este ensino envolve              conduzir ao desenvolvimento de produtos de software
+sobretudo entender problemas e descrever formas de         de qualidade, objetivo final, tanto quando se tem a
+resolução, de maneira imparcial, para que então sejam      computação como uma atividade meio como quando a
+codificadas em uma linguagem de programação. Ou            computação é tida como uma atividade fim.
+seja, somente após o aprendizado dos conceitos de                Com esse intuito, [23] apresenta algumas
+algoritmos e fundamentos de lógica, o estudante pode       recomendações genéricas a serem aplicadas no ensino de
+travar contato com uma linguagem de programação            disciplinas relacionadas a algoritmos e computação:
+concreta para experimentar aqueles conceitos.              • coerência com os objetivos fundamentais. Por
+      Além disso, o estudo de programação deve passar          coerência, entende-se que o professor deve: i)
+efetivamente pelo estudo de estruturas de dados. Assim,        expressar claramente as idéias, os conceitos e as
+quando se projeta um programa, deve-se pensar nos              técnicas perante os alunos (se o professor coloca
+algoritmos que manipulam os dados e na forma de                algoritmos confusos na lousa ou em transparências,
+estruturar estes dados. Desta maneira, as duas coisas se       ele não pode esperar algoritmos claros nas respostas
+complementam.                                                  dos alunos); ii) destacar a importância dos resultados
+      De acordo com [1], no ensino de estruturas de            teóricos e mostrar rigor formal toda vez que isto se
+dados, deve ser dado destaque à parte conceitual e             fizer necessário; e iii) procurar valorizar o uso de
+comportamental das estruturas, antes de pensar em              técnicas na resolução de problemas. Esta última
+implementação. Por exemplo, no ensino de estruturas            coerência pode ser alcançada em particular usando a
+lineares, deve-se transmitir ao aluno o conceito desta         técnica de descobrir a solução de um problema junto
+estrutura, através das operações aplicáveis, como criar,       com os alunos, ao invés de simplesmente apresentar
+acrescentar, consultar e remover elementos de uma lista        e explicar soluções prontas;
+encadeada. Em um curso de Ciência da Computação,           • ênfase no pensamento crítico. Este é papel de toda
+esta parte pode ser apresentada através de uma                 educação, porém, nesta matéria, um cuidado especial
+especificação algébrica, por exemplo. Em seguida,              deve ser necessário dada sua natureza teórica com
+discutem-se      formas     de    implementações      ou       forte componente matemático. Em outras palavras,
+representações físicas das listas (contigüidade,               os alunos que têm pouca maturidade matemática
+encadeamento, circulares, duplamente encadeada,                tendem a acreditar em qualquer demonstração que
+com/sem descritor, etc). Este tópico é onde normalmente        lhes é apresentada. Tal comportamento deve ser
+o aluno apresenta maior dificuldade de assimilação do          desestimulado. É essencial que os alunos duvidem
+conceito, uma vez que o encadeamento não é um                  daquilo que lhes é apresentado e é com dúvidas
+conceito muito freqüente na vida real, dificultando sua        saudáveis e sua resolução que a percepção da
+compreensão. Dessa forma, é recomendável que as                importância do resultado teórico poderá ser
+disciplinas de estruturas de dados possuam significativa       consolidada. Nesse sentido, considera-se um recurso
+atividade prática em laboratório.                              valioso o conjunto de exercícios que pedem para os
+      Com relação aos cursos na área de Computação e           alunos identificarem falhas de argumentação (por
+Informática, os cursos de licenciatura visam à formação
+  exemplo, em uma demonstração errada), erros em             professores para acompanharem efetivamente as
+  algoritmos ou erros em notícias da imprensa;               atividades laboratoriais de programação, dado o grande
+• a teoria na prática. A experiência com o ensino            número de estudantes geralmente sob sua supervisão
+  dessas disciplinas de Computação mostra que os             ([25]). Dentro desse paradigma, pode-se destacar a
+  alunos, em geral, não se sentem atraídos por elas, por     forma como os alunos estudam para a disciplina,
+  considerarem-nas muito abstratas. Por esse motivo,         geralmente memorizando, e a falta de pré-requisitos em
+  crê-se ser importante usar como recurso didático           conteúdos relacionados ([14]).
+  sempre que possível um grande número de exemplos                 Em [19], são relatados           outros problemas
+  da vida real. A inclusão de projetos de                    associados a este processo:
+  implementação, seja dentro das disciplinas teóricas,       • a falta de motivação do aluno criada pelo despreparo,
+  seja dentro de uma disciplina específica, também               citado anteriormente, e o desânimo quando há,
+  visa a tornar a matéria menos abstrata. De resto, é            principalmente, na crença de que a disciplina
+  importante salientar para os alunos o grande impacto           constitui um obstáculo extremamente difícil de ser
+  que os resultados teóricos têm alcançado na prática.           superado;
+                                                             • o processo tradicional de avaliação pode deixar o
+3. Análise de Metodologias de Ensino de Computação               aluno tenso prejudicando o aprendizado ([5]);
+abordando problemas e soluções                               • o relacionamento entre professor e aluno pode ser
+                                                                 um problema quando o primeiro preocupa-se em
+      Dentro da esfera de discussão dos métodos                  mostrar o que sabe desconsiderando um ambiente de
+educacionais como ferramentas para a formação de                 aprendizagem descontraído e colaborativo;
+profissionais de qualidade para o mercado, o presente        • a didática ou a falta de metodologia de ensino
+trabalho se propõe a dar sua contribuição. Entretanto, ele       dificulta o aprendizado dos novos e diversos
+analisará um tema mais abrangente e complexo: as áreas           conceitos. Inclui-se a grave falta de comunicação
+de Computação e Informática, que apresentam                      entre os professores das várias disciplinas que
+inovações constantes e grande transformação de                   permitiria    identificar    conteúdos    afins    ou
+preceitos existentes. Sabe-se que é complicado                   superposição de tópicos tornando o trabalho
+promover mudanças na educação básica e, ao se tratar             realizado mais integrado auxiliando o processo de
+de cursos de graduação baseados na produção de                   ensino e aprendizagem ([12 e 17]).
+tecnologia, o problema é ainda maior. O que se pode                Em [19], afirma-se que o professor deve ser capaz
+perceber é esses cursos exercerem grande atração sobre       de fazer o aluno compreender a abstração envolvida com
+os futuros ingressos em uma faculdade, o que se mostra       toda a simbologia utilizada. Para isto, deve utilizar sua
+pela concorrência elevada em processos seletivos. No         criatividade e tentar resolver cada problema baseando-se
+entanto, vencido o obstáculo de entrada, vêm o início da     em situações do cotidiano. Assim, o aluno começa a ter
+fase universitária e um dos maiores dilemas: o contato       raciocínio lógico e ordem de pensamento.
+com disciplinas básicas que vão preparar o ingresso para           Segundo [16], algumas das dificuldades
+atuar em áreas específicas. Esse contato, sobretudo em       vivenciadas pelo professor no processo são: i)
+cursos de Computação, pode gerar tanto afinidade             reconhecer as habilidades inatas de seus alunos; ii)
+quanto repulsa, o que acontece com freqüência                apresentar técnicas para soluções de problemas; iii)
+expressiva, conforme [14].                                   trabalhar a capacidade de abstração do aluno, tanto na
+      Os problemas apresentados na compreensão de            busca das possíveis soluções como na escolha da
+conceitos abstratos de programação, conforme [5],            estrutura de dados a ser utilizada; e iv) promover a
+encontra sua raiz ainda durante a formação básica, o que     cooperação e a colaboração entre os alunos.
+caracteriza uma importante linha de pesquisa na                    No entanto, para [5], o iniciante do curso superior
+metodologia educacional. Com certeza, sem uma radical        traz uma bagagem cultural que não apenas não serve
+mudança cultural de atitude e comportamento, um              para o apropriado desenvolvimento de um estudo
+indivíduo dificilmente será um profissional de               acadêmico, mas pode atrapalhar o desenvolvimento
+Computação adequado, visto que é preciso desenvolver         desse estudo. Ele vem de uma experiência de estudante
+a capacidade de buscar respostas através de novas            de disciplinas desenvolvidas em torno do paradigma de
+perguntas que levem à resposta da questão original. A        apresentação de respostas e soluções, usualmente da
+formação do profissional em Computação deve incitar o        velha e surrada didática diretiva, ao invés de focar no
+desenvolvimento de raciocínio crítico, a solução de          processo de questionamento. Assim, mais uma das
+problemas, a aplicação de métodos de pesquisa e o            vertentes do problema educacional na área de
+desenvolvimento profissional contínuo.                       Computação encontra-se na sua formação básica.
+      Dessa forma, a falta de compreensão do raciocínio            Mas, considerando o campo universitário, o nível
+lógico pode ser a principal razão pelo alto índice de        de maturidade do aluno é importante neste ponto para
+reprovação nas disciplinas de Algoritmos e Programação       que o professor possa adequar o processo pedagógico no
+e, em alguns casos, pela desistência de um curso. Em         sentido de acompanhar o amadurecimento do aluno,
+parte, isso é decorrência da dificuldade encontrada pelos
+permitindo aplicar técnicas de ensino e aprendizagem           de abstração do conteúdo e a dificuldade dos
+([14]).                                                        docentes em detectar e atender as dificuldades de
+      O acompanhamento contínuo de cada aprendiz e o           aprendizagem dos alunos. Dessa forma, propuseram
+tratamento      personalizado     a    cada    estudante,      um ambiente que auxilia no atendimento às
+principalmente em turma com um número elevado de               dificuldades de aprendizagem da disciplina de
+alunos, serão possíveis se forem apoiados por sistemas         Algoritmos utilizando o paradigma de Assistentes
+inteligentes, ou seja, auxiliados por computador ([17]).       Inteligentes de Ensino. Estes assistentes auxiliam o
+Logo, a idéia de usar produtos de software para o ensino       professor em sua tarefa de monitorar, assistir e
+de programação é de grande valia e ainda poderá                analisar os alunos. Os resultados da utilização do
+transformar o ensino de disciplinas avançadas em algo          ambiente apontam para a viabilização da tarefa de
+mais primoroso e tecnológico.                                  acompanhamento individualizado dos alunos e uma
+      A partir de todo esse problemático desafio,              maior eficiência na identificação e atendimento às
+mudanças passaram a ser consideradas por graduados,            dificuldades de aprendizagem;
+mestres e doutores que trabalham com o ensino de             • em [4], discute-se que grupos de estudo têm surgido
+algoritmos e programação. A análise da literatura feita        como uma alternativa para complementar os
+por [14], independente de ser nacional ou internacional,       conteúdos     vistos    em    sala    de    aula   e
+mostrou que há três vertentes na busca de soluções para        desenvolver/aprimorar habilidades. Neste contexto,
+os problemas apontados:                                        apresentaram a importância dos grupos de estudo na
+• Ferramentas, que incluem trabalhos que apresentam            formação dos futuros profissionais da área de
+    ferramentas computacionais visando facilitar o             computação. Relataram a experiência com o grupo
+    processo de ensino e aprendizagem;                         de estudos de Java da Universidade Luterana do
+• Estratégias, que incluem trabalhos que discutem              Brasil (ULBRA). Ao contrário do que se possa
+    estratégias de ensino e/ou de avaliação de                 imaginar, a diferença de nível entre os alunos não
+    competências;                                              constituiu obstáculos para o andamento dos
+• Ferramentas e Estratégias, que são os trabalhos              trabalhos. Observou-se uma forte interação entre os
+    que discutem alguma estratégia suportada por               componentes do grupo e o prazer em dividir o
+    ferramentas computacionais.                                conhecimento adquirido. Relações se estabeleceram
+      Juntamente com o uso de uma ferramenta                   a partir da experiência de pesquisar, aprender e
+computacional, deve-se tentar ajustar algumas propostas        resolver problemas juntos;
+pedagógicas de trabalho disciplinar, cada vez mais foco      • em [9], foram concluídos, após diversos estudos
+de pesquisas na área de Computação, principalmente no          sobre Ambientes de Aprendizado Colaborativo
+âmbito internacional ([14]). Alguns trabalhos nacionais        Suportado por Computador, que eles podem trazer
+relacionados aos problemas de ensino de algoritmos e           melhorias ao processo de aprendizado e contribuir
+programação estão listados a seguir:                           para torná-lo mais prazeroso e socializador. Então,
+• em [8], percebendo os problemas e procurando                 desenvolveram um produto de software verificador
+    solucioná-los, ou pelo menos amenizá-los, foi              de diferenças significativas entre programas e o
+    proposto o uso de uma abordagem de aprendizagem            utilizaram para a montagem de grupos para o
+    baseada     na colaboração.       Esta    abordagem        aprendizado colaborativo de programação de
+    colaborativa parte do princípio de que o conflito          computadores. Chegaram à conclusão de que o
+    sócio-cognitivo entre os aprendizes pode melhorar o        aprendizado colaborativo é viável e eficaz nesse
+    seu aprendizado. Para suportar o aprendizado               contexto, mas difícil de implantar sem a presença de
+    colaborativo, foi desenvolvido um avaliador de             um mediador. Logo, estudaram o Learn in Group,
+    programas em C, chamado Verificador de Diferenças          um sistema baseado na Web para o suporte ao
+    Significativas entre Programas – VDSP. O VDSP              aprendizado colaborativo de programação. O sistema
+    avalia os programas dos alunos, pontuando-os. A            conta com dois agentes mediadores, um para a
+    pontuação é utilizada para montar grupos de alunos         constituição de grupos de trabalho colaborativo e o
+    que deverão refazer o programa, trocando pontos de         outro para acompanhar e estimular a participação dos
+    vista e considerações. O VDSP foi experimentado            membros dos grupos;
+    com alunos do curso de Sistemas de Informação da         • em [15], foi citado que o Grupo de Trabalho de
+    PUC Minas Arcos, especificamente, alunos da                Licenciatura em Computação (GT-3) da Sociedade
+    disciplina Algoritmos e Estruturas de Dados, com           Brasileira de Computação (SBC) estabeleceu, entre
+    resultados positivos em relação à formação de              as metas para 2004-2005, desenvolver experiências
+    grupos de trabalho homogêneos e heterogêneos sob           relativas ao ensino de programação no nível médio.
+    mediação do professor em detrimento de um trabalho         Isso visando melhorar o comportamento dos futuros
+    individual;                                                ingressos em cursos de Computação e Informática,
+• em [18], o aprendizado de algoritmos é considerado           tentando sanar os problemas relacionados ao
+    desafiador pelos estudantes de cursos tecnológicos.        pensamento algorítmico mais cedo. A partir dessa
+    Os principais motivos para este fato são: o alto nível     idéia, pesquisadores da área da Universidade
+  Estadual Norte Fluminense (UENF) idealizaram uma            podem ser explorados de diferentes formas. Neste
+  proposta para ser aplicada em uma escola pública de         sentido, estes ambientes requerem um conjunto de
+  Cardoso Moreira – RJ, através de uma oficina que            funções para atender os aspectos pedagógicos,
+  permitiu identificar os pontos de dificuldade no            identificados pelos professores especialistas. Como
+  processo e a necessidade de trabalhar mais a                esta tarefa não é de fácil execução, dado o perfil
+  informática de modo interdisciplinar. Apesar da             diferenciado da equipe interdisciplinar, fez-se
+  elevada evasão, o resultado obtido na avaliação dos         necessário a utilização de uma metodologia para
+  concluintes da oficina permite projetar as                  guiar e organizar todo o projeto de desenvolvimento
+  expectativas da inclusão do tema algoritmos e               do produto de software. Dessa forma, eles
+  programação na matriz curricular. A oficina permitiu        apresentaram um relato de experiência em uma
+  comprovar que a idéia do GT-3 é factível, ou seja,          disciplina da graduação da Pontifícia Universidade
+  que alunos do ensino médio são capazes de                   Católica do Rio Grande do Sul (PUCRS) no intuito
+  desenvolver tal conteúdo sem necessariamente                de formalizar as práticas de Engenharia de Software
+  estarem inseridos em um curso técnico, o que pode           adotadas para o projeto e desenvolvimento de
+  estimular o professor por aproveitar a nova                 produtos de software educacionais, através do
+  competência do aluno para promover o                        projeto PDS-E (Processo para Desenvolvimento de
+  aprofundamento de conteúdos de sua disciplina e,            Software Educacional). Isso para que sistemas de
+  conseqüentemente, a interdisciplinaridade;                  informação educacionais fossem desenvolvidos de
+• em [27], foi discutida a experiência do uso de              forma estruturada e pedagógica, contendo o assunto
+  projetos      integrados      para    promover      a       a ser tratado. Os resultados obtidos com a aplicação
+  interdisciplinaridade no curso de Ciência da                da disciplina em três semestres consecutivos foram
+  Computação. A integração tanto ocorre entre                 muito promissores. Os alunos, em seus depoimentos
+  disciplinas de um mesmo período quanto entre                colhidos através da avaliação formal e no decorrer da
+  disciplinas de diferentes períodos. Esta última             disciplina,    afirmaram     que    desta    maneira
+  integração foi altamente favorável entre as                 conseguiram dimensionar melhor o trabalho a ser
+  disciplinas que formam os pacotes de disciplinas            feito e conversar melhor com os programadores. Os
+  optativas, ofertadas a partir do sexto semestre. Cada       programadores, por sua vez, entendem melhor o que
+  projeto visou transpor as barreiras da fragmentação         deveriam fazer. Enfim, todos ganharam com a
+  do conhecimento (não se trata de uma colagem                formalização e a padronização das idéias. Neste
+  fragmentada de saberes), o aluno foi posto diante de        contexto, tem-se buscado formalizar a metodologia
+  problemas que exigem a aplicação dos                        de ensino relatada e o uso dos recursos através da
+  conhecimentos de uma disciplina em outra, para              proposta do PDS-E.
+  posteriormente utilizá-los na resolução dos                   Para [11], diversos sistemas para implementação
+  problemas. Esse processo visou estabelecer o valor      de animações de algoritmos e de estruturas de dados
+  das competências e habilidades em converter o           foram produzidos. Vários destes sistemas exploram a
+  conhecimento específico da área de formação para        potencialidade do uso de visualizações gráficas das
+  outras áreas de estudo. Os resultados mais              operações realizadas nas estruturas de dados como
+  expressivos se refletiram no comportamento dos          ferramenta de ensino. O uso de movimento em tempo
+  alunos: criou-se uma cultura do ensino-aprendizado      real, cores e sons enriquecem ainda mais o poder de
+  pelo próprio esforço, de que o processo de              comunicação. De fato, algumas experiências positivas
+  aprendizado deve ser, em grande parte, construído       foram relatadas na literatura, principalmente com o uso
+  pelo próprio aluno. Para os docentes, ficou claro que   de sistemas que utilizam a abordagem ativa, na qual o
+  devem estar aptos a aceitarem novos papéis e            aprendiz interage com as animações na criação de
+  ficarem atentos ao processo dinâmico que é o ensino     instâncias para testes. Por outro lado, a ênfase na
+  da Ciência da Computação. Os projetos iniciaram         qualidade da animação gráfica para enriquecer a
+  uma série de discussões sobre a fragmentação das        abordagem ativa da maioria dos sistemas levou-os a um
+  disciplinas envolvidas nos projetos. Foram exibidas     grau de complexidade que impede seu uso para fins de
+  inúmeras deficiências de disciplinas dos períodos       criação de animações pelos próprios aprendizes. Deste
+  anteriores ao quarto período. Foi proposto um           modo, sua utilização se limita à interação, ainda que
+  questionamento dos conteúdos programáticos de           ativa, com as animações pré-implementadas,
+  diversas disciplinas e suas formas de abordagens.       representando as mais novas tendências de trabalhos
+  Finalmente, foram relevantes nas discussões sobre as    para o ensino de Computação e Informática.
+  novas propostas para uma total reestruturação                 Em [11], afirmou-se que, do mesmo modo que a
+  curricular do curso de Bacharelado em Ciência da        experimentação durante a operação das animações
+  Computação, visando melhorar a metodologia de           enriquece o aprendizado mais do que a mera observação
+  ensino;                                                 passiva delas, é de se esperar que, com um sistema onde
+• em [13], afirmou-se que os programas educacionais,      a própria implementação das animações gráficas é
+  conforme a metodologia utilizada pelo professor,        facilitada a ponto de poder ser realizada pelo estudante,
+a absorção do funcionamento dos algoritmos seja ainda          maior alcance ao público. Além disso, a divulgação
+mais intensa.                                                  das propostas de melhorias de processos
+      Apesar desta nova tendência dos produtos de              educacionais visa injetar e obter informações para
+software para educação em Computação, ainda é muito            ampliação da literatura disponível ([21]);
+utilizada a abordagem ativa descrita anteriormente. Isso   • a transição de educadores seria facilitada, uma vez
+porque configura uma forma de controle do aprendizado          que existiria uma base pronta para ser apreciada,
+pelo discente, uma vez que quaisquer informações               mantendo a qualidade de ensino e aprendizagem do
+erroneamente assimiladas na maioria das vezes causam           conteúdo.
+um impacto negativo na evolução do aluno durante o               Assim, o uso de um sistema de informação
+curso. Dessa forma, o produto de software utiliza          educacional, o produto de software educacional, é um
+estratégias passo a passo na simulação de estruturas de    subsídio valioso para a formação de alunos, ajudando-os
+dados conhecidas e bem sedimentadas. Assim, o aluno        a concluírem seu curso, principalmente se atender a
+realiza uma série de operações ao utilizar o programa,     disciplinas que estão no início do curso e são pré-
+assimilando conceitos básicos sem correr o risco de        requisitos necessários para as disciplinas mais
+implementar seus próprios algoritmos de forma              específicas de períodos avançados. Quando feita uma
+incorreta.                                                 boa base, rendimento e desempenho aumentam,
+                                                           proporcionando      melhores     resultados,   melhores
+4. A importância do            uso   de    ferramentas     currículos e melhores profissionais para o mercado
+computacionais no ensino                                   ([20]).
+
+    É importante salientar alguns pontos especiais:        5. Ferramentas para o ensino de algoritmos,
+• a aula de uma disciplina que relaciona programação,      estruturas de dados e programação
+  algoritmos e estruturas de dados deve ser realizada
+  em laboratórios para que os alunos possam entender             Para o desenvolvimento de qualquer trabalho, faz-
+  as abstrações apresentadas. Deve ser composta de         se necessário discutir o que realmente há de contribuição
+  uma parte teórica, onde conceitos são transmitidos, e    ao universo acadêmico. Nesta seção, são citados alguns
+  uma parte prática, onde são entendidos comandos e        projetos relacionados. Deve-se ressaltar, contudo, que
+  tópicos ministrados. Deve haver questões-desafio,        não houve pretensão de fazer uma análise exaustiva de
+  para que os discentes sejam acostumados a usar de        tais projetos. São eles:
+  agilidade e criatividade na solução de problemas         • ASTRAL (Animation of Data Structures and
+  ([14]);                                                      Algorithms) [11]. É um ambiente de programação
+• o uso de um produto de software educacional, que             para produção de animações de algoritmos e de
+  enfatize animação gráfica, é de extrema importância          estruturas de dados com propósito instrucional. O
+  como facilitador do processo de aprendizagem, visto          ambiente foi desenvolvido no Instituto de
+  que a apresentação de conceitos abstratos se torna           Computação da Universidade de Campinas
+  mais viável e didática, melhorando a qualidade do            (IC/UNICAMP) em 1995-97 para plataforma
+  material das aulas ([24]);                                   Macintosh e recentemente portado para Windows.
+• normalmente, um aluno se interessa por aulas                 Utilizando o ambiente, um usuário pode implementar
+  diferenciadas e isso não só prende sua atenção, como         uma variedade de estruturas de dados e algoritmos
+  também influenciam positivamente nas avaliações              (que atuam sobre essas estruturas) e, através de
+  ([5]);                                                       chamadas de algumas poucas rotinas específicas do
+• uma economia de tempo pode ser conseguida e seria            ambiente, é possível visualizar graficamente as
+  direcionada para maiores explicações e resoluções de         estruturas de dados bem como animações que
+  exercícios, uma vez que o material didático seria            mostram a atuação dos algoritmos sobre elas. Isso se
+  virtual, evitando uma explanação cansativa através           dá através de uma biblioteca de suporte gráfico que é
+  do quadro-negro ([20]);                                      parte do ASTRAL. A abordagem de animação de
+• o uso de uma boa ferramenta que seja livre permite           algoritmos tem duas vantagens imediatas:
+  ao aluno ter acesso ao material virtual para estudar         aprendizado e depuração. Aquele se beneficia da
+  em casa. Além disso, ele possuiria um valioso                observação dinâmica do funcionamento das
+  projeto, para consultas futuras, em caso de                  estruturas de dados e proporciona um nível de
+  necessidade – a tendência em abstrair detalhes, com          abstração maior, enquanto a depuração é facilitada
+  o passar do tempo, sempre leva a dúvidas e estas a           pela visualização gráfica que deixa claro para o
+  novas pesquisas em estruturas básicas ora aprendidas         usuário-programador, no momento da execução, em
+  ([11]);                                                      que parte da implementação da estrutura ou do
+• a existência de um material também via web para              algoritmo os erros ocorrem. Ambas vantagens são
+  estudos e pesquisas estimula maior contribuição              particularmente interessantes para alunos de
+  tecnológica para a sociedade, integração de                  disciplinas de estruturas de dados e algoritmos. O
+  diferentes ideais através de contatos pela Internet e        uso do ASTRAL em disciplinas de graduação sobre
+  estruturas de dados como componente de                     incluem funções comuns e os problemas incluem
+  programação foi muito bem sucedido durante vários          alguns como o caixeiro viajante. Alguns tópicos têm
+  semestres;                                                 links para implementações e mais informações. A
+• EDDL (Estruturas de Dados Dinâmicas Lineares)              página de índice relaciona os tópicos por tipo ou em
+  [2]. Surgiu de uma discussão sobre estratégias de          ordem alfabética. Apresenta o funcionamento dos
+  ensino das estruturas de dados e tipos de dados            algoritmos como animações sendo executadas ao se
+  abstratos utilizados em programação. A estruturação        definirem os seus parâmetros;
+  do programa EDDL e a concepção da sua                    • TBC-AED (Treinamento Baseado em Computador
+  funcionalidade englobam os seguintes componentes:          para Algoritmos e Estruturas de Dados) [20 e 22]. É
+  i) uma abordagem introdutória aos conceitos ou             um produto de software educacional que analisa
+  especificação dos tipos de estruturas; ii) as técnicas     tópicos básicos de programação, englobando um
+  de implementação; e iii) a utilização dessas               conteúdo teórico sintético e direto, acompanhado de
+  estruturas na resolução de problemas. Pode ser             processo gráfico passo a passo, representando um
+  utilizado quer como ferramenta introdutória como           repositório didático com visualização gráfica. Isso
+  ferramenta de revisão, exercitação e auto-avaliação.       facilita a visualização e o entendimento das
+  Após o desenvolvimento dos primeiros protótipos ou         informações ora apresentadas e disponibiliza o
+  versões experimentais, o EDDL adquiriu uma                 tempo que seria gasto em transcrever explicações do
+  configuração global em que uma tela principal dá           quadro-negro para o caderno para a resolução de
+  acesso aos módulos principais do programa, que são         exercícios de aplicação e fixação. Além disso, pode-
+  os seguintes: conceitos introdutórios, pilhas, filas,      se alcançar maior interação entre o professor e os
+  listas lineares e exercícios. Em cada uma dessas           seus alunos, no sentido de aumentar o espaço para
+  seções, é analisada em detalhe cada uma das                questionamentos. Possui algumas características, tais
+  operações mais usuais com estes tipos de estruturas,       como: i) links explicativos, evitando a necessidade
+  tais como: criação e destruição da estrutura, inserção     de aprendizagem via tutorial; ii) a usabilidade da
+  e remoção de elementos na estrutura e verificação do       interface gráfica é razoável, possibilitando ao
+  estado da estrutura (vazia, cheia). Oferece um             professor apresentar conceitos iniciais, conteúdos
+  conjunto de ferramentas e outros recursos de               teóricos e práticos aos poucos, como apresentaria em
+  programação que o revelam ser ao mesmo tempo               transparências; iii) conteúdo teórico simples, de
+  intuitivo e de fácil manipulação, diversificado,           forma a familiarizar melhor o aluno com o assunto;
+  versátil e eficaz para o desenvolvimento de projetos,      iv) processo gráfico passo a passo, com elementos
+  principalmente quando o aspecto gráfico é uma das          numéricos, o que melhora a visualização e o
+  componentes importantes a ter em conta;                    entendimento; e v) legendas explicativas, que
+• TED (Tutorial de Estruturas de Dados) [10]. É um           ilustram as etapas do processo de apresentação de
+  tutorial para dinamizar o ensino na disciplina de          algoritmos, facilitando o aprendizado e englobando
+  estrutura de dados. O tutorial desenvolvido é um           aulas teóricas e práticas, ao envolver uma nova
+  produto de software educacional com o objetivo de          forma de transmitir conhecimento. O TBC-AED
+  permitir uma maior interação entre o professor e o         apresenta os seguintes temas: Busca Binária,
+  aluno, servindo como uma ferramenta de apoio ao            Métodos de Ordenação (Select Sort, Insert Sort,
+  aprendizado. O tutorial subdivide-se nas várias            Bubble Sort, Merge Sort e Quick Sort), Estruturas de
+  estruturas apresentadas durante a disciplina,              Alocação Estática e Dinâmica de Memória (Lista,
+  permitindo ao aluno ter uma visão individualizada          Fila e Pilha) e Árvore Binária de Busca. Ele foi
+  dos conteúdos, mas sem perder a visão do todo.             elaborado usando Java e o ambiente de
+  Através de conceitos de dinamização de                     desenvolvimento NetBeans. A partir da apresentação
+  aprendizagem,       como     a     visualização    dos     e disponibilização da ferramenta aos alunos, aqueles
+  acontecimentos simultaneamente com o que é                 que a utilizaram obtiveram êxito na disciplina,
+  executado, o aluno cria uma visão de totalidade do         perfazendo um total de aprovação superior àqueles
+  sistema. O sistema de tutorial apresenta os                que não a utilizaram. Devido a esse fato, para
+  algoritmos das estruturas de dados, ao mesmo tempo         melhorar os resultados, optou-se por dividir a carga
+  em que demonstra a sua implementação lógica                horária da disciplina, antes apenas teórica, em aulas
+  através de exemplos visuais permitindo ao aluno            expositivas (teóricas) e de laboratório (uso da
+  acompanhar todos os passos que são executados;             ferramenta, incluindo exercícios de programação)
+• Dictionary of Algorithms and Data Structures [3].          para o segundo semestre de 2005. Como
+  Este site contém uma parte do Software Quality             conseqüência da evolução, intrínseca a qualquer
+  Group do Software Diagnostics and Conformance              projeto, o TBC-AED foi disponibilizado via web,
+  Testing      Division,    Information      Technology      através de applets 1 , gerando o TBC-AED/WEB
+  Laboratory. Este é um dicionário de algoritmos,
+                                                           1
+  técnicas algorítmicas, estruturas de dados, problemas     Applets são programas Java que podem ser embutidos
+  atípicos e definições relativas. Os algoritmos           em documentos HTML. Quando um navegador carrega
+   (Treinamento Baseado em Computador para                        Dessa forma, compreende-se que a educação
+   Algoritmos e Estruturas de Dados via Web) para que       precisa ser reavaliada, pois representa a base da atual
+   possa ter maior acessibilidade, além de possibilitar a   sociedade mundial e o único instrumento que pode
+   troca de idéias, através da interatividade com           desenvolver o ser humano e torná-lo digno de constituir
+   usuários diversos ([21]). A idéia de criar o TBC-        sua vida e seu ambiente. Isso deve ser acompanhado por
+   AED/WEB surgiu para evitar que o estudante precise       uma atitude crítica da comunidade científica formada,
+   fazer o download do TBC-AED para estudar,                que é a maior interessada em manter e prosseguir com
+   bastando ter uma versão do aplicativo apenas em sua      avanços que contribuam para a melhoria da qualidade de
+   estação de trabalho em casa, para trabalhar offline.     vida.
+   Quando estiver em alguma estação conectada à
+   Internet, ele pode executar o programa diretamente       7. Referências
+   no navegador, desde que esta estação possua a JVM
+   (Java Virtual Machine) instalada. Quanto às              [1] Azeredo, P. A. Uma proposta de Plano Pedagógico
+   características relacionadas à funcionalidade e à             para a Matéria de Programação. Anais do II
+   aparência, o TBC-AED/WEB não difere do TBC-                   Curso: Qualidade de Cursos de Graduação da Área
+   AED. Dessa forma, a partir do acesso web, espera-se           de Computação e Informática (WEI 2000). Editora
+   gerar uma interatividade maior com outros                     Universitária Champagnat.
+   pesquisadores, difusão da pesquisa, contribuição à       [2] Azul, A. A. e Mendes, A. J. EDDL: Um Programa
+   comunidade científica da área e feedback em relação           Didático sobre Estruturas de Dados Dinâmicas
+   ao trabalho realizado.                                        Lineares.      3º     Simpósio     Investigação    e
+                                                                 Desenvolvimento de Software Educativo – 1998.
+6. Conclusões                                                    Évora,         Portugal.        Disponível       em:
+                                                                 http://www.minerva.uevora.pt/simposio/comunicac
+     Sob todo conjunto de informações apresentadas até           oes/Mendes/Eddl.html. Acesso: 15 jun 2005.
+o presente momento, pode-se perceber que existe uma         [3] Black, P. E. Dictionary of Algorithms and Data
+gama de recursos que possibilitam o desenvolvimento              Structures. NIST (National Institute of Standards
+de ferramentas computacionais para o auxílio da                  and        Technology).          Disponível       em
+educação superior em Computação, com destaque para a             http://www.nist.gov/dads/. Acesso: 15 jun 2005.
+linguagem de programação Java, que conta com a              [4] Borges, K. S. e Filho, H. B. R. A Importância dos
+portabilidade e forte suporte para técnicas adequadas de         Grupos de Estudos na Formação Acadêmica. XIII
+Engenharia de Software ([7]). Isso faz com que as novas          Workshop de Educação em Computação
+tecnologias atinjam mais rapidamente seu público alvo.           (WEI’2005). São Leopoldo, RS, Brasil.
+     Além disso, observou-se que o uso de produtos de       [5] Buzin, P. F. W. K. A epistemologia da Ciência da
+software para o ensino de programação e algoritmos é             Computação: Desafio do Ensino dessa Ciência.
+uma idéia inteligente, se for amadurecida e desenvolvida         Revista de Educação, Ciência e Cultura, v. 6, nº 2.
+de forma cuidadosa e estruturada. Isso fornece novas             Centro Universitário La Salle. Canoas, RS, Brasil,
+experiências para professores e alunos, que se                   2001.
+proponham a trabalhar com esse tema. Além disso, eles       [6] Campos, E. A. V. e Ascencio, A. F. G. Fundamentos
+terão sua qualidade de ensino elevada e poderão ser              da Programação de Computadores. Editora
+capazes de avançar mais rapidamente no campo do                  Prentice Hall, 2003.
+conhecimento, através da agilidade de processos             [7] Deitel, H. M. e Deitel, P. J. Java Como Programar.
+didáticos e da participação ativa do docente da área.            Bookman Companhia ed Informática, 2003.
+     Conclui-se também que uma boa elaboração de            [8] Faria, E. S. J. e Coello, J. M. A. Um Estudo
+produtos tecnológicos que facilitem a transmissão de             Empírico dos Efeitos do Uso de Trabalho
+conhecimentos em Computação deve ser acompanhada                 Colaborativo no Aprendizado de Programação em
+de expressiva pesquisa no campo de novas metodologias            Cursos de Graduação em Computação. XIII
+de ensino. A principal finalidade disso é, cada vez mais,        Workshop de Educação em Computação
+haver contribuições que incorram no aprimoramento do             (WEI’2005). São Leopoldo, RS, Brasil.
+ensino superior e na formação de profissionais melhor       [9] Faria, E. S. J., Vilela, J. M. e Coello, J. M. A. Um
+qualificados para o mercado. Isso reflete principalmente         Sistema de Aprendizado Colaborativo de
+sobre futuros professores, uma vez que, aqueles que têm          Programação Baseado em Agentes chamado Learn
+passado por esse tipo de experiência durante a                   In Group. XIII Workshop de Educação em
+graduação, terão grande interesse em executar o mesmo            Computação (WEI’2005). São Leopoldo, RS,
+processo quando estiverem lecionando.                            Brasil.
+                                                            [10] Flávio, D. TED - Tutorial de Estruturas de Dados,
+uma página da Web que contém um applet, o applet é               desenvolvido durante estágio supervisionado na
+executado ([7]).                                                 Universidade do Vale do Itajaí – 2004. Disponível
+      em http://www.tutorialdeestruturadedados.8m.com.       [21] Santos, R. P. e Costa, H. A. X. TBC-AED e TBC-
+      Acesso: 20 jun 2005.                                         AED/WEB: Um Desafio no Ensino de Algoritmos,
+[11] Garcia, I. C., Rezende, P. J. e Calheiros, F. C.              Estruturas de Dados e Programação. IV
+      Astral: Um Ambiente para Ensino de Estruturas de             Workshop de Educação em Computação e
+      Dados através de Animações de Algoritmos.                    Informática do estado de Minas Gerais (WEIMIG’
+      Revista Brasileira de Informática na Educação                2005). Varginha, MG, Brasil.
+      (RBIE’1997) nº 01, http://www.inf.ufsc.br/sbc-         [22] Santos, R. P. e Costa, H. A. X. Desenvolvimento de
+      ie/revista/nr1/garcia.htm. Ambiente ASTRAL                   um Software Educacional para o Ensino de
+      disponível      em:     http://www.dcc.unicamp.br/           Algoritmos, Estruturas de Dados e Programação.
+      ~rezende/ASTRAL/. Acesso: 28 abr 2005.                       CD de Resumos XVIII Cicesal – XII Seminário
+[12] Giraffa, L., Marczak, S. e Almeida, G. O Ensino de            PIBIC/Cnpq – VIII Seminário PBIICT/Fapemig - I
+      Algoritmos e Programação mediado por uma                     Congresso de Extensão, Lavras, MG, v. 1, p. 113-
+      Ambiente Web. Congresso Nacional da Sociedade                113, 2005.
+      Brasileira de Computação (SBC’2003). Campinas,          [23] Setubal, J. C. Uma proposta de Plano Pedagógico
+      SP, Brasil.                                                  para a Matéria de Computação e Algoritmos.
+[13] Giraffa, L., Marczak, S. e Prikladnicki, R. PSD-E:            Anais do II Curso: Qualidade de Cursos de
+      Em Direção a um Processo para Desenvolvimento                Graduação da Área de Computação e Informática
+      de Software Educacional. XI Workshop de                      (WEI 2000). Editora Universitária Champagnat.
+      Informática na Escola (WIE’2005). São Leopoldo,        [24] Soares, T. C. A. P., Cordeiro E. S., Stefani Í. G. A.,
+      RS, Brasil.                                                  Tirelo, F. Uma Proposta Metodológica para o
+[14] Júnior, J. C. R. P. e Rapkiewicz, C. E. O Processo            Aprendizado de Algoritmos em Grafos Via
+      de Ensino e Aprendizagem de Algoritmos e                     Animação Não-Intrusiva de Algoritmos. III
+      Programação: Uma Visão Crítica da Literatura.                Workshop de Educação em Computação e
+      III Workshop de Educação em Computação e                     Informática do Estado de Minas Gerais (WEIMIG’
+      Informática do estado de Minas Gerais (WEIMIG’               2004). Belo Horizonte, MG, Brasil.
+      2004). Belo Horizonte, MG, Brasil.                     [25] Tobar, C. M., Rosa, J. L. G., Coelho, J. M. A. e
+[15] Júnior, J. C. R. P., Rapkiewicz, C. E., Delgado, C. e         Pannain, R. Uma Arquitetura de Ambiente
+      Xexeo, J. A. M. Ensino de Algoritmos e                       Colaborativo     para     o     Aprendizado       de
+      Programação: Uma Experiência no Nível Médio.                 Programação. XII Simpósio Brasileiro de
+      XIII Workshop de Educação em Computação                      Informática na Educação (SBIE’2001). Vitória, ES,
+      (WEI’2005). São Leopoldo, RS, Brasil.                        Brasil.
+[16] Menezes, C. e Nobre, I. Suporte à Cooperação em         [26] Wirth, N. Algoritmos e Estruturas de Dados. LTC
+      um Ambiente de Aprendizagem para Programação                 Informática-Programação, 1989.
+      (SambA). XIII Simpósio Brasileiro de Informática       [27] Yamamoto, F. S., Silva, A. F., Zanutto, J. e
+      na Educação (SBIE’2002). São Leopoldo, RS,                   Zampirolli, F. A. Interdisciplinaridade no Ensino
+      Brasil.                                                      de Computação. XIII Workshop de Educação em
+[17] Pimentel, E. P., França, V. F. e Omar, N. A                   Computação (WEI’2005). São Leopoldo, RS,
+      Caminho de um Ambiente de Avaliação e                        Brasil.
+      Acompanhamento Contínuo de Aprendizagem em
+      Programação de Computadores. II Workshop de
+      Educação em Computação e Informática do Estado
+      de Minas Gerais (WEIMIG’2003). Poços de
+      Caldas, MG, Brasil.
+[18] Raabe, A. L. A. e Silva, J. M. C. Um Ambiente para
+      Atendimento das Dificuldades de Aprendizagem de
+      Algoritmos. XIII Workshop de Educação em
+      Computação (WEI’2005). São Leopoldo, RS,
+      Brasil.
+[19] Rodrigues, M. C. Como Ensinar Programação?.
+      Informática – Boletim Informativo Ano I nº 01,
+      ULBRA. Canoas, RS, Brasil, 2002.
+[20] Santos, R. P. e Costa, H. A. X. TBC-AED: Um
+      Software Gráfico para Apresentação de
+      Algoritmos e Estruturas de Dados aos Iniciantes
+      em Computação e Informática. I Congresso de
+      Computação do Sul do Mato Grosso
+      (COMPSULMT’ 2005). Rondonópolis, MT,
+      Brasil.
 

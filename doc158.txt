@@ -1,0 +1,1217 @@
+Operations Research Perspectives 2 (2015) 62–72
+ Contents lists available at ScienceDirect
+ Operations Research Perspectives
+ journal homepage: www.elsevier.com/locate/orp
+ Areview of simheuristics: Extending metaheuristics to deal with
+ stochastic combinatorial optimization problems
+ Angel A. Juana,∗, Javier Faulinb, Scott E. Grasmanc, Markus Rabed, Gonçalo Figueirae
+ a Department of Computer Science, IN3– Open University of Catalonia, Spain
+ b Department of Statistics and OR, Public University of Navarre, Spain
+ c Department of Industrial and Systems Engineering, Rochester Institute of Technology, USA
+ d Department IT in Production and Logistics, TU Dortmund, Germany
+ e INESC TEC and Faculty of Engineering, University of Porto, Portugal
+ a r t i c l e i n f o
+ Article history:
+ Available online 18 March 2015
+ Keywords:
+ Metaheuristics
+ Simulation
+ Combinatorial optimization
+ Stochastic problems
+ a b s t r a c t
+ Many combinatorial optimization problems (COPs) encountered in real-world logistics, transportation,
+ production, healthcare, financial, telecommunication, and computing applications are NP-hard in nature.
+ These real-life COPs are frequently characterized by their large-scale sizes and the need for obtaining
+ high-qualitysolutionsinshortcomputingtimes,thusrequiringtheuseofmetaheuristicalgorithms.Meta
+heuristics benefit from different random-search and parallelization paradigms, but they frequently as
+sume that the problem inputs, the underlying objective function, and the set of optimization constraints
+ are deterministic. However, uncertainty is all around us, which often makes deterministic models over
+simplified versions of real-life systems. After completing an extensive review of related work, this paper
+ describes a general methodology that allows for extending metaheuristics through simulation to solve
+ stochastic COPs. ‘Simheuristics’ allow modelers for dealing with real-life uncertainty in a natural way by
+ integrating simulation(inanyofitsvariants)intoametaheuristic-drivenframework.Theseoptimization
+driven algorithms rely on the fact that efficient metaheuristics already exist for the deterministic version
+ of the corresponding COP. Simheuristics also facilitate the introduction of risk and/or reliability analysis
+ criteria during the assessment of alternative high-quality solutions to stochastic COPs. Several examples
+ of applications in different fields illustrate the potential of the proposed methodology.
+ ©2015TheAuthors. Published by Elsevier Ltd.
+ This is an open access article under the CC BY license
+ (http://creativecommons.org/licenses/by/4.0/).
+ 1. Introduction
+ We live in big cities with multimodal transportation systems,
+ travel around the world using a complex network of intercon
+nectedairports,buyproductsonlinethataredeliveredtoourdoors
+ from different parts of the planet, make use of highly expensive e
+health systems, keep in touch with our friends and colleagues us
+ing Internet-based services, and our lives are tied to fluctuations
+ in global financial markets. The world is becoming more complex
+ all the time, and most of the systems around us are quite ineffi
+cient– in terms of both monetary and environmental costs– due
+ to the lack of tools to improve their design, reliability, and daily
+ ∗ Corresponding author.
+ E-mail addresses: ajuanp@uoc.edu (A.A. Juan), javier.faulin@unavarra.es
+ (J. Faulin), segeie@rit.edu (S.E. Grasman), markus.rabe@tu-dortmund.de (M. Rabe),
+ goncalo.figueira@fe.up.pt (G. Figueira).
+ http://dx.doi.org/10.1016/j.orp.2015.03.001
+ operations. Most of the decision-making issues associated with
+ the aforementioned systems can be modeled as NP-hard combi
+natorial optimization problems (COPs) with uncertain (stochastic)
+ conditions. Metaheuristic approaches allow for generating ‘high
+quality’ solutions to these kinds of problems in relatively short
+ computing times. Historically, they have been mostly applied to
+ simplified scenarios where real-life uncertainty (i.e., stochastic or
+ randombehavior) is usually not taken into account. There is, how
+ever, an increasing trend for considering randomness into COPs as
+ a way of describing new real problems in which part of the infor
+mationis notknowninadvance. Thistendencycanbeobservedin
+ [1,2], whoprovideareviewofmanytraditionalCOPswithstochas
+tic characteristics. The analyzed problems include stochastic
+ routing, stochastic scheduling, and stochastic reservations. Hem
+melmayretal. [3] studied inventory routing problems considering
+ stochastic product usage. A complete survey on the use of meta
+heuristics to solve a wide class of stochastic COPs can be found
+ in[4], wheretheauthorshaveclassifiedthereviewedmethodsinto
+ 2214-7160/© 2015 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+A.A. Juan et al. / Operations Research Perspectives 2 (2015) 62–72
+ 63
+ twomaincategories based onthewaytheobjective function is es
+timated: (i) ad hoc approximation and (ii) simulation.
+ Simulation techniques allow for modeling and artificially re
+producing complex systems in a natural way [5,6]. Details can
+ thus be incorporated into these models with no mathematical so
+phistication and the computational time typically stays manage
+able. However, complex models may require long development
+ times and difficult verification and validation processes. More
+over, simulation is not an optimization tool on its own. Therefore,
+ simulation experiments need to be designed in order to gain an
+ understanding of the model’s behavior with respect to both deci
+sion and probability spaces. Modern design of experiments [7] can
+ beafirststepinsuchastudy,helpingtoidentifypromisingareasin
+ thesolution spaceorperformingsensitivityanalysis.Nevertheless,
+ large COPsrequiretheuseofmetaheuristicstoconductanefficient
+ search. This paper extends previous work in combining simulation
+ with metaheuristics by proposing a new class of optimization al
+gorithmscalled‘simheuristics’. These algorithms integrate simula
+tion (in any of its variants) into a metaheuristic-driven framework
+ to solve complex stochastic COPs.
+ The mixture of metaheuristics with other methodologies is be
+coming very popular in Operations Research as a good proce
+dure to tackle difficult combinatorial optimization problems [8].
+ While Bianchi et al. [4] presented earlier examples, Glover et al. [9,
+ 10] and April et al. [11] popularized the combination of simula
+tionandmetaheuristicsbydevelopinganddescribingthecommer
+cial optimization software OptQuest, which is currently integrated
+ intoseveralcommercialsimulationpackages[12].Inordertomake
+ OptQuest generic and compatible with any simulation model, the
+ authors proposed a ‘‘black box’’ approach– for both continuous
+ anddiscrete optimization problems– in which the solution proce
+dure is clearly separated from the system. This approach is mainly
+ oriented to optimizing a simulation model of the system, i.e., a
+ discrete-event or Monte Carlo simulation model is generated for
+ a given system and then OptQuest is used to optimize the control
+ parameters of the system [13,14]. However, as discussed in [15],
+ some approaches do not work well out-of-the-box. Instead, they
+ need to be adapted to the specific characteristics of the problem.
+ In those cases, closed software solutions like OptQuest might not
+ be the most efficient ones.
+ Inthispaper,wediscussdifferentwaysofcombiningsimulation
+ with metaheuristics and how problem-specific information can be
+ used to enhance the solution method. Our simheuristic approach
+ has two distinctive characteristics:
+ 1. It promotesacloserintegration betweenoptimizationandsim
+ulation. In particular, the evaluation of solutions is performed
+ not only by simulation, but also by problem-specific analyti
+cal expressions. Hence, it mixes simulation and ad hoc approxi
+mations, although generic metamodels are avoided– while the
+ simple nature of these models is appealing for optimization
+ purposes, they do not accurately represent the real underlying
+ system.
+ 2. The feedback of simulation can be used not only to evaluate
+ solutions, but also to refine the analytical part, so that the latter
+ is able to generate and/or evaluate more realistic solutions.
+ The simheuristics described in this paper focus on the resolution
+ of (discrete) combinatorial optimization problems with stochas
+tic components. These stochastic components can either be lo
+cated in the objective function or in the set of constraints. During
+ the optimization process, our approach benefits from already ex
+isting metaheuristics for deterministic versions of COPs. As illus
+trated in Section 3, our simheuristics approach has been able to
+ provide state-of-the-art solutions for combinatorial optimization
+ problems in different application fields including vehicle routing,
+ scheduling, manufacturing, system availability, and healthcare. As
+ Fig. 1. Overview schema of the simulation–optimization approach.
+ discussedlater, the combinationofmetaheuristicswithsimulation
+ alsopromotestheuseofrisk-analysiscriteriaduringtheevaluation
+ of alternative solutions to stochastic COPs. Finally, and following
+ the criticism of Sörensen [16] regarding certain lack of innovative
+ness in the field of metaheuristics, this paper also aims at ‘open
+ing’ a new research line in this field by extending metaheuristics
+ so they can solve– through their integration with different simu
+lation techniques–anewsetofproblemscharacterizedbyreal-life
+ uncertainty.
+ The paper is structured as follows: Section 2 proposes a clas
+sification of simulation–optimization methods and contextual
+izes simheuristics inside this classification. Section 3 reviews
+ recent applications of simulation–optimization approaches to dif
+ferent fields, including: manufacturing and production, logistics
+ and supply chain management, and healthcare. This review gives
+ context to Section 4, which describes the main ideas behind the
+ simheuristic algorithms we proposebyintegrating simulation into
+ a metaheuristic-driven framework. Section 5 discusses further de
+sign issues yet to be fully explored. Section 6 provides examples
+ of applications to different industries, including: production, lo
+gistics, and Internet computing. Finally, Section 7 summarizes the
+ main conclusions of this work and gives insight about future re
+search lines in simheuristics.
+ 2. Simheuristics as a simulation–optimization methodology
+ Hybrid simulation–optimization (Sim–Opt) techniques and
+ methods have been used for some decades; the first ranking-and
+selection and stochastic-approximation methods were proposed
+ in the 50s. However, the field has flourished in the last fifteen
+ years or so, fertilized in large part by the increase in computational
+ power, the development of advanced optimization methods (such
+ as hybrid metaheuristics) and the emergence and dissemination
+ of simulation software. Fig. 1 illustrates the previously introduced
+ Sim–Optapproach, in whichbothtechniquesinteract to find near
+optimal solutions to complex or stochastic optimization problems.
+ Essentially, Sim–Opt methods have been developed by the
+ simulation and optimization communities independently from
+ each other, resulting in two intersecting approaches [17]: the
+ simulation community developed the ‘‘simulation–optimization’’
+ (SO) approach– focused in the optimization of simulation mod
+els–, while the optimization community developed ‘‘hybrid
+ simulation–analytic’’ (HSA) models/modeling [18]. This general
+ classification is depicted in Fig. 2.
+64
+ A.A. Juan et al. / Operations Research Perspectives 2 (2015) 62–72
+ Fig. 2. Classification of Sim–Opt approaches.
+ Source: Adapted from [17].
+ Regarding SO, Swisher et al. [19] define it as a ‘‘structured ap
+proach to determine optimal input parameter values, where opti
+mal is measured by a function of output variables– steady-state
+ or transient– associated with a simulation model’’. Thus, the opti
+mization procedure uses the outputs from the simulation model,
+ which evaluates the performance of a given solution. That solu
+tion consists of a series of decisions, which are inputs to the sim
+ulation model. On the basis of this evaluation, and on the basis of
+ the past evaluations, the optimization procedure decides upon a
+ new set of input values. Therefore, the simulation model acts as
+ an evaluation function (EF) of the optimization procedure [20]. Al
+ternatively, several sets of input values (each being a solution to
+ the problem) may be simulated in order to construct a surrogate
+ model (or metamodel) (Surrogate Model Construction, SMC) that
+ can then besolved using classical optimization techniques instead
+ of simulation [21]. The solution of the metamodel is then consid
+ered as an approximate solution to the original problem. Several
+ works in the literature discuss both EF and SMC methods [22–24].
+ The commercial optimization module OptQuest [9,25] combines
+ both these approaches. In this software, the EF component con
+sists of a combination of two metaheuristics (scatter search and
+ tabu search) whereas the SMC component uses a neural network.
+ As far as HAS concerns, according to Shanthikumar and Sar
+gent [18] anHSAmodelis‘‘amathematicalmodelwhichcombines
+ identifiable simulation and analytic models’’, whereas HSA mod
+eling ‘‘consists of building independent analytic and simulation
+ models of the total system, developing their solution procedures,
+ andusing their solution procedures together for problem solving’’.
+ Anexample of an HSAmodelis any stochastic program with sam
+pled scenarios (obtained via Monte Carlo simulation). Therefore,
+ in HSA simulation is not typically used to evaluate the quality or
+ feasibility of solutions, but to enhance either the analytical model
+ (AME)ortogenerateapartofthesolution(SG).InAME,simulation
+ is used to refine the parameters of a problem-specific analytical
+ model.Thisanalyticalmodelenhancementstrategytendstobeless
+ simulation-intensive than EF, since the optimization component is
+ not dependent on simulation to validate its moves. In fact, as we
+ move from left to right in Fig. 2, the dependence of optimization
+ on simulation tends to decrease given that more problem-specific
+ information is incorporated in the method.
+ It is interesting to notice that, when looking at the hierarchical
+ structure between simulation and optimization in Fig. 2, we can
+ differentiate between approaches that are more optimization
+drivenandmoresimulation-driven.Intheformer,theoptimization
+ algorithm is the ‘driving’ agent and simulation acts as an ‘auxiliary’
+ agent, being called whenever appropriate by the optimization
+ agent (simulation-based optimization). In the latter, simulation
+ acts as the driving agent to reproduce the behavior of a random
+ system and then optimization is being called from time-to-time in
+ order to find optimal (or near-optimal) values of some simulation
+ parameters (optimization-based simulation). Finally, as shown in
+ Fig. 2, simheuristic algorithms constitute a special case of Sim–Opt
+ approaches that typically are optimization-driven, but can either
+ beclassified as EF (SO)orasAME(HSA)dependingontheirspecific
+ implementation.
+ 3. Areview onsim–optapplications
+ In order to show some of the potential application fields
+ of simheuristics as a particular type of Sim–Opt methodology,
+ this section reviews recent applications of different Sim–Opt ap
+proaches (both based on exact and approximated optimization
+ methods) to different fields. The application fields include: manu
+facturing and production, logistics and supply chain management,
+ and healthcare.
+ 3.1. Sim–Opt applications in manufacturing & production
+ In the scientific literature it is possible to find multiple exam
+ples of Sim–Opt applications to the manufacturing and production
+ field. Dengiz et al. [26] propose a tabu search algorithm, in con
+junction with a simulation model of a just-in-time system, to find
+ the optimum number of kanbans that meet production demands.
+ Altiparmaketal.[27]proposeahybridmethodologytofindanear
+optimal buffer size configuration for the asynchronous assembly
+ system. Their methodology combines an artificial neural network
+ model with simulated annealing. The former model is used to de
+velop a filter-out metamodel that helps to overcome the fact that
+ running simulations is extremely time consuming. Byrne and Hos
+sain [28] apply a recursive optimization–simulation approach to a
+ production planning probleminajobshopsystem.Arecursiveop
+timization–simulation approach consists in alternating between a
+ simulationandanoptimizationmodel,whereneitheristheleading
+ agent.Thepurposeofsimulationiscomputingadjustedproduction
+ capacities– which take into account the waiting times in the sys
+tem– and refining them in the analytical model. Some improve
+mentsontherecursiveoptimization–simulation approach, related
+A.A. Juan et al. / Operations Research Perspectives 2 (2015) 62–72
+ 65
+ toproductclustering,simulationlength,andinventorylevelobser
+vation, are proposed in [29]. Can et al. [30] present a comparative
+ study of different algorithms for optimizing the stochastic buffer
+allocation problem. Their experimental results show that it is pos
+sible to enhance the performance of these algorithms by allowing
+ theformationofinfeasiblesolutionsandtheincorporationoflinear
+ penalty functions during the search process. Hubscher–Younger
+ et al. [15] use MATLAB to optimize a chemical batch production
+ process by means of their integrated approach, which combines
+ continuous-time, discrete-event, and state-transition systems. In
+ [31], the authors face scheduling problems in complex assembly
+ lines. In particular, they consider the problem often referred to as a
+ multi-mode,resource-constrained,multi-projectschedulingprob
+lem with activity splitting. To solve this problem, they propose a
+ simulation-based heuristic decentralized algorithm based on self
+organization. Laroque et al. [32] present a hybrid approach of
+ simulation and metaheuristics for an innovative, fast converg
+ing procedure aimed at optimizing the parameters associated
+ to a simulation model. Their approach uses a combination
+ of particle swarm optimization and genetic algorithms as an
+ automatic experimental design in a distributed simulation envi
+ronment. These authors use a simple material flow simulation
+ problemtoevaluatethesolutiongivenbythecombinedprocedure.
+ Almeder and Hartl [33] deal with a scheduling problem related
+ to a real-world production process in the metal-working indus
+try, which can be described as an offline stochastic flexible flow
+shop problem with limited buffers. The authors propose a variable
+ neighborhood search approach in which the objective function is
+ evaluated either by Monte Carlo simulation or by a detailed
+ discrete-event simulation. Lin and Huang [34] address the issue
+ of automated material handling systems in a semiconductor fab
+rication plant. The stochastic and complex manufacturing process
+ is represented by a simulation model, which is optimized using a
+ particle swarm optimization metaheuristic. The algorithm is en
+hanced by the use of optimal computing budget allocation, which
+ reduces the number of required simulations. Finally, Gansterer et
+ al. [35] present a Sim–Opt framework for hierarchical production
+ planning. The frameworkisusedtoidentifygoodsettingsforthree
+ planning parameters, namelyplannedleadtimes,safetystock, and
+ lot sizes. Within a discrete-event simulation that mimics the pro
+duction system, they use a mathematical optimization model for
+ replicating the decision problem. This analytical model is solved to
+ optimality using a standard optimization engine. The authors de
+vise a variable neighborhood search procedure that embodies the
+ OptQuest routine for local search purposes, showing better results
+ than five other approaches.
+ 3.2. Sim–Opt applications in logistics & supply chain management
+ Inside the logistics and supply chain management arena, Sub
+ramanian et al. [36] combine mathematical programming and
+ discrete-event simulation toassesstheuncertaintyandcontrolthe
+ risk when managing a pipeline. The simulation component is the
+ driving agent, which calls optimization when needed. Truong and
+ Azadivar [37] embed an SG method in an EF approach to solve a
+ supply chain design problem. Their genetic algorithm (EF compo
+nent) focuses on main qualitative decisions and each chromosome
+ is decoded by an analytic model followed by simulation (SG com
+ponent). Subramaniam and Gosavi [38] present an SO approach
+ aimed at solving a stochastic material-dispatching system in a re
+tailer network. The problem they consider is one of determining
+ the optimal number of trucks and quantities to be dispatched in
+ such a system. They develop a model that accommodates several
+ real-life considerations, and also discuss how it can be optimized.
+ Theauthorsusetwooptimizationtechniques,simulatedannealing
+ and neuro-response surfaces, to tackle the problem of dispatching
+ material between a single warehouse and several retailers in an
+ SO scheme. Jung et al. [39] approach a supply chain management
+ problem under demand uncertainty. The authors have devised an
+ optimization-based simulation framework, similar to that of [36],
+ but where refinements are performed to the analytic model. The
+ latter is thus solved using a rolling horizon within the simulation
+ model. This procedure is repeated multiple times, performing (ev
+ery n iterations) the appropriate refinements to the safety stock
+ levels in order to accommodatetheuncertaintyofdemand.Junget
+ al. [40] extend this study to multi-stage supply chains, while em
+ploying a Sim–Opt approach in gathering information about the
+ supply chain. Ekren and Heragu [41] discuss how to optimize a
+ single-item, two-echelon inventory system where the items can
+ be stored in several stocking locations. They perform a simulation
+ based on two policies and five scenarios using the OptQuest tool
+ and commercial simulation software. The goal is to minimize the
+ total inventory, backorders, and transshipments costs, based on
+ the replenishment and transshipment quantities. In their study,
+ they find that the stocking location having cheaper transporta
+tion cost has a clearing house role in the transportation problem.
+ Also, they conclude that when the capacity increases until a cer
+tain amount of the transshipment capacity value, the optimum
+ cost decreases drastically. Almeder et al. [42] apply a recursive
+ optimization–simulation approach to a stochastic supply chain
+ planning problem. The results of multiple simulation runs are ag
+gregated by quantiles, which enable consideration of different risk
+ levels. Eskandari et al. [43] study the issue of channel coordina
+tion for a supply chain consisting of one supplier and two retail
+ers facing stochastic demand that is sensitive to both sales effort
+ and retail price. The authors develop a decision support tool using
+ SOfor supply chain coordination with revenue sharing or buyback
+ contract. The SO decision support tool is then used to find the op
+timum or near-optimum set of decision variables in the cases of
+ centralized supply chains or coordinated supply chains using con
+tracts. The authors conclude that, unlike traditional mathematical
+ techniques that are subject to rather restricting assumptions, the
+ use of simulation modeling and optimization allows for address
+ing realistic scenarios. Alizadeh et al. [44] consider the problem of
+ inventory models with deteriorating items, stochastic lead times,
+ and Poisson demands. Their goal is to minimize the long-run total
+ expected costs of the system when shortage is allowed, and they
+ use OptQuest in their solving process.
+ 3.3. Sim–Opt applications in healthcare
+ Duetothesocial andeconomicrelevanceofmodernhealthcare
+ systems, this section offers a review of recent approaches in
+ healthcareservicesthatcouldbeeasilysubstitutedbysimheuristic
+ algorithms.In[45],theauthorsproposeanapproachthatcombines
+ simulation with a genetic algorithm metaheuristic and a goal
+ programming model. A similar approach is also employed in
+ [46] to solve a multi-objective optimization problem related to a
+ cancer treatment center facility. Although not described in detail,
+ in [47] an algorithm integrating Monte Carlo simulation with
+ simulated annealing is used to optimize patient arrival schedules
+ in a multiple operating room surgical suite. Similarly, Iser et
+ al. [48] propose a simple algorithm, also combining heuristics
+ with Monte Carlo simulation, in order to obtain ‘good’ solutions
+ for the problem of minimizing the expected cost of surgery
+ scheduling, which include costs due to operating room overtime,
+ as well as costs due to post-surgery (recovering) nurse-hours. Also
+ related to the scheduling of patients for elective surgeries under
+ stochastic usage of operating room capacity, Stanciu et al. [49]
+ propose a relatively simple algorithm combining a heuristic with
+ Monte Carlo simulation to determine the reservation of a fixed
+ capacity across multiple customer classes. Arnaut [50] transforms
+66
+ A.A. Juan et al. / Operations Research Perspectives 2 (2015) 62–72
+ the problemofmaximizingtheutilizationofoperatingroomswith
+ random processing and setup times into a stochastic job-shop
+ problem with parallel machines and sequence-dependent setup
+ times, and then uses a commercial simulator in combination with
+ OptQuest to solve the associated stochastic scheduling problem.
+ Rico et al. [51] study the best nurse allocation policy to manage
+ patient overflow during a pandemic influenza outbreak. Their
+ approach combines a commercial simulator with OptQuest in
+ order to analyze different configurations regarding the number
+ of nurses needed for healthcare delivery. Kasaie and Kelton [52]
+ propose an approach combining agent-based simulation with
+ response-surface optimization to solve a resource allocation
+ problem in the control of epidemics. Silva and Pinto [53] develop
+ a hybrid methodology to analyze the performance of a medical
+ emergency system. They first create a discrete-event simulation
+ modeloftheemergencysystem,andthenuseOptQuesttoanalyze
+ different scenarios and find the best parameters for the simulation
+ model. In their work, Weng et al. [54] combine a simulation
+ modelwithOptQuestinordertooptimizetheallocation of human
+ resources in a hospital emergency department. Finally, Kuo et
+ al. [55,56] model the emergency department in a hospital using a
+ commercial simulator, and then use simulated annealing to obtain
+ ‘good’ estimatesfortheparametersassociatedwiththeprobability
+ distributions in their simulation model.
+ 4. Basic logic behind simheuristics
+ As previously mentioned, real-world sized instances of COPs
+ are typically approached by metaheuristics. Likewise, real-life
+ stochastic COPs can be naturally addressed by a combination of
+ metaheuristics and simulation techniques (in any of its variants).
+ In this context, a simheuristic algorithm is a particular Sim–Opt
+ approachorientedtoefficientlytackleaCOPinstancethattypically
+ contains stochastic components. These stochastic components can
+ either be located intheobjectivefunction(e.g., random customers’
+ demands,randomprocessingtimes,etc.)orinthesetofconstraints
+ (e.g., customers’ demands that must be satisfied with a given
+ probability, deadlines that must be met with a given probability,
+ etc.). In particular, our simheuristic approach is aimed at solving
+ combinatorial optimization problems of the form:
+ Minf(s) = E [C (s)] or,alternatively,
+ Maxf(s) = E[B(s)].
+ Subject to:
+ P (qi(s) ≥ li) ≥ ki ∀i = 1,2,...,n
+ hj (s) ≤ rj ∀j = 1,2,...,m
+ s ∈ S
+ where:
+ (1)
+ (2)
+ (3)
+ (4)
+ • S represents a discrete space of possible solutions s to the
+ optimization problem.
+ • C(s) represents a stochastic cost function (alternatively, B(s)
+ represents a stochastic profit or income function)
+ • E[C(s)]representsaprobabilisticmeasureofinterestassociated
+ with the cost function (e.g., the expected value of C(s))
+ • Eqs. (2) represent probabilistic constraints related to the
+ problem (e.g., the probability that the service quality q(s)
+ reaches a given threshold l is above a user-defined value k)
+ • Eqs.(3) represent typical deterministic constraints in combina
+torial optimization problems.
+ Theuseofmetaheuristicsinside theSOarenahadalreadybeende
+scribed by Olafsson [57], who highlights the importance of cov
+ering the gap between the solutions of practical problems and
+ their theoretical analysis—traditionally carried out by exact pro
+cedures. We extend the study of simheuristics to the full spec
+trum of Sim–Opt approaches, which include not only SO, but also
+ HSA. Notice that simheuristics can also be applied to determinis
+tic problems,whosecomplexityrequirestheuseofsimulation,and
+ eventocontinuous-spaceproblems.However,ourfocusinthispa
+per is on stochastic COPs since they appear frequently in real-life
+ decision-making processes. Some examples of simheuristic appli
+cation to different fields can be found in the Sim–Opt literature.
+ Thus, for instance, Juan et al. [58] and Gonzalez et al. [59] com
+binedMonteCarlosimulationwithroutingmetaheuristicsinorder
+ to solve, respectively, the vehicle routing problem with stochastic
+ demands and the arc routing problem with stochastic demands;
+ Juanetal.[60]combinedMonteCarlosimulationwithascheduling
+ metaheuristic in order to solve the permutation flow-shop prob
+lemwithstochasticprocessingtimes;andJuanetal.[61]combined
+ Monte Carlo simulation with a routing metaheuristic in order to
+ solvetheinventoryroutingproblemwithstock-outsandstochastic
+ demands.Also, as illustrated in [62], discrete-event simulation can
+ be used in combination with a metaheuristic to solve other COPs
+ with probabilistic constraints where the random behavior is con
+ditioned by the time factor.
+ Our simheuristic approach assumes that, in scenarios with
+ moderate uncertainty (variance), high-quality solutions for the
+ determinist version of a COP are also likely to be high-quality
+ solutions for its corresponding stochastic version—of course, this
+ doesnotimplythatthebestsolutionforthedeterministCOPhasto
+ be the best solution for the stochastic version. Notice that, in most
+ practical applications, this assumption seems to be reasonable.
+ Also, notice that in scenarios with extreme uncertainty levels,
+ individual outcomes can be extremely diverse and, therefore,
+ optimization techniques should not be implemented in those
+ cases. This ‘relationship assumption’ allows us to generate several
+ ‘promising’solutionsforthestochasticCOPthroughthegeneration
+ of a numberofhigh-quality solutions for the deterministic COP. As
+ depicted in Fig. 3, given a stochastic COP instance, its deterministic
+ counterpart is considered. This can be done, for instance, by
+ replacing all random variables by their expected values, which
+ is clearly optimistic. Then, a metaheuristic-driven algorithm is
+ run in order to perform an efficient search inside the solution
+ space associated with the deterministic COP. This iterative search
+ process aims at finding a set of high-quality feasible solutions
+ for the deterministic COP. During the iterative searching process,
+ the algorithm has to assess or estimate the quality (or feasibility)
+ of each of these ‘promising’ solutions when they are considered
+ as solutions of the stochastic COP instance. One natural way to
+ do this is by taking advantage of the capabilities that simulation
+ methodsoffertomanagerandomness.Ofcourse,otherapproaches
+ can also be used instead of simulation, e.g. dynamic programming,
+ fuzzy logic, etc. However, under the presence of historical data
+ on stochastic behavior, simulation allows for developing both
+ accurate and flexible models. Specifically, randomness can be
+ modeled throughout a best-fit probability distribution– either
+ theoretical or empirical– without having to assume a Normal or
+ Exponential behavior as other methods do. It should be noted that
+ during theinteractive searching process only ‘promising’ solutions
+ (i.e., those that perform well in the optimistic, deterministic
+ case) are sent to the simulation component. Moreover, for each
+ promising solution, just a reduced number of replications are
+ run since only rough estimates are necessary at this stage. This
+ strategy allows for controlling the computational effort employed
+ by simulation during the interactive searching process, thus
+ leaving enough time to the metaheuristic to perform an intensive
+ search of the solution space. The estimated values provided by the
+ simulation can then be used to keep a ranked list of elite solutions
+ for the stochastic problem. They can also provide feedback to
+A.A. Juan et al. / Operations Research Perspectives 2 (2015) 62–72
+ 67
+ Fig. 3. General scheme of simheuristics for solving stochastic COPs.
+ the metaheuristic so that it intensifies exploration of promising
+ searching areas. Once the computational time assigned to the
+ iterative searching process has expired, more accurate estimates
+ can be obtained for a reduced set of elite solutions by employing
+ simulations with a larger number of replicas. These new estimates
+ can then be used to re-rank the solutions.
+ Aremarkablefactisthatthesefinalsimulationscanalsobeused
+ to obtain additional information on the probability distribution
+ of the quality of each solution. This complementary information
+ can then be used to introduce risk/reliability analysis criteria in
+ the decision-making process. In effect, since the objective function
+ is stochastic, a decision maker might not only be interested in
+ obtainingthesolutionthatoptimizesitsexpectedvalue,buthe/she
+ mightbealsointerestedinanalyzingtheprobabilitydistributionof
+ the values generated by several alternative solutions with similar
+ expected values. As shown in Fig. 4, a risk-averse decision maker
+ might choose a solution with a lower variability or risk (e.g., Sol2)
+ over a more risky solution with a slightly better expected value
+ (e.g., Sol1, which could go as higher as 60 cost units). Precisely,
+ this risk analysis capability is one of the major advantages that
+ simheuristics (and other similar approaches) can offer in a natural
+ way due to the ability of metaheuristics to generate a plethora
+ of high-quality alternative solutions and also due to the ability of
+ simulation to provide a random sampling of observations for each
+ proposed solution.
+ In summary, simulation allows for extending existing and
+ highly efficient metaheuristics– initially designed to cope with
+ deterministic problems– so they can also be employed in solving
+ stochastic COPs. This is the case in [63], where the authors discuss
+ how the iterated local search metaheuristic can be naturally
+ extended by combining it with simulation.
+ Obviously, one major drawback of every approach combining
+ metaheuristics with simulation is that the results are not expected
+ to be optimal. Nevertheless, real-life problems are frequently NP
+hard and stochastic. Therefore, simheuristics constitute a quite
+ interesting alternative for many practical purposes since they
+68
+ A.A. Juan et al. / Operations Research Perspectives 2 (2015) 62–72
+ Fig. 4. Introducing risk-analysis criteria in the assessment of alternative solutions.
+ represent relatively simple and flexible methods that are able
+ to provide ‘high-quality’ solutions to complex real-life problems
+ in reasonable computing times. The motivation for combining
+ metaheuristics with simulation in general, and simheuristics in
+ particular, is that it is often preferable to obtain an approximate
+ solution to an accurate model of the real system rather than the
+ optimal solution to an oversimplified model. Finally, the fully
+ integrated and relatively simple design of simheuristic algorithms
+ allows them to be extremely flexible, therefore promoting their
+ integration with biased-randomized searching strategies [64] as
+ well as with computing parallelization strategies [65].
+ 5. Further design considerations
+ Other designs of simheuristics are possible. For instance, the
+ simulation length may vary during the optimization process ac
+cording to a statistical test that compares pairs of solutions. If dif
+ferences are significant, the simulation process can terminate ear
+lier (with less or shorter replications). In addition, the number of
+ replications in each simulation may increase along with the meta
+heuristic procedure, as new promising solutions become less fre
+quent, so that it keeps some diversification in the beginning but
+ converges with increasing confidence. The trade-off between di
+versification and intensification has to be adjusted when shift
+ing from a deterministic problem to its stochastic version. Indeed,
+ since the selection of solutions involves some uncertainty, there
+ will be cases where a worse solution is selected, even for high
+ confidence levels. This introduces an additional diversification el
+ement so increasing intensification may be advisable. One way to
+ tune this diversification–intensification trade-off, as Figueira and
+ Almada-Lobo [17] noted, is by changing the search scheme with
+ respect to the alternation in the solution and realization (or proba
+bility) spaces. As previously discussed, one realization for each so
+lution(1R1S)allowsobtainingagreaterdiversificationofsolutions.
+ Other schemes, such as different realizations for each solution
+ (DR1S)andcommonrealizationsforeachsolution(CR1S)maypro
+vide a better convergence to the detriment of diversification. CR1S
+ is indeed a stream of research, widely known as sample path opti
+mization [66] or sample average approximation [67], which advo
+cates the importance of improvingtheconvergenceofSOmethods
+ by converting the problem into its deterministic version.
+ The aforementioned designs can be classified as evaluation
+ function techniques since that is the mainpurposeofsimulationin
+ the methodology. Nevertheless, simheuristics can also be applied
+ in the context of analytical model enhancement methods, which
+ are less simulation-intensive. An example is the work reported in
+ [68], which is described in the next section.
+ 6. Potential and actual applications in different fields
+ 6.1. Production planning and scheduling
+ In [60] theauthorsanalyzethepermutationflow-shopproblem
+ with stochastic times, a generalization of the well-known permu
+tation flow-shop problem (NP-hard) in which the processing time
+ of each job i in each machine j is a random variable Pij following
+ a positive probability distribution. Since uncertainty is present in
+ mostreal-life processesandsystems,consideringrandomprocess
+ing times represents a more realistic scenario than simply consid
+ering deterministic times. As a result, unforeseen circumstances
+ can lead to sudden changes in the processing time of certain jobs
+ in certain machines, which is likely to have noticeable effects on
+ the predicted makespan, i.e., the total completion time of all jobs.
+ OnenaturalgoalwhendealingwiththisstochasticCOPistodeter
+mineasequenceofjobsthatminimizestheexpectedmakespan.In
+ thearticlesbyDodin[69],Honkompetal.[70],Gourgandetal.[71],
+ andBakerandAltheimer[72],simulation–optimizationtechniques
+ had been used to get results for the stochastic version of the prob
+lem. In most of these articles, however, assumptions were made
+ about the probability distributions employed to model processing
+ times, e.g., Normal or Exponential, or about the restricted size of
+ the instances being analyzed. In a real-life scenario, the specific
+ distributions to be used will have to be fitted from historical data
+ (observations) leading to empirical distributions. To overcome
+ these restrictive assumptions, Juan et al. [60] propose a simheuris
+tic algorithm. The main idea behind their approach is to transform
+ the initial stochastic instance into its corresponding deterministic
+ instance– by considering average, instead of random, processing
+ times– and then solve the determinist instance using an efficient
+ metaheuristic. Since any solution s for the deterministic instance
+ will be also a feasible solution for the stochastic version, they
+ use Monte Carlo simulation to obtain estimates for the expected
+ makespan associated with s. Simulation is used here to determine
+ whichsolution, among thebest-found deterministic ones, shows a
+ lowerexpectedmakespanwhenconsideringstochastictimes.This
+ strategy assumes that a strong correlation exists between high
+quality solutions for the deterministic version of the problem and
+ high-qualitysolutionsforthestochasticversion.However,notnec
+essarily the best-found solution for the deterministic version will
+ becomethebest-foundsolutionforthestochasticversionsincethe
+ resulting makespan of the former might be quite sensitive to vari
+ations in the processing times. Specific sensitivity analysis could
+ be used here to measure how robust this assumption is [73]. Also,
+ as the authors discuss, the information provided by the simula
+tion can be employed to perform a survival analysis of alterna
+tive solutions with similar expected makespan. This way, proba
+bilities of completing the jobs before a given deadline can be com
+pared among different solutions (Fig. 5). In this specific case, the
+ first solution exhibits a higher probability of meeting a deadline
+ not greater than 4000 s. However, for greater values, the second
+ solution should perform better. Current studies are extended to
+ the problem of mid-term scheduling of production under relaxed
+ constraints, e.g., with algorithms that allow for changing the fac
+tory capabilities and capacities for the future. Such an approach
+ leads to so-called ‘changing steady-state’ systems that show a high
+ complexity with respect to the high number and diversity of re
+lationships. Discrete-event simulation seems a good candidate to
+ approachthis kind of problemsincombinationwithmetaheuristic
+ algorithms [74].
+ Another example of simheuristics in production planning is
+ presented by Figueira et al. [68]. The authors approach the
+ production planning and scheduling of an integrated pulp and
+ paper mill, subject to process variability and disturbances. The
+ former can be modeled by probability distributions. The latter,
+A.A. Juan et al. / Operations Research Perspectives 2 (2015) 62–72
+ 69
+ Fig. 5. Using cumulative density functions to compare alternative solutions.
+ however, needs a distribution for the time between failures
+ and another for the time to repair. This behavior cannot be
+ easily modeled by stochastic programming approaches. Monte
+ Carlo simulation also fails to provide the necessary detail.
+ Therefore, a discrete-event simulation model is developed for
+ mimicking the execution of production plans while considering
+ both process variability and disturbances. The deterministic
+ problem is formulated as a mixed integer programming model,
+ which comprises a combinatorial part (related to the sequence of
+ papercampaigns)andacontinuouspart(regardingtheproduction
+ rates and quantities). Since it is an NP-hard problem, a variable
+ neighborhoodsearchmetaheuristicisappliedtothecombinatorial
+ part, while the linear continuous optimization is left to an exact
+ solver, which decodes every (integer) partial solution considered
+ by the metaheuristic. Uncertainty is then reproduced using
+ discrete-eventsimulation,whichisintegratedinthemetaheuristic
+ framework. However, the algorithm does not call simulation to
+ evaluate solutions since that would require a huge computational
+ effort. Furthermore, given that each solution is decoded by an
+ exact method, using simulation as an evaluation function would
+ only give feedback with respect to the integer representation
+ (sequencing of campaigns). Therefore, simulation is used to refine
+ particular parameters of the analytical model, so that the resulting
+ plans can be more robust.
+ 6.2. Transportation and logistics
+ The first example in this section refers to the vehicle routing
+ problem with stochastic demands, another NP-hard problem in
+ whichasetofcustomerswithrandomdemandsmustbeservedby
+ afleet ofhomogeneousvehiclesdepartingfromadepot.Obviously,
+ there are some tangible costs associated with the distribution of
+ these resources from the depot to the customers. In particular, it
+ is usual for the model to explicitly consider costs due to moving
+ a vehicle from one node– customer or depot– to another. These
+ costs are often related to the total distance traveled, but they can
+ also include other factors such as number of vehicles employed,
+ service times for each customer, etc. The classical goal consists of
+ determining the optimal solution (set of routes) that minimizes
+ those tangible costs subject to the following constraints: (i) all
+ routes beginandendatthedepot;(ii)eachvehiclehasamaximum
+ load capacity, which is considered to be the same for all vehicles;
+ (iii) all (stochastic) customers’ demands must be satisfied; (iv)
+ each customer is supplied by a single vehicle; and (v) a vehicle
+ cannot stop twice at the same customer without incurring in a
+ penalty cost. The random behavior of customers’ demands could
+ cause an expected feasible solution to become infeasible if the
+ final demand of anyrouteexceeds theactual vehicle capacity. This
+ situation is referred to as ‘route failure’, and when it happens some
+ corrective actions must be introduced to obtain a new feasible
+ solution. Thus, for example, after a route failure the associated
+ vehiclemightbeforcedtoreturntothedepotinordertoreloadand
+ resume the distribution at the last visited customer. As discussed
+ in [58], one possible methodology to deal with this problem is to
+ design reliable solutions, i.e., solutions with a low probability of
+ suffering route failures. This is basically attained by constructing
+ routesinwhichtheassociatedexpecteddemandwillbesomewhat
+ lower than the vehicle capacity. Particularly, the idea is to keep
+ a certain amount of vehicle capacity surplus (safety stock) while
+ designing the routes, so that if final routes’ demands exceed their
+ expected values up to a certain limit, they can be satisfied without
+ incurringinaroutefailure.Usingsafetystocksnotonlycontributes
+ to reducing variable costs due to route failures but, related to that,
+ it also increases the reliability or robustness of the planned routes,
+ i.e., as safety stock levels increase, the probability of suffering a
+ route failure diminishes. Notice, however, that employing safety
+ stocks also increases fixed costs associated with an initial routing
+ design, since more vehicles and more routes are needed when
+ larger buffers are considered. Therefore, when minimizing the
+ total expected cost, a tradeoff exists between fixed costs and
+ expected variable costs. Thus, the challenge relies on the selection
+ of the appropriate buffer size. Given a stochastic instance, Juan et
+ al. [58] consider different levels of this buffer size and then solve
+ the resulting scenarios. This is performed by employing Monte
+ Carlo simulation, which allows for estimating the variable costs
+ associated with each candidate solution. Thus, among the multiple
+ solutions generated for each scenario, the ones with lowest total
+ expected costs are stored as the best-found result associated
+ with the corresponding safety-stock levels. Once the execution
+ of the different scenarios ends, the corresponding solutions are
+ comparedtoeachotherandtheonewiththelowesttotalexpected
+ costs is selected as the best-found routing plan. A parallel version
+ of this algorithm can be found in Juan et al. [75].
+ Another simheuristic approach has been used by Goodson et
+ al. [76]togeneratedynamicsolutionsfortheMulti-vehicleRouting
+ ProblemwithStochastic DemandandDurationLimits.Yetanother
+ example in the transportation and logistics arena is due to Juan
+ et al. [61], who deal with the inventory routing problem with
+ stochastic demands (also an NP-hard problem). This can be seen
+ as an extension of the well-known capacitated vehicle routing
+ problem composed of a set of retail centers plus the depot. Each
+ retail center owns an inventory, which is managed by the central
+ depot. For each retail center, the inventory level at the end of
+ a period depends on the initial stock level and also on the end
+clients’ demands during that period. These end-clients’ demands
+ are stochastic in nature, and they can be modeled through
+ theoretical or empirical probability distributions. Therefore, at the
+ end of each period there might be some costs associated with
+ inventory holding and inventory stock-outs. These costs might be
+ incorporated into the decision-making process and added to the
+ distribution or routing costs. At the end of each period, inventory
+ levels are registered by the retail center and updated in the central
+ depot, so that a new routing strategy is defined for the new period
+ taking into account the new data. Under these conditions, one
+ possible goal is to minimize total expected costs (distribution plus
+ inventory-related costs) in each single-period scenario. In order
+ to solve this problem, Juan et al. [61] propose a hybrid approach
+ which also combines simulation with an efficient vehicle-routing
+ metaheuristic. The algorithm initially makes use of Monte Carlo
+ simulation to estimate the expected inventory costs associated
+ with each retail center-policy combination. Next, it employs a
+70
+ A.A. Juan et al. / Operations Research Perspectives 2 (2015) 62–72
+ fast routing heuristic to compute the total costs– inventory plus
+ routing– associated with several refill strategies. The best of
+ these strategies is then utilized as an initial base solution in
+ a multi-start randomized metaheuristic. After randomly sorting
+ the retail centers, this heuristic iteratively improves the base
+ solution by trying different refill policies for each retail center and
+ selecting the one with the lowest total costs. After performing a
+ set of computational tests, the authors show that their ‘integrated’
+ methodology outperforms the traditional sequential approach,
+ in which each individual inventory level is optimized first and
+ then the resulting vehicle routing problem is solved. Notice that
+ their simulation–optimizationapproachcanconsiderpersonalized
+ refill policies for each customer, which contributes to significantly
+ reducingthetotalcostsoverotherapproachesusingstandardrefill
+ policies.
+ An interesting recent approach has been announced by Dross
+ and Rabe [77]. The problem initiated from a large, international
+ trading company with over 100 warehouses in different countries
+ and with an inventory of around 150,000 items on permanent
+ stock. The company operates a large, complex and heterogeneous
+ logistics network. The network is structured as a multi-echelon
+ network with central, regional and local warehouses. Within the
+ logistics network, there are certain warehouses that can perform
+ value-added services, for example cutting, drilling or milling. In
+ recent years, the company has developed specialized reporting
+ systems to manage their logistics network. The process data and
+ the stock data are gathered by the operational systems and are
+ regularly transferred into a Data Warehouse (DWH). Based on
+ the DWH, the company has developed different Performance
+ Measurement Systems (PMS). PMS unite different Performance
+ Measures that relate to each other in a hierarchical form and
+ usually culminate in one Key Performance Indicator (KPI). The
+ company also developed a dedicated KPI Monitoring System
+ (KPIMS) for each KPI, to ensure constant improvement of the
+ logistics network regarding the KPIs. Each KPIMS constantly
+ monitors one KPI and sends an individually composed KPI Alert
+ to a responsible manager, if the KPI leaves certain predefined
+ corridors. A KPI Alert generally consists of two parts: A list of facts
+ that caused the KPI to deteriorate and a set of possible actions
+ that could be performed by the addressed manager in order to
+ improve the KPI. In this setup a problem arises from the fact that
+ the different KPIMS are not connected to each other and each
+ KPI Alert is sent to the managers of the company, independently.
+ This leads to a situation, where the suggested actions of a KPIMS
+ could improve its own KPI while deteriorating one or more other
+ KPIs. Furthermore, from the perspective of the receiving manager,
+ the resulting counter-intuitive and counter-productive suggested
+ actions could be very disappointing. E.g., the logistics manager
+ could receive a report, which tells him to lower the stock of a
+ specific item, because this wouldimprovehis‘‘StockProductivity’’.
+ He performs the suggested action and therefore receives another
+ report from another KPIMS, which tells him to raise the stock,
+ because this would probably improve his ‘‘Deliveries On Time In
+ Full’’. As a consequence, the manager would probably reject the
+ suggested actions and just act according to his or her personal
+ opinion or not react at all. Therefore, the company is looking
+ for a solution to optimize their logistics network in a constant,
+ multi-objective manner, i.e. to find those actions that optimize
+ the network considering all monitored KPIs. Essentially, the goal
+ is an interdependence analysis, which can be used to improve the
+ understanding of the interconnectedness of the different KPIs and,
+ most importantly, generate good integrated action suggestions
+ that improve the logistics network. Unfortunately, the complexity
+ of the network inhibits to reduce the problem to one of the
+ traditional combinatorial problems with stochastic parameters,
+ suchasforexampletheInventoryRoutingProblemwithStochastic
+ Demands(IRPSD)[65].Thetailoringofaspecializedmeta-heuristic
+ is prevented, because the structure of each Performance Indicator
+ System is too complex to inject it effectively into a meta-heuristic.
+ Therefore, Discrete Event Simulation (DES) is applied to measure
+ the KPIs for different scenarios of actions and their combinations.
+ The measurement of the KPIs is possible because the output data
+ of the DES model is aggregated and analyzed in the same way as
+ the original real-world data using DWH technology. Comparing
+ the KPIs with their respective predefined corridors enables the
+ system to evaluate if an action was expedient or not. The number
+ of possible actions is very high and a simple permutation of
+ the actions is thus not feasible. An intelligent mechanism is
+ mandatorytodrivethesimulationexperimentstowardsapplicable
+ solutions. A research project is running ontheimplementationofa
+ simheuristic approach modeling an agent which executes actions
+ on the DES model and receives rewards (KPI measurements)
+ in order to learn which actions were expedient. This approach
+ uses machine learning algorithms to explore the solution space,
+ also taking into account knowledge from previous learning in
+ comparable situations.
+ 6.3. Internet computing
+ Our next example is related to the field of Internet comput
+ing, and illustrates how discrete-event simulation can be also
+ combined with metaheuristics in order to check the feasibility of
+ probabilistic constraints. Internet computing systems can benefit
+ from the use of personal and non-dedicated computers, which are
+ currently employed in volunteer computing systems. Being non
+dedicated, these resources show random behavior regarding the
+ times they are online (available) and offline. Accordingly, their
+ availability levels are lower than those of traditionally employed
+ dedicated resources. Thus, in order to usenon-dedicatedresources
+ in cloud computing environments, it is necessary first to solve
+ the problem of how to attain high availability levels for the In
+ternet services deployed over them. Most approaches on how to
+ guarantee high service availability levels with non-dedicated re
+sources are based on the introduction of high degrees of redun
+dancy into the system. However, this praxis leads to an inefficient
+ usage of computational resources and, therefore, to higher opera
+tional costs. Accordingly,in[62],theauthorsproposeanovelsimu
+lation–optimization approach to generate cost-efficient configura
+tions of non-dedicated resources able to support Internet services
+ with ahighavailability level, i.e., they deal with the stochastic COP
+ of determining a minimum-cost configuration of non-dedicated
+ resources able to support a service while maintaining the service
+ availability level over a user-defined threshold. The main idea be
+hind their solution approach is to design a metaheuristic algo
+rithm that, starting from a feasible but costly solution, performs an
+ oriented local search trying to replace expensive resources with
+ cheaper ones, usually offering somewhat lower availability lev
+els. For each new configuration generated in this iterative process,
+ discrete-event simulation is employed, as suggested in [78], to es
+timate the new global availability of the service. This estimation is
+ then used to check if the new and less expensive configuration of
+fers an availability level higher than the one specified by the user.
+ Previously published proposals for availability-aware service
+ deployment required the use of restrictive assumptions, e.g., iden
+tical replicas of a service, series–parallel topologies, small-scale
+ scenarios, specific probability distributions, etc. All these unrealis
+tic assumptionsareunnecessaryinthenewsimheuristicapproach.
+ According to the numerical experiments run by the authors, their
+ algorithm is able to quickly provideoptimalsolutions in small-size
+ scenarios, while it can also be used in more realistic scenarios to
+ generate good solutions in real time, thus improving the greedy
+ approachestypicallyusedinInternetservicedeploymentpractices
+A.A. Juan et al. / Operations Research Perspectives 2 (2015) 62–72
+ 71
+ over contributory resources i.e., computing resources provided by
+ individual Internet users who are typically distributed around the
+ world. Ofcourse, improvingthegreedysolutionalsocausesproper
+ resource usage, i.e., more services could be supported by the same
+ number of resources or fewer resources could support the same
+ number of services.
+ 7. Conclusions and future perspectives
+ Mostofthecombinatorialoptimizationproblemsthatarefound
+ in real-world applications have a stochastic nature. Since the vast
+ majority of the articles in the combinatorial optimization litera
+ture deal with deterministic scenarios, there is a need to consider
+ simulation–optimization approaches that allow researchers and
+ practitioners for solving realistic models including uncertainty.
+ Simheuristics contributetofill this gapbyextendingmetaheuristic
+ algorithms in a natural way, so they can also be applied in solving
+ combinatorial optimization problems with stochastic components
+ either in the objective function or in the set of constraints. How
+ever, the concept of simheuristics described in this paper differs
+ from the metaheuristics reported in the SO community [9,57]. In
+stead of using a pure black box approach, where evaluations are
+ performed only by simulation, simheuristics closely integrate op
+timizationandsimulationbyincorporatingproblem-specificinfor
+mation.Thus,analyticalexpressionscomplementtheoptimization
+ process and may be used to screen poor or infeasible solutions.
+ Since these analytical expressions are problem-specific, they ex
+ist prior to any simulation run. Therefore, they are not as depen
+dent on simulation as the metamodels used in the SO community.
+ Still, they can be enhanced with the simulation feedback. Finally,
+ bydesigntheyareabletoprovidedifferent alternative solutions of
+ similar quality and promote the introduction of risk or reliability
+ analysis criteria when comparing these solutions, so the decision
+makercanchoosethesolutionthatbestfits his/her utility function
+ according to these criteria. In order to control the computational
+ timeinvestedinperformingsimulations,therearesomecriticalis
+sues in the design of an efficient simheuristic algorithm. One issue
+ is the selection policy of promising solutions—the ones that will
+ be sent to the simulation component. Another issue is the number
+ of replications that must be run for each of these promising solu
+tions. During the stochastic searching process, simulations with a
+ relatively short number of replications should be sufficient to ob
+tain rough estimates of the solution value, so that a list of elite
+ solutions can be constructed. Once the stochastic searching pro
+cess is finished, simulations with more replications can be run in
+ order to obtain more accurate estimates for each of the elite solu
+tions. Alternatively, statistical selection methods can be incorpo
+rated to adjust the simulation length according to the difference
+ betweensolutions. Also, variance reduction techniques can beem
+ployed here.
+ So far, most simheuristic approaches have focused on evalua
+tion function and feasibility checking purposes, and they have em
+ployedeitherMonteCarloordiscrete-eventsimulation.Weexpect
+ other types of simulation, such as agent-based, to be increasingly
+ adopted in simheuristic frameworks. Since these simulation types
+ require more computational effort, analytical model enhancement
+ methods appear to be a good alternative in many situations, par
+ticularly when there is a linear analytical model for the problem.
+ Acknowledgments
+ This workhasbeenpartially supported by the Spanish Ministry
+ of Economy and Competitiveness (grant TRA2013-48180-C3-P),
+ FEDER, and the Ibero-American Programme for Science and
+ Technology for Development (CYTED2014-515RT0489). Likewise
+ wewanttoacknowledge the support received by the Department
+ of Universities, Research & Information Society of the Catalan
+ Government (Grant 2014-CTP-00001) and the CAN Foundation
+ (Navarre, Spain) (Grant 3CAN2014-3758).
+ References
+ [1] Van Hentenryck P, Bent R. Online stochastic combinatorial optimization.
+ Boston. (USA): The MIT Press; 2010.
+ [2] Bent R., Van Hentenryck P.. Waiting and relocation strategies in online
+ stochastic vehicle routing. In: proceedings of the twentieth international joint
+ conference on artificial intelligence; 2007. p. 1816–21.
+ [3] Hemmelmayr V, Doerner KF, Hartl RF, Savelsbergh MWP. Vendor managed
+ inventory for environments with stochastic product usage. Eur J Oper Res
+ 2010;202:686–95.
+ [4] Bianchi L, Dorigo M, Gambardella LM, Gutjahr WJ. A survey on metaheuristics
+ for stochastic combinatorial optimization. Natural Comput Internat J 2009;
+ 8(2):239–87.
+ [5] Nance RE, Sargent RG. Perspectives on the evolution of simulation. Oper Res
+ 2002;50(1):161–72.
+ [6] Gass SI, Assad AA. Model world: Tales from the time line- the definition of OR
+ and the origins of Monte Carlo simulation. Interfaces 2005;35(5):429–35.
+ [7] Kleijnen JPC, Sanchez SM, Lucas TW, Cioppe TM. State-of-the-art review: A
+ user’s guide to the brave new world of designing simulation experiments.
+ INFORMS J Comput2005;17(3):263–89.
+ [8] Soeiro-Ferreira J. Multimethodology in metaheuristics. J Oper Res Soc 2013;
+ 64:873–83.
+ [9] Glover F, Kelly JP, Laguna M. New advances and applications of combining
+ simulation and optimization. In: Proceedings of the 1996 winter simulation
+ conference. 1996. p. 144–152.
+ [10] Glover F, Kelly JP, Laguna M. New advances for wedding optimization and
+ simulation. Proceedings of the 1999 winter simulation conference, 1999. p.
+ 255–60.
+ [11] April J, Glover F, Kelly JP, Laguna M. Practical introduction to simulation
+ optimization. In: Proceedings of the 2003 winter simulationconference. 2003.
+ p. 71–8.
+ [12] Eskandari H, Mahmoodi E, Fallah H, Geiger CD. Performance analysis of
+ commercial simulation-based optimization packages: OptQuest and Witness
+ optimizer. In: Proceedings of the 2011 winter simulation conference. 2011. p.
+ 2363–73.
+ [13] Rogers P. Optimum-seeking simulation in the design and control of
+ manufacturing systems: experience with OptQuest for Arena. In: Proceedings
+ of the 2002 winter simulation conference. 2002. p. 1143–50.
+ [14] Kleijnen JPC, Wan J. Optimization of simulated systems: OptQuest and
+ alternatives. Simul Modelling Practice Theor 2007;15:354–62.
+ [15] Hubscher-Younger T, Mosterman PJ, Deland S, Orqueda O, Eastman D.
+ Integrating discrete-event and time-based models with optimization for
+ resource allocation. In: Proceedings of the 2012 winter simulation conference.
+ 2012. p. 145–55.
+ [16] Sörensen K. Metaheuristics—the metaphor exposed. Internat Trans Oper Res
+ 2015;22(1):3–18.
+ [17] Figueira G, Almada-Lobo B. Hybrid simulation-optimization methods: A
+ taxonomy and discussion. Simul Modelling Practice Theor 2014;46:118–34.
+ [18] Shanthikumar JG, Sargent RG. A unifying view of hybrid simulation/analytic
+ models and modeling. Oper Res 1983;31(6):1030–52.
+ [19] Swisher JR, Hyden P, Jacobson SH, Schruben L.. Simulation optimization: a
+ surveyofsimulationoptimizationtechniquesandprocedures.In:Proceedings
+ of the 2000 winter simulation conference. 2000. p. 119–28.
+ [20] Andradottir S. An overview of simulation optimization via random search.
+ Handbooks in operations research and management science, vol. 13. 2006.
+ p. 617–31. Ch. 20.
+ [21] Barton RR, Meckesheimer M. Metamodel-based simulation optimization.
+ Handbooks in operations research and management science, vol. 13. 2006.
+ p. 535–74. Ch. 18.
+ [22] Fu MC. Optimization for Simulation: Theory vs. Practice. INFORMS J Comput
+ 2002;14(3):192–215.
+ [23] Tekin E, Sabuncuoglu I. Simulation optimization: A comprehensive review on
+ theory and applications. IIE Trans 2004;36(11):1067–81.
+ [24] WangLF,ShiLY.Simulationoptimization:areviewontheoryandapplications.
+ Acta Automat Sinica 2013;39(11):1957–68.
+ [25] AprilJ,GloverF,KellyJP,LagunaM.Simulation/OptimizationusingRealWorld
+ Applications. In: Proceedings of the 2001 conference on winter simulation
+ conference. 2001. p. 134–38.
+ [26] DengizB,AlabasC.Simulationoptimizationusingtabusearch.In:Proceedings
+ of the 2000 winter simulation conference. 2000. p. 805–810.
+ [27] Altiparmak F, Dengiz B, Bulgak AA. Optimization of buffer sizes in assembly
+ systems using intelligent techniques. In: Proceedings of the 2002 conference
+ on winter simulation conference. 2002. p. 1157–62.
+ [28] Byrne MD, Hossain MM. Production planning: An improved hybrid approach.
+ Internat J Production Econ 2005;93:225–9.
+ [29] Bang JY, Kim YD. Hierarchical production planning for semiconductor wafer
+ fabrication based on linear programming and discrete-event simulation. IEEE
+ Trans Automat Sci Eng 2010;7(2):326–36.
+ [30] Can B, Beham A, Heavey C. A comparative study of genetic algorithm
+ components in simulation-based optimisation. In: Proceedings of the 2008
+ winter simulation conference. 2007. p. 1829–37.
+ [31] Angelidis E, Bohn D, Rose O. A simulation-based optimization heuristic using
+ self-organization for complex assembly lines. In: Proceedings of the 2012
+ conference on winter simulation conference. 2012. p. 1231–40.
+72
+ A.A. Juan et al. / Operations Research Perspectives 2 (2015) 62–72
+ [32] Laroque C, Klaas A, Fischer JH, Kuntze M. Fast converging, automated
+ experiment runs for material flow simulations using distributed computing
+ and combined metaheuristics. Proceedings of the 2012 winter simulation
+ conference. 2012. p. 102–11.
+ [33] Almeder C, Hartl RF. A metaheuristic optimization approach for a real-world
+ stochasticflexibleflowshopproblemwithlimitedbuffer.InternatJProduction
+ Econ 2013;145(1):88–95.
+ [34] Lin JT, Huang CJ. A simulation-based optimization approach for a semicon
+ductor photobay with automated material handling system. Simul Modelling
+ Practice Theor 2014;46:76–100.
+ [35] GanstererM,AlmederC,HartlRF.Simulation-basedoptimizationmethodsfor
+ setting productionplanningparameters.InternatJProductionEcon2014;151:
+ 206–13.
+ [36] Subramanian D, Pekny JF, Reklaitis GV. A simulation-optimization framework
+ for addressing combinatorial and stochastic aspects of an R&D pipeline
+ management problem. Comput Chem Eng 2000;24(2):1005–11.
+ [37] Truong TH, Azadivar F. Simulation optimization in manufacturing analysis:
+ simulation based optimization for supply chain configuration design. In
+ Proceedings of the 35th conference on winter simulation. 2003. p. 1268–75.
+ [38] Subramaniam G, Gosavi A. Simulation-based optimization for material
+ dispatching in a retailer network. In: Proceedings of the 2004 winter
+ simulation conference. 2004. p. 1412–17.
+ [39] Jung JY, Blau G, Pekny JF, Reklaitis GV, Eversdyk D. A simulation based opti
+mization approach to supply chain management under demand uncertainty.
+ Comput ChemEng2004;28(10):2087–106.
+ [40] Jung JY, Blau G, Pekny JF, Reklaitis GV, Eversdyk D. Integrated safety
+ stock management for multi-stage supply chains under production capacity
+ constraints. Comput Chem Eng 2008;32(11):2570–81.
+ [41] Ekren BY, Heragu SS. Simulation based optimization of multi-location
+ transshipment problem with capacitated transportation. In: Proceedings of
+ the 2008 winter simulation conference. 2008. p. 2632–38.
+ [42] AlmederC,PreusserM,HartlRF.Simulationandoptimizationofsupplychains:
+ alternative or complementaryapproaches?.ORSpectrum2009;31(1):95–119.
+ [43] Eskandari H, Darayi M, Geiger CD. Usingsimulation optimization as a decision
+ support tool for supply chain coordination with contracts. In: Proceedings of
+ the 2010 winter simulation conference. 2010. p. 1306–17.
+ [44] AlizadehM,EskandariH,SajadifarSM,GeigerCD.Analyzingastochasticinven
+tory systemfor deteriorating items with stochastic lead time using simulation
+ modeling. In: proceedings of the 2011 winter simulation conference. 2011. p.
+ 1650–62.
+ [45] Baesler FF, Sepulveda JA. Multi-response simulation optimization using
+ stochastic genetic search within a goal programming framework. In:
+ Proceedings of the 2000 winter simulation conference. 2000, p. 788–4.
+ [46] Baesler FF, Sepulveda JA. Multi-objective simulation optimization for a cancer
+ treatment center. In: Proceedings of the 2001 winter simulation conference;
+ 2001. p. 1405-1411.
+ [47] DentonBT,RahmanAS,NelsonH,BaileyAC.Simulationofamultipleoperating
+ room surgical suite. Proceedings of the 2006 winter simulation conference.
+ 2006. p. 414–24.
+ [48] Iser JH, Denton BT, King RE. Heuristics for balancing operating room and post
+anesthesia resources under uncertainty. In: Proceedings of the 2008 winter
+ simulation conference. 2008. p. 1601–08.
+ [49] Stanciu A, Vargas L, May J. A revenue management approach for managing
+ operating room capacity. In: Proceedings of the 2010 winter simulation
+ conference. 2010. p. 2444–54.
+ [50] Arnaut J. Heuristics for the maximization of operating rooms utilization using
+ simulation. Simulation 2010;86(8-9):573–83.
+ [51] Rico F, Salari E, Centeno G. Emergency departments nurse allocation to face a
+ pandemic influenza outbreak. In: Proceedings of the 2007 winter simulation
+ conference. 2007. p. 1292–98.
+ [52] Kasaie P, Kelton WD. Simulation optimization for allocation of epidemic
+control resources. IIE Trans Healthcare Syst Eng 2013;3:78–93.
+ [53] Silva PMS, Pinto LR. Emergency medical systems analysis by simulation and
+ optimization. In: Proceedings of the 2010 winter simulation conference. 2010
+ p. 2422–32.
+ [54] Weng S, Cheng B, Kwong ST, Wang L, Chang C. Simulation optimization
+ for emergency department resources allocation. In: Proceedings of the 2011
+ winter simulation conference. 2011 p. 1231–38.
+ [55] Kuo YH, Leung JMY, Graham CA. Simulation with data scarcity: developing a
+ simulation model of a hospital emergency department. In: Proceedings of the
+ 2012 winter simulation conference. 2012. p. 979–90.
+ [56] Kuo YH, Rado O, Lupia B, Leung JMY, Graham CA. Improving the effi
+ciency of a hospital emergency department: a simulation study with in
+directly imputed service time distributions. Flexible Serv Manuf J 2014;
+ http://dx.doi.org/10.1007/s10696-014-9198-7.
+ [57] Olafsson S. Metaheuristics. Handbook Oper Res Manag Sci 2006;13(21):
+ 633–54.
+ [58] Juan A, Faulin J, Grasman S, Riera D, Marull J, Mendez C. Using safety stocks
+ andsimulation to solve the vehicle routing problem with stochastic demands.
+ Trans Res C 2011;19:751–65.
+ [59] Gonzalez S, Juan A, Riera D, Elizondo M, Fonseca P. Sim-RandSHARP: A Hybrid
+ Algorithm for solving the Arc Routing Problem with Stochastic Demands. In:
+ Proceedings of the 2012 winter simulation conference. 2012. p. 1–11.
+ [60] JuanA,Barrios B, Vallada E, Riera D, Jorba J. SIM-ESP: A simheuristic algorithm
+ for solving the permutation flow-shop problem with stochastic processing
+ times. Simul Modelling Practice Theor 2014;46:101–17.
+ [61] Juan A, GrasmanS,CaceresJ, Bektas T. A simheuristic algorithm for the single
+periodstochastic inventoryroutingproblemwithstock-outs.SimulModelling
+ Practice Theor 2014;46:40–52.
+ [62] CabreraG,JuanA,LazaroD,MarquesJ,ProskurniaI.Asimulation-optimization
+ approach to deploy Internet services in large-scale systems with user
+providedresources.SimulTransSocModelSimulInternat2014;90(6):644–59.
+ [63] Grasas A, Ramalhinho H, Juan A. SimILS: A simulation-based extension of the
+ iterated local search metaheuristic for stochastic combinatorial optimization.
+ J Simul 2014; http://dx.doi.org/10.1057/jos.2014.25. [in press].
+ [64] Juan A, Faulin J, Ruiz R, Barrios B, Gilibert M, Vilajosana X. Using oriented
+ random search to provide a set of alternative solutions to the capacitated
+ vehicle routing problem. Operations research and cyber-infrastructure, 47.
+ NewYork(USA): Springer; 2009. p. 331–46.
+ [65] Juan AA, Rabe M. Combining simulation with heuristics to solve stochastic
+ routing and scheduling problems. In: Simulation in produktion und logistik.
+ Paderborn: Heinz-Nixdorf-Institute; 2013. p. 641–9.
+ [66] Gurkan G, YoncaOzge A, Robinson SM. Sample-path optimization in simu
+lation. In Proceedings of the 1994 winter simulation conference. 1994. p.
+ 247–54.
+ [67] Kleywegt AJ, Shapiro A, Homem-de-Mello T. The sample average approxima
+tion method for stochastic discrete optimization. SIAM J Optim 2002;12(2):
+ 479–502.
+ [68] Figueira G, Furlan M, Almada-Lobo B. Predictive Production Planning in an
+ Integrated Pulp and Paper Mill. Manufacturing Modell Manag Control 2013;
+ 7(1):371–6.
+ [69] DodinB.Determiningtheoptimalsequencesandthedistributionalproperties
+ of their completion times in stochastic flow shops. Comput Oper Res1996;23:
+ 829–43.
+ [70] Honkomp SJ, Mockus L, Reklaitis GV. Robust scheduling with processing time
+ uncertainty. Computers and Chemical Engineering 1997;21:1055–60.
+ [71] Gourgand M, Grangeon N, Norre S. Markovian analysis for performance
+ evaluation and scheduling in m machine stochastic flow-shop with buffers of
+ any capacity. Eur J Oper Res 2008;161:126–47.
+ [72] BakerKR,AltheimerD.Heuristicsolutionmethodsforthestochasticflowshop
+ problem. Eur J Oper Res 2012;216:172–7.
+ [73] Rabe M, Spieckermann S, Wenzel S. Verification and validation for simulation
+ in production and logistics. Simulation News Europe 2010;19(2):21–9.
+ [74] Rabe M, Deininger M. Modellefür Job-Shop-Scheduling-Algorithmen in
+ Changing-Steady-State-Systemen.Submittedforthe15thASIMconferenceon
+ simulation in production and logistics, 2013.
+ [75] Juan A, Faulin J, Jorba J, Caceres J, Marques JM. Using parallel & distributed
+ computing for solving real-time vehicle routing problems with stochastic
+ demands. Ann Oper Res 2013;207:43–65.
+ [76] Goodson JC, Ohlmann JW, Thomas BW. Rollout policies for dynamic solutions
+ to the multivehicle routing problem with stochastic demand and duration
+ limits. Oper Res 2013;61(1):138–54.
+ [77] Dross F, Rabe M. A SimHeuristic Framework as a Decision Support System
+ for Large Logistics Networks with Complex KPIs. In: Proceedings of the 22nd
+ symposium simulationstechnik. 2014. p. 247–54.
+ [78] Faulin, Juan JA, Serrat C, Bargueño V. Predicting availability functions in time
+dependent complex systems with SAEDES simulation algorithms. Reliab Eng
+ Syst Safety 2008;93(11):1761–71.

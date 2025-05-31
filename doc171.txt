@@ -1,0 +1,106 @@
+Migrating away from Rust.
+BrandonReinhart · 4 days ago · Dev Log
+
+When I started building Architect of Ruin in December 2023 I chose to build it in the Bevy game engine. My choice was motivated by a personal interest in Rust -- a language I derive a lot of joy in using. This was furthered by Bevy's ECS model which I also find fun to work with and the openness of Bevy's community which I have a genuine appreciation for.
+
+So, it came as a surprise that in January of 2025 we transitioned the game away from Rust and Bevy. I spent about six weeks rewriting the game entirely in C# and we have been using Unity for the past three months.
+
+Switching engines is a classic project killer. Productivity can nosedive, regressions inevitably emerge, and every step forward seems to lead to three steps back. Not to mention that domain expertise built up in one language and engine doesn't cleanly transfer to a new language and engine.
+
+But I bit the bullet and I want to explain why.
+
+The Bevy Journey
+A lot of good work was accomplished in Bevy. The tilemap, most of my approach to composing the scene, and a large amount of character and gameplay logic were implemented in Bevy. I learned about the guts of Spine and skeletal animation by tearing apart Rust transpiles of the spine runtime. I learned a lot about custom render pipelines by implementing my own rendering features in Bevy's render world. Bevy's pure ECS was a joy to work with and Rust's compile-time checks meant I could refactor large swathes of code quickly and with confidence.
+
+The Bevy community was also an active source of inspiration - not just ideas about how to use the engine, but a positive community of builders and contributors. This community is very good at being excited about game development and being energetic about debate.
+
+I had the opportunity to contribute features and fixes to a number of community crates, although most of those contributions were small and were focused on work that moved my own goals forward.
+
+Despite these positive experiences and the progress made, practical challenges emerged as development continued.
+
+Emergent Problems
+I want to begin by stating that I anticipated many of these challenges before they manifested. I knew that using a game engine early in its development lifecycle would pose unique risks and costs. I considered those costs to be likely worthwhile and surmountable. My love of Rust and Bevy meant that I would be willing to bear some pain that other game developers might choose to avoid. I didn't walk blindly into these specific problems, but they bit harder than I was expecting.
+
+
+Collaboration - I started this project with my brother. While he's sharp and eager, he's new to coding. Onboarding him directly into game dev while simultaneously navigating Rust's unique aspects proved challenging. We found ourselves with a steeper learning curve that slowed his ability to contribute effectively to gameplay logic.
+
+
+Abstraction - While my initial motivation was the enjoyment of Rust, the project's bottleneck increasingly became the rapid iteration of higher-level gameplay mechanics. As the codebase grew, we found that translating gameplay ideas into code was less direct than we hoped. Rust's (powerful) low-level focus didn't always lend itself to a flexible high-level scripting style needed for rapid prototyping within our specific gameplay architecture. I found that my motivation to build and ship fun gameplay was stronger than my desire to build with Rust.
+
+I had anticipated that this was going to be a thing, but I wasn't calibrated to the degree it would start to annoy me and slow the project down.
+
+Rust can be verbose.
+
+(A relatively simple gameplay function signature.)
+Migration - Bevy is young and changes quickly. Each update brought with it incredible features, but also a substantial amount of API thrash. As the project grew in size, the burden of update migration also grew. Minor regressions were common in core Bevy systems (such as sprite rendering), and these led to moments of significant friction and unexpected debugging effort.
+
+This came to a head on one specific day where I was frustrated with a sprite rendering issue that had emerged in a new release. Blake had run into the same problem at the same time and our shared frustration boiled over into a kind of table flip moment. He turned to me and said something along the lines of "this shouldn't happen, this kind of thing should just be solved" and that triggered the conversation that led to a re-evaluation.
+
+The point isn't that specific sprite problem, but that because all systems in Bevy are open to tinkering and improvement, all systems were potentially subject to regressions.
+
+Learning - Over the past year my workflow has changed immensely, and I regularly use AI to learn new technologies, discuss methods and techniques, review code, etc. The maturity and vast amount of stable historical data for C# and the Unity API mean that tools like Gemini consistently provide highly relevant guidance. While Bevy and Rust evolve rapidly - which is exciting and motivating - the pace means AI knowledge lags behind, reducing the efficiency gains I have come to expect from AI assisted development. This could change with the introduction of more modern tool-enabled models, but I found it to be a distraction and an unexpected additional cost.
+
+Modding - Modding means a lot to me. I got my start in the industry as a modder and I want my game to be highly moddable. Over time, as I learned more about how to realize this goal, I came to understand many inherent limitations in Rust and Bevy that would make the task more difficult. Lack of a clear solution to scripting and an unstable ABI (application binary interface) raised concerns. I am not an expert in this area, perhaps these are all easily surmounted. I can only say that I did not find a path (after much searching) that I felt confident trusting.
+
+These factors combined - the desire for a smoother workflow across experience levels, the need for a high-level abstraction for gameplay, optimizing productivity, and modding - pointed towards a re-evaluation of the project's next phase.
+
+The Switch
+To be honest, I completely disregarded Unity when I started the project.
+
+Some of this stemmed from unforced errors on the part of Unity. They had just gone through a crisis of pricing that culminated in the resignation of their CEO and they seemed out of touch with indie developers. I also made several assumptions. I felt sick of coding in the outdated form of C++ that pervades older game engines and assumed I'd feel similarly about C#. I figured that since Unreal doesn't offer much for 2D render pipelines that Unity wouldn't either. This led me to fail to give serious thought to using Unity in 2023.
+
+In the first week of January of 2025, Blake and I decided to do a cost-benefit analysis. We wrote down all the options: Unreal, Unity, Godot, continuing in Bevy, or rolling our own. We wrote extensive pros and cons, emphasizing how each option fared by the criteria above: Collaboration, Abstraction, Migration, Learning, and Modding.
+
+Having some experience with the other options, I decided I needed to understand Unity better. An afternoon's research led me to conclude that it seemed to score high on the pros over the cons.
+
+We had a team meeting where I laid out the trade-offs. Ulrick pointed out that a bunch of unknowns, like particles, would just be solved in a packaged engine. Blake pointed out that if things went well, and a new engine meant faster gameplay development, we could end up ahead of schedule.
+
+10% for 90%
+The team decided to invest in an experiment. I would pick three core features and see how difficult they would be to implement in Unity. We would spend no more than 3 weeks on the task. We would invest 10% of effort to see if we should invest the other 90% in a full port.
+
+Tilemap - I figured this one would be straightforward, since the basic logic is simple. It would require implementing custom shaders. We wouldn't be using the built in Unity Tilemap because our needs were specific and well-known to us. This was foundational to the game scene and I had a good mental model for how long it took me to write the first time in Rust.
+
+Characters - Our characters use Spine and have unique customization requirements and features. This gave me a lot of trouble in Rust, so I figured it would be a good point of comparison in C#.
+
+UI - I wanted UI to be easy to build, fast to iterate, and moddable. This was an area where we learned a lot in Rust and again had a good mental model for comparison. Some research led me to conclude that Noesis would be a good fit because of its emphasis on data-driven XAML and the fact that the WPF model is very well documented. Even if I didn't know WPF, I knew I could learn it quickly with AI assistance.
+
+The first two tasks: Tilemap and Characters, were chosen because they were fundamental, but also because let me check my time-expectations against reality on an easy task and a hard task. This would allow me to project the workload of future tasks and the port more broadly. The UI task was chosen because our game is UI heavy and any significant speed improvement in iterating on UI would have compounding returns on future development.
+
+We finished all three tasks in 3 days!
+
+Commit 1 was on Jan 8th and the Tilemap was done the same day. 
+
+While I implemented the tilemap, Blake wrote the camera system. This demonstrated a significant boost in his ability to contribute when the technical framework was more scrutable. It was also a huge boost to his confidence and contributed to a new feeling of momentum. I should point out that Blake had never written C# before.
+
+I implemented the Tilemap shader in Unity Shader Graph, thinking this would be easier for Ulrick to play with. This wasn't the last Shader Graph I wrote, but ultimately, I decided that visual shader creation and iteration was too slow, and refactoring was much slower as well. I now write all shaders in HLSL.
+
+On Jan 10th we had figured out the basics of building UI in Noesis. Blake wrote a few simple UI widgets and then built the main menu and I built the first part of the game HUD, the toolbar.
+
+The work went far more smoothly than I expected, and nothing was left on the cutting room floor. The tilemap took a day, a basic panel in Noesis was an afternoon including hooking up the plugin. The rest of the time was on wiring up characters. To be clear, I didn't port the entire UI in an afternoon or implement our equipment system. What we did have were customizable character bodies, a fully ported tilemap, some basic menus and enough knowledge to make projections on how long the rest of the port would take.
+
+This image is very representative of where we were at the end of the first week of porting, although this one is actually from a few days later after items had gone in.
+
+At the end of the week, we convened to discuss what we had learned and made the decision to move ahead with the full port.
+
+The following six weeks were dedicated to rewriting the remaining systems and content from the Bevy version into Unity/C#. The overall process largely validated the findings from our three-day test. Gameplay systems with the same number of features could be implemented with less verbosity. 
+
+Code size shrank substantially, massively improving maintainability. As far as I can tell, most of this savings was just in the elimination of ECS boilerplate.
+
+Everything felt tighter and more straightforward. Update migration anxiety was gone and while it was replaced with "we gotta get this done" anxiety, that dissipated quickly as progress was constant.
+
+Life Since the Switch
+We've now been developing Architect of Ruin exclusively in Unity for the past three months. The shift has measurably improved our day-to-day development. Iteration feels faster, allowing ideas to flow into the game more easily. We've also been able to leverage ecosystem tools like the AStar Pathfinding Project.
+
+One area that isn't solved and which will likely cost us some pain is localization. In Rust, the Fluent project is excellent and exactly what we needed -- I haven't yet found a comparable solution in Unity.
+
+I plan to discuss specific elements of the game's implementation in Unity and the porting process in future posts. The goal of today's post was only to explain the reasoning that led us to our current position.
+
+A few conclusions stand out.
+
+I failed to fairly evaluate my options at the start of the project. Rust is great and I love it, but I didn't give alternatives a fair shake. In particular, I didn't spend time examining the differences between Unreal and Unity more closely.
+
+Sometimes you have to burn time to earn time. I think we are way ahead of where we would have been had we stuck with Bevy. Our agility in implementing rendering features while also pushing gameplay forward is much higher.
+
+Rust remains a language I deeply enjoy, and Bevy is an exciting engine with a fantastic community -- I have immense respect for both and may well use them again for different projects. For Architect of Ruin, however, the needs for accessible collaboration, rapid gameplay iteration, and leveraging a stable ecosystem pointed towards an alternative.
+
+It was a difficult decision, one that felt counter to my instincts, but ultimately it put us in a much stronger position to realize our vision for the game.

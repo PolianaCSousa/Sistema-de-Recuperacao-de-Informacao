@@ -1,0 +1,543 @@
+150    I nteração Humano - Computador
+p ergunt a  (ou item do roteiro) individual, to das as resp ost as de to dos os ent re v ist ados 
+s ão analis adas sistemát ica e rigoros amente. Ess a anális e re vela as tendências cent rais 
+
+das resp ost as. Já  na 
+anális e intr ap ar ti cip ante
+, p ara cada ent re v ist ado individual, to-
+das as suas resp ost as (para to das as p ergunt as) s ão analis adas, bus c ando ident iﬁ
+ car 
+possíveis conﬂ
+itos de opiniõ es, inconsistências ent re resp ost as, s ent imentos cont ra-
+ditórios etc. Ess as du as formas de anális e p o dem s er feit as alternadamente, vis ando 
+aprofundar o result ado da anális e e permitir detectar ausências notáveis, ou seja, o 
+
+que os entre v ist ados deixaram de dizer em cer t as resp ost as mas diss eram ou  suge-
+
+r iram em out r as, b em como det a l hes s obre s eus s ent imentos e at itudes, incluindo 
+
+eventuais conﬂ
+ itosinternos.
+Ao conduzirmos ent re v ist as com divers os p erﬁ
+ s de usuários s obre o mesmo pro-
+cess o, sistema ou  organização, p o demos obter uma vis ão prof unda e abrangente dos 
+tópicos invest igados. C omo não costuma s er viável re a lizar ent re v ist as com muit as 
+
+p ess oas, p o demos utilizar o result ado de uma entre v ist a para elab orar questionários 
+
+que p ermit am colet ar informaçõ es de um número maior de p ess oas, e assim obter 
+
+resu lt ados est at ist icamente sig niﬁ
+ cativos ou p elo menos mais repres ent ativos da p o-
+pu l a ç ã o de interess e.
+ Questionários
+5.5.2 
+O us o de quest ionár ios t amb ém é uma das té cnicas de colet a de dados mais f re-
+quentemente utilizadas. Um  
+qu e s t i on á r i o
+ é um formulário impress o ou on-line com 
+p ergunt as que os usuários e demais par t icip antes de vem resp onder, a ﬁ
+ m de forne cer 
+os dados ne cess ár ios em uma p es quis a, anális e ou  avaliação. Diferentemente de en-
+t re v ist as, quest ionár ios p er mitem colet ar dados de um g r ande número de p ess o as, até 
+
+mesmo ge ograﬁ
+camente disp ers as, comp ondo amostras muito maiores do que com 
+ent re v ist as ou  g r up os de fo co.Assim como ent re v ist as, quest ionários p o dem conter 
+p ergunt as ab er t as e fe chadas, mas costumam pr iv i leg iar as p ergunt as fe chadas, de 
+
+pre enchimento rápido e de fácil anális e. 
+As  p ess oas p o dem resp onder questionários no s eu própr io temp o e no confor to  
+do s eu lar ou lo cal de trab alho. No ent anto, como o resp ondente não terá como tirar 
+dúvidas s obre as p e rgunt a s no momento de resp onder ao quest ionár io, a for mu l ação 
+
+da p ergunt a  (e das resp ost as) de ve  s er ainda mais c uidados a do que no cas o de entre-
+
+vist as, e v it ando ambiguidades e mal-entendidos (L azar 
+et  al .
+, 2010; Shar p 
+et  al .
+, 2007). 
+Além diss o, um quest ionár io de ve  conter inst r uçõ es claras s obre como resp onder 
+cada p ergunt a , indicando explicit amente s e  uma p ergunt a  admite uma única resp os-
+
+t a  ou  mú lt iplas resp ost as e utilizando símb olos informat ivos de forma consistente.
+
+Capítulo 5 |
+ Identiﬁ
+ 
+ cação de Necessidades dos Usuários e Requisitos de IHC    151
+A t axa de resp ost as de um questionário é muito variável. S e gundo C ourage e 
+B axter (2005), varia de 1% em questionários de ﬁlant ropi a a 95% em questionários 
+de cens o. Em alguns cas os, p ara aument ar o número de quest ionários resp ondidos, 
+
+adot amos uma est ratég ia de s or te ar br indes dent re os resp ondentes. No  ent anto, ess a 
+
+est ratég ia p o de fa ls e ar os dados colet ados, for ne c idos p or p ess o as interess adas mais 
+
+nos br indes do que em cont ribuir para a p es quis a.
+Diferentemente de ent re v ist as, em quest ionár ios não de vemos fazer muit as p er-
+gunt as ab er t as, p orque iss o re duz a t axa de resp ost as. Utilizamos questionários em 
+geral qu ando temos uma b o a no ção das resp ost as mais prováveis e queremos conhe-
+
+cer a prop orção de resp ost as numa amostra mais ampl a da p opu lação de usuários. 
+
+Emb ora restrinja os dados colet ados, ess a estratégia torna a anális e dos dados mais 
+
+rápida e fácil. Muit as ve zes os questionários s ão utilizados em conjunto com entre-
+
+vist as.Ap ós entre v ist as exploratórias, questionários p o dem s er utilizados para corro-
+
+b orar os result ados das entre v ist as.Além diss o, cas o as est atísticas colet adas at ravés 
+
+de quest ionários s ejam inesp eradas, novas entre v ist as p o dem s er formuladas para 
+
+des cobrir os motivos p or trás das sur pres as encont radas.
+C omo não há op or tunidade de dis c ut ir s obre o quest ionário ou  t irar dúvidas no 
+momento de resp ondê-lo, as p e rgunt a s fe chadas ge ralmente incluem resp ost as neu-
+
+t r as ou  alternat ivas, como“não s ei”,“não quero resp onder” ou “out ros”. Muitos p es qui-
+
+s adores costumam omit ir p ergunt as negat ivas nos quest ionár ios, p ara não conf undir 
+
+os re sp ondentes (Shar p  
+et  al .
+, 2007). Outros misturam ess es dois tip os de p ergunt as 
+just amente para ajudar a veriﬁ
+ car a consistência das resp ost as dos usuários.
+S e gundo Shar p e co autoras (2007), um quest ionário t ípico inicia com a s e guinte  
+estr utur a
+: infor maçõ es demog ráﬁ
+ cas b ásicas (e.g., s exo, idade) e det al hes rele vantes 
+s obre sua exp eriência (e.g., há qu anto temp o utiliza comput adores e nível de exp e-
+riência com o domínio em quest ão). Ess as p ergunt as auxiliam os p es quis adores a 
+
+ag r up arem resp ost as de diferentes usuários.Va le obs er var, no ent anto, que ess as in-
+
+formaçõ es contextuais de vem s e  limit ar àquelas que forem rele vantes aos obj et ivos 
+
+do estudo. Pergunt as gerais costumam pre c e der p ergunt as esp e cíﬁ
+ cas.Aliás, a ordem 
+das p ergunt as de ve  s er c uidados amente proj et ada, p ois a resp ost a a uma p ergunt a  
+p o de s er inﬂ
+ uenciada p or uma das p ergunt as anteriores. Quando um quest ionário é 
+longo, suas p ergunt as p o dem s er ag r upadas em tópicos relacionados, formando uma 
+estr utura lógica e de pre enchimento mais fácil. Quando queremos obter informaçõ es 
+
+de gr up os distintos de usuários (e.g., profess ores e alunos, gerentes e té cnicos etc.), 
+
+p o de s er ne cess ár io elab orar um questionário diferente para cada gr up o.
+
+152    I nteração Humano - Computador
+E x istem divers os tip os de p ergunt as e resp ost as utilizados em questionários, 
+dent re os qu ais dest acamos: mú lt ipla es colha, faixas de valores, es calas e p ergunt as 
+ab e r t a s .
+E x istem p ergunt as c ujas resp ost as s ão pre v isíveis, como, p or exemplo, s exo  (fe-
+minino ou  mas c u lino). Ness es cas os, p o demos ofere c er um conjunto de resp ost as de 
+
+mú ltipl a  e s c o l h a
+, como no exemplo a s e guir :
+S exo:     
+ masculino       
+ feminino       
+ preﬁ
+ ro não informar
+Em alguns cas os, o usuário p o de es col her mais do que uma resp ost a. Ess es cas os 
+de vem s er b em marc ados, para diferenciar das p ergunt as de uma única resp ost a. Por 
+
+exemplo, qu ando queremos des cobr ir qu ais as at ividades mais f re quentes dent ro de 
+
+um conjunto de at ividades pre deﬁ
+nidas, p o demos s olicit ar ao usuário que marque 
+to das as op çõ es rele vantes, ou  um número máximo de op çõ es, como a s e guir :
+Quais atividades você realiza mais frequentemente on-line? 
+(marque 
+até duas 
+opções)
+ e -mail
+ leitura de notícias
+ transações bancárias
+ par ticipação em redes sociais
+ pesquisas gerais 
+ compra de produtos 
+ co ntrato de ser viços
+ outros
+Algumas p ergunt as s e  referem a valores esp e cíﬁ
+cos, como idade ou  re nda mens a l. 
+C omo alguns resp ondentes não s e  s entem à vont ade em forne cer ess es valores exatos, 
+
+e como a anális e dess es dados costuma s er feit a de forma ag re gada, é comum ofere-
+
+cermos 
+faixas d e val ores
+ como op çõ es de resp ost a. Ness e t ip o  de p ergunt a , é imp or-
+
+t ante e v it ar a s obrep osição de valores (e.g., 20–30 e 30–40), p ara que a ambiguidade 
+
+não prejudique a ac urácia dos dados colet ados. Por exemplo:
+Idade:       
+ abaixo de 21     
+ 21–30      
+ 31–40      
+ 41–50      
+ acima de 50
+Para facilit ar a comp aração das resp ost as dos usuários, com f re quência s ão utilizadas 
+
+es c alas
+, dentre as qu ais as mais conhe cidas s ão as es calas de Liker t (1932) e as es calas 
+de diferenciais s emânt icos.A 
+es c ala de L i ker t
+ é comumente utilizada para me dir 
+opiniõ es, at itudes, crenças e, no cas o de IHC, s at isfação dos usuários com um pro duto 
+ou  ideia de desig n, como no exemplo a s e guir :
+
+Capítulo 5 |
+ Identiﬁ
+ 
+ cação de Necessidades dos Usuários e Requisitos de IHC    153
+É fácil encontrar o produto desejado navegando pelas seções do site:
+ concordo plenamente
+ concordo parcialmente
+ não concordo nem discordo
+ discordo parcialmente
+ discordo totalmente
+A es cala de 
+diferen ciais s emânti cos
+, p or sua ve z, explora at itudes bip olares s obre um 
+item particular.
+Para cada par de adjetivos a seguir, marque o valor correspondente à sua opi-
+nião sobre a página de um produto do site:
+atraente
+ 
+feia
+clara
+ 
+confusa
+útil
+ 
+inútil
+O número de valores de uma es cala é variável. Em geral, utilizamos um número ímpar 
+de valores, a menos que queiramos e v it ar  que os usuários ﬁ quem“em cima do muro” 
+(Shar p  
+et  al .
+, 2007). Em es calas Liker t, costumamos utilizar 5 p ontos, e em es calas de 
+diferencial s emânt ico utilizamos 5, 7 ou mesmo 9 p ontos, este último qu ando quere-
+mos que os usuários façam ju lgamentos sutis s obre as carac teríst icas indicadas.
+Perguntas ab er tas
+ s ão utilizadas para obter informaçõ es livres e p ossivelmente 
+mais det al hadas s obre alguns p ontos. É imp or t ante forne cer esp aço suﬁ
+ ciente para 
+o usuário s e express ar. Em geral, ap enas du as ou três linhas não s ão suﬁ
+ cientesnem 
+mot ivam uma resp ost a extens a. C omp are o formato das p ergunt as a s e guir. Qual for-
+
+mato incent iva o resp ondente a forne cer uma resp ost a mais complet a?
+(a) O que você acha do mecanismo de busca do site?
+____________________________________________________________________
+____________________________________________________________________
+(b) O que você acha do mecanismo de busca do site?
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+
+____________________________________________________________________
+____________________________________________________________________
+D e vemos tomar c uidado p ara não incluirmos muit as p ergunt as ab er t as em um ques-
+t ionár io, p ois iss o p o de desmot ivar os resp ondentes a complet á-los. 
+
+154    I nteração Humano - Computador
+Para colet ar dados dos usuários at ravés de questionários, atualmente é p ossí-
+vel utilizar formulários on-line. E xistem divers os s er v iços gratuitos ou pagos,
+2
+ qu e  
+p ermitem não ap enas criar formulários s oﬁ
+st icados p ara colet ar mos os dados, mas 
+t amb ém ofere c em divers as ferrament as de anális e dos dados colet ados.
+C omo dito na s e ção anterior, muit as ve zes os questionários s ão utilizados ap ós 
+entre v ist as exploratórias. Iss o  o c or re  pr incipalmente  p or dois motivos: (1) ness as en-
+tre v ist as s ão colet adas informaçõ es que p ermitem elab orar melhores p ergunt as no 
+
+questionário, e (2) os questionários p ermitem des cobrir o qu anto  as informaçõ es for-
+
+ne cidas p elos entre v ist ados s ão repres ent ativas da p opu lação-alvo.Além diss o, cas o 
+
+os questionár ios forne çam result ados sur pre endentes, é p ossível conduzir uma nova 
+
+ro dada de entre v ist as para auxiliar na inter pret ação dess es result ados. 
+5.5.3 Grupos de Foco
+Em um gr up o de fo co, divers as p ess oas (geralmente entre três e dez) s ão reunidas 
+p or uma ou  du as horas numa esp é cie de dis c uss ão ou  ent re v ist a colet iva, guiada p or 
+
+um mo derador exp er iente. Q u ando s ão b em conduzidos, os g r up os de fo co p o dem 
+
+forne cer uma ampl a gama de informaçõ es num c ur to p erío do de temp o. 
+Gr up os de fo co p ermitem colet ar informaçõ es s obre um público-alvo s obre quem 
+tenhamos p ouca informação. Po dem s er re alizados para gerar ideias; obter opiniõ es 
+de p ess oas s obre tópicos, conceitos ou  demonstraçõ es; obter resp ost as a uma s érie de 
+
+questõ es; ident iﬁ
+ car conﬂ
+itos relacionados a terminologias; ident iﬁ
+ car expectativas 
+de diferentes g r up os de p ess o a s; e des cobr ir problemas, des aﬁ
+ os, f r ust raçõ es, at itudes, 
+preferências e avers õ es que surgem ap enas num contexto s o cial e p or iss o p o dem s er 
+ignoradas p or outras té cnicas (L azar 
+et  al .
+, 2010; Shar p 
+et  al .
+, 2007; C ourage e B axter, 
+2005). Os gr up os de fo co têm como vant agem p ermit ir obter, em p ouco temp o, mú l-
+
+tiplos p ontos de vist a de um gr up o de p ess oas.
+O pap el do 
+moderador
+ de um gr up o de fo co é muito imp or t ante para ass egurar 
+que p ess oas mais quiet as ou  tímidas par t icip em e e v it ar  que as extrover tidas e ag res-
+
+sivas dominem a dis c uss ão.
+C ourage e B axter (2005) sugerem e v it ar p e dir para os par t icipantes fazerem pre-
+vis õ es s obre algo que eles ainda não exp eriment aram, como, p or exemplo, p e dir para 
+avaliar a utilidade de algo que ainda não utilizaram.Além diss o, de vemos e v it ar ende-
+
+re çar tópicos p olêmicos, relacionados, p or exemplo, com p olítica e valores morais.Al-
+
+gumas questõ es típicas exploradas em gr up o de fo co s ão (C ourage e B axter, 2005):
+um“dia típico” de um usuário ou o dia de trabalho mais re cente;
+ 
+2 LimeSur ve y (w w w.limesur ve y.org) e o Sur ve yMonke y (w w w.sur ve ymon ke y.com) s ão 
+exemplos dess e t ip o  de s er v iço.
+
+Capítulo 5 |
+ Identiﬁ
+ 
+ cação de Necessidades dos Usuários e Requisitos de IHC    155
+as t arefas que os usuários re alizam e como eles as re alizam;
+ 
+o domínio em geral (e.g., terminologia, pro c e dimentos normat izados);
+ 
+preferências e avers õ es dos usúarios;
+ 
+resu lt ados des ejados ou  obj et ivos dos usuár ios;
+ 
+re açõ es, opiniõ es ou  at itudes dos usuár ios s obre um deter minado pro duto 
+ 
+ou  c onc e ito ;
+r
+esu lt ados des ejados p ara novos pro dutos ou  f unciona lidades.
+ 
+Além de p ergunt as, é comum forne cer aos par t icipantes materiais concretos e protó-
+ti
+p os do pro duto para que eles tenham um fo co b em deﬁ
+ nido s obre o que falar. No 
+cas o de protót ip os, p o demos t amb ém p e dir p ara eles re alizarem algumas t arefas e 
+relat arem suas exp eriências.
+5.5.4 
+ Brainstorming
+ de Necessidades e Desejos dos Usuários
+Ess a té cnica forne ce informaçõ es s obre os tip os de conteúdo e carac terísticas que os 
+usuários querem e des ejam em um pro duto (C ourage e B axter, 2005). Ess a at iv idade 
+
+de 
+brain stor ming  
+f unciona para qu alquer pro duto ou s er v iço, e result a numa list a 
+pr iorizada de ne cessidades e des ej os dos usuários. Em geral, ess a té cnica é ut i liza-
+
+da p ara le vant ar  re quisitos e aprender s obre novas carac teríst icas que os usuários 
+
+apre ciariam em um pro duto, e forne ce mais b enef ícios qu ando utilizada durante o 
+
+est ág io conceitu al do des envolv imento do pro duto. Diferentemente de um g r up o de 
+
+fo co, que bus c a endere çar p ergunt as esp e cíﬁ
+ cas, uma s ess ão de 
+brain stor ming
+ bu s c a  
+le vant ar  de for ma b ast ante livre um conjunto g r ande e abrangente de opiniõ es dos 
+
+p ar t icip antes em tor no de um tema. Os resu lt ados dess a at ividade p o dem a liment ar 
+
+diret amente a esp e ciﬁ
+ cação f uncional e do c ument ação de desig n.
+Uma s ess ão de 
+brain stor ming
+ p o de s er conduzida em aproximadamente uma 
+hora, e le va menos temp o ainda para analis ar  os dados de uma s ess ão, o que torna 
+ess a té cnica le ve  em termos de re c urs os, mas p o deros a em termos de resu lt ados. Em 
+
+geral, uma s ess ão de 
+brain stor ming
+ envolve entre 8 e 12 usuários ﬁ
+ nais, de preferência 
+com p erﬁ
+ l s e mel hante. C a s o  haj a  mais do qu e um p e r ﬁ
+ l, de ve mos conduzir mais de 
+uma s ess ão. 
+Um a  s e s s ã o  e ﬁ
+ cientede 
+brain stor ming  
+come ça com uma p ergunt a  que sumariza 
+o obj et ivo  de entender o que os usuários querem e pre c is am  no pro duto. Em ve z 
+de p e dir para falarem s obre qu alquer cois a que queiram, é mais eﬁ
+ciente fazer uma 
+p ergunt a  vis ando ident iﬁ
+ car 
+conteúdo
+, 
+tare fa s
+ ou  
+carac ter í stica s
+ d o  pro dut o. S e n d o  
+assim, a p ergunt a inicial p o de s er feit a de três diferentes formas: (1) para ident iﬁ
+ car 
+as informaçõ es que os usuários querem ou pre cis am que o sistema forne ça; (2) para 
+
+156    I nteração Humano - Computador
+ident iﬁ
+car os t ip os de at ividades ou açõ es que os usuários esp eram re alizar com o 
+sistema; e (3) para ident iﬁ
+car carac terísticas como, p or exemplo, conﬁ
+ abi lidade, ra-
+pidez, s e gurança (C ourage e B axter, 2005).A p ergunt a de ve s e referir ao“sistema 
+ideal”, para que os par t icipantes não s e limitem ao que eles acre dit am que a te cnologia 
+
+p oss a fazer.Alguns exemplos de p ergunt a  s ão:“Q ue informaçõ es o sistema ide al de ve  
+
+forne cer?”;“Q ue t arefas vo cê pre cis ar ia ou gost ar ia de re alizar com o sistema ideal?”; 
+
+“Q ue carac ter íst icas o sistema ide a l  de ve  apres ent ar?”. Uma s ess ão de le vant amento 
+
+de ne cessidades e des ej os dos usuários t amb ém p o de s er dividida em du as et ap as, 
+
+uma para o le vant amento das informaçõ es e outra para o le vant amento das t arefas.
+C ada s ess ão de ve  ter um 
+moderador
+, que é resp ons ável p or fazer p ergunt as para 
+es cl are c er o que for dito; manter o fo co no objetivo da s ess ão; manter a at iv idade em 
+an d a m e nt o, m a s  s e m  ofe re c e r  s u a s  própr i a s  opi n i õ e s  ou  i n ﬂ
+ uenciar inde vidamente 
+as resp ost as dos par t icip antes; manter os par t icip antes motivados; não crit icar o que 
+eles diss erem; cer t iﬁ
+ car- s e  de que to dos p ar t icip em, mas que ninguém domine a s es-
+s ão.Além do mo derador, uma s ess ão p o de envolver um s e cret ár io, um cineg raﬁ st a e, 
+
+cas o as inst alaçõ es p ermit am, out r as p ar tes interess adas.
+No  início da s ess ão, os p ar t icip antes de vem s er infor mados s obre o obj et ivo  e 
+pro c e dimento da at iv idade. C ourage e B axter (2005) sugerem uma intro dução como 
+
+a s e guir (p. 382):
+E s t a m o s  proj e t an d o  <
+des cr ição dos produto
+> e pre c is amos entender qu ais <
+in -
+for mações , tare fa s  ou  cara c ter í stica s
+> vo cês querem e pre c is am  ness e pro duto. 
+Iss o ajudará a nos cer t iﬁ
+ carmos de que o pro duto s eja proj et ado para s atisfazer 
+s eus des ej os e ne cessidades. Est a s ess ão terá du as p ar tes. Na  pr imeira, faremos 
+um 
+brain stor ming
+ de <
+infor mações , tare fa s  ou  cara c ter í stica s
+> de um sistema 
+ide al; e na s e gunda p ar te da at iv idade p e diremos que vo cês pr iorizem indivi-
+
+du almente os itens que foram le vant ados.
+E les sugerem deﬁ
+ nir as s e guintes re g r as p ara a s ess ão:
+Este é um sistema 
+ 
+ideal
+,
+  ent ão to das as ideias s ão corret as. Os par t icipantes 
+não de vem censurar a si própr ios ou aos outros, mas sim exercit ar sua cria-
+t ividade.
+Não s e  t r at a de uma s ess ão de desig n, ent ão os p ar t icip antes não de vem 
+ 
+tent ar  
+pr
+ oj etar  ou  con str uir
+ o sistema. C as o  os par t icip antes come cem a su-
+ger ir s oluçõ es de desig n, eles s erão inter rompidos e p ergunt as s erão feit as 
+para identiﬁ
+ car a motivação p or trás dess as sugestõ es.A quest ão inicial tem 
+um pap el imp or t ante  ness e p onto. Em ve z de p ergunt ar“Q ual é o sistema 
+
+de agenda ideal para o s eu disp osit ivo móvel?”, p or exemplo, p o demos p er-
+
+gunt ar“Q ual é o sistema de agenda ideal para qu ando vo cê est á fora do 
+
+Capítulo 5 |
+ Identiﬁ
+ 
+ cação de Necessidades dos Usuários e Requisitos de IHC    157
+es critório?”, a ﬁ
+m de e v it ar que os par t icipantes s e reﬁ
+ ram esp e ciﬁ
+ camente 
+aos s eus própr ios disp osit ivos.
+O mo derador p o de fazer p ergunt as s obre sugestõ es duplicadas. Quando um 
+ 
+par t icip ante faz uma sugest ão que pare ce s emelhante a uma sugest ão ante -
+rio
+r, é p ossível que ele esteja querendo dizer algo um p ouco diferente. Ness e 
+cas o, o mo derador de ve  p e dir mais det a l hes p ara des cobr ir de que maneira 
+
+as sugestõ es diferem.
+O s e cret ár io es cre ve ap enas o que o mo derador paraf ras ear. Iss o signiﬁ
+ ca 
+ 
+que o mo derador pre c is a entender o que os par t icip antes re almente que-
+r
+em com cada sugest ão, para ent ão transmitir ao s e cret ár io o que de ve s er 
+re gistrado. O s e cret ár io ent ão de ve  re gistrar a sugest ão, numerando-a para 
+
+facilit ar referências f uturas.
+Durante a s ess ão, cas o os par t icip antes desviem dos objetivos, a p ergunt a inicial e até 
+mesmo as re g r as p o dem s er rep et idas. C as o os usuários come cem a sugerir informa-
+
+çõ es qu ando o fo co s ão as t arefas, ou vice-vers a, o mo derador de ve fazer p ergunt as 
+
+para que o par t icip ante reformule sua sugest ão e assim p ermit a elicit ar as t arefas 
+
+rele vantes. 
+D e vemos forne cer pap el e lápis a ﬁ
+m de que os par t icip antes p oss am re gistrar 
+suas ideias p ara que, em momentos de g r an de at ividade, as ideias individuais não s e  
+
+p erc am  enquanto o mo derador est iver tent ando entender uma out ra ideia for ne c ida 
+
+anter ior mente.
+Q u ando os p ar t icip antes de uma s ess ão de 
+brain stor ming
+ come çam a s e calar, 
+p o de s er um sinal de que to das as ideias que t in ham  já ten ham sido re g ist radas e 
+
+de que est á na hora de pass ar  para a próx ima at iv idade. S e gundo C ourage e B axter 
+
+(2005), iss o costuma aconte cer p or volt a de 40 minutos do início da at iv idade.
+Na at iv idade de pr iorização dos itens re gistrados, geralmente s olicit amos que 
+cada p ar t icip ante re g ist re, num formu l ár io, os cinco itens que considera ess enciais 
+para o pro duto, indicando, para cada item, s eu número, sua des crição e p or que ess e 
+
+item é imp or t ante para ele. D e vemos informar aos par t icip antes que to dos os cinco 
+
+itens têm o mesmo p es o, e que, cas o um par t icip ante tente“vot ar” num mesmo item 
+
+mais de uma ve z, as duplicat as s erão des car t adas.
+Uma alternat iva à s ess ão de 
+brain stor ming
+ consiste em utilizar diag ramas de aﬁ
+ -
+nidade (B e yer e Holt zblatt , 1998). Um 
+diag r ama d e aﬁ
+ nidade
+ é const r uído da s e-
+guinte maneira: cada p ess o a  es cre ve cada item p or ela le vant ado numa p e quena fol ha 
+de pap el auto colante e a aﬁ
+xa num p ainel ou  p are de. Em s e guida, os p ar t icip antes 
+e x am i n am  a s  fol ha s  aﬁ
+ xadas p or to dos, ag r upando os itens s emelhantes ou for temen-
+te relacionados. D ep endendo do obj et ivo  do diag rama, p o demos acres cent ar rótu los 
+

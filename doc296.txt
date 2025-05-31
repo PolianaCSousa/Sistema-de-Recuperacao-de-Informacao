@@ -1,0 +1,328 @@
+SILVA, Alexandre Pinto da [1], FIGUEIREDO, Douglas Barbonaglia Sathler [2], DUTRA, Frederico Giffoni de Carvalho [3]
+
+SILVA, Alexandre Pinto da. FIGUEIREDO, Douglas Barbonaglia Sathler. DUTRA, Frederico Giffoni de Carvalho. Aplicação da inteligência artificial na segurança do trabalho: uma revisão sistemática de literatura. Revista Científica Multidisciplinar Núcleo do Conhecimento. Ano. 08, Ed. 06, Vol. 03, pp. 116-129. Junho de 2023. ISSN: 2448-0959, Link de acesso: https://www.nucleodoconhecimento.com.br/tecnologia/aplicacao-da-inteligencia, DOI: 10.32749/nucleodoconhecimento.com.br/tecnologia/aplicacao-da-inteligencia
+
+RESUMO
+O artigo discorre sobre as aplicações da inteligência artificial direcionadas para segurança do trabalho na prevenção de acidentes. A pesquisa, de caráter exploratório, descritivo e de abordagem qualitativa, relata os resultados de uma revisão sistemática de literatura, cujo objetivo foi identificar quais as aplicações de inteligência artificial, voltadas à segurança do trabalho, já existentes e que estão sendo aplicadas. A coleta dos estudos referentes ao tema de pesquisa se deu por meio de buscas de artigos, publicados em português, no Portal de Periódicos Capes, Portal Brasileiro de Acesso Aberto à Informação Científica – OASISBR, e no Google Acadêmico. Foi proposto e apresentado protocolo de pesquisa, detalhando os critérios de inclusão e exclusão. Dos 145 artigos retornados das bases de dados pesquisadas, 10 cumpriram os critérios definidos no protocolo de pesquisa e foram analisados na íntegra. Conclui-se que a aplicação da inteligência artificial na segurança do trabalho para a prevenção de acidentes, ainda é pouco explorada. Como proposta para estudos futuros, sugere-se uma pesquisa em outros idiomas.
+
+Palavras-chave: Inteligência artificial, Segurança do trabalho, Prevenção, Segurança, Acidente.
+
+1. INTRODUÇÃO
+Os acidentes e doenças do trabalho já são relatados desde a antiguidade. O Novo Testamento de Lucas faz menção ao desabamento da Torre de Siloé, no qual vitimou 18 prováveis trabalhadores. Há aproximadamente dois mil anos antes de Cristo, Hipócrates, conhecido como o Pai da Medicina, descreveu a intoxicação por chumbo, que acometeu um trabalhador mineiro (IPEA, 2011).
+
+Segundo a Organização Internacional do Trabalho (OIT), quase 2 milhões de pessoas morrem no mundo a cada ano de causas que estão relacionadas ao trabalho (OIT, 2021). No Brasil, segundo o Anuário Estatístico da Previdência Social (AEPS), houve, em 2019, 582.507 acidentes do trabalho registrados, sendo que destes, 2.540 resultaram em óbitos e 15.923 em incapacidade permanente (AEPS, 2019).
+
+Nas atividades que envolvem riscos, as empresas possuem normativas que regulam os requisitos mínimos que devem ser cumpridos para garantir a segurança dos trabalhadores, sendo as principais diretrizes técnicas determinadas pelas Normas Regulamentadoras – NRs publicadas pelo Ministério do Trabalho e Previdência – MTP. Estas NRs possuem o objetivo de estabelecer as disposições gerais, o campo de aplicação, os termos e as definições comuns às Normas Regulamentadoras – NR relativas à segurança e saúde no trabalho e as diretrizes para a prevenção em Segurança e Saúde no Trabalho. (MTP, 2022).
+
+Para melhorar a prevenção nos ambientes laborais, são usadas ferramentas tecnológicas disponíveis, principalmente com a modernização trazida pela chamada 4ª Revolução Industrial, ou Indústria 4.0. Tal movimento possibilitou a automação industrial usando tecnologia como inteligência artificial, robótica, entre outros, com o objetivo de automatizar algumas atividades industriais, melhorando o processo (PORTAL DA INDÚSTRIA, 2022).
+
+Mesmo com todos os controles de segurança existentes nos ambientes de trabalho, o ser humano é passível de erro, pois a segurança do trabalho, muitas vezes, depende apenas da memória e expertise do trabalhador. Na maioria das situações, os fatores identificados como mais importantes nas conclusões das análises de acidentes se referem a comportamentos de trabalhadores, em especial, ações ou omissões situadas pouco antes do desfecho do acidente (ALMEIDA, 2007).
+
+Sendo assim, a aplicação da tecnologia pode contribuir para a prevenção de acidentes de trabalho, tornando as atividades mais seguras. Dessa forma, a tecnologia passa a ser inserida no processo com o intuito de ajudar os trabalhadores no desempenho de suas tarefas de forma segura.
+
+Diante do exposto, essa pesquisa se propõe a responder, por meio de questões investigativas, quais as pesquisas publicadas, em português a respeito da aplicação da Inteligência Artificial que possa, de uma forma direta ou indireta, prevenir acidentes de trabalho.
+
+2. REFERENCIAL TEÓRICO
+2.1.  INTELIGÊNCIA ARTIFICIAL
+A Inteligência Artificial é a ciência que busca a automação do comportamento humano. Segundo Luger (2013), a Inteligência Artificial (IA) pode ser definida como o ramo da ciência da computação que se ocupa da automação do comportamento inteligente.
+
+Outra definição é trazida por McCarthy (1963), afirmando que a IA é um ramo da ciência da computação que, por meio da elaboração de sistemas, simulam a capacidade do ser humano de raciocinar, perceber, resolver problemas e tomar decisões.
+
+Já Medeiros (2018, p.19) afirma que ainda não há uma definição do conceito de inteligência artificial:
+
+Na esteira da definição de inteligência, não há também uma forma única para conceituar inteligência artificial (IA). Existe uma série de elementos que se manifestam de maneiras diferenciadas e também em razão de interpretações distintas sobre como os processos de IA se correlacionam com os mecanismos do cérebro e da mente humana.
+
+O constante aumento da capacidade dos computadores torna a inteligência artificial mais aplicável em diversos campos (VALDATI, 2020). O autor ainda afirma que o termo tem sua origem na área da ciência da computação, definindo a inteligência artificial como “inteligência exibida por máquinas.”
+
+Para Kaufman, (2022, p 9.) a inteligência artificial é alicerçada em bases de dados para calcular a probabilidade de eventos ocorrerem: “A inteligência artificial hoje é composta fundamentalmente de modelos estatísticos que, baseados em dados, calculam a probabilidade de eventos ocorrerem”.
+
+Quanto a uma classificação dos tipos de IA, Ludermir (2021) destaca três tipos:
+
+IA Focada: Também conhecida como IA Fraca, consiste de algoritmos especializados em resolver problemas em uma área e/ou um problema específico.
+IA Generalizada: Também conhecida como IA Forte, os algoritmos desenvolvidos se tornam tão capazes quanto humanos em várias tarefas.
+IA Superinteligente: Neste tipo, os algoritmos são significantemente mais capazes que humanos em praticamente todas as tarefas.
+2.2.  SEGURANÇA DO TRABALHO
+Todas as ações desenvolvidas para prevenir acidentes e doenças relacionadas com o trabalho estão dentro do campo da prevenção destes eventos indesejáveis. A própria Constituição Brasileira de 1988, em seu Capítulo II – Dos Direitos Sociais, assegura como direito de todo (a) trabalhador (a) a “redução dos riscos inerentes ao trabalho, por meio de normas de saúde, higiene e segurança” (BRASIL, 1988).
+
+Segundo Saliba (2011), a segurança do trabalho pode ser definida como “a ciência que atua na prevenção dos acidentes de trabalho decorrentes dos fatores de riscos ocupacionais”!
+
+O tema se torna a cada dia mais relevante, e a própria OIT, em sua 110ª Conferência Internacional do Trabalho realizada em junho de 2022, acrescentou o princípio de um ambiente de trabalho seguro e saudável, como o quinto princípio de direitos fundamentais no trabalho (os outros quatro princípios são: liberdade sindical e o reconhecimento efetivo do direito à negociação coletiva; a eliminação de todas as formas de trabalho forçado ou obrigatório; a abolição efetiva do trabalho infantil; a eliminação da discriminação em relação ao emprego e à ocupação) (OIT, 2022).
+
+Desde a revolução industrial, com a introdução de maquinários nos processos de produção, houve um grande aumento de acidentes de vc trabalho, e o Brasil não se furtou a se deparar com este problema, apesar de mais tarde do que os países europeus (IPEA, 2011).
+
+Segundo o Anuário Estatístico da Previdência Social (AEPS), na década de 70, o Brasil chegou a ter registrado aproximadamente 1.500.000 acidentes de trabalho por ano. Com a modernização das normativas e o desenvolvimento de equipamentos de proteção mais seguros, a média de acidentes de 2010 a 2019 ficou em torno de 650.000 (AEPS, 2019). Apesar dessa diminuição significativa, o Brasil ainda registra um grande número de acidentes, e nesse período de 2010 a 2019, registrou em todos os anos mais de 550.000 acidentes de trabalho.
+
+3. METODOLOGIA
+Essa pesquisa possui caráter exploratório e descritivo, tendo como finalidade identificar, por meio de uma revisão sistemática de literatura, quais são as aplicações de inteligência artificial voltadas à segurança do trabalho pulicadas em português. Segundo Gil (1994), a pesquisa exploratória objetiva proporcionar maior familiaridade com um problema, tornando-o mais explícito ou constituindo hipóteses. Quanto à abordagem, a pesquisa classifica-se como qualitativa, que de acordo com Creswell (2010), direciona como forma de se explorar e entender significados atribuídos, tendo como a interpretação da complexidade da situação.
+
+Para o cumprimento do objetivo desta pesquisa optou-se pela realização da Revisão Sistemática da Literatura (RSL), que foi dividida em três etapas principais, a saber: (1) Planejamento, contemplando a realização de uma revisão bibliográfica, como forma de familiarização com a temática estudada e preenchimento do protocolo de busca; (2) Condução, que consistiu na busca em bases de dados e na aplicação dos critérios de inclusão e exclusão; (3) Extração de dados.
+
+A coleta dos estudos referentes ao tema de pesquisa se deu por meio de buscas no Portal de Periódicos Capes, Portal Brasileiro de Acesso Aberto à Informação Científica – OASISBR, e no Google Acadêmico. Foi proposto e apresentado no Quadro 1 o protocolo de pesquisa, com o desígnio de detalhar os critérios de inclusão e exclusão, o horizonte temporal, tipos de documentos, o idioma pesquisado e os termos descritores.
+
+Quadro 1 – Protocolo de pesquisa da inteligência artificial e segurança do trabalho
+
+Protocolo	Descrição
+Quadro conceitual	A Inteligência Artificial é uma ciência que busca substituir, ou ao menos ajudar o ser humano em algumas atividades cotidianas, enquanto a Segurança do Trabalho é tudo aquilo que visa a proteção do trabalhador em seu ambiente laboral. Dessa forma, busca-se identificar pesquisas da IA no âmbito da segurança do trabalho para a prevenção de acidentes.
+Contexto	Estudos que fundamentem e que se proponham a apresentar relação entre os campos da Inteligência Artificial e da Segurança do Trabalho.
+Critérios de inclusão	Artigos ou estudos publicados em revistas, anais de seminários, conferências, repositórios.
+Idioma	Português
+Horizonte	Sem delimitação temporal
+Critérios de exclusão	1         Estudos duplicados.
+2         Estudos indisponíveis para download.
+
+3         Estudos que não fundamentam teoricamente a relação entre os termos da pesquisa.
+
+4         Trabalhos de Conclusão de Curso, dissertação, projetos e teses.
+
+Descritores (termos de pesquisa)	Equação de pesquisa usando o operador   booleano “AND”:
+“Inteligência Artificial” AND acidente AND trabalho;
+
+Pesquisar fontes	OASISBR; CAPES; Google Acadêmico.
+Fonte: Próprios autores, adaptado de Dresch, Lacerda, Antunes Jr. (2015, p.142).
+
+Partindo do protocolo de pesquisa definido no Quadro 1, pretende-se responder algumas indagações sobre a aplicação da IA na segurança do trabalho, que, de alguma forma possa ter algum impacto na prevenção de acidentes:
+
+1) Existe algum setor que se destaca na aplicação da IA para evitar acidentes de trabalho?
+
+2) Há artigos de revisão de literatura relacionadas à temática? Se sim, quais as principais descobertas?
+
+3) Existe alguma pesquisa focada em uma categoria específica de trabalhadores?
+
+4) Há algum tipo de IA mais usada que se destaque?
+
+5) Alguma pesquisa conseguiu comprovar, com dados científicos, se a aplicação da IA diminui os acidentes de trabalho?
+
+4. RESULTADOS E DISCUSSÃO
+Seguindo o protocolo definido no Quadro 1, no dia 31/03/2023 foram feitas as pesquisas nas bases de dados informadas, resultando na Tabela 1:
+
+Tabela 1. Composição da pesquisa nas bases de dados
+
+Base	Resultados	Resultados após aplicação dos critérios de exclusão
+CAPES	9	4
+Google Acadêmico	132	4
+OASISBR	4	2
+Total	145	10
+Fonte: elaborado pelos autores.
+
+No total foram retornados 145 artigos, todos na língua portuguesa, conforme foi estabelecido no protocolo de pesquisa a Tabela 1, restando 10 artigos para leitura na íntegra, com o propósito de se fazer uma análise mais criteriosa do conteúdo e encontrar as respostas para as indagações norteadoras da pesquisa. Os artigos selecionados são apresentados no Quadro 2.
+
+Quadro 2 – Artigos selecionados após aplicação dos critérios de exclusão
+
+Nº	Autor(es)	Título do trabalho / publicação / URL
+P1	Pereira; Botelho (2018)	Design de Interação: fatores humanos e os veículos autônomos
+ 
+
+Design & Tecnologia
+
+ 
+
+URL: https://www.ufrgs.br/det/index.php/det/article/view/523
+
+P2	Sousa; Araújo; De Azevedo (2020)	Um Sistema para Predição de Risco de Acidentes em Rodovias de Pernambuco
+ 
+
+Revista de Engenharia e Pesquisa Aplicada
+
+ 
+
+URL: http://revistas.poli.br/index.php/repa/article/view/1328
+
+P3	Marins Zurssa; Martins (2022)	Análise Automática do Uso do Solo no Entorno de Rodovias Usando uma Abordagem Fuzzy
+ 
+
+Trends in Computational and Applied Mathematics
+
+ 
+
+URL: https://www.scielo.br/j/tcam/a/jkPpHmTgjj5HTqdY4DDCmHR/
+
+P4	Veiga; Pires (2018)	Impacto da inteligência artificial nos locais de trabalho
+ 
+
+International Journal on Working Conditions
+
+ 
+
+URL: https://comum.rcaap.pt/handle/10400.26/30179
+
+P5	Soares; Pereira (2021)	Aplicação de classificador binário por RNC na detecção de acidentes de trânsito
+ 
+
+Revista Brasileira de Computação Aplicada
+
+ 
+
+URL: http://www.seer.upf.br/index.php/rbca/article/view/12466
+
+P6	Groto et al., (2021)	Uso da inteligência artificial para predição de acidentes de trabalho com materiais biológicos em profissionais da saúde
+ 
+
+Research, Society and Development journal
+
+ 
+
+URL: https://rsdjournal.org/index.php/rsd/article/download/19743/18007/245720
+
+P7	Silva et al., (2021)	Utilização das Tecnologias da Indústria 4.0 na Segurança e Saúde do Trabalhador: uma revisão sistemática de literatura
+ 
+
+Brazil Journal of Production Engineering
+
+ 
+
+URL: https://periodicos.ufes.br/bjpe/article/view/37022/24397
+
+P8	Lourenço Esteves et al., (2019)	Aprendizado de Máquina Aplicado para Auxílio ao Motorista Utilizando Raspberry PI
+ 
+
+Colloquium Exactarum
+
+ 
+
+URL: https://revistas.unoeste.br/index.php/ce/article/view/3167
+
+P9	Chagas et al., (2012)	Um Jogo para Treinamento de Operadores de Sondas de Perfuração Terrestre
+ 
+
+Holos
+
+ 
+
+URL: https://www2.ifrn.edu.br/ojs/index.php/HOLOS/article/view/634
+
+P10	Felix (2022)	Veículos autônomos e a logística 4.0: uma visão geral
+ 
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
+
+ 
+
+URL: https://engrxiv.org/preprint/download/2331/4538
+
+Fonte: elaborado pelos autores.
+
+Após a leitura e análise dos textos, buscou-se sintetizar as ideias para responder às questões norteadoras da pesquisa.
+
+4.1. EXISTE ALGUM SETOR QUE SE DESTACA NA APLICAÇÃO DA IA PARA EVITAR ACIDENTES DE TRABALHO?
+A maioria (60%) das pesquisas aborda, de uma forma direta ou indireta a questão dos acidentes de trânsito (P1, P2, P3, P5, P8 e P10). As pesquisas vão de encontro com a preocupação com o grande número de acidentes de trânsito que acontecem todos os anos no Brasil e no mundo. Cerca de 1,3 milhão de pessoas morreram em estradas no mundo todo apenas em 2016. No mesmo ano, ocorreram 96 mil acidentes com mais de 6 mil vítimas fatais nas rodovias federais brasileiras (Sousa; Araújo; De Azevedo, 2020).
+
+Cabe destacar os artigos P1, P2 e P10. Os autores da pesquisa P2 propõem o uso de um sistema composto por um modelo de machine learning, que é um tipo de inteligência artificial, treinado com dados de ocorrências de acidentes disponibilizados pela Polícia Rodoviária Federal, e uma ferramenta interativa de visualização dos pontos com maiores riscos no mapa de Pernambuco.
+
+Os artigos P1 e P10 proporcionam uma abordagem direta sobre veículos autônomos. P1 afirma que, do total de acidentes de trânsito registrados, 94% são causados por erro humano.
+
+Usar a IA para prevenir esse tipo de acidente, corrobora com o objetivo deste artigo, pois os acidentes de trânsito, ou quaisquer outros acidentes ocorridos quando os trabalhadores estão a serviço das organizações, são considerados também acidentes de trabalho, conforme o artigo 19 da Lei 8213 de 24 de julho de 1991:
+
+Art. 19.  Acidente de trabalho é o que ocorre pelo exercício do trabalho a serviço de empresa ou de empregador doméstico ou pelo exercício do trabalho dos segurados referidos no inciso VII do art. 11 desta Lei, provocando lesão corporal ou perturbação funcional que cause a morte ou a perda ou redução, permanente ou temporária, da capacidade para o trabalho (BRASIL, 1991).
+
+4.2. HÁ ARTIGOS DE REVISÃO DE LITERATURA RELACIONADAS À TEMÁTICA? SE SIM, QUAIS AS PRINCIPAIS DESCOBERTAS?
+O artigo P4 apresenta uma revisão de literatura de artigos científicos nacionais e internacionais, complementando com um questionário em que buscou-se analisar a percepção dos trabalhadores frente a introdução da IA nos ambientes de trabalho. Concluiu-se na pesquisa que as oportunidades em matéria de segurança e saúde no trabalho irão superar as ameaças que poderão antevir da restruturação dos postos de trabalho. Outra contribuição constatada foi que os respondentes do questionário foram unânimes ao referirem que a IA irá reduzir o número de acidentes de trabalho e beneficiará o bem-estar social.
+
+A pesquisa P7 realizou uma revisão sistemática de literatura, buscando trazer as principais tecnologias aplicadas na indústria na segurança do trabalho. Foram selecionados 19 artigos para uma análise minuciosa. Como principal descoberta, pode ser considerada a conclusão de que são promissoras as possibilidades de uma gestão ocupacional preventiva e simultânea através do uso das tecnologias da indústria 4.0, aí incluída a IA como um dos principais artifícios. Uma outra descoberta dessa pesquisa é que a literatura reflete a importância de adaptações tecnológicas em termos de gestão da Saúde e Segurança do Trabalho no Brasil, de forma a torná-la mais propositiva, prática, simultânea e eficiente.
+
+O trabalho P10 traz uma revisão sistemática de literatura, fazendo comparação entre 9 artigos relacionados a veículos autônomos e a logística 4.0. Como principal contribuição, foram observados gaps de pesquisa e identificadas tendências voltadas ao aprimoramento das tecnologias contidas na revolução 4.0 e na logística 4.0, citando o aperfeiçoamento da Inteligência Artificial (IA).
+
+4.3. EXISTE ALGUMA PESQUISA FOCADA EM UMA CATEGORIA ESPECÍFICA DE TRABALHADORES
+Pesquisa voltada para a área de saúde, no oeste do Paraná, o artigo P6 trouxe como proposta de desenvolver um software que realizasse um cálculo para predizer quais as chances de um profissional que labora na área de saúde se acidentar. Foi aplicado um questionário, que foi respondido por 111 desses profissionais, como assistente administrativo, agente comunitário de saúde, médico, técnico/auxiliar de enfermagem, enfermeiro, entre outros, com o intuito de obter mais informações sobre a rotina de trabalho destes trabalhadores, além da associação de 1.094 comunicações de acidentes de trabalho.
+
+Para a análise dos dados coletados, foi desenvolvido um modelo na linguagem de programação Python com biblioteca Scikit-learn, que é uma biblioteca de linguagem Python para aplicação prática de machine Learning. Para fazer a classificação de predição se um trabalhador da saúde pode se acidentar, foi aplicada a metodologia random forest (algoritmo de aprendizagem supervisionada, usado principalmente para classificação ou regressão), com 100 estimadores em aprendizado supervisionado. O modelo de inteligência artificial foi treinado utilizando dados limitados a profissionais da atenção primária e unidades de pronto atendimento. Os dados coletados foram armazenados no software Excel, sendo as análises estatísticas realizadas no RStudio usando os testes Qui-Quadrado e T-Student.
+
+Uma das conclusões da pesquisa, após toda a análise estatística de dados, foi que técnicos de enfermagem têm maior prevalência de acidentes com materiais biológicos que outros profissionais, e este fato pode levar a políticas públicas focadas nestes trabalhadores.
+
+4.4. EXISTE ALGUMA PESQUISA FOCADA EM UMA CATEGORIA ESPECÍFICA DE TRABALHADORES
+Dos artigos selecionados, 40% (4) P2, P6, P7 e P8 citaram a técnica de machine learning no desenvolvimento das pesquisas. Segundo Figueiredo e Cabral (2020), machine learning é uma técnica utilizada para o desenvolvimento de uma programação especialista, que vai se tornando mais eficiente, com a redução do fator humano para a respostas dos problemas. É uma técnica que, tendo como base experiências passadas, é capaz de criar uma hipótese ou função capaz de resolver o problema que se deseja solucionar.
+
+4.5. ALGUMA PESQUISA CONSEGUIU COMPROVAR, COM DADOS CIENTÍFICOS, SE A APLICAÇÃO DA INTELIGÊNCIA ARTIFICIAL DIMINUI OS ACIDENTES DE TRABALHO
+De acordo com as pesquisas selecionadas para a análise, essa indagação não pôde ser respondida. Nenhuma das pesquisas trouxe dados concretos da diminuição dos acidentes devido a aplicação da IA nos ambientes de trabalho.
+
+Um fator que pode ter contribuído com a falta desses dados científicos é a contemporaneidade do assunto, que pôde ser comprovado, pois 90% das pesquisas foram publicadas a partir de 2018, conforme mostra a Figura 1.
+
+Figura 1. Anos de publicação dos artigos
+
+Anos de publicação dos artigos
+Fonte: Elaborado pelos autores.
+É necessário mais tempo para se obter dados mais consistentes e ser possível responder essa indagação.
+
+5. CONSIDERAÇÕES FINAIS
+O objetivo dessa pesquisa foi investigar as aplicações da inteligência artificial direcionadas para segurança do trabalho na prevenção de acidentes. Foram pesquisadas 03 bases de dados com palavras-chave relacionadas à temática, retornando 145 artigos. Destes, 10 cumpriram os critérios definidos no protocolo de pesquisa e foram analisados na íntegra.
+
+No campo de descobertas dessa pesquisa, há destaque para a grande preocupação dos acidentes de trânsito, que se busca solucionar através da aplicação da IA. Outro destaque é a existência de pesquisa voltada para uma categoria específica, onde o uso de tratamento de dados por meio da IA pode nortear medidas preventivas nas organizações. Esse tipo de tratamento de dados pode ser replicado para outras categorias.
+
+O objetivo da pesquisa foi cumprido, e as perguntas norteadoras foram respondidas, apesar da resposta à indagação se já há dados estatísticos que comprove a diminuição de acidentes de trabalho com a aplicação da IA ter uma resposta negativa, no qual foi justificado devido às pesquisas ainda serem recentes. Dados científicos consistentes poderão ser obtidos no futuro e comprovar ou não essa hipótese. Cabe ressaltar que não houve limitação de datas para a pesquisa.
+
+Conclui-se que existe uma grande oportunidade para a aplicação da IA na segurança do trabalho. Como limitações da pesquisa, é possível citar o baixo número de artigos retornados e selecionados para análise. Como a pesquisa foi feita apenas na língua portuguesa, fica evidenciado o baixo número de artigos publicados, principalmente no Brasil, em relação à aplicação da IA na segurança do trabalho.
+
+Para proposta de estudos futuros, sugere-se uma pesquisa em outros países e idiomas, para se ter um parâmetro de como está o Brasil em comparação com os principais atores no mundo, além de pesquisas que comprovem a hipótese que a aplicação da IA na segurança do trabalho diminui o número de acidentes.
+
+AGRADECIMENTOS:
+Este trabalho faz parte do P&D 04950-0661/2022 – Sistema Integrado de Visão Computacional para Proteção à Receita e Segurança do Trabalho, financiado pela ANEEL, desenvolvido pela Cemig.
+
+REFERÊNCIAS
+AEPS. Anuário Estatístico da Previdência Social. 2019. Disponível em: < https://www.gov.br/trabalho-e-previdencia/pt-br/assuntos/previdencia-social/saude-e-seguranca-do-trabalhador/dados-de-acidentes-do-trabalho >. Acesso em: 30 maio 2022.
+
+ALMEIDA, I. M.; JACKSON FILHO, J. M. Acidentes e sua prevenção. Revista Brasileira de Saúde Ocupacional, v. 32, p. 07-18, 2007.
+
+BRASIL. [Constituição (1988)]. Constituição da República Federativa do Brasil de 1988. Brasília, DF: Presidente da República, [2016]. Disponível em: http://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm. Acesso em: 06 jun. 2022.
+
+BRASIL. Lei nº 8.213, de 24 de julho de 1991. Dispõe sobre os Planos de Benefícios da Previdência Social e dá outras providências. Disponível em: <http://www.planalto.gov.br/ccivil_03/Leis/L8213cons.htm> Acesso em: 19 jul. 2022.
+
+CHAGAS, J. F. S. et al. Um jogo para treinamento de operadores de sondas de perfuração terrestre. HOLOS, 1, 137–146, 2012. DOI: https://doi.org/10.15628/holos.2012.634.
+
+Creswell, J. W. Projeto de pesquisa: métodos qualitativo, quantitativo e misto. Porto Alegre: Sage Editora, 2010.
+
+Dresch, A.; LACERDA, D. P.; ANTUNES JÚNIOR, J. A. V. Design science research: método de pesquisa para avanço da ciência e tecnologia. Bookman Editora, 2015.
+
+FELIX, M. O. F. J. Veículos autônomos e a logística 4.0: uma visão geral. Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP), 2022.
+
+FIGUEIREDO, C. R. B.; CABRAL, F. G. Inteligência artificial: machine learning na Administração Pública. International Journal of Digital Law, v. 1, n. 1, p. 79–96, 15 mar. 2020.
+
+GIL, A.C. Métodos e técnicas de pesquisa social. São Paulo: Atlas, 1994. 207 p.
+
+GROTO, A. D. et al. Uso da inteligência artificial para predição de acidentes de trabalho com materiais biológicos em profissionais da saúde. Research, Society and Development, v. 10, n. 12, p. e93101219743, 14 set. 2021.
+
+IPEA. Saúde e segurança no trabalho no Brasil: aspectos institucionais, sistemas de informação e indicadores. Brasília: Ipea, 2011.
+
+KAUFMAN, D. Desmistificando a inteligência artificial. Belo Horizonte: Autência, 2022, pág. 9.
+
+LOURENÇO ESTEVES, L. et al. Aprendizado de máquina aplicado para auxílio ao motorista utilizando Raspberry PI. Colloquium exactarum, v. 11, n. 2, p. 15–25, 1 jun. 2019.
+
+LUDERMIR, T. B. Inteligência Artificial e Aprendizado de Máquina: estado atual e tendências. Inteligência Artificial. v. 35, n. 101, p. 85–94, 2021.
+
+LUGER, G. F. Inteligência artificial. Tradução: Daniel Vieira. 6ª ed. São Paulo: Pearson Education do Brasil, 2013, p. 01.
+
+MARINS ZURSSA, L. R.; MARTINS, A. C. G. Análise Automática do Uso do Solo no Entorno de Rodovias Usando uma Abordagem Fuzzy. Trends in Computational and Applied Mathematics, v. 23, n. 2, p. 383–399, 27 jun. 2022.
+
+MEDEIROS, L. F. Inteligência artificial aplicada: uma abordagem introdutória. Curitiba: InterSaberes, 2018, p. 19.
+
+McCarthy, J. Programs with common sense. Proceedings of the Symposium on the Mechanization of Thought Processes, National Physical Laboratory, Teddington, Middlesex, England, 1–15, 1963.
+
+MTP. Normas Regulamentadoras. Ministério do Trabalho e Previdência, 2022. Disponível em <www.gov.br >. Acesso em: 08 jul. 2022.
+
+OIT. OMS/OIT: Quase 2 milhões de pessoas morrem a cada ano de causas relacionadas ao trabalho. Organização Internacional do Trabalho, 2021. Disponível em: < https://www.ilo.org/brasilia/noticias/WCMS_820318/lang–pt/index.htm >. Acesso em: 30 maio 2022.
+
+OIT. Conferência Internacional do Trabalho acrescenta segurança e saúde aos Princípios e Direitos Fundamentais no Trabalho. Organização Internacional do Trabalho, 2022. Disponível em: < https://www.ilo.org/brasilia/noticias/WCMS_848148/lang–pt/index.htm>. Acesso em: 20 jun. 2022.
+
+PEREIRA, S. B.; BOTELHO, R. D. Design de Interação: fatores humanos e os veículos autônomos. Design & Tecnologia 16, 2018.
+
+PORTAL DA INDÚSTRIA. Indústria 4.0: Entenda seus conceitos e fundamentos. 2022. Disponível em: <https://www.portaldaindustria.com.br/industria-de-a-z/industria-4-0/#o-que-e>. Acesso em 06 de junho 2022.
+
+SALIBA, T. M. Curso básico de segurança e higiene ocupacional. LTr Editora Ltda., 2011.
+
+SILVA, C. M. M. DA et al. Utilização das tecnologias da indústria 4.0 na segurança e saúde do trabalhador: uma revisão sistemática da literatura. Brazilian Journal of Production Engineering – BJPE, p. 252–268, 17 dez. 2021.
+
+SOARES, A. C.; PEREIRA, D. C. Aplicação de classificador binário por RNC na detecção de acidentes de trânsito. Revista Brasileira de Computação Aplicada, 2021.
+
+SOUSA, R. D. S.; ARAÚJO, D.; DE AZEVEDO, V. M. Um Sistema para Predição de Risco de Acidentes em Rodovias de Pernambuco. Revista de Engenharia e Pesquisa Aplicada, v. 5, n. 2, p. 18–26, 29 abr. 2020.
+
+VALDATI, A. B. Inteligência artificial – IA. Curitiba: Contentus, 2020. Pág. 7.
+
+VEIGA, R. A. C.; PIRES, C. C. Impacto da inteligência artificial nos locais de trabalho. RICOT, 2020.
+
+[1] Mestre. ORCID: 0000-0001-5680-7856. Currículo Lattes: http://lattes.cnpq.br/3211788525640226.
+
+[2] Bacharel em engenharia de computação. ORCID: 0009-0002-7503-4654. Currículo Lattes: http://lattes.cnpq.br/5669660096734511.
+
+[3] Orientador. ORCID: 0000-0002-8666-0354.
+
+Enviado: 28 de Fevereiro, 2023. 
+
+Aprovado: 26 de Abril, 2023.

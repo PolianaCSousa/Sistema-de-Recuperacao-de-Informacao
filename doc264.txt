@@ -1,0 +1,632 @@
+Avaliações heurísticas para decisões de acessibilidade: uma revisão sistemática da literatura
+ARTIGO ORIGINAL
+
+ALMEIDA, Hugo Leonardo Nascimento [1], CORREIA, Walter Franklin Marques [2], ALMEIDA FILHO, Adiel Teixeira de [3]
+
+ALMEIDA, Hugo Leonardo Nascimento. CORREIA, Walter Franklin Marques. ALMEIDA FILHO, Adiel Teixeira de. Avaliações heurísticas para decisões de acessibilidade: uma revisão sistemática da literatura. Revista Científica Multidisciplinar Núcleo do Conhecimento. Ano 08, Ed. 03, vol. 03, pp. 107-153. Março de 2023. ISSN:2448-0959, Link de Acesso: https://www.nucleodoconhecimento.com.br/ciencia-da-computacao/avaliacoes-heuristicas, DOI: 10.32749/nucleodoconhecimento.com.br/ciencia-da-computacao/avaliacoes-heuristicas
+
+RESUMO
+Há cada vez mais pessoas que usam a tecnologia diariamente para se comunicar e acessar informações, incluindo idosos e pessoas com deficiência. As tecnologias assistivas, também chamadas de auxílios técnicos, são recursos de acessibilidade e inclusão que proporcionam maior grau de autonomia e assistência para pessoas que apresentam algum grau de dificuldade na utilização de recursos em seu contato com ambientes reais e virtuais. O objetivo deste estudo é investigar as percepções sobre a avaliação heurística de acessibilidade em software por meio de uma revisão sistemática da literatura que abrange os últimos 5 anos. Isso começou com um total de 8.548 artigos publicados indexados nas bases de dados Scopus e Web of Science. Foram elaboradas doze questões de pesquisa relevantes que foram respondidas de acordo com os resultados encontrados no conjunto final de artigos. Dois grupos de palavras-chave foram criados para auxiliar na busca de artigos e um processo de filtragem foi aplicado aos resultados das buscas. A pesquisa mostra, por meio de figuras e tabelas, evidências sobre o crescimento da produção científica na área. Os principais autores e periódicos que publicam sobre avaliação da acessibilidade de software são listados, assim como as respostas às perguntas sobre quais modelos avaliativos, heurísticas, métricas, limitações, tecnologias assistivas e públicos-alvo são mais citados nos artigos publicados. Este estudo também analisa a cocitação das referências e fontes bibliográficas casadas. A pesquisa mostrou evidências de que não há um consenso geral sobre o uso de um único modelo para avaliar a acessibilidade, mas que as diretrizes W3C WCAG são as fontes mais utilizadas para referenciar heurísticas e métricas em estudos desse tipo. Percebeu-se também que a maioria dos estudos não foca em tecnologias assistivas, mas são amplamente utilizadas para apoiar decisões em websites.
+
+Palavras-chave: Avaliação e avaliação, Acessibilidade na Web, Avaliação heurística.
+
+1. INTRODUÇÃO
+O uso de heurísticas pode auxiliar na resolução de problemas relacionados à usabilidade e acessibilidade em projetos de software (EUSÉBIO; SILVEIRO; TEIXEIRA, 2020; RANADA; LIDSTRÖM, 2019). Considerando a crescente busca e disseminação de heurísticas (HORTON et al., 2017), que consistem em métodos ou processos criados para propor soluções para problemas por meio de itens de verificação, percebe-se que diversos fatores de decisão, que podem fazer parte de a solução, ainda não são encontrados na literatura (CHI; TSENG; JANG, 2012).
+
+Na pesquisa científica, a engenharia de software se apresenta como uma das disciplinas mais referenciadas no que diz respeito a conceitos e práticas, pois reúne diversas técnicas e atividades para validação, verificação e avaliação de resultados, incluindo heurísticas. A seleção de técnicas experimentais de engenharia de software que ocorrem ao longo do ciclo de realização da pesquisa, quando utilizadas corretamente, pode ser o fator fundamental para o sucesso da pesquisa (WOHLIN et al., 2012).
+
+A engenharia de software é vista como um conceito interdisciplinar que reúne aspectos tecnológicos e gerenciais, de forma a abordar sistematicamente todos os processos de implementação, implantação e manutenção de projetos de software, sendo sua qualidade assegurada pela construção dos mesmos dentro dos prazos, custos e recursos previamente definidos (MAFFEO, 1992).
+
+As formas de conduzir pesquisas relacionadas a software, quando envolvendo pessoas, devem ser contextualizadas levando em conta preocupações éticas (BADAMPUDI, 2017). Com base nas informações teóricas obtidas pela pesquisa, será proposto um modelo de escolha/classificação baseado em relações de dominância, a fim de mitigar a desconfiança e a ineficiência (SINGER; VINSON, 2002) quanto à condução de métodos empíricos baseados em fundamentados heurística.
+
+Atualmente, na academia, estão sendo concebidas diferentes propostas de criação e extração de métricas (formas de medir resultados) (GARCÍA-SANTIAGO; OLVERA-LOBO, 2021; ARAÚJO; CARNEIRO; PALHA, 2020), embora a maioria das propostas não seja utilizada da mesma forma em projetos desenvolvidos pela indústria (UMARJI; SEAMAN, 2008). A utilização de métricas visa avaliar os resultados obtidos e agregar positivamente ao processo de software e à geração de valor.
+
+As métricas estudadas e propostas pela indústria têm como valor agregado a busca de custos e o timing das atividades de manutenção, além da relação direta com o número de erros encontrados nos sistemas empresariais (UMARJI; SEAMAN, 2008), o que demonstra que questões relacionados à acessibilidade não são o foco ou muitas vezes não são levados em consideração pelas mesmas propostas.
+
+A preocupação em satisfazer todas as necessidades e exigências de seus usuários e demais potenciais envolvidos e a consciência de que a aceitação do sistema envolve diversos fatores, faz com que usabilidade e acessibilidade sejam pensadas e consideradas juntamente com custo, utilidade, confiabilidade, aceitação social, etc (NIELSEN, 1994).
+
+Os estudos de usabilidade e acessibilidade podem se apropriar de estudos de outras áreas (GAMACHE et al., 2018; LAKSHMI; KUMAR; DAS, 2018; STITZ; BLUNDELL, 2018; VENTURI, 1995), a fim de poder monitorar melhor a conduta dos estudos empíricos, envolvendo seres humanos, necessários para a validação de pesquisas em engenharia de software.
+
+A experiência do usuário desperta um interesse crescente na comunidade Human-Computer Interaction (HCI). Mesmo que a comunidade HCI pareça aceitar que a funcionalidade por si só ou os princípios de usabilidade não são mais suficientes, não há um entendimento coerente do que realmente é a experiência do usuário (HASSENZAHL, 2018). A ISO 9241-210 propõe definir a experiência do usuário como todos os aspectos da experiência do usuário ao interagir com um produto, serviço, ambiente ou instalação (ABNT, 2011).
+
+Com base em estudos anteriores, este artigo apresenta uma Revisão Sistemática da Literatura (RSL) envolvendo o uso de avaliações heurísticas em decisões de acessibilidade, com o objetivo de responder a um conjunto de questões relevantes e ainda em aberto na literatura da área. Entre as contribuições deste estudo, apresenta um conjunto de dados não observados em revisões anteriores, como a análise e agrupamento dos modelos de avaliação, heurísticas e métricas utilizadas, e a realização de um estudo sobre os autores principais. Inicialmente, os 8.548 artigos considerados nesta revisão sistemática foram publicados nas bases de dados Web of Science e Scopus. Estes foram posteriormente analisados e filtrados e resultaram nos 101 artigos analisados nesta revisão. Portanto, os resultados deste artigo atualizam as conclusões anteriores (CAMPOVERDE-MOLINA, LUJAN-MORA; GARCIA, 2020; NAGARAJU; CHAWLA, 2019; NATHAN et al., 2018; PAIVA, FREIRE; FORTES, 2021). Outra contribuição deste estudo é verificar um período antes e depois da Lei Europeia de Acessibilidade, que foi introduzida depois que os órgãos do setor público da União Europeia foram obrigados a garantir a acessibilidade aos sites. Isso surgiu como resultado da Diretiva de Acessibilidade na Web (CEN e CENELEC, 2019; EUROPEAN COMMISSION, 2015). Além disso, um ponto a ser destacado como diferencial neste artigo é a apresentação do TreeMaps (SHNEIDERMAN, 1992) (analisando expressões contidas nos títulos do conjunto de artigos), WordCloud (analisando as palavras-chave dos autores principais), co- análise de citações e acoplamento bibliográfico. A ferramenta Bibliometrix R (ARIA; CUCCURULLO, 2017) foi usada para capturar essas métricas.
+
+Este artigo está dividido em cinco seções. A Seção 1 fornece uma breve introdução ao tema. A Seção 2 apresenta a metodologia RSL. A seção 3 apresenta os principais resultados e linhas de análise da revisão sistemática. A Seção 4 resume o trabalho realizado, discute algumas limitações, indica diretrizes de pesquisa e faz sugestões para futuras linhas de pesquisa, enquanto a Seção 5 apresenta algumas conclusões.
+
+2. METODOLOGIA
+Esta revisão sistemática reúne informações de estudos recentes da mesma natureza, realizados e publicados em diferentes áreas do conhecimento (ALMEIDA-FILHO; SILVA; FERREIRA, 2020; ARAÚJO; CARNEIRO; PALHA, 2020; GONZÁLEZ-PEREA; GALÁN; VILLARINY, 2019 ; LAENGLE et al., 2017; MARIZ; ALMEIDA; ALOISE, 2018; NASCIMENTO; ALENCAR, 2016; PEREIRA; COSTA, 2015; RUSCHEL; SANTOS; LOURES, 2017; TERASHIMA; CLARK, 2021; ZOPOUNIDIS et al., 2015).
+
+Na metodologia deste estudo, são definidas as questões que serão analisadas na investigação; em seguida, os artigos são listados e posteriormente filtrados, com base em procedimentos padronizados; em seguida, são apresentados os principais resultados obtidos; e, finalmente, os resultados são analisados.
+
+2.1 DEFINIÇÃO DAS QUESTÕES RELEVANTES PARA A PESQUISA
+A fase de definição consistiu em identificar pontos específicos nos quais os artigos publicados precisam se enquadrar para sua apresentação e discussão na RSL. Assim, inicialmente, foram listados os pontos específicos que foram abordados e isso levou à compilação de uma série de perguntas de pesquisa para orientar a análise dos resultados, determinar se havia lacunas na literatura e definir o escopo da revisão. Essas questões de pesquisa, que não são classificadas de acordo com sua importância, são apresentadas na Tabela 1.
+
+Tabela 1 – Questões de Pesquisa
+
+Questões de pesquisa	Descrição
+Q1	Tem havido um aumento do número de modelos heurísticos de avaliação da acessibilidade?
+Q2	Houve um aumento no número de artigos citando avaliação heurística para decisões de acessibilidade?
+Q3	Quais são as principais referências encontradas que tratam de avaliações heurísticas para decisões de acessibilidade?
+Q4	Quem são os pesquisadores mais relevantes no campo da pesquisa de avaliação heurística para acessibilidade?
+Q5	Os modelos heurísticos de avaliação estão mais presentes em periódicos voltados à pesquisa operacional?
+Q6	Quais são os modelos de avaliação mais citados?
+Q7	Que tipos de tecnologias assistivas os modelos mais ajudam?
+Q8	Que grupos de indivíduos são o foco da pesquisa?
+Q9	Quais são as limitações e lacunas existentes mais citadas em estudos que abordam modelos heurísticos de avaliação?
+Q10	Quais são as heurísticas mais analisadas pelos modelos publicados?
+Q11	Quais são as métricas mais utilizadas nas avaliações?
+Q12	Existe associação entre o modelo heurístico de avaliação utilizado e o tipo de tecnologia assistiva utilizada e/ou público-alvo estudado?
+Fonte: autor.
+
+2.2 COLETA E SELEÇÃO DOS ARTIGOS
+O conjunto de artigos publicados foi compilado a partir das bases de dados Web of Science e Scopus. Para realizar as buscas no serviço disponibilizado pelas bases de dados, foram formulados dois conjuntos de palavras-chave, conforme Tabela 2. Um primeiro conjunto envolveu 9 palavras-chave relacionadas à acessibilidade. O segundo conjunto, com 12 palavras-chave, está relacionado à avaliação heurística. Algumas das palavras-chave escolhidas também foram consideradas na revisão por (PAIVA; FREIRE; FORTES; 2021); no entanto, as palavras-chave apresentadas na Tabela 2 não se limitam àquelas por eles utilizadas.
+
+Tabela 2 – Palavras-chave
+
+Acessibilidade: Palavras-chave	Heurísticas: Palavras-chave
+acessibilidade; tecnologias assistivas; tecnologias adaptativas; tecnologias de reabilitação; acessibilidade; comunicabilidade; dispositivos de assistência; dispositivos adaptativos; dispositivos de reabilitação	avaliação Heurística; modelo heurístico; método heurístico; técnicas heurísticas; técnicas de inspeção; métodos de inspeção; avaliação de inspeção; modelo de inspeção; inspeção heurística; modelo de avaliação; métodos de avaliação; técnicas de avaliação
+Fonte: autor.
+
+As buscas foram feitas combinando as palavras-chave dos dois grupos. Assim, cada uma das 9 palavras-chave do grupo Acessibilidade foi combinada com cada uma das 12 palavras-chave do grupo Heurísticas, utilizando o Operador Booleano “AND”. Um total de 301 resultados foram encontrados inicialmente no banco de dados Web of Science Core Collection e 8247 resultados no banco de dados Scopus (Elsevier), totalizando 8548 resultados encontrados. Este conjunto inicial de artigos publicados foi filtrado de acordo com regras pré-determinadas, a fim de selecionar apenas aqueles que são consistentes com a revisão sistemática proposta conforme estabelecido na Seção 2.3.
+
+2.3 PROCESSO DE FILTRO
+Primeiramente, foi utilizado um filtro para recuperar apenas os artigos publicados de 2017 a 2021, com o objetivo de obter as características mais recentes e relevantes na literatura científica, observando os termos de busca. Após o filtro, 158 artigos foram removidos dos resultados da busca no Web of Science, restando 143 resultados. Enquanto no Scopus, 4.480 trabalhos foram removidos, restando 3.767. No total, após o Filtro 1 sobraram 3.910 trabalhos.
+
+Um segundo filtro foi utilizado para retirar os artigos que não se caracterizavam como artigos. O objetivo do filtro foi focar apenas na revisão de artigos de grande relevância acadêmica, categorizados como “Artigo” nas plataformas de pesquisa. Assim, livros e outras categorias de material publicado também foram removidos. Os artigos resultantes de apresentações em conferências, e posteriormente publicados em revistas científicas, foram consequentemente incluídos na análise, uma vez que passaram a ter o estatuto de artigos. Um total de 63 artigos foram removidos pelo segundo filtro no Web of Science e um total de 1.281 artigos foram removidos do banco de dados Scopus pelo Filtro 2. Isso deixou 80 artigos do Web of Science e 2.486 do Scopus. No total, restaram para análise 2.566 artigos.
+
+Um terceiro filtro foi usado posteriormente. Observou-se que alguns dos artigos poderiam ser facilmente excluídos por não pertencerem à área de pesquisa deste artigo. Por exemplo, a pesquisa revelou muitos artigos nas áreas da Saúde, como Medicina e Enfermagem. Tais artigos que não foram categorizados como “Ciência da Computação”, de acordo com as áreas de pesquisa das bases de dados utilizadas, não foram considerados nesta revisão sistemática. 55 artigos foram excluídos dos resultados do Web of Science, após o terceiro filtro, restando 25, e 1.795 artigos foram excluídos dos resultados do Scopus, restando 691. Portanto, um conjunto de 716 artigos permaneceu após o Filtro 3.
+
+Por fim, esses artigos foram analisados para excluir artigos que não agregassem informações relevantes a esta pesquisa. Foi realizada uma verificação de cada artigo, na tentativa de selecionar apenas os artigos que apresentavam, em síntese, avaliações sobre a acessibilidade de aplicações tecnológicas. Assim, foi possível eliminar estudos duplicados encontrados nas duas bases de dados utilizadas. No total, 101 artigos foram selecionados e formaram o conjunto final, os quais foram analisados e categorizados de acordo com as propostas deste artigo. A Figura 1 ilustra o processo de aplicação de filtros ao conjunto inicial de artigos.
+
+Figura 1- Processo de filtragem
+
+Filtering process.
+Fonte: autor.
+2.4 ANÁLISE DE ACOPLAMENTO E COCITAÇÃO
+Ao longo deste artigo, serão apresentados os resultados e a discussão sobre a revisão sistemática. Muitos gráficos são auto-explicativos e respondem a algumas das perguntas da pesquisa. Alguns gráficos precisam de explicações adicionais, e estas são dadas no texto.
+
+Foi realizada uma análise bibliográfica de acoplamento das fontes, de forma que os artigos obtidos de um conjunto inicial foram agrupados de acordo com suas fontes. Esta análise relata como diferentes fontes são citadas, por meio de conjuntos. Em seguida, foram listados os artigos que mencionam os autores de cada grupo formado. A força do acoplamento bibliográfico cresce à medida que o número de artigos semelhantes é listado nas listas das fontes analisadas. Essa análise permite entender quais são as fontes mais relevantes para um determinado número de artigos (ECK; WALTMAN, 2010; PERIANES-RODRIGUEZ; WALTMAN; ECK, 2016; SMALL, 1974; WALTMAN; ECK; NOYONS, 2010).
+
+Também foi realizada uma análise de cocitação das referências citadas, com o objetivo de medir a força das conexões entre as referências citadas de um conjunto de artigos. Usando um determinado conjunto de artigos, uma lista de referências citadas pode ser obtida de um banco de dados como o Web of Science ou o Scopus. Considerando um conjunto de artigos, quanto maior o número de artigos desse conjunto que citam duas referências ao mesmo tempo, maior a força de cocitação entre essas duas referências citadas. Essa análise nos permite entender como as referências mais importantes em um conjunto de artigos se relacionam com os artigos do conjunto com base em onde as próprias referências são citadas. (ECK; WALTMAN, 2010; PERIANES-RODRIGUEZ; WALTMAN; ECK, 2016; SMALL, 1974; WALTMAN; ECK; NOYONS, 2010).
+
+A fim de criar um mapa que liga as palavras-chave dos autores mais relevantes dos artigos analisados, foi realizada uma análise de rede das palavras-chave dos autores. A força da conexão entre as palavras-chave cresce à medida que mais artigos as utilizam (ECK; WALTMAN, 2010; PERIANES-RODRIGUEZ; WALTMAN; ECK, 2016; SMALL, 1974; WALTMAN; ECK; NOYONS, 2010).
+
+3. RESULTADOS E DISCUSSÃO DA SISTEMÁTICA
+Primeiramente, para responder às duas primeiras questões de pesquisa, os artigos foram separados por ano de publicação e pela frequência de sua citação ao longo dos anos. A Figura 2 ilustra os resultados da categorização dos artigos em relação ao ano de publicação por meio de um gráfico de área, que mostra uma tendência de crescimento do número de artigos publicados a cada ano a partir de 2018. Para 2021, apenas artigos publicados até 2 de julho foram contabilizados. Portanto, para efeito de comparação, fica evidente que o total de artigos, publicados apenas no primeiro semestre de 2021, já supera a metade dos artigos publicados em cada um dos outros anos anteriores. Um crescimento mais evidente é visto em 2019, possivelmente porque, nesse ano, a União Europeia introduziu o European Accessibility Act, que atualmente é considerado um dos principais exemplos de legislação de acessibilidade digital no mundo. Além do fato de que os países membros da União Europeia precisavam cumprir a Diretriz de Acessibilidade à Web, aprovada pelo Parlamento Europeu, que exige que os sites de órgãos do setor público cumpram os padrões de acessibilidade desde 23 de setembro de 2018. Ao olhar na Figura 3, observe que os países que mais produziram artigos nesta amostra foram Espanha, Malásia, EUA e Brasil. No entanto, mais de 60% dos artigos encontrados são provenientes de países pertencentes à União Europeia, o que explica a maior atenção à acessibilidade devido à referida legislação. Portanto, a resposta para Q1 é: sim, o número de modelos utilizados na avaliação heurística para acessibilidade vem crescendo ano a ano desde 2018.
+
+Figura 2 – Produção Científica Anual
+
+Annual Scientific Production
+Fonte: autor.
+Figura 3 – Produção Científica do País
+
+Country Scientific Production
+Fonte: autor.
+Em relação ao Q2, a Figura 4 ilustra a evolução do número acumulado de citações dos artigos selecionados por ano, podendo ser evidenciada visualmente uma suave curva de crescimento. Assim, percebe-se que não houve tempo para que os artigos mais recentes fossem citados quando comparados aos estudos anteriores. Houve um aumento no número de artigos publicados, mas os artigos mais recentes, naturalmente, ainda possuem um número menor de citações, demonstrando que artigos mais antigos têm mais relevância para discussões recentes sobre o tema. No primeiro semestre de 2021, os artigos selecionados receberam 6 citações, demonstrando que os autores estão mais interessados no estado da arte nesta área a partir das fontes, mas também demonstrando que os artigos continuam sendo citados ao longo dos anos, e mostrando que se tornou natural que os artigos mais recentes se baseiem nos anteriores. Assim, a resposta para Q2 é que o número de artigos citando avaliação heurística para decisões de acessibilidade tem crescido.
+
+Figura 4 – Número de citações por ano
+
+Number of citations per year.
+Fonte: autor.
+A verificação das demais citações foi realizada, utilizando informações extraídas das bases de dados dos periódicos online, para evidenciar a listagem dos artigos. A ferramenta Bibliometrix R (ARIA; CUCCURULLO, 2017) foi usada para analisar o acoplamento bibliográfico de fontes e realizar uma análise de cocitação por meio de visualização de rede e divisão de cluster. Na pesquisa de acoplamento bibliográfico, o grau de parentesco entre os artigos é baseado no número de referências compartilhadas. Na análise de cocitação, observa-se a ligação entre os documentos citados devido à forma como os itens de referência são citados em conjunto (SMALL, 1974). A Figura 5 mostra uma análise de cocitação para 27 referências e três grupos são identificados.
+
+Figura 5 – Análise da cocitação
+
+Analysis of co-citation
+Fonte: autor.
+A Tabela 3 apresenta os três clusters, listando os artigos que compõem cada um deles. Observou-se que os estudos gerais que abordam a avaliação de acessibilidade foram alocados no Cluster 1. Por outro lado, o Cluster 2 e o Cluster 3 incluíram trabalhos com foco na avaliação de sites governamentais.
+
+Tabela 3 – Agrupamento de Clusters de cocitações
+
+Cluster 1	Cluster 2	Cluster 3
+vigo m. 2013	abanumy a. 2005	nielsen j. 1994-2
+nielsen j. 1994-1	al-faries a. 2013	al-khalifa h.s. 2017
+power c. 2012	al-khalifa h.s. 2012	youngblood n.e. 2012
+Fonte: autor.
+
+Tabela 3 – Agrupamento de Clusters de cocitações
+
+(conclusão)
+
+Cluster 1	Cluster 2	Cluster 3
+brajnik g. 2008-1	baowaly m.k. 2012	jati h. 2009
+acm: new york ny eua.	adepoju s.a. 2016	king b.a. 2016
+ 
+
+aizpurua a. 2016	akgul y. 2016	
+lazar j. 2007	al-radaideh m. 2011	
+petrie h. 2007	al mourad b. 2013	
+ahmi a. 2015	grantham j. 2012	
+brajnik g. 2008-2	latif m.h.a. 2010	
+brajnik g. 2011	lujn-mora s. 2014	
+Fonte: autor.
+
+Para analisar como as fontes estão vinculadas a partir de suas referências, foi realizada uma análise de acoplamento bibliográfico e está ilustrada na representação visual da rede na Figura 6. Nesse caso, três clusters diferentes foram formados. Universal Access in the Information Society, Library Hi Tech, IEEE Access e Advances in Human-Computer Interaction foram identificadas como as fontes mais relevantes para conexões dentro da rede.
+
+Figura 6 – Análise do acoplamento bibliográfico
+
+Analysis of bibliographic coupling
+Fonte: autor.
+Levando em consideração as informações extraídas das análises, a Q3 pode ser respondida indicando que os principais estudos que abordam avaliações heurísticas para decisões em acessibilidade são Al-Faries (2013), Al-Khalifa (2012), Al-Khalifa (2017), Vigo (2013) e Abanumy (2005) e as fontes para estes são Universal Access in the Information Society, Library Hi Tech, IEEE Access e Advances in Human-Computer Interaction.
+
+Para responder a Q4, foi realizado um estudo sobre os autores dos artigos catalogados. Os nomes de 307 autores foram encontrados nos artigos publicados, 302 desses autores foram co-autores de dois ou mais dos 101 artigos, enquanto apenas cinco deles são de um único autor. A ferramenta Bibliometrix R foi usada para coletar o impacto dos autores e esse impacto é ilustrado na Tabela 4 para os autores principais. Entre as métricas apresentadas estão o número de artigos publicados, citações totais, índice h, índice g e índice m, considerando o conjunto de artigos analisados nesta RSL. Cada um dos autores desta tabela é coautor de pelo menos três dos 101 artigos identificados para este estudo.
+
+Tabela 4 – Impacto dos autores
+
+Autor
+ 
+
+h_índice	g_índice	m_índice	Número total de citações	Número de Papéis	PY_começo	
+ACOSTA-VARGAS P	2	3	0.667	18	3	2019
+DOUSH IA	2	3	0.4	22	3	2017
+ISMAILOVA R	3	3	0.6	75	3	2017
+AZIZ N	1	2	0.2	4	2	2017
+BRANCO F	2	2	0.4	37	2	2017
+FREIRE AP	2	2	2	5	2	2021
+GONALVES R	2	2	0.4	37	2	2017
+HUSSAIN A	1	2	0.25	4	2	2018
+INAL Y	2	2	0.4	40	2	2017
+LUJAN-MORA S	2	2	0.667	15	2	2019
+LUJN-MORA S	2	2	0.5	17	2	2018
+MARTINS J	2	2	0.4	37	2	2017
+MUTALIB AA	1	2	0.2	4	2	2017
+PAIVA DMB	2	2	0.5	5	2	2018
+Fonte: autor.
+
+Como mostra a Tabela 4, dos autores principais, três são coautores de mais de 2 artigos, a saber, Acosta-Vargas P, Doush IA e Ismailova R. De fato, ressalta-se que Acosta-Vargas, embora só tenha surgido em 2019 nesta área, já é o autor mais importante segundo os índices apresentados. Em resposta à Q4, considerando o índice g e o número de artigos, esses três autores se destacam como os pesquisadores mais relevantes na área de pesquisa de avaliação heurística para acessibilidade. Acosta-Vargas P também se destaca pelo índice m, enquanto Ismailova R se destaca pelo número de citações. A Tabela 5 ilustra a relação entre esses autores e os modelos heurísticos de avaliação analisados.
+
+Tabela 5 – Autores Principais x Modelos
+
+Autor	Modelos
+Acosta-Vargas P.	WCAG 2.1, WCAG 2.2, WCAG 2.1 + Brajnik, JClic, Ardora, Chanchí et al. (2019), Case Study, Salvador-Ullauri L. et al. (2020).
+Doush IA.	AChecker, HTML Validator, CSS Validator, APrompt, Cynthia Says, EvalAccess 2.0, SortSite, TAW, WAVE, ISAB.
+Ismailova R.	Survey, EvalAccess 2.0, WCAG 1.0, WebXACT/Bobby, Cynthia Says, The Functional Accessibility, WebInSight, TAW, AChecker.
+Fonte: autor.
+
+Q5 está diretamente relacionado a revistas científicas que publicam artigos que projetam e aplicam avaliação heurística para ajudar a tomar melhores decisões em acessibilidade. Ao todo, foram encontrados 55 periódicos científicos diferentes. Apenas 16 desses periódicos publicaram mais de 2 artigos incluídos no RSL. A Tabela 6 mostra cada uma dessas revistas científicas de acordo com o número de artigos publicados por cada uma delas.
+
+Tabela 6 – Artigos publicados por periódico
+
+Fontes
+ 
+
+Artigos
+UNIVERSAL ACCESS IN THE INFORMATION SOCIETY	19
+IEEE ACCESS	7
+RISTI – REVISTA IBERICA DE SISTEMAS E TECNOLOGIAS DE INFORMACAO	6
+APPLIED SCIENCES (SWITZERLAND)	4
+INTERNATIONAL JOURNAL OF HUMAN-COMPUTER INTERACTION	4
+ACM TRANSACTIONS ON ACCESSIBLE COMPUTING	2
+ADVANCES IN HUMAN-COMPUTER INTERACTION	2
+BEHAVIOUR AND INFORMATION TECHNOLOGY	2
+COMPUTERS IN HUMAN BEHAVIOR	2
+ELECTRONIC LIBRARY	2
+INTERNATIONAL JOURNAL OF INTERACTIVE MOBILE TECHNOLOGIES	2
+INTERNATIONAL JOURNAL OF TECHNOLOGY AND HUMAN INTERACTION	2
+JOURNAL OF INFORMATION AND COMMUNICATION TECHNOLOGY	2
+JOURNAL OF SPECIAL EDUCATION TECHNOLOGY	2
+LIBRARY HI TECH	2
+MULTIMEDIA TOOLS AND APPLICATIONS	2
+Fonte: autor.
+
+Ao analisar a Tabela 6, nota-se que apenas 16 das 55 fontes científicas foram citadas, ou seja, 39 das fontes publicaram apenas 1 artigo científico relacionado ao tema especificado. Esses números mostram que os autores podem buscar periódicos mais específicos que tratem de determinado tipo de modelo heurístico de avaliação, ou fontes específicas em relação a ambientes onde possa haver certa preocupação com a acessibilidade para avaliá-lo.
+
+Uma análise mais específica foi realizada com a ferramenta Bibliometrix R (ARIA; CUCCURULLO, 2017) sobre o impacto dos periódicos científicos. A Tabela 7 apresenta um conjunto de métricas envolvendo os periódicos mais relevantes com base no índice h em relação às citações dos estudos de cada periódico. São exibidos o número de artigos publicados, citações totais, índice h, índice g e índice m, considerando os 101 artigos analisados nesta RSL. O Fator de Impacto (FI) calculado de cada revista nos últimos dois anos também é exibido.
+
+Tabela 7 – Impacto dos Periódicos
+
+Elemento
+ 
+
+h_índice	g_índice	m_índice	TC	NP	PY_começo	FI	
+UNIVERSAL ACCESS IN THE INFORMATION SOCIETY	7	13	1.4	183	13	2017	1.815
+ACM TRANSACTIONS ON ACCESSIBLE COMPUTING	2	2	0.666666667	23	2	2019	2.641
+ADVANCES IN HUMAN-COMPUTER INTERACTION	2	2	0.5	5	2	2018	1.355
+COMPUTERS IN HUMAN BEHAVIOR	2	2	0.4	33	2	2017	5.003
+ELECTRONIC LIBRARY	2	2	0.4	11	2	2017	0.792
+IEEE ACCESS	2	3	0.666666667	25	3	2019	3.745
+Elemento
+ 
+
+h_índice	g_índice	m_índice	TC	NP	PY_começo	FI
+INTERNATIONAL JOURNAL OF HUMAN-COMPUTER INTERACTION	2	3	0.4	34	3	2017	1.713
+INTERNATIONAL JOURNAL OF TECHNOLOGY AND HUMAN INTERACTION	2	2	0.666666667	6	2	2019	0.711
+JOURNAL OF INFORMATION AND COMMUNICATION TECHNOLOGY	2	2	0.4	12	2	2017	1.833
+RISTI – REVISTA IBERICA DE SISTEMAS E TECNOLOGIAS DE INFORMACAO	2	2	0.666666667	8	3	2019	0.531
+Fonte: autor.
+
+É interessante observar na Tabela 7 que, em todos os periódicos listados, os artigos da amostra possuem, em média, mais citações por artigo do que a média geral do periódico. Portanto, eles puxam o IF dos respectivos diários para cima.
+
+Ao examinar as palavras-chave indicadas no catálogo de artigos, informações na forma de Nuvem-de-palavras podem ser extraídas. A Figura 7 ilustra os principais termos presentes nos artigos, ilustrando assim para quais temas os periódicos foram considerados nesta RSL e por quais critérios eles podem ser classificados. Destacamos os termos acessibilidade e usabilidade como os mais relevantes entre os 20 termos mais relevantes de todo o catálogo. Termos que se referem a deficiências e idosos também entraram na composição da figura. É importante mencionar que um artigo publicado pode ter mais de uma palavra-chave.
+
+Figura 7 – Nuvem-de-palavras dos principais termos
+
+WordCloud of the main terms
+Fonte: autor.
+A Figura 8 mostra as 10 expressões de duas palavras (Bigramas) que mais aparecem nos títulos dos artigos analisados nesta RSL. Dentro deste TreeMap, diferentes informações podem ser analisadas em relação à Figura 7, como os termos ‘revisão de literatura’ e ‘literatura sistemática’, mostrando assim o formato de alguns desses estudos na área. Na Figura 8, o termo acessibilidade é confirmado como o mais relevante para periódicos que publicam avaliações heurísticas de acessibilidade. Os sites governamentais também se mostram como uma expressão relevante nesta área de pesquisa e estão presentes em 12% dos artigos. Assim, a resposta à Q5 é “sim”: os modelos heurísticos de avaliação estão mais presentes em periódicos voltados para a pesquisa operacional.
+
+Figura 8 – TreeMap de Bigramas
+
+TreeMap of Bigrams
+Fonte: autor.
+A resposta da Q6 pode ser identificada na Figura 9. Os modelos mais citados e utilizados nas avaliações heurísticas de acessibilidade documentados cientificamente e indexados pelo Scopus e Web of Science são: padrões WCAG, ferramentas AChecker e WAVE. Observe que, além dos próprios modelos, são utilizadas técnicas, ferramentas, padrões, estudos, revisões e métricas para avaliar a acessibilidade em software. O WCAG possui diferentes versões que foram citadas pelos estudos (1.0, 2.0, 2.1, 2.2 e outras variações (ACOSTA-VARGAS et al., 2020; ACOSTA-VARGAS; SALVADOR-ULLAURI; LUJAN-MORA, 2019; AKGÜL, 2021; ALAJARMEH, 2021; ALSAEEDI, 2020; BABU; XIE, 2017; BAI; STRAY; MORK, 2019; HASSOUNA; SAHARI; ISMAIL, 2017; ISMAILOVA; KIMSANOVA, 2017; MADEIRA et al., 2021; MARTINS; GONÇALVES; BRANCO, 2017 ; SALVADOR-ULLAURI et al. 2020; WENTZ et al., 2019). A ferramenta mais utilizada foi o AChecker.
+
+Figura 9 – Frequência de citação dos modelos
+
+Frequency of citation of the models
+Fonte: autor.
+Na Tabela 8 encontram-se as descrições dos modelos citados mais de uma vez e suas respectivas ocorrências nos artigos da amostra final. 91 modelos diferentes foram citados apenas uma vez, enquanto 25 modelos diferentes foram citados mais de uma vez.
+
+Tabela 8 – Contagem de ocorrências dos modelos
+
+Modelos/Técnicas/Ferramentas/Padrões	Frequência
+WCAG	17
+AChecker	13
+WAVE	10
+TAW	6
+Interview	6
+Survey	6
+W3C HTML/CSS Validator	5
+SortSite	4
+Questionnaires	4
+Experiment	4
+EvalAccess	4
+FAE	3
+Case Study	3
+WCAG 2.1 + Brajnik	2
+Pingdom AB	2
+Mobile-friendly Test	2
+ARIA	2
+Fonte: autor.
+
+Tabela 8 – Contagem de ocorrências dos modelos (conclusão)
+
+Modelos/Técnicas/Ferramentas/Padrões	Frequência
+Total Validator	2
+SiteImprove	2
+Norman	2
+Nielsen	2
+Prototype	2
+UX evaluations	2
+Chanchí et al. (2019)	2
+Cynthia Says	2
+Fonte: autor.
+
+Para responder a Q7, foi necessário coletar as tecnologias envolvidas em todos os estudos dos artigos da amostra final. Identificou-se que as tecnologias avaliadas não eram necessariamente diretamente ou propriamente assistivas, mas eram utilizadas por um público que tinha pessoas beneficiadas com boas práticas de acessibilidade. Inicialmente, uma minoria dos estudos avaliou adequadamente as tecnologias assistivas, conforme ilustrado na Figura 10.
+
+Figura 10 – Tipos de tecnologias avaliadas
+
+Types of Technologies evaluated
+Fonte: autor.
+A Tabela 9 lista as breves descrições das tecnologias assistivas avaliadas pelos artigos. Apenas a tecnologia TalkBack foi foco de avaliação em mais de um estudo diferente (ROBLES et al., 2019; YAN; RAMACHANDRAN, 2019).
+
+Tabela 9 – Descrição das tecnologias assistivas
+
+Tipos de tecnologias assistivas avaliadas
+Sistemas Assistivos em geral
+Design de sistema interativo assistido
+Dispositivo apontador assistido baseado em uma câmera montada na cabeça
+Interação do gráfico (ampliação segura, impressão, atualização em tempo real de personalização, interação por voz, exportação de dados, sonificação)
+Braço de Robô Colaborativo
+Material de Curso Assistivo Interativo
+Acessibilidade do Teclado
+Aplicativos móveis de assistência à saúde
+Linguagem assistida por dispositivos móveis e baseada em gamificação
+Estímulos de treinamento multimídia
+Talkback
+Assistência de navegação remota baseada em teleorientação
+Fonte: autor.
+
+Dentre as demais tecnologias avaliadas pelos artigos, destacamos a avaliação de sites em geral, aplicativos móveis, sites governamentais, softwares em geral e softwares educacionais, conforme ilustrado na Figura 11.
+
+Figura 11. Tecnologias não assistivas avaliadas
+
+Non-assistive Technologies evaluated
+Fonte: autor.
+A resposta para Q7 é que o TalkBack é o tipo de tecnologia assistiva mais suportada pelos modelos que investigamos. No entanto, em geral, os sites são os mais avaliados devido às heurísticas de acessibilidade.
+
+Para responder a Q8, o que foi preciso fazer foi revisar todos os artigos selecionados, identificar e agrupar os grupos de indivíduos caracterizados como público-alvo de cada estudo. Percebeu-se que o grupo de deficientes visuais (incluindo cegos, pessoas com baixa visão e outros indivíduos com problemas visuais) é o foco mais frequente de pesquisas envolvendo avaliação heurística para acessibilidade. A Figura 12 ilustra o percentual de ocorrência de cada grupo de indivíduos descritos nos artigos da RSL.
+
+Figura 12. Ocorrência do público-alvo
+
+Occurrence of the target public
+Fonte: autor.
+A Tabela 10 apresenta a descrição dos grupos de indivíduos que foram selecionados como público-alvo da pesquisa, o número de ocorrências desses grupos nos artigos e, em alguns casos, algumas observações sobre o agrupamento. Alguns estudos focaram em mais de um grupo de indivíduos, portanto a soma total supera o número de artigos analisados nesta revisão sistemática.
+
+Tabela 10 – Público-alvo dos estudos
+
+Público-alvo dos estudos	Ocorrências	Observações
+Pessoas com deficiência visual	29	Estes incluem cegos, baixa visão, problemas de contraste e outros usuários com deficiência visual
+Pessoas com deficiência	21	não especificado
+Pessoas em geral	17	não especificado
+Público-alvo dos estudos	Ocorrências	Observações
+Usuários de sites educacionais	10	Isso inclui administradores, alunos (com deficiências não especificadas ou não), professores
+Os idosos	10	
+Pessoas com Transtorno do Espectro do Autismo (TEA)	6	
+Pessoas com deficiência física ou sensorial	5	
+Pessoas com deficiência auditiva	4	
+Usuários do site do governo	4	
+Pessoas com deficiência intelectual	3	
+Pessoas com dificuldades de aprendizagem	3	
+Stakeholders envolvidos com o produto	2	 
+ 
+
+Pessoas com Síndrome de Down	1	
+Pessoas com problemas de fala	1	
+Pessoas com Transtorno de Déficit de Atenção e Hiperatividade (TDAH)	1	
+Pessoas com fotossensibilidade	1	
+Fonte: autor.
+
+Em resposta à Q9, as limitações e lacunas existentes mais citadas nos trabalhos que abordam modelos heurísticos de avaliação são: os recursos tecnológicos utilizados; o foco dos estudos, nem sempre focados apenas na acessibilidade; a limitação de pesquisas relacionadas aos objetivos aqui abordados nesta RSL; e a diversidade da população estudada. A quantidade de vezes que cada tipo de limitação aparece na amostra desta revisão é apresentada na Tabela 11 abaixo. É importante ressaltar que diferentes artigos citaram mais de um tipo de limitação diferente, fazendo com que o número total de ocorrências seja maior que o número de artigos da amostra.
+
+Tabela 11 – Limitações dos estudos
+
+Limitações	Frequência
+Limitações nos recursos tecnológicos utilizados	32
+Avaliação de Acessibilidade não é o foco da pesquisa	24
+Pesquisa limitada	24
+Diversidade da população estudada	18
+Barreiras durante as interações ou coleta de dados com as partes interessadas	7
+O resultado está na fase preliminar	6
+Custo	5
+Tempo	5
+Sem ênfase na cultura, nas necessidades do usuário e nos aspectos contextuais	4
+Viés dos pesquisadores e generalização de seus resultados	4
+Diretrizes antigas	2
+Diretrizes subjetivas	2
+Conhecimento da população-alvo	1
+Fonte: autor.
+
+A Figura 13 mostra um gráfico que lista as limitações mencionadas como uma porcentagem de seu número total e, portanto, mostra as limitações mencionadas com mais frequência.
+
+Figura 13 – Frequência das limitações
+
+Frequency of the limitations
+Fonte: autor.
+Para responder à questão Q10, as informações tiveram que ser extraídas das heurísticas utilizadas em cada um dos estudos relatados pelos artigos desta RSL. As heurísticas geralmente pertencem a um grupo ou repositório heurístico específico. Conforme apresentado na Tabela 12, foram descritos os grupos, repositórios, referências e estudos heurísticos citados em mais de um artigo.
+
+Tabela 12 – Fontes das Heurísticas
+
+Heurística	Frequência
+WCAG 2.0	28
+WCAG 2.1	11
+Nielsen	10
+WCAG 1.0	9
+Heurística	Frequência
+US Section 508 standards	8
+WCAG	7
+W3C	5
+Interview	4
+WAI-ARIA	4
+Own guidelines	4
+Experiment	3
+ISO 9241-11	3
+ISO/IEC 40500	2
+Silva, Holden, & Jordan, 2015	2
+Fonte: autor.
+
+Considerando todas as citações da amostra final, foi construído um gráfico que mostra a relação proporcional entre as principais fontes das heurísticas citadas que são agrupadas, independentemente do versionamento, e as demais fontes menos citadas. Este gráfico é mostrado na Figura 14.
+
+Figura 14 – Fontes das Heurísticas
+
+Sources of the Heurístics
+Fonte: autor.
+A partir da Figura 14, observe que as fontes mais recorrentes são as diferentes versões do W3C WCAG, que é de autoria do mesmo grupo que fornece outros conjuntos de diretrizes reconhecidos internacionalmente, e que também são citados no conjunto de amostra final deste RSL (UAAG ; FERATI; VOGEL, 2020), ATAG (FERATI; VOGEL, 2020) WAI-ARIA (COSTA; DUARTE, 2017; FERATI; VOGEL, 2020; GARCÍA-SANTIAGO; OLVERA-LOBO, 2021), mas estão incluídos na categoria Outros de o gráfico apresentado. Existem também alguns estudos que citaram a ISO/IEC 40500 (MARCO; ALONSO; QUEMADA, 2019; NAVARRETE; LUJÁN-MORA, 2018), que é equivalente ao WCAG 2.0. Portanto, a resposta para Q10 é: as heurísticas mais analisadas pelos modelos publicados são as heurísticas descritas por WCAG (Perceptibilidade, Operabilidade, Entendimento e Robustez) (CALDWELL et al., 2008).
+
+As métricas mais utilizadas nas avaliações são os níveis de conformidade WCAG (A, AA, AAA) (CALDWELL et al., 2008). Esta é a resposta para Q11, conforme mostrado na Tabela 13, que lista todas as fontes (citadas mais de uma vez) de onde foram extraídas as métricas de avaliação. De um total de 85 fontes de diferentes métricas citadas nos artigos, apenas 15 foram citadas mais de uma vez e apenas 1 fonte (W3C WCAG) se destaca com uma diferença de 29 citações a mais que as outras fontes mais sinalizadas (Revisão de Literatura e Questionário).
+
+Tabela 13 – Fontes das Métricas
+
+Origem das métricas	Citações
+W3C WCAG	36
+Revisão da literatura	7
+Questionário	7
+Enquete	6
+Entrevista	6
+Experimentar	6
+próprio estudo	4
+Pesquisa qualitativa	3
+Nielsen	3
+WAI	2
+Seção508	2
+Teste piloto	2
+NTC 5854	2
+Estudo de caso	2
+ARIA standards	2
+Fonte: autor.
+
+Para responder à última questão de pesquisa do artigo, o que deveria ser investigado para todas as tecnologias assistivas estudadas era qual modelo de avaliação foi usado no estudo. Observou-se, entretanto, que o número de tecnologias assistivas propriamente ditas é baixo em relação ao total de tecnologias mencionadas, não havendo repetição da ocorrência de tecnologias assistivas nos artigos da amostra, com exceção do TalkBack, impossibilitando fazer uma associação entre o tipo de tecnologia utilizada e o modelo utilizado para avaliar as heurísticas.
+
+A resposta para Q12 é em parte não. Não há evidências de associação entre o modelo de avaliação de acessibilidade e a tecnologia assistiva avaliada. Ao observar os estudos que envolveram a avaliação do TalkBack (MADEIRA et al., 2021; ROBLES et al., 2019; YAN; RAMACHANDRAN, 2019), percebe-se que os modelos citados são diversos e não se repetem. Em uma rápida verificação, o modelo de avaliação mais citado nos artigos desta RSL (normas WCAG) não apresenta associação com nenhuma tecnologia específica, pois não foi observado padrão de repetição. No entanto, pode-se estabelecer uma relação entre os principais públicos-alvo não generalizados e os modelos de avaliação encontrados na literatura, conforme Tabela 14. Observe que o padrão WCAG é o mais recorrente em estudos voltados para deficientes visuais, enquanto questionários e entrevistas são os mais utilizados para avaliar produtos voltados para a terceira idade, enquanto o Wave e o AChecker aparecem mais em pesquisas voltadas para pessoas com deficiência física ou sensorial.
+
+Tabela 14 – Modelos x Público-alvo
+
+Modelos/Público-alvo	O deficiente visual	Os idosos	Pessoas com Transtorno do Espectro do Autismo (TEA)	Pessoas com deficiência física ou sensorial	O deficiente auditivo
+WCAG	5				
+AChecker	3			2	1
+Entrevista	3	2	1		
+Brajnik	2				
+Questionário	2	2			
+eXaminator	1			1	1
+Wave	1			2	1
+TAW	1			1	1
+Modelos/Público-alvo	O deficiente visual	Os idosos	Pessoas com Transtorno do Espectro do Autismo (TEA)	Pessoas com deficiência física ou sensorial	O deficiente auditivo
+Próprio modelo de interação do dispositivo	1		1	1	1
+Ivarsson e Gorschek (2011)	1			1	1
+Experimentar	1	1			
+Estudo de caso	1	1			
+Enquete		1	1		
+Fonte: autor.
+
+4. DISCUSSÃO, FUTUROS CAMINHOS E TENDÊNCIAS
+Esta pesquisa apresentou a análise dos resultados obtidos com o agrupamento dos artigos em uma RSL. No total, 101 artigos foram agrupados de acordo com ano de publicação, referências, autores, modelos, tecnologias, público-alvo, limitações, heurísticas e métricas. Com base na apresentação dos resultados, um conjunto de perguntas de pesquisa foi elaborado e respondido. A Tabela 15 apresenta as conclusões da análise realizada sobre o conjunto de 12 questões de pesquisa inicialmente apresentadas na Tabela 1.
+
+Tabela 15 – Conclusões da Pesquisa
+
+Questões de pesquisa	Descrição
+Q1	Sim, o número de modelos utilizados na avaliação heurística para acessibilidade vem crescendo ano após ano
+Q2	Sim. O número de artigos citando avaliação heurística para decisões de acessibilidade tem crescido, mas novos artigos não tiveram muito tempo para serem citados com mais frequência
+Q3	Al-Faries A. (2013), Al-Khalifa H.S. (2012), Al-Khalifa H.S. (2017), Vigo M. (2013) e Abanumy A. (2005)
+Q4	Acosta-Vargas P., Doush I.A. e Ismailova R.
+Q5	Sim. Modelos de avaliação heurística estão mais presentes em periódicos voltados para pesquisa operacional
+Q6	Os modelos mais citados e utilizados em avaliações heurísticas de acessibilidade cientificamente documentados e indexados pela Scopus e Web of Science são: padrões WCAG, ferramentas AChecker e WAVE
+Q7	O TalkBack é o tipo de tecnologia assistiva mais suportada pelos modelos investigados, porém, em geral, os sites são o produto mais avaliado devido às heurísticas de acessibilidade
+Q8	O grupo de indivíduos com deficiência visual (incluindo cegos, pessoas com baixa visão e outros indivíduos com problemas visuais) é o foco mais frequente de pesquisas envolvendo avaliação heurística para acessibilidade
+Q9	As limitações e lacunas existentes mais citadas nos trabalhos que abordam modelos heurísticos de avaliação são: os recursos tecnológicos utilizados; o foco dos estudos, nem sempre focados apenas na acessibilidade; a limitação de pesquisas relacionadas aos objetivos aqui abordados nesta RSL; e a diversidade da população estudada
+Q10	As heurísticas mais contempladas pelos modelos publicados são as heurísticas descritas por WCAG (Perceptibility, Operability, Understanding and Robustness)
+Q11	As métricas mais utilizadas nas avaliações são os níveis de conformidade WCAG (A, AA, AAA)
+Q12	Não há evidências de associação entre o modelo de avaliação de acessibilidade e a tecnologia assistiva avaliada. No entanto, o padrão WCAG é o mais recorrente em estudos voltados para deficientes visuais, enquanto questionários e entrevistas são os mais utilizados para avaliar produtos voltados para idosos, enquanto Wave e AChecker aparecem mais em pesquisas voltadas para pessoas com deficiência física ou sensorial
+Fonte: autor.
+
+Diante dos resultados, pode-se confirmar a predominância do uso de heurísticas e métricas das WCAG, assim como todo o contexto avaliativo das WCAG. Além disso, o crescimento do número de artigos publicados na área demonstra a importância da avaliação heurística no suporte à acessibilidade em produtos de software.
+
+Em síntese, as principais contribuições deste estudo são ter realizado uma revisão do estado da arte da avaliação heurística para acessibilidade que possa servir de base para pesquisas futuras na área de acessibilidade digital; definir e responder a um conjunto de questões de investigação relevantes para a literatura; estender as RSLs anteriores quanto ao escopo da pesquisa, inserindo abordagens relacionadas aos modelos, heurísticas e métricas mais utilizadas na avaliação da acessibilidade de produtos tecnológicos.
+
+Como linhas de pesquisa futuras, sugerem-se investigações mais específicas relacionadas ao uso de diferentes tecnologias assistivas apoiadas em avaliações heurísticas. Investigações especificando um público-alvo definido, bem como estabelecendo e respondendo a novas questões de pesquisa usando o banco de dados criado neste estudo. Estudos futuros devem continuar a refinar os métodos heurísticos e, assim, socializar as melhores práticas de acessibilidade.
+
+Pesquisas futuras também podem propor novos métodos para avaliar recursos digitais. Testes desses novos métodos com usuários bem definidos são sugeridos para identificar as barreiras que eles possam ter no uso dos recursos tecnológicos abordados nos testes. Além disso, sugere-se um complemento a isso, ou seja, uma pesquisa com os stakeholders envolvidos com o desenvolvimento de software, para saber se eles conhecem as diretrizes de acessibilidade divulgadas na literatura e se já aplicaram algumas das diretrizes em produtos de software.
+
+Além disso, será necessário um estudo sobre as métricas utilizadas na avaliação de acessibilidade, a fim de analisar a validade das métricas existentes e propor melhorias que permitam o uso efetivo dessas técnicas em projetos de software.
+
+Embora existam vantagens em avaliar a acessibilidade na tomada de decisão na construção de software, bem difundidas na literatura, ainda existem desafios a serem explorados na área. A implementação da avaliação heurística para decisões sobre acessibilidade nas organizações e o uso adequado de heurísticas é difundido na busca de soluções nas mais diversas áreas do conhecimento (VENTURI, 1995). Modelos avaliativos podem levar tempo e envolver custos e esforços financeiros. Assim, os modelos mais utilizados permitem a flexibilização de alguns de seus parâmetros de forma a facilitar sua aplicabilidade. Surgiram muitos modelos híbridos que combinam ferramentas automatizadas, princípios teóricos bem estabelecidos e técnicas de design.
+
+Relativamente a esta RSL, as tecnologias de apoio correspondem a apenas 13% das tecnologias referidas no conjunto dos artigos selecionados (ver Figura 10) enquanto 14% do público-alvo dos estudos é o público em geral, sem caracterização dos utilizadores (ver Figura 12 ). Isso mostra que, embora a maioria dos estudos se concentre em usuários específicos, as tecnologias avaliadas não foram projetadas para atender diretamente a um grupo específico. A partir desta pesquisa, percebeu-se que não há evidências de associação entre o modelo para avaliar a acessibilidade e a tecnologia assistiva avaliada, mas foi possível estabelecer quais são os modelos mais utilizados por públicos específicos mais citados nos estudos.
+
+Para finalizar, sugere-se manter a análise das limitações permanentes nos modelos avaliativos como importante para perspectivas futuras. A comparação entre diferentes estudos de revisão deve informar se algumas dessas limitações foram ou não aliviadas. A partir deste estudo, as limitações mais frequentes referem-se aos recursos tecnológicos utilizados, ao foco dos estudos, ao direcionamento das pesquisas e à diversidade da população estudada.
+
+5. CONCLUSÕES
+A evolução das técnicas de tomada de decisão transformou a forma como os pesquisadores analisam problemas ao desenvolver uma solução de software/hardware. Este artigo assume a forma de uma revisão sistemática da literatura e pretende fornecer uma visão ampla de como os modelos de avaliação heurística têm sido usados para apoiar a acessibilidade, seja avaliando tecnologias assistivas ou avaliando quaisquer outras tecnologias nos últimos anos. No geral, este RSL confirmou as descobertas de estudos anteriores e adicionou novas questões de pesquisa aos estudos de formato RSL que foram usados até o momento.
+
+Tendo em vista a contínua otimização do conjunto de artigos selecionados para estudos futuros, por se tratar de um tema muito específico, sugere-se que novos processos de filtragem sejam considerados, a fim de evitar maiores variações na utilização de avaliadores para projetos que valorizem por acessibilidade sendo selecionada fora do contexto desta pesquisa. Esta RSL mostra que alguns estudos aplicados selecionados já apresentam limitações quanto aos objetivos e especificação da avaliação com foco em acessibilidade. Quanto aos autores e fontes das referências catalogadas, foram descritos fazendo-se uso de índices suficientes de impacto e frequência de aparições, desconsiderando o aprofundamento temático estabelecido por seus artigos relacionados e a imersão nos conceitos da área.
+
+O número de artigos publicados sobre avaliação heurística para a tomada de decisão em acessibilidade aumentou nos últimos anos, e isso foi particularmente notório entre 2018 e 2019. A Diretiva de Acessibilidade na Web, aprovada pelo Parlamento Europeu, obrigou os países membros da União Europeia a cumprir com os padrões de acessibilidade de seus sites públicos já em setembro de 2018. Com isso, os estudos de acessibilidade foram naturalmente desenvolvidos e os modelos avaliativos de acessibilidade passaram a ser mais amplamente utilizados. Somado a essa diretriz, o European Accessibility Act foi iniciado em 2019, e se tornou referência mundial em legislação de acessibilidade digital.
+
+O principal objetivo desta RSL foi fornecer uma visão geral do estado da arte de um campo de pesquisa que pode implicar apontar lacunas na literatura. Em suma, as técnicas e métodos utilizados para assegurar o objetivo principal pretendem ser sólidos e estão sujeitos a atualização. Os resultados do presente estudo mostraram a relevância das questões de pesquisa e levaram a descobertas interessantes sobre a literatura de avaliações heurísticas para decisões em acessibilidade.
+
+AGRADECIMENTOS
+Este trabalho foi parcialmente financiado por CIn/Samsung, SiDi, CNPq (315245/2020-4, 305768/2016-6, 428832/2018-0) e Capes (001) aos quais os autores agradecem.
+
+REFERÊNCIAS
+ABNT – Associação Brasileira de Normas Técnicas Ergonomia da interação humano-sistema: parte 210 : projeto centrado no ser humano para sistemas interativos.  2011. Available: https://moodle.ufsc.br/pluginfile.php/4330158/mod_resource/content/4/ABNT_NBR_ISO_9241-210_2011.pdf. Acess in: 23 mar. 2023.
+
+ACOSTA-VARGAS, Patricia et al. Evaluation of accessibility in teleconferencing systems for low vision users during covid-19. RISTI-Revista Iberica de Sistemas e Tecnologias de Informacao, p. 205-218, 2020.
+
+ACOSTA-VARGAS, Patricia; SALVADOR-ULLAURI, Luis Antonio; LUJÁN-MORA, Sergio. A heuristic method to evaluate web accessibility for users with low vision. IEEE Access, v. 7, p. 125634‑125648, 2019. DOI: https://doi.org/10.1109/ACCESS.2019.2939068.
+
+AKGÜL, Yakup. Accessibility, usability, quality performance, and readability evaluation of university websites of Turkey: a comparative study of state and private universities. Universal access in the information society, v. 20, n. 1, p. 157-170, 2021. DOI :https://doi.org/10.1007/s10209-020-00715-w.
+
+ALAJARMEH, Nancy. Evaluating the accessibility of public health websites: an exploratory cross-country study. Universal Access in the Information Society, p. 1-19, 2021. DOI :https://doi.org/10.1007/s10209-020-00788-7.
+
+ALMEIDA-FILHO, Adiel Teixeira de; SILVA, Diogo Ferreira de Lima; FERREIRA, Luciano. Financial modelling with multiple criteria decision making: a systematic literature review. Journal of the Operational Research Society, 1-19, 2020. DOI: https://doi.org/10.1080/01605682.2020.1772021.
+
+ALSAEEDI, Abdullah. Comparing web accessibility evaluation tools and evaluating the accessibility of webpages: proposed frameworks. Information, v. 11, n. 1, p. 40, 2020. DOI :https://doi.org/10.3390/info11010040.
+
+ARAÚJO, Adolpho Guido; CARNEIRO, Arnaldo Manoel Pereira; PALHA, Rachel Perez. Sustainable construction management: a systematic review of the literature with meta-analysis. Journal of Cleaner Production, v. 256, p. 120350, 2020. DOI: https://doi.org/10.1016/j.jclepro.2020.120350.
+
+ARIA, Massimo; CUCCURULLO, Corrado. bibliometrix: an R-tool for comprehensive science mapping analysis. Journal of informetrics, v. 11, n. 4, p. 959-975, 2017. DOI: https://doi.org/10.1016/j.joi.2017.08.007.
+
+BABU, Rakesh; XIE, Iris. Haze in the digital library: design issues hampering accessibility for blind users. The Electronic Library, v. 35, n. 5, p. 1052-1065, 2017. DOI: https://doi.org/10.1108/EL-10-2016-0209.
+
+BADAMPUDI, Deepika. Reporting ethics considerations in software engineering publications. In: 2017 ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM), p. 205-210, 2017. DOI: https://doi.org/10.1109/ESEM.2017.32.
+
+BAI, Aleksander; STRAY, Viktoria; MORK, Heidi. What methods software teams prefer when testing web accessibility. Advances in Human-Computer Interaction, v. 2019, p. 1-14, 2019. DOI: https://doi.org/10.1155/2019/3271475.
+
+CALDWELL, Ben et al. Web Content Accessibility Guidelines 2.0 (WCAG).  W3C, 2008. Available in: https://www.w3.org/WAI/WCAG20/versions/guidelines/wcag20-guidelines-20081211-a4.pdf. Acess in: 23 mar. 2023.
+
+CAMPOVERDE-MOLINA, Milton; LUJAN-MORA, Sergio; GARCIA, Llorenc Valverde. Empirical studies on web accessibility of educational websites: a systematic literature review. IEEE Access, v. 8, p. 91676-91700, 2020. DOI: https://doi.org/10.1109/ACCESS.2020.2994288.
+
+CEN & CENELEC. EN 17161:2019: design for all: accessibility following a design for all approach in products, goods and services: extending the range of users. Brussels: Cen-Celenic, 2019.
+
+CHI, Chia-Fen; TSENG, Li-Kai; JANG, Yuh. Pruning a decision tree for selecting computer-related assistive devices for people with disabilities. IEEE Transactions on Neural Systems and Rehabilitation Engineering, v. 20, n. 4, p. 564-573, 2012. DOI: :https://doi.org/10.1109/TNSRE.2012.2193419.
+
+COSTA, Daniel; DUARTE, Carlos. Visually impaired people and the emerging connected TV: a comparative study of TV and Web applications’ accessibility. Universal Access in the Information Society, v. 16, p. 197-214, 2017. DOI: https://doi.org/10.1007/s10209-016-0451-6.
+
+ECK, Nees Van; WALTMAN, Ludo. Software survey: VOSviewer, a computer program for bibliometric mapping. Scientometrics, v. 84, n. 2, p. 523-538, 2010. DOI: https://doi.org/10.1007/s11192-009-0146-3.
+
+EUSÉBIO, Celeste; SILVEIRO, André; TEIXEIRA, Leonor. Website accessibility of travel agents: an evaluation using web diagnostic tools. Journal of Accessibility and Design for All, v. 10, n. 2, p. 180‑208, 2020. DOI: https://doi.org/10.17411/jacces.v10i2.277.
+
+EUROPEAN COMMISSION . Proposal for a directive of the European Paliament and of the Concil on the approximation of the laws, regulations and administrative provisions of the Member States as regards the accessibility requirements for products and services. EUR‑Lex, 2015. Available in: https://eur‑lex.europa.eu/legal‑content/EN/TXT/?uri=COM%3A2015%3A0615%3AFIN. Acess in: 23 mar. 2023.
+
+FERATI, Mexhid; VOGEL, Bahtijar. Accessibility in web development courses: A case study. Informatics. v. 7, n. 1, p. 1‑15, 2020. DOI: https://doi.org/10.3390/informatics7010008.
+
+GAMACHE, Stephanie et al. Measure of environmental accessibility (MEA): development and inter-rater reliability. Journal of accessibility and design for all, v. 8, n. 1, p. 1-32, 2018. DOI: https://doi.org/10.17411/jacces.v8i1.141.
+
+GARCÍA-SANTIAGO, Lola; OLVERA-LOBO, Maria-Dolores. How accessibility guidelines are used in Spanish World Heritage websites: an exploratory study. Library Hi Tech, v. 39, n. 1, p. 144-165, 2021. DOI: https://doi.org/10.1108/LHT-05-2019-0113.
+
+HASSENZAHL, Marc. The thing and I: understanding the relationship between user and product. Funology 2: from usability to enjoyment, p. 301-313, 2018. DOI: https://doi.org/10.1007/978-3-319-68213-6_19.
+
+HASSOUNA, Mohammed Saleh; SAHARI, Noraidah; ISMAIL, Amirah. University website accessibility for totally blind users. Journal of Information and Communication Technology, v. 16, n. 1, p. 63-80, 2017. DOI: https://doi.org/10.32890/jict2017.16.1.8218.
+
+HORTON, Emily L. et al. A review of principles in design and usability testing of tactile technology for individuals with visual impairments. Assistive technology, v. 29, n. 1, p. 28-36, 2017. DOI: https://doi.org/10.1080/10400435.2016.1176083.
+
+ISMAILOVA, Rita; KIMSANOVA, Gulida. Universities of the Kyrgyz Republic on the Web: accessibility and usability. Universal Access in the Information Society, v. 16, n. 4, p. 1017-1025, 2017. DOI:https://doi.org/10.1007/s10209-016-0481-0.
+
+LAENGLE, Sigifredo et al. Forty years of the European Journal of Operational Research: A bibliometric overview. European Journal of Operational Research, v. 262, n. 3, p. 803-816, 2017. DOI: https://doi.org/10.1016/j.ejor.2017.04.027.
+
+LAKSHMI, Krishnan; KUMAR, PD Madan; DAS, Himangshu. Design considerations for a dental health care for patients with special needs. Journal of accessibility and design for all, v. 8, n. 1, p. 80‑101, 2018. DOI: https://doi.org/10.17411/jacces.v8i1.168.
+
+MADEIRA, Stephane et al. Accessibility of mobile applications for tourism—is equal access a reality? Universal Access in the Information Society, v. 20, p. 555-571, 2021. DOI: https://doi.org/10.1007/s10209-020-00770-3.
+
+MAFFEO, Bruno. Engenharia de software e especificação de sistemas. Rio de Janeiro: Campus, 1992.
+
+MARCO, Lourdes; ALONSO, Álvaro; QUEMADA, Juan. An identity model for providing inclusive services and applications. Applied Sciences, v. 9, n. 18, p. 3813, 2019. DOI: https://doi.org/10.3390/app9183813.
+
+MARIZ, Fernanda Bar; ALMEIDA, Mariana R.; ALOISE, Daniel. A review of dynamic data envelopment analysis: state of the art and applications. International Transactions in Operational Research, v. 25, n. 2, p. 469‑505, 2018. DOI: https://doi.org/10.1111/itor.12468.
+
+MARTINS, José; GONÇALVES, Ramiro; BRANCO, Frederico. A full scope web accessibility evaluation procedure proposal based on Iberian eHealth accessibility compliance. Computers in Human Behavior, v. 73, p. 676-684, 2017. DOI: https://doi.org/10.1016/j.chb.2016.12.010.
+
+NAGARAJU, M.; CHAWLA, Priyanka. A methodical search of web content accessibility for visual disabled people. International Journal of Engineering and Advanced Technology, v. 8, n. 6, p. 1713‑1719, 2019. DOI: https://doi.org/10.35940/ijeat.F8425.088619.
+
+NASCIMENTO, Kayo Renato Da Silva; ALENCAR, Marcelo Hazin. Management of risks in natural disasters: a systematic review of the literature on NATECH events. Journal of Loss Prevention in the Process Industries, v. 44, p. 347-359, 2016. DOI: https://doi.org/10.1016/j.jlp.2016.10.003.
+
+NATHAN, S. S. et al. Accessibility, disability and deaf: a review. International Journal of Engineering and Technology, v. 7, n. 4.19, p. 369-371, 2018.DOI: https://doi.org/10.14419/ijet.v7i3.12.16109.
+
+NAVARRETE, Rosa; LUJÁN-MORA, Sergio. Bridging the accessibility gap in Open Educational Resources. Universal Access in the Information Society, v. 17, n. 4, p. 755-774, 2018. DOI:https://doi.org/10.1007/s10209-017-0529-9.
+
+NIELSEN, Jakob. Usability inspection methods. New York: John Wiley & Sons, 1994.
+
+PEREA, Lourdes González; GALÁN, Jesús Hernández; VILLARINY, Natalí González. The presence of universal accessibility in doctoral dissertations deposited in Spain between 1998-1999 and 2017-2018 academic years. Journal of accessibility and design for all, v. 9, n. 2, p. 118-140, 2019. DOI: https://doi.org/10.17411/jacces.v9i2.213.
+
+PAIVA, Débora Maria Barroso; FREIRE, André Pimenta; FORTES, Renata Pontin de Matos. Accessibility and software engineering processes: a systematic literature review. Journal of Systems and Software, v. 171, p. 110819, 2021. DOI: https://doi.org/10.1016/j.jss.2020.110819.
+
+PEREIRA, Valdecy; COSTA, Helder Gomes. A literature review on lot size with quantity discounts: 1995-2013. Journal of Modelling in Management, v. 10, n. 3, p. 341-359, 2015. DOI: https://doi.org/10.1108/JM2-07-2013-0029.
+
+PERIANES-RODRIGUEZ, Antonio; WALTMAN, Ludo; ECK, Nees Jan Van. Constructing bibliometric networks: A comparison between full and fractional counting. Journal of Informetrics, v. 10, n. 4, p. 1178-1195, 2016. DOI: https://doi.org/10.1016/j.joi.2016.10.006.
+
+RANADA, Åsa Larsson; LIDSTRÖM, Helene. Satisfaction with assistive technology device in relation to the service delivery process –  a systematic review. Assistive Technology, v. 31, n. 2, p. 82‑97, 2019. DOI: https://doi.org/10.1080/10400435.2017.1367737.
+
+ROBLES, Teresita de Jesús Álvarez et al. Adapting card sorting for blind people: Evaluation of the interaction design in TalkBack. Computer Standards & Interfaces, v. 66, p. 103356, 2019. DOI: https://doi.org/10.1016/j.csi.2019.103356.
+
+RUSCHEL, Edson; SANTOS, Eduardo Alves Portela; LOURES, Eduardo de Freitas Rocha. Industrial maintenance decision-making: A systematic literature review. Journal of Manufacturing Systems, v. 45, p. 180‑194, 2017. DOI: https://doi.org/10.1016/j.jmsy.2017.09.003.
+
+SALVADOR-ULLAURI, Luis et al. Combined method for evaluating accessibility in serious games. Applied Sciences, v. 10, n. 18, p. 6324, 2020. DOI: https://doi.org/10.3390/APP10186324.
+
+SHNEIDERMAN, Ben. Tree visualization with tree-maps: 2-d space-filling approach. ACM Transactions on graphics, v. 11, n. 1, p. 92-99, 1992.
+
+SINGER, Janice; VINSON, Norman G. Ethical issues in empirical studies of software engineering. IEEE Transactions on Software Engineering, v. 28, n. 12, p. 1171-1180, 2002. DOI: https://doi.org/10.1109/TSE.2002.1158289.
+
+SMALL, Henry. Co-citation in the scientific literature : a new measure of the relationship between two documents. Journal of the American Society for information Science, v. 24, n. 4, p. 28-31, 1974.
+
+STITZ, Tammy; BLUNDELL, Shelley. Evaluating the accessibility of online library guides at an academic library. Journal of Accessibility and Design for All, v. 8, n. 1, p. 33-79, 2018. DOI: https://doi.org/10.17411/jacces.v8i1.145.
+
+TERASHIMA, Mikiko; CLARK, Kate. Measuring economic benefits of accessible spaces to achieve’meaningful’access in the built environment: a review of recent literature. Journal of Accessibility and Design for All, v. 11, n. 2, p. 195-231, 2021. DOI: https://doi.org/10.17411/jacces.v11i2.274.
+
+UMARJI, Medha; SEAMAN, Carolyn. Why do programmers avoid metrics?. In: Proceedings of the Second ACM-IEEE international symposium on Empirical software engineering and measurement, p. 129-138, 2008. DOI: https://doi.org/10.1145/1414004.1414027.
+
+VENTURI, Gustavo. O universalismo ético: Kohlberg e Habermas. Lua Nova: Revista de Cultura e Política, p. 67‑84, 1995. DOI: https://doi.org/10.1590/s0102‑64451995000200005.
+
+WALTMAN, Ludo; VAN ECK, Nees Jan; NOYONS, Ed CM. A unified approach to mapping and clustering of bibliometric networks. Journal of informetrics, v. 4, n. 4, p. 629-635, 2010. DOI: https://doi.org/10.1016/j.joi.2010.07.002.
+
+WENTZ, Brian et al. Documenting the accessibility of 100 US bank and finance websites. Universal Access in the Information Society, v. 18, p. 871-880, 2019. DOI: https://doi.org/10.1007/s10209-018-0616-6.
+
+WOHLIN, Claes et al. Experimentation in software engineering. Berlin: Springer; Berlin: Heidelberg, 2012.
+
+YAN, Shunguo; RAMACHANDRAN, P. G. The current status of accessibility in mobile apps. ACM Transactions on Accessible Computing, v. 12, n. 1, p. 1-31, 2019. DOI: https://doi.org/10.1145/3300176
+
+ZOPOUNIDIS, Constantin et al. Multiple criteria decision aiding for finance: An updated bibliographic survey. European Journal of Operational Research, v. 247, n. 2, p. 339-348, 2015. DOI: https://doi.org/10.1016/j.ejor.2015.05.032
+
+[1] Professor. ORCID: 0000-0003-4467-0113. CURRÍCULO LATTES: http://lattes.cnpq.br/9433837114578364.
+
+[2] Doutor. ORCID: 0000-0002-6491-9783. CURRÍCULO LATTES: http://lattes.cnpq.br/3252289006108114.
+
+[3] Orientador. Doutor. ORCID: 0000-0001-6069-3601. CURRÍCULO LATTES: http://lattes.cnpq.br/9944976090960730.

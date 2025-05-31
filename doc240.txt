@@ -1,0 +1,401 @@
+﻿USO DO MÉTODO PBL NO ENSINO DE                                                 
+ARQUITETURA DE COMPUTADORES 
+
+ 
+1  2  3
+
+Wagner L. A. de Oliveira , Gustavo H. M. Arruda , Roberto A. Bittencourt  
+ 
+ 
+
+Abstract  Problem-Based Learning (PBL) has been one of fortemente baseada na metodologia PBL. Como estudo de 
+the most active areas in educational research. Due to its caso, foca-se a disciplina de Arquitetura de Computadores, 
+features, PBL has been used mainly in medical schools. objetivando-se mostrar exemplos de problemas, pontos 
+Regarding Brazil, we could verify that the Computer fortes e pontos fracos da metodologia. Quanto à organização 
+Engineering undergraduate program at Feira de Santana do artigo, inicialmente, uma visão geral da metodologia PBL 
+State University (UEFS) is the first one to present a fully é fornecida. Em seguida, descreve-se como esta metodologia 
+PBL-based curriculum. Other initiatives have been carried forma a base do referido curso de graduação. Tal descrição 
+out at other educational institutions, but they focus on é, então, substanciada, focando-se em nossa experiência na 
+individual courses. This paper presents a brief PBL disciplina de Arquitetura de Computadores. Conclusões e 
+background, an overview of the structure of our referências encerram o artigo.  
+undergraduate program, and describes our PBL experience 
+at a Computer Architecture course. It is discussed how such MÉTODO PBL 
+a course has been organized in order to meet PBL 
+
+No início da década de 1970, as faculdades de medicina 
+requirements, the choice of the problems, learning goals, 
+
+de McMaster (Canadá) e de Maastricht (Holanda) fizeram as 
+assessment ways, course coverage, strengths and 
+
+primeiras experiências com o método PBL. Logo após, as 
+weaknesses of the method. The adaptation process of tutors 
+
+faculdades de medicina de Albuquerque, Harvard e Hawaii 
+and students to PBL as well as proposals for improvements 
+
+adotaram o método, o qual passou a ser recomendado por 
+to the course are also discussed. 
+ sociedades de medicina e adotado, nas décadas seguintes, 
+
+em outras escolas da área de saúde, como enfermagem, 
+Index Terms  Computer Architecture, Problem-Based 
+
+fisioterapia, odontologia e veterinária. O método atingiu 
+Learning  
+
+novas fronteiras (em faculdades de medicina da África, Ásia 
+INTRODUÇÃO e América Latina), assim como escolas de outras áreas de 
+
+conhecimento – exemplos incluem a Faculdade de Direito de 
+A Aprendizagem Baseada em Problemas – PBL (Problem- McMaster, a Faculdade de Economia da Universidade de 
+Based Learning) é uma metodologia de ensino de aplicação Maastricht e algumas escolas de engenharia dos Estados 
+recente, a qual visa o aprendizado a partir da resolução de Unidos [1]. Assim, extrapolando suas origens, o método tem 
+problemas contextualizados na realidade que os estudantes, mostrado ser aplicável ao ensino em diferentes ramos de 
+após sua formação, deverão encontrar. Para uma dada conhecimento. 
+disciplina, objetiva-se que o conjunto de tais problemas seja Devido ao maior desenvolvimento do método na área de 
+elaborado de forma a cobrir, o máximo possível, o conteúdo medicina, grande parte da bibliografia sobre PBL deve ser 
+programático da mesma. Organizados em pequenos grupos, adaptada, visando à contextualização do método em outras 
+sob a supervisão de um tutor, os alunos são motivados a áreas de conhecimento. Destarte, adaptando Venturelli [2], 
+buscar os conhecimentos necessários à resolução dos pode-se identificar, de forma geral, três grandes eixos na 
+problemas. O aprendizado é centrado no aluno, o qual deixa composição do método PBL, quais sejam: 
+de ser mero receptor passivo de conhecimentos, passando à • o currículo integrado, com a fusão de disciplinas 
+atuação como principal responsável pelo seu aprendizado.  científicas em eixos temáticos;  
+
+Neste contexto, a metodologia PBL tem sido mais • o estudo baseado em problemas/projetos fundamentados 
+fortemente aplicada a cursos da área de medicina, nos quais na realidade, implicando na pesquisa e discussão em 
+um problema pode envolver temas diversos de uma dada pequenos grupos para suas resolução e compreensão, a 
+área. Para cursos de outros ramos de conhecimento, a partir da autogerência de tais grupos na aquisição do 
+metodologia PBL geralmente é aplicada a disciplinas conhecimento; e 
+isoladas, muitas vezes em caráter experimental.  • a avaliação diferenciada, com mecanismos de auto-
+
+Este artigo relata nossa experiência no curso de avaliação que buscam medir a eficiência e/ou eficácia do 
+Engenharia da Computação da Universidade Estadual de grupo, no processo de resolução dos problemas/projetos, 
+Feira de Santana – UEFS (Bahia, Brasil), cuja organização é visando o amadurecimento da situação avaliada. 
+                                                          
+1 Wagner L. A. de Oliveira, DTEC/UEFS, Av. Universitária, s/n, DTEC, 44.031-460, Feira de Santana, BA, Brasil, wlao@uol.com.br 
+2 Gustavo H. M. Arruda, DTEC/UEFS, Av. Universitária, s/n, DTEC, 44.031-460, Feira de Santana, BA, Brasil, gustavo.arruda@gmail.com 
+3 Roberto A. Bittencourt, DEXA/UEFS, Av. Universitária, s/n, DEXA, 44.031-460, Feira de Santana, BA, Brasil, robertoab.prof@gmail.com 
+
+
+
+Venturelli destaca, ainda, um quarto eixo, adequado métodos empregados na implementação do projeto) e 
+para cursos na área de saúde: eficácia (relativa à qualidade dos resultados alcançados). 
+• a inserção dos estudantes em serviços públicos de saúde Esta avaliação exige a comparação de diferentes soluções 
+
+e educação, fomentando a importância, para o processo possíveis, sendo, muitas vezes, atribuição exclusiva do tutor 
+de aprendizagem, do conhecimento prático e do contato do grupo. Em nosso curso de Engenharia de Computação, a 
+com o cotidiano.  avaliação tem duas dimensões: a dimensão global, em que se 
+
+ 
+
+Este quarto eixo pode ser integrado ao segundo eixo avaliam as competências gerais e específicas adquiridas pelo 
+elencado anteriormente, de acordo com as necessidades estudante, e a dimensão modular, em que se avalia a 
+pedagógicas e a realidade regional de cada curso.  proficiência de cada estudante no conhecimento dos assuntos 
+
+Ainda em relação aos eixos citados, os que apresentam específicos de cada módulo componente do estudo 
+maiores problemas de implementação inicial são o primeiro integrado. Para um estudo integrado de dois módulos, são 
+e o terceiro. Por outro lado, o segundo eixo demanda esforço geradas três notas, a saber: 
+constante do corpo docente, na elaboração de problemas e • Uma nota para o estudo integrado, calculada a partir de 
+projetos que sejam, ao mesmo tempo, atualizados, atrativos, uma média ponderada (MPEI) de produtos de grupos 
+factíveis e importantes para a formação dos estudantes.  tutoriais (PGT) e do desempenho nos grupos tutoriais 
+
+A elaboração de um currículo integrado constitui-se em  (DGT), conforme a expressão  
+tarefa complicada, devido ao grande número de variáveis MPEI = p × PGT + (1-p) × DGT, 
+envolvidas, cuja análise busca responder a uma questão onde p é, geralmente, 0,7 (zero vírgula sete). Ao final de 
+primordial: quais componentes curriculares de uma grade cada problema, os alunos geram, individualmente ou em 
+tradicional podem ser agrupados em módulos tratados sob grupo, um produto ou apresentação conforme designado 
+ótica integradora? A chave para responder tal questão para cada problema. A média PGT é calculada a partir de 
+baseia-se na quantificação e qualificação de associatividades uma ponderação das notas obtidas nos produtos ou 
+entre os diversos tópicos tratados nos componentes apresentações gerados. Durante os grupos tutoriais, os 
+curriculares, resultando, inclusive, na reordenação do alunos são avaliados, pelo tutor, por seu desempenho 
+tratamento de tais tópicos. A idéia é aproximar tópicos que (DGT), sendo consideradas as dimensões de participação, 
+possam ser explorados conjuntamente, na resolução de contribuição efetiva, criatividade, entrosamento e respeito 
+problemas e projetos práticos. No curso de Engenharia de mútuo em cada um dos passos do ciclo PBL; e 
+Computação da UEFS, os componentes curriculares são • Uma nota para cada módulo, calculada a partir de uma 
+separados em módulos, os quais são agrupados (geralmente média ponderada (MPM) de produtos de grupos tutoriais 
+aos pares) em disciplinas semestrais denominadas estudos referentes ao módulo (PGTM) e avaliações de conteúdo 
+integrados. Tais estudos englobam, ainda, grupos tutoriais do módulo (AC), conforme a expressão  
+nos quais os problemas e projetos seguem a metodologia MPM = p × PGTM + (1-p) × AC, 
+PBL. Exemplos de estudos integrados incluem Introdução ao onde p é o peso atribuído aos resultados gerados pelos 
+Hardware, Engenharia de Software e Sistemas Digitais. grupos tutoriais. A média PGTM é calculada a partir de 
+Neste último encontra-se o foco deste artigo, ao abarcar os uma ponderação das notas obtidas nos produtos ou 
+módulos de Arquitetura de Computadores e Arquitetura de apresentações gerados dos problemas relativos ao módulo 
+Computadores Avançada.   em questão. Cada problema que agregue conteúdo do 
+
+Quanto à avaliação diferenciada, o método PBL propõe módulo, tem avaliação específica dos aspectos relativos a 
+a auto-avaliação pelos componentes do grupo tutorial. Em este conteúdo (não necessariamente a mesma nota da 
+princípio, na fase final de cada reunião do grupo, seus avaliação integrada do problema/projeto), e esta nota é 
+integrantes fazem a avaliação do desenvolvimento da ponderada na média PGTM, de acordo com a 
+reunião, quanto ao cumprimento e ao estabelecimento de participação do conteúdo do problema no total do 
+metas, assim como dos próprios participantes, tanto no conteúdo do módulo. As provas escritas tratam dos 
+contexto da reunião, como no comprometimento com conteúdos abordados no módulo e são individuais, 
+estudos realizados previamente (designados em reunião gerando a média AC. 
+anterior). Contudo, tal mecanismo se adequa melhor às Assim, pelo sistema de avaliação adotado, as notas dos 
+características dos problemas tratados na área de medicina. módulos são separadas da nota do estudo integrado. Caso o 
+Um problema desta área é, geralmente, trabalhado em uma estudante não passe em um dos módulos, o estudo integrado 
+reunião e tem sua solução apresentada em reunião seguinte. fica pendente, até que ele/ela curse e passe no respectivo 
+Há um número relativamente pequeno de possíveis módulo. Caso o aluno não atinja a nota mínima no estudo 
+canalizações na resolução de um problema, facilitando a integrado (sete), ele participa novamente do respectivo 
+avaliação pelos pares. Para cursos na área de engenharia, grupo tutorial. Finalmente, em caso de insucesso total, o 
+muitas vezes os problemas são substituídos por projetos, os estudante refaz completamente o estudo integrado (aulas 
+quais exigem longo tempo de implementação e possibilitam expositivas dos módulos e grupo tutorial). 
+o uso de diferentes abordagens. Neste caso, fica difícil para A figura 1 mostra o ciclo de desenvolvimento de uma 
+os estudantes medirem e ponderarem eficiência (relativa aos reunião de grupo tutorial no PBL. 
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ FIGURA  1 
+
+METODOLOGIA DOS GRUPOS TUTORIAIS. 
+   
+ 
+
+Em cada reunião tutorial, observados por um professor- em oposição à unicidade de conteúdo do conhecimento do 
+tutor, os alunos lêem a especificação do problema/projeto professor. Essa postura é importante no mundo atual, no qual  
+(ou relatam o ponto onde se encontra o desenvolvimento do os assuntos aprendidos na graduação raramente permanecem 
+mesmo) e escolhem um coordenador, um secretário de mesa estanques após a formação do aluno. Somente uma postura 
+e um secretário de quadro para a reunião. Em seguida, o de estudo e aprimoramento contínuos possibilita o sucesso 
+secretário de quadro divide a lousa em 5 partes: Idéias, profissional em um mundo globalizado, frente à grande 
+Fatos, Hipóteses, Questões e Metas. Os alunos fazem, então, quantidade de informações e à demanda por atualizações. A 
+um brainstorming, onde sugerem idéias, relatam fatos e agilidade é um importante componente a exercitar no aluno 
+levantam hipóteses e questões sobre o foco discutido. Segue- de graduação, assim como a criatividade na exploração de 
+se fase de filtragem, onde se enxuga a lousa e se clarifica um novos métodos de organização profissional [3]. 
+pouco mais o problema (ou estágio atual). Por fim, são Ao envolver problemas e projetos práticos, os alunos 
+estabelecidas metas de aprendizagem a ser cumpridas até a são obrigados a buscar soluções de implementação. Pontos 
+próxima reunião. Devido à natureza dos problemas/projetos teóricos críticos na solução dos problemas e questões de 
+apresentados em nosso curso, a etapa 6 da figura 1 implementação são tratadas em aulas de consultoria, dentro 
+(Avaliação do Processo) é, geralmente, feita apenas na dos módulos teóricos. Finalizado um problema, os alunos 
+última reunião referente a um dado problema/projeto.  participam do chamado bate-bola, onde são questionados 
+
+Neste processo, o professor-tutor procura interferir o individualmente sobre a solução obtida e sobre sua 
+mínimo possível no encaminhamento da resolução dos participação na obtenção de tal solução. 
+problemas. Desta forma, a metodologia PBL instiga os A metodologia PBL é interessante também para os 
+alunos a buscar, por conta própria, o conhecimento professores, pois há a necessidade de renovação dos 
+necessário à solução dos problemas, nos inúmeros meios de problemas, assim como a necessidade de implementá-los (ao 
+difusão do conhecimento hoje disponíveis. Nesta busca, o menos parcialmente), de forma a visualizar e antecipar 
+aluno aprende a utilizar e a pesquisar nesses meios, com o eventuais dificuldades para os alunos (a serem clarificadas 
+objetivo de facilitar o acesso à diversidade de informações, nas aulas de consultoria). 
+
+
+
+CURSO DE GRADUAÇÃO BASEADO EM PBL com o método, através da apresentação e do estudo de suas 
+bases teóricas, abrangência, desafios e formas de avaliação. 
+
+A metodologia PBL foi implantada no curso de Além disso, o docente é introduzido à prática do método e à 
+Engenharia de Computação da UEFS por seu coordenador, elaboração de problemas, através da análise de resultados de 
+Roberto A. Bittencourt, desde o início do mesmo, em 2003. problemas e projetos apresentados nos estudos integrados. 
+Neste curso, com prazo de integralização em 10 semestres, Em relação aos alunos, a primeira semana de aulas é 
+os estudos integrados, nos quais o método PBL é reservada exclusivamente para a compreensão e prática do 
+obrigatoriamente empregado, representam cerca de 30% da método. Este processo é complementado com o início das 
+carga horária total, de 4345 horas. Em relação aos demais atividades nos estudos integrados. Naturalmente, por serem 
+componentes curriculares do curso, as disciplinas das áreas egressos de um sistema educacional tradicional, há certa 
+de matemática, física e química são lecionadas de forma dificuldade inercial de adaptação, havendo, inclusive, casos 
+tradicional, ao passo que as disciplinas optativas apresentam de desistência nos primeiros semestres.  
+variações de métodos didáticos (inclusive híbridos com Uma das principais reclamações dos alunos refere-se à 
+PBL), de acordo com as especificidades de cada disciplina. sobrecarga de atividades, uma vez que a resolução dos 
+
+A tabela I mostra a composição modular dos estudos problemas os mantêm em atividade de estudo constante.  
+integrados, juntamente com suas respectivas cargas horárias. Outra queixa recorrente dos alunos refere-se ao grau de 
+
+ dificuldade dos problemas – algumas vezes os problemas 
+TABELA I são considerados desestimulantes ou simples, outras vezes 
+
+COMPOSIÇÃO DOS ESTUDOS INTEGRADOS são considerados complexos ou  superdimensionados.  
+Estudo Integrado  Módulos Sem. C.H. Finalmente, outra questão levantada é o descompasso 
+
+Circuitos Digitais 
+Introdução que surge, algumas vezes, entre assuntos tratados nos 
+
+1 120 
+ao Hardware Introdução aos  módulos teóricos e nos problemas dos grupos tutoriais, além 
+
+Sistemas de Computação de diferenças de comportamento dos professores-tutores. Há 
+Algoritmos e 
+
+Algoritmos e Programação I 1 60 casos em que os alunos consideram difícil o estudo, por 
+Programação I conta própria, de determinados assuntos, julgando que estes 
+
+Arquitetura de Computadores 
+Sistemas deveriam ter sido introduzidos antes, nas aulas teóricas. Em 
+Digitais Arquitetura de Computadores 2 120 outras situações, nas atividades dos grupos tutoriais, se 
+
+Avançada percebe a não assimilação adequada de alguns assuntos já 
+Algoritmos e Programação II abordados, meses antes, nas aulas teóricas. 
+
+Programação Estruturas de Dados 3 180 Em atenção às reclamações e visando melhor adequação 
+dos alunos à aquisição e fixação de conhecimento, os 
+
+Estruturas Discretas docentes, constantemente, trocam dados sobre o transcorrer 
+Circuitos Circuitos Elétricos dos grupos tutoriais, realizam reordenamentos na seqüência 
+
+4 120 
+Eletrônicos Eletrônica Geral de aulas teóricas, mudam a ênfase de determinados assuntos 
+
+e reestruturam os temas dos problemas e projetos.  
+Concorrência Sistemas Operacionais 
+
+4 120 
+e Conectividade Redes de Computadores PBL EM ARQUITETURA DE COMPUTADORES 
+
+Engenharia de Software 
+Engenharia No curso de Engenharia de Computação da UEFS, a 
+de Software Bancos de Dados 5 180 disciplina Arquitetura de Computadores corresponde a um 
+
+Análise e Projeto de Sistemas dos módulos do estudo integrado de Sistemas Digitais, 
+juntamente com o módulo de Arquitetura de Computadores 
+
+Algoritmos e Análise e Projeto de Algoritmos 
+6 120 
+
+Complexidade Avançada (tabela I). Cada módulo é dado em 60 horas, as 
+Métodos Numéricos quais são divididas ao meio, entre aulas teóricas e grupos 
+
+Sinais e Eletrônica Digital tutoriais. O estudo integrado envolve quatro docentes, sendo 
+Sistemas Digitais 6 120 
+e Analógicos Sinais e Sistemas um deles responsável pelas aulas teóricas e pelos temas 
+
+trabalhados nos problemas/projetos. Os quatro docentes 
+Linguagens Formais e Autômatos 
+
+participam da elaboração dos problemas/projetos e, também, 
+Linguagens Compiladores 7 150 atuam como tutores de pequenos grupos (de 6 a 8 alunos). 
+de Programação 
+
+Conceitos de Linguagens de A tabela II sintetiza os problemas dados no mais recente 
+Programação estudo integrado de Sistemas Digitais. Uma das principais 
+
+ dificuldades encontradas refere-se ao grau de cobertura dos 
+O processo de adaptação ao método abrange os corpos temas abordados nos problemas, uma vez que é grande a 
+
+docente e discente. Todo professor novo no curso passa por variedade de assuntos nas ementas dos dois módulos 
+uma oficina de uma semana, antes de ministrar aulas ou teóricos. Desta forma, parte da ementa é tratada apenas nas 
+tutoriar um grupo. Nesta oficina, o professor trava contato aulas teóricas.  
+
+
+
+TABELA II exclusivamente sobre aspectos teóricos e de implementação, 
+SÍNTESE DE PROBLEMAS/PROJETOS DE SISTEMAS DIGITAIS em VHDL, de máquinas de estados finitas. Tal intervenção 
+
+Projeto P1: Síntese de um Processador (5 semanas) foi necessária, devido às dificuldades de alunos de segundo 
+Objetivos de aprendizado: semestre, referentes à base matemática e à adequação com 
+Sintetizar uma unidade central de processamento, contendo uma 
+
+unidade aritmética e lógica, registradores e uma unidade de controle, uma linguagem de descrição de hardware. Contudo, as aulas 
+para um conjunto de instruções específico; auxiliares consumiram carga horária dos módulos teóricos, 
+
+Compreender as diferenças entre unidade de controle hardwired e prejudicando o tratamento de assuntos não abordados nos 
+microprogramada; tutoriais. Para reduzir tal prejuízo, e facilitar a adequação 
+
+Projetar o conjunto de microinstruções, o seqüenciamento e a 
+temporização das instruções, e a lógica de controle associada; dos alunos, o uso do Quartus II e do VHDL foi antecipado 
+
+Simular e analisar o funcionamento dos subsistemas do processador, para o primeiro semestre, no estudo integrado Introdução ao 
+usando software de simulação/síntese de circuitos digitais em VHDL.  Hardware, envolvendo projetos de menor complexidade. 
+
+ 
+
+Produto: O problema P4 levou a pesquisas pormenorizadas sobre 
+Relatório técnico; a arquitetura e formas de programação do PlayStation 2, 
+Simulação do processador no software Quartus II da Altera. 
+Projeto P2: Memória Cache / Linguagem Assembly (3 semanas) envolvendo temas como multiprocessamento, pipelines, 
+Objetivos de aprendizado: vetorização, hierarquia de memória e processamento de 
+Implementar programas de teste em assembly; áudio e vídeo. Apesar de teórico, este problema apresentou 
+Avaliar diferentes tipos de organização de memórias cache; ampla receptividade, devido à penetração que os videogames 
+Compreender as diferenças entre algoritmos de substituição de linhas têm no universo jovem. Além disso, possibilitou a fixação de 
+
+e políticas de escrita em memórias cache; 
+Utilizar a ferramenta de emulação emu8086.  assuntos que haviam sido tratados apenas nas aulas teóricas, 
+ 
+
+Produto: tais como processadores vetoriais e com pipeline. 
+Relatório técnico; Um dos maiores desafios na elaboração de problemas e 
+Programa assembly: existência de memória cache no Pentium IV. projetos refere-se aos graus de dificuldade e cobertura. 
+Projeto P3: Barramentos e Entrada/Saída (4 semanas) Apesar do esforço em abarcar a maior parte da ementa nos 
+Objetivos de aprendizado: 
+Compreender o funcionamento de barramentos, arbitragem, grupos tutoriais, alguns assuntos foram tratados apenas nas 
+
+mecanismos de acesso ao barramento e tipos de barramentos; aulas teóricas, tais como superescalaridade e processadores 
+Compreender princípios básicos de E/S de dados para o processador; VLIW. Outro desafio do PBL refere-se ao seqüenciamento 
+Projetar um método para controle de acesso a dispositivos externos das aulas teóricas, de forma a motivar os alunos, geralmente 
+
+por meio de um barramento de dados comum; 
+Simular e sintetizar, no dispositivo ACEX, um controlador de ansiosos por receber conhecimentos que possam ajudá-los na 
+
+barramento e mecanismos de DMA em linguagem VHDL. resolução dos problemas e implementação dos projetos.  
+ 
+
+Produto: 
+Relatório técnico; CONCLUSÕES 
+Implementação física do sistema descrito no texto do problema, 
+
+usando placa de prototipação baseada em FPGA. Devido às suas origens, a metodologia PBL encontra-se bem 
+Problema P4: Arquiteturas Embutidas (3 semanas) estruturada em cursos da área de medicina. Entretanto, são 
+Objetivos de aprendizado: grandes os desafios para sua aplicação em outras áreas de 
+Compreender o funcionamento básico de arquiteturas embutidas 
+
+voltadas para aplicações de entretenimento; conhecimento. Este artigo mostrou parte de uma iniciativa 
+Compreender princípios básicos de processamento em tempo real de inovadora – a concepção de um curso de Engenharia de 
+
+áudio e vídeo, processamento vetorial e controle de memória Computação baseado em PBL. Para melhor visualização da 
+distribuída em esquemas de multiprocessamento; proposta do curso, destacou-se um componente curricular e 
+
+Analisar as principais características arquiteturais do PlayStation 2 e 
+como estas características são usadas na programação de um jogo. optou-se pelo enfoque prático de questões diversas, tais 
+
+ 
+
+Produto como formas de avaliação, observações e reclamações de 
+Seminário com os temas: multiprocessamento, hierarquia de memória, alunos, desafios enfrentados pelos professores e grau de 
+
+renderização de imagens, circuitos de E/S, programação e outros usos cobertura de problemas/projetos. Espera-se que este artigo 
+do console (Linux, clusters). fomente a interação com outros educadores, interessados na 
+ aplicabilidade do método PBL. 
+Observa-se, na tabela II, que os tutoriais trataram de três 
+
+projetos de implementação e de um problema teórico. REFERÊNCIAS 
+Ambos projetos P1 e P3 foram desenvolvidos com circuitos 
+esquemáticos e linguagem VHDL, no ambiente Quartus II [1] Herried, C. F., "The Death of Problem-Based Learning?", Journal of 
+
+da Altera, ao passo que o projeto P2 requisitou o uso de College Science Teaching, Vol. 32 (Mar/Apr), 2003, pp. 364-366. 
+
+linguagem assembly, suportada pelo software emu8086. [2] Venturelli, J., "Educacion médica: Nuevos Enfoques, Metas y 
+Logo após a primeira reunião de cada um destes projetos, o Métodos", Organización Panamericana de Salud, Washington, 1997. 
+
+(Programa Ampliado de Libros de Texto y Materiales de Instrucción – 
+funcionamento destes softwares foi demonstrado em aulas Paltex – Serie Salud y Sociedad, n.5, 2000). 
+teóricas. Adicionalmente, aulas teóricas de VHDL e aulas de 
+consultoria foram agendadas no transcorrer dos projetos, [3] Komatsu, R.S. et al., "Aprender a Aprender: Guia do Processo de 
+
+Ensino-aprendizagem". 2ª ed. Marília: Faculdade de Medicina de 
+para tratamento de partes críticas nas implementações. Por Marília, 1998. 
+exemplo, no caso do projeto P1, uma aula de consultoria foi

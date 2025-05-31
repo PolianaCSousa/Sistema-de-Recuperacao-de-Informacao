@@ -1,0 +1,471 @@
+﻿Como Ensinar Ciência da Computação para Crianças?
+Tendências e Lacunas de Pesquisa na Área
+Aline de S. M. dos Santos1, Wellington G. Pereira1, Rozelma Soares de França2
+1Departamento de Computação
+2Departamento de Educação – Universidade Federal Rural de Pernambuco (UFRPE)
+CEP: 52171-900 – Recife – PE – Brasil
+{alinesntn.m, tonygomes}@gmail.com, rozelma.franca@ufrpe.br
+Abstract. The teaching of computer skills at school has been increasingly debated
+as a topic, once it became the focus of recent educational policies. At the same
+time, strategies and courseware for its implementation have also been investigated.
+In this context, this article intends to explain how to promote computer skills in
+elementary education based in a systematic review of its literature, both national
+and international wise. This research is specially dedicated to the effects of
+promoting activities plugged, unplugged and hybrid activities for young students,
+while indicating trends in this matter as well gaps that may be filled by future
+research on this field.
+Resumo. O ensino de computação na escola tem sido um tema cada vez mais
+discutido, sendo foco de políticas educacionais recentes. Em paralelo, estratégias
+e materiais didáticos para sua implementação também têm sido alvo de
+investigações. Neste contexto, este artigo busca lançar luz sobre como promover
+a computação no ensino fundamental a partir de uma revisão sistemática de
+literatura em bases nacionais e internacionais. A pesquisa se volta, especialmente,
+sobre os efeitos que a aplicação de atividades plugadas, desplugadas e híbridas
+podem proporcionar, apontando para tendências e lacunas que poderão ser
+cobertas por futuros trabalhos.
+1. Introdução
+A tecnologia está cada vez mais presente na sociedade, contribuindo para diversos setores,
+como a educação. Nesse contexto, mais que interagir com os artefatos tecnológicos, outras
+habilidades também têm sido requeridas dos cidadãos, como o pensamento computacional
+(PC); que pode ser explorado desde a educação básica. Ao analisar o cenário sobre
+computação na escola, Raabe et al. (2020) o organizam em quatro abordagens, considerando
+seu momento histórico, a saber: i) Construcionismo e Letramento Computacional; ii) A
+Emergência do Pensamento Computacional; iii) Code.org e a Demanda do Mercado; e iv)
+Equidade e Inclusão.
+Em relação à primeira abordagem, ela é pautada nas contribuições de Seymour Papert
+que, desde 1967, já propunha a exploração da linguagem de programação Logo na
+construção do conhecimento, incentivando os estudantes a criarem objetos concretos. Nesse
+período surgiu o termo pensamento computacional, que só ganhou força em 2006 com a
+publicação de um artigo por Jeanette Wing; o qual integra a segunda abordagem para o
+ensino de computação na educação básica. Wing (2006) defende que o PC é uma habilidade
+fundamental para todos, não somente para cientistas da computação; propondo que à leitura,
+escrita e aritmética deveríamos incluí-lo na habilidade analítica de todas as crianças. Em
+relação à terceira abordagem, é direcionada, especialmente, a capacitar jovens para o
+mercado de trabalho em computação; enquanto que a quarta busca a melhoria do acesso ao
+ensino-aprendizagem na área, advogando a necessidade da equidade de oportunidades para
+que os cidadãos exerçam sua cidadania com plenitude.
+Frente à essa discussão, alguns avanços foram feitos no campo de currículos
+escolares, possibilitando aos estudantes terem acesso a esse conhecimento desde cedo; a
+exemplo de países como Escócia, Finlândia e Grécia (BRACKMANN et al., 2020). No
+Brasil, a BNCC (MEC, 2018) incorpora o PC na área de Matemática do Ensino Fundamental
+e possibilita o trabalho com a computação de maneira mais profunda no Ensino Médio, por
+meio de itinerários formativos. Ainda há as Diretrizes para ensino de Computação na
+Educação Básica da Sociedade Brasileira de Computação (SBC, 2019) e o Currículo de
+Tecnologia e Computação do Centro de Inovação para a Educação Brasileira (CIEB, 2018),
+os quais preveem habilidades para além do PC. No caso da proposta da SBC, outros dois
+eixos são contemplados: Cultura Digital e Mundo Digital. Já o CIEB nomeia esses eixos
+como Cultura Digital e Tecnologia Digital, os quais remetem, respectivamente, às relações
+humanas mediadas por tecnologias digitais, e ao conjunto de conhecimentos relacionados a
+como funcionam os computadores e suas tecnologias, em especial as redes e a internet.
+Associado a tais currículos, são requeridos materiais e métodos que deem suporte à
+sua implementação na escola. Nesse contexto, revisões de literatura tem buscado
+compreender tendências e lacunas na área, focando especialmente no desenvolvimento do
+PC por meio de atividades desplugadas (RODRIGUES et al., 2018; SOUZA et al., 2019;
+MORAIS et al., 2019). Há também aqueles que analisam a literatura sobre o
+desenvolvimento do PC por meio de conceitos de Internet das Coisas (SCHNEIDER et al.,
+2019); e outros que investigam como tal competência computacional tem sido avaliada
+(AVILA et al., 2017). Mais que o PC, é preciso se buscar compreender como a computação
+pode ser ensinada na escola, em sua plenitude. É nesse contexto que se situa este trabalho
+que, por meio de uma revisão sistemática de literatura nos cenários nacional e internacional,
+aponta para tendências e lacunas de pesquisa no ensino de computação na escola,
+privilegiando seus três eixos. A pesquisa tem como foco o ensino fundamental e considera
+estudos que adotam diferentes táticas de implementação de atividades - desplugada, plugada
+e híbrida - observando seus efeitos sobre esse nível de ensino.
+2. Metodologia
+Visando identificar os efeitos que diferentes táticas de implementação de atividades de
+computação podem provocar sobre a aprendizagem no ensino fundamental, uma Revisão
+Sistemática de Literatura (RSL) foi realizada. Segundo Kitchenham (2007), RSL consiste
+em uma forma de estudo secundário, tendo etapas bem definidas, que possibilita identificar,
+analisar e interpretar evidências relacionadas a uma questão de pesquisa. Para orientar a sua
+execução, um protocolo é criado e, nas subseções seguintes, são exibidos seus principais
+elementos nesta RSL.
+2.1 Questões de Pesquisa
+Este estudo foi norteado pela seguinte questão central de pesquisa: Quais os efeitos que
+diferentes táticas de implementação de atividades podem provocar sobre o processo de
+ensino-aprendizagem de Computação no Ensino Fundamental?. Para respondê-la, foram
+definidas questões específicas (QE), a saber: QE1: Quais são os objetivos das pesquisas?;
+QE2: Qual é seu público-alvo?; QE3: Quais os tipos de materiais didáticos propostos ou
+usados?; QE4: Quais os materiais didáticos propostos ou usados nessas experiências?; QE5:
+Quais são eixos e conceitos de computação explorados nos materiais didáticos?; QE6: Quais
+áreas de conhecimento têm sido exploradas nesses estudos atreladas à computação?; QE7:
+Quais resultados obtidos?.
+2.2 Critérios de Inclusão e Exclusão
+Foram incluídos trabalhos científicos completos que tratavam sobre diferentes táticas de
+implementação de atividades para ensino-aprendizagem de computação no ensino
+fundamental. Os estudos que atenderam a pelo menos um dos critérios de exclusão listados
+a seguir foram retirados do processo de análise: i) Artigos não acessíveis na íntegra,
+considerando a disponibilidade fornecida pelo Portal da CAPES ou pela oferta gratuita na
+web; ii) Artigos convidados, resumos, artigos resumidos, tutoriais, keynote speech,
+relatórios de workshop, relatórios técnicos; iii) Estudos secundários e terciários; iv) Artigos
+escritos em idiomas além do Inglês ou Português; v) Estudos duplicados: apenas o mais atual
+foi incluído; vi) Artigos que expressam pontos de vistas pessoais ou opiniões de
+especialistas; vii) Estudos que não tenham como público-alvo o ensino fundamental; viii)
+Estudos que tratam sobre táticas de implementação de atividades para ensino-aprendizagem
+de computação na educação básica apenas como trabalhos futuros.
+2.3 Fontes de dados, estratégia de busca e seleção dos estudos
+A busca ocorreu de forma automática em bases de dados nacionais e internacionais,
+conforme ilustrado na Figura 1. No cenário nacional foram considerados o Portal de
+Publicações da CEIE, a Revista Novas Tecnologias na Educação (RENOTE) e o Workshop
+sobre Educação em Computação (WEI). Já no internacional foram utilizadas as bases ACM
+Digital Library, Educational Resources Information Center – ERIC, IEEE Xplore,
+ScienceDirect e Scopus.
+Em relação à string, foram usadas as seguintes, com variações a partir das
+especificidades de cada base: i) ("computação" OR "pensamento computacional"
+OR "cultura digital" OR "mundo digital" OR "tecnologia digital") AND
+("plugad*" OR "desplugad*" OR "unplugged" OR "híbrid*"), quando de
+bases nacionais e ii) ("computer science" OR "computational thinking" OR
+"computing" OR "information technology" OR "digital literacy") AND
+("plugged" OR "unplugged" OR "hybrid") AND ("primary education" OR
+"elementary education" OR "primary school" OR "elementary school"
+OR "middle school") quando a pesquisa ocorreu em base internacional.
+Figura 1: Processo de Seleção dos Estudos
+A lista de estudos retornados foi analisada. Em um primeiro momento foram lidos o
+título, resumo e palavras-chave. Posteriormente foi feita a leitura da introdução, método e
+conclusão dos estudos pré-selecionados na etapa anterior. Nas duas etapas, quando um
+estudo atendia a pelo menos um dos critérios de exclusão ele era retirado do processo de
+análise. Os estudos considerados relevantes foram lidos na íntegra, sendo feita a extração e
+análise dos dados que respondem às questões de pesquisa definidas. Ao final, também foi
+feita a avaliação da qualidade dos estudos selecionados.
+3. Resultados
+Nesta revisão, 46 estudos nacionais1 e 48 internacionais2 foram incluídos, os quais foram
+publicados de acordo com a distribuição exibida na Figura 2, que demonstra a evolução das
+publicações. Como pode ser observado, os estudos analisados foram publicados entre 2009
+e 2020, havendo maior recorrência de publicações no ano de 2019. No cenário nacional, este
+resultado pode ter relação com a BNCC, publicada em 2018, que incluiu o PC junto à
+Matemática no ensino fundamental.
+Figura 2: Distribuição Temporal dos Estudos Primários
+3.1. Objetivos das Pesquisas
+Os objetivos identificados nas pesquisas foram diversos. No cenário nacional, com grande
+parte sendo relato de experiência, identificou-se: proposição e aplicação de atividades
+desplugadas [EP01, EP07, EP24, EP28, EP30, EP42, EP45, EP46], utilização de jogos e
+gamificação como estratégia de aprendizagem de PC [EP08, EP16, EP25, EP39, EP44],
+desenvolvimento de habilidades do PC [EP04, EP09, EP10, EP15, EP19, EP23, EP26, EP27,
+EP28, EP31, EP35, EP36, EP37], interesse pelo ensino de conceitos e princípios da
+computação [EP13, EP34, EP38], ensino de lógica de programação [EP40, EP43],
+desenvolvimento do raciocínio lógico [EP02, EP11, EP12, EP17, EP20, EP33, EP39],
+promoção da equidade de gêneros nas carreiras de computação [EP18], ressaltar a
+importância do uso da tecnologia no ensino fundamental [EP21], e estímulo ao PC de forma
+interdisciplinar [EP03, EP05, EP30, EP32, EP46].
+Os objetivos internacionais, por sua vez, são divididos entre apresentar proposta de
+material específico [EP01, EP02, EP10, EP21, EP33, EP36, EP43], fazer experimentos
+usando jogos plugados e desplugados [EP03, EP08, EP12, EP42, EP47], descrever
+propostas de programas educacionais visando o ensino-aprendizagem da computação e de
+PC [EP04, EP05, EP13, EP14, EP15, EP17, EP18, EP20, EP22, EP23, EP24, EP25, EP27,
+EP29, EP30, EP31, EP32, EP39, EP40, EP41, EP43, EP44, EP45, EP48], descrever
+atividades usando Interação Humano-Computador [EP07, EP28], estimular a aplicação de
+PC de forma interdisciplinar [EP11, EP26] e promover a equidade de gêneros nas carreiras
+de computação [EP16]. Foi observado que há uma maior variação de conteúdos de
+computação nas experiências internacionais e, em alguns casos, esses conteúdos são tratados
+de forma mais profunda, como os relatados em [EP15, EP43] com o uso de robótica para
+promoção do PC e da engenharia da computação.
+1Planilha Estudos Nacionais: http://bit.ly/EstudosNacionais
+2 Planilha Estudos Internacionais: http://bit.ly/EstudosInternacionais
+0 0 0 1 0 1 4 2 4
+9
+22
+32 0 1 3 2 1 4 1 3 2
+13 16
+2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020
+Nacional
+Internacional
+3.2. Público-Alvo
+Durante o processo de extração dos dados nacionais notamos que muitos dos estudos
+contemplavam mais de uma turma de estudantes, como o intitulado “Circuito de quatro
+estações aplicando a computação desplugada” que tem como público-alvo turmas de 1° ao
+5° ano do ensino fundamental. Levando em consideração essa informação, identificamos
+que: 16 estudos tiveram como foco o 5º ano [EP04, EP05, EP06, EP11, EP13, EP17, EP19,
+EP20, EP23, EP26, EP27, EP31, EP34, EP37, EP38, EP39]; 14 o 6º ano [EP08, EP10,
+EP13, EP16, EP17, EP20, EP23, EP26, EP30, EP38, EP39, EP42, EP43, EP46]; e 14 o 9º
+ano [EP02, EP03, EP09, EP14, EP15, EP25, EP29, EP33, EP35, EP38, EP40, EP42, EP44,
+EP45]. Outros anos tiveram menor recorrência, o que aponta para a lacuna nesse campo. São
+eles: 1º ano [EP04, EP21, EP24], 2º ano [EP04, EP24, EP37], 3º ano [EP04, EP28, EP34,
+EP37], 4º ano [EP01, EP04, EP13, EP34, EP36, EP37], 7º ano [EP08, EP16, EP29, EP35,
+EP38, EP42] e 8º ano [EP08, EP09, EP25, EP29, EP35, EP38, EP42], os quais tiveram
+menos de 10 recorrência, cada.
+Assim como na literatura nacional, na internacional fora identificado estudos que
+contemplavam mais de um ano escolar; como é o caso do “Unplugged Teaching Activities
+to Promote Computational Thinking Skills in Primary and Adults From a Gender
+Perspective” que envolveu o 2º, o 5º e o 6º ano do ensino fundamental. Sendo assim,
+constatou-se que 13 estudos internacionais tinham como foco o 6º ano [EP05, EP06, EP13,
+EP14, EP16, EP22, EP24, EP26, EP33, EP39, EP44, EP47, EP48]. Já o 2º ano [EP14, EP16,
+EP33, EP48], 3º ano [EP32, EP33], 4º ano [EP03, EP06, EP12, EP19, EP33], 5º ano [EP08,
+EP16, EP19, EP23, EP26, EP33, EP45, EP47, EP48], 7º ano [EP17, EP22, EP26, EP27,
+EP34, EP41, EP42, EP47], 8º ano [EP05, EP17, EP18, EP20, EP27, EP30, EP31, EP34,
+EP37] e 9º ano [EP17, EP25, EP27, EP30, EP34] tiveram menos de 10 artigos, e o 1º ano
+não apareceu.
+Figura 3: Público-Alvo dos Estudos Primários
+A Figura 3 sumariza os estudos por ano escolar a que se destina. Destacamos, porém,
+que 15,21% (7) dos estudos nacionais [EP07, EP08, EP12, EP18, EP22, EP32, EP41] e
+29,16% (14) dos internacionais [EP01, EP02, EP04, EP07, EP09, EP10, EP11, EP21, EP28,
+EP29, EP35, EP36, EP38, EP40] não deixavam claro o ano escolar, apresentando apenas a
+idade e/ou se referindo apenas como sendo do ensino fundamental.
+3.3. Tipos de Materiais
+Os materiais foram classificados em: i) desplugado, quando composto por atividades que
+não requerem o uso de computadores e suas tecnologias associadas; ii) plugado, quando é
+apoiado pelo uso de recursos tecnológicos; iii) híbrido, quando o material provê interações
+com e sem o uso de tecnologias digitais; e iv) plugado e desplugado, quando o estudo se
+apoia em materiais que originalmente não são híbridos, mas que na experiência exploram o
+potencial pedagógico das táticas plugada e desplugada de forma conjunta.
+No cenário nacional, constatou-se maior recorrência de estudos que se apoiam em
+materiais desplugados; o que pode estar associado à ausência ou precariedade de recursos
+tecnológicos, como conexão à internet, nas escolas. Esse resultado corresponde a 65,22%
+3 3 4 6
+16 14
+6 7
+14
+4 2 5 9 13
+8 9 5
+1º 2º 3º 4º 5º 6º 7º 8º 9º
+Nacional
+Internacional
+(30 estudos) dos estudos analisados. Em relação aos materiais plugados, foram explorados
+em apenas 2,17% (1 estudo). O mesmo percentual foi identificado em relação à proposição
+de material híbrido. A combinação de materiais plugados e desplugados, por outro lado, foi
+identificada em 30,43% (14) dos estudos.
+Já em relação ao cenário internacional, houve uma maior equivalência entre os
+materiais desplugados, e plugados e desplugados. Os materiais desplugados foram
+trabalhados em 45,83% (22) dos estudos, enquanto a combinação de materiais plugados e
+desplugados foi explorada em 35,42% (17) deles. Também foram encontrados materiais
+híbridos em 10,42% (5) e plugados em 8,33% (4). A Tabela 1 apresenta a síntese dos tipos
+de materiais identificados nos estudos.
+Tabela 1: Tipos de Materiais dos Estudos Primários
+Tipo de
+Material
+NACIONAL INTERNACIONAL
+% ID dos Estudos % ID dos Estudos
+Desplugado 65,22 EP02, EP03, EP04, EP06, EP07, EP08, EP10,
+EP11, EP13, EP14, EP15, EP17, EP18, EP20,
+EP22, EP23, EP24, EP27, EP28, EP29, EP30,
+EP31, EP34, EP37, EP38, EP39, EP42, EP44,
+EP45, EP46
+45,83 EP02, EP04, EP07, EP10, EP11, EP13,
+EP14, EP15, EP18, EP20, EP22, EP23,
+EP25, EP30, EP31, EP35, EP37, EP39,
+EP41, EP44, EP46, EP48
+Plugado 2,17 EP12 8,33 EP05, EP06, EP21, EP28
+Híbrido 2,17 EP32 10,42 EP01, EP09, EP16, EP36, EP43
+Plugado e
+Desplugado
+30,43 EP01, EP05, EP09, EP16, EP19, EP21, EP25,
+EP26, EP33, EP35, EP36, EP40, EP41, EP43
+35,42 EP03, EP08, EP12, EP17, EP19, EP24,
+EP26, EP27, EP29, EP32, EP33, EP34,
+EP38, EP40, EP42, EP45, EP47
+3.4. Materiais Didáticos
+Os estudos nacionais que utilizam material puramente desplugado (9) [EP023, EP04, EP06,
+EP074, EP08, EP105, EP11, EP14, EP23] têm uma tendência a usarem criações próprias,
+sendo suas atividades passíveis de resolução com o uso de papel, lápis, caneta, tampas de
+garrafas pet, etc. Há também aqueles que se apoiam nas atividades do livro Computer
+Science Unplugged6 de Tim Bell [EP13, EP14, EP19, EP25, EP29, EP30, EP38, EP40,
+EP42, EP43], além de adaptações do mesmo livro [EP34, EP45, EP46]. Em relação aos
+plugados, identificou-se o uso do Scratch7 [EP01, EP19, EP22, EP33, EP35, EP40, EP41,
+EP43], Code.org8 [EP19, EP21, EP26, EP30, EP33, EP36], Hora do Código9 [EP01, EP05,
+EP09] e Scratch Jr.10 [EP12]. Com relação ao híbrido, foi levantado o livro-jogo sertão.bit11
+que explora o PC a partir do contexto sociocultural [EP32].
+No contexto internacional, 27,27% (6) dos estudos desplugados usam o livro
+Computer Science Unplugged [EP14, EP20, EP23, EP30, EP31, EP37], 50% (11) [EP02,
+EP07, EP10, EP11, EP13, EP15, EP18, EP21, EP22, EP25, EP44] utilizam material próprio,
+um utiliza exercícios baseados no Bebras12 [EP41], outro adapta atividade do Code Master13
+3 http://almanaquesdacomputacao.com.br/
+4 https://sorayaroberta.github.io/guia.pdf
+5 http://poesiacompilada.com/
+6 https://csunplugged.org
+7 https://scratch.mit.edu/
+8 https://code.org/
+9 https://hourofcode.com/br
+10 https://www.scratchjr.org/
+11 https://www.falecomrozelma.com/
+12 https://www.bebras.org/
+13 https://www.thinkfun.com/products/code-master/
+[EP48] e nos outros três não constavam quais materiais utilizaram [EP04, EP35, EP39]. Já
+em relação ao material plugado, existe uma diversidade, como o Scratch [EP09, EP19, EP24,
+EP27, EP29, EP34, EP42], Code.org [EP32, EP33], Lego Mindstorms14 [EP43], APP
+Inventor15 e ScratchX16 [EP28], i*Catch [EP21], Scratch para Arduino17 e Open Roberta18
+[EP19] e um aplicativo que simula o jogo Nimrod19 [EP19]. Finalmente, em relação ao
+material híbrido, encontramos o Logic Blocks20 [EP01], Cubelets21 [EP09], Lego
+Mindstorms [EP43] e um material próprio para a construção de um game [EP36].
+3.5. Eixos e Conceitos da Computação
+Nesta revisão teve-se como referência os eixos e conceitos da computação do Currículo de
+Tecnologia e Computação do CIEB, ressaltando que há equivalências nos nomes e/ou
+sentidos daqueles propostos pela SBC: i) Cultura Digital (CD): Letramento Digital,
+Cidadania Digital, Tecnologia e Sociedade; ii) Pensamento Computacional (PC):
+Abstração, Algoritmos, Decomposição, Reconhecimento de Padrões, e iii) Tecnologia
+Digital (TD): Representação de Dados, Hardware e Software, Comunicação e Redes. A
+Tabela 2 apresenta a síntese realizada a partir da análise dos estudos.
+Tabela 2: Eixos de Computação dos Estudos Primários
+Tipo de
+Material
+NACIONAL INTERNACIONAL
+% ID dos Estudos % ID dos Estudos
+Cultura Digital 0 - 4,17 EP07, EP36
+Pensamento
+Computacional
+93,48 EP01, EP02, EP03, EP04, EP05, EP06, EP07,
+EP08, EP09, EP10, EP11, EP12, EP13, EP14,
+EP15, EP16, EP17, EP18, EP19, EP20, EP21,
+EP22, EP23, EP24, EP25, EP26, EP27, EP28,
+EP30, EP31, EP32, EP33, EP35, EP36, EP37,
+EP38, EP39, EP40, EP41, EP43, EP44, EP45.
+EP46
+77,08 EP02, EP04, EP05, EP06, EP08, EP09,
+EP10, EP11, EP12, EP13, EP14, EP15,
+EP16, EP18, EP19, EP20, EP22, EP23,
+EP24, EP25, EP27, EP28, EP29, EP31,
+EP32, EP33, EP34, EP35, EP37, EP39,
+EP40, EP41, EP42, EP44, EP45, EP46,
+EP48
+Tecnologia
+Digital
+10,87 EP16, EP29, EP34, EP42, EP46 0 -
+Dos estudos nacionais, 93,48% (43) se encaixam no eixo PC, enquanto TD aparece
+em 10,87% (5). Ressaltamos, porém, que os estudos [EP16, EP46] têm ambos os eixos (PC
+e TD), e que o eixo CD não foi mencionado nos estudos analisados. Em relação aos
+conceitos de PC, observamos que a maioria dos estudos versavam sobre Algoritmos (33),
+seguido de Abstração (29), Decomposição (21) e Reconhecimento de Padrões (19). Já nos
+conceitos da TD, foram identificados Representação de Dados (5 estudos) e Hardware e
+Software (1); não tendo sido identificado exploração do conceito Comunicação e Redes.
+Salienta-se que muitos estudos continham mais de um conceito de TD, como por exemplo
+[EP01, EP03].
+No âmbito internacional, a maioria dos estudos também se enquadra no eixo PC,
+com 77,08% (37), enquanto CD surge em 4,17% (2). Não houve recorrência de estudos no
+eixo TD. Quanto aos conceitos do PC, destaca-se Algoritmos (34 artigos), seguido de
+Abstração (15), Decomposição (9) e Reconhecimento de Padrões (5). Já sobre os conceitos
+14 https://www.lego.com/pt-br/themes/mindstorms
+15 https://appinventor.mit.edu/
+16 https://scratchx.org/
+17 http://s4a.cat/index_pt.html
+18 https://lab.open-roberta.org/
+19 http://www.goodeveca.net/nimrod/
+20 http://www.blockmagic.eu/
+21 https://www.modrobotics.com/
+de CD aparecem Cidadania Digital e Letramento Digital, cada um em 1 estudo. Ressalta-se
+que houveram 9 estudos que não explicitavam o eixo de computação.
+3.6. Áreas de Conhecimento atreladas à Computação
+A Matemática é, tanto para os estudos nacionais (14) [EP02, EP05, EP14, EP15, EP16,
+EP17, EP20, EP29, EP30, EP33, EP36, EP39, EP40, EP43] quanto os internacionais (12)
+[EP01, EP04, EP08, EP11, EP13, EP14, EP27, EP34, EP35, EP38, EP44] a área de
+conhecimento que mais tem sido explorada junto à computação. É salutar mencionar que a
+BNCC (MEC, 2018) prevê o PC em tal área no ensino fundamental. Nesta revisão, fora
+identificado que, de forma interdisciplinar, nos estudos nacionais, o eixo PC é observado em
+13 estudos [EP02, EP05, EP14, EP15, EP16, EP17, EP20, EP30, EP33, EP36, EP39, EP40,
+EP43], enquanto TD em dois [EP16 e EP29]. Já nos estudos internacionais, a matemática é
+explorada somente com o eixo PC.
+No cenário nacional, Língua Portuguesa surge como uma área do conhecimento
+possível de ser explorada em conjunto com o PC em 5 estudos [EP02, EP10, EP14, EP15,
+EP33]. No internacional, por outro lado, STEM (do inglês, Science, Technology,
+Engineering e Mathematics) aparece em 6 [EP02, EP06, EP15, EP16, EP26, EP48], como a
+segunda área mais explorada junto com o PC. Outras áreas do conhecimento contempladas
+nos estudos nacionais foram Literatura [EP10, EP32]; Educação Física [EP36]; Música
+[EP03]; e Redação [EP14]. Já nos internacionais também encontramos Ciências [EP08,
+EP11, EP35]; Lógica Matemática [EP01, EP04]; Artes [EP04]; Caracteres Chineses [EP11];
+Inglês [EP27] e Música [EP04].
+3.7. Resultados das Experiências
+Como apresentado anteriormente, os objetivos dos estudos analisados foram diversos. Esta
+seção, portanto, em consonância com a pergunta central de pesquisa, busca estabelecer
+relações entre as diferentes táticas de implementação das atividades e seu efeito sobre o
+processo de ensino-aprendizagem de computação. Nesse sentido, foram identificadas três
+táticas: plugada, desplugada e híbrida, sendo esta última contemplada por materiais
+originalmente híbridos ou pela combinação de plugados e desplugados.
+Em relação às experiências nacionais desplugadas, identificou-se como principais
+resultados: aumento gradativo das notas dos testes após a exploração de PC [EP02, EP10,
+EP11, EP15, EP22, EP23, EP28, EP34, EP38, EP39, EP42], melhoria no desenvolvimento
+do PC [EP03, EP04, EP06, EP07, EP13, EP14, EP31, EP44, EP45, EP46] e um despertar
+da curiosidade dos alunos sobre o PC [EP08, EP20, EP30]. Já em relação à aplicação dessa
+tática nos estudos internacionais, os resultados mostram uma significativa melhora nas
+habilidades do PC [EP07, EP10, EP11, EP13, EP18, EP22, EP31, EP35, EP39, EP41, EP44,
+EP46, EP48] e um despertar da curiosidade dos alunos sobre o PC [EP02, EP15, EP20,
+EP30], enquanto um dos artigos diz que não houve mudanças significativas nas atitudes e
+intenções dos alunos em relação ao PC [EP37].
+No que diz respeito à adoção da tática plugada, no cenário nacional houve um
+estímulo do raciocínio lógico, criatividade, autonomia e capacidade de resolução de
+problemas [EP12]. E, no internacional, os resultados mostram que após a intervenção, os
+participantes foram capazes de usar os conceitos de PC [EP06] e que o uso de táticas
+plugadas facilita o desenvolvimento do PC [EP21, EP28]
+Quanto às híbridas, o nacional propõe um material, mas sem resultados de seu uso
+em sala. No âmbito internacional, os resultados destacaram uma melhora nas habilidades de
+PC [EP43], o despertar da curiosidade dos alunos sobre o PC [EP01], que as mulheres
+foram mais participativas que os homens [EP16], e dois artigos não deixavam claro os
+resultados [EP09, EP36]. Aqueles que combinaram materiais plugados e desplugados, no
+cenário nacional, houve um aumento significativo na compreensão do PC [EP01, EP05,
+EP09, EP16, EP25, EP33, EP36, EP40, EP41, EP43], uma melhora na participação das
+atividades [EP19, EP21, EP26] e interesse em obter mais conhecimento sobre a computação
+e o PC [EP35]. No internacional, os resultados mostram que houve uma melhora nas
+habilidades de PC e computação [EP27, EP29, EP33, EP34, EP38, EP45, EP47], uma maior
+motivação dos alunos no desenvolvimento de PC [EP08, EP12, EP24, EP42], uma
+significante associação entre o PC e as habilidades matemáticas [EP19, EP26], um estudo
+afirma ser mais apropriado trabalhar com o PC nos anos iniciais do ensino fundamental
+[EP32] e outro reporta que a pesquisa não foi suficiente para uma avaliação completa do
+impacto do experimento [EP17].
+4. Considerações Finais
+As discussões recentes sobre a computação no currículo escolar carregam consigo alguns
+desafios. A formação de professores, a infraestrutura, os materiais e estratégias que podem
+apoiar o processo de ensino-aprendizagem são alguns deles. Nesse contexto, entender a
+influência desses fatores sobre os diferentes níveis de ensino, se faz necessário. O ensino
+fundamental foi o foco deste artigo, dada a ausência de estudos que tracem um panorama
+sobre os efeitos das táticas de implementação de atividades sobre o ensino-aprendizagem de
+computação, privilegiando todos os seus eixos.
+A revisão sistemática realizada contou com estudos de bases de dados nacionais e
+internacionais e, a partir de seus resultados, pode-se inferir que as pesquisas sobre o tema
+têm uma diversidade de objetivos, tendo poucas recorrências de estudos que se relacionam
+com a quarta abordagem de ensino de computação, sobre equidade e inclusão (RAABE et
+al., 2020), a qual pode ser foco de futuras investigações. Eventos como o Women in
+Information Technology (WIT) dialogam com essa abordagem e podem ampliar essa
+discussão. Sobre o público-alvo, há uma tendência de realização de pesquisas com o 5º e 6º
+anos, havendo a necessidade de mais investigações que contemplem os anos iniciais do
+fundamental.
+Em relação aos materiais, os desplugados aparecem como destaque, porém é salutar
+apontar o interesse pela integração de materiais desplugados com plugados, os quais podem
+denotar experiências híbridas; podendo futuras investigações explorarem as características
+dessas duas táticas em um só recurso. Outro fator que pode apoiar essas investigações são
+seus resultados positivos sobre a aprendizagem reportados. No que diz respeito aos eixos de
+computação, o PC foi o mais citado, não havendo ocorrências de estudos sobre cultura digital
+no ensino fundamental na literatura nacional, e do eixo tecnologia digital na internacional.
+Ao se tratar de interdisciplinaridade da computação, a matemática foi a área com mais
+estudos, havendo também potencial de sua aplicação em áreas como Línguas, Artes e
+Ciências.
+Como limitação desta pesquisa pode-se citar os possíveis vieses introduzidos no
+processo de seleção dos estudos e extração dos dados. Contudo, para minimizá-la a RSL
+contou com a participação de quatro pesquisadores, sendo um com experiência na execução
+de RSL e que ficou responsável por dirimir as divergências, quando elas aconteciam. Outro
+aspecto diz respeito à quantidade de bases de dados, porém considerou-se aquelas que
+contemplam os anais das principais conferências da área de Educação em Computação e
+Informática na Educação, tanto no Brasil, quanto no exterior. Por fim, a partir dos resultados
+obtidos, pretende-se como ação futura conceber materiais didáticos quem atendam às
+lacunas aqui reportadas, apoiando o processo de ensino-aprendizagem de computação no
+ensino fundamental.
+5. Agradecimentos
+Agradecemos à Adrielle Sousa pelo auxílio na realização desta revisão sistemática e ao
+CNPq pelo financiamento da pesquisa.
+Referências
+AVILA, Christiano et al. Metodologias de Avaliação do Pensamento Computacional: uma
+revisão sistemática. In: Anais do SBIE, 2017.
+BRACKMANN, C.P; BARONE, D. A. C; CASALI, A; GONZÁLEZ, M.R. Panorama
+global da adoção do pensamento computacional. In: RAABE, A., ZORZO, A. F;
+BLIKSTEIN. (Org) Computação na Educação Básica: Fundamentos e Experiências.
+Porto Alegre: Penso, 2020.
+CIEB. Currículo de Referência em Tecnologia e Computação. 2018. Disponível em:
+<https://curriculo.cieb.net.br>. Acesso em 20 de mar. 2021.
+KITCHENHAM, B. and CHARTERS, S.: Guidelines for performing systematic literature
+reviews in software engineering. Technical Report EBSE 2007-001, Keele University and
+Durham University Joint Report..
+MEC. Base Nacional Comum Curricular. 2018. Disponível em:
+<http://basenacionalcomum.mec.gov.br/abase>. Acesso em 20 de mar. 2021.
+MORAIS, E. V. D.; SOUZA, M. B. B. Contribuições e Desafios da Computação
+Desplugada: Um Mapeamento Sistemático. RENOTE, v. 17, n. 1, 2019.
+RAABE, A; COUTO, N.E.R; BLIKSTEIN, P; Diferentes abordagens para a computação na
+educação básica. In: RAABE, A., ZORZO, A. F; BLIKSTEIN. (Org) Computação na
+Educação Básica: Fundamentos e Experiências. Porto Alegre: Penso, 2020.
+RODRIGUES, S.; ARANHA, E.; SILVA, T. R. Computação Desplugada no Ensino de
+Programação: Uma Revisão Sistemática da Literatura. In: Anais do SBIE, 2018.
+SBC. Diretrizes para ensino de Computação na Educação Básica. 2019. Disponível em:
+<https://www.sbc.org.br/educacao/diretrizes-para-ensino-de-computacao-na-educacao-
+basica>. Acesso em 20 de mar. 2021.
+SCHNEIDER, G.; BERNARDINI, F.; BOSCARIOLI, C.. Ensino do Pensamento
+Computacional por meio de Internet das Coisas: Possibilidades e Desafios. In: Anais do
+SBIE, 2019.
+SOUZA, D. S.; DIAS, J.; SANTOS, K. S.. “Não ligue o computador”: a Computação
+Desplugada como Estratégia Metodológica para o desenvolvimento do Pensamento
+Computacional na Educação Básica – Uma Revisão Sistemática da Literatura. RENOTE,
+v. 17, n. 3, 2019.
+WING, Jeannette M. Computational thinking. Communications of the ACM, v. 49, n. 3, p.
+33-35, 2006.

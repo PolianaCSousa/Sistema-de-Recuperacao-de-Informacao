@@ -1,0 +1,632 @@
+Algoritmos e redes sociais: a propagação de fake news na era da pós-verdade
+Autor(es): Amaral, Inês; Santos, Sofia José
+Publicado por: Imprensa da Universidade de Coimbra
+URL
+persistente: URI:http://hdl.handle.net/10316.2/47348
+DOI: DOI:https://doi.org/10.14195/978-989-26-1778-7_5
+Accessed : 1-Jul-2020 08:22:01
+
+A navegação consulta e descarregamento dos títulos inseridos nas Bibliotecas Digitais UC Digitalis,
+UC Pombalina e UC Impactum, pressupõem a aceitação plena e sem reservas dos Termos e
+Condições de Uso destas Bibliotecas Digitais, disponíveis em https://digitalis.uc.pt/pt-pt/termos.
+Conforme exposto nos referidos Termos e Condições de Uso, o descarregamento de títulos de
+acesso restrito requer uma licença válida de autorização devendo o utilizador aceder ao(s)
+documento(s) a partir de um endereço de IP da instituição detentora da supramencionada licença.
+Ao utilizador é apenas permitido o descarregamento para uso pessoal, pelo que o emprego do(s)
+título(s) descarregado(s) para outro fim, designadamente comercial, carece de autorização do
+respetivo autor ou editor da obra.
+Na medida em que todas as obras da UC Digitalis se encontram protegidas pelo Código do Direito
+de Autor e Direitos Conexos e demais legislação aplicável, toda a cópia, parcial ou total, deste
+documento, nos casos em que é legalmente admitida, deverá conter ou fazer-se acompanhar por
+este aviso.
+
+INÊS AMARAL
+Faculdade de Letras da Universidade de Coimbra
+https://orcid.org/0000-0003-4929-4866
+SOFIA JOSÉ SANTOS
+Faculdade de Economia e Centro de Estudos Sociais – Universidade de Coimbra/CIES – ISCTE
+https://orcid.org/0000-0001-9300-7452
+A l g o r i t m o s e r e d e s s o c i a i s : a p r o pag aç ão
+d e fa k e n e w s n a e r a da p ó s - v e r da d e
+A l g o r i t h m s a n d s o c i a l n e t wo r k s : t h e s p r e a d
+o f fa k e n e w s i n t h e p o s t - t r u t h e r a
+Resumo: O novo ecossistema mediático online assume as redes sociais como o seu
+centro, onde coabitam media, utilizadores comuns e novos gatekeepers. Num espaço em
+que a desintermediação é cada vez maior, notícias falsas propagam-se com a ajuda de
+algoritmos automatizados. É a denominada era da “pós-verdade” ou dos “factos alternativos”, em que a distorção da realidade transita do online para o offline com capacidade de
+influenciar eleições. Este capítulo aborda a propagação de notícias falsas através de redes
+sociais e algoritmos automatizados. A partir da articulação entre “pós-verdade”, “fake news”
+e desinformação, procuramos refletir sobre novas dinâmicas de participação cívica e novos
+gatekeepers e a sua influência nas dietas informativas.
+Palavras-chave: Fake News; Pós-Verdade; Desinformação; Redes Sociais; Algoritmos.
+Abstract: The new online media ecosystem assumes social networks as its center, in
+which the media, ordinary users and new gatekeepers cohabit. In a space where disintermediation is increasing, false news is spread with the help of automated algorithms. It is
+the so-called “post-truth” era or “alternative facts”, in which the distortion of reality transitions from online to offline, with the ability to influence masses. This chapter addresses
+the spread of “fake news” through social networking and automated algorithms. Based on
+the articulation between “post-truth”, “fake news” and misinformation, we sought to reflect
+on new dynamics of civic participation and new gatekeepers and their influence on information diets.
+Keywords: Fake News, Post-Truth, Misinformation, Social Networks, Algorithms
+64
+Introdução
+Desde a campanha para as eleições presidenciais norte-americanas de
+2016 que o fenómeno dos “factos alternativos” e das “notícias falsas” (a que se
+convencionou chamar, usando a terminologia anglo-saxónica, de fake news)
+tem povoado densamente os debates sobre as atuais dietas informativas, os
+processos que as sustentam assim como as suas implicações e consequências
+para as democracias (Ball, 2017; Nelson & Taneja, 2018).
+Apesar de a construção de narrativas específicas para influenciar a opinião pública ter sido desde sempre uma prática política comum e de as fake
+news terem precedentes em várias cronologias e geografias, a frequência do
+seu uso e o seu alcance, mesmo em contextos de democracias maduras, tem
+conhecido nos últimos anos uma dimensão sem precedentes (Ball, 2017).
+Assiste-se a uma potencial disrupção à qual alguns autores deram sentido
+apelidando os tempos atuais como “pós-verdade”, i.e., uma era “na qual os
+factos e as evidências foram substituídos por crenças pessoais e emoções”
+(Rochlin, 2017, p. 386). Na génese deste alcance disseminado e mainstream –
+porque produzido e consumido não apenas pelas margens, mas também pelo
+centro da sociedade (Ball, 2017; Lewandowsky, Ecker, & Cook, 2017) – estão
+diferentes fatores, entre os quais se salienta a democratização dos processos
+de gatekeeping.
+Inicialmente identificado por Lewin (1947), e mais tarde conceptualizado
+por White (1950) no âmbito das Teorias da Comunicação, o gatekeeping pode
+ser sintetizado como um processo através do qual se determina que conteúdos
+podem chegar ao público (White, 1950) enquanto informação válida e fidedigna. Independentemente das abordagens que cada autor tem do gatekeeping – privilegiando a personalidade dos intervenientes (Johnstone, Slawski,
+& Bowman, 1972), características organizacionais (Galtung & Ruge, 1965),
+lógicas de influência ideológicas (Shoemaker & Reese, 1996), e/ou códigos
+deontológicos (Lynch & McGoldrick, 2005) – parte-se sempre do reconhecimento de esse processo de seleção e filtragem decorrer num domínio profissional com regras definidas, e, subsequentemente, estar sujeito a mecanismos
+de accountability.
+65
+Tradicionalmente, quem assume a responsabilidade de escolha e validação
+da informação que deve chegar pelos diferentes gates ao público são os jornalistas e editores. Para informar a sua decisão, estes recorrem a um conjunto
+de regras e fronteiras profissionais, éticas e deontológicas aceites pelos pares,
+que conferem ao seu processo de mediação uma autoridade social inigualável
+(Traquina, 1993; Sousa, 2006). Consequentemente, a realidade social produzida nessa mediação é vista como a mais aproximada à realidade.
+Porém, a configuração do atual espaço mediático, no qual o online desempenha um papel central, convida muitos mais participantes para o processo
+de gatekeeping (Singer, 2013), democratizando as práticas que Couldry (2010)
+apelidou de “voz como processo”, ou seja, o reconhecimento da capacidade
+de todos darem o seu testemunho influenciando, subsequentemente, o debate
+público e a ação política. Contudo, contrariamente aos gatekeepers tradicionais, estes novos atores, na sua esmagadora maioria, não estão afetos a códigos profissionais de conduta, tendo antes tendencialmente como critérios
+para a avaliação e seleção do conteúdo a (re)publicar preferências e emoções
+pessoais (Singer, 2013; Bro & Wallberg, 2014). Neste ambiente, e como afirma
+Singer (2013) com base em Deuze (2008), o valor da informação disseminada
+é determinada não pelo valor do produto em si mesmo, mas antes pelas
+interações geradas. Abrindo espaço para a emergência de lógicas emotivas e
+pessoais de produção e partilha de conteúdos, a ecologia dos media digitais
+cria oportunidades inéditas de intensificação da disseminação das fake news
+(Bakir & McStay 2017).
+Este capítulo pretende explorar como o espaço digital – em particular os
+algoritmos e as redes sociais – altera formas de participação e encerra uma
+nova dinâmica de gatekeeping que favorece uma maior proliferação de fake
+news (em termos de número) e capacidade de validação/legitimação de informação falsa em circulação. Para explorar as identidades, especificidades e
+alcance dos “novos” gatekeepers na era digital da pós-verdade, este capítulo
+encontra-se dividido em três partes. Na primeira abordamos os processos que
+sustentam a participação em rede que as redes sociais online hoje potenciam.
+Na segunda parte, exploramos a articulação e alimentação recíproca que se
+estabelece entre os conceitos “pós-verdade”, “fake news” e “desinformação”.
+Finalmente, na terceira parte, explicamos de que forma as redes sociais online
+66
+e os algoritmos se constituem como novos gatekeepers, refletindo também
+sobre o alcance que estas novas dinâmicas trazem para as dietas informativas
+nas democracias ocidentais de hoje.
+1. Participação em rede
+A manipulação pública dos sentimentos dos recetores criando empatia
+com fake news induz às referidas “individualized collective action” (Micheletti,
+2003), ou seja, ações espontâneas que se enquadram em ações conetivas sem
+organização (Bennett & Segerberg, 2012). A empatia com notícias falsas possibilita o aparecimento de formas individualizadas de ação política (Kavada,
+2016), sem que o recetor tenha total noção de que contribui para a partilha
+massiva de ideologias.
+O sentimento de pertença a um grupo com opiniões similares surge como
+elemento mobilizador de ações coletivas (Bakardjieva, 2015). É neste sentido
+que Bimber (2017) considera que a tecnologia deve ser pensada enquanto
+contexto. Na mesma linha de pensamento, Chadwick (2013) alerta para o
+hibridismo dos media cujo ecossistema suporta e expande redes sociais assimétricas baseadas em conteúdo, o que significa que a interação é feita através do conteúdo mas promove conversação (Amaral, 2016). A este propósito
+atente-se nas palavras de Bennett e Segerberg que defendem que “as pessoas
+podem ainda juntar-se em ações em grande número, mas a referência de
+identidade deriva da expressão pessoal inclusiva e diversa em larga escala, em
+vez de através do grupo comum ou identificação ideológica” (2012, p. 744).
+Os autores referem as “formações de ações coletivas digitalmente mediadas”
+(Bennett & Segerberg, 2012, p. 742) para explicar que o cenário digital amplia
+as ações dos convencionais movimentos sociais em estruturas de rede social
+frequentemente assimétricas.
+O conceito de rede social não se circunscreve ao contexto digital.
+O termo foi referido pela primeira vez por Barnes, nos anos 50 do século
+passado, num estudo pioneiro sobre as interações individuais na construção
+de uma estrutura social de uma comunidade piscatória na Noruega (Amaral, 2016). A estrutura das redes sociais é explicada no trabalho de Simmel
+67
+(1955). O autor argumentava que a sociedade resultava de uma rede de relações (simétricas ou assimétricas, i.e., com ou sem reciprocidade) e não da
+agregação de indivíduos. Os primeiros estudos remontam ao século XVIII e
+ao matemático Euler, que desenvolveu o enquadramento teórico para o que
+viria a ser estudado como a teoria dos grafos (Portugal, 2007). Nas Ciências
+Sociais, os trabalhos de Tönnies e Durkheim sobre sociedade e comunidades sustentam uma conceção não individualista dos fenómenos sociais,
+considerando que a realidade social só pode ser compreendida através do
+coletivo que é interligado por laços sociais de partilha de valores e crenças
+(Amaral, 2016).
+Recuero sustenta que “a expressão das redes sociais na Internet pode ser
+resultado do tipo de uso que atores sociais fazem de suas ferramentas” (2009,
+p. 94). A autora propõe uma tipologia de redes sociais na Internet: i). redes
+emergentes que remetem para interações sociais mútuas e efetivas como trocas sociais e conversação; ii). redes de afiliação que decorrem da pertença
+a grupos através de mecanismos de associação, considendo-se aqui que as
+interações sociais são meramente reativas (Recuero, 2009; Amaral, 2016).
+A operacionalização do conceito de rede social em contexto digital decorre
+da tecnologia:
+A distinção entre sites de redes sociais e social media pode ser operacionalizada
+pelo propósito das ferramentas de comunicação, o que não invalida que a sua
+apropriação adapte as características que definem o suporte aos propósitos dos
+utilizadores. Assim, e se os sites de rede social se centram numa estrutura de
+ligações, nada impede que se tornem suportes de publicação e interação social.
+O mesmo é válido para sites de social media, que têm como propósito a publicação
+e partilha social de conteúdo mas que podem ser apropriados para definir redes
+sociais (Amaral, 2016, p. 139).
+Na esfera digital e no enquadramento dos sites de rede social e social
+media, Bennett e Segerberg afirmam que “quadros de ação pessoal não se
+espalham automaticamente” (2012, p. 746). Os autores distinguem a “lógica da
+ação coletiva” da “lógica da ação conetiva”, argumentando que a fragmentação
+estrutural da sociedade permite o aparecimento de “ações de rede digital” que
+68
+plasmam as alterações que se verificam no papel da comunicação na ação
+coletiva (Kavada, 2016).
+O conceito de “repertórios de ação digital” (Selander & Jarvenpaa, 2016)
+mescla as dimensões de interação e envolvimento, permitindo que os indivíduos apoiem movimentos políticos e sociais sem controlo direto dessas
+organizações. Selander e Jarvenpaa observam que “repertórios de ação digital
+proporcionam autonomia mas também permitem expandir as interações em
+que os apoiantes se envolvem em várias questões e além dos limites organizacionais” (2016, p. 332). Os autores enfatizam que esses repertórios tornam
+a “interação impessoal num envolvimento de não-compromisso” (Selander &
+Jarvenpaa, 2016, p. 333).
+Os media na era digital generalizaram o pressuposto de audiências informadas, o acesso popularizado à internet e o envolvimento dos utilizadores.
+No entanto, a análise das influências diretas e indiretas das práticas mediáticas sobre o envolvimento cívico deve considerar que a democracia não é um
+conceito estático, assumindo que os mass media e as instituições políticas
+podem restringir o envolvimento público (Papacharissi, 2010).
+Ao teorizar sobre a noção de participação cívica, vários autores enfatizam
+o surgimento de ações de envolvimento individualizadas e novos estilos de
+cidadania induzidos por mudanças tecnológicas, sociais e económicas (Barnidge, Macafee, Alvarez, & Rojas, 2014; Bennett, 2008; Bennett & Segerberg,
+2011). Cidadania e envolvimento são uma consequência direta de diferentes
+padrões de comunicação (online e offline) que influenciam os indivíduos a
+terem comportamentos específicos em relação à intervenção cívica (Barnidge
+et al., 2014).
+A participação decorre da agência cívica, que promove o envolvimento
+cívico dos cidadãos em questões de vida pública e política (Dahlgren & Álvares, 2013). Dahlgren (2009) enfatiza que os media têm um impacto direto na
+participação na vida pública. O autor considera que a ideia de cultura cívica
+está ancorada à identidade cívica. No entanto, num ecossistema mediático
+cada vez mais híbrido, “as experiências participativas podem se tornar mais
+fluídas e menos consistentes” (Brites, 2015, p. 20). Efetivamente, a participação é mais do que o acesso ou interação com os media sociais (Carpentier,
+2011; Dahlgren & Álvares, 2013).
+69
+Quando considerado de uma perspetiva coletiva, Bakardjieva observa que
+a identidade “representa uma peça central de ‘contention’” (2015, p. 983).
+Neste sentido, os teóricos dos “novos movimentos sociais” equacionam a
+questão da “identidade coletiva” dentro de uma abordagem intrinsecamente
+ligada ao conceito de “ação coletiva” (Nunes, 2014), principalmente em modelos estruturalistas e pós-estruturalistas (Polleta & Jasper, 2001). Ancorado na
+teoria de Touraine (1985), Melucci (1995; 1996) considera a “ação coletiva
+como resultado de propósitos, recursos e limites, como uma orientação intencional construída por meio de relações sociais dentro de um sistema de oportunidades e restrições” (1995, p. 43).
+Na perspetiva de Melucci, “a identidade coletiva estabelece os limites do
+ator em relação ao campo: regula a filiação de indivíduos e define os requisitos para a adesão ao movimento” (Fominaya, 2010, p. 395). Este argumento é
+plasmado nas conceptualizações subsequentes que relacionam emoções com
+identidade em movimentos sociais (della Porta, 1992; Goodwin, Jasper, & Polletta, 2001; Polletta & Jasper, 2001; Gerbaudo, 2016).
+A partir das tecnologias do self, Cammaerts concetualizou as “tecnologias
+de auto-mediação” com o propósito de “teorizar a interação entre as potencialidades e restrições dos media sociais para movimentos de protestos e ativistas” (2015, p. 88). Daqui decorre que “participação mediada pela internet”
+e “práticas de resistência mediadas pelas TIC” (Cammaerts, 2012, p. 128) de
+sujeitos coletivos dependem de “tecnologias de auto-mediação”, na medida
+em que se assumem como “ferramentas através das quais um movimento
+social se torna autoconsciente” (Cammaerts, 2015, p. 98).
+Wellman e Gulia (1999) argumentam que as redes são sistemas de relacionamentos centrados em indivíduos e não em grupos, reportando-se ao
+conceito de “individualismo em rede” (Castells, 2003; Recuero, 2009). Os autores diferenciam a rede social e a comunidade com base na ideia de que esta
+última se interliga através de laços fortes de interação social, identificação e
+interesses comuns. Daqui decorre que o conceito de rede se refere à definição
+de grupos com laços mais fracos e sem localização geográfica, o que permite
+a associação de indivíduos dispersos no espaço.
+Redes de ação em grande escala (Bennett & Segerberg, 2012; Amaral, 2016)
+são proeminentes na política contenciosa (Murru, Amaral, Brites, & Seddighi,
+70
+2018) e podem transformar a tradicional definição de movimento social em
+ações individuais conetivas organizadas. Os media digitais estimulam “formas
+individualizadas de ação política” (Kavada, 2016; Micheletti, 2003). Neste sentido, as redes transformam o conceito de ação coletiva, bem como os “convencionais entendimentos de agência política” (Kavada, 2016, p. 8).
+Micheletti (2003) desenvolveu o conceito de “ação coletiva individualizada” por oposição à “ação coletiva coletivista”. As ações individualizadas são
+espontâneas e não assumem a estrutura de uma organização coletiva, estando
+ligadas à adesão a causas; já “ação coletiva coletivista” implica envolvimento
+e uma participação organizada. O impacto das redes de ação conetiva pode
+ser explícito na promoção de movimentos sociais a partir de uma perspetiva
+micro de participação, em vez de macro. Como as “ações coletivas individualizadas” (Micheletti, 2003) se materializam em “ações de rede digital”, que
+Micheletti cunhou como “ações individualizadas em rede”, surge a ideia de
+que o ambiente digital potencializa “novas formas de movimentos sociais”
+(Castells, 2012, p. 15).
+É com base nestas novas conceptualizações que surgem contra-narrativas
+baseadas na técnica como forma de manipulação de factos e assumindo a era
+da “pós-verdade”, em que “factos alternativos” desinformam milhões de pessoas através de textos denominados de “notícias”, mas deliberadamente falsos.
+2. Pós-verdade, fake news e desinformação
+Os debates políticos e societais têm sido dominados pela “pós-verdade”,
+conceito e processos ainda em evolução, o que dificulta a condensação
+analítica e explicativa que uma qualquer definição exige e oferece. Se, por
+exemplo, o Oxford Dictionary (s/d) define “pós-verdade” como um ambiente
+“relacionado com ou denotando circunstâncias nas quais os factos objetivos
+são menos influentes na formação da opinião pública do que apelos à emoção
+e às crenças pessoais”, Rochlin (2017) fala mesmo em substituição de evidências por crenças pessoais e emoções. Já Lewandowsky et al. (2017) referem-se
+ao abandono de critérios convencionais de evidência, de coerência e de um
+processo de verificação de factos.
+71
+Do mesmo modo, a génese da “pós-verdade” é visto pela literatura a partir de perspetivas e em escalas de intensidade distintas. Para Ball (2017), o
+ingrediente central da dinâmica e do sistema da “pós-verdade” é o “logro” (no
+original, “bullshit”), definindo-o como algo muito distinto da simples mentira
+política com a qual os cidadãos de um modo ou de outro vão convivendo.
+Subscrevendo a ideia original de Frankfurt (2005), Ball (2017) afirma que
+enquanto que quem mente reconhece a dualidade entre certo e errado assim
+como a existência de factos suscetíveis de serem averiguados, o agente da
+“pós-verdade” – que os dois autores denominam de “bullshitter” – define-se
+antes por ignorar essas diferenciações, recorrendo a tudo aquilo que lhe permitir conseguir o resultado mais vantajoso para si. Segundo Lewandowsky
+et. al (2017), a emergência da era da “pós-verdade” deve-se, sobretudo, a
+“mega-tendências societais, como o declínio do capital social, a crescente
+desigualdade económica, o aumento da polarização, o declínio da confiança
+na ciência e o crescimento gradual da fragmentação da paisagem mediática”
+(2017, p. 353).
+O rosto mais visível e episódico da “pós-verdade” são as fake news (Ball,
+2017). Não sendo também consensuais, todas as definições de fake news assumem dois elementos centrais: i). a inclusão de conteúdos deliberadamente
+falsos; ii). a sua propagação online (Bakir & McStay, 2017; Berkowitz & Schwartz, 2016; Bounegru, Gray, Venturini, & Mauri, 2017; Wardle & Derakhshan,
+2017). Rochlin acrescenta de forma explícita o argumento da metodologia e
+do propósito quando afirma “que é projetado para parecer um site de notícias
+real (...) [e] ter maior número possível de pessoas a gostar e partilhar a história
+falsa” (2017, p. 388), confirmando a relevância do elemento emocional nesta
+dinâmica. Também para Bakir e McStay a economia das emoções é central
+na propagação das fake news, sustentando a relevância de aproveitar estados
+emocionais para atrair a atenção dos recetores. Nas suas palavras, definem
+fake news como “totalmente falsas ou contendo elementos deliberadamente
+enganosos incorporados no seu conteúdo ou no seu contexto” (2018, p. 1).
+A reação emocional e a geração de comportamentos grupais nas redes
+sociais ou nos media sociais em torno de assuntos remete para o conceito
+de “empathic media”, termo cunhado por McStay (2016). Este conceito está
+ancorado à ideia de “mediated emotional life” (Bakir & McStay, 2018, p. 2)
+72
+na era da comunicação em rede que potencia as ações conetivas (Bennett &
+Segerberg, 2012) e as ações individualizadas em rede (Micheletti, 2003).
+A partir desta perspetiva de experiências mediadas, vários autores consideram que o termo fake news é inadequado para descrever fenómenos de
+desinformação. Wardle e Derakhshan sublinham que
+O termo “notícias falsas” também começou a ser apropriado por políticos de todo
+o mundo para descrever organizações de notícias cuja cobertura consideram desagradável. Desta forma, está a tornar-se um mecanismo pelo qual os poderosos
+podem reprimir, restringir, boicotar e contornar a imprensa livre (2017, p. 16)
+No cenário digital, Shao, Ciampaglia, Varol, Flammini e Menczer consideram que informação falsa tem a mesma probabilidade de se tornar viral como
+informação fiável. De acordo com os autores:
+Uma mistura complexa de vieses cognitivos, sociais e algorítmicos contribui para
+a nossa vulnerabilidade à manipulação por desinformação online. Mesmo num
+mundo ideal onde os indivíduos tendem a reconhecer e evitar a partilha de informações de baixa qualidade, a sobrecarga de informações e a escassa atenção
+limitam a capacidade dos media sociais de discriminar informações com base na
+qualidade (2017, p. 2).
+Neste sentido, Tandoc, Lim e Ling sublinham que “o discurso contemporâneo, particularmente a cobertura dos media, parece definir notícias falsas
+referindo-se a posts virais baseados em relatos fictícios feitos para parecer
+notícias” (2017, p. 2). O consumo de informação nos media sociais expõe
+diariamente os utilizadores a conteúdos falsos ou que desinformam (Shoan
+et al., 2017). O cenário digital altera drasticamente a forma como os rumores
+e as notícias falsas circulam, potenciando “cascatas de informações em larga
+escala” (Vosoughi, Roy, & Aral, 2018, p. 1146). A este propósito, atente-se em
+Wardle e Derakhshan:
+Rumores, teorias da conspiração e informações fabricadas estão longe de serem
+novas. Os políticos sempre fizeram promessas irreais durante as campanhas eleito-
+73
+rais. As corporações sempre afastaram as pessoas de pensar em questões de formas
+diferentes. E os media há muito tempo que divulgam histórias enganosas pela
+sua capacidade de chocar. No entanto, a complexidade e a escala da poluição da
+informação no nosso mundo digitalmente conectado apresentam um desafio sem
+precedentes (2017, p. 10).
+É neste contexto que Wardle e Derakhshan (2017) apresentam o quadro
+conceptual “Information Disorder”, onde identificam desinformação de três
+tipos: “mis-information”, “dis-information” e “mal-information”. Utilizando
+como dimensões “dano” e “falsidade”, os autores (2017, p. 5) conceptualizam
+as diferenças entre os três tipos de “information disorder”: “mis-information”
+– informação falsa que é partilhada mas não tem como objetivo causar danos;
+“dis-information” – informações falsas partilhadas com vista a causar danos;
+“mal-information” – informação verdadeira da esfera privada que é partilhada
+na esfera pública para causar danos. Wardle e Derakhshan (2017) defendem
+ainda que dentro da desinformação existem três elementos (agente – quem
+criou, produziu e distribuiu o conteúdo e qual a sua motivação; mensagem
+– qual o tipo de mensagem e as suas características; e recetor – como é que
+interpreta a mensagem e que tipo de ação toma) que correspondem a três
+fases da produção no quadro de “Information Disorder” (criação – a mensagem é criada; produção – a mensagem é transformada num produto mediático; e distribuição – a mensagem é distribuída ou tornada pública).
+Assumindo o complexo e híbrido ecossistema mediático, Wardle (2017)
+descreve sete tipos de erros e informações que decorrem do amplo espetro
+de conteúdo online que se pode tornar desinformação quando a audiência
+interpreta mal a mensagem, conforme demonstra a figura 1.
+A internet e os media sociais alteraram significativamente a forma como
+a informação é produzida e distribuída. Neste sentido, o atual ecossistema
+mediático é híbrido e apresenta características muito específicas como fácil
+acesso às tecnologias de edição, publicação e distribuição de conteúdo; consumo de informação público registado pelos media sociais; velocidade na disseminação da informação; informação transmitida em tempo real pelos pares,
+o que confere credibilidade e maior confiança na partilha com outros pares
+(Wardle & Derakhshan, 2017).
+74
+Figura 1 – 7 formas comuns de “information disorder” (Fonte: Wardle, 2017)
+Os processos de desinformação ocorrem frequentemente com novos gatekeepers que se movimentam no ambiente mediático online com capacidade
+de propagar informação falsa de forma viral e numa lógica de “dis-information” e “mal-information” (Wardle & Derakhshan, 2017).
+3. Redes Sociais e Algoritmos
+As plataformas digitais, assumindo a estrutura de rede social ou de media
+social, potenciam “ambientes tecnológicos emergentes em que os padrões
+de conexão são diferentes” (Brites, Amaral, & Catarino, 2018, p. 87) quando
+comparados com os media tradicionais. Tal acontece porque, como afirma
+Castells (2003), a internet é um espaço de espaços, onde convivem o público
+e o privado, o global e o local. Efetivamente, o cenário digital “potencia uma
+geografia sócio-tecnológica de redes e nós interligados por fluxos de informação” (Amaral, 2016, p. 19).
+O contexto híbrido faz com que os media sociais mobilizem a conversação
+em torno de conteúdos assim como a agency da sua produção, o que a amplia
+uma perspetiva colaborativa (Kavada, 2015). Assumindo a teoria da esfera
+75
+pública (Habermas, 1989), as conversações que ocorrem nas redes sociais
+podem ser consideradas uma das interconexões entre os diferentes níveis
+da sociedade em micro e macro escalas de participação (Murru et al., 2018).
+Estas conversações estão incluídas nos fluxos de informação a que pertencem
+os indivíduos que os criam e aos quais estão expostos. Porém, ainda que seja
+um espaço de espaços mais ou menos fluído, o acesso à informação por parte
+de cada um é sempre, de alguma forma, limitado. Efetivamente, a difusão da
+informação nas timelines dos utilizadores depende dos algoritmos e das suas
+definições.
+As primeiras teorias, claramente “tecnófilas”, consideravam que os intermediários da informação online nos media sociais eram elementos neutros,
+ou seja, meros algoritmos que automatizavam operações de distribuição de
+conteúdos (Bozdag, 2013). Daqui decorre a ideia de que “as máquinas, não os
+humanos, parecem tomar as decisões cruciais, criando a impressão de que os
+algoritmos evitam preconceitos de seleção e descrição inerentes a qualquer
+médium editado por humanos” (Bozdag, 2013, p. 210).
+Contrariando estas primeiras teorias, consegue-se identificar um viés de
+subjetividade. Ficando a pegada digital de cada utilizador registada, os algoritmos conseguem manipular estes dados – denominados big data – que
+existem em larga escala e são muito complexos para propósitos específicos
+que estão definidos e programados. Como explica Bozdag, “intermediários
+de informação como Facebook e Google começaram a introduzir recursos
+de personalização: algoritmos que adaptam informações com base no que
+o utilizador precisa, quer e quem ele conhece na rede social” (2013, p. 209).
+Neste sentido, surgem as “echo chambers” ou “filter bubbles” (Bakir & McStay,
+2018, p. 8). Estas bolhas “são alimentadas por sistemas de algoritmos e pela
+estrutura de dados agregados em torno de utilizadores” (Brites et al., 2018, p.
+87), que podem criar uma “monocultura” porque os algoritmos personalizam
+a informação de acordo com as interações passadas dos utilizadores e da leitura semântica dos conteúdos distribuídos por estes (Bozdag, 2013). Bakir e
+McStay explicam que
+câmaras de eco criadas por algoritmos, ou ‘bolhas de filtro’, surgem quando algoritmos aplicados ao conteúdo online medem seletivamente as informações que um
+76
+utilizador deseja ver com base nas informações sobre a pessoa, as suas ligações,
+histórico de navegação, compras e postagens e pesquisas (2017, p. 8).
+Os autores alertam para o “viés de confirmação”, ou seja, a tendência que
+as pessoas têm de validar informação que confirme as suas crenças pré-existentes, o que traduz uma exposição limitada a diferentes pontos de vista
+(Bakir & McStay, 2017). Na esmagadora maioria das vezes, este fenómeno
+ocorre sem o conhecimento dos utilizadores, atendendo à ubiquidade das
+plataformas digitais (Mollen & Dhaenes, 2018).
+Estes novos processos de gatekeeping têm implicações nas dietas informativas e, consequentemente, na democracia nas sociedades. Wardle e Derakhshan sublinham que “o problema fundamental é que as ‘bolhas de filtro’
+pioram a polarização ao permitir que vivamos nas nossas próprias câmaras
+de eco online, deixando-nos apenas com opiniões que validam, em vez de
+desafiar, as nossas próprias ideias.” (2017, p. 50). Nesta linha de pensamento,
+Mollen e Dhaenes argumentam que
+as aplicações baseadas em algoritmos resultam de um ‘mindset’ métrico, em que a
+vigilância contínua de pessoas e a produção de dados da audiência significam que
+os atores da indústria já não lidam com grupos específicos do público-alvo, por
+exemplo com base em variáveis sociodemográficas, mas antes para prever padrões
+comportamentais (2018, p. 45).
+Trata-se da ideologia da “datificação”, cunhada por van Dijck (2013, 2014).
+A “datificação” está ancorada à pegada digital dos utilizadores e aos dados
+complexos de grande escala. Através da manipulação de big data, a “datificação” permite a transformação das ações sociais em dados quantitativos que
+potenciam as já referidas “echo chambers” (van Dijck, 2013; Bakir & McStay,
+2017) e que nos levam para um segundo problema que é, por sua vez potenciado pelas próprias “bolhas”: a distorção social através de narrativas de “factos alternativos” (Albright, 2017).
+A intrusão das plataformas digitais (Mollen & Dhaenes, 2018; van Dijck,
+2014; Gillespie, 2014) é cada vez mais declarada, numa lógica de vigilância
+através de bots aos utilizadores que não têm controlo sobre a sua privacidade
+77
+nem sobre os seus dados (Vesnić-Alujević, Seddighi, Das, & Mathieu, 2018;
+van Dijck 2014).
+Van Dijck (2014) refere que os principais players do ecossistema digital,
+como o Google e o Facebook, apresentam-se como transmissores de dados.
+No entanto, “os algoritmos que sustentam todos os tipos de atos sociais online
+estão a tornar-se cada vez mais compatíveis e, portanto, permutáveis” (van
+Dijck, 2014, p. 156). Ou seja, há ligações entre os diferentes algoritmos de
+várias plataformas sociais. Este intercâmbio de dados também se amplia às
+fake news através de algoritmos automatizados, ou seja, bots.
+A este propósito, Shao et al. referem que “uma complexa mistura de vieses
+cognitivos, sociais e algorítmicos contribui para a nossa vulnerabilidade à
+manipulação por desinformação online” (2017, p. 2). Segundo os autores, os
+bots são particularmente ativos na amplificação de fake news nos primeiros
+momentos da disseminação junto de utilizadores que são influentes, mesmo
+antes que as referidas notícias falsas se tornem virais (Shao et al., 2017).
+Os social bots são utilizados na manipulação direta de utilizadores. Estão
+programados para publicarem conteúdos e interagirem com outros utilizadores, estabelecendo ligações sociais. Shao et al. sublinham que “as pessoas
+tendem a confiar nos contatos sociais e podem ser manipuladas para acreditar
+e disseminar o conteúdo produzido dessa maneira” (2017, p. 2). Os autores
+sublinham ainda que
+a ampliação de notícias falsas através de bots sociais sobrecarrega a nossa capacidade de verificação de factos devido à nossa atenção limitada, bem como às nossas
+tendências de atentar no que parece popular e de confiar em informações num
+ambiente social (Shao et al., 2017, p. 2).
+O escândalo da Cambridge Analytica, empresa envolvida na utilização não
+autorizada de milhões de dados de utilizadores do Facebook na campanha
+de Donald Trump em 2016, veio dar visibilidade pública aos processos de
+“datificação” e tecnologia intrusiva. A mesma empresa já tinha interferido na
+campanha do Brexit, também em 2016, utilizando social bots para abordagens
+individualizadas a utilizadores do Facebook, segundo admitiu no parlamento
+britânico um funcionário da Cambridge Analytica. Entretanto, a empresa
+78
+fechou em maio de 2018 e o CEO do Facebook, Mark Zuckerberg, garantiu
+ao congresso americano e ao parlamento europeu que tudo faria para proteger os dados dos utilizadores. No entanto, os media sociais não são apenas o
+Facebook e, conforme referido anteriormente, a permuta de dados e de algoritmos automatizados é uma realidade (van Dijck, 2014).
+É neste contexto que as eleições presidenciais brasileiras estão envoltas em
+desinformação. Uma sondagem da Datafolha aferiu que a plataforma social
+mais popular entre os eleitores brasileiros (66% têm conta) é o WhatsApp,
+onde 44% dos eleitores se informam sobre política e as atuais eleições. O
+Tribunal Superior Eleitoral está a investigar denúncias, após uma reportagem
+do jornal Folha de S. Paulo ter revelado o pagamento de 12 milhões de reais
+por diversas empresas para que agências beneficiassem o candidato Jair Bolsonaro publicando informações falsas (texto, imagem, áudio e vídeo) sobre
+o Partido dos Trabalhadores e o seu candidato, Fernando Haddad. A investigação decorreu antes da segunda volta, sendo que surgem inúmeras dúvidas
+quanto à influência das fake news e dos bots sociais no resultado da primeira
+volta. Enquanto decorria a investigação, a Folha de S. Paulo reportou que os
+utilizadores migraram os grupos de apoio a Jair Bolsonaro do WhatsApp para
+outros espaços da internet, ao mesmo tempo que subitamente surgiram nesta
+mesma rede social inúmeros grupos de apoio a Fernando Haddad e ao Partido dos Trabalhadores.
+Os algoritmos, a datificação e a manipulação que ocorrem nas plataformas
+digitais, com particular ênfase para as redes sociais, influenciam diretamente
+as esferas sociais e políticas O determinismo tecnológico esbate frequentemente aquelas que são questões centrais para se pensar criticamente sobre
+o atual ecossistema online como a mediação em termos de transmissão e a
+apropriação de media e tecnologia (Jansson, 2013; Ytre-Arne, Amaral, Chimirri, & Vicente-Mariño, 2018).
+Conclusão
+Tradicionalmente, os gatekeepers informativos que escolhem e validam as
+notícias a chegar ao público são jornalistas e editores cuja conduta se orienta
+79
+por princípios éticos e deontológicos específicos, oferecendo aos cidadãos
+informação fidedigna essencial para a tomada de decisões informadas em
+contexto democrático (Lewandowsky et al., 2017). O novo ecossistema mediático online permite a emergência de novos protagonistas no processo de gatekeeping que passa a ser cada vez mais caracterizado por uma dinâmica de
+desintermediação. Se, por um lado, estas dinâmicas permitem a um número
+crescente de indivíduos e grupos alcançarem visibilidade, voz e poder de
+agência bem como ultrapassar contextos de relativo “isolamento” ou “quarentena social” por outros meios; por outro lado, significa que muitos conteúdos
+que são agora acessíveis podem ser consumidos como informação sem conter
+nela o mesmo grau de confiança e veracidade de outrora.
+Ora porque baseiam o seu processo de seleção de conteúdos em preferências e emoções pessoais (Singer, 2013; Bro & Wallberg, 2014), ora porque
+consistem em automatismos algorítmicos que alimentam as “echo chambers”
+ou as “bubble filters” (Bakir & McStay, 2018, p.8), os novos gatekeepers reúnem menos condições de fazer frente ao fenómeno das fake news, consubstanciando-se inclusive como facilitadores da propagação eficaz deste tipo de
+conteúdos. Para além disso, em termos de impacto nas dietas informativas,
+as redes sociais online são tendencialmente, num número crescente de países, a fonte privilegiada de informação para a população (Gyannes & Lavin,
+2018). Da mesma forma é importante ter em conta que “o comportamento das
+audiências é muitas vezes baseado num processo de dois passos, em que a
+decisão de usar um determinado media antecede a seleção de um conteúdo
+específico” (Webster, 2014, p. 94). Se o tempo médio que, em 2017, os utilizadores em todo mundo gastaram diariamente a usar as redes sociais foi de
+135 minutos (Statista, 2018), é fácil antecipar que mesmo que os indivíduos
+não escolham ter a informação através de redes sociais, isso possa acabar por
+acontecer.
+A identificação da era da “pós-verdade” “assinala a perceção de uma
+mudança na forma como o domínio público é constituído, assim como na conduta dos grandes protagonistas na esfera media-política” (Schlesinger, 2017, p.
+603). O crescente recurso às fake news por parte de determinados atores políticos, a facilitação que a tecnologia oferece do ponto de vista de divulgação
+e alcance deste tipo de conteúdo são questões que levantam preocupações
+80
+quanto aos efeitos destas dinâmicas nas democracias atuais. A democracia
+depende de públicos bem informados: se as pessoas estão ou são mal informadas, as decisões que tomam podem ter consequências adversas; da mesma
+forma, quando uma sociedade é ou está mal informada, as suas decisões
+sociais coletivas podem ter efeitos nefastos (Lewandowsky et al., 2017).
+Referências bibliográficas
+Albright, J. (2017). Welcome to the era of fake news. Media and Communication,
+5(2), 87–89.
+Amaral, I. (2016). Redes Sociais: Sociabilidades emergentes. Covilhã: Editora LabCom.
+Bakardjieva, M. (2015). Do clouds have politics? Collective actors in social media
+land. Information, Communication & Society, 18(8), 983-990.
+Bakir, V., & McStay, A. (2018). Fake news and the economy of emotions: Problems,
+causes, solutions. Digital Journalism, 6(2), 154–175.
+Ball, J. (2017). Post-truth: How bullshit conquered the world. London: Biteback
+Publishing.
+Barnidge, M., Macafee, T., Alvarez, G., & Rojas, H. (2014). Citizenship and political participation in Colombia: How orientations toward citizenship associate with political
+and civic behaviors. International Journal of Communication, 8(20), 1831-1850.
+Bennett, W. L. (2008). Changing citizenship in the digital age. In W. L. Bennett (Ed.),
+Civic life online: Learning how digital media can engage youth (pp. 1-24). Cambridge: MIT Press.
+Bennett, W. L., & Segerberg, A. (2011). Digital media and the personalization of collective action. Information, Communication and Society, 14(6), 770-799.
+Bennett, W. L., & Segerberg, A. (2012). The logic of connective action: Digital media
+and the personalization of contentious politics. Information, Communication &
+Society, 15(5), 739-768.
+Berkowitz, D., & Schwartz, D. A. (2016). Miley, CNN and the onion: When fake news
+becomes realer than real. Journalism Practice, 10(1), 1–17.
+Bimber, B. (2017). Three prompts for collective action in the context of digital media.
+Political Communication, 34(1), 6-20.
+81
+Bounegru, L., Gray, J., Venturini, T., & Mauri, M. (2017). A field guide to fake news and
+other information disorders: A collection of recipes for those who love to cook with
+digital methods. Amsterdam: Public Data Lab.
+Bozdag, E. (2013). Bias in algorithmic filtering and personalization. Ethics and information technology, 15(3), 209-227.
+Brites, M. J. (2015). Jovens e culturas cívicas: Por entre formas de consumo noticioso
+e de participação. Covilhã: Livros LabCom.
+Brites, M. J., Amaral, I., & Catarino, F. (2018). A era das “fake news”: o digital storytelling como promotor do pensamento crítico. Journal of Digital Media & Interaction,
+1(1), 85-98.
+Cammaerts, B. (2012). Protest logics and the mediation opportunity structure. European Journal of Communication, 27(2), 117-134.
+Bro, P., & Wallberg, F. (2014). Digital gatekeeping: News media versus social media.
+Digital Journalism, 2(3), 446-454.
+Cammaerts, B. (2015). Technologies of self-mediation: Affordances and constraints
+of social media for protest movements. In J. Uldam & A. Vestergaard (Eds.), Civic
+engagement and social media – Political participation beyond the protest (pp.
+97–110). Basingstoke: Palgrave MacMillan.
+Carpentier, N. (2011). Media and participation: A site of ideological-democratic
+struggle. Bristol: Intellect.
+Castells, M. (2003). A era da informação: Economia, sociedade e cultura. A sociedade
+em rede (Vol. 1). Lisboa: Fundação Calouste Gulbenkian.
+Castells, M. (2012). Networks of outrage and hope: Social movements in the Internet
+age. Cambridge, UK: Polity Books.
+Chadwick, A. (2013). The hybrid media system: Politics and power. Oxford University
+Press.
+Couldry, N. (2010). Why voice matters. Culture and politics after neoliberalism. London: Sage Publications.
+Dahlgren, P. (2009). Media and political engagement: Citizens, communication, and
+democracy. Cambridge: Cambridge University Press.
+Dahlgren, P., & Alvares, C. (2013). Political participation in an age of mediatisation:
+Towards a new research agenda. Javnost-the Public, 20(2), 47-65.
+Della Porta, D. (1992). Social movements and violence: Participation in underground organizations. Greenwich: Jai Press.
+82
+Deuze, M. (2005). What is journalism? Professional identity and ideology for journalists reconsidered. Journalism, 6(4), 442-464.
+Fominaya, C. F. (2010). Creating cohesion from diversity: The challenge of collective identity formation in the global justice movement. Sociological Inquiry, 80(3),
+377-404.
+Frankfurt, H. G. (2005). On bullshit. New Jersey: Princeton University Press.
+Galtung, J., & Ruge, M. H. (1965). The structure of foreign news. Journal of Peace
+Research, 2, 64-90.
+Gerbaudo, P. (2016). Constructing public space| Rousing the Facebook crowd: Digital enthusiasm and emotional contagion in the 2011 protests in Egypt and Spain.
+International Journal of Communication, 10(20), 254-273.
+Gillespie, T. (2014). The relevance of algorithms. In T. Gillespie, P. J. Boczkowski, &
+K. A. Foot (Eds.), Media technologies. Essays on communication, materiality, and
+society (pp. 167–193). Cambridge, MA: MIT Press.
+Goodwin, J., Jasper, J. M., & Polletta, F. (2001). Why emotions matter. In J. Goodwin,
+J. M.
+Jasper & F. Polletta (Eds.) Passionate politics: Emotion and social movements (pp.
+1-25). Chicago: The University of Chicago Press.
+Johnstone, J. W., Slawski, E. J., & Bowman, W. W. (1972). The professional values of
+American newsmen. Public Opinion Quaterly, 36, 522-540.
+Goyanes, M. l., & Lavin, A. (2018). The sociology of fake news: Factors affecting the
+probability of sharing political fake news online. Media@LSE Working Papers Series.
+Habermas, J. (1989). The structural transformation of the public sphere: An inquiry
+into a category of bourgeois society. Cambridge, MA: MIT Press.
+Kavada, A. (2015). Social media as conversation: A manifesto. Social Media + Society,
+1(1).
+Kavada, A. (2016). Social movements and political agency in the digital age: A communication approach. Media and Communication, 4(4), 8-12.
+Lewandowsky, S., Ecker, U. K., & Cook, J. (2017). Beyond misinformation: Understanding and coping with the “post-truth” era. Journal of Applied Research in Memory
+and Cognition, 6(4), 353-369.
+Lynch, J., & McGoldrick, A. (2005). Peace journalism. Stroud: Hawthorn Press.
+McStay, A. (2016). Empathic media and advertising: Industry, policy, legal and citizen
+perspectives (the case for intimacy). Big Data & Society 3(2), 1-11.
+83
+Melucci, A. (1995). The process of collective identity. In H. Johnston & B. Klandermans (Eds.), Social movements and culture (pp. 41–63). Minneapolis: University of
+Minnesota Press.
+Melucci, A. (1996). Challenging codes: Collective action in the information age. Cambridge: Cambridge University Press.
+Micheletti, M. (2003). Shopping with and for virtues. In M. Micheletti (Ed.), Political
+virtue and shopping (pp. 149-168). New York: Palgrave Macmillan.
+Murru, M. F., Amaral, I., Brites, M. J., & Seddighi, G. (2018). Bridging the gap between micro and macro forms of engagement: Three emerging trends in research
+on audience participation. In R. Das & B. Ytre-Arne (eds) The future of audiences:
+A foresight analysis of interfaces and engagement (pp. 161–177). Cham: Palgrave
+Macmillan. http://doi.org/10.1007/978-3-319-75638-7_9
+Mollen, A., & Dhaenens, F. (2018). Audiences’ coping practices with intrusive interfaces: Researching audiences in algorithmic, datafied, platform societies. In R. Das &
+B. Ytre-Arne (Eds), The future of audiences: A foresight analysis of interfaces and
+engagement (pp. 43-60). Cham: Palgrave Macmillan.
+Nelson, J. L., & Taneja, H. (2018). The small, disloyal fake news audience: The role
+of audience availability in fake news consumption. New Media & Society, 20(10),
+3720–3737. https://doi.org/10.1177/1461444818758715.
+Nunes, C. (2014). The social movement concept under debate: From the sixties to the
+present day. Sociologia, Problemas e Práticas, 75, 131-147.
+Papacharissi, Z. (2010). A private sphere: Democracy in a digital age. Cambridge:
+Polity.
+Polletta, F., & Jasper, J. M. (2001). Collective identity and social movements. Annual
+Review of Sociology, 27(1), 283-305.
+Portugal, S. (2007). Contributos para uma discussão do conceito de rede na teoria
+sociológica. Oficina do CES, 271.
+Recuero, R. (2009). Redes sociais na Internet. Porto Alegre, Sulina: Editora Meridional.
+Rochlin, N. (2017). Fake news: Belief in post-truth. Library Hi Tech, 35(3), 386-392.
+Oxford Dictionary (s/d) “Post-Truth”. Consultado em https://en.oxforddictionaries.
+com/definition/post-truth a 19 de outubro de 2018.
+Schlesinger, P. (2017). Book review: John Nerone, the media and public life: A history. Cambridge: Polity Press, 2015. Media, Culture & Society, 39(4), 603–606.
+84
+Selander, L., & Jarvenpaa, S. L. (2016). Digital action repertoires and transforming a
+social movement organization. MIS Quarterly, 40(2), 331–352.
+Shao, C., Ciampaglia, G. L., Varol, O., Flammini, A., & Menczer, F. (2017). The spread
+of fake news by social bots. Nature Communications, 9(1).
+Shoemaker, P. J., & Reese, S. D. (1996). Mediating the message: Theories of influence
+in mass media content. New York: Longman.
+Sousa, J. P. (2006). Elementos de teoria e pesquisa da comunicação e dos media. Porto:
+Edições Universidade Fernando Pessoa.
+Singer, J. B. (2013). User-generated visibility: Secondary gatekeeping in a shared
+media space. New Media & Society, 16(1), 55-73.
+Statista (2018). Daily time spent on social networking by internet users worldwide
+from 2012 to 2017 (in minutes). Consultado em https://www.statista.com/statistics/433871/daily-social-media-usage-worldwide/ a 20 de outubro de 2018.
+Tandoc, E. C., Lim, Z. W., & Ling, R. (2018). Defining “fake news” A typology of scholarly definitions. Digital Journalism, 6(2), 137-153.
+Touraine, A. (1985). An introduction to the study of social movements. Social
+Research, 52(4), 749-787.
+Traquina, N. (Ed). (1993). Jornalismo: Questões, teorias e “estórias”. Lisboa: Vega.
+van Dijck, J. (2013). ‘You have one identity’: Performing the self on Facebook and
+LinkedIn. Media, Culture and Society, 35(2), 199–215.
+van Dijck, J. (2014). Datafication, dataism and dataveillance: Big data between scientific paradigm and ideology. Surveillance & Society, 12(2), 197–208.
+Vesnić-Alujević, L., Seddighi, G., Das, R., & Mathieu, D. (2018). Audiences, towards
+2030: Drivers, scenarios and horizons of the future. In R. Das & B. Ytre-Arne (Eds.),
+The future of audiences: A foresight analysis of interfaces and engagement (pp.
+199-241). Cham: Palgrave Macmillan.
+Vosoughi, S., Roy, D., & Aral, S. (2018). The spread of true and false news online.
+Science, 359(6380), 1146–1151.
+Wardle, C. (2017). Fake news. It’s complicated. First Draft News.
+Wardle, C., & Derakhshan, H. (2017). Information disorder: Toward an interdisciplinary framework for research and policymaking. Council of Europe report.
+Webster, J. G. (2014). The marketplace of attention: How audiences take shape in a
+digital age. Cambridge, Massachusetts: The MIT Press.
+85
+Wellman, B., & Gulia, M. (1999). Net surfers don’t ride alone: Virtual communities
+as communities. In B. Wellman (Ed.), Networks in the global village (pp. 331-366).
+Boulder: Westview.
+White, D. M. (1950). The «gate keeper»: A case study in the selection of news. Journalism Quaterly, 27(4), 383-390. 

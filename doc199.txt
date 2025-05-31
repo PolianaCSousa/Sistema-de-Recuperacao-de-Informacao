@@ -1,0 +1,423 @@
+1
+
+Desafios da Inteligência Artificial Generativa na Construção
+de Sistemas Computacionais Acessíveis
+
+Ingrid M. Miranda da Silva1, Marcelo Henrique Pereira Silva2,
+Luciano Arruda Teran1, Marcelle Pereira Mota1
+
+Instituto de Ciências Exatas e Naturais – Universidade Federal do Pará (UFPA)
+Caixa Postal 1611 – 66075-110 – Belém – PA – Brasil
+Instituto de Tecnologia – Universidade Federal do Pará
+(UFPA)
+
+{ingrid.silva,luciano.teran}@icen.ufpa.br,
+marcelo.pereira.silva@itec.ufpa.br, mpmota@ufpa.br
+
+Abstract. In recent times, advancements in the field of Artificial Intelligence
+(AI) have shown promising adoption in various sectors of society and led to
+numerous studies on their implications. This systematic mapping explores the
+intersection of accessibility and Generative AI, examining contributions from
+the literature and their potential consequences for users with disabilities or re-
+duced mobility by investigating how these AI techniques can improve their di-
+gital inclusion. As result, it was observed that there is a greater predominance
+of the use of the ChatGPT tool for accessibility-related issues. The contributi-
+ons of this mapping corroborate the guidance for the development of accessible
+computational systems through Generative Artificial Intelligence.
+
+Resumo. Nos últimos tempos, os avanços no campo da Inteligência Artificial
+(IA) têm impactado vários setores da sociedade e gerado inúmeros estudos so-
+bre suas implicações. Este artigo realizou um mapeamento sistemático sobre
+a interseção entre acessibilidade e IAGs, ao coletar o estado da arte e obser-
+var o uso de técnicas de IA que podem fortalecer a inclusão digital de usuá-
+rios com deficiências. Como resultados, foi observado que existe uma maior
+predominância de uso da ferramenta ChatGPT para questões relacionadas à
+acessibilidade. As contribuições deste mapeamento corroboram à orientação
+de desenvolvimento de sistemas computacionais acessíveis por meio da Inteli-
+gência Artificial Generativa.
+
+1. Introdução
+O advento da Inteligência Artificial (IA) representa um marco significativo na capaci-
+dade computacional, permitindo, assim, a construção de modelos capazes de aprender
+tarefas [Chowdhary 2020]. Entre as subdivisões desse campo, destaca-se a Inteligência
+Artificial Generativa (IAG), onde o aprendizado ocorre mediante conteúdos fornecidos
+pelo usuário, como textos, imagens e áudios [Freire et al. 2023].
+
+No cenário de Modelos de Linguagem de Grande Escala (LLMs), há promisso-
+ras perspectivas para atender diversas demandas em diversos âmbitos. No entanto, existe
+uma lacuna na aplicação de IAGs para a inclusão de pessoas com deficiência ou mo-
+bilidade reduzida (PMR), intensificando barreiras de acessibilidade no ambiente digital
+
+2
+
+[Morris 2020]. Portanto, identificar pesquisas relacionadas a LLMs no contexto da aces-
+sibilidade é essencial para explorar a literatura sobre o desenvolvimento inclusivo dessas
+tecnologias digitais. Este estudo visa ser uma fonte para pesquisadores, desenvolvedores
+e profissionais que desejam compreender e discutir as interseções entre acessibilidade e
+tecnologias digitais emergentes de IAGs, como os LLMs.
+
+Para a elaboração deste estudo, foi realizado um Mapeamento Sistemático da Lite-
+ratura (MSL), conforme descrito por [Kitchenham and Charters 2007], permitindo avaliar
+a existência de evidências sobre o tema, além de relatá-las para a construção de estudos
+primários e, com isso, apoiar na resolução de problemáticas científicas pertinentes. Esse
+estudo secundário visa conduzir futuras revisões sistemáticas da literatura, elucidando
+as lacunas identificadas. A condução se baseou na pergunta formulada pelo critério PI-
+COC: RQ: “Como a acessibilidade é tida em interações com tecnologias digitais de
+Inteligência Artificial Generativa?”, culminando na elaboração da estratégia de busca
+em bases como a ACM Digital Library e SBC-OpenLib (SOL), definição de critérios de
+inclusão e exclusão de artigos e análise qualitativa da literatura.
+
+Explorar a intersecção entre acessibilidade e IAGs permite abordar cinco pergun-
+tas secundárias, cada uma com motivações que contribuem para a resolução da questão
+principal. Este enfoque promove a percepção dos usuários com deficiência ou mobilidade
+reduzida ao interagir com tecnologias emergentes de IAGs e analisa os resultados gerados
+por essas interações.
+
+2. Materiais e Métodos
+Para o devido encaminhamento metodológico desta pesquisa, a Figura 1 apresenta
+as etapas seguidas para a realização do MSL. Essas etapas foram escolhidas a par-
+tir de uma diretriz de condução de Revisão e Mapeamento Sistemático da Literatura
+[Kitchenham and Charters 2007].
+
+Figura 1. Etapas de condução do MSL [Kitchenham and Charters 2007]
+
+2.1. Critérios de Busca
+Com base nos interesses percebidos pelo protocolo PICOC junto aos seus termos en-
+quanto facilitadores, surgiu a string de busca, que foi definida como: (“Artificial Intel-
+
+3
+
+ligence” OR “AI” OR “intelligent assistant” OR “LLMs” OR “Deep Learning” OR
+“Copilot” OR “Chatgpt” OR “Codex” OR “gpt” OR “Generative AI”) AND (“Accessi-
+bility” OR “A11Y” OR “Inclusion” OR “Disability”).
+
+Inicialmente, após a construção desta string, foi feito um teste que avaliou se esta
+retornava 2 artigos controles considerados relevantes para a pesquisa. Portanto, concluída
+a testagem, este protocolo possibilitou que na biblioteca digital da ACM o intervalo de
+tempo entre 2004 e 2023 fosse delimitado para retornar as buscas. Tendo as totalidades
+descritas pela Figura 2.
+
+Figura 2. Resultados retornados da base de dados e artigos selecionados
+
+2.2. Critérios de Inclusão e Exclusão
+Para a seleção dos trabalhos foram considerados critérios que validam a abordagem a te-
+mática pensada, além de se adequarem à pergunta proposta. Desta forma, para a inclusão
+de trabalhos, os critérios respeitados foram: i) ser necessariamente artigos de pesquisa e
+ii) o artigo deve focar em pesquisas relacionadas a IAGs, ou modelos de IAGs, como são
+os LLMs, juntamente ao termo de acessibilidade e seus diversos cenários de aplicabili-
+dade. Se tratando da exclusão, os critérios adotados foram: i) livros, ii) artigos de jornais,
+iii) shorts papers, iv) estudos secundários, v) estudos duplicados, vi) estudos de subáreas
+e vii) outros formatos.
+
+Durante esta etapa de inclusão, foi feita uma filtragem para mapear autorias que de
+fato coincidissem com o tema, e a partir destas pesquisas retornadas, houve a identificação
+e avaliação dos títulos, resumos e palavras-chave, e caso estes se comunicassem com
+tópicos de IAGs e Acessibilidade eram selecionados para leitura e catalogação de seu
+conteúdo a serem tratados nesta então pesquisa.
+
+3. Resultados
+As subseções a seguir destacam os estudos primários com suas abordagens de Inteligên-
+cias Artificiais Generativas e Acessibilidade.
+
+3.1. RQ1 - O que é desenvolvido a partir de IAGs?
+De acordo com [Gumina et al. 2023], busca-se aliar o uso de técnicas de IAGs no auxí-
+lio de códigos gerados em cursos de desenvolvimento de software. Ferramentas como
+OpenAI Codex, Copilot e ChatGPT estão sendo amplamente utilizadas na indústria e
+alterando métodos tradicionais de ensino de software. Como boa prática, o código de-
+senvolvido é baseado em: i) decomposição do sistema em subtarefas; ii) programação
+
+4
+
+funcional determinada por atributos de uma função; e iii) projetos contextualizados com
+requisitos específicos de clientes, utilizando estruturas de dados, módulos e interfaces.
+
+Na pesquisa de [Tseng et al. 2022], estudantes foram envolvidos em atividades
+práticas de processamento de texto através de tarefas de programação e projetos no
+curso de Processamento de Linguagem Natural (PLN). O curso focou em conceitos fun-
+damentais, como os algoritmos e as suas aplicabilidades, com projetos que envolviam
+sumarização, classificação, simplificação de texto, extração de informações e criação
+de chatbots. Assim como as pesquisas de [Gumina et al. 2023] e [Tseng et al. 2022],
+[Lima et al. 2023] estão relacionadas ao contexto de educação computacional, no qual o
+uso de IA Generativa se dá por meio de uma interface web capaz de sintetizar os resulta-
+dos de uma atividade proposta na disciplina de sistemas complexos.
+
+[Gadiraju et al. 2023] desenvolveu um modelo de IA Generativa por um agente de
+conversação baseado em LLMs, proporcionando diálogos abertos e tendo como resultado
+o conteúdo dessas conversas para análise do comportamento da tecnologia. O estudo de
+[Othman et al. 2023] avalia o desempenho de LLMs na detecção de rupturas de acessibili-
+dade segundo a Web Content Accessibility Guidelines (WCAG) em dois sites, permitindo
+a detecção automática de transgressões das diretrizes de acessibilidade.
+
+[A et al. 2023] estudou interações de IAGs em um contexto multimodal, associ-
+ando textos à geração de imagens. O projeto criou um assistente capaz de reformular
+frases complexas, transformar textos em imagens e outras ações. [Jandrey et al. 2023]
+utilizam a IA Generativa para criar descrições de textos alternativos para imagens, anali-
+sadas por pessoas com deficiência visual para verificar a adequação às suas necessidades.
+Outro trabalho de [Perdigão et al. 2023] avalia não só a descrição de imagens por LLMs,
+mas também a identificação e tradução adequadas dessas figuras aos usuário.
+
+3.2. RQ2 - Por que é importante avaliar a acessibilidade em IAGs?
+De acordo com [Gumina et al. 2023], avaliar que a Inteligência Artificial e suas técnicas
+podem ser um fator benéfico se bem administradas desde a base dos estudos, repercute
+na preocupação com a acessibilidade ao propor à classe a necessidade de validação e
+verificação do código por meio de depuradores, com foco na preocupação com erros de
+lógica, erros de sintaxe apenas. Ou seja, a importância principal resvala sobre a qualidade
+semântica e sintática do código, a acessibilidade fica em segundo plano, caso alguma
+ruptura seja encontrada no código.
+
+Outro ponto está na importância da percepção da interação entre pessoas com defi-
+ciências com LLMs, justamente por estabelecer um design mais inclusivo e personalizado
+para este público-alvo, estas preocupações podem ser vistas por meio das pesquisas de
+[Gadiraju et al. 2023] e [Tseng et al. 2022]. [Gadiraju et al. 2023] avalia, ainda, que pela
+configuração de LLMs em incorporar dados de fontes subjacentes, acabam por incorporar
+também preconceitos presentes nestas mesmas fontes, enquanto que [Tseng et al. 2022]
+também elucidam esta preocupação, mencionando assim uma abordagem centrada no ser
+humano, pois esta garante que estas tecnologias sejam avaliadas através dos seus princi-
+pais atores, sendo as pessoas com deficiência.
+
+Enquanto isso, a pesquisa realizada por [Tseng et al. 2022], relata sobre o con-
+ceito de ética em IA, onde há uma preocupação com as considerações éticas relativas aos
+usuários para quem as IAs são desenvolvidas em termos de gênero e raça; no entanto,
+
+5
+
+estas discussões não alcançam as pessoas com deficiência. Este motivo estabelece para
+o estudo uma necessidade de sensibilizar discentes no manejo de técnicas de IAs que
+estejam atreladas aos conceitos de acessibilidade.
+
+A avaliação realizada pelo trabalho de [A et al. 2023] garante que a acessibilidade
+tem sua importância no campo educacional, no qual as tecnologias de IAGs podem au-
+xiliar no aprendizado. Ainda neste contexto, [Lima et al. 2023] visam garantir que todos
+os discentes participem de simulações de aprendizagem de sistemas complexos realizada
+como parte da disciplina.
+
+Para [Othman et al. 2023], além de garantir que este tipo de IA consiga remediar
+automaticamente problemas de acessibilidade web para garantir um uso equitativo, eles
+também mencionam a necessidade de estudo do treinamento destas IAs segundo um con-
+texto sociolinguístico. Sendo assim, trata-se de inclusão o momento em que a ferramenta
+assiste também questões não somente ligadas a uma só linguagem, como o caso da língua
+inglesa.
+
+Para o contexto de descrição de imagens, [Perdigão et al. 2023] ressaltam que IAs
+devem ter sua confiabilidade e eficiência reconhecidas pela crescente promoção e ado-
+ção promovidas por Big Techs, e que esta aceitação deve impulsionar uma cultura de
+inclusão e diversidade. Ademais, [Jandrey et al. 2023] aponta também que geradores au-
+tomáticos de descrição de imagens de IAGs não teve seu desenvolvimento impulsionado
+pelas necessidades genuínas dos indivíduos com deficiência visual, deixando em vista
+que estes sistemas baseados em inferências podem desconsiderar tais necessidades e, por
+consequência, paira questionamentos sobre sua real eficácia.
+
+3.3. RQ3 - Onde as tecnologias estão sendo aplicadas?
+As tecnologias de IA estão sendo aplicadas em diversos contextos, como apresenta a
+Figura 3. No contexto acadêmico, elas são utilizadas no desenvolvimento de soft-
+ware com ferramentas como Visual Studio Code e W3C Markup Validation Service
+[Gumina et al. 2023], no processamento de linguagem natural fora utilizado o NLTK,
+spaCy e Google Colab [Tseng et al. 2022], e no desenvolvimento de agentes de IA gene-
+rativas multimodais sua aplicação ocorre ao superar desafios de aprendizado em escolas
+como uma ferramenta de apoio [A et al. 2023]. Em aplicações webs, destacam-se os
+chatbots como ChatGPT e LaMDA, usados para criar ambientes digitais mais inclusivos
+e detectar vieses e preconceitos [Othman et al. 2023, Gadiraju et al. 2023]. Para descri-
+ções textuais de imagens, são utilizadas ferramentas como o IBM MAX Image Caption
+Generator Model [Jandrey et al. 2023] e o ChatGPT [Perdigão et al. 2023].
+
+3.4. RQ4 - Quem são os atores no contexto de uso das ferramentas?
+No contexto de uso das ferramentas de IA, os principais atores podem ser classificados
+em três categorias. A primeira categoria inclui estudantes de tecnologia, que são prepa-
+rados para resolver problemas e utilizar ferramentas de IA generativa, como destacado
+por [Gumina et al. 2023], [Tseng et al. 2022], e [Lima et al. 2023]. A segunda categoria
+abrange pessoas com deficiências, subdividida em adultos com deficiências de diversas
+identidades de gênero [Gadiraju et al. 2023], pessoas com dificuldades de aprendizagem,
+incluindo problemas de visão e auditivos [A et al. 2023], e pessoas com deficiências vi-
+suais de variados níveis de acuidade [Jandrey et al. 2023, Perdigão et al. 2023]. A ter-
+
+6
+
+Figura 3. Contexto de uso das tecnologias digitais
+
+ceira categoria envolve usuários com necessidades de acessibilidade, que inclui preocu-
+pações com diretrizes de acessibilidade web e usuários que falam idiomas além do inglês
+[Othman et al. 2023], conforme classifica a Figura 4.
+
+Figura 4. Classificação dos atores
+
+3.5. RQ5 - Como a acessibilidade é observada nas saídas obtidas de IAGs?
+Para [Gumina et al. 2023] o código é efetivamente acessível somente a partir da análise
+e validação realizada na depuração, conduzida durante as etapas finais de implementação
+dos seus estudantes. Portanto, IAGs não garantem aos autores uma saída com exatidão
+em critérios de acessibilidade. A responsabilidade para que isto aconteça recai sobre as
+técnicas de validação dos estudantes.
+
+Observa-se uma abordagem semelhante entre as pesquisas de
+[Gumina et al. 2023] e [Tseng et al. 2022], que destacam a importância da acessi-
+bilidade para garantir acesso igualitário às ferramentas de IAGs para todos os estudantes.
+No entanto, o último constatou pouco impacto no conhecimento sobre acessibilidade ao
+comparar os resultados das entrevistas e projetos criados em sala de aula, reforçando
+a necessidade de integrar uma perspectiva centrada no ser humano em cursos de
+computação. Essa integração deve combinar tarefas e projetos com acessibilidade,
+tornando o pensamento sobre acessibilidade natural aos estudantes em suas atividades de
+programação.
+
+7
+
+Sobre os dados obtidos em [Gadiraju et al. 2023] e [A et al. 2023], foi destacado
+que os estudantes podem enfrentar barreiras para o desenvolvimento da acessibilidade.
+Em que principalmente neste primeiro trabalho, pelo resultado obtido, detecta-se que a
+ferramenta teve um comportamento negativo relativo às pessoas com deficiência, por-
+tanto estes usuários descrevem que a ferramenta reproduziu, com frequência, estereótipos
+e demonstrou falta de conhecimento sobre deficiências, tendo uma baixa percepção de
+acessibilidade nas suas respostas. Desta forma, independente do contexto de uso, suas
+percepções voltam-se para atender estas necessidades, porém divergem do público-alvo e
+como elas atendem suas necessidades ou não.
+
+Assim como em [Gumina et al. 2023], nota-se que os autores em
+[Othman et al. 2023] aliam as avaliações de acessibilidade nos retornos dados por
+IAG há mais de uma etapa de checagem. Isto é, o ChatGPT para este trabalho não
+atou somente como um verificador de acessibilidade, mas esta avaliação foi confirmada
+manualmente através ferramentas de varredura web pelos próprios pesquisadores. Como
+resultado, verifica-se que se tratando de reconhecer as diretrizes de acessibilidade, a
+automação teve uma acurácia semelhante à varredura manual.
+
+Para [Lima et al. 2023], o retorno gerado pelo acesso a ferramentas como
+ChatGPT auxiliou na forma de interação com os resultados do que foi desenvolvido em
+sala. Neste sentido, ao pensar um novo método de ensino utilizando simuladores, isso
+permitiu que os dados obtidos sejam mais palpáveis para seus estudantes com deficiên-
+cias.
+
+Para a pesquisa realizada por [Jandrey et al. 2023], os retornos gerados pela tec-
+nologia foram insatisfatórios, as sentenças geradas deixavam de apontar a localização da
+imagem e diversos elementos que a compunham, seja a representação de ações humanas
+retratadas à quantidade de indivíduos presentes na figura. Semelhantemente, o descon-
+tentamento ocorre na pesquisa de [Perdigão et al. 2023], na qual a descrição de imagens
+falha, com classificações de detalhamento de nível médio para ruim pelo usuário com
+deficiência visual, além das demais que não foram descritas pelo LLM.
+
+4. Contribuições para a Web Social
+A influência das IAGs pode desempenhar um papel importante na moldagem da acessibi-
+lidade digital. Logo, ao avaliar o uso desse tipo de tecnologia digital, é possível observar
+diversos impasses relativos à acessibilidade a serem, posteriormente, estudados e retifica-
+dos. Dos poucos trabalhos voltados para esta abordagem, observa-se uma disparidade no
+acesso a essas tecnologias digitais inovadoras, onde sua popularização pode escalar mais
+rapidamente que as preocupações com seu uso equitativo.
+
+Ao avaliar as contribuições para a Web Social, é evidente que ainda há desafios
+substanciais a serem superados. Os principais desafios são: (1) a falta de diretrizes claras
+para garantir a acessibilidade, resultando em disparidades de acesso a essas tecnologias
+digitais inovadoras; (2) pouco enfoque em relação aos aspectos sociolinguísticos e cul-
+turais no treinamento de IAGs para promover uma inclusão mais ampla além do inglês;
+(3) existe uma predominância de vieses e preconceitos nas respostas de IAGs que reflete
+na baixa confiabilidade dos seus usuários e destaca uma necessidade urgente de tratativas
+éticas e de inclusão; (4) a escassez de estudos sobre acessibilidade e a falta de envolvi-
+mento de pessoas com deficiência especialistas no processo de desenvolvimento corrobo-
+
+8
+
+ram para a exclusão digital, (5) a falta de integração da acessibilidade das IAGs, desde as
+fases iniciais de treinamento e desenvolvimento, geram obstáculos e afetam a garantia de
+uma aplicação mais confiável e equitativa aos seus usuários.
+
+Esses desafios demonstram a necessidade de um enfoque multidisciplinar que in-
+clua diretrizes claras e padronizadas para acessibilidade, a fim de mitigar disparidades
+no acesso. Além disso, é essencial promover a inclusão de especialistas em deficiência
+durante o desenvolvimento deste tipo de ferramenta da Web Social, bem como assegurar
+que os aspectos éticos e de inclusão sejam prioritários. Apenas através de um compro-
+misso contínuo com a acessibilidade e a equidade será possível maximizar o potencial da
+IA com plataformas verdadeiramente inclusiva e democrática.
+
+5. Considerações Finais
+
+Ao avaliar o uso de Inteligências Artificiais Generativas, ainda há diversos impasses rela-
+tivos à acessibilidade a serem estudados e retificados. Nos estudos avaliados percebe-se
+uma preocupação em diversos contextos de inclusão, desde cenários relativos à variabi-
+lidade linguística à preocupação com a percepção de acessibilidade nestas tecnologias
+desenvolvidas por pessoas sem deficiência, bem como pessoas com deficiência também
+participando nestes contextos nas etapas de design e testes.
+
+Contudo, à medida que celebramos pequenos avanços, surge uma ressalva sig-
+nificativa relacionada à acessibilidade no uso de IAGs para o ensino, onde foi possível
+identificar consistentes preocupações sobre como a acessibilidade é abordada no contexto
+educacional. Dado que, apesar de haver uma preocupação com sua adoção, quando o
+tópico “acessibilidade” é fomentado de maneira singular apenas aos grupos de pessoas
+sem deficiência, sua adoção pode não ser amplamente fixada posteriormente. Tornando
+necessário que se busque meios de empatizar este grupo também para que seus projetos
+sejam benéficos e inclusivos à todas as pessoas.
+
+Embora surja a preocupação sobre o desenvolvimento e manejo dessas tecnologias
+digitais generativas, as limitações desse estudo ocorrem devido serem poucos os estudos
+com interesse em pesquisas para a acessibilidade, implicando em poucas discussões sobre
+como este “facilitador” pode ser difundido e a quem ele está atendendo. Futuramente, se
+considera produzir novos estudos de inspeção em IAGs para avaliar se suas saídas corro-
+boram para a acessibilidade digital com especialistas de IHC, de modo que estes atuem,
+inicialmente, a gerar resultados para corroborar resultados de interações acessíveis ou não.
+Desse modo, por exemplo, as contribuições dos estudos devem fortalecer a acessibilidade
+para que atendam as características de interação dos usuários, desde a geração de código
+apoiada por IAGs.
+
+Desta forma, torna-se necessário uma abordagem mais inclusiva no desenvolvi-
+mento e implementação de IAs, visando melhorar o critério de acessibilidade em todas
+as interações e aplicações dessas inovadoras tecnologias de processamento de linguagem
+natural. Haja vista que, pela carência evidenciada de estudos que envolvam aspectos de
+acessibilidade e inclusão, faz-se fundamental que todos envolvidos nas etapas de pro-
+dução destas tecnologias digitais assegurarem o desenvolvimento de recursos interativos
+acessíveis, corroborando também para um engajamento de pessoas com deficiência na
+construção de diversos sistemas interativos.
+
+9
+
+Referências
+A, R., V, N., Jebadurai, I. J., Vedamanickam, A. M., and Kumar, P. U. (2023). Design
+of generative multimodal ai agents to enable persons with learning disability. In Com-
+panion Publication of the 25th International Conference on Multimodal Interaction,
+ICMI ’23 Companion, page 259–271, New York, NY, USA. Association for Compu-
+ting Machinery.
+
+Chowdhary, K. (2020). Fundamentals of artificial intelligence. Springer.
+Freire, A. P., Cardoso, P. C. F., and Salgado, A. d. L. (2023). May we consult chatgpt in
+
+our human-computer interaction written exam? an experience report after a professor
+answered yes. In Proceedings of the XXII Brazilian Symposium on Human Factors in
+Computing Systems, pages 1–11.
+
+Gadiraju, V., Kane, S., Dev, S., Taylor, A., Wang, D., Denton, E., and Brewer, R. (2023).
+"i wouldn’t say offensive but...": Disability-centered perspectives on large language
+models. In Proceedings of the 2023 ACM Conference on Fairness, Accountability,
+and Transparency, FAccT ’23, page 205–216, New York, NY, USA. Association for
+Computing Machinery.
+
+Gumina, S., Dalton, T., and Gerdes, J. (2023). Teaching it software fundamentals: Strate-
+gies and techniques for inclusion of large language models: Strategies and techniques
+for inclusion of large language models. In Proceedings of the 24th Annual Conference
+on Information Technology Education, SIGITE ’23, page 60–65, New York, NY, USA.
+Association for Computing Machinery.
+
+Jandrey, A., Ruiz, D., and Silveira, M. (2023). Imagery contents descriptions for people
+with visual impairments. In Anais do XXII Simpósio Brasileiro sobre Fatores Humanos
+em Sistemas Computacionais, Porto Alegre, RS, Brasil. SBC.
+
+Kitchenham, B. and Charters, S. (2007). Guidelines for performing systematic literature
+reviews in software engineering. 2.
+
+Lima, J., Jacaúna, R., Müller, M., and Menezes, C. (2023). Sistemas complexos com
+apoio do chatgpt na interpretação de gráficos para estudantes com deficiência visual. In
+Anais do XXXIV Simpósio Brasileiro de Informática na Educação, pages 1040–1049,
+Porto Alegre, RS, Brasil. SBC.
+
+Morris, M. R. (2020). Ai and accessibility. Commun. ACM, 63(6):35–37.
+Othman, A., Dhouib, A., and Nasser Al Jabor, A. (2023). Fostering websites accessibility:
+
+A case study on the use of the large language models chatgpt for automatic remedia-
+tion. In Proceedings of the 16th International Conference on PErvasive Technologies
+Related to Assistive Environments, PETRA ’23, page 707–713, New York, NY, USA.
+Association for Computing Machinery.
+
+Perdigão, L., Monteiro, F., Peixotto, B., Bianco, V. L., and Fernandes, E. (2023). In-
+teligência artificial para audiodescrição de imagens: uma análise da pessoa com de-
+ficiência visual. In Anais do VIII Congresso sobre Tecnologias na Educação, pages
+182–191, Porto Alegre, RS, Brasil. SBC.
+
+Tseng, C.-E., Jung, S. H., Elglaly, Y. N., Liu, Y., and Ludi, S. (2022). Exploration on
+integrating accessibility into an ai course. In Proceedings of the 53rd ACM Technical
+
+10
+
+Symposium on Computer Science Education - Volume 1, SIGCSE 2022, page 864–870,
+New York, NY, USA. Association for Computing Machinery.

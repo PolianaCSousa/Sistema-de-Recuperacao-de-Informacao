@@ -1,0 +1,172 @@
+﻿Ensino de Ciência da Computação na Educação Básica:
+Experiências, Desafios e Possibilidades
+Rozelma S. de França, Waldir C. da Silva, Haroldo J. C. do Amaral
+Universidade de Pernambuco (UPE) – Campus Garanhuns
+Caixa Postal 15 – 55.294-902 – Garanhuns – PE – Brasil
+{rozelma.soares, waldircsilva, haroldo.amaral}@gmail.com
+Abstract. This paper offers contributions on the teaching of computing in
+basic education in Brazil. It presents computer teaching experience a
+school of public Pernambuco using unplugged computing
+activities and a programming language in a playful approach.
+Resumo. Este trabalho oferece contribuições acerca do ensino de
+Computação na educação básica no Brasil. Apresenta-se uma experiência de
+ensino de Computação numa escola da rede pública do Estado de
+Pernambuco com o emprego da Computação Unplugged e de uma linguagem
+de programação com abordagem lúdica.
+1. Introdução
+A Computação ou Informática, entendida como o corpo de conhecimentos acerca de
+computadores, sistemas de computação e suas aplicações, engloba aspectos teóricos,
+experimentais, de modelagem e de projeto1. No Brasil, atualmente, o aprendizado desses
+conceitos é reservado apenas àqueles que optam por cursos de graduação na área. Porém,
+como relata o Model Curriculum for K–12 Computer Science 20112, a grande maioria
+das profissões do século 21 exige uma compreensão da Ciência da Computação.
+Profissionais de arte e entretenimento, comunicação, saúde, entre outros, precisam ter
+conhecimentos de Computação, enquanto ciência, na busca por soluções de problemas de
+áreas diversas, bem como na construção dessas soluções.
+A lista de habilidades e conhecimentos necessários para o pleno exercício da
+cidadania neste século é extensa, incluindo o chamado Pensamento Computacional, como
+destaca Paulo Blinkstein, enfatizando que esse, talvez, seja o mais importante e menos
+compreendido (BLIKSTEIN, 2008). Pensamento computacional é saber usar o
+computador como um instrumento de aumento do poder cognitivo e operacional humano,
+aumentando a nossa produtividade, inventividade, e criatividade.
+O pensamento computacional e o raciocínio lógico deveriam ser ensinados desde
+cedo, já que aumentam a capacidade de dedução e conclusão de problemas (SICA, 2011).
+Tal ação tem sido incentivada pela Sociedade Brasileira de Computação3 que defende o
+1 Currículo de Referência da SBC para Cursos de Graduação em Computação e Informática, 1999.
+2 A Model Curriculum for K–12 Computer Science: Report of the ACM K–12 Task Force Computer
+Science Curriculum Committee, 2011. Disponível em
+<http://www.csta.acm.org/Curriculum/sub/CurrFiles/CSTA_K-12_CSS.pdf>
+3<http://www.sbc.org.br/index.php?option=com_content&view=category&layout=blog&id=215&Itemid=82>
+ensino da Computação desde o ensino fundamental, a exemplo de outras ciências como,
+por exemplo, Física, Matemática, Química, Biologia. É fundamental a introdução de
+conceitos de Ciência da Computação na Educação Básica como forma de aprimorar o
+raciocínio computacional das crianças, pelo seu caráter transversal a todas as ciências
+(NUNES, 2011). Nesse sentido, os cursos de Licenciatura em Computação têm entre suas
+responsabilidades a de formar profissionais para introduzir a Ciência da Computação na
+Educação Básica, disseminando, assim, o pensamento computacional ou algorítmico
+(NUNES, 2010).
+Considerando a relevância e importância do que foi exposto, este trabalho
+apresenta um relato de experiência de ensino de Computação na Educação Básica,
+decorrente das atividades desenvolvidas nos Estágios Curriculares Obrigatórios no curso de
+Licenciatura em Computação da Universidade de Pernambuco, no ano de 2011. A
+metodologia, bem como os resultados obtidos, foi baseada na realização de atividades
+lúdicas, através da Computação Unplugged e da ferramenta Scratch, envolvendo os alunos
+do 9º ano do Ensino Fundamental da Escola de Aplicação Professora Ivonita Alves Guerra
+da Universidade de Pernambuco, localizada no agreste meridional do estado de
+Pernambuco, na cidade de Garanhuns.
+A seguir, na seção 2 será relatado sobre o trabalho desenvolvido no que diz respeito
+à sua metodologia e, no item 3, os resultados obtidos e algumas considerações finais.
+2. Ensinando Computação na Educação Básica
+Com a finalidade de promover a disseminação do pensamento computacional na educação
+básica, foram realizadas atividades lúdicas, através da Computação Unplugged e da
+ferramenta de programação Scratch4.
+Inicialmente, discutiram-se conceitos e diferenças entre dados e informações,
+havendo ainda a realização de atividades que demonstravam como é realizada a conversão
+de números decimais para o formato binário.
+Em outro momento, discutiu-se a respeito de situações nas quais os computadores
+necessitam armazenar imagens, considerando a representação em termos de dígitos
+binários. Explicou-se que as telas dos computadores são divididas em uma grade de
+pequenos pontos (pixels). Na demonstração, utilizou-se uma imagem ampliada, em preto e
+branco, onde foi possível perceber os pixels. Além disso, foi explicado como uma imagem
+pode ser representada através de números e foi solicitado aos alunos que decodificassem
+imagens utilizando o método descrito em sala de aula.
+Compressão de textos também foi abordada onde se buscou demonstrar e discutir
+como computadores comprimem textos, afim de não desperdiçar espaço de armazenamento
+ou otimizar o tempo no envio de informações em uma rede. Discutiu-se também acerca da
+detecção e correção de erros, situações estas que muitas vezes acontecem acidentalmente,
+corrompendo os dados armazenados em um disco ou que estão sendo transmitidos em uma
+rede, por exemplo. Em ambos os casos, foram propostos exercícios práticos a serem
+resolvidos pelos alunos, possibilitando uma melhor compreensão dos conteúdos
+trabalhados.
+Para atividade de adivinhação, método que também pode ser usado para construir
+uma interface de computador que prediz a próxima letra que o usuário digitará, utilizou-se
+4 <http://scratch.mit.edu>
+um esquema chamado de Árvore de Decisão para adivinhar um número entre zero e sete.
+Para tal, os alunos formaram duplas para desenvolver a atividade. Um aluno poderia fazer
+perguntas a seu par, o qual responderia somente sim ou não até que se adivinhasse a
+resposta.
+Em relação à ordenação, buscou-se desenvolver atividades que mostrassem como
+os computadores ordenam números aleatórios de forma crescente e decrescente. Diferentes
+árvores foram disponibilizadas e, após a ordenação das entradas, os alunos foram
+questionados sobre qual era mais rápida.
+Uma maneira divertida de abordar Autômatos de Estados Finitos (AEF) foi através
+da utilização de um mapa que permitia construir frases através da escolha de caminhos
+aleatórios. Antes de realizar a atividade, contudo, explicou-se que AEF seguem um
+conjunto de instruções para verificar se o computador reconhece a palavra ou conjunto de
+símbolos.
+O conceito de algoritmo também foi apresentado para os alunos, onde situações do
+cotidiano foram descritas na forma de algoritmos para uma melhor compreensão da lógica
+envolvida, como, por exemplo: trocar o pneu furado de um carro. Também, destacou-se a
+programação dos computadores, em termos de linguagem de máquina, definida como um
+vocabulário limitado de instruções que devem ser obedecidas.
+Como forma de implementação de algoritmos, utilizou-se a ferramenta Scratch,
+composta por uma linguagem gráfica de programação, que possibilita a criação de histórias
+interativas, animações, jogos e o compartilhamento dessas criações na Web. A ferramenta
+em questão permitiu o trabalho, de forma interativa, com conceitos referentes ao projeto de
+algoritmos, presentes nas linguagens de programação, sendo caracterizado como um
+ambiente de programação bastante intuitivo, o que facilitou o processo de aprendizagem.
+Algumas situações-problema foram criadas e suas respectivas soluções algorítmicas,
+através das suas implementações com comandos disponíveis no ambiente de programação.
+Em seguida, os alunos foram desafiados a propor problemas que pudessem ser
+representados em um jogo ou animação. Além disso, solicitou-se a sequência de instruções
+necessárias para resolver os problemas propostos. A partir daí, os estudantes puderam
+implementar seus algoritmos em um ambiente de programação. Tal atividade possibilitou a
+exploração da criatividade e imaginação, despertando ainda mais o seu interesse. A Figura
+1 ilustra algumas animações desenvolvidas pelos alunos.
+Figura 1. Animações criadas em Scratch
+3. Resultados e Considerações Finais
+Para verificar se as atividades foram bem sucedidas, monitoramos o comportamento, o
+grau de interesse e aprendizagem dos alunos. Além disso, após cada atividade, um
+questionário foi aplicado com o objetivo de verificar o nível de absorção dos conceitos,
+dificuldades encontradas e interesse pela Computação.
+Os critérios utilizados nessa avaliação compreendem o nível de interesse, o nível de
+dificuldade e a aprendizagem, que reflete o quão as atividades foram realizadas
+corretamente, dos alunos. Nove atividades foram aplicadas, como seguem: Números
+Binários, Representação de Imagens, Compressão de Texto, Detecção e Correção de
+Erros, Árvore de Decisão, Redes de Ordenação, Autômatos de Estados Finitos,
+Algoritmos, e Linguagens de Programação.
+A Tabela 1 ilustra a avaliação das atividades aplicadas, em relação aos critérios
+adotados, em números percentuais de alunos.
+Tabela 1. Avaliação das Atividades
+Atividade Nível de interesse
+(%)
+Grau de dificuldade
+(%)
+Aprendizagem (%)
+Números Binários 91,7 4,2 95,8
+Representação de Imagens 95,8 8,3 100
+Compressão de Texto 79,2 16,7 83,3
+Detecção e Correção de
+Erros
+87,5 54,17 70,8
+Árvore de Decisão 91,7 20,8 79,2
+Redes de Ordenação 95,8 25 91,7
+Autômatos de Estados
+Finitos
+83,3 4,2 87,5
+Algoritmos 87,5 8,3 91,7
+Linguagens de Programação 83,3 20,8 91,7
+Na programação com Scratch, 91,7% dos discentes alegaram que a utilização do
+ambiente foi um instrumento interessante e favorecedor da aprendizagem, estabelecendo
+uma relação clara entre a abordagem utilizada e a forma como os computadores funcionam
+através da execução de um conjunto de instruções. Todos os estudantes consideraram
+importante o conhecimento de conceitos de Computação e, após as atividades, 83,3%
+declararam um acréscimo de interesse pela área.
+Espera-se que o desenvolvimento de ações como estas venham a acrescentar o
+recente discurso no país sobre o ensino da Ciência da Computação, enquanto ciência, como
+forma de conscientização da sua necessidade, na Educação Básica.
+Referências
+Bell, T., Witten, I, H. e Fellows M. (2011). Computer Science Unplugged: Ensinando
+Ciência da Computação sem o uso do computador. Tradução coordenada por Luciano
+Porto Barreto
+Blikstein, Paulo. (2008). O pensamento computacional e a reinvenção do computador na
+educação. Disponível em <
+http://www.blikstein.com/paulo/documents/online/ol_pensamento_computacional.html
+> Acesso em: 05 de set. de 2011.
+Nunes, Daltro José. (2011). Ciência da Computação na Educação Básica. Disponível em <
+http://www.jornaldaciencia.org.br/Detalhe.jsp?id=79207> Acesso em: 25 de out. 2011.
+Nunes, Daltro José. (2010). Computação ou informática? Disponível em <
+http://www.jornaldaciencia.org.br/Detalhe.jsp?id=69969> Acesso em: 18 de ago. 2011.
+Sica, Carlos. (2008). Ciência da Computação no Ensino Básico e Médio. Disponível em
+<http://www.odiario.com/blogs/carlossica/2011/10/07/ciencia-da-computacao-no-
+ensino-medio/ > Acesso em: 22 de out. de 2011.

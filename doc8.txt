@@ -1,0 +1,1076 @@
+Revista de Gestão da Tecnologia e Sistemas de Informação
+Journal of Information Systems and Technology Management
+Vol. 7, No. 1, 2010, p.163-182
+ISSN online: 1807-1775
+DOI: 10.4301/S1807-17752010000100007
+
+REDES NEURAIS, LÓGICA NEBULOSA E ALGORITMOS
+GENÉTICOS: APLICAÇÕES E POSSIBILIDADES EM FINANÇAS
+E CONTABILIDADE
+NEURAL NETWORKS, FUZZY LOGIC AND GENETIC ALGORITHMS:
+APPLICATIONS AND POSSIBILITIES IN FINANCE AND ACCOUNTING
+Artur Filipe Ewald Wuerges
+Universidade Federal de Santa Catarina, Brasil
+José Alonso Borba
+Universidade Federal de Santa Catarina, Brasil
+_____________________________________________________________________________________
+
+ABSTRACT
+There are problems in Finance and Accounting that can not be easily solved by means of
+traditional techniques (e.g. bankruptcy prediction and strategies for investing in common stock).
+In these situations, it is possible to use methods of Artificial Intelligence. This paper analyzes
+empirical works published in international journals between 2000 and 2007 that present studies
+about the application of Neural Networks, Fuzzy Logic and Genetic Algorithms to problems in
+Finance and Accounting. The objective is to identify and quantify the relationships established
+between the available techniques and the problems studied by the researchers. Analyzing 258
+papers, it was noticed that the most used technique is the Artificial Neural Network. The most
+researched applications are from the field of Finance, especially those related to stock exchanges
+(forecasting of common stock and indices prices).
+Keywords: neural networks, gentic algorithms, fuzzy logic; finance, accounting
+
+RESUMO
+Existem problemas em Finanças e Contabilidade que não podem ser resolvidos facilmente
+através de técnicas tradicionais – por exemplo, previsão de falências e estratégias para
+negociação em bolsas de valores. Nestes casos, uma das alternativas é o uso de métodos de
+inteligência computacional. Este artigo analisa pesquisas empíricas publicadas em periódicos
+internacionais entre 2000 e 2007 que apresentam estudos sobre a aplicação de redes neurais,
+_____________________________________________________________________________________
+Recebido em/Manuscript first received: 02/10/2008 – 25/01/2010 Aprovado em/Manuscript accepted:
+08/04/2010
+Endereço para correspondência/ Address for correspondence
+Artur Filipe Ewald Wuerges, Universidade Federal de Santa Catarina, Curso de Pós-Graduação em
+Administração, Rua José João Martendal, 111 - Ap. 402, Florianópolis / SC, Tel. (47) 3372-1227, E-mail:
+awuerges@gmail.com
+José Alonso Borba, Universidade Federal de Santa Catarina, Programa de Pós-Graduação em
+Contabilidade, Campus Universitário, Trindade – Florianópolis/SC – CEP 88040-500, Tel: (48) 32346608, E-mail: jalonso@cse.ufsc.br
+
+ISSN online: 1807-1775
+Publicado por/Published by: TECSI FEA USP – 2010
+
+164
+
+Wuerges, A., Borba, José.
+
+lógica nebulosa e algoritmos genéticos a problemas da área de Finanças e Contabilidade. O
+objetivo é identificar e quantificar as relações estabelecidas entre as tecnologias disponíveis e os
+problemas estudados pelos pesquisadores. Analisando-se 258 artigos, percebeu-se que a técnica
+mais utilizada é a rede neural artificial. As aplicações mais pesquisadas são de Finanças,
+especialmente aquelas relacionadas a bolsas de valores (previsão de cotações de ações e de
+índices).
+Palavras-chave: redes neurais; algoritmos genéticos; lógica nebulosa; Finanças; Contabilidade.
+
+1. INTRODUÇÃO
+Redes neurais artificiais (artificial neural networks ou RNAs) são algoritmos
+vagamente baseados em conceitos derivados de pesquisas sobre a natureza do cérebro,
+utilizados para tarefas cognitivas, tais como aprendizado e otimização. Das três técnicas
+cujas aplicações serão analisadas por este artigo (redes neurais, lógica nebulosa e
+algoritmos genéticos), esta é a mais antiga. O trabalho pioneiro, em redes neurais, é o de
+McCulloch e Pitts – A Logical Calculus of the Ideas Immanent in Nervous Activity –
+publicado em 1943. As RNAs podem “compreender” por si mesmas as características
+de um problema, utilizando para seu aprendizado um conjunto de exemplos cuja
+resposta já seja conhecida (Müller; Reinhardt, 1990).
+O conceito de lógica nebulosa (fuzzy logic ou LN) foi introduzido por Lotfi Zadeh
+em 1965, como uma forma de reduzir e explicar a complexidade de sistemas (Cox,
+1998). Esta idéia permaneceu praticamente desconhecida pelo grande público até o final
+da década de 1980, quando o metrô de Sendai adotou um sistema baseado na LN – o
+Automatic Train Operator (ATO) – e surgiram várias empresas que tinham o objetivo
+de desenvolver e comercializar produtos baseados nesta tecnologia. Apesar de o
+interesse comercial haver arrefecido, hoje é possível encontrar aplicações da lógica
+nebulosa em áreas bem diferentes daquela em que surgiu – como em Finanças e em
+Contabilidade, objetos de estudo deste artigo.
+Algoritmos genéticos (AGs), por sua vez, são técnicas de busca paralela (Nanda;
+Pendharkar, 2001), que começam com um conjunto de soluções possíveis e, através de
+operações especiais (avaliação, seleção, crossover e mutação), evoluem
+progressivamente em direção a soluções mais promissoras. Assim como as redes neurais
+surgiram inspiradas no funcionamento do cérebro, os algoritmos genéticos foram
+inspirados na evolução, seleção natural e genética (Nunez-Letamendia, 2002). Estes
+algoritmos dependem basicamente de uma função que avalie a qualidade de uma
+determinada solução para o problema – e esta função pode ser obtida mesmo para
+problemas difíceis de serem resolvidos através de técnicas convencionais.
+Cada um dos métodos da inteligência computacional abordados neste artigo – redes
+neurais artificiais, lógica nebulosa e algoritmos genéticos – possui múltiplas aplicações.
+A capacidade de detecção de padrões apresentada pelas redes neurais artificiais, por
+exemplo, permite seu uso em aplicações tão díspares quanto diagnóstico de câncer de
+mama, estudado por Übeyli (2007), e precificação de derivativos financeiros, estudada
+por Montagna et al (2003). Mesmo dentro das áreas de Finanças e Contabilidade,
+objetos de estudo deste artigo, as aplicações são bastante diversas, incluindo previsão de
+R. Gest. Tecn. Sist. Inf. /JISTEM Journal of Information Systems and Technology Management, Brazil
+
+Redes neurais, lógica nebulosa e algoritmos genéticos: aplicações e possibilidades em
+Finanças e Contabilidade
+
+165
+
+desempenho de ações, análise de crédito e previsão de falência – que são as mais
+comuns.
+No caso das redes neurais e dos algoritmos genéticos, esta flexibilidade surge, ao
+menos em parte, do fato destes modelos não exigirem muitos conhecimentos prévios do
+problema a ser solucionado. E, sendo em suas origens uma maneira de expressar
+incertezas, a lógica nebulosa pode ser utilizada em vários tipos de problemas em que as
+variáveis, pelas suas próprias características, não podem ser definidas com exatidão.
+Esta situação é bastante comum em Finanças e Contabilidade.
+Justamente por esta flexibilidade apresentada pela inteligência computacional, um
+determinado problema ou aplicação pode possibilitar mais de uma abordagem. A
+previsão do preço de um ativo financeiro, por exemplo, pode ser realizada tanto com o
+uso da lógica nebulosa quanto com redes neurais artificiais. Mesmo nos casos em que
+existe mais de uma opção viável, espera-se que os artigos relacionados a cada aplicação
+privilegiem os métodos que se mostram mais eficazes. Portanto, a análise dos artigos
+publicados recentemente pode mostrar as técnicas preferidas para cada aplicação, além
+de tendências emergentes, que poderão tornar-se dominantes em breve.
+Entre os pesquisadores brasileiros, a aplicação de sistemas inteligentes nestas áreas
+já é uma realidade. Streit e Borenstein (2009) analisam a regulamentação do setor
+financeiro através de um modelo baseado em agentes; e o comportamento destes
+agentes foi simulado por meio de regras fuzzy construídas através da análise do
+conteúdo de jornais e entrevistas com especialistas. Esta é, portanto, uma abordagem
+híbrida que combina lógica nebulosa com modelos econométricos e uma simulação
+baseada em agentes.
+Faria et al. (2009) utilizam redes neurais artificiais para prever o comportamento do
+Ibovespa, verificando que foi possível prever o sinal da variação do índice em 60% das
+vezes. Conclui-se que este grau de eficácia é similar ao obtido em mercados
+desenvolvidos utilizando-se as mesmas técnicas, e que é possível desenvolver sistemas
+de suporte à decisão que explorem esta capacidade de previsão das redes neurais
+artificiais.
+O objetivo geral deste artigo é analisar os artigos acadêmicos internacionais de
+natureza empírica que utilizem métodos de inteligência computacional (lógica nebulosa,
+redes neurais e algoritmos genéticos) para abordar problemas relacionados a Finanças e
+Contabilidade, no período de primeiro de janeiro de 2000 a 31 de dezembro de 2007.
+Para atingir este objetivo identificaram-se e analisaram-se as aplicações em
+Finanças e Contabilidade que foram abordadas com o uso de métodos de inteligência
+computacional e, subsequentemente, quantificou-se a frequência de cada uma das
+combinações entre método e aplicação possíveis. Foi feita também uma análise mais
+detalhada dos algoritmos híbridos e de sua evolução; por fim, identificaram-se os
+periódicos que mais publicaram artigos no período em questão.
+Espera-se que esta análise revele a importância dos sistemas de informação
+inteligentes e o impacto que elas vêm tendo na produção científica internacional. Este
+artigo também mostra as conexões que podem ser feitas entre a inteligência artificial e
+as necessidades dos usuários, revelando as possibilidades oferecidas aos pesquisadores e
+aos usuários destes sistemas. E, ao quantificar e classificar a produção científica nestas
+Vol.7, No.1, 2010, p. 163-182
+
+166
+
+Wuerges, A., Borba, José.
+
+áreas, o artigo também oferece uma visão das possibilidades de pesquisa existentes,
+identificando problemas ainda pouco explorados e que podem ser desenvolvidos com o
+uso da inteligência artificial.
+2. REVISÃO TEÓRICA
+Apesar de serem todos classificados como inteligência computacional, os três
+métodos abordados neste artigo são diferentes em sua essência e na maneira como
+resolvem problemas. Por isso, neste tópico serão apresentados, de maneira resumida, os
+conceitos básicos de cada uma destas técnicas.
+2.1. Redes Neurais Artificiais
+Com esta técnica, a partir de unidades básicas – os neurônios (unidades neurais) –
+são construídas redes em que uma determinada unidade neural recebe entradas de outros
+neurônios. Todas as entradas recebidas são multiplicadas pelo seu peso sináptico. Estes
+produtos são somados, resultando em um valor de saída que, após ser transformado por
+uma função de ativação, é repassado à próxima camada de neurônios (Calderon; CHEH,
+2002). Vários neurônios podem ser organizados em camadas (layers), formando uma
+rede neural.
+Antes que uma rede neural possa ser útil, ela precisa ser treinada, isto é, precisa
+“aprender” o problema. O processo de aprendizagem determina os pesos sinápticos
+adequados para cada neurônio, de tal forma que a saída obtida pelos neurônios da última
+camada sejam as mais próximas possíveis das saídas desejadas para o problema que
+deve ser resolvido.
+Na figura 1, tem-se uma rede neural de três camadas do tipo feed-forward, também
+chamada de perceptron. A camada superior é chamada de camada de entrada, com duas
+variáveis; a camada inferior é a camada de saída. As camadas intermediárias (no
+exemplo, há apenas uma) são chamadas de camadas ocultas (hidden layers). Uma rede
+neural artificial com a arquitetura apresentada neste exemplo poderia, por exemplo, ser
+treinada para executar a operação booleana XOR (“ou exclusivo”).
+
+R. Gest. Tecn. Sist. Inf. /JISTEM Journal of Information Systems and Technology Management, Brazil
+
+Redes neurais, lógica nebulosa e algoritmos genéticos: aplicações e possibilidades em
+Finanças e Contabilidade
+
+167
+
+A utilidade das redes neurais deve-se à sua capacidade de “aprender” usando dados
+de treinamento (exemplos), e então generalizar a partir das observações feitas. Isto faz
+com que as RNAs sejam particularmente úteis em problemas que não são conhecidos
+com profundidade, e podem inclusive lidar com conjuntos de dados que contenham
+distorções, ruídos e dados irrelevantes (Hwang; Lin, 2000).
+
+Figura 1: diagrama de uma rede neural com três camadas
+Fonte: adaptado de Müller e Reinhardt (1990).
+2.2. Lógica Nebulosa
+Na lógica convencional (binária), um elemento pertence ou não pertence a um
+determinado conjunto, e nunca se encontra entre estes dois estados possíveis. Esta é
+uma maneira de simplificar um mundo inerentemente complexo, mas – argumentam os
+defensores da lógica nebulosa – esta simplificação acaba por distorcer a realidade
+(GRINT, 1997). A lógica nebulosa é um método que permite expressar incertezas de
+maneira mais consistente, através dos conjuntos nebulosos: ao invés de simplesmente
+pertencer ou não pertencer, um elemento poderá ter vários graus de pertinência a um
+conjunto.
+Os conjuntos nebulosos (fuzzy sets) são funções que mapeiam, em uma escala de
+zero a um, esta pertinência de um determinado elemento ao conjunto. O valor zero
+indica que o elemento não pertence ao conjunto, enquanto o valor um significa que o
+elemento é completamente representativo do conjunto; valores entre estes dois indicam
+graus intermediários de pertinência.
+A figura 1 mostra um conjunto clássico e um conjunto nebuloso que representam a
+pertinência de um produto ao conjunto dos produtos que são caros, de acordo com seu
+preço. No primeiro gráfico, um produto que custa 50 u.m. pertence a este conjunto, mas
+um produto que custa 40 u.m. não pertence. Há uma transição abrupta entre pertencer e
+não pertencer ao conjunto dos produtos caros.
+
+Vol.7, No.1, 2010, p. 163-182
+
+Wuerges, A., Borba, José.
+
+168
+
+caro
+
+1
+
+0
+
+10 20 30 40 50 60 80 u.m.
+
+caro
+
+1
+
+0
+
+10 20 30 40 50 60 80 u.m.
+
+Figura 2: exemplo de conjunto clássico e conjunto nebuloso
+Fonte: autores.
+O segundo gráfico da figura 2 mostra uma situação em que a transição entre
+pertencer ou não ao conjunto dos produtos caros é feita de forma suave, através da
+lógica nebulosa. Neste caso, um produto que custa 50 u.m. é razoavelmente caro, e não
+simplesmente caro, como ocorre com a lógica clássica. De forma análoga, um produto
+que custa 30 u.m. é pouco caro. Existem infinitas possibilidades de pertinência entre 0 e
+1.
+Com conjuntos nebulosos é possível realizar várias operações – as básicas são
+interseção, união e complemento – e, com regras de inferência (policies), criar modelos
+que auxiliem na tomada de decisão.
+2.3 Algoritmos Genéticos
+O funcionamento básico de um AG foi descrito pela primeira vez em meados da
+década de 1970, por John Holland, e suas primeiras aplicações – assim como as da
+lógica nebulosa – surgiram na área de Engenharia.
+Para efetuar a busca por soluções ótimas, os AGs primeiro geram um conjunto
+de soluções aleatórias para o problema para, então, calcularem (utilizando uma função
+de avaliação) a qualidade de cada uma destas soluções. Depois, através de mecanismos
+de reprodução, combinam as melhores soluções, formando novas soluções que serão,
+possivelmente, mais adequadas do que aquelas que lhe deram origem. O novo conjunto
+de soluções é novamente avaliado. A reprodução e a avaliação são repetidas até que o
+conjunto de soluções não possa mais ser melhorado.
+Este processo é esquematizado na figura 3, que representa todas as soluções
+possíveis para um problema (no eixo horizontal) e a qualidade de cada uma destas
+soluções (no eixo vertical). Um conjunto inicial de soluções é gerado e, através de um
+AG, espera-se que algumas destas soluções evoluam progressivamente em direção ao
+ponto A, chamado de máximo global. Existe a possibilidade de, eventualmente, as
+soluções se concentrarem no ponto B, que é o mínimo local. Este risco, porém, pode ser
+diminuído com a adoção de estratégias que garantam a heterogeneidade do conjunto de
+R. Gest. Tecn. Sist. Inf. /JISTEM Journal of Information Systems and Technology Management, Brazil
+
+Redes neurais, lógica nebulosa e algoritmos genéticos: aplicações e possibilidades em
+Finanças e Contabilidade
+
+169
+
+soluções.
+
+120
+
+A
+
+avaliação
+
+100
+
+80
+
+60
+
+40
+
+B
+20
+
+0
+
+0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+0.6
+
+0.7
+
+0.8
+
+0.9
+
+1
+
+solução
+
+Figura 3: conjunto de soluções
+
+Fonte: autores.
+Vale lembrar que, além da reprodução, é possível trocar informações entre dois
+cromossomos (soluções) – técnica chamada crossover – ou alterar pedaços de uma
+solução, simulando as mutações genéticas encontradas em seres vivos.
+Seu funcionamento, como explicado, faz com que os AGs sejam adequados para
+analisar um amplo espaço de soluções (através das amostras presentes na população
+inicial, gerada aleatoriamente), concentrando-se posteriormente nas áreas que mostram
+resultados mais promissores (Rafaely; Bennell, 2006).
+2.4 Trabalhos correlatos
+
+Foram encontrados artigos bibliométricos similares já publicados, mas envolvendo
+apenas redes neurais artificiais. As aplicações da lógica nebulosa e dos algoritmos
+genéticos ainda não foram objeto de um estudo bibliométrico, possivelmente devido à
+relativa escassez de artigos sobre estes métodos.
+Um dos artigos encontrados teve como objetivo examinar as tendências históricas
+dos artigos publicados sobre redes neurais aplicadas a Finanças no período de 1971 a
+1996 (WONG; SELVI, 1998). Este estudo examinou 64 artigos e detectou um declínio
+no número de publicações em 1995 e 1996, após uma rápida ascensão de 1991 a 1994.
+De forma similar, Fadlalla e Lin (2001) analisou a aplicação de redes neurais
+exclusivamente em Finanças. Este artigo optou por analisar em profundidade uma
+amostra de 40 artigos, observando também as características das redes neurais adotadas.
+Chegou-se à conclusão de que a estratégia de controle mais comum é a de
+Vol.7, No.1, 2010, p. 163-182
+
+170
+
+Wuerges, A., Borba, José.
+
+retropropagação de erro (BP), adotada por 26 dos 40 artigos, e que é comum que seja
+utilizada apenas uma camada oculta (o que ocorre em 29 artigos). Mais importante, foi
+descoberto que em todos os artigos - com exceção de um - a RNA se saiu melhor do que
+métodos estatísticos tradicionais. Concluiu-se que as aplicações estão concentradas em
+poucas áreas, e há outras áreas que também poderiam aproveitar estas técnicas.
+Mochón et al. (2008) amplia o escopo de sua análise para a chamada soft computing
+– que são as técnicas que tentam replicar a habilidade da mente humana de aplicar
+modos de raciocínio que são aproximados ao invés de exatos. Esta definição inclui as
+RNAs e a lógica nebulosa e os algoritmos genéticos, além de algumas outras técnicas
+probabilísticas. Ao invés de realizar uma análise bibliométrica, este artigo buscou
+mostrar as diferentes aplicações destas ferramentas, concluindo que elas se adaptam
+perfeitamente às necessidades do mundo das Finanças. Mochón et al. também conclui
+que esta área de pesquisa ainda está se popularizando, e não esperam que a tendência
+seja revertida em breve.
+Foi encontrado outro trabalho correlato na área de Contabilidade – mais
+especificamente, auditoria e risco, também envolvendo RNAs, desenvolvido por
+Calderon e Cheh (2002). Foi feito um estudo qualitativo sobre os artigos, inclusive com
+análise das fontes de dados, variáveis e arquiteturas utilizadas. Estes autores também
+apontam para a utilidade prática destas tecnologias: eventos como o colapso da Enron
+mostram que existem padrões nebulosos e não-lineares que não podem ser detectados
+pelos métodos tradicionais.
+Wong, Lai e Lam (2000) analisaram a aplicação de redes neurais artificiais em
+negócios, abrangendo um total de 302 artigos compreendidos entre 1994 e 1998. Foi
+detectada uma queda no número de artigos em 1998, e sugeriu-se que isto poderia tanto
+indicar uma diminuição do interesse quanto ser consequência do surgimento de novos
+periódicos que não estavam incluídos na pesquisa.
+3. METODOLOGIA
+
+A metodologia foi dividida em três partes: a primeira refere-se à coleta dos
+artigos – envolvendo a busca em si e os locais onde os artigos serão obtidos. A segunda
+parte aborda a análise e classificação dos trabalhos e preparação dos dados obtidos para
+posterior análise. Por fim, são apresentadas as limitações do trabalho.
+3.1 Coleta dos artigos
+
+Como um dos objetivos específicos é relacionar métodos de inteligência
+computacional a aplicações em negócios, as palavras-chave da busca foram divididas
+em dois domínios: métodos e aplicações. Os termos relacionados às técnicas – neural,
+genetic e fuzzy – pertencem ao primeiro grupo. No segundo grupo, em um primeiro
+momento foram utilizadas as palavras finance e accounting. Na primeira etapa da
+pesquisa, os elementos destes dois domínios foram agrupados em pares, e a busca foi
+realizada unindo-se os elementos de cada par através do operador booleano AND. Os
+artigos obtidos nesta etapa foram analisados e classificados, sendo então identificados
+os tópicos mais comuns, isto é, as aplicações específicas em Finanças e Contabilidades
+R. Gest. Tecn. Sist. Inf. /JISTEM Journal of Information Systems and Technology Management, Brazil
+
+Redes neurais, lógica nebulosa e algoritmos genéticos: aplicações e possibilidades em
+Finanças e Contabilidade
+
+171
+
+que foram estudadas por dois ou mais artigos. Estes tópicos foram utilizados para
+elaborar uma lista ampliada de palavras-chave, que continha stocks, forex, exchange,
+bankruptcy, commodities, interest rate, credit, derivatives, options, portfolio, fraud,
+auditing, bank e business. Esta lista também foi combinada com os termos neural,
+genetic e fuzzy, e com estes pares foram feitas novas buscas nas bases de dados.
+A busca foi realizada em duas bases de dados disponíveis no Portal de Periódicos da
+Capes: ScienceDirect e ProQuest. Existem outras bases de dados, como a EBSCO Host
+e a CSA, que também possuem artigos na área de Ciência da Informação e Tecnologia.
+Apesar de importantes, estas bases de dados não foram objeto deste trabalho.
+Na ScienceDirect, foi feita uma busca avançada no título, no abstract e nas
+palavras-chave dos artigos de 2000 a 2007, limitada aos seguintes assuntos: business,
+management and accounting; computer science; decision sciences; economics,
+econometrics and finance. Esta limitação evita que a busca retorne artigos sobre
+neurociências ou genética, por exemplo. Na ProQuest, foi feita uma busca avançada
+abrangendo citação e resumo, entre 01/01/2000 e 31/12/2007, limitada a artigos com
+texto completo e publicações acadêmicas.
+3.2 Análise e classificação
+
+Uma vez obtido o resultado da busca, procedeu-se à leitura do abstract (e do artigo
+completo, se necessário), observando-se se o artigo utilizava quaisquer das técnicas em
+estudo, se a aplicação proposta era nas áreas de Finanças ou Contabilidade, e se era
+apresentado um estudo empírico. Satisfeitas estas condições, procedeu-se à
+classificação.
+Primeiro, cada artigo foi classificado quanto às técnicas utilizadas – RNAs, LN e
+AGs. E, caso diferentes métodos de inteligência computacional fossem utilizados no
+mesmo modelo, este recebeu a classificação adicional de híbrido. Artigos que
+comparam métodos diferentes foram classificados em ambos os métodos, mas não como
+híbridos.
+Posteriormente, os artigos foram classificados de acordo com a área a qual o
+problema se relacionava – FFinanças ou Contabilidade. Nenhum dos trabalhos foi
+classificado em ambas as áreas; no caso específico dos trabalhos sobre estrutura de
+capital (que poderiam ser enquadrados tanto em Finanças quanto em Contabilidade),
+optou-se por classificá-los como trabalhos de Finanças. Esta decisão se justifica pelo
+fato dos dois trabalhos sobre estrutura de capital encontrados terem sido publicados em
+periódicos de Negócios e Finanças, mas não de Contabilidade.
+Foram identificadas as aplicações específicas mais comuns e os trabalhos foram
+então classificados em uma destas aplicações. Aqueles que não se enquadravam em
+nenhuma destas aplicações mais comuns foram agrupados na categoria outros. Ao fim
+da análise, as categorias que possuíam menos de sete artigos foram eliminadas, e seus
+trabalhos foram realocados para a categoria outros. Vale lembrar que esta classificação,
+ainda mais do que as outras, é subjetiva. Algumas categorias problemáticas são:
+
+Vol.7, No.1, 2010, p. 163-182
+
+172
+
+Wuerges, A., Borba, José.
+
+a) Falências: abrange não apenas artigos que tratam especificamente da previsão
+de falências, mas também aqueles que classificam a empresa em categorias, de acordo
+com a sua saúde financeira – como o trabalho de Agarwal, Davis e Ward (2001);
+b) Ações: além da previsão do desempenho de ações de empresas individuais,
+engloba índices, fundos e IPOs. Artigos relacionados a commodities, forex (câmbio) e
+derivativos não estão incluídos.
+c) Derivativos: ao invés de criar categorias para cada espécie de derivativo
+financeiro existente, optou-se por agrupá-los sob o rótulo genérico de artigos sobre
+derivativos. Isto inclui opções (sobre ações, índices e moedas), futuros, warrants e
+derivativos climáticos.
+d) Análise de crédito: engloba análise de candidatos a empréstimos fornecidos por
+bancos e instituições governamentais, avaliação de solicitações de cartões de crédito e
+artigos sobre análise de crédito soberano.
+Em alguns casos, um mesmo artigo precisou ser classificado em mais de uma
+categoria quanto à aplicação. Qi e Zhang (2001), por exemplo, analisa a seleção de
+modelos de previsão de séries temporais abordando três séries com características
+diferentes: índices de ações, câmbio e t-bills. Por isso, este trabalho foi classificado
+simultaneamente em ações, câmbio e juros.
+3.3 Limitações
+
+Os diferentes métodos da inteligência computacional podem ser aplicados de
+maneiras variadas. O termo neural network, por exemplo, abrange diferentes algoritmos
+de treinamento e diversas configurações possíveis para uma rede neural. A análise mais
+detalhada de cada uma destas técnicas, porém, está fora do escopo deste artigo.
+As fronteiras entre as diferentes classificações para os algoritmos podem ser difusas.
+Foram encontrados métodos relacionados aos temas de estudo, mas que foram excluídos
+da pesquisa; um caso de particular importância é a programação genética. Apesar de
+utilizar um processo de aprimoramento de soluções similar ao dos algoritmos genéticos,
+a estrutura das soluções que são analisadas é diferente. No caso dos algoritmos
+genéticos, a solução é representada por um conjunto de caracteres de tamanho fixo; na
+programação genética, a solução é uma árvore hierárquica que representa operações
+executadas sobre constantes ou variáveis (Chen et al, 2007).
+Existem muitos artigos que não foram incluídos por estarem fora do período
+delimitado. Esta é uma limitação importante, pois uma rápida busca por fuzzy e
+accounting na ProQuest, por exemplo, revelou 20 resultados anteriores a 1o de janeiro
+de 2000; outra busca por neural e finance, na mesma base de dados, retornou outros 32
+artigos.
+Este trabalho limita-se a analisar artigos que apresentem exemplos reais. Isto
+significa que estudos que utilizam exemplos numéricos (fictícios) para demonstrar uma
+técnica não são considerados. Também existem artigos que utilizam métodos de
+inteligência computacional para construir mercados artificiais (ou simulados), em que
+agentes modelados de acordo com certos pressupostos teóricos tomam suas decisões. As
+R. Gest. Tecn. Sist. Inf. /JISTEM Journal of Information Systems and Technology Management, Brazil
+
+Redes neurais, lógica nebulosa e algoritmos genéticos: aplicações e possibilidades em
+Finanças e Contabilidade
+
+173
+
+conclusões obtidas por esta última classe de trabalhos podem ter aplicações práticas,
+mas esta pesquisa procurou restringir-se a artigos que mostrem métodos diretamente
+aplicáveis a problemas da área de Finanças e Contabilidade.
+As limitações aqui estabelecidas podem causar um importante viés: dados empíricos
+sobre bolsas de valores, de futuros e de commodities são facilmente obtidos em bases de
+dados especializadas; outros dados são obtidos com muito menos facilidade. Isto pode
+explicar, em parte, alguns dos resultados obtidos – em especial o grande número de
+artigos sobre bolsas de valores.
+4. ANÁLISE DOS RESULTADOS
+
+Após a seleção, isto é, excluindo-se as repetições e os artigos fora das limitações
+metodológicas, restaram 102 artigos na ProQuest e 156 na ScienceDirect, totalizando
+258 trabalhos diferentes. Destes, 176 eram da área de Finanças, e 82 de Contabilidade.
+4.1 Classificação por ano
+
+Pode-se perceber que a tendência nos primeiros três anos (2000-2002) foi
+descendente, atingindo-se o número de 22 e 23 artigos em 2002 e 2003 (figura 4). Um
+dos motivos que podem ter contribuído é o fato de não constar na ProQuest artigos
+publicados no International Journal of Intelligent Systems in Accounting, Finance and
+Management em 2003. Supõe-se que houve um intervalo na edição deste periódico, que
+reapareceu em 2004 com o nome de Intelligent Systems in Accounting, Finance and
+Management. A partir deste ano, a tendência no número total de artigos é crescente.
+Vale observar que, de 2005 a 2007, houve um aumento do uso de lógica nebulosa,
+algoritmos genéticos e modelos híbridos, simultaneamente a uma queda no número de
+artigos sobre redes neurais artificiais. Isto pode indicar uma mudança de interesse da
+comunidade acadêmica – possivelmente devido ao fato das redes neurais já terem sido
+amplamente exploradas, com um total de 193 artigos durante o período em análise.
+
+Vol.7, No.1, 2010, p. 163-182
+
+Wuerges, A., Borba, José.
+
+174
+
+45
+40
+35
+
+artigos
+
+30
+
+Total
+RNA
+
+25
+
+LN
+20
+
+AG
+Híbridos
+
+15
+10
+5
+0
+2000
+
+2001
+
+2002
+
+2003
+
+2004
+
+2005
+
+2006
+
+2007
+
+ano
+
+Figura 4: total de artigos publicados por ano
+
+Fonte: dados da pesquisa.
+
+4.2 Classificação por periódico
+
+Pode-se perceber, através da tabela 1, que o Expert Systems with Applications é o
+periódico que mais publicou artigos sobre inteligência computacional aplicada em
+Contabilidade e Finanças. É importante ressaltar, porém, que 38 dos artigos analisados
+foram encontrados em periódicos diferentes que apresentaram, no período estudado,
+apenas um artigo publicado. Isto significa que existem outros periódicos que,
+ocasionalmente, podem publicar artigos envolvendo inteligência computacional em
+aplicações na área de Negócios. Como exemplo disso, tem-se um artigo que trata de
+precificação de derivativos através de redes neurais, publicado em uma revista da área
+de Física (MONTAGNA et al, 2003). Esta constatação sugere a hipótese de que a
+aplicação de inteligência computacional em Finanças e Contabilidade tem caráter
+multidisciplinar.
+
+R. Gest. Tecn. Sist. Inf. /JISTEM Journal of Information Systems and Technology Management, Brazil
+
+Redes neurais, lógica nebulosa e algoritmos genéticos: aplicações e possibilidades em
+Finanças e Contabilidade
+
+Periódico
+Expert Systems with Applications
+European Journal of Operational Research
+Computers & Operations Research
+Fuzzy Sets and Systems
+International Journal of Intelligent Systems in Accounting, Finance and Management
+Neurocomputing
+Intelligent Systems in Accounting, Finance and Management
+The Journal of the Operational Research Society
+Computational Economics
+Derivatives Use, Trading & Regulation
+Journal of American Academy of Business
+Journal of Forecasting
+Omega
+Outros
+Total
+
+175
+
+Freqüência
+47
+19
+13
+11
+9
+8
+7
+7
+6
+6
+6
+6
+6
+107
+258
+
+Tabela 1: periódicos com maior frequência de artigos publicados
+
+Fonte: dados da pesquisa.
+4.3 Classificação por método e aplicação
+
+Para analisar a preferência dos autores de uma área por um dos métodos de
+inteligência computacional, primeiro deve-se obter o número de artigos relacionados a
+cada aplicação. E, como pode ser depreendido da tabela 2, a maioria dos artigos
+analisados (68,22%) é da área de Finanças.
+Aplicação
+Freqüência
+Finanças
+176
+Contabilidade
+82
+Total
+258
+
+Tabela 2: aplicações
+
+Fonte: dados da pesquisa.
+Os artigos selecionados também podem ser classificados de acordo com suas
+aplicações específicas, como mostra a tabela 3. Apenas quatro destes artigos foram
+classificados em mais de uma aplicação: um deles se enquadrou simultaneamente em
+análise de crédito e falências; dois em ações e juros; o último foi classificado em ações e
+câmbio.
+
+Vol.7, No.1, 2010, p. 163-182
+
+176
+
+Wuerges, A., Borba, José.
+
+Aplicação
+Freqüência
+Ações
+79
+Câmbio
+37
+Análise de crédito
+35
+Falências
+30
+Gestão de carteira
+18
+Derivativos e futuros
+16
+Juros
+14
+Fraude
+6
+Outros
+28
+
+Tabela 3: aplicação específicas mais comuns
+
+Fonte: dados da pesquisa.
+Pode-se perceber que as aplicações relacionadas a ações receberam bastante
+destaque nos artigos analisados. Este grupo inclui trabalhos que abordam ações de
+empresas individuais e índices de ações (por exemplo, Ibovespa e S&P 500). Em ambos
+os casos, o artigo normalmente busca prever o nível das cotações no próximo período
+ou identificar a tendência do movimento dos preços (ascendente ou descendente). Um
+dos artigos estudados teve como objetivo prever a cotação de fechamento do DJIA
+(Dow Jones Industrial Average) utilizando fatores externos (isto é, o modelo não se
+limitava a utilizar cotações passadas) (O’connor; Madden, 2006). Os fatores externos
+usados foram o preço do petróleo (WTI cushing crude oil) e taxas de câmbio
+(USD/YEN, USD/GBP, USD/CAN). Também foram usados indicadores técnicos
+derivados do DJIA. No conjunto de teste, obteve-se um retorno anual sobre o
+investimento de 21,10% - incluídos os custos de transação. Como comparação, o
+retorno de mercado foi de 13,03%, e uma rede neural mais simples – que utilizava
+somente cotações passadas – teve retorno de apenas 8,03%. Isto mostra que as redes
+neurais não são uma solução por si mesmas; as variáveis devem ser escolhidas
+cuidadosamente, e seu desempenho depende do ambiente em que elas são utilizadas.
+Em mercados muito eficientes – como é o caso da bolsa de Nova York – seu
+desempenho nem sempre será excepcional.
+A análise de crédito também obteve bastante atenção. Esta categoria de trabalhos
+não se limita à análise de solicitações de cartões de crédito ou empréstimos bancários;
+um dos artigos encontrados tinha como objetivo prever o risco de inadimplência no
+contexto do comércio internacional. Um modelo fuzzy foi utilizado com 3344 empresas
+asiáticas, e tentou-se identificar as empresas que teriam problemas em honrar os
+pagamentos de suas importações (Tang; Chi, 2005). Ao se comparar o modelo baseado
+na lógica nebulosa com um modelo logit, observou-se que o primeiro é mais sensível,
+ou seja, tem desempenho superior na detecção de empresas inadimplentes. O modelo
+logit, em compensação, tem maior sucesso na classificação de empresas que não
+oferecem risco de perdas devido ao não-pagamento. Isto mostra que a escolha do
+modelo depende das características do problema; se o custo dos créditos erroneamente
+recusados for maior do que as perdas por inadimplência, então o modelo logit é mais
+R. Gest. Tecn. Sist. Inf. /JISTEM Journal of Information Systems and Technology Management, Brazil
+
+Redes neurais, lógica nebulosa e algoritmos genéticos: aplicações e possibilidades em
+Finanças e Contabilidade
+
+177
+
+indicado.
+Como se deseja observar as técnicas mais comuns em cada área, um mesmo
+artigo pode ser classificado em mais de um método, sendo ou não híbrido. Por isso, os
+valores totais de cada área foram ignorados – pois não estariam de acordo com o total de
+258 artigos analisados. Os dados obtidos foram organizados na tabela 4.
+Método
+RNA
+LN
+AG
+Híbridos
+
+Finanças
+129
+37
+44
+30
+
+Contabilidade
+64
+19
+13
+12
+
+Total
+193
+56
+57
+42
+
+Tabela 4: técnicas utilizadas em Finanças e Contabilidade
+
+Fonte: dados da pesquisa.
+Observando-se esta tabela, constata-se que as redes neurais artificiais são o
+método mais utilizado, correspondendo a 74,81% dos artigos analisados; e que os
+algoritmos híbridos são bem menos frequentes, com apenas 13,57%. A preferência pelas
+redes neurais é um pouco mais acentuada na área de Contabilidade, em que 78,57% dos
+artigos utilizam-nas. Na área de Finanças, este percentual é de 73,30%. No caso da
+lógica nebulosa, não há uma diferença considerável: esta técnica está presente em
+21,02% dos trabalhos da área de Finanças e em 22,62% dos trabalhos da área de
+Contabilidade. Os algoritmos híbridos ainda são bastante raros, e sua presença é um
+pouco mais comum nos trabalhos de Finanças, sendo utilizados em 17,05% deles.
+Para investigar se haveria técnicas mais comuns para cada tipo de problema, foi
+feita uma nova análise, cruzando aplicações e métodos, como mostrado na tabela 5.
+Neste caso, os modelos que utilizam mais de um método são classificados
+exclusivamente como híbridos.
+RNA
+
+Técnica
+Ações
+Câmbio
+Análise de crédito
+Falências
+Gestão de carteira
+Derivativos e futuros
+Juros
+Fraude
+Outros
+
+Freq.
+45
+25
+24
+17
+4
+14
+7
+5
+18
+
+%
+56,96%
+67,57%
+68,57%
+56,67%
+22,22%
+87,50%
+50,00%
+83,33%
+64,29%
+
+LN
+
+AG
+
+Híbridos
+Freq.
+%
+Freq.
+%
+Freq.
+%
+7
+8,86%
+11 13,92% 16 20,25%
+2
+5,41%
+1
+2,70%
+10 27,03%
+4
+11,43%
+2
+5,71%
+6
+17,14%
+3
+10,00%
+5
+16,67%
+6
+20,00%
+11 61,11%
+3
+16,67%
+2
+12,50%
+3
+21,43%
+2
+14,29%
+2
+14,29%
+1
+16,67%
+5
+17,86%
+4
+14,29%
+1
+3,57%
+
+Tabela 5: técnicas utilizadas nas aplicações mais comuns
+
+Fonte: dados da pesquisa.
+
+Vol.7, No.1, 2010, p. 163-182
+
+178
+
+Wuerges, A., Borba, José.
+
+Percebe-se que os artigos sobre bolsas de valores privilegiam as redes neurais
+artificiais, que são utilizadas em 56,96% dos trabalhos; os artigos que mais utilizam
+redes neurais são aqueles sobre derivativos e futuros. Isto pode ser explicado pelo fato
+destes artigos normalmente desenvolverem modelos para detectar e explorar padrões em
+séries temporais – algo que as redes neurais fazem muito bem.
+4.3.1 Modelos híbridos
+
+Isolando-se os artigos que fazem uso de modelos híbridos e verificando cada
+uma das combinações possíveis entre as três técnicas de inteligência computacional,
+aqui abordadas, chegou-se à tabela 6.
+Tipo
+Freqüência
+RNA e AG
+23
+RNA e LN
+12
+LN e AG
+4
+RNA, LN e AG
+3
+Total
+42
+
+Tabela 6: combinações de técnicas mais comuns
+
+Fonte: dados da pesquisa.
+Como existem várias maneiras de combinar redes neurais artificiais com algoritmos
+genéticos, é natural que esta classe de híbridos seja bastante relevante: mais de metade
+dos algoritmos híbridos encontrados é deste tipo, com resultados promissores.
+É possível, por exemplo, utilizar algoritmos genéticos para selecionar as variáveis
+de entrada mais importantes de uma rede neural. Isto é crítico para um bom desempenho
+da RNA, pois o excesso de variáveis de entrada leva à chamada “maldição da
+dimensionalidade”, prejudicando a qualidade dos resultados (Hughes, 1968). Em um
+dos artigos analisados, um algoritmo genético selecionou as informações contábeis mais
+relevantes para a previsão de falências; posteriormente, utilizando-se redes neurais, as
+empresas foram classificadas como estando em risco de falência (distressed) ou não.
+Com isso, o índice de acertos foi de 82%. Utilizando-se um algoritmo evolucionário
+mais recente (particle swarm optimization) ao invés de algoritmos genéticos, o índice
+aumentou para 87%. Sem nenhuma seleção de variáveis, o índice cai para 77% (KO;
+LIN, 2006).
+Outra possibilidade de algoritmo híbrido combinando redes neurais e algoritmos
+genéticos é a criação de redes que mudem seus parâmetros arquiteturais (número de
+camadas ocultas, por exemplo) de acordo com o problema. Esta técnica foi aplicada
+com sucesso à previsão de taxas de câmbio diárias (Nag; Mitra, 2002). Neste caso, uma
+população de redes neurais evoluía através do AG, obtendo-se como resultado uma rede
+neural com arquitetura ótima. Os resultados são encorajadores: no caso do estudo
+R. Gest. Tecn. Sist. Inf. /JISTEM Journal of Information Systems and Technology Management, Brazil
+
+Redes neurais, lógica nebulosa e algoritmos genéticos: aplicações e possibilidades em
+Finanças e Contabilidade
+
+179
+
+realizado com o iene e o dólar, o erro absoluto médio do modelo híbrido foi de 0,63; a
+melhor rede neural de arquitetura fixa utilizada teve um erro de 0,67. O modelo Garch,
+por sua vez, teve um erro de 0,66. Isto significa que, pelo menos neste caso, a
+abordagem híbrida superou os métodos convencionais.
+Por fim, é possível utilizar algoritmos genéticos para combinar os resultados de
+outros sistemas de tomada de decisão – inclusive de usuários e experts. Desta maneira, o
+algoritmo pode aproveitar tanto o conhecimento humano quanto a capacidade das redes
+neurais em detectar padrões. Esta idéia foi utilizada na previsão do KOPSI, o índice da
+bolsa de valores da Coréia do Sul (Kim et al., 2006). O objetivo era classificar o
+movimento futuro do mercado em quatro níveis: bear, edged-down, edged-up e bull.
+Constatou-se que, pelo fato de se adaptarem mais rapidamente às mudanças no
+ambiente, as pessoas conseguem prever melhor os movimentos mais rápidos do
+mercado (bull e bear); as redes neurais se saem melhor na previsão de tendências mais
+regulares e suaves (edged-up e edged-down). Juntando-se os dois através de um
+algoritmo genético foi possível obter um resultado superior, com 79,5% de acerto
+(contra 66% da rede neural e 59% dos experts).
+Outro tipo de modelo híbrido comum é aquele que combina redes neurais com
+lógica nebulosa. Neste caso, é comum o uso de sistemas conhecidos como neuro-fuzzy,
+em que as características de um problema são representadas através de um modelo
+linguístico de alto nível – isto é, de fácil compreensão para seres humanos, já que é
+composto por regras de inferência do tipo “se-então”. A tarefa da rede neural é
+encontrar as melhores regras e ajustar seus parâmetros. Portanto, a diferença entre o
+modelo neuro-fuzzy e uma rede neural convencional é que, enquanto nesta última a
+saída é um valor ou uma classificação que mais tarde será utilizado na tomada de
+decisão, no primeiro a saída é uma regra fuzzy. Com isso, evita-se uma crítica comum às
+redes neurais: sua falta de transparência, ou seja, a dificuldade de se compreender os
+meios pelo quais a rede neural chegou a um determinado resultado; os pesos sinápticos
+não são facilmente interpretados pelo usuário final. Por isso, as redes neurais costumam
+ser chamadas de black boxes ou caixas-pretas (Olden; Jackson, 2002). Em uma das
+aplicações empíricas analisadas, 290 solicitações de crédito foram classificadas em dois
+grupos: bons empréstimos e maus empréstimos. O índice de acertos do modelo híbrido
+(neuro-fuzzy) ficou entre 64,2% e 66,6%; um método concorrente (MDA) conseguiu
+acertar entre 62,05% e 66,2%. Apesar dos resultados serem similares, os autores
+ressaltam que o sistema neuro-fuzzy foi capaz de identificar com mais precisão os casos
+de crédito ruim. Com isso, pode-se reduzir justamente o erro do tipo I – que é o mais
+prejudicial em análise de crédito (Malhotra; Malhotra, 2002).
+5. CONCLUSÃO
+
+Como foi explicado no tópico dedicado às limitações metodológicas, existem vários
+artigos anteriores ao ano de 2000. O início desta produção intelectual não é muito
+recente, mas a atenção dedicada às aplicações da inteligência computacional em
+Contabilidade e Finanças continua crescendo. Os avanços teóricos continuam criando
+Vol.7, No.1, 2010, p. 163-182
+
+180
+
+Wuerges, A., Borba, José.
+
+novas possibilidades – um exemplo são as support vector machines, uma nova técnica
+que vem apresentando resultados muito promissores.
+Neste artigo, pode-se observar uma predominância de estudos envolvendo Finanças
+e redes neurais. Quanto às aplicações específicas, percebe-se que aquelas relacionadas
+ao mercado financeiro são bem mais comuns; se forem considerados os artigos
+relacionados a bolsas de valores, derivativos, commodities, forex, gestão de carteira e
+juros, chega-se a 164 artigos, o que corresponde a mais de metade do total de 258
+artigos analisados. Artigos que procuraram analisar a qualidade do crédito através de
+inteligência computacional representaram o segundo grupo de maior expressão.
+Os algoritmos híbridos – apesar do desempenho potencialmente superior em vários
+casos, como atestam as evidências empíricas apresentadas neste artigo – tiveram uma
+participação relativamente inexpressiva no total de trabalhos analisados. Isto pode ter
+origem na complexidade inerente à combinação de duas técnicas diferentes; é possível
+que, com a popularização dos métodos da inteligência computacional, os híbridos
+comecem a serem vistos como uma alternativa superior e a conquistar a preferência dos
+estudantes e praticantes de Finanças e Contabilidade.
+Ao longo deste artigo foram apresentados exemplos de artigos que apresentam
+evidências empíricas de que os métodos da inteligência computacional podem ser úteis
+em Finanças e Contabilidade, apesar de seu uso prático ainda ser incipiente; isto sugere
+a necessidade do profissional da área de Negócios se manter atualizado em relação aos
+novos desdobramentos teóricos da inteligência computacional. O caráter flexível das
+técnicas aqui abordadas faz com que suas possibilidades sejam quase ilimitadas e,
+certamente, existem aplicações ainda não exploradas para essas idéias promissoras.
+
+REFERÊNCIAS BIBLIOGRÁFICAS
+
+Agarwal, A., Davis, J. T., & Ward, T. (2001). Supporting ordinal four-state
+classification decisions using neural networks. Information Technology and
+Management, Bussum, 2 (1): 5.
+Calderon, T. G., & Cheh, J. J. (2002, Dezembro). A roadmap for future neural networks
+research in auditing and risk assessment. International Journal of Accounting
+Information Systems, 3 (4): 203-236.
+Chen, J.-S., Chang, C. L., Hou, J.-L., & Lin, Y.T. (2008, Novembro). Dynamic
+proportion portfolio insurance using genetic programming with principal component
+analysis. Expert Systems with Applications.
+Cox, E. (1998). The fuzzy systems handbook : a practitioner's guide to building, using,
+and maintaining fuzzy systems (2a ed.). San Diego: AP Professional.
+Fadlalla, A., Lin, C. H. (2001). An analysis of the applications of neural networks in
+finance. Interfaces, 31 (4): 112-122.
+R. Gest. Tecn. Sist. Inf. /JISTEM Journal of Information Systems and Technology Management, Brazil
+
+Redes neurais, lógica nebulosa e algoritmos genéticos: aplicações e possibilidades em
+Finanças e Contabilidade
+
+181
+
+Faria, E. de, Albuquerque, M. P., Gonzalez, J., Cavalcante, J., & Albuquerque, M. P.
+(2009). Predicting the Brazilian stock market through neural networks and adaptive
+exponential smoothing methods. Expert Systems with Applications, 36(10): 1250612509.
+Grint, K. (1997). Fuzzy management: contemporary ideas and practices at work. New
+York: Oxford.
+Hwang, M. I., & Lin, J. W. (2000). Neural fuzzy systems: A tutorial and an application.
+The Journal of Computer Information Systems, 40 (4): 27.
+Hughes, G. F. (1968, January). On the mean accuracy of statistical pattern recognizers.
+IEEE Transactions on Information Theory, 14 (1): 55-63.
+Kim, M. J., Min, S. H., & Han, I. (2006). An evolutionary approach to the combination
+of multiple classifiers to predict a stock price index. Expert Systems with Applications,
+31 (2): 241-247.
+Ko, P. C., & Lin, P. C. (2006, Março). An evolution-based approach with modularized
+evaluations to forecast financial distress. Knowledge-Based Systems, 19 (1): 84-91.
+Malhotra, R., & Malhotra, D. K. (2002, January). Differentiating between good credits
+and bad credits using neuro-fuzzy systems. European Journal of Operational Research,
+136 (1): 190-211.
+Mochón, A., Quintana, D., Sáez, Y., & Isasi, P. (2008). Soft computing techniques
+applied to finance. Applied Intelligence, 29 (2): 111-115.
+Montagna, Guido et al. (2003). Pricing derivatives by path integral and neural networks.
+Physica A, 324: 189-195.
+Müller, B., & Reinhardt, J. (1990). Neural netoworks: an introduction. Berlin: SpringerVerlag.
+Nag, A. K., & Mitra, A. (2001). Forecasting daily foreign exchange rates using
+genetically optimized neural networks. Journal of Forecasting, Chichester, 21 (7): 501.
+Nanda, S., & Pendharkar, P. (2001). Linear models for minimizing misclassification
+costs in bankruptcy prediction. International Journal of Intelligent Systems in
+Accounting, Finance and Management, 10 (3): 155.
+Nunez-letamendia, L. (2002). Trading systems designed by genetic algorithms.
+Managerial Finance, Patrington, 28 (8): 87.
+O’connor, N., & Madden, M. G. (2006, September). A neural network approach to
+predicting stock exchange movements using external factors. Knowledge-Based
+Systems, 19 (5): 371-378.
+Olden, J. D., & Jackson, D. A. (2002). Illuminating the “black box”: a randomization
+approach for understanding variable contributions in artificial neural networks.
+Ecological Modelling, 154 (1-2): 135-150.
+Qi, M., & Zhang, G. P. (2001, August). An investigation of model selection criteria for
+neural network time series forecasting. European Journal of Operational Research, 132
+(3): 666-680.
+Vol.7, No.1, 2010, p. 163-182
+
+182
+
+Wuerges, A., Borba, José.
+
+Rafaely, B., & Bennell, J. A. (2006). Optimisation of FTSE 100 tracker funds; A
+comparison of genetic algorithms and quadratic programming. Managerial Finance,
+Patrington, 32 (6): 477.
+Streit, R. E., & Borenstein, D. (2009). An agent-based simulation model for analyzing
+the governance of the Brazilian Financial System. Expert Systems with Applications, 36
+(9): 11489-11501.
+Tang, T. C., & Chi, L. C. (2005). Predicting multilateral trade credit risk: comparisons
+of logit and fuzzy logic models using ROC curve analysis. Expert Systems with
+Applications, 28 (3): 547-556.
+Übeyli, E. D. (2007, November). Implementing automated diagnostic systems for breast
+cancer detection. Expert Systems with Applications, 33 (4): 1054-1062.
+Wong, B. K., Lai, V. S., & Lam, J. (2000, September). A bibliography of neural
+network business applications research: 1994-1998. Computers & Operations Research,
+27 (11-12): 1045-1076.
+Wong, B. K., & Selvi, Y. (1998). Neural network applications in finance: A review and
+analysis of literature (1990-1996). Information & Management, 34 (3): 129-139.
+
+R. Gest. Tecn. Sist. Inf. /JISTEM Journal of Information Systems and Technology Management, Brazil
+
+

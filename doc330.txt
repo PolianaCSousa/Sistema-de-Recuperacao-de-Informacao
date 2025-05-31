@@ -1,0 +1,106 @@
+Fatores que Impactam o Resultado dos Projetos de Software em Uma Autarquia Federal
+Francisco Canindé da Silva Leite
+13/04/2018
+CONTEÚDO
+Resumo
+1. Introdução
+2. Embasamento Teórico
+2.1 O comprometimento da equipe no processo de desenvolvimento do projeto de software.
+2.2 Gerenciar as atividades do projeto de software
+2.3 Tecnologias utilizadas no desenvolvimento
+2.4 Definição de Requisitos
+3. Implementação
+Conclusão
+Referencias
+Francisco Canindé da Silva Leite
+LEITE, Francisco Canindé da Silva [1]
+
+LEITE, Francisco Canindé da Silva. Fatores que Impactam o Resultado dos Projetos de Software em Uma Autarquia Federal. Revista Científica Multidisciplinar Núcleo do Conhecimento. Ano 03, Ed. 04, Vol. 02, pp. 88-97, Abril de 2018. ISSN:2448-0959
+
+Resumo
+Implantar um modelo de processo para desenvolvimento de software não é uma tarefa fácil, mas é a forma encontrada pelos órgãos da administração pública para agregar valor ao produto e consequentemente melhorar os serviços prestados ao público interno e externo. Uma vez implantado, o modelo de processo precisa ser otimizado e melhorado continuamente, mas isso não é suficiente para garantir a qualidade no resultado do produto. Alem dos processos, existem as atividades impactantes que podem influenciar o resultado ou funcionamento do produto, tais como: gerenciamento do projeto, comprometimento da equipe, tecnologias utilizadas e especificações de requisitos. Este artigo faz uma dicotomia entre processo versus projeto e referência os fatores que podem alterar a qualidade no resultado do produto que é o software propriamente dito e suas documentações.
+
+1. Introdução
+Visando melhorar a qualidade de processos, produtos e serviços oferecidos, o Programa Brasileiro de Qualidade e Produtividade de software (PBQP) tem estimulado as empresas a adotarem normas, métodos, técnicas e ferramentas de qualidade para que possam agregar valor ao produto e consequentemente aumentar a competitividade no mercado globalizado BARTIE (2002). Além de adotar tais procedimentos, os mesmos precisam ser otimizados e melhorados continuamente, para isso é fundamental que os processos sejam avaliados com certa frequência apara averiguar se os mesmos estão aderentes ou não, e com isso implementar estratégias de melhorias FUGGETTA (apud, MOURO 2000).
+
+Adotar modelos de processo, ferramentas de qualidade é significante e fundamental para alcançar a qualidade, porém não é o suficiente. Existem outros fatores preponderantes e determinantes que refletem diretamente no desempenho do projeto de software tais como: o comprometimento da equipe, o gerenciamento das atividades, tecnologias a serem utilizadas e definição de requisitos. Primeiro, não basta somente nomear pessoas chaves nas fases do projeto, segundo, faz-se necessário que as mesmas tenham um conhecimento prévio sobre a tecnologia, ferramentas e padrões a serem utilizados pela empresa e, por conseguinte um efetivo gerenciamento do projeto e especificação de requisitos corretos são essenciais para o sucesso do projeto.
+
+Segundo SOMMERVILE (2003) o software é um produto intangível, com base nesta afirmação, entende-se que que prazos para o desenvolvimento do projeto de software são estimados de acordo com o tamanho e complexidade de cada projeto. Diferentemente de outros projetos de engenharias que são visíveis e podem ser notados quando ocorrem atrasos, no projeto de software isso não é possível, pois a única forma de mensurar o desempenho é por meio de documentações e artefatos.
+
+Os riscos podem impactar negativamente o andamento do projeto, por isso não podem ser descartados, mesmo que as chances de ocorrerem sejam remotas, além disso, a ausência de um gerenciamento permanente das atividades do projeto pode comprometer o cronograma e consequentemente alongar o prazo de entrega. Por fim, não definir a tecnologia a ser utilizada com antecedência, é um risco iminente, pois as pessoas que irão utilizá-las têm que ter um mínimo de conhecimento sobre as mesmas, caso contrário pode ser disponibilizados treinamentos para nivelar o conhecimento, outro potencial risco são as mudanças nos requisitos, quando mal especificadas.  Este artigo está estruturado em 3 seções: a seção 2 apresenta o embasamento teórico, a seção 3 a implementação onde é simulado o tempo planejado em dias e o tempo real em dias e seção 4 as considerações finais.
+
+2. Embasamento Teórico
+Neste tópico será apresentada uma pesquisa bibliográfica referente às questões norteadoras que foram levantadas com o propósito de fornecer uma visão sobre as atividades determinantes para a garantia da qualidade em um projeto de software.
+
+2.1 O comprometimento da equipe no processo de desenvolvimento do projeto de software.
+SOMMERVILLE (2003) afirma além de adotar métodos, ferramentas ou algum modelo de processo, há fatores que influenciam o processo e consequentemente a qualidade do produto e o desempenho do projeto, um fator que pode ser determinante para o sucesso e/ou fracasso do projeto, são os membros que compõem a equipe. O trabalho em equipe é fundamental para o bom andamento do projeto, mas em sua maioria é ofuscada pela falta de entendimento e comunicação entre os seus membros, a equipe tem que ter um objetivo comum, portanto cada componente tem que trabalhar para atingir o objetivo, para isso é necessário que as funções sejam equilibradas e compartilhadas para que todos tenham uma participação efetiva nas atividades do projeto, GRAY e LARSON (2009).
+
+Nesse contexto o time do projeto é o principal fator de sucesso para o andamento do projeto. O choque de ideias entre os membros da equipe é um empecilho que tem que ser resolvido em equipe, ou seja, escalar problemas que podem ser solucionados pela própria equipe não é uma boa prática outro problema comum no decorrer do desenvolvimento é a falta de comunicação entre os membros do time. No início do projeto normalmente acontece os desentendimentos uma vez que é feito um brainstorming, após a realização dessa atividade, realiza-se um debate para utilizar as principais ideias e assim traçar os primeiros planos e metas para o projeto.
+
+GRAY e LARSON (2009) afirmam que os membros da equipe e o gerente de projeto reconheçam as limitações situacionais e com isso façam o melhor que puderem garantindo assim um melhor desempenho da atividade a ser realizada.  A palavra chave nesse aspecto é o envolvimento de todos que participam diretamente do empreendimento, pois cada pessoa exerce um papel importante e fundamental para que o objetivo final seja alcançado. Portanto, processo, ferramentas e tecnologias são mecanismos que facilitam o trabalho, porém se não houver um comprometimento de todos os membros da equipe as chances de insucesso são enormes.
+
+2.2 Gerenciar as atividades do projeto de software
+Para adentrar nas atividades de gerenciamento de projeto é necessário entender o conceito de projeto. Na definição do PMBOK (2004) projeto é um esforço temporário empreendido para criar um produto, serviço ou resultado exclusivo, por se tratar de um empreendimento temporário que terá como resultado um produto, daí a importância de gerenciar esse empreendimento, pois o projeto de software assim como todos os demais, tem um inicio e fim definidos.
+
+O primeiro passo determinante para o sucesso no decorrer do projeto é a escolha dos membros que compõem a equipe, mas partindo da premissa que a equipe já esta formada e com os papeis definidos, cabe ao gerente a habilidade para gerenciar a equipe, fazendo com que todos visem o mesmo objetivo. Visar o objetivo comum é ficar a par dos acontecimentos no decorrer do desenvolvimento do projeto, isso ocorre da seguinte maneira, os analistas projetistas acompanham as atividades que são realizadas na fase de modelagem e requisitos, terminados essas etapas o acompanhamento se inverte. No entanto, isso não significa que um papel alocado em uma área realizará o trabalho de outro, esse acompanhamento é para ter uma melhor visibilidade do processo em relação ao andamento do projeto.
+
+Todavia, caso haja necessidade, um papel que foi alocado nas fases iniciais, uma vez terminada sua participação, o mesmo poderá auxiliar outros papeis em outras fases e/ou exercer outra função, isso é uma decisão que cabe ao gerente do projeto. Essas realocações tendem a ocorrer principalmente quando algum membro da equipe deixa o projeto, fato este que é identificado logo no início do projeto como possíveis riscos, caso isso acontecer é colocado em pratica o que foi definido no plano de contingência.  Para GRAY e LARSON (2009), o gerenciamento de risco identifica o maior número de eventos de risco possível, os riscos podem ser mitigados, transferidos, aceitável e evitados. Tem riscos que são aceitos, principalmente quando há mudanças internas como alterações nos casos de usos e substituição de uma tecnologia por outra.
+
+Outro fator impactante para o projeto são as não homologações dos artefatos nas datas preestabelecidas, quanto maior a demora para ser a homologado, estes artefatos ficam propensos as mudanças acarretando retrabalho e atraso no cronograma do projeto. Por isso, gerenciar as atividades do projeto é pertinente, uma vez que cada fase do processo de software tem atividades específicas que na maioria das vezes uma atividade serve como entrada para outra, mas podem ocorrer de forma paralela, isso é definido no diagrama de rede do projeto (apresenta graficamente a sequencia das atividades) e precisam ser gerenciadas para que os prazos de início e termino sejam concretizados, GRAY e LARSON (2009).
+
+2.3 Tecnologias utilizadas no desenvolvimento
+Desenvolver um aplicativo web é uma tarefa complexa, a tecnologia e ferramentas escolhidas para realizar a implementação é fundamental para o sucesso principalmente na fase de construção onde a complexidade é maior. Agregar valor ao produto é a forma encontrada para resolver alguns problemas, sobre tudo os de produtividade, é importante que se diga que a agregação de valor é algo inerente ao processo em relação custo-benefício, por isso a importância de se utilizar uma tecnologia que permita o reuso principalmente na fase de codificação do sistema, haja vista que nessa fase o nível de complexidade é maior e dessa forma se pode ganhar agilidade e economia, principalmente de tempo quando se reutiliza componentes que foram utilizados em outros projetos, OLIVEIRA e BACILE (2006).
+
+Desenvolver software em camadas faz com que a aplicação se torne menos acoplada, facilitando assim a manutenção no código, também quando há mudanças em uma classe o impacto nas demais são menores. Com essa finalidade de reaproveitamento utilizou-se o Entertprise Java Bean (EJB) que é um componente server-side que encapsula a lógica de negócio de uma aplicação, além de simplificar o desenvolvimento de aplicações, PANDA, RAHMAN e LANE (2007). Também se utilizou o framework struts que é do grupo Apache e serve como o controller de uma arquitetura MVC. Funciona como um controlador central entre as regras de negócio e o controlador com o usuário. Um framework de aplicações web é um pedaço de software que fornece automação estrutural de tarefas comuns do domínio, bem como um embutido de arquitectura solução que pode ser facilmente herdado pelas aplicações implementadas sobre o quadro BROWN, DAVIS e STANLICK (2008).
+
+2.4 Definição de Requisitos
+Requisitos pode ser entendido como “algo ou necessidade para o qual o sistema tem que atender”. O dicionário Aurélio (1999) define como sendo, uma condição necessária para obtenção de certo objetivo.
+
+Segundo (Thayer, 1997) a Engenharia de Requisitos é a primeira etapa detro do processo da Engenharia de software, não menos importante, pois o software é projetado de acordo com os requisitos que foram definidos. Nesse tótipo, não será discorrido as fases de Engenharia de Requisitos, mas os problemas encontrados durante a elicitação de requisitos de software, pois é na elicitação ou levantamento que o dono do sistema expõe as necessidades e solicita o que o sistema deverá fazer.
+
+Alguns probelmas são inerentes quanto a elicitação de requisitos em órgãos da administração pública, tais como: escolha de usuários a serem entrevistados, processos não definidos, pessoas não sabem o que querem, e falta de autonomia na definição e/ou validação de regras.
+
+Os problemas elencados no paragráfo anterior são fatores condicionatens que afetam o projeto de desenvolvimento de um software, mas que que ocorrem com frequência na esfera pública.
+
+3. Implementação
+O trabalho tomou como base um projeto desenvolvido em um ambiente de fábrica de software, mesmo assim, houve alguns empecilhos que impactaram diretamente no cronograma do projeto. Para definir as atividades foi realizado um Work Breakdown Structure WBS e/ou Estrutura Analítica do Projeto EAP, uma vez definido a EAP, realizou-se o digrama de Rede de Atividades, pois por meio desse diagrama foi possível definir a sequência lógica das atividades e as dependências entre elas, ou seja, existem atividades predecessores e paralelas.
+
+Após ser feito esse levantamento iniciou-se uma simulação do cronograma do projeto propriamente dito, primeiramente baseado em uma montagem do diagrama detalhado, essa tarefa foi realizada manualmente para se obter uma prévia do cronograma em relação às datas, a atividade realizada foi de acordo com a técnica caminho de ida. Para isso utilizou-se o Inicio Mais Cedo (IMC), Termino Mais Cedo (TMC) e Duração da Atividade (D.At) com a seguinte formula (IMC + D.At =) tudo isso, com base no tempo estimado. Também foi simulado o Tempo Planejado (TP) X Tempo Real (TR) a simulação é feita com base no tempo estimado pela técnica caminho de ida, lembrando que o TP é estático já definido no cronograma e o TR é o tempo que as atividades levam para acontecer com percentual para mais, para menos ou exato, a Figura 1 mostra um gráfico após a simulação realizada entre tempo planejado em dias e tempo real em dias e a Figura 2 mostra o percentual em gráfico.
+
+Figura 1 - Estimativa de tempo planejado e tempo real
+Figura 1 – Estimativa de tempo planejado e tempo real
+A Figura 1, ilustra o cronograma do projeto onde o indicador aponta 33% de atraso no cronograma do projeto, isso se deu em virtude de alguns riscos de projetos que ocorreram, um dos riscos se deu devido a mudanças de regras de negócios, que impactou na entrega das sprints.
+
+Figura 2 - Gráfico de Estimativa
+Figura 2 – Gráfico de Estimativa
+A Figura 2, mostra os percentuais de impacto no curso do projeto, nos marcos levantar requisitos e entregar descrição dos 10 primeiros UC, houve atrasos na entrega dos artefatos.
+
+Ressalta-se que houveram outros fatores impeditivos que impactaram negativamente no andamento do projeto tais como: falta de ambientes de homologação e teste, que implicaram no momento em que o software fora disponibilizado em produção, porém não serão detalhados nesse trabalho.
+
+Conclusão
+A finalidade desse trabalho foi mostrar os fatores determinantes que impactam o cronograma de um projeto de software em uma autarquia federal. Objetivou-se averiguar se os projetos de software estão em conformidade ao processo de desenvolvimento com a finalidade de garantir a qualidade no resultado final do produto, porém há fatores preponderantes que são decisivos tanto para garantia da qualidade do produto, quanto para um bom desempenho no curso do projeto.
+
+Neste artigo abordaram-se fatores determinantes para que um projeto de software seja realizado com êxito sem comprometer o cronograma e que no final se obtenha um produto que atenda os requisitos exigidos. Portanto, foram apresentados quatro pontos relevantes para que um projeto de software alcance os resultados esperados, primeiro aspecto é o comprometimento da equipe pois todos os papeis são importantes para o processo de desenvolvimento, o segundo aspecto trata do gerenciamento das atividades, o terceiro ponto são as tecnologias utilizadas e o quarto levou-se em conta o levantamento de requisitos.
+
+Por fim, a implementação mostrou um cronograma de um projeto de software onde é estimado o tempo planejado em dias e o tempo real das atividades, e que as mudanças nos requisitos impactaram na entregada do produto em tempo hábil. Portanto, este artigo elencou fatores preponderantes inerentes a projetos de software que podem impactar o produto e a entrega do projeto.
+
+Referencias
+BROWN, D; Davis, C.M e Stalinck, S. Struts 2 in Action editora MANNING – 2008.
+
+BARTIER, A. Garantia da Qualidade de Software. Rio de Janeiro: Ed. Campus, 2002.
+
+GRAY, C.F. e Larson E.K. Gerenciamento de Projeto: O processo gerencial 4e ; 4ed. São Paulo 2009 editora McGrawHill.
+
+MORO, R. D, Falbo, R. A. Avaliação e Melhoria de Processos de Software: Conceituação e Definição de um Processo para Apoiar a sua Automatização: < http://www.inf.ufes.br>. Acesso em: 02 de maio de 2012.
+
+OLIVEIRA, M. e BACILI, K. O Reuso na Pratica: O Reuso como diferencial competitivo em        produtividade e qualidade no desenvolvimento de software: Disponível em:www.mundojava.com.br. Acesso em: 08 de maio de 2012.
+
+PANDA, D; Rahman, R e LANE, Derek. EJB3 in Action editora MANNING – 2007.
+
+SOMMERVILLE, I. Engenharia de Software. São Paulo: Ed. Pearson, 2003.
+
+PROJECT MANAGEMENT INSTITUTE. PMBOK 3 rd Edition – A Guide to the Project Management Body of Knowledge, 2004. Disponível em: <http://www.pmi.org>. Acesso em: 20 de abril de 2012.
+
+THAYER, R. H. e DORFMAN, M.; “Introduction to Tutorial Software Requirements Enginnering” in Software Requirements Engineering, IEEE-CS Press, Second Edition, 1997
+
+[1] Graduado na área de computação, atua como servidor público na SUFRAMA, no cargo de Analista Técnico Administrativo – TI.

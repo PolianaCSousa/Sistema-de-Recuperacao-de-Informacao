@@ -1,0 +1,450 @@
+358    I nteração Humano - Computador
+o result ado da etiquet agem, em geral cont abilizando as etiquet as p or usuá-
+ 
+rio e t arefa;
+os p
+roblemas de comunicabi lidade encont rados;
+ 
+sugestõ es de melhor ias;
+ 
+o p erﬁ
+ 
+ l s emiót ico do sistema.
+ 
+Prototipação em 
+10.2.3  
+Papel 
+O méto do de 
+prototip a ç ã o  em  p ap e l
+ (Snyder, 2003) avalia a us abilidade de um de-
+sig n de IHC repres ent ado em p ap el, at ravés de simu laçõ es de us o com a p ar t icip a-
+ção de p otenciais usuários. Simu lar o us o em pap el é um mo do rápido e barato de 
+
+ident iﬁ
+ car problemas de us abi lidade antes mesmo de const r uir uma s olução de IHC 
+exe c ut ável. S endo assim, ess e méto do é uma op ção interess ante  para uma avaliação 
+
+for mat iva junto aos usuár ios, pr incip a lmente p ara comp ar ar  a lter nat ivas de desig n. 
+
+Ele p ermite avaliar facilmente s oluçõ es parciais, que não cobrem to da a interface com 
+
+usuário, e s oluçõ es de baixa e mé dia ﬁ
+ delidade, que ainda não deﬁ
+ nem to dos os de-
+t a l hes da inter face.
+C om tudo prep arado, o avaliador conv ida usuários p ara exe c ut arem algumas 
+t arefas com ap oio do sistema simu lado em pap el. Durante a simu lação, os usuários 
+
+falam, fazem gestos ou es cre vem para manifest ar como des ejam interagir com o sis-
+
+tema. Um avaliador atua como“c omput ador” para simular em pap el a exe c ução do 
+
+sistema e express ar suas re açõ es em resp ost a às açõ es do usuário. Ess as exp eriências 
+
+de us o simu ladas p ermitem ident iﬁ
+car as par tes da interface que f uncionam b em e 
+aquelas que apres ent am  problemas de us abilidade.A Tab ela 10.7 sumariza as at iv ida-
+des do méto do de protot ip ação em p ap el.
+Na  at ividade de 
+preparação
+, a lém do mater ia l de ap oio elab orado na maior i a das 
+avaliaçõ es com usuários (veja S e ção 9.7.2), o avaliador de ve elab orar protót ip os em 
+
+pap el. Repres ent amos as telas do sistema em pap el, em geral des enhadas à mão livre 
+
+e s em nos pre o c uparmos com det alhes de interface que não s ejam rele vantes para a 
+
+avaliação.A intenção é repres ent ar e dest acar os elementos pr incipais da interface 
+
+com os qu ais o usuário vai interagir durante a simulação da interação.Além das telas 
+
+est áticas, o avaliador t amb ém de ve preparar outros p e daços de pap el com par tes da 
+
+interface que s e  mo diﬁ
+ cam durante a interação, como menus, dicas s obre elementos 
+de interface, itens de alguma list a, resu lt ados de bus c a e diálogos, p or exemplo. O que 
+for p ossível pre ver de ve  s er preparado antes das simu laçõ es de us o. O que não for 
+
+p ossível s erá des enhado no pap el durante as simu laçõ es. 
+
+Capítulo 10 |
+ M étodos de Avaliação de IHC    359
+ Atividades do 
+Tabela 10.7   
+método de prototipação em papel
+prototipação em papel
+atividade
+tarefa
+Preparação
+deﬁ
+ nir tarefas para os par ticipantes executarem
+ 
+deﬁ 
+ nir o per ﬁ
+ l dos par ticipantes e recrutá-los
+ 
+criar protótipos em papel da inter face para executar as tarefas
+ 
+executar um teste -piloto
+ 
+Coleta de dados
+cada usuário deve executar as tarefas propostas interagindo com os 
+ 
+protótipos em papel, mediado pelo avaliador
+a
+valiador deve
+ 
+listar os problemas encontrados
+ 
+–
+re ﬁ
+ 
+ nar os protótipos em papel para resolver os problemas mais 
+ 
+–
+simples
+I
+nterpretação
+Consolidação dos 
+resultados
+priorizar a correção dos problemas não resolvidos
+ 
+sugerir correções
+ 
+Relato dos resultados relatar os problemas encontrados e sugestões de correção
+ 
+O E xemplo 10.10 apres ent a um esb o ç o de tela utilizado em uma s ess ão de protot i-
+p ação em p ap el. Obs er ve que há anot açõ es em p e daços de p ap el adesivo que s erão 
+
+manipu lados durante a s ess ão de avaliação.
+Esboço de tela utilizado em uma sessão de prototipação em papel
+Exemplo 10.10 – 
+4
+4 Imagem extraída do Proj eto Orient ado de Marc ela C âmara e E duardo Rib eiro (2010).
+
+360    I nteração Humano - Computador
+Em s e guida, o avaliador prepara o ambiente em que a simulação vai o c or rer, tipica-
+mente uma s a la de reunião com mes a e cadeiras, e prep ara os e quip amentos ne cess á-
+
+rios para re gistrar os dados, como gravador de voz e câmera de víde o.
+A 
+coleta  de dados
+ (veja S e ção 9.7.3) na protot ip ação em pap el de ve s er re aliza-
+da p or p elo menos dois avaliadores: um resp ons ável p or simu lar o comp or t amento 
+
+do sistema e outro p or obs er var a exp eriência de us o. O resp ons ável p or simu lar o 
+
+sistema bus c a compre ender as açõ es do usuário s obre o protót ip o em pap el (e p ossi-
+
+velmente  as intençõ es que motivaram t ais açõ es), e mo diﬁ
+ ca a interface confor me o 
+comp or t amento pl anejado para o sistema, s em, no ent anto, forne cer explicaçõ es ou 
+or ient açõ es para o usuário. Tudo o que for necess ár io infor mar ao usu ár io de ve  est ar 
+
+repres ent ado na inter face do sistema.
+No  início da s ess ão, o resp ons ável p or simu lar o comp or t amento do sistema 
+apres ent a o protót ip o em pap el e explica como est ão repres ent ados os elementos de 
+interface (
+widgets
+) e como os par t icip antes p o dem“ interag ir” com eles. Por exemplo, 
+os avaliadores p o dem mostrar o que é um item de menu, um b ot ão de comando ou  
+
+uma 
+combobox
+ e dizer que é p ossível“clicar” s obre eles (com um de do, uma canet a ou  
+algum out ro inst r umento). D ep ois de apres ent ar  a interface, os avaliadores ent regam 
+
+os cenários ao par t icip ante e explicam as t arefas a s erem exe c ut adas.
+O par t icipante, ent ão, come ça a interagir com o protót ip o em pap el da interface 
+do sistema. Para iniciar uma t arefa, o par t icip ante p o de querer nave gar p elos itens de 
+
+menu. E le p o de manifest ar iss o de vár i as for mas, t a l como dizer em voz a lt a  ou  colo-
+
+car o de do s obre um item do menu pr incip a l. C omo resp ost a a ess a ação, o ava liador 
+
+resp ons ável p or simu lar o comp or t amento do sistema de ve  apres ent ar  um p e daço de 
+
+pap el com os subitens do menu pr incipal indicado. Quando o usuário es colher qu al 
+
+menu acionar, ele indica iss o para o avaliador, que, p or sua ve z, mo diﬁ
+ ca a interface 
+com usuário simu lando outro comp or t amento corresp ondente à ação do usuário, 
+s eja abrindo um diálogo s obre a tela atual, substituindo a tela atual p or outra etc.
+S empre  que ne cess ár io, os avaliadores p o dem mo diﬁ
+ car ligeiramente a interface 
+p ara s olucionar algum problema simples de us abi lidade, como, p or exemplo, colo car 
+um b ot ão de comando numa tela de mo do a facilit ar o acess o a uma op eração. S e  o 
+
+problema de us abi lidade for mais complexo, os ava liadores p o dem suger ir que o p ar-
+
+ticipante pass e para a próxima t arefa s olicit ada.
+Durante a simu lação da interação, o obs er vador de ve ﬁ
+ car atento a divers os as-
+p e c tos: par tes da interface que f uncionaram b em e que f uncionaram mal, qu ais t are-
+fas foram concluídas com sucess o, qu ais erros foram cometidos, qu ais coment ários 
+
+foram feitos e qu ais quer outros dados que lhe auxiliem a apre ciar a qu alidade da in-
+
+ter face. C omo nos demais méto dos de obs er vação, dep ois de ter minar a exe c ução das 
+
+Capítulo 10 |
+ M étodos de Avaliação de IHC    361
+t arefas os avaliadores p o dem re alizar uma entre v ist a p ós-teste para colher a opinião 
+do par t icip ante s obre o protót ip o da interface e sugestõ es de melhorias.
+Ap ós cada exp eriência de us o obs er vada, os avaliadores s e reúnem para re alizar 
+a at ividade de 
+inte r pre tação
+ (veja S e ção 9.7.4).As anot açõ es dos avaliadores s obre a 
+exp eriência de us o, as entre v ist as pré e p ós-teste, e p ossivelmente o áudio e o víde o 
+
+gravados s ão analis ados a ﬁ
+ m de ident iﬁ
+ car problemas de us abi lidade no protót ip o de 
+interface avaliado. O result ado dess a anális e é uma list a de problemas na interface que 
+
+de vem s er corrig idos, além de indicaçõ es de p ar tes do sistema que p o dem s er ap er-
+
+feiçoadas. Os  problemas fáceis de res olver p o dem s er res olv idos antes da exe c ução da 
+
+próxima simulação de us o com outro par t icipante. D ess a forma, o protót ip o em pap el 
+
+da interface com usuário p o de s er aprimorado p or ciclos sucessivos de avaliação e 
+
+re proj e t o.
+C omo durante a simu lação de us o existe p elo menos um avaliador resp ons ável 
+p ela obs er vação, ele p o de come çar a inter pret ar os dados da exp eriência de us o en-
+qu anto obs er va a atuação do usuário. Por t anto, na prát ica não existe uma s eparação 
+
+clara de qu ando ter mina a at ividade de colet a  de dados e qu ando come ça a at ividade 
+
+de inter pret ação. Pelo menos a lgumas p ar tes dess as du as at iv idades s ão conduzidas 
+
+e m  c onju nto  n a  protot ip a ç ã o  e m  p ap e l.
+Na  at ividade de 
+consolidação dos resultados
+, os avaliadores veriﬁ
+ cam qu ais pro-
+blemas não puderam s er res olv idos no reproj eto rápido do protót ip o de interface 
+(veja S e ção 9.7.5). Eles pr iorizam a corre ç ão dos problemas com bas e na gravidade (o 
+
+qu anto  prejudicaram a interação) e f re quência em que o c or reram. Por ﬁ
+ m, os avalia-
+dores sugerem prop ost as de cor re ç ão dess es problemas ou  de camin hos que p o dem 
+
+s er explorados para melhorar a interface.
+No  
+relato  dos resultados
+, os avaliadores de vem comunicar aos interess ados:
+os objetivos da avaliação;
+ 
+uma bre ve des crição do méto do de protot ip ação em p ap el;
+ 
+o número e o p erﬁ 
+l de avaliadores e dos par t icipantes;
+ 
+as t arefas exe c ut adas p elos par t icipantes;
+ 
+uma list a de problemas de us abi lidade cor r ig idos durante os ciclos de ava-
+ 
+liação e reproj eto, indicando:
+lo
+cal onde o c or reu;
+–
+fatores de us abi lidade prejudicados;
+–
+des cr ição e just iﬁ
+ cat iva do problema;
+–
+corre ç ão re alizada no protót ip o em pap el;
+–
+indicação s e o problema voltou a o c or rer dep ois da corre ç ão;
+–
+
+362    I nteração Humano - Computador
+uma list a dos problemas de us abilidade ainda não corrigidos, indicando:
+ 
+lo cal onde o c or reu;
+–
+fa
+tores de us abi lidade prejudicados;
+–
+des cr ição e just iﬁ
+ cat iva do problema;
+–
+pr ioridade p ara corre ç ão;
+–
+sugestõ es de cor re ç ão;
+–
+indicaçõ es de par tes do sistema que p o dem s er mais b em elab oradas.
+ 
+Resumo Comparativo dos Métodos de Avaliação
+10.3 
+Os méto
+dos de ava liação apres ent ados neste capítu lo prop õ em mo dos própr ios de 
+colet a, aná lis e e ju lgamento do va lor de dados relacionados ao us o de sistemas com-
+put acionais interat ivos. Nest a s e ção comp ar amos algumas carac teríst icas dess es mé-
+
+to dos p ara auxi liar o ava liador na es col ha do méto do mais ade qu ado em cada cas o. 
+
+E les s erão comp arados de acordo com 
+o que
+ e 
+qu an d o
+ s e avalia, b em como o 
+tipo de 
+re s u l t a d o
+ pro duzido.
+C ada méto do de avaliação de IHC é mais ade qu ado p ara avaliar alguns dess es 
+asp e c tos relacionados ao us o do sistema (
+o que avaliar
+; Tab ela 10.8). 
+ Aspec tos geralmente 
+Tabela 10.8   
+avaliados através de cada método
+apropriação 
+de tecnologia
+alternativas 
+
+de design
+conformidade 
+
+com padrão
+problemas 
+
+de IHC
+investigação
+entrevistas
++++
++
+–
+++
+questionários
+++
++
+–
+++
+grupos de foco
+++
++++
+–
++++
+inspeção
+avaliação heurística
+–
++++
++++ +++
+percurso cognitivo
++
+++
+–
++++
+inspeção semiótica
+–
+++
++
++++
+obser vação
+estudo de campo
++++
++
+–
++++
+teste de usabilidade
++++
+++
+ 
+–
++++
+aval. de 
+comunicabilidade
++++
+++
+ 
+–
++++
+prototipação em papel +
++++
+–
++++
+A classiﬁ
+cação varia de um méto do mais ade qu ado (“+++”) até um méto do inade-
+qu ado (“–”) para s e avaliar o referido asp e c to. Para avaliar a forma como os usuários 
+
+Capítulo 10 |
+ M étodos de Avaliação de IHC    363
+s e apropr iam dos sistemas comput acionais interativos, utilizamos entre v ist as, estudos 
+de camp o, testes de us abi lidade e avaliação de comunicabi lidade. Para comp ar ar  e 
+
+avaliar ideias e alternat ivas de desig n, costumamos ut i lizar g r up os de fo co, avaliação 
+
+heuríst ica e protot ip ação em p ap el. Já  p ara avaliar a confor midade com um p adrão, 
+
+ut i lizamos uma avaliação p or insp e ç ão, como a avaliação heuríst ica, considerando 
+
+algum conjunto de re comendaçõ es, guia de est i lo ou  norma. C omo era de s e  esp erar, 
+
+os problemas na interação e na interface s ão avaliados p or to dos os méto dos de ava-
+
+liação analis ados.
+A avaliação de IHC p o de s er re alizada em diferentes momentos no pro c ess o de 
+desig n e des envolvimento. Po demos comp ar ar  os méto dos de ava liação em f unção 
+
+da ne cessidade de existir uma s olução de IHC pront a  e f uncionando.A Tab ela 10.9 
+
+comp ara a aplicação format iva (durante o pro c ess o de desig n, antes de uma s olu -
+
+ção concluída) e s omativa ou  conclusiva (com uma s olução concluída) dos méto dos 
+
+de av a l iação apres e nt ados. Os méto dos classiﬁ
+ cados com“++” s ão empregados mais 
+f re quentemente no t ip o  de ava liação refer ido. Ent re v ist as, quest ionár ios, g r up os de 
+
+fo co, avaliação heurística e de p erc urs o cognitivo p o dem s er utilizados para avaliação 
+
+format iva e s omativa com b enef ícios s emelhantes.A insp e ç ão s emiótica, o estudo de 
+
+camp o, o teste de us abi lidade e a avaliação de comunicabi lidade s ão mais apropr iados 
+
+para avaliação s omativa, ap es ar de t amb ém p o derem s er aplicados para cer tos tip os 
+
+de avaliação formativa. Já a protot ip ação em pap el é mais apropr iada para a avaliação 
+
+format iva, p or explorar ideias em pap el e não numa s olução de IHC exe c ut ável.
+Quando cada método d
+Tabela 10.9   
+e avaliação costuma ser utilizado
+avaliação formativa avaliação somativa
+investigação
+entrevistas
+++
+++
+questionários
+++
+++
+grupos de foco
+++
+++
+inspeção
+avaliação heurística
+++
++
+percurso cognitivo
+++
++
+inspeção semiótica
++
+++
+obser vação
+estudo de campo
++
+++
+teste de usabilidade
++
+++
+aval. de comunicabilidade
++
+++
+prototipação em papel 
+++
++
+

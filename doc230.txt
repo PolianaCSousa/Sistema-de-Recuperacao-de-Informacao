@@ -1,0 +1,720 @@
+Blockchain-Enabled Edge Computing Techniques for Advanced Video Surveillance in Autonomous Vehicles
+Mohammad Tabrez Quasim*, Khair Ul Nisa
+
+Department of Computer Science and Artificial Intelligence, College of Computing and Information Technology, University of Bisha, Bisha, P.O. Box 551, Saudi Arabia
+
+* Corresponding Author: Mohammad Tabrez Quasim. Email: email
+
+Computers, Materials & Continua 2025, 83(1), 1239-1255. https://doi.org/10.32604/cmc.2025.061541
+
+Received 27 November 2024; Accepted 12 February 2025; Issue published 26 March 2025
+
+iconView Full Text
+iconDownload PDF
+Abstract
+The blockchain-based audiovisual transmission systems were built to create a distributed and flexible smart transport system (STS). This system lets customers, video creators, and service providers directly connect with each other. Blockchain-based STS devices need a lot of computer power to change different video feed quality and forms into different versions and structures that meet the needs of different users. On the other hand, existing blockchains can’t support live streaming because they take too long to process and don’t have enough computer power. Large amounts of video data being sent and analyzed put too much stress on networks for vehicles. A video surveillance method is suggested in this paper to improve the performance of the blockchain system’s data and lower the latency across the multiple access edge computing (MEC) system. The integration of MEC and blockchain for video surveillance in autonomous vehicles (IMEC-BVS) framework has been proposed. To deal with this problem, the joint optimization problem is shown using the actor-critical asynchronous advantage (ACAA) method and deep reinforcement training as a Markov Choice Progression (MCP). Simulation results show that the suggested method quickly converges and improves the performance of MEC and blockchain when used together for video surveillance in self-driving cars compared to other methods.
+Keywords
+Blockchain; multiple access edge computing; video surveillance; autonomous vehicles
+1  Introduction to Blockchain and MEC
+
+As online services become more prevalent, mobile devices on wireless connections are growing exponentially. Seventy-nine percent of worldwide mobile data traffic will be mobile video transmission by 2022, as per a study made by Cisco. Over the past decade, flowing audiovisual platforms like Netflix and YouTube have been increasingly prevalent as the need for multimedia applications has grown. Various drawbacks are associated with video streaming services, including limited profits for video providers, hefty subscriptions, and low privacy for consumers [1]. On top of that, video streams have to be transformed into multiple bitrate versions to fulfill varied user needs owing to various policies and changing system circumstances. Numerous duplicates of audiovisual records with varying data rates are kept on the centralized servers, incurring enormous expenses in video collection and internet use.
+
+Blockchain has recently been presented and deployed as a viable decentralized alternative in various distributed settings. These decentralized, innovative, contract-based communications in communal or isolated peer-to-peer (P2P) networks may be accessed by anybody in the system [2]. VideoCoin, Flixxo, and others can construct decentralized, distributed video streaming networks using blockchain solutions.
+
+With blockchain-based streaming media, video providers (VP), listeners, and network operators (NOs) can all trade videos without the involvement of a third entity. The streaming video procedures may be self-organized as a bonus by employing a consensus protocol.
+
+Blockchain-based video systems cannot transcode videos owing to their limited computing requirements [3]. MEC, which delivers computing performance to the edges of the STS system, is a potential solution to enable content delivery facilities to consumers [4]. Servers outfitted with MEC deliver reduced delay services to consumers and free up network bandwidth and storage expenses. According to [5], an MEC-based architecture enables an MEC server to translate the bitrate form of the audiovisual data following link conditions and operator demands. A video bitrate adaption method is proposed in [6], considering wireless channel circumstances. Incorporating blockchains and MECs might have substantial advantages and be an excellent idea for this exciting field. Progress has been made on MEC and distributed ledger to make the most of both technologies’ strengths and weaknesses.
+
+In recent years, deep reinforcement learning (DRL) has become a powerful technique for solving resource allocation issues in wireless communications and networking with the aid of Artificial Intelligence (AI) [7]. The DRL-based methods have lower computational complexity than the standard optimization methods and can maximize the resources with low complexity in communication systems [8]. Using the MEC platform for video surveillance, throughput can be improved and reduced latency in blockchain-enabled autonomous vehicles. The study aims to contribute to the following points:
+
+•   This paper presents a unique video surveillance architecture for blockchain-enabled STS with the MEC system, in which philosophical transactions have been used to provide safe data gathering and processing.
+
+•   Video unloading and resource allocation have been defined as an MCP to improve operational throughput and reduce the delay of the MEC system. It is characterized as a normalized transaction throughput and aggregated delay.
+
+•   An ACAA-based DRL method is further presented, centered on a distributed management system with reduced complexity.
+
+The remaining sections of the document are organized as follows. Section 2 explores related works on video surveillance in MEC and Blockchain. The integration of MEC and blockchain for video surveillance in autonomous vehicles is proposed in Section 3 of STS. Section 4 consists of the analysis and findings obtained from the proposed model. Finally, the conclusion and possible studies have been outlined in Section 5.
+
+2  Related Works on MEC, Blockchain, and STS
+
+MEC for blockchain has been introduced by Wu et al. in [9], and commercial computational supply management teams based on Stackelberg game theory have been proposed. This method allows smartphone nodes (miners) to outsource their mining tasks to an edge computing network operator (ECNO). An allocation strategy for deep learning (DL) resources in mobile blockchain networks is proposed by Guo et al. [10] to optimize the income of the ECNO. However, these works are inappropriate for video streaming because they use a proof-of-work (PoW) procedure to achieve agreement in the blockchain system—data mining and block harmonization among all members affected by increased costs and extended delays.
+
+Guo et al. [11] examine the agreement proliferation issue in Proof-of-Stake (PoS) public blockchains to overcome this challenge. Blockchain users and miners are modeled using machine learning models. Nguyen et al. [12] propose an enhanced Decentralized Proof of Stake (DPoS) consensus mechanism featuring a two-step lenient safety protocol (miner selection and segment validation) to facilitate car information sharing in blockchain-enabled Internet of Vehicles (IoV). Kang et al. [13] propose a systematic information-sharing method for efficient information loading and dissemination, devoid of endorsement, utilizing collaborative blockchain and a consensus mechanism for in-vehicle processing and connectivity.
+
+Game theory is a versatile and valuable instrument for analyzing the interactions and cooperative processes among various nodes and participants within systems. Xiong et al. [14] investigate the interplay among network service operators, subsidized information facility providers, and mobile users within a structured multiple Stackelberg control framework in edge buffering platforms. Various applications of Stackelberg’s game have been examined, including resource allocation in portable fog computing environments, simulated reserve management in wireless transmission networks, and computational supply distribution in fog networks [15,16]. They portray prospecting as a cooperative game among miners. Miners establish a consortium to maximize their computing capacity and gain a regular income.
+
+To optimize the income of the ECNO and the usefulness of the blockchain, Misra et al. [17] model the mining procedure as the Stackelberg game. This is not the first time Stackelberg’s activities have been used to mimic reserve distribution and blockchain-based withdrawal processes. MEC now supports video transcoding as a practical method for delivering ad-hoc video streaming services. Using MEC and other technologies, we have explored several challenges related to video transcoding and delivery. It is proposed by Singh et al. [18] to strengthen the streaming service in information-centric heterogeneous networks by leveraging wireless virtualization techniques.
+
+MEC, buffering, and software defined networks (SDN) have been considered by several researchers. Challenges in combined adaptive audiovisual frequency and circulation engineering have been examined. Nguyen et al. [19] proposed a blockchain-based framework to improve situational awareness in autonomous vehicles. This system facilitates secure data sharing among vehicles and edge devices, ensuring real-time communication for critical decision-making. The decentralized nature of blockchain enhances trust and data integrity while reducing the risks of tampering and unauthorized access.
+
+Another notable contribution comes from Wang et al. [20], who explored edge computing for distributed video analytics in autonomous vehicles. Their study demonstrated how combining blockchain with edge nodes can improve data processing speeds and reduce latency. This synergy enables real-time anomaly detection and event prediction, which is critical for advanced surveillance tasks.
+
+Wiseman [21] highlights the potential of reducing image color resolution and optimizing quantization tables to significantly decrease data size, thereby enhancing communication efficiency. This approach aligns with previous studies that emphasize the importance of video data in conveying dynamic information, such as vehicle movement and speed, which static images cannot adequately represent.
+
+Due to the high transaction throughput required by the blockchain system, this work aims at lowering the latency of video analytics applications using MEC systems and boosting the operational throughput of the blockchain. Markov decision process represents a combined audiovisual offloading and reserve distribution challenge. To solve this challenge, the DRL technique is utilized in this study. Also, the critical control components have been distributed to solve various computational issues.
+
+3  Integration of MEC and Blockchain for Video Surveillance in Autonomous Vehicles
+
+A video surveillance framework using MEC for STS has been introduced. The smart contract for video analytics is then described. The combination of Ethereum with edge devices can safeguard STS critical information systems and protect private information in the infrastructure and services. The overall model is presented for video unloading criteria in STS circumstances, which comprise STS systems that create interactions, the MEC scheme that supports video surveillance, and the blockchain scheme that interacts with the event.
+
+3.1 The Architecture of Video Surveillance
+
+Fig. 1 depicts the framework for integrating MEC and blockchain for video surveillance in autonomous vehicles. MEC is used to unload video surveillance tasks from the STS, which has two aspects: a vehicle node with the camera and a Road Segments (RS) node with MEC. Cameras mounted on vehicle nodes can initiate audiovisual errands, wrap them into video blocks, and convey them to RS nodes through vehicular systems. MEC with RS node allows for sophisticated video analytics. It also ensures video retention on RS and information processing across nearby vehicles. For STS’s perception and decision-making, cameras are an appealing sensor choice. Numerous contemporary professional driving support systems depend on cameras for carriageway and pedestrian identification, for example. In real-time, video analytics in STS may be performed using edge computing due to its extensive data volume, computation needs, and latency constraints.
+
+images
+
+Figure 1: Framework for the integration of MEC and blockchain for video surveillance in autonomous vehicles
+
+3.2 System Model for STS
+
+A blockchain-activated STS network using blockchain has been examined. The core of the coverage area is placed within the STS networks with a single macro-cell base station (BS). Various RSs are spread across the BS, and wired connections link all RSs. Assume a system without interruption, wherein users employ coherent bandwidth to communicate information. Let the RS set be marked N = {1, 2, …, N}. Therefore, P = {1, 2, …, P}, is indicated for the set of vehicles where n vehicles are provided with their respective RS n.
+
+The blockchain nodes consist of all RSs in the blockchain system. These units have two characteristics: regular nodes and nodes of consensus. The blockchain system broadly addresses operations from the MEC network, i.e., the video download of data records. Blockchain technology requires two stages to accomplish its functions. One is the production of blocks, while the other is the according procedure. Normal nodes transmit and absorb register information solely, whereas agreement nodes create transactions and execute the consensus protocol. It has to be noted that L consensus nodes are chosen by a particular practice from N. Let L = {1, 2, …, L}, mark the agreement cluster. The reverse link produces a video bottleneck in vehicular communications. MEC servers have resource constraints that restrict download scaling. Vehicle-to-internet communication supports cellular system uplink communication when automobiles communicate RS visual information.
+
+There is a need to enhance connectivity and computer abilities. Thus, reverse link MEC is taken into account in this research. Backhaul MEC will be examined in future studies because of the length constraint of this paper. Edge buffering is also crucial for on-demand cellular network video streaming. Video surveillance requests in automotive cyberspace have been considered, and the key responsibilities are video decryption, pre-processing, and entity recognition. Therefore, connectivity and processing capabilities were examined to maximize the blockchain platform’s transaction performance and reduce the MEC platform’s delay. MEC-based RSs are used in video analysis platform tasks.
+
+Fig. 2 shows the methodology of video surveillance in STS. As illustrated in Fig. 2, many modules allow the video analysis process to be considered and explained.
+
+images
+
+Figure 2: Methodology of video surveillance in STS
+
+1.    Video deciphering: It is the decoding procedure or the decompression of encoded video instantaneously. The codec may extract and unwind the multimedia broadcasting in a sequential sequence constructed on the real-time streaming protocol (RTSP) or the real-time messaging protocol (RTMP). As a result, AVS, H.264/AVC, and H.265/HEVC are among the most commonly utilized video coding standards.
+
+2.    Initial processing: the correction procedure is a non-uniform modification of brightness or colors and amplitude. Because of the poor contrast and blurring of the picture, lens correction and enhanced picture should improve the quality of the video sequences.
+
+3.    Object Recognition: Instances of semantic entities of a specific class need to be detected, which are essential in achieving independent navigation. STS’s significant objects are automobiles, football, cycling, and road signs. Accordingly, a single-phase method comprised of deep learning (DL) based object recognition methodologies has been used. The classes include regional integration, spatial pyramid pooling network (SPP-Net), and regional proposition networks (RPN). The solitary technique model consists of a single screen detector (SSD).
+
+4.    Track objects: The status of one or more things must be estimated over runtime via sensor readings. The follow-up of other drivers is essential for autonomous vehicles. Object detection comprises four phases: function retrieval, navigation model, look-up framework, and online updating. Object detection and tracking approaches include generating, discriminating, and deep learning models.
+
+5.    Feature dissection: A tag consisting of a set of classes must be assigned to each image pixel. The division of pictures into semantic areas allows cars to comprehend their atmosphere so that autonomous vehicles may be securely included in our current roadways.
+
+6.    Stereo Phonic: The method of getting knowledge from inactive 2D pictures taken from a laser scanner is stereo prediction.
+
+7.    Visual Drift: It can offer important scene information and act as an interface to specific activities, including movement estimate and surveillance.
+
+For the unburdening mission of video surveillance applications using MEC, the transmission of data from intelligent vehicles to road segments is given as follows:
+
+S
+=
+B
+W
+×
+l
+o
+g
+[
+1
++
+P
+o
+(
+m
+)
+G
+(
+m
+)
+δ
++
+P
+j
+G
+j
+(
+m
+)
+]
+(1)
+
+S is defined as the transmission of data from intelligent vehicles to road segments. Specifically, S quantifies the amount of data transmitted during the video surveillance process, measured in bits. This data includes video frames, metadata, and other relevant information necessary for effective surveillance and analysis.
+
+The calculation of S is based on the available bandwidth (denoted as BW) and the signal-to-noise ratio, which influences the quality and reliability of the data transmission. The equation reflects how these factors interact to determine the maximum data rate that can be achieved in the communication channel.
+
+Let 
+P
+o
+(
+m
+)
+ and 
+G
+(
+m
+)
+ depict the transmission energy and gain of the channel. There are 
+p
+ vehicles and 
+n
+ RSs for a period of 
+m
+. 
+δ
+ is the power of the interfering signal. The transmission bandwidth is given by 
+B
+W
+.
+ 
+P
+j
+G
+j
+(
+m
+)
+ is the sum of all interfering signals.
+
+The latency to download the video information (
+E
+o
+)
+ is given by
+
+E
+o
+=
+∅
+J
+/
+S
+(2)
+
+where 
+∅
+J
+ is the volume of video information in bits received from the road segments, 
+S
+ is data transmission from intelligent vehicles to road segments for the unburdening mission of video surveillance applications using MEC. The power consumed for the information of video data from the autonomous vehicle to RS is given by
+
+D
+o
+=
+P
+o
+(
+m
+)
+E
+o
+(3)
+
+E
+o
+ is the latency to download the video information. 
+P
+o
+(
+m
+)
+ is the transmission energy of the channel. It would incur the computing resources to carry out the video surveillance work on the MEC server 
+p
+. The processing latency that MEC server 
+p
+ performs on the autonomous vehicle n is therefore determined by the following equation:
+
+E
+d
+=
+∅
+J
+Y
+/
+F
+0
+(4)
+
+The number of computational resources needed for evaluating a bit of the video data may be determined using 
+F
+=
+{
+F
+0
+}
+ in cycles/s to signify the processor frequency required by the 
+n
+th MEC server. 
+Y
+ denotes calculation intensity for video surveillance (in cycles/bit).
+
+The power consumed for video surveillance using the MEC server is given by
+
+D
+d
+=
+L
+×
+(
+F
+2
+o
+)
+×
+E
+d
+(5)
+
+L
+ is the effectiveness of power consumption of the dispensation unit. 
+F
+0
+ represents the processor frequency needed by the 
+n
+th MEC server. 
+E
+d
+ is the processing latency MEC server 
+p
+ performs on the autonomous vehicle.
+
+The total transmission latency is given by
+
+E
+=
+E
+o
++
+E
+d
+=
+∅
+J
+/
+S
++
+∅
+J
+Y
+/
+F
+0
+(6)
+
+Therefore, the completion of the video surveillance task by the 
+n
+th MEC server is given as the total delay in transmission and processing latency. The actual power consumption is provided by
+
+D
+=
+D
+o
++
+D
+d
+=
+[
+P
+o
+(
+m
+)
+E
+o
+]
++
+[
+L
+×
+(
+F
+2
+o
+)
+×
+E
+d
+]
+(7)
+
+E
+o
+ is the video information delayed in being downloaded 
+P
+o
+(
+m
+)
+ is the channel energy transfer. 
+L
+ is the efficiency of the unit’s electricity usage. An 
+n
+th MEC server requires CPU-cycle frequency, 
+F
+0
+. 
+E
+d
+ is the autonomous vehicle delay performed by the MEC server 
+p
+.
+
+3.3 Blockchain Process
+
+Blockchains can possess three characteristics of a scalability trilemma law: (1) versatility, (2) safety, and (3) decentralization.
+
+The three key features of blockchain have been depicted in Fig. 3. Each of these features has been explained in detail as follows.
+
+images
+
+Figure 3: Features of blockchain
+
+3.3.1 Versatility
+
+It defines the network infrastructure, including how many nodes the network can handle, the number of transactions the network can take, etc. Operations to the blockchain network have been recorded. Based on the suggested timetable approach, a block producer is selected, and a block producer is then generated by gathering, verifying, and packing operations. The operational throughput ∂ can be specified by
+
+∂
+=
+{
+[
+T
+C
+T
+U
+]
+/
+U
+J
+}
+(8)
+
+where 
+T
+C
+ be the segment size. The segment interval and the transaction size are denoted by 
+U
+J
+ and 
+T
+U
+, respectively. The segment size can thus be increased or the time interval reduced to enhance the information flow. However, additional variables like delay, safety, and decentralization impact the scalability of blockchain systems.
+
+3.3.2 Safety
+
+Safety refers to the amount of blockchain’s defensiveness against exterior assaults and the platform’s resilience to manipulation. A blockchain system contains various attack vectors, including dual expenditure attacks, wormhole attacks, DDoS (Distributed Denial of Service) assaults, and 51 percent assaults. The number of evil verifiers 
+k
+ should thus be constrained by the following restrictions to guarantee the safety of smart contracts:
+
+k
+<
+K
+,
+w
+h
+e
+r
+e
+ 
+K
+=
+⌊
+(
+L
+−
+1
+)
+/
+2
+⌋
+(9)
+
+K
+ is the number of evil nodes that is maximally acceptable.
+
+3.3.3 Redistribution
+
+Redistribution refers to the extent of authority, dominance, and value diversity of the blockchain. All activities and blocks are disseminated, validated, recorded, and decentralized across all stakeholders in a private blockchain, ensuring that the whole structure is unchangeable, robust, and durable. At the same time, more than 1/2 of the computer resources stay fair. When blockchain is used in STS settings, scaling becomes a big problem. Firstly, by boosting segment size or lowering block intervals, the transaction output may be enhanced. Second, the reduction in the break of the block enforces a more substantial restriction on the latency. The segment size and periodic modification or the choice of block manufacturers and consensus methods should thus be carried out carefully to bring blockchain sustainability up to a standard level.
+
+3.4 Process Flow of Contract in Blockchain for STS
+
+Fig. 4 depicts the process flow of contracts in blockchain. An intelligent contract is an agreement of conscience, autonomous, and manipulative programs. A centralized repository with the interoperability and security of blockchain expertise proficient in audiovisual surveillance in low-cost STS situations has been given. Fig. 4 shows the STS blockchain topology, with data stock and sharing records included in the transaction data. The interactions created as STS environments are presented in Fig. 4 with intelligent contracts for data storage and share procedures. The blockchain network has to accomplish two stages: (1) Transaction bundling and segment generation and (2) segment registration with agreement q.
+
+images
+
+Figure 4: The process flow of contract in blockchain for STS
+
+3.5 Markov Chain Process (MCP)
+
+The problem of video download and the allocation of resources is presented as a discrete decision-making process by Markov to maximize system rewards. Two primary types of DRL techniques are generally available, including worth-based and regulation-based. The ACAA technique approaches temporal differences using a distinct memory structure to reflect an active policy irrespective of the value. Actor-Critics want to use all the exceptional items based on both weight and procedure while simultaneously removing all their inconveniences.
+
+ACAA has been employed in discontinuous and ongoing activity spaces faster and more resilient than conventional methods. The method focuses primarily on the simultaneous formation of several players with universal characteristics. The ACAA uses several actors and reviewers to break down the reliance of the data on multiple threads of a CPU (Central Processing Unit). This increases convergence in training considerably and enables DRL agents to train for CPUs quickly. This problem is solved by using the ACAA algorithm.
+
+Fig. 5 shows the mediator and atmosphere in DRL for the proposed IMEC-BVS framework. The DRL method can resolve synchronous policy decisions by optimizing the reward function in the unknown environment. The resource apportionment issue based on DRL may be stated as an MCP, as seen in Fig. 5.
+
+images
+
+Figure 5: Mediator and atmosphere in DRL for proposed IMEC-BVS framework
+
+The MCP is well-defined by three factors: [T (m), B (m), Q (m), S (m)], where T (m) is the system state set, B (m) is the structure accomplishment set, Q (m) is the probabilities for the status transition and S (m) is the function for recompense. The objective of learning is to create a strategy that optimizes the benefits predicted. Network entities can make observations using the DRL methods and get the optimal policy on location with the least or without sharing of information.
+
+This work aims to maximize the operation output of the distributed ledger and reduce the delay of MEC systems, which are based on video analytics apps within an STS. The MEC system’s overall latency comprises queuing delay and computer latency, which are defined by E. As stated in equations for Eo and Ed, the volume of the data is utilized to estimate the delay and calculate the computational latency. The magnitude of information and processor frequency have also been used. The output may be defined by network capacity, segment interval, and average transaction size in the blockchain network. In STS systems, vehicles generally anticipate being finalized in a short period, and the Stay to Final (STF) meets the limitation. Therefore, the resource assignment issue defines data quantity, processing capacity, and delay for video surveillance tasks. Then the combined objective function has been formulated as follows:
+
+∞
+m
+a
+x
+B
+(
+m
+)
+F
+[
+∞
+∑
+m
+=
+0
+ 
+(
+α
+1
+∂
+α
+1
++
+1
+)
+×
+α
+2
+E
+(
+m
+)
+]
+ 
+(10a)
+
+Given that 
+GT 
+1
+:
+N
+∑
+n
+=
+1
+ 
+P
+o
+(
+m
+)
+×
+(
+∅
+J
+/
+S
+)
+>
+F
+m
+i
+n
+(10b)
+
+GT 
+2
+:
+U
+S
+T
+F
+<
+τ
+<
+U
+J
+(10c)
+
+infinity sign (∞) in Eq. (10a) indicates that the summation is evaluated over an infinite series, representing the cumulative effect of the system’s performance over an indefinite time horizon. 
+F
+ and 
+F
+m
+i
+n
+ summate overall MEC server computing capability and minimum energy consumption. 
+∅
+J
+ is the volume of video information in bits received from the road segments, and 
+S
+ is the transmission of data from intelligent vehicles to road segments. 
+N
+ is the number of RS in STS using MEC. 
+P
+o
+(
+m
+)
+ is the transmission energy of the channel. Transaction size is given by 
+U
+J
+, and the STF period is denoted as 
+U
+S
+T
+F
+.
+τ
+ is the segment interval. The recompense function can, therefore, be stated as follows:
+S
+(
+m
+)
+=
+{
+α
+1
+∂
+/
+(
+α
+1
++
+1
+)
+×
+α
+2
+E
+,
+i
+f
+G
+T
+1
+∩
+G
+T
+2
+0
+,
+o
+t
+h
+e
+r
+w
+i
+s
+e
+(11)
+
+where 
+α
+1
+ refers to a weight factor in which the goal function is combined into the same, and 
+α
+2
+ is a charting factor in assuring the objective function in the same grade. Operational throughput is given by 
+∂
+, and 
+E
+ denotes the overall latency of the proposed IMEC-BVS framework.
+
+4  Results and Discussion for the Proposed IMEC-BVS Framework
+
+The effectiveness of the suggested method has been tested in this section under various parameter settings. Simulations that use a Python-based simulator are carried out with TensorFlow. Different interventions have been examined to check the performance of the proposed algorithm: (1) Conventional Deep Q-Network (DQN) method: A standard DQN approach creates a DNN (Deep Neural Networks) to identify and assess behaviors that eventually lead to extrapolation. (2) Suggested approach with Static Segment Size (SSS): The block size generated by the block provider will be the same. (3) Suggested approach with Static Segment Period (SSP): The producing frequency of segments is equal.
+
+The simulation parameters used in this work have been summarized in Table 1. The proposed IMEC-BVS framework, comprising 15 RS units and 120 autonomous vehicles, is assessed in this study. The CPU has a 64 G memory for Intel Core i5-8400. TensorFlow 1.10.0 and Python 3.6 on Ubuntu 18.04.2 LTS are the programming environments employed.
+
+images
+
+Fig. 6 compares throughput (%) and computational resources (F0) for the proposed IMEC-BVS framework. When the computational resources of MEC grow for all techniques, the average throughput drops, as seen in the graph. Further, the suggested approach provides greater throughput under the same processing power of MEC, while the conventional DQN method obtains the minimum throughput value. The throughput of the proposed IMEC-BVS framework with SSS is higher than that of the approach with SSP for all deals of computational resources. As a result, the blockchain network has fewer computer resources available, whereas the MEC system has more computing resources available to execute the video unloading job.
+
+images
+
+Figure 6: Comparison of throughput (%) and computational resources (F0) for the proposed IMEC-BVS framework
+
+A comparison among throughput (%) and STF threshold for the proposed IMEC-BVS framework has been depicted in Fig. 7. The figure shows the effect of the STF threshold on the average transaction rate.
+
+images
+
+Figure 7: Comparison of throughput (%) and STF threshold for the proposed IMEC-BVS framework
+
+As the threshold of the STF is increased, the average throughput improves for all methods. It is possible to produce more transactions due to the reduced latency limitation. The proposed IMEC-BVS method with SSS has a maximum throughput of 63%. The proposed approach with SSP has a maximum throughput of 60%, which is less than that obtained in the SSS approach. The DQN method has the most negligible throughput value of 38% at an STF threshold of 14.
+
+Fig. 8 compares the mean recompense value among the proposed approach (with SSS and SSP) and the existing DQN approach. As seen in Fig. 8a, transaction size significantly influences averaging rewards. The average compensation falls for all techniques as the average transaction size increases. As the mean transaction size increases, so does the throughput, and the two are strongly associated. In addition, the suggested method yields the most significant mean compensation relative to the baseline methods, indicating it is the most effective. Fig. 8b compares the mean value of recompense vs. the number of autonomous vehicles for various approaches. With the rising number of autonomous cars, the average incentive rises. Moreover, the proposed method with SSS can achieve higher compensation than the proposed approach with SSP and existing approaches.
+
+images
+
+Figure 8: (a) Mean value of recompense vs. transaction size (TU); (b) Mean value of recompense vs. the number of autonomous vehicles
+
+Using different weight factors, the influence of processor frequency on average reward is explored (see Table 2a). The total compensation increases as α1 increases. Further, it can be noticed that the mean compensation for a given α1 increases with processor frequency as a function of α1. A comparison among various methods on the mean value of recompense for varying segment intervals (UJ) is given in Table 2b. As the maximum segment interval UJ for all approaches is increased, the mean compensation drops for all methods. This is attributed to the fact that, as the segment interval increases, throughput reduces.
+
+images
+
+Fig. 9 depicts the assessment of segment size (TC) vs. the mean value of compensation using the proposed IMEC-BVS framework. Except for SSS, the mean value of compensation increases with the increase in the segment size. The reward value is the maximum for the proposed approach with SSP than SSS and DQN. This is due to the STF limitation. As a result, the optimum number of transactions in a segment is limited to a maximum of 11.
+
+images
+
+Figure 9: Comparison of the segment size (
+T
+C
+)
+ vs. the mean value of recompense using the proposed IMEC-BVS framework
+
+A combined optimization issue has been developed to optimize the operational throughput of the blockchain process and reduce the delay of the MEC system. An excellent convergence efficiency has been provided by the proposed IMEC-BVS method. For video surveillance applications in STS scenarios, the framework justifies using the decentralized approach with blockchain.
+
+5  Conclusion and Future Work
+
+For video surveillance in autonomous cars, the integration of MEC with blockchain technology has been suggested. As a result, the joint optimization issue has been modeled as MCP. The ACAA method has also been utilized to unravel the problem. The effectiveness of the suggested algorithm has been tested using a variety of inputs. For all values of computing resources, the proposed IMEC-BVS architecture with SSS has a greater throughput than the method with SSP. The average incentive increases as the number of autonomous automobiles increases. A decrease in the mean compensation is observed for all techniques when the maximum segment interval UJ increases. An additional benefit is that a suggested strategy with SSS can result in greater average rewards than a proposal with SSP or existing alternatives. With SSP, the maximum throughput is 60 percent. Throughput and convergence performance are improved compared to the baseline method. In the future, we will incorporate compression methods into our work.
+
+The presented work has certain limitations and shortcomings.
+
+Limitations: The proposed method may face challenges in scaling to a large number of autonomous vehicles. While the algorithm shows effectiveness for various inputs, performance could degrade as the network size grows significantly, particularly in environments with a high density of autonomous vehicles. Another limitation is the optimization of computing resources that may not be fully applicable in real-world settings where resources like processing power and memory are limited. Shortcomings: The current work mentions throughput and incentive as key performance indicators, but other important metrics such as energy efficiency, security (other than throughput), and fault tolerance are not explored in depth. These factors are crucial in autonomous driving systems and might limit the system’s practicality, which will be explored in the future.
+
+Acknowledgement: The authors are thankful to the Deanship of Graduate Studies and Scientific Research at University of Bisha for supporting this work through the Fast-Track Research Support Program.
+
+Funding Statement: The authors received no specific funding for this study.
+
+Author Contributions: Mohammad Tabrez Quasim contributed to the conceptualization, design of the fault detection and recovery model, and data analysis. Khair Ul Nisa handled implementation, simulations, literature review, and manuscript preparation. All authors reviewed the results and approved the final version of the manuscript.
+
+Availability of Data and Materials: Not applicable.
+
+Ethics Approval: Not applicable.
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present study.
+
+References
+1.Do DT, Nguyen MV, Nguyen TN, Li X, Choi K. Enabling multiple power beacons for uplink of NOMA-enabled mobile edge computing in wirelessly powered IoT. IEEE Access. 2020;8:148892–905. doi:10.1109/ACCESS.2020.3015741. [Google Scholar] [CrossRef]
+
+2.Manogaran G, Mumtaz S, Mavromoustakis CX, Pallis E, Mastorakis G. Artificial intelligence and blockchain-assisted offloading approach for data availability maximization in edge nodes. IEEE Trans Veh Technol. 2021;70(3):2404–12. doi:10.1109/TVT.2021.3058689. [Google Scholar] [CrossRef]
+
+3.Meenaakshi Sundhari RP, Murali L, Baskar S, Shakeel PM. MDRP: message dissemination with re-route planning method for emergency vehicle information exchange. Peer Peer Netw Appl. 2021;14(4):2285–94. doi:10.1007/s12083-020-00936-z. [Google Scholar] [CrossRef]
+
+4.Manogaran G, Saravanan V, Hsu CH. Information-centric content management framework for software defined Internet of vehicles towards application specific services. IEEE Trans Intell Transp Syst. 2021;22(7):4541–9. doi:10.1109/TITS.2021.3058452. [Google Scholar] [CrossRef]
+
+5.Sang Z, Guo S, Wang Q, Wang Y. GCS: collaborative video cache management strategy in multi-access edge computing. Ad Hoc Netw. 2021;117:102516. doi:10.1016/j.adhoc.2021.102516. [Google Scholar] [CrossRef]
+
+6.Ullah R, Rehman MAU, Ali Naeem M, Kim BS, Mastorakis S. ICN with edge for 5G: exploiting in-network caching in ICN-based edge computing for 5G networks. Future Gener Comput Syst. 2020;111:159–74. doi:10.1016/j.future.2020.04.033. [Google Scholar] [CrossRef]
+
+7.Kumar Pande S, Kumar Panda S, Das S, Sagar Sahoo K, Kr Luhach A, Jhanjhi NZ, et al. A resource management algorithm for virtual machine migration in vehicular cloud computing. Comput Mater Contin. 2021;67(2):2647–63. doi:10.32604/cmc.2021.015026. [Google Scholar] [CrossRef]
+
+8.Baskar S, Periyanayagi S, Shakeel PM, Sarma Dhulipala VR. An energy persistent range-dependent regulated transmission communication model for vehicular network applications. Comput Netw. 2019;152:144–53. doi:10.1016/j.comnet.2019.01.027. [Google Scholar] [CrossRef]
+
+9.Wu D, Bao R, Li Z, Wang H, Zhang H, Wang R. Edge-cloud collaboration enabled video service enhancement: a hybrid human-artificial intelligence scheme. IEEE Trans Multimed. 2021;23:2208–21. doi:10.1109/TMM.2021.3066050. [Google Scholar] [CrossRef]
+
+10.Guo S, Dai Y, Guo S, Qiu X, Qi F. Blockchain meets edge computing: stackelberg game and double auction based task offloading for mobile blockchain. IEEE Trans Veh Technol. 2020;69(5):5549–61. doi:10.1109/TVT.2020.2982000. [Google Scholar] [CrossRef]
+
+11.Guo S, Hu X, Guo S, Qiu X, Qi F. Blockchain meets edge computing: a distributed and trusted authentication system. IEEE Trans Ind Inform. 2020;16(3):1972–83. doi:10.1109/TII.2019.2938001. [Google Scholar] [CrossRef]
+
+12.Nguyen DC, Ding M, Pham QV, Pathirana PN, Le LB, Seneviratne A, et al. Federated learning meets blockchain in edge computing: opportunities and challenges. IEEE Internet Things J. 2021;8(16):12806–25. doi:10.1109/JIOT.2021.3072611. [Google Scholar] [CrossRef]
+
+13.Kang J, Yu R, Huang X, Wu M, Maharjan S, Xie S, et al. Blockchain for secure and efficient data sharing in vehicular edge computing and networks. IEEE Internet Things J. 2019;6(3):4660–70. doi:10.1109/JIOT.2018.2875542. [Google Scholar] [CrossRef]
+
+14.Xiong Z, Feng S, Niyato D, Wang P, Leshem A, Han Z. Joint sponsored and edge caching content service market: a game-theoretic approach. IEEE Trans Wirel Commun. 2019;18(2):1166–81. doi:10.1109/TWC.2018.2890469. [Google Scholar] [CrossRef]
+
+15.Meng S, Wang Y, Jiao L, Miao Z, Sun K. Hierarchical evolutionary game based dynamic cloudlet selection and bandwidth allocation for mobile cloud computing environment. IET Commun. 2019;13(1):16–25. doi:10.1049/iet-com.2018.5100. [Google Scholar] [CrossRef]
+
+16.Meng S, Wang Y, Miao Z, Sun K. Joint optimization of wireless bandwidth and computing resource in cloudlet-based mobile cloud computing environment. Peer Peer Netw Appl. 2018;11(3):462–72. doi:10.1007/s12083-017-0544-x. [Google Scholar] [CrossRef]
+
+17.Misra SC, Mondal A. FogPrime: dynamic pricing-based strategic resource management in fog networks. IEEE Trans Veh Technol. 2021;70(8):8227–36. doi:10.1109/TVT.2021.3096149. [Google Scholar] [CrossRef]
+
+18.Singh R, Dwivedi AD, Srivastava G, Wiszniewska-Matyszkiel A, Cheng X. A game theoretic analysis of resource mining in blockchain. Clust Comput. 2020;23(3):2035–46. doi:10.1007/s10586-020-03046-w. [Google Scholar] [CrossRef]
+
+19.Nguyen H, Nguyen T, Leppänen T, Partala J, Pirttikangas S. Situation awareness for autonomous vehicles using blockchain-based service cooperation. arXiv:2204.03313. 2022. [Google Scholar]
+
+20.Wang J, Wang Q, Zhao L. Blockchain-based edge computing for autonomous vehicles: a distributed video analytics approach. IEEE Trans Ind Inform. 2021;17(8):5769–78. [Google Scholar]
+
+21.Wiseman Y. Adapting the H.264 standard to the Internet of vehicles. Technologies. 2023;11(4):103. doi:10.3390/technologies11040103. [Google Scholar] [CrossRef]

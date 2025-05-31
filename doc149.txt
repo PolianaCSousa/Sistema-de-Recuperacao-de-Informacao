@@ -1,0 +1,1334 @@
+JÚLIO CORRÊA BARROS SILVA
+INTELIGÊNCIA ARTIFICIAL E MÚSICA
+Trabalho de Conclusão de Curso
+São Paulo
+2023
+JÚLIO CORRÊA BARROS SILVA
+INTELIGÊNCIA ARTIFICIAL E MÚSICA
+Trabalho de Conclusão de Curso apresentado ao
+Departamento de Música da Escola de Comunicações
+e Artes da Universidade de São Paulo para obtenção do
+título de Bacharel em Música com Habilitação em
+Composição.
+Orientador: Prof. Dr. Fernando Henrique de Oliveira
+Iazzetta.
+São Paulo
+2023
+Autorizo a reprodução e divulgação total ou parcial deste trabalho, por qualquer meio convencional ou eletrônico, para fins de estudo
+e pesquisa, desde que citada a fonte.
+Catalogação na Publicação
+Serviço de Biblioteca e Documentação
+Escola de Comunicações e Artes da Universidade de São Paulo
+Dados inseridos pelo(a) autor(a)
+Silva, Júlio Corrêa Barros
+Inteligência Artificial e Música / Júlio Corrêa Barros
+Silva; orientador, Prof. Dr. Fernando Henrique de
+Oliveira Iazzetta. - São Paulo, 2023.
+51 p.
+Trabalho de Conclusão de Curso (Graduação)-
+Departamento de Música / Escola de Comunicações e Artes /
+Universidade de São Paulo.
+Bibliografia
+1. Inteligência Artificial. 2. Música. 3. Algoritmos.
+4. Composição. I. Iazzetta, Prof. Dr. Fernando Henrique de Oliveira . II. Título.
+CDD 21.ed. - 780
+Elaborado por Alessandra Vieira Canholi Maldonado - CRB-8/6194
+O mediador entre a cabeça e as mãos deve ser o coração.
+Fritz Lang
+AGRADECIMENTOS
+Agradeço ao meu orientador, o prof. Dr. Fernando Iazzetta, pelos ensinamentos e
+paciência com a minha insistência exagerada para os aplicativos funcionarem, e ao colega
+Gabriel Lemos pelas orientações e dicas de estudo. Ao meu amigo Yago Cano, por me ajudar
+a desvendar o mundo da programação, e aos amigos Paulo Sallet e Fernanda Redondo,
+demonstro minha gratidão por seu carinho.
+Por me ajudar a trilhar esse caminho desde a infância, agradeço a toda a família,
+começando pela minha mãe, Jeanne Corrêa, à minha tia e madrinha Sheila Corrêa, ao meu pai
+Paulo Henrique Silva, à minha avó Dete Silva, ao meu avô Bolival Silva e aos meus tios e
+primas.
+Gratidão também a todos os professores que me ensinaram a amar a música desde os
+cinco anos de idade no Conservatório Musical do Butantã, na Escola de Música do Estado de
+São Paulo (EMESP) Tom Jobim, na Escola Municipal de Música de São Paulo e, finalmente,
+na Escola de Comunicação e Artes da Universidade de São Paulo (ECA-USP). Em especial, à
+Mônica Ajej, Regina Kinjo, Dante Cavalheiro, Meca Vargas, Silvio Ferraz, Marcos Ramos e
+João Candeloro.
+Por último, porém não menos importante, não posso deixar de fora o agradecimento ao
+meu companheiro de estudos em tempo integral, meu gato Sopão.
+RESUMO
+SILVA, Júlio Corrêa Barros. Inteligência Artificial e Música. 2023, 51p. Trabalho de
+Conclusão de Curso (Graduação em Música) – Departamento de Música, Escola de
+Comunicações e Artes, Universidade de São Paulo, São Paulo, 2023.
+Resumo: Este trabalho de conclusão de curso é uma tentativa de comparar a composição
+musical feita por um estudante no final do curso de composição com aquela realizada por uma
+ferramenta de Inteligência Artificial (IA), ambas partindo dos mesmos parâmetros. No primeiro
+capítulo, há uma introdução da história da IA acompanhando a evolução da tecnologia
+computacional, assim como uma explicação de termos técnicos, tais como machine learning,
+redes neurais e algoritmos genéticos e evolucionários que fazem parte desse universo. A seguir,
+no capítulo “Inteligência Artificial e Música (IAM)” são descritas a história e aplicação
+crescentes da IAM, o surgimento da composição automatizada e da música algorítmica.
+Posteriormente, discorre sobre o uso dos Sistemas Imunológicos Artificiais e das ferramentas
+de masterização aumentando o acesso das pessoas a esse universo sem que tenham uma grande
+formação técnica e musical. Ainda, aborda a importância da IAM como instrumento de grande
+potencial na educação do musicista. O capítulo seguinte, “Tentativas de fazer música com
+IAM”, descreve os experimentos de criação musical com software de IA, mostrando os erros e
+acertos, os resultados às vezes ruins musicalmente e outros satisfatórios, porém apresentando
+dificuldades de codificação da programação. No último capítulo são analisadas as interfaces da
+IAM aplicadas aos campos da arte, tecnologia e educação, abordando conceitos como ética,
+consumo, liberdade, acessibilidade de uso e direitos autorais. Também comenta sobre as
+dificuldades do musicista em conseguir um resultado final da produção da IAM com uma
+música com boa qualidade artística. No caso deste trabalho, isso impossibilitou a comparação
+pretendida, uma vez que não foi possível alcançar resultados satisfatórios de criação musical
+com as ferramentas computacionais utilizadas, demonstrando que a IAM ainda tem limites.
+Palavras-chave: Inteligência artificial. Música. Algoritmos. Composição.
+ABSTRACT
+Abstract: This course completion paper is an attempt to compare the musical composition
+made by a student at the end of the composition course with that made by an Artificial
+Intelligence (AI) tool, both based on the same parameters. In the first chapter, there is an
+introduction to the history of AI following the evolution of computational technology, as well
+as an explanation of technical terms, such as machine learning, neural networks, genetic and
+evolutionary algorithms that are part of this universe. Next, in the chapter “Artificial
+Intelligence and Music (AIM)” the growing history and application of AIM is described, as
+well as the emergence of automated composition and algorithmic music. Later, the use of
+Artificial Immune Systems and mastering tools is discussed, increasing people's access to this
+universe without having extensive technical and musical training. It also addresses the
+importance of AIM as an instrument with great potential in the education of musicians. The
+following chapter, “Attempts to make music with AIM”, describes the experiments in creating
+music with AI software, showing the successes and mistakes, the results that are sometimes
+musically bad and sometimes satisfactory, but presenting difficulties in coding the program. In
+the last chapter, AIM interfaces applied to the fields of art, technology and education are
+analyzed, addressing concepts such as ethics, consumption, freedom, accessibility of use and
+copyright. It also discusses the difficulties faced by musicians in achieving the final result of
+the AIM production with music of good artistic quality. In the case of this work, this made the
+intended comparison impossible, since it was not possible to achieve satisfactory results in
+musical creation with the computational tools used, demonstrating that AIM still has limits.
+Keywords: Artificial Intelligence. Music. Algorithms. Composition.
+SUMÁRIO
+Lista de abreviaturas e siglas p. 09
+Lista de tabelas p. 10
+Introdução p. 11
+Capítulo 1: Inteligência Artificial e Música (IAM) p. 19
+Capítulo 2: Tentativas de Fazer Música com IAM p. 27
+Conclusão p. 41
+Referências bibliográficas p. 45
+LISTA DE ABREVIATURAS E SIGLAS
+AG Algoritmos Genéricos
+BSL Backtracking Specification Language
+CMU Carnegie Mellon University
+CPU Central Processing Unit
+ECA-USP Escola de Comunicação e Artes da Universidade de São Paulo
+EMESP Escola de Música do Estado de São Paulo
+EMI Experiments in Musical Intelligence
+EAU Emirados Árabes Unidos
+EUA Estados Unidos da América
+IA Inteligência Artificial
+IAM Inteligência Artificial e Música
+ICMC Conferência Internacional de Música por Computador
+IDM Intelligent Dance Music
+IMG/1 Incidental Music Generator number one
+LISP List Processing
+MIT Instituto de Tecnologia de Massachusetts
+OSCAR OSCillator ARtist
+PD Pure Data
+SIAs Sistemas Imunológicos Artificiais
+SNARC Stochastic Neural Analog Reinforcement Calculator
+SOM Self-Organizing Map
+LISTA DE TABELAS
+Tab. 1 - Parâmetros de pesquisa no Jukebox. Elaboração própria. p. 33
+11
+INTRODUÇÃO
+A ideia de máquinas dotadas de características humanas pode parecer atual, mas sabese que os mitos da Grécia Antiga já pensavam em humanoides, máquinas que imitam homens,
+com capacidades como inteligência, consciência e razão. Segundo o professor João Fernando
+Marar, especialista em Inteligência Artificial (IA) (PRADO, 2023a), na Mitologia Grega, o
+Deus do Fogo, Hefesto, construiu ao menos três humanoides chamados Talos, Pandora e as
+Donzelas Douradas, essas últimas feitas de ouro parecidas com mulheres jovens que
+respondiam às necessidades de seu criador. Elas possuíam consciência, fala, inteligência,
+aprendizado e razão. Já Talos era um robô gigante de bronze, que foi presenteado por Zeus a
+seu filho Minos para proteger a ilha de Creta. Ele era capaz de realizar tarefas e interagir com
+o ambiente. Por fim, a famosa Pandora foi criada como instrumento de traição depois que o Titã
+Prometeu roubou o fogo dos Deuses e o deu à humanidade para que a ajudassem a criar a
+tecnologia. Então Zeus ordenou a Hefesto que criasse uma humanoide para ser o mal disfarçada
+de dádiva, sendo ela moldada de terra e água, dotada de traição e sedução.
+Ainda na Grécia Antiga, Aristóteles pensava em como livrar os escravos do trabalho
+braçal como, por exemplo, criando uma vassoura com vontade própria para realizar a limpeza
+sozinha. Assim, não haveria a necessidade de escravos fazerem o trabalho bruto, podendo eles
+usar o tempo para aprender outras coisas como, por exemplo, matemática. Essas ideias de
+humanoides substituindo tarefas humanas permearam as mentes de geração em geração, mesmo
+que ainda sem tecnologia para colocá-las em prática.
+Foi com a Revolução Industrial, a Segunda Guerra Mundial e o consequente avanço
+tecnológico que, no ano de 1943, Warren McCulloch e Walter Pitts publicaram um artigo sobre
+redes neurais, estruturas de raciocínio artificiais em forma de modelo matemático que imitam
+o sistema nervoso humano. É, basicamente, um método de Inteligência Artificial que ensina
+computadores a processar dados de forma inspirada pelo cérebro humano (REDES..., [20--]).
+É um tipo de processo dito machine learning, que usa nós ou neurônios artificiais
+interconectados em uma estrutura em camadas.
+As redes neurais contam com dados de treinamento para aprender e melhorar sua
+precisão ao longo do tempo, permitindo a classificação e agrupamento de dados a uma alta
+12
+velocidade. As tarefas de reconhecimento de fala ou imagem podem levar apenas poucos
+segundos. Uma das redes neurais mais conhecidas é o algoritmo – um passo a passo para
+resolução de um problema - de procura do Google.
+Com as redes neurais também surgiram o chamado deep learning, onde o deep está se
+referindo à profundidade das camadas em uma rede neural. Esta consiste em mais de três
+camadas, que incluiriam as entradas e a saída, e pode ser considerada um algoritmo de deep
+learning. Já uma rede neural que só tem duas ou três camadas é apenas básica.
+Foi na década de 1950 que se intensificaram as discussões sobre essas ideias da maneira
+como é pensada na atualidade e se saiu de um plano principalmente da teoria para tentativas de
+aplicações práticas, que dariam origem no futuro aos chamados algoritmos evolucionários, que
+serão explicados posteriormente.
+Também neste período foi publicado por Turing um artigo chamado “Computing
+Machinery and Intelligence” (Máquinas Computacionais e Inteligência) onde propôs o Teste
+de Turing, que foi um grande marco. Neste, uma pessoa, um computador e um juiz são mantidos
+em salas separadas e a comunicação só pode ser realizada por texto impresso. A máquina e o
+ser humano manterão uma conversação entre si. O juiz deverá tentar distinguir entre a máquina
+e o homem. Turing questionava se poderia a máquina imitar o pensamento humano e confundir
+o juiz. Esse teste ficou conhecido por Jogo da Imitação e é título do filme de 2014 sobre a vida
+do autor (ALONSO, 2008). Outro artigo importante da época sobre esses ensaios práticos de
+IA é o trabalho de Claude Shannon, também de 1950, sobre como programar uma máquina para
+jogar xadrez com cálculos de posição simples, mas eficientes.
+No ano seguinte, 1951, foi criada a Calculadora Stochastic Neural Analog
+Reinforcement Calculator (SNARC) por Marvin Minsky, que era de operações matemáticas
+simulando sinapses, ligações entre neurônios. Considerado o primeiro neurocomputador do
+mundo, ela operava a partir de um ponto de partida ajustando os pesos automaticamente. Já em
+1952, foi Arthur Samuel que criou um jogo de damas no IBM 701 que consegue melhorar por
+conta própria e vira um desafio à altura de jogadores amadores (A HISTÓRIA..., 2018).
+13
+Um grande feito aconteceu em 1956, quando houve a Conferência de Dartmouth nos
+Estados Unidos da América (EUA), onde o campo de pesquisa foi batizado de Inteligência
+Artificial (IA) por McCarthy e a máxima do setor foi definida: “A ideia é que cada aspecto de
+aprendizado ou outra forma de inteligência possa ser descrita de forma tão precisa que uma
+máquina pode ser criada para simular isso”.
+Esse evento foi considerado o marco zero do conceito atual de IA e os principais nomes
+de cientistas foram Alan Turing, Marvin Minsky, John McCarthy, Allen Newell e Hebert
+Simon, todos unidos com a missão de desenvolver máquinas inteligentes.
+No ano seguinte, foi Frank Rosenblatt que apresentou o Perceptron, um algoritmo, com
+nome de personagem de Transformers, que é uma rede neural de uma camada que classifica
+resultados e começou como uma máquina chamada Mark 1 (VIEGAS, 2017).
+Em seguida, em 1958, John McCarthy desenvolveu a linguagem de programação List
+Processing (LISP), que se tornou uma das principais linguagens para se trabalhar com IA nas
+décadas seguintes, servindo de inspiração até hoje.
+E, finalmente, foi no último ano desta década inspiradora, 1959, que surgiu o termo
+machine learning, descrevendo um sistema que dá aos computadores a habilidade de aprender
+alguma função sem serem programados diretamente pra isso. Basicamente, significa alimentar
+um algoritmo com dados, para que a máquina aprenda a executar uma tarefa automaticamente.
+Portanto, essa década foi realmente incrível e só não se obteve resultados práticos ainda
+melhores porque não se dispunha ainda de tecnologia suficiente para aplicação prática.
+Já na seguinte década, em 1962, um cientista da computação chamado John Holland
+introduziu o conceito de algoritmos genéticos, que estabeleceu as bases para a evolução dos
+algoritmos evolucionários, segundo os quais quanto melhor um indivíduo se adaptar ao seu
+meio ambiente, maior será sua chance de sobreviver e gerar descendentes. Este é o conceito
+básico da evolução genética biológica.
+14
+Sendo assim, os algoritmos genéticos de Holland foram inspirados na teoria de seleção
+natural de Darwin. Ele propôs que uma população de soluções potenciais para um problema
+pudesse evoluir ao longo do tempo por meio de um processo de seleção, cruzamento e mutação.
+Essa abordagem permitiu a exploração de um vasto espaço de busca, possibilitando a descoberta
+de soluções (ALGORITMOS..., [20--]).
+Nessa mesma década, foram ocorrendo avanços na capacidade dos computadores,
+tornando possível a aplicação e desenvolvimento do método. As primeiras implementações de
+algoritmos genéticos visavam introduzir pequenas mutações em sistemas e observar se haveria
+melhorias significativas.
+Ainda nos anos 60, os primeiros sistemas inteligentes de tradução de texto começaram
+a ganhar relevância, usados principalmente para traduzir conteúdos escritos em russo
+relacionados ao programa espacial Sputnik.
+E foi em 1964 que foi criado pelo matemático Joseph Weizenbaum, pesquisador do
+Instituto de Tecnologia de Massachusetts (MIT), o primeiro chatbot do mundo, ELIZA, com a
+função de realizar conversas de forma automática comandadas por dados e algoritmos baseados
+em palavras-chave como um psicanalista, criado para ser um psicólogo virtual.
+Finalizando tal década, em 1969, é demonstrado o Shakey, primeiro robô que unia
+mobilidade, fala e certa autonomia de ação. Ele funcionava, apesar de ter muitas falhas e ser
+muito lento.
+Um avanço significativo ocorreu na década de 1970, quando John Koza introduziu a
+programação genética, um programa computacional que utiliza os algoritmos genéticos
+permitindo a expansão com novas possibilidades para que tais algoritmos enfrentassem tarefas
+mais complexas e versáteis (GABRIEL; DELBEM, 2008).
+Outro feito relevante da época foi na Universidade de Stanford, em 1972, com o MYCIN
+(sistema especializado no diagnóstico de doenças do sangue e medicamentos prescritos). Ele
+era baseado em uma máquina de inferência, programada para ser um espelho lógico do
+15
+raciocínio humano. Ao inserir os dados, o mecanismo fornecia respostas de alto nível de
+especialização.
+Na segunda metade dos anos 1970, houve o chamado inverno da IA, uma fase de poucas
+novidades, cortes nos investimentos e baixa atenção ao setor, muito por conta ainda da falta de
+tecnologia para resultados convincentes da aplicação da IA e por estranhamento de algo ainda
+bastante desconhecido.
+Já no início dos anos 1980, esse panorama mais sombrio mudou por meio de Edward
+Feigenbaum, que demonstrou os sistemas especialistas, softwares que realizam atividades
+complexas e específicas de um campo, imitando o raciocínio humano, mas bem mais veloz e
+com base de conhecimento gigante. Esses sistemas aproximaram a IA do mundo corporativo e
+vários setores percebem sua utilidade promissora.
+Foram nos anos 1990 que ocorreram avanços adicionais nos algoritmos evolucionários,
+com a introdução da otimização por enxame de partículas por James Kennedy e Russell
+Eberhart. Eles se inspiraram no comportamento coletivo de bandos de pássaros e cardumes de
+peixes, nos quais os indivíduos se comunicam e cooperam para encontrar a melhor solução. A
+otimização por enxame de partículas criou o conceito de inteligência coletiva, dando uma nova
+dimensão aos algoritmos evolucionários. Paralelamente a isso, aconteceu também a evolução
+tecnológica dos computadores, permitindo que as redes neurais criassem uma perspectiva de
+grande avanço da IA.
+Só que o sucesso não aconteceu porque os investimentos foram mal planejados, além
+da adoção de uma linguagem de programação sem grande adesão chamada Prolog. Outro
+agravante é que ainda nesta época as ideias eram maiores do que o poder de execução das
+Central Processing Units (CPUs). Isso tudo fez com que houvesse o segundo pequeno inverno
+da IA, na primeira metade dos anos 1990.
+A segunda metade dos anos 1990 foi marcada pela explosão da internet comercial. As
+redes se aproveitaram da IA pra desenvolver sistemas de navegação e também de classificação.
+São criados programas que pesquisam a rede automaticamente e classificam resultados, como
+o protótipo do Google, que nasceu nesse período.
+16
+Um grande feito que chamou a atenção do mundo foi em 1997, quando a máquina
+derrotou o homem em um jogo de xadrez. O campeão soviético Garry Kasparov foi derrotado
+em uma das rodadas pelo computador Deep Blue, da IBM, em partidas que repercutiram ao
+redor do mundo. O Deep Blue utilizava um método que analisava possibilidades, previa
+respostas e sugeria o melhor movimento.
+Já na seguinte década, em 2002, a iRobot lançou o primeiro Roomba. Esse assistente de
+limpeza autônomo tem pré-configurações e sensores de posicionamento trabalhando juntos.
+Esse autômato, constantemente aperfeiçoado, está cada vez mais presente nos lares ao redor do
+mundo.
+Foi a partir de 2008 que o processamento de linguagem explodiu e o Google lançou o
+recurso de reconhecimento de voz no iPhone para pesquisas. Em seguida, em 2011, a Apple
+lançou uma assistente virtual, a Siri, que responde perguntas e faz pesquisas com comandos de
+voz. Ela é seguida pela Alexa, da Amazon, que explodiu em popularidade; a Cortana, da
+Microsoft, e o Google Assistente.
+Ainda em 2011, a IBM criou Watson, um supercomputador e plataforma de IA que
+venceu os melhores jogadores num game show televisivo de adivinhação chamado Jeopardy.
+Sua aplicação se estendeu a áreas como saúde, direito, artes, reconhecimento de imagem, dentre
+outras.
+A Universidade do Vale do Silício, a Udacity, surge neste ecossistema inovador dos
+Estados Unidos em 2011, após o experimento do professor da Universidade de Stanford,
+Sebastian Thrun, ao lado de Peter Norvig, em que eles ofereciam um curso online e gratuito
+sobre “Introdução à Inteligência Artificial”. O sucesso e a procura foram enormes, dando
+origem à Udacity.
+Em 2012, o Google X (laboratório de pesquisa do Google) foi capaz de fazer uma
+máquina reconhecer gatos em um vídeo, ou seja, uma máquina aprendeu a distinguir algo. E,
+em 2016, a AlphaGO (IA do Google especializada em jogos Go) venceu a campeã europeia Fan
+Hui e a campeã mundial Lee Sedol. O jogo Go possui muito mais variações do que o xadrez do
+17
+Deep Blue. Agora não se tratava mais de regras de codificação para sistemas especialistas, mas
+de permitir que os computadores descubram, por meio de correlação e classificação, com base
+em uma grande quantidade de dados, as suas próprias respostas.
+Outro fato notório foi em 2014, quando um chatbot chamado Eugene Goostman
+conseguiu vencer o teste de Turing e convenceu jurados durante uma conversa por escrito de
+que ele, um programa, era na verdade um humano.
+Não menos notável é o ChatGPT, uma das aplicações de IA mais populares.
+Desenvolvido pela OpenAI, utiliza a tecnologia de processamento de linguagem natural para
+interagir com os usuários de maneira conversacional. Essa tecnologia tem sido usada em várias
+áreas, desde assistentes virtuais e suporte ao cliente até chatbots em plataformas de mídia social.
+A IA envolve o uso de dispositivos e softwares cada vez mais capazes de imitar o
+comportamento e o pensamento humano na tomada de decisões e execução de tarefas. Funciona
+por meio da análise de um grande volume de dados e identificação de padrões, feito por meio
+de diversas tecnologias. São exemplos práticos da IA no cotidiano os assistentes de voz,
+reconhecimento facial, algoritmo de redes sociais, entre outros (O QUE..., [20--]).
+Hoje, da maneira como é vista, a IA é uma ciência com mais de sessenta anos, voltada
+ao desenvolvimento de máquinas e programas de computador capazes de reproduzir
+comportamentos, atitudes, raciocínios e tarefas humanas. Ela tem um aspecto multidisciplinar,
+envolvendo matemática, estatística, probabilidades, neurobiologia computacional, ciência da
+computação, dentre outras ciências, todas tentando imitar a cognição humana. Sua aplicação é
+ampla, como na medicina, artes, marketing, segurança, comunicação, dentre muitas outras.
+18
+19
+CAPÍTULO 1:
+INTELIGÊNCIA ARTIFICIAL E MÚSICA (IAM)
+As primeiras experiências de Inteligência Artificial e Música (IAM) datam dos anos
+1950 e 1960, época em que os computadores começaram a ser usados para gerar composições
+musicais. Um dos pioneiros foi o compositor Iannis Xenakis, utilizando computadores para
+criar músicas complexas baseadas em algoritmos matemáticos. Outro marco foi o trabalho com
+música algorítmica em 1955 de Lejaren Hiller na Universidade de Illinois, que realizou um
+experimento de composição musical por meio de um processo algorítmico. Trata-se de um
+método de composição automatizada que transforma elementos musicais na forma de
+algoritmos, reunindo aspectos da ciência da computação e composição musical e é a base da
+IAM.
+Nesse processo de surgimento da IAM, foi em 1951 que Alan Turing programou um
+computador para reproduzir melodias tradicionais. Já em 1960, R. Kh. Zaripov, um pesquisador
+russo, publicou o primeiro artigo mundial sobre composição algorítmica de música usando o
+computador Ural-1, com o título An Algorithmic descripition of process of music composition
+(FERNÁNDEZ; VICO, 2013).
+Já em 1965, o inventor Ray Kurzweil apresentou uma peça de piano criada por um
+computador que era capaz de reconhecer padrões em várias composições, analisar e usá-los
+para criar novas melodias. Ele inventou seu primeiro programa de computador aos quinze anos
+de idade e foi responsável pela criação de muitos projetos que envolviam reconhecimento de
+padrões musicais por computador. Foi também o inventor do programa K250 em 1983,
+considerado o primeiro instrumento musical eletrônico a emular o som complexo de um piano,
+além de muitos outros instrumentos de orquestra virtualmente (ZULIĆ, 2019).
+A primeira Conferência Internacional de Música por Computador (ICMC) ocorreu no
+ano de 1974 na Universidade Estadual de Michigan, e ocorre anualmente até os dias atuais,
+reunindo pesquisadores, professores e estudantes com publicações que apresentam ideias e
+inovações desenvolvidas em estúdios e laboratórios, criando uma síntese entre ciência e arte na
+computação musical.
+20
+Um nome que se destaca nesse desenvolvimento é David Cope, que desenvolveu a IA
+Experiments in Musical Intelligence (EMI) em 1981 como resultado de um bloqueio criativo.
+Primeiramente, foi criado para compreender o estilo musical do compositor e para ter a
+habilidade de localizar as ideias de seus trabalhos, podendo prever uma próxima nota que
+fizesse sentido no contexto da peça. Porém, o resultado foi um programa que compunha no
+estilo de diversos compositores clássicos. Apesar de o resultado seguir corretamente as regras
+de condução de vozes, contraponto e harmonia, a música gerada soava sem vida e energia.
+Cope usou então o conceito de recombinância, um método para produção musical em
+que se junta músicas já existentes em novas sucessões lógicas. Por exemplo, todo e qualquer
+bom livro em português é construído a partir da recombinância das vinte e três letras do
+alfabeto. De modo similar, a maioria das grandes obras da música ocidental existe como
+recombinações das doze alturas da escala temperada e seus equivalentes nas oitavas. O segredo
+não está em criar novas letras ou notas, mas sim em dar sutileza e elegância na recombinação
+e, para que haja boas recombinações, é necessária muita análise musical.
+O software EMI, criado em 1984 como um parceiro interativo para o autor, trata
+intervalos como elementos linguísticos, usando métodos similares à música de Varèse e
+Messiaen. Cope, o autor, acredita que a música dos algoritmos é tanto dos humanos quanto
+aquela composta pelos compositores que se tem como inspiração. Um objetivo da EMI é ajudar
+na compreensão mais completa sobre a essência de estilo (COPE, 1987).
+Pesquisadores têm explorado a composição algorítmica por muitos anos (HILLER,
+1970; 1981; BOLOGNESI, 1983. DODGE; JERSE, 1985. LOY, 1989). Um trabalho de 1990
+produziu uma série de peças curtas com a IA Incidental Music Generator number one (IMG/1)
+que, apesar de desprovidas de semântica, possuem estrutura sintática. O intuito dessa e muitas
+outras IAs de música é possibilitar que leigos na música possam produzir peças, indicando
+alguns parâmetros, nada muito complexo. A IMG/1 trabalha com três deles: Estilo, Duração e
+Andamento. No programa, há 10 estilos. A duração é dada em segundos e o andamento é em
+batidas por minuto. Além desses três, para aqueles que querem descrições mais detalhadas, há
+a escolha de tonalidade, otimização, debug e sintetizador/setup, canais MIDI, transposição de
+oitava, energia (fatores rítmicos), previsibilidade, volume, além de outros (LANGSTON,
+1991).
+21
+A IMG/1 produz música que não está no nível de ser executada em um palco, mas que
+pode ser usada como incidental ou como de plano de fundo.
+Já em 1988, foi criado o CHORAL, programa que harmoniza e aplica análise
+schenkeriana de corais no estilo de Bach. O conhecimento teórico de assuntos como
+contraponto, harmonia e orquestração por compositores é tão grande que computadores não são
+capazes de tê-lostodos. Mesmo a aparentemente simplestarefa de representar algoritmicamente
+as características do estilo dos corais de Bach na realidade beira o infactível. Uma incumbência
+mais simples é construir um programa que compõe apenas em um estilo.
+Em 1988, existiram tentativas com estilossimples, como melodias folclóricas ou as duas
+primeiras frases de corais de Bach. Porém, é difícil impedir que o programa introduza traços
+que distorcem o estilo desejado. Foi criado, então, o Backtracking Specification Language
+(BSL), uma linguagem lógica eficiente que serviu para a codificação do CHORAL.
+Um sistema musical ambicioso tem que lidar com o problema de ter representada uma
+grande quantidade de conhecimento musical complexo, o que está longe de ser conquistado.
+Outra dificuldade é programar o que é chamado de “talento” do compositor: sua capacidade de
+fazer escolhas acertadas. Dificilmente é possível fazer o programa não escolher o “correto”,
+porém não musical.
+O CHORAL produz um acorde por vez. Ele recebe um código que representa uma
+melodia e gera uma harmonização em partitura, a qual geralmente demora de três a trinta
+minutos (embora algumas levem horas). As vozes ficam fora do alcance. Um uso de quinta
+paralela é feito da maneira que é permitida nas regras de Bach. O nível de competência do
+programa é aceitável, semelhante a um estudante de música talentoso que estudou os corais de
+Bach (EBCIOĞLU, 1988).
+De 21 a 24 de junho de 1989, ocorreu o “The European Workshop on Artificial
+Intelligence and Music” em Genova, na Itália. Nele, experts em IA na música se conheceram e
+discutiram sobre suas pesquisas. Um interessante software apresentado é o OSCillator ARtist
+(OSCAR), capaz de ouvir um humano e gerar estruturas sonoras em tempo real. A interessante
+22
+performance de C. Canepa utiliza materiais gerados por um computador que analisou as regras
+da Oferenda Musical de Bach (BAIED; BLEVINS; ZAHLER, 1993).
+Muitos algoritmos de IA são bioinspirados, ou seja, simulam funcionamentos biológicos
+como sistemas imunológicos, redes neurais ou a teoria da evolução de Darwin.
+Depois do sucesso dos Algoritmos Genéticos (AGs), um outro paradigma de
+computação bioinspirada vem sendo explorado: os Sistemas Imunológicos Artificiais (SIAs).
+Os SIAs são sistemas adaptativos baseados no sistema imunológico natural e estão sendo
+amplamente utilizados em problemas de otimização, busca, reconhecimento de padrões,
+segurança de redes, entre outros. Em SIA, um problema com solução desconhecida é tratado
+como antígeno, enquanto potenciais soluções são modeladas como anticorpos. Há várias
+implementações de sucesso, como a aiNet.
+Essa ferramenta, originalmente proposta para agrupamento de dados, foi aplicada neste
+trabalho em um método de síntese sonora. Os sons produzidos são chamados de imunológicos:
+foram gerados sons-anticorpo para reconhecer um conjunto de sons-antígeno, produzindo,
+assim, variantes timbrísticas com as características desejadas. A aiNet forneceu manutenções
+da diversidade e um número adaptável de sons-anticorpo resultantes, de modo que o resultado
+estético pretendido foi alcançado, evitando a definição formal dos atributos timbrais.
+A rede neural de Konhonen é uma grade de neurônios que constitui um sistema autoorganizável. Também é conhecida como mapa auto-organizável ou Self-Organizing Map
+(SOM). Ela é baseada em observações do comportamento cerebral que reúne funções correlatas
+em regiões próximas no cérebro. O principal objetivo da SOM é transformar um padrão de sinal
+incidente n-dimensional em um mapa discreto m-dimencional (normalmente uni ou
+bidimensional) e realizar esta transformação adaptativamente de uma maneira topologicamente
+ordenada. Desta forma, um mapa topográfico dos dados de entrada é criado, sendo possível
+abstrair características intrínsecas neles contidas de acordo com as suas localizações espaciais.
+Um método de síntese sonora utilizando a SOM foi desenvolvido a partir das ideias
+iniciais desenvolvidas neste projeto. A mesma codificação foi utilizada, resultando em igual
+23
+espaço de busca; apenas a técnica utilizada para se atingir o resultado final é outra (CAETANO;
+MANZOLLI; VON ZUBEN, 2005).
+Atualmente, um dos maiores usos da IA é em plataformas de streaming como o Spotify,
+que calcula quais as melhores músicas a serem sugeridas para cada usuário com base no que é
+ouvido por ele e no que o aplicativo quer que ele ouça (WATANABE, 2021).
+A evolução tecnológica foi acontecendo e, já em 2016, a Sony, através da IAM, compôs
+uma música ao estilo dos Beatles, chamada “Daddy’s Car” que foi feita com a ajuda do
+compositor francês Benoit Carré, conferindo-lhe um toque humano. No ano seguinte, Taryn
+Southern emprestou a sua voz ao Amper, uma plataforma de IA, para lançar o seu primeiro
+álbum, intitulado “I AM AI”, criado quase totalmente pela plataforma e muito bem aceito pela
+crítica. Assim, o mundo percebeu definitivamente o grande potencial desta tecnologia.
+Atualmente, a IAM pode estar presente em todas as etapas da indústria musical e em
+grande evidência. O assunto de muitas discussões hoje em dia é o uso da IAM na etapa de
+composição. Os compositores agora podem contar com assistentes virtuais que geram melodias,
+harmonias e até letras com base em parâmetros definidos. Isso interfere no processo criativo e
+gera novas formas de expressão musical, bem como discussões sobre o processo autoral.
+Softwares de edição de áudio utilizam algoritmos de IA para aprimorar a qualidade do som e
+remover ruídos, por exemplo. Em seguida, alguns usos da IAM na atualidade serão destacados:
+O serviço de streaming Spotify, por exemplo, utiliza tecnologia para criar playlists
+específicas para seus usuários, de acordo com suas preferências na plataforma. Já o Youtube
+utiliza a IA para sinalizar conteúdos com direitos autorais e automatizar a monetização dos
+anúncios.
+As grandes empresas de tecnologia estão se envolvendo no nicho da produção e criação
+de músicas. Equipes do Google, por exemplo, publicam frequentemente artigos e recursos para
+a comunidade de desenvolvedores. Recentemente, um de seus grupos de pesquisa lançou uma
+série de plugins (programa usado para adicionar funções a outros maiores) de IAM com código
+aberto, chamando a iniciativa de Magenta. Eles utilizam técnicas de aprendizagem de máquina
+de ponta para a geração de músicas. A coleção de plugins também é compatível com o Ableton
+24
+Live, um programa de áudio digital bastante popular, tornando fácil a adaptação aos trabalhos
+de músicos.
+Uma IAM importante é o Jukebox, desenvolvido pela OpenAI, uma das mais recentes e
+proeminentes iniciativas de geração de música. Ele usa a IA quando fornecido com gênero,
+artista e letra como entrada para produzir uma nova música.
+Outra ação bem atual da IAM é a masterização de música, o que antes era feita
+exclusivamente por engenheiros de áudio, que operavam hardware de áudio de alta qualidade
+em um ambiente de estúdio adequado, sendo um processo demorado e com altos custos de
+produção. Por meio do uso da IA, a masterização pode tornar-se acessível a um maior número
+de pessoas, porém, sua qualidade ainda é questionável. Um exemplo desse tipo de IAM é o
+Moises. Os usuários só precisam enviar uma música para que a plataforma aprenda as
+características de áudio e carregar a faixa final, que será masterizada. Tal processo funciona de
+forma autônoma e não é necessário nenhum conhecimento de engenharia de áudio. Em poucos
+segundos, o usuário pode baixar uma música pronta para ser tocada em qualquer dispositivo
+com a máxima qualidade, desde em dispositivos móveis até estéreos de alta-fidelidade e casas
+de shows.
+Um outro exemplo de uso recente da IAM foi a Anghami, plataforma de streaming dos
+Emirados Árabes Unidos (EAU) com um programa-piloto de geração de música por IA que
+teve como foco a Copa do Mundo do Catar. Basicamente, os usuários preencheram alguns
+dados simples: para qual time torciam durante a Copa e qual clima gostariam para a música, se
+de celebração, relaxamento etc. Um algoritmo, então, cruzava as respostas com os gêneros e
+músicas mais ouvidos por essas pessoas para elaborar uma nova faixa totalmente sob medida
+para o seu gosto, incluindo tudo: letra, acordes, arranjos e uma voz artificial que encaixava o
+mais perfeitamente possível na música.
+E o programa de IAM Boomy, lançado em 2019, permite o emprego de bases prégravadas e qualquer usuário pode criar músicas que passarão por um pequeno processo de
+revisão.
+25
+Já o MorpheuS é um projeto de pesquisa de Dorien Herremans e Elaine Chew na Queen
+Mary University de Londres. O sistema usa uma abordagem de otimização para transformar
+peças de modelo existentes em novas com maior complexidade. Peças compostas por ele foram
+tocadas em concertos em Stanford e Londres.
+À disposição há também o Computer Music Project da Carnegie Mellon University
+(CMU), que desenvolve música de computador e tecnologia de performance interativa para
+melhorar a experiência musical humana e a criatividade. Este esforço interdisciplinar se baseia
+em teoria musical, ciência cognitiva, inteligência artificial e aprendizado de máquina, interação
+homem-computador, sistemas em tempo real, computação gráfica e animação, multimídia,
+linguagens de programação e processamento de sinal.
+Por sua vez, no Riffusion, há uma rede neural projetada por Seth Forsgren e Hayk
+Martiros em 2022, com código aberto, ou seja, qualquer pessoa pode baixá-lo e usar. É um dos
+vários modelos derivados da Stable Diffusion, IA geradora de imagens.
+E a IAM chamada Melobytes é uma plataforma online que provê uma grande quantidade
+de ferramentas criativas de IAM para que se explore os limites de arte e música, desenvolvendo
+conteúdos que podem servir de inspiração para outras criações.
+Destaca-se também a Soundraw, IAM que surgiu a partir de outra, Ecrett. Foi criada por
+Daigo Kusunoki e permite tanto a composição de músicas originais sem direitos autorais quanto
+a criação de música pelos usuários por meio da seleção de diferentes comandos. Softwares estão
+sempre sendo atualizados por seus desenvolvedores. A plataforma sugere o uso para
+acompanhamento de vídeos ou imagens, apresentações, comerciais ou vídeos promocionais e
+música de plano de fundo.
+O uso da IAM na educação musical permite que um estudante usufrua de inúmeras
+ferramentas computacionais para aprendizado de assuntos como, por exemplo, progressões
+harmônicas, que são estudos das simultaneidades na música. Os compositores podem
+empiricamente fazer testes de criação em poucos minutos, enquanto no passado, seria
+necessário muito tempo para isso. A cada dia surgem novas ferramentas de IAM e esse caminho
+26
+vem se expandindo de maneira bastante acelerada nos últimos anos, dando aos musicistas
+infinitas possibilidades de criação antes inimagináveis (KURZWEIL, 1990).
+27
+CAPÍTULO 2:
+TENTATIVAS DE FAZER MÚSICA COM IAM
+Na intenção de investigar a capacidade da IA de compor músicas, independente do estilo
+musical, diversas ferramentas da atualidade foram utilizadas em dois computadores, um
+MacBook Pro e um HP 256 G8 com Windows 11.
+Inicialmente, o mais popular dos softwares, o famoso ChatGPT, criado pela Open AI,
+foi empregado na versão 3.5, por meio de comandos em inglês por se entender que haveria uma
+resposta mais complexa utilizando sua língua original e na qual há maior armazenagem de
+informações. Então, o primeiro comando foi: “Create a musical score for contemporary music”
+(OPENAI, 2023a). A resposta do ChatGPT foi um passo a passo detalhado e bastante genérico
+para composição de uma peça de música mista contemporânea, embora o esperado fosse uma
+resposta fosse mais criativa, específica e original.
+A seguir, outra tentativa foi realizada, por meio de um novo comando ao Chat: “Create
+an electronic experimental music score, with continuous form of about three minutes and use
+music notation software to transcribe the musical ideas into a readable score”.
+A resposta obtida foi:
+As an AI text-based model, I cannot directly create or transcribe music notation.
+However, I can provide you with a detailed outline for creating an electronic
+experimental music score with continuous form and offer suggestions for utilizing
+music notation software to transcribe your ideas (OPENAI, 2023b).
+E, em seguida, deu um passo a passo genérico para criação de música contemporânea,
+mas sem a descrição de cada um. Alguns dos itens foram: “Estabilish the concept and mood” e
+“Explore sonic possibilities”.
+Na terceira tentativa, foi pedido: “Create an electronic experimental music score, with
+continuous form of about three minutes and use text to describe the music”.
+Em resposta, quase que instantaneamente foi gerado o seguinte texto:
+28
+‘Ethereal Oscillations’ is an experimental electronic composition that embraces sonic
+exploration and unconventional techniques. This three-minute piece aims to create an
+immersive and ever-evolving sonic journey, blurring the boundaries between
+traditional musical elements. The composition begins with a gentle, undulating drone
+that slowly emerges, enveloping the listener in a mesmerizing ambient atmosphere.
+Layers of ethereal textures gradually intertwine, creating a complex sonic landscape
+filled with delicate harmonics and subtle fluctuations. As the piece progresses,
+fragmented melodic motifs emerge and dissolve, appearing like fleeting whispers in
+the sonic space. These motifs, generated through algorithmic processes and
+unconventional scales, add an unpredictable and otherworldly character to the
+composition. The rhythmic foundation in ‘Ethereal Oscillations’ is not based on
+traditional beats, but rather on intricate patterns of pulsating and shifting rhythms.
+Syncopated elements, irregular accents, and polyrhythmic structures create an
+intriguing and constantly shifting sense of time. Throughout the composition, digital
+effects and processing techniques are employed to transform and manipulate the
+sounds in real-time. Granular synthesis, spectral processing, and live sampling add
+layers of complexity, resulting in dynamic and evolving soundscapes. The stereo field
+is skillfully utilized to enhance the spatial experience. Sounds move and pan across
+the sonic canvas, creating a sense of movement and immersion. Spatialization
+techniques, including automated panning and spatial audio processing, provide an
+expansive and enveloping sonic environment. ‘Ethereal Oscillations’ does not adhere
+to a traditional song structure. Instead, it follows a continuous form, seamlessly
+transitioning from one section to another, creating an uninterrupted sonic flow. The
+transitions are fluid and organic, achieved through careful blending of sonic elements
+and gradual changes in textures, dynamics, and tonalities. This experimental
+composition encourages listeners to embark on a sonic exploration, transcending
+conventional musical boundaries. It invites them to immerse themselves in an abstract
+and evocative soundscape, where the boundaries between organic and synthetic,
+structured and chaotic, and familiar and otherworldly are blurred (OPENAI, 2023c).
+Dessa maneira, o resultado foi melhor porque o ChatGPT conseguiu elaborar um texto
+que descreve uma peça musical detalhada de qualidade, mencionando, por exemplo, seções,
+fundamentos rítmicos e motivos melódicos. Também detalhou linguagem teórica musical e
+realizou descrições subjetivas. Houve ainda a tentativa de classificar elementos sonoros com
+palavras extramusicais.
+Em um esforço para obter um melhor resultado, com uma composição de resultado
+sonoro mais satisfatório, pediu-se ao ChatGPT, por meio do software Csound, para desenvolver
+a mesma ideia gerada por ele, através do seguinte comando: “Create the code of ‘Ethereal
+Oscillations’ for Csound”.
+A resposta foi:
+Adjust the parameters such as the waveform, frequency, amplitude, and output level
+to achieve the desired ethereal textures and oscillations. Replace ‘[duration]’ with the
+desired durations of the composition in seconds. Please note that Csound is a powerful
+and flexible sound synthesis lenguage, and this code provides a strting point. You can
+expand upon it by adding more instruments, effects, and processing techniques to
+further develop your experimental electronic composition (OPENAI, 2023d).
+29
+Esse retorno continha um simples oscilador, que é um gerador de onda sonora e sem
+parâmetros como entrada. Assim, foi preciso definir amplitude, frequência e forma da onda
+simples. Na partitura o oscilador era continuamente acionado, com a duração em segundos
+estabelecida pelo autor deste trabalho. Também foi muito genérico e continha diversos erros de
+código na linguagem do programa, impossibilitando seu funcionamento. Enfim, mais uma vez
+o resultado foi insatisfatório, musicalmente falando.
+Novamente, buscou-se suprimir os problemas supracitados, requisitando-se para ele:
+“Could you fill the missing parameters of this code?”, referente ao código anterior. E a resposta
+foi: “Certainly! Here’s the modified code with the missing parameters filled in.”
+No entanto, seguiu na resposta exatamente o mesmo código da resposta anterior, com
+os parâmetros ainda a serem preenchidos.
+Como nenhum resultado sonoro foi obtido com o Csound mesmo lhe pedindo para mais
+especificidade, optou-se por pedir que o ChatGPT fizesse música com o Pure Data (PD). Então,
+a primeira tentativa neste sentido foi: “Create ‘Ethereal Oscillations’ for PD.”
+A resposta foi:
+Creating a complete composition based on such a detailed description would be
+beyond the scope of this text-based platform. However, I can provide you with a
+general outline and a set of components that you can use as a starting point to create
+your own "Ethereal Oscillations" composition in Pure Data (OPENAI, 2023e)
+Seguiu-se um passo a passo contendo erros, em que o ChatGPT descreveu como iniciar
+um patch no PD e sugeriu o uso de osciladores simples, geradores de ruído e filtros, além de
+modulações que utilizam outros osciladores para gerar números na entrada do principal, tanto
+para a criação do drone ondulante quanto para gerar as texturas etéreas, além do uso de
+envelopes sonoros.
+Para a criação dos motivos melódicos algorítmicos, foi sugerido o uso de algoritmos
+matemáticos ou estruturas de dados, além de escalas não convencionais e afinações microtonais
+para obter melodias de outro mundo. Recomendou-se o uso de aleatorização e operações
+30
+baseadas em acaso para dar imprevisibilidade aos motivos. Para criar os ritmos pulsantes e
+inconstantes, o ChatGPT propôs o uso de geradores de padrão, além de acentos irregulares,
+polirrítmicos e de flutuações de andamento. Foi levantado o uso de delays. Para manipulação
+sonora em tempo real, sugeriu a aplicação de efeitos como reverb, delay, processamento
+granular e loops em tempo real, além de usar sampling para mais camadas de complexidade.
+Para espacialização e movimento, indicou-se a criação de uma sensação de movimento
+e imersão no plano Stereo com panning e efeito Doppler. Sobre a forma contínua e transições,
+foi proposto que, apesar de fluida, a peça possuísse partes com transições muito graduais, com
+fading, crossfade, mudança de dinâmica, de tonalidade e texturas que se transformam. A
+sugestão de haver tonalidade na peça de certa forma contrastou com os inúmeros tratamentos
+eletroacústicos.
+O resultado também foi muito geral, justamente na última frase que ele utilizou para
+concluir, demonstrou que ele não teve a especificidade desejada. Antes que isso lhe fosse
+requisitado, foi pedido: “Create a code for ‘Ethereal Oscillations’ in Pure Data”.
+A resposta foi: “Certainly! Here's an example code for a Pure Data patch that
+incorporates some of the elements described in ‘Ethereal Oscillations’”.
+Seguiu-se um código cuja aplicação no aplicativo era incerta. Em seguida, a orientação
+do ChatGPT foi que o código era apenas uma versão inicial, a qual poderia ser alterada e
+acrescida de acordo com a criatividade de cada um. Porém, era justamente isso que o autor
+deste trabalho queria que ele fizesse. Então, tentou-se pedir ao ChatGPT que ele explicasse
+como aplicar esse código no PD com duas perguntas: “How do I play this code in PD?” e “How
+do I paste the code into the blank canvas area in PD?.”
+As respostas foram simplesmente orientando a copiar o código e colar no software, sem
+especificar onde, ou a colar o código todo em um único objeto do PD, o que não funcionou.
+Então, solicitou-se: “Create a complete guide based on” na resposta da tentativa 1 com
+PD.
+31
+A resposta foi semelhante, porém adicionou alguns detalhes, ainda mantendo-se
+genérica. Por isso, foi pedido que ele focasse em apenas um elemento da composição: “Describe
+precisely the creation of the undulating drone of ‘Ethereal Oscillations’”.
+O primeiro passo descrito foi o de adicionar um oscilador para o tom simples do drone.
+Após, pediu para parâmetros serem aplicados nas entradas do oscilador. O exemplo do
+ChatGPT tinha um erro: segundo ele, a primeira entrada do oscilador determina a forma de
+onda. No entanto, na verdade, a primeira entrada do oscilador é a frequência em hertz e a única
+onda que ele produz é a senoide. Em seguida, sugeriu o uso de um filtro passa-baixa para a
+ondulação, o que não teria função em sons tão simples. Depois, o ChatGPT sugeriu o uso de
+modulação de amplitude, que é um oscilador modulando a amplitude de outro, e modulação de
+frequência, que é um oscilador modulando a frequência de outro. Propôs então que se ajustasse
+a amplitude de ondas com a multiplicação, além de mudar parâmetros para obter efeitos
+diferentes em tempo real.
+Além desse elemento, solicitou-se também: “Describe precisely the layering of Ethereal
+Textures of ‘Ethereal Oscillations’”.
+A resposta foi semelhante à anterior: simples quando comparados a trabalhos de
+compositores de música eletroacústica. Até poderiam ser utilizados em composições que
+tivessem outra fonte de interesse, mas a produção dessa AI não foi satisfatória.
+Em seguida, foi pedido: “Create a complex Csound code”.
+A resposta foi:
+Creating a complex Csound code is a broad task, as Csound can be used to generate a
+wide variety of audio and music compositions. Below, I'll provide an example of a
+complex Csound code for generating a simple polyphonic synthesizer with multiple
+voices and effects. This code is for educational purposes, and you can use it as a
+starting point to explore more complex Csound programming (OPENAI, 2023f).
+Foi gerado um código cuja tentativa deu errado, pois o ChatGPT foi treinado com
+conteúdo da internet, que é majoritariamente formado por trabalhos e tutoriais simples sobre o
+Csound. Isso fez com que seu código também fosse simples e com três erros que foram
+corrigidos pelo orientador do autor deste trabalho, prof. Dr. Fernando Iazzetta, mas o código
+era simples demais para ser aproveitado.
+32
+This code defines a polyphonic synthesizer with two voices, each playing a simple
+waveform (in this case, an oscillator) and applying an amplitude envelope and a Moog
+low-pass filter. The score section defines the sequence of notes to be played. Csound
+is a powerful tool for audio synthesis, so you can create much more complex
+instruments and effects by extending this code. You can experiment with various
+oscillators, filters, and modulation techniques to create more intricate and
+sophisticated soundscapes (OPENAI, 2023f).
+Depois das tentativas com o ChatGPT, seguiu-se tentando fazer composição com o
+Jukebox, IA da mesma empresa do ChatGPT que gera música nova quando alimentado com
+informações ou a partir do zero.
+Foi solicitada ajuda ao Yago Cano, analista de sistemas, para instalar o Jukebox no
+computador do autor. Para isso, foram baixadas a linguagem de programação Python e a
+distribuição de linguagem Anaconda. Instalou-se a IA do Jukebox, mas, antes de tudo, Yago
+descobriu um site que o rodava. Passou-se, então, a utilizá-lo.
+O Jukebox apresenta dois modos: o Primed, em que uma música é continuada com o
+percentual de similaridade ajustável; e o modo ancestral, em que a música é gerada sem
+referências anteriores. O teste foi feito com os seguintes parâmetros
+33
+Nome Jukebox
+Modo Primed
+Arquivo de referência
+23 primeiros segundos da composição do
+autor, Memórias do Guarujá, com voz e
+piano aberto
+Duração 70 segundos
+Artista de referência Igor Stravinsky
+Gênero de referência Avant-Garde
+Porcentagem de semelhança com
+arquivo de referência
+50%
+Tab. 1 – Parâmetros de pesquisa no Jukebox. Elaboração própria.
+Ocorreu um erro, pois o site do Jukebox requeria a versão 2.0.1 do software torch mas
+só possuia a 1.13.1, por isso, desistiu-se dessa tentativa. Não foi possível instalar o programa
+Jukebox por conta do conhecimento limitado do autor acerca de programação.
+Desde 23 de junho de 2023, o autor deste trabalho entrou na lista de espera de uso do
+software Music LM. Pelos testes dessa AI feitas por outras pessoas disponíveis na internet, ela
+tem muito potencial: as músicas geradas são muito interessantes e parecem ser feitas por
+humanos. Músicas longas que não deixam de ter interesse e os mais variados gêneros são
+criados por esse software. No entanto, até o momento da publicação deste trabalho, o autor
+ainda se encontra nesta lista de espera.
+Outra tentativa foi feita com o Suno Chirp, que é um robot do software de comunicação
+Discord. O robot é uma aplicação de software feita para simular ações humanas repetidas vezes
+de maneira padrão como um robô. Ele gera principalmente canções com letras digitadas por
+quem o utiliza ou criadas pelo ChatGPT. É melhor com estilos musicais específicos.
+34
+Foisolicitado que ele produzisse duas músicas eletrônicas experimentais com letra sobre
+natureza criada pelo ChatGPT. A letra gerada foi a seguinte:
+In the forest, whispers of the trees
+Melodies of leaves caressed by the breeze
+Nature’s symphony, a delicate embrace
+As sunlight paints the world with grace
+Wild and free, the rivers flow
+Where the mountains stand tall, they know
+In harmony, Earth’s song takes flight
+A celebration of nature’s might (SUNOAI, 2023).
+A parte eletrônica ficou embolada e confusa. É possível acessar músicas feitas por
+outros usuários. Letras muito compridas são cortadas: a duração máxima é de quarenta
+segundos. O que se pode fazer é continuar uma música já existente.
+Outra tentativa foi com o Whisper, mas era necessário conhecimento básico da
+linguagem Python, o que o autor deste trabalho não tem.
+Em seguida, foi testado o Mubert.
+Na conversa com Tristan Vassaux, da Guiana Francesa, que ocorreu no NuSom, foi
+usada a IA Mubert, que funciona com prompts. Tristan usou dois deles: “Intercultural techno
+with Armenian flutes” e “Chopin-like classical music with accordion”. Ambos falharam. No
+primeiro, o gênero foi parcialmente respeitado, mas não se ouve flauta alguma. No segundo,
+não houve nada parecido com Chopin e o timbre usado não se parece em nada com acordeão.
+Na realidade, o resultado foi uma música eletrônica de pista.
+O autor deste trabalho resolveu, então, testar sozinho o Mubert. Em sua seleção de
+gêneros, testou aqueles que não fizessem parte da música eletrônica de pista: clássica orquestral,
+neoclássico, post-rock e folk world music. No primeiro gênero, surgiu um kick, uma nota grave
+no piano e timbres eletrônicos que lembram pizzicato de cordas e vozes de um coro. No
+neoclássico, houve um som eletrônico que remete ao violão e ruídos brancos por vezes filtrados.
+O post-rock foi um gênero que funcionou, com um baixo grave e repetitivo e uma bateria lenta.
+Depois entram os outros instrumentos em um estilo que se chamaria de música de comercial.
+World music também mostrou um resultado interessante com tambores. A funcionalidade
+35
+“Moods” que está dentro do Mubert também não funciona bem. Não é possível distinguir uma
+música “upbeat” de uma “dramatic”.
+Entrando no que parece ser a especialidade da IA, o Mubert faz muito bem os
+subgêneros da música eletrônica de pista. O Intelligent Dance Music (IDM) é bastante diferente
+do House que, por sua vez, difere em muito do Synthwave.
+Outra tentativa foi com o Moises, IA que separa uma música em várias partes. Na versão
+gratuita, desagrega vocais da bateria, do baixo e de outros instrumentos, depois faz alterações
+nos quatro instrumentos e os mixa. Foi testada a música “Breathe” de Pink Floyd. O baixo e a
+guitarra não se desassociaram muito bem, mas a bateria e os vocais ficaram bem distintos. Um
+metrônomo indesejado permaneceu durante o primeiro minuto da música.
+Em seguida, houve uma tentativa com o AIVA, um site que gera músicas a partir
+daquelas já criadas com IA. Os únicos parâmetros que podem ser alterados são a tonalidade,
+que pode ser maior ou menor, e a duração da peça. A música gerada a partir de uma música
+chamada “Tchaikovsky” foi muito interessante, com um motivo presente na peça toda, a
+mudança de acordes foi intrigante e o timbre da orquestra foi bom. A variedade e a qualidade
+das músicas do AIVA são boas. Dois problemas são a falta de parâmetros ajustáveis e de espaço
+para receber um comando.
+Seguiu-se com a IA Riffusion, que trabalha com letras, seja escritas pelos usuários ou
+geradas pela IA. Também é possível descrever o som ou deixar que a IA escolha as
+características dele. Como teste, o programa pôde escolher letra e características da música. A
+letra gerada foi: “Júlio's dance moves, country style, twirlin' and groovin', makin' hearts go
+wild”. A descrição do som foi: edm dance song, male vocals harmonies, upbeat electronic
+beats, melodic vocal harmonies. O resultado foram três pequenostrechos, o que foi interessante,
+apesar de a letra não encaixar em uma métrica mais estável, como é comum no estilo usado
+pela IA. Porém, em exemplos disponíveis na página inicial do site, a métrica encaixa bem.
+O site apresenta apenas trechos curtos de música. Testou-se, então, criar uma letra maior
+e em português gerada com o ChatGPT:
+36
+(Verso 1)
+No crepúsculo da vida, olho para o mar,
+Onde as ondas quebram, como o tempo a passar.
+Caminhando na areia, sob o sol poente,
+Memórias e sonhos, no coração ardente.
+(Refrão)
+E eu canto para o horizonte, minha canção de amor,
+Onde o oceano e o céu se unem, lá no infinito azul.
+Com a esperança como guia, meu farol no escuro,
+Navego pela vida, em busca do meu futuro.
+(Verso 2)
+Na calada da noite, sob um manto estrelado,
+As constelações acima, meu destino traçado.
+A lua sussurra segredos, para mim revelar,
+Na escuridão, encontro a luz a brilhar.
+(Refrão)
+E eu canto para o horizonte, minha canção de amor,
+Onde o oceano e o céu se unem, lá no infinito azul.
+Com a esperança como guia, meu farol no escuro,
+Navego pela vida, em busca do meu futuro.
+(Ponte)
+Em cada onda, em cada brisa do mar,
+Sinto a vida fluir, me levar a sonhar.
+Com coragem no peito e paixão no olhar,
+Seguirei em frente, não vou hesitar.
+(Refrão)
+E eu canto para o horizonte, minha canção de amor,
+Onde o oceano e o céu se unem, lá no infinito azul.
+Com a esperança como guia, meu farol no escuro,
+Navego pela vida, em busca do meu futuro.
+(Saída)
+E assim, com fé e amor, eu continuarei a remar,
+Pelas águas da vida, em direção ao meu lugar.
+No horizonte distante, meu destino a chamar,
+Minha canção de amor, no vento a voar (OPENAI, 2023g).
+O programa Riffusion respondeu que são permitidas apenas letras de cinco a vinte
+palavras. Foi solicitado, então, que o ChatGPT escrevesse uma letra com vinte palavras e que
+a música fosse lenta (“1930’s very slow jazz singer, smooth drums”), para ficar mais longa.
+Assim, a usaria no Riffusion conforme ele mesmo solicitou.
+Então o ChatGPT respondeu: “Aqui está uma letra de música com vinte palavras:
+Na luz da manhã, o amor floresceu, sorrisos no ar, o coração a bater, juntos, para sempre, vamos
+viver”.
+O programa leu as palavras com sotaque inglês e simplesmente ignorou letras
+com acentos e cedilha. Invariavelmente, todo resultado da IA tem doze segundos: o tempo não
+37
+foi lento. A letra foi falada em dois dos três trechos gerados. O terceiro inicia com uma canção
+de jazz, mas logo se transforma em um discurso falado. Um horror!
+Testou-se então uma letra em inglês: “Underneath the starry sky, we dance and sing,
+our spirits soaring high. In this moment, love's embrace, forever in this space”.
+Com a descrição sendo: avant-garde noisy experimental. Os três excertos foram muito
+semelhantes: letra falada com um murmúrio no fundo que tenta ser o acompanhamento. Foi
+utilizado o site riffusion.com.
+Foi experimentada também a IA Bard, que funciona como o ChatGPT, um IA de
+linguagem que responde com palavras. Foi pedido em português a ela que criasse uma canção
+complexa sobre o oceano, mas o resultado não foi nada complexo:
+Título: Oceano Infinito
+Gênero: Rock Progressivo
+Tempo: 4/4
+Andamento: Lento
+Introdução:
+(Dó - Ré - Mi - Fá - Sol - Lá - Si - Dó)
+Verso 1:
+Em águas profundas Onde a luz não chega O oceano esconde Mistérios e riquezas
+Refrão:
+Oceano infinito Tão vasto e desconhecido Tu és um mundo à parte De beleza e
+segredos
+Verso 2:
+Tu és o lar de criaturas Ainda desconhecidas E de plantas que crescem Em águas
+salgadas
+Refrão:
+Oceano infinito Tão vasto e desconhecido Tu és um mundo à parte De beleza e
+segredos
+Ponte:
+Tu és um espelho do céu E um reflexo da terra Tu és um universo Em constante
+transformação
+Refrão:
+Oceano infinito Tão vasto e desconhecido Tu és um mundo à parte De beleza e
+segredos
+Outro:
+Tu és um mistério Que nunca será desvendado Mas, mesmo assim, Tu és um lugar
+mágico
+Solo:
+(Dó - Ré - Mi - Fá - Sol - Lá - Si - Dó)
+Fim:
+(Dó - Ré - Mi - Fá - Sol - Lá - Si - Dó) (BARDAI, 2023a).
+38
+Segundo a análise do Bard:
+Esta música é uma balada rock progressivo que explora a beleza e o mistério do
+oceano. A letra é complexa, com metáforas e simbolismos que evocam a vastidão e a
+profundidade do oceano. A melodia é lenta e melancólica, criando uma atmosfera de
+contemplação. A música começa com uma introdução lenta e sombria, que representa
+a vastidão e o mistério do oceano. O primeiro verso descreve o oceano como um lugar
+onde a luz não chega, onde o desconhecido se esconde. O refrão enfatiza a vastidão e
+a beleza do oceano, que é um mundo à parte, cheio de segredos. O segundo verso
+descreve as criaturas e plantas que vivem no oceano. A ponte compara o oceano a um
+espelho do céu e um reflexo da terra, e afirma que é um universo em constante
+transformação. O refrão é repetido, enfatizando a beleza e o mistério do oceano.
+Aparte intitulada outro descreve o oceano como um mistério que nunca será
+desvendado. Mesmo assim, o oceano é um lugar mágico, que nos inspira a sonhar. O
+solo é uma progressão de acordes complexa que cria uma sensação de movimento e
+transformação. A música termina com o refrão repetido, que é um hino à beleza e ao
+mistério do oceano (BARDAI, 2023b).
+Já de acordo com a interpretação do Bard:
+Esta música pode ser interpretada de várias maneiras. Ela pode ser vista como uma
+celebração da beleza e do mistério do oceano. Também pode ser vista como uma
+reflexão sobre a vastidão e o desconhecido. A música também pode ser vista como
+uma metáfora para a vida, que é um mistério que nunca será desvendado.
+Independentemente da interpretação, esta música é uma bela e complexa exploração
+do oceano (BARDAI, 2023c).
+Concluiu-se que o Bard, por ser um modelo de linguagem, tem sua atenção e foco
+voltados para a linguagem: desvia da tarefa de criar uma música complexa e até mesmo daquela
+de criar uma letra complexa para apenas realizar uma descrição rebuscada sobre o que fez.
+Examinou-se a IA Ecrett Music, que permite que se escolha três categorias de estilo:
+scene, mood e genre. Como teste, foram selecionados Puzzle, Tense e Techno, respectivamente.
+Uma qualidade que não tinha sido vista em nenhuma outra IA é a separação da música em
+seções diferentes e a possibilidade de escolher quais instrumentos entram em quais seções:
+Melody, que possui três opções de timbre, Backing, Bass, Drum e Fill, que tem três opções. É
+possível ajustar o volume de cada instrumento separadamente. A melodia ficou em 33% e os
+outros instrumentos em 100%.
+Em uma segunda experimentação, foi escolhido Slow Motion, Chill e Acoustic. Havia a
+opção de escolher vários instrumentos. Foram selecionados Melody 1, Backing 3, Bass 3 e
+39
+Drum 1. Melody ficou com 55% de volume, Backing com 87%, Bass com 96% e Drum com
+75%.
+Soundraw, uma versão mais atualizada do Ecrett, também possui três estilos: gênero,
+clima e tema; porém, há mais opções do que no primeiro. É possível alterar a duração da música,
+o andamento e até os instrumentos. A “energia” de cada seção de nove segundos pode ser
+ajustada, indo de Low até Very High. Foram avaliados Horror & Thriller e Fear, mas o
+resultado não foi como no Soundful. Houve uma batida que descaracterizou uma música repleta
+de tensão. É possível fazer músicas mais longas sem perda de interesse. Usou-se então essa IA
+para criar uma música de cinco minutos em que a mudança de energia dá mais dinâmica, mas
+a percepção foi de que cinco minutos é muito tempo mesmo com essa ferramenta.
+Depois, houve uma tentativa de utilizar uma IA chamada Melodrive, mas não foi
+possível baixá-la sem auxílio por ausência deconhecimento de linguagem de programação para
+fazê-lo.
+Melobytes é uma IA boa: pode-se escolher estilo musical, andamento, linguagem da voz,
+letra, se houver voz, gênero do(a) cantor(a), geração de clipe ou não, fonte sonora e se haverá
+efeitos de áudio como reverb, compressor, distorção, flanger, gargle, Eq paramétrico, chorus,
+eco e phaser.
+Testou-se criar uma música no estilo de Pink Floyd com a seguinte letra:
+Pula fogueira iaiá
+Pula fogueira ioiô
+Cuidado para não se queimar
+Olha que a fogueira já queimou o meu amor (PULA..., 1936).
+Mas a música gerada, de seis minutos e quarenta segundos, era apenas instrumental.
+Havia semelhanças entre ela e o repertório de Pink Floyd, mas faltava uma linha de condução.
+Nessa IA foi gerada uma música um pouco mais longa que, mesmo assim, funciona melhor que
+as geradas em IAs testadas anteriormente.
+Ao realizar um segundo teste com um estilo chamado Hino, foi possível perceber que
+na realidade havia voz no primeiro teste. Era robótica, feita com síntese. Por isso não foi
+40
+possível reconhecê-la anteriormente. A voz em português é muito ruim, quase irreconhecível.
+Testou-se então uma voz que teoricamente funcionaria em qualquer língua. A letra ficou mais
+reconhecível, mas ainda havia cortes e mudanças de dinâmica abruptos, além de durações
+irregulares de sílabas e algumas omissões. O estilo escolhido, da banda Yes, teve mais êxito do
+que o do Pink Floyd.
+Experimentou-se então uma letra em inglês feita com o ChatGPT, no estilo de Ravel:
+In the stillness of the moonlit vale,
+A songbird’s trill, the nightingale,
+Its melody, a soothing balm,
+In the darkness, a conforting psalm
+With feathers of midnight and voice so sweet,
+The nightingale’s song, a secret treat,
+Each knot it sings, a gift from the heart,
+In the hush of night, a work of art (OPENAI, 2023h).
+O resultado ficou horrível, com voz irreconhecível. Sons eletrônicos que lembram
+miados de gatos não se assemelharam em nada com os trabalhos de Ravel. Formulou-se a
+hipótese de que vozes específicas de uma língua não funcionam. Para verificar, testou-se
+novamente com uma voz que funcionaria em qualquer linguagem. Ficou um pouco melhor, mas
+ainda se reconhece uma sílaba ou outra.
+Seguiu-se para a tentativa com o Magenta; no entanto, como eram necessários
+conhecimento na linguagem Python e a edição Ableton Live 10 Suite, e o autor deste trabalho
+não possuía nenhum dos dois, não foi possível finalizar o teste.
+Essas foram as principais tentativas deste autor de usar a IA com a função de compor,
+que geraram uma alternância entre momentos de empolgação e de frustração nesse percurso de
+descobertas.
+41
+CONCLUSÃO
+A Inteligência Artificial e Música é um tema muito atual e com muitas interfaces entre
+música e tecnologia. Isso acontece por diferentes mecanismos, como pelo simples uso de um
+aparelho de som até o funcionamento de complexos processadores digitais de som. É necessário
+que o musicista tenha conhecimento em tecnologias computacionais e um linguajar bastante
+técnico.
+Atualmente, a sociedade discute a influência da IA em todas as áreas de atuação
+profissional e também na vida pessoal. Em particular na música, discussões em torno da
+originalidade, ética, criatividade, sensibilidade e direitos autorais das produções musicais
+utilizando a IAM estão em voga não somente dentre os profissionais da música, mas também
+na imprensa e sociedade. É inegável que a IA já faz parte do cotidiano das pessoas sem mesmo
+que elas percebam, quer seja por meio das plataformas de streaming, ouvindo produções, por
+meio dos assistentes de voz, mecanismos de pesquisa, carros autônomos e redes sociais.
+A ideia inicial era comparar uma música feita por um estudante no final do curso de
+composição sem o uso da IA com outra produzida exclusivamente por IAM partindo ambas dos
+mesmos parâmetros. As duas seriam apresentadas para dois grupos distintos, o primeiro com
+conhecimento técnico musical, como professores, acadêmicos e outros profissionais da música,
+e o segundo sem tal formação técnica. Os grupos não seriam informados sobre a maneira com
+que foram produzidas cada obra e, por meio de uma entrevista de poucas perguntas, os
+entrevistados dariam suas opiniões sobre as produções. Ao final, seria realizada análise
+comparativa entre ambas pelas vistas dos dois grupos.
+Durante as tentativas de usar algumas plataformas de IAM, aleatoriamente houve
+dificuldade pela necessidade de maior conhecimento de programação de computador para
+executar o aplicativo. Outra percepção foi que em inglês havia mais sucesso nas respostas aos
+comandos dados aos aplicativos do que em português. Isso porque eles, em sua maioria, foram
+alimentados nessa língua.
+42
+Sucesso foi obtido em alguns aplicativos, porém, as músicas eram extremamente
+simples e pobres,sendo necessária outra mídia para dar estrutura. Muitos programas entregaram
+murmúrios, como Suno Chirp e Melobytes; outros, por exemplo, o Soundful, peças que não se
+sustentavam na sua forma. Houve os que repetiam as peças que foram disponibilizadas na
+entrada do software, como AIVA; ou algumas músicas que não atendiam os requisitos de
+entrada, a exemplo do Mubert, e IAMs que tinham poucos parâmetros de entrada, como o AIVA,
+ou que eram, em geral, curtas, em sua maioria feitas com menos de um minuto e muito
+repetitivas, como o Soundraw. Houve outras cujas letras em português não funcionavam,
+mesmo oferecendo essa possibilidade: Suno Chirp e Riffusion. Sugestões vagas e genéricas para
+a criação de uma peça e instruções com erros para a programação delas, ou seja, peças ruins
+foram apresentadas pelo ChatGPT e IA Bard. Enfim, nas tentativas, nota-se que ainda falta
+bastante para a IAM conseguir compor música de qualidade.
+Às vezes, apesar de um resultado razoável, ao executá-lo havia dificuldade da IAM com
+os códigos como, por exemplo, com o ChatGPT 3.5, que descreveu Ethereal Oscillations muito
+detalhadamente e com termos musicais e sonoros que remetiam a uma música bastante
+promissora, porém, apresentou dificuldade ao escrever códigos para a música ser executada
+tanto no programa Csound quanto no Pure Data, se valendo de recursos simples e muitos erros.
+Outras vezes, sequer foi possível baixar o programa.
+A necessidade de maior conhecimento tecnológico para a nova era de musicistas implica
+em uma demanda para que as entidades de educação musical ofertem ainda mais esse
+conhecimento no meio acadêmico, com grades interdisciplinares e maior aproximação na
+graduação e pós-graduação dessas duas áreas, a arte e a tecnologia. Afinal, a arte musical e as
+ciências exatas sempre caminharam de mãos dadas, e é preciso acelerar o conhecimento para
+seguir assim. Como exemplo, há a medicina que, atualmente, nos congressos médicos das mais
+diversas especialidades, disponibilizam aulas sobre interação da saúde com a IA e a realidade
+virtual.
+Apesar de inegáveis benefícios da IA e de seus avanços nas diferentes áreas, a sociedade
+ainda está iniciando nesse mundo por meio de debates a respeito dos limites éticos da IA e do
+papel por ela desempenhado na sociedade atual. A ampliação das discussões sobre esse tema
+43
+em todos os níveis da sociedade se faz necessária, afinal, cada vez mais, percebendo ou não,
+haverá constantes interações com essa realidade.
+Pode-se analisar que a ideia que vem desde os primórdios da humanidade está aos
+poucos saindo da ficção, como nos filmes de Hollywood desde o filme Metrópolis de 1927;
+Blade Runner - o Caçador de Andróides; AI: Inteligência Artificial de 2001; Her (Ela) de 2013;
+Matrix; Exterminador do Futuro; Eu, Robô; 2001 Uma Odisseia no Espaço de 1968; e O Jogo
+da Imitação de 2014, dentre outros, e se tornando parte da rotina, com máquinas que almejam
+no futuro desenvolver atitudes, pensamentos e emoções próprias e sem auxílio de comandos
+prévios.
+A IAM é uma ferramenta que pode inspirar a criatividade do compositor, mesmo que
+ainda haja muita limitação técnica nesse processo. Ela é uma boa aliada para explorar novas
+ideias e estilos, por meio de sugestões e insights que talvez não surgissem de outra maneira.
+Sendo assim, a ideia de que um compositor poderá ser substituído por uma IAM não tem
+fundamento.
+Apesar de a ideia inicial deste trabalho não ter sido factível, as tentativas foram por
+vezes promissoras, denotando uma necessidade de estudos mais profundos do uso das
+tecnologias novas na arte composicional. Com base nessa pesquisa, a peça “Composição
+Humana” foi criada por um aluno do fim do curso de composição da ECA-USP para uma
+comparação com a música gerada por IAM. No entanto, isto não chegou a acontecer porque o
+resultado das tentativas de criação de música pela tecnologia foi pouco artístico.
+É evidente o avanço contínuo da IA em todas as áreas e, mesmo que um dia as máquinas
+consigam alcançar fielmente os potenciais cognitivos da humanidade e até consigam “sentir”
+sem receber comandos, não há como produzir obras como os humanos porque, como disse Fritz
+Lang em seu filme Metrópolis de 1927, “O mediador entre a cabeça e as mãos deve ser o
+coração”.
+44
+45
+REFERÊNCIAS BIBLIOGRÁFICAS
+A HISTÓRIA da inteligência artificial. Instituto de Engenharia, São Paulo, 20 out. 2018.
+Disponível em: https://www.institutodeengenharia.org.br/site/2018/10/29/a-historia-dainteligencia-artificial/. Acesso em: 09 nov. 2023.
+AI in Music Composition & Production. AIWS, Houston, [202-]. Disponível em:
+https://aiworldschool.com/research/ai-in-music-compositionproduction/#:~:text=AI%20music%20composition%20was%20first,learning%20is%20gainin
+g%20widespread%20popularity. Acesso em: 17 out. 2023.
+AIVAAI. “Tchaikovsky”. 2023. Disponível em: https://www.aiva.ai. Acesso em: 14 maio
+2023.
+ALGORITMOS Genéticos. USP, São Paulo, [20--]. Disponível em:
+https://sites.icmc.usp.br/andre/research/genetic/. Acesso em: 17 out. 2023.
+ALONSO, A. L. A máquina de Turing e a máquina do Revirão: computar, calcular e pensar.
+Lumina, v. 2, n. 2, 2008.
+ARANGO, J. J.; TOMOYOSHI, M.; IAZZETTA, F. QUEIROZ, M. Brazilian Challenges on
+Network Music. In: PROCEEDINGS OF THE SOUND AND MUSIC COMPUTER
+CONFERENCE, Stockholm, 2013. Anais [...], SMC, 2013.
+BACHGPT. [S. l.: s. n.], 2023. 1 vídeo (15 min). Publicado pelo canal Nobody & The
+Computer. Disponível em: https://www.youtube.com/watch?v=HS0MXynfstA. Acesso em:
+15 nov. 2023.
+BAIRD, B.; BLEVINS, D.; ZAHLER, N. Artificial Intelligence and Music: Implementing an
+Interactive Computer Performer. Computer Music Journal, Cambridge, v. 17, n. 2, p. 73-79,
+1993.
+BALA, P. 10 Melhores sites de inteligência artificial que criam músicas. Apptuts, [S. l.], 17
+out. 2023. Disponível em: https://www.apptuts.net/tutorial/informatica/sites-inteligenciaartificial-criam-musicas/. Acesso em: 20 nov. 2023.
+BARDAI. “Criar uma canção complexa sobre o oceano – Análise do Bard”. 2023b.
+Disponível em: https://bard.google.com/chat. Acesso em: 14 maio 2023.
+BARDAI. “Criar uma canção complexa sobre o oceano – Interpretação do Bard”. 2023c.
+Disponível em: https://bard.google.com/chat. Acesso em: 14 maio 2023.
+BARDAI. “Criar uma canção complexa sobre o oceano”. 2023a. Disponível em:
+https://bard.google.com/chat. Acesso em: 14 maio 2023.
+BEYLS, P. The Musical Universe of Cellular Automata. International Computer Music
+Conference, p. 34-41, 1989.
+BOULANGER, R. (ed.). The Csound Book: Perspectives in Software Syntheses, Sound
+Design, Signal Process, and Programming. Cambrigde: MIT Press, 2000. 782 p.
+BRIOT, J. P.; HADJERES, G.; PACHET, F. D. Deep Learning Techniques for Music
+Generation – a survey. arXiv preprint arXiv:1709.01620, 2017.
+CABAL, A. J. F. 4 qualidades humanas que a inteligência artificial não consegue copiar. G1,
+São Paulo, 26 nov. 2023. Disponível em:
+https://g1.globo.com/tecnologia/noticia/2023/07/26/4-qualidades-humanas-que-a-inteligenciaartificial-nao-consegue-copiar.ghtml. Acesso em: 05 dez. 2023.
+CAETANO, M.; MANZOLLI, J.; VON ZUBEN, F. BioMúsica: Aplicações de Inteligência
+Artificial e Algoritmos Bio-Inspirados em Música. In: II SEMINÁRIO DE MÚSICA,
+46
+CIÊNCIA E TECNOLOGIA, 1., 2005, São Paulo. Disponível em:
+http://www.proceedings.scielo.br/scielo.php?script=sci_arttext&pid=MSC0000000102005000
+100014&lng=en&nrm=abn. Acesso em: 04 dez. 2023.
+CAMURRI, A. et al. Music and Multimedia Knowledge Representation and Reasoning: the
+Harp System. Computer Music Journal, Cambridge, v. 19, n. 2, p. 34-58, 1995.
+CARMO, V. O uso de questionários em trabalhos científios. UFSC, Santa Catarina, 2013.
+Disponível em:
+https://www.inf.ufsc.br/~vera.carmo/Ensino_2013_2/O_uso_de_questionarios_em_trabalhos_
+cient%EDficos.pdf. Acesso em: 17 out. 2023.
+CARVALHO JUNIOR, A. D. Análise de padrões musicais rítmicos e melódicos utilizando o
+algoritmo de predição por correspondência parcial. 2011. Dissertação (Mestrado em
+Informática – Sistemas de Computação) – Departamento de Informática, Universidade
+Federal da Paraíba, João Pessoa, 2011.
+CHAER, G.; DINIZ, R. R. P.; RIBEIRO, E. A. A técnica do questionário na pesquisa
+educacional. Revista Evidência, v. 7, n. 7, 2012.
+CHIN, F.; WU, S. An Efficient Algorithm for Rhythm-Finding. Computer Music Journal,
+Cambridge, v. 16, n. 2, p. 35-44, 1992.
+CONKLIN, D. Music Generation from Statistical Models. In: PROCEEDINGS OF THE
+AISB 2003 SYMPOSIUM ON ARTIFICIAL INTELLIGENCE AND CREATIVITY IN
+THE ARTS AND SCIENCES. 2003. p. 30-35.
+COPE, D. An Expert System for Computer-Assisted Composition. Computer Music Journal,
+Cambridge, v. 11, n. 4, p. 30-46, 1987.
+COPE, D. Computer Modeling of Musical Intelligence in EMI. Computer Music Journal, v.
+16, n. 2, p. 69-83, 1992.
+COPE, D. Computer Models of Musical Creativity. Cambridge: The MIT Press, 2017.
+COPE, D. The Algorithmic Composer. Middleton: A-R Editions, 2000. 302 p.
+COPE, D. Virtual Music. Computer Music Journal, Cambridge, v. 26, n. 4, p. 92-95, 2002.
+DANNENBERG, R. B. The Canon Score Language. Computer Music Journal, Cambridge, v.
+13, n. 1, p. 47-56, 1989.
+DHARIWAL, P. et al. Jukebox: A Generative Model for Music. arXiv preprint arXiv:
+2005.00341, 2020.
+DUISBERG, R. On the Role of Affect in Artificial Intelligence and Music. Perspectives of
+New Music, vol. 23, n. 1, p. 6-35, 1984.
+EBCIOĞLU, K. An Expert System for Harmonizing Four-Part Chorales. Computer Music
+Journal, Cambridge, v. 12, n. 3, p. 43-51, 1988.
+ECO, H. Como se faz uma Tese. São Paulo: Editora Perspectiva, 2020.
+ECRETTMUSIC. “Puzzle, Tense e Techno”. 2023. Disponível em: https://ecrettmusic.com/.
+ECRETTMUSIC. “Slow Motion, Chill e Acoustic”. 2023. Disponível em:
+https://ecrettmusic.com/. Acesso em: 14 maio 2023.
+FEENBERG, A. Questioning Technology. Londres: Routledge, 1999.
+FERNADEZ, J. D. AI Methods in Algorithmic Composition: A Comprehensive Survey.
+Journal of Artificial Intelligence Research, v. 48, p. 513-582, 2013.
+FERNÁNDEZ, J. D.; VICO, F. AI Methods in Algorithmic Composition: A Comprehensive
+Survey. Journal of Artificial Intelligence Research, v. 48, p. 513-582, 2013.
+47
+FRIBERG, A. Generative Rules for Music Performance: A Formal Description of a Rule
+System. Computer Music Journal, Cambridge, v. 15, n. 2, p. 56-71, 1991.
+GABRIEL, P. H. R.; DELBEM, A. C. B. Fundamentos de Algoritmos Evolutivos. São Paulo:
+ICM-USP, 2008.
+GALANTER, P. What is Generative Art? Complexity Theory as a Context for Art Theory. In:
+GA2003 - 6th GENERATIVE ART CONFERENCE, 2003. Milano: Politecnico di Milano
+University, 2023. Disponível em:
+https://philipgalanter.com/downloads/ga2003_what_is_genart.pdf. Acesso em 15 de janeiro
+de 2023.
+GONÇALVES, H. A. Manual de monografia, dissertação e tese. 2 ed. São Paulo: Avercamp,
+2008.
+GONSALVES, E. L. Iniciação à Pesquisa Científica. Campinas: Alínea Editora, 2005.
+GUITARRA, P. Inteligência Artificial. Brasil Escola, São Paulo, 2023. Disponível em:
+https://brasilescola.uol.com.br/informatica/inteligencia-artificial.htm. Acesso em: 20 nov.
+2023.
+HOWELL, J. A Beginners Guide to ChatGPT. 101 Blockchains, New York, 19 maio 2023.
+Disponível em: https://101blockchains.com/chatgpttutorial/?gclid=CjwKCAjwkNOpBhBEEiwAb3MvvRPQ0xw2EBRUFCAYAsbm4iHOtcYjlj
+Hmpze3KohDTmBzMB6VUMWg5xoCNegQAvD_BwE. Acesso em: 20 nov. 2023.
+IAZZETTA, F. Adaptations and Contrasts: some issues regarding the interaction between
+instrumental and electroacoustic sounds (versão bilíngue: Adaptações e Contrastes: algumas
+reflexões a respeito da interação entre sons instrumentais e eletroacústicos). Sonic Ideas -
+Ideas Sonicas, v. 6, p. 11-26, 2013.
+IAZZETTA, F. Composição e performance interativa. In: FERRAZ, S. (org.). Notas, atos,
+gestos. Rio de Janeiro: 7 Letras, 2007.
+IAZZETTA, F. Formalization of Computer Music Interaction Through a Semiotic Approach.
+Journal of New Music Research, v. 25, n. 3, p. 212-230, 1996.
+IAZZETTA, F. GenComp: An Environment for Graphic Creation and Representation of
+Music Generated with Genetic Algorithms. In: III Simpósio Brasileiro de Computação e
+Música, Recife, 1996. Anais [...], Recife, UFPE, 1996.
+IAZZETTA, F. O fonógrafo, o computador e a música na universidade brasileira. In: X
+ENCONTRO DO ANPPOM, Goiânia, 1997. Anais [...], UFG, 1997.
+KOVACS, L. Como surgiu a inteligência artificial. Tecnoblog, Americana, 05 mar. 2023.
+Disponível em: https://tecnoblog.net/responde/como-surgiu-a-inteligencia-artificial/. Acesso
+em: 15 out. 2023.
+KUGEL, P. Myhill’s Thesis: There’s More than Computing in Musical Thought. Computer
+Music Journal, Cambridge, v. 14, n. 3, p. 12, 1990.
+KUHN, W. B. A Real-Time Pitch Recognition Algorithm for Music Applications. Computer
+Music Journal, Cambridge, v. 14, n. 3, p. 60-71, 1990.
+KURZWEIL, R. The Age of Intelligent Machines. Cambridge: MIT Press, 1992. 580 p.
+LANGSTON, P. S. IMG/1: An Incidental Music Generator. Computer Music Journal,
+Cambridge, v. 15, n. 1, p. 28-39, 1991.
+LASKE, O. E. Introduction to Cognitive Musicology. Computer Music Journal, Cambridge,
+v. 12, n. 1, p. 43-57, 1988.
+48
+LASKOWSKI, N.; TUCCI, L. Artificial Intelligence (AI). TechTarget, Newton, [20--].
+Disponível em: https://www.techtarget.com/searchenterpriseai/definition/AI-ArtificialIntelligence. Acesso em: 15 out. 2023.
+LEACH, J.; FITCH, J. Nature, Music, and Algorithmic Composition. Computer Music
+Journal, Cambridge, v. 19, n. 2, p. 23-33, 1995.
+LEMOS, A. Como surgiu a inteligência artificial?. Exame, São Paulo, 08 ago. 2023.
+Disponível em: https://exame.com/inteligencia-artificial/como-surgiu-a-inteligencia-artificial/.
+Acesso em: 14 nov. 2023.
+MARASCIULO, M.; PETERSEN, T. M. Como a ideia de inteligência artificial evoluiu ao
+longo da história. Galileu, São Paulo, 10 set. 2023. Disponível em:
+https://revistagalileu.globo.com/tecnologia/noticia/2023/06/como-a-ideia-de-inteligenciaartificial-evoluiu-ao-longo-da-historia.ghtml. Acesso em: 25 nov. 2023.
+MELOBYTES. “Pink Floyd – Pula a Fogueira”. 2023. Disponível em:
+https://melobytes.com/en. Acesso em: 14 maio 2023.
+MILLER, A. I. The Artist in the Machine: the World of AI-powered Creativity. Cambridge:
+The MIT Press, 2019.
+MOISESAI. “Breathe”. 2023. Disponível em: www.studio.moises.ai. Acesso em: 14 maio
+2023.
+MOORER, J. A. How Does a Computer Make Music?. Computer Music Journal, Cambridge,
+v. 2, n. 1, p. 32-37, 1978.
+MOORER, J. A. Music and Computer Composition. Communications of the ACM, v. 15, n. 2,
+p. 104-113, 1972.
+MUBERT. 2023. Disponível em: www.mubert.com. Acesso em: 14 maio 2023.
+NEVES, D. Os 9 melhores sites de inteligência artificial para criar músicas. Música &
+Mercado, São Paulo, 29 maio 2023. Disponível em: https://musicaemercado.org/os-9-
+melhores-sites-para-criar-musicas-com-inteligencia-artificial/. Acesso em: 10 out. 2023.
+O QUE é intelegência artificial (IA)?. IBM, Nova Iorque, [20--]. Disponível em:
+https://www.ibm.com/br-pt/topics/artificial-intelligence. Acesso em: 13 abr. 2023.
+OPENAI. “1930’s Very Slow Jazz Singer, Smooth Drums”. 2023. Disponível em:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Could you Fill the Missing Parameters of this Code?”. 2023. Disponível em:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Create ‘Ethereal Oscillations’ for PD.” 2023e. Disponível em:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Create a code for ‘Ethereal Oscillations’ in Pure Data”. 2023. Disponível em:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Create a Complete Guide Based On”. 2023. Disponível em:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Create a Complex Csound Code”. 2023f. Disponível em: https://chat.openai.com.
+Acesso em: 14 maio 2023.
+OPENAI. “Create a musical score for contemporary music”. 2023a. Disponível em:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Create an Electronic Experimental Music Score, with Continuous Form of
+About Three Minutes and Use Music Notation Software to Transcribe the Musical Ideas
+49
+Into a Readable Score”. 2023b. Disponível em: https://chat.openai.com. Acesso em: 14
+maio 2023.
+OPENAI. “Create an Electronic Experimental Music Score, with Continuous Form of About
+Three Minutes and Use Text to Describe the Music”. 2023c. Disponível:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Create the Code of ‘Ethereal Oscillations’ for Csound”. 2023d. Disponível em:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Criar uma letra maior e em português”. 2023g. Disponível em:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Describe Precisely the Creation of the Undulating Drone of ‘Ethereal
+Oscillations’”. 2023. Disponível em: https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Describe Precisely the Layering of Ethereal Textures of ‘Ethereal Oscillations’”.
+2023. Disponível em: https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “How do I Paste the Code into the Blank Canvas Area in PD?”. 2023. Disponível
+em: https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “How do I Play this Code in PD?”. 2023. Disponível em: https://chat.openai.com.
+Acesso em: 14 maio 2023.
+OPENAI. “Letra em inglês com estilo de Ravel”. 2023h. Disponível em:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+OPENAI. “Underneath the Starry Sky, We Dance and Sing, our Spirits Soaring High. In this
+Moment, Love's Embrace, Forever in this Space”. 2023. Disponível em:
+https://chat.openai.com. Acesso em: 14 maio 2023.
+PASQUINELLI, M.; JOLER, V. The Nooscope Manifested: AI as Instrument of Knowledge
+Extractivism. Fritz, [S. l.], 2020. Disponível em: https://fritz.ai/nooscope/. Acesso em 25 set.
+2020.
+PENNYCOOK, B. Machine Songs II: The “PRAESCIO” Series: Composition-Driven
+Interactive Software. Computer Music Journal, Cambridge, v. 15, n. 3, p. 16-26, 1991.
+PHILOSOPHIZE This. [Locução de]: Stephen West. [S. l.]: Spotify, 22 jul. 2023. Podcast.
+Disponível em:
+https://open.spotify.com/episode/1cDx1urFBxA5TdXQnG7Ds6?si=43bb8b14141c410e.
+Acesso em: 15 out. 2023.
+PRADO, C. Inteligência artificial lança 1° hit e incomoda gigantes da música; quem fica com
+os direitos autorais?. G1, São Paulo, 05 jun. 2023. Disponível em: https://g1.globo.com/poparte/musica/noticia/2023/06/05/inteligencia-artificial-lanca-1o-hit-e-incomoda-gigantes-damusica-quem-fica-com-os-direitos-autorais.ghtml. Acesso em: 10 out. 2023.
+PRADO, C.; SARMENTO, G. g1 Ouviu # 250 – Inteligência artificial incomoda gigantes da
+música, mas pode virar ferramenta criativa para artistas. G1, São Paulo, 04 jun. 2023.
+Disponível em: https://g1.globo.com/podcast/g1-ouviu/noticia/2023/06/04/g1-ouviu-250-
+inteligencia-artificial-incomoda-gigantes-da-musica-mas-pode-virar-ferramenta-criativa-paraartistas.ghtml. Acesso em: 10 out. 2023.
+PRADO, J. A inteligência artificial é mais antiga do que você imagina. Tecnoblog,
+Americana, 05 abr. 2023a. Disponível em: https://tecnoblog.net/especiais/inteligenciaartificial-historia-dilemas/. Acesso em: 15 out. 2023.
+PULA a fogueira. Intérprete: Francisco Alves. Compositor: João Bastos Filho e Getúlio
+Marinho. Intérprete: Francisco Alves. RCA Victor: Marcha, 1936.
+50
+REDES neurais artificiais. ICMC, São Paulo, [20--]. Disponível em:
+https://sites.icmc.usp.br/andre/research/neural/. Acesso em: 21 maio 2023.
+RIFFUSION. “edm dance song, male vocals harmonies, upbeat electronic beats, melodic
+vocal harmonies”. 2023. Disponível em: https://www.riffusion.com/. Acesso em: 14 maio
+2023.
+RISSET, J. C. Some Comments About Future Music Machines. Computer Music Journal,
+Cambridge, v. 15, n. 4, p. 32-36, 1991.
+ROADS, C. Artificial Intelligence and Music. Computer Music Journal, Cambridge, v. 4, n.
+2, p. 13-25, 1980.
+SAUTOY, M. The Creativity Code: Art and Innovation in the Age of AI. Cambridge: The
+Belknap Press of Harvard University Press, 2019.
+SEVERINO, A. J. Metodologia do Trabalho Científico. São Paulo: Cortez Editora, 1976.
+SICHMAN, J. S. Inteligência Artificial e sociedade: avanços e riscos. Estudos Avançados, v.
+35, p. 37-50, 2021. Disponível em: https://www.revistas.usp.br/eav/article/view/185024.
+Acesso em: 11 maio 2021.
+SIMON, S. J. Computer Models of Musical Creativity. Journal of the American Society for
+Information Science and Technology, Syracuse, v. 58, n. 10, p. 1553-1555, 2007.
+SOLIS, J. et al. The Waseda Flutist robot WF-4RII in comparison with a professional flutist.
+Computer Music Journal, Cambridge, v. 30, n. 4, p. 12-27, 2006.
+SUNO Discord Commands. Suno Docs, [S. l], [20--]. Disponível em: https://sunoai.notion.site/Suno-DiscordCommands5b62a5bf426346ad8355164c9ecb5115#69c3a8104f7c4444a08df424e1967c89.
+Acesso em: 16 out. 2023.
+SUNOAI. “Produzir duas músicas eletrônicas experimentais com letra sobre natureza criada
+pelo ChatGPT”. 2023. Disponível em: https://www.suno.ai/. Acesso em: 14 maio 2023.
+SUPPER, M. A Few Remarks on Algorithmic Composition. Computer Music Journal,
+Cambridge, v. 25, n. 1, p. 48-53, 2001.
+VALLANCE, C. ‘Inteligência Artificial não ameaça humanidade’: por que mais de 1,3 mil
+especialistas creem que tecnologia será benéfica. BBC News Brasil, São Paulo, 19 jul. 2023.
+Disponível em:
+https://www.bbc.com/portuguese/articles/c10zm8rzvp0o#:~:text='Intelig%C3%AAncia%20A
+rtificial%20n%C3%A3o%20amea%C3%A7a%20humanidade,creem%20que%20tecnologia
+%20ser%C3%A1%20ben%C3%A9fica&text=Uma%20carta%20aberta%20assinada%20por,
+n%C3%A3o%20uma%20amea%C3%A7a%20%C3%A0%20humanidade%22. Acesso em:
+17 out. 2023.
+VIDYAMURTHY, G.; CHAKRAPANI, J. Cognition of Tonal Centers: A Fuzzy Approach.
+Computer Music Journal, Cambridge, v. 16, n. 2, p. 45-50, 1992.
+VIEGAS, J. D. O Perceptron e as Máquinas de Vetores de Suporte. 2017. Projeto
+Supervisionado – UNICAMP, Campinas, 2017. Disponível em:
+me.unicamp.br/~mac/db/2017-1S-138596.pdf. Acesso em: 16 jun. 2023.
+VIRGINIO, A. A. S. Projeto de Pesquisa: estrutura e formatação. [20--]. Apresentação do
+Power Point. Disponível em:
+https://edisciplinas.usp.br/pluginfile.php/7605034/mod_resource/content/1/Projeto%20de%20
+Pesquisa_Estrutura%C3%A7%C3%A3o.pdf. Acesso em: 15 jun. 2023.
+51
+WATANABE, G. C. A Mediação algorítmica do hip hop: as playlists personalizadas do
+Spotify e a formação de uma identidade midiatizada. 2021. Trabalho de Conclusão de Curso
+(Bacharelado em Comunicação Social com habilitação em Publicidade e Propaganda) –
+Universidade de São Paulo, São Paulo, 2021. Disponível em:
+https://repositorio.usp.br/directbitstream/b86e9d14-73a4-48f1-a715-e0556ac0eed9/tc4738-
+Giovanni-Watanabe-Mediacao.pdf. Acesso em: 02 dez. 2023.
+WILSON, S. Computer art: Artificial Intelligence and the Arts. Leonardo, v. 16, n. 1, p. 15-
+20, 1983.
+WINOGRAD, T.; FLORES, F. Understanding Computers and Cognition: A New Foundation
+for Design. 1. ed. Boston: Addison-Wesley Professional, 1987. 207 p.
+WITTEN, I. H.; MANZARA, L. C.; CONKLIN, D. Comparing Human and Computational
+Models of Music Prediction. Computer Music Journal, Cambridge, v. 18, n. 1, p. 70-80, 1994.
+X2ID. Filmes sobre a inteligência artificial. X2 Inteligência Artificial, São Paulo, 3 mar. 2020.
+Dispponível em: https://x2inteligencia.digital/2020/03/03/filmes-sobre-a-inteligenciaartificial/. Acesso em: 17 out. 2023.
+X2ID. História da Inteligência Artificial. X2 Inteligência Artificial, São Paulo, 20 fev. 2020.
+Disponível em: https://x2inteligencia.digital/2020/02/20/historia-da-inteligencia-artificial-2/.
+Acesso em: 19 nov. 2023.
+ZUBEN, F. J. V.; BOCCATO, L.; ATTUX, R. Programação Genética. UNICAMP, Campinas,
+[20--]. Disponível em:
+https://www.dca.fee.unicamp.br/~lboccato/topico_9_programacao_genetica.pdf. Acesso em:
+20 out. 2023.
+ZULIĆ, H. et al. How AI can Change/Improve/Influence Music Composition, Performance
+and Education: Three Case Studies. INSAM Journal of Contemporary Music, Art and
+Technology, v. 1, n. 2, p. 100-114, 2019.

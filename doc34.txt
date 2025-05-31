@@ -1,0 +1,928 @@
+     Desenvolvimento de Editores Colaborativos em Tempo Real:
+                         Revisão Rápida
+       Laurentino Augusto Dantas                                   Joab Cavalcante da Silva                         Maria da Graça C. Pimentel
+        laurentino.dantas@ifms.edu.br                                     joab@uems.br                                      mgp@icmc.usp.br
+     Instituto Federal de Mato Grosso do                          Universidade Estadual de Mato                         Universidade de São Paulo
+                      Sul                                                 Grosso do Sul                                      São Carlos, SP
+                 Naviraí, MS                                               Naviraí, MS
+ABSTRACT                                                                                     alcance das ferramentas de colaboração e seu crescente potencial
+Currently, users expect to collaborate synchronously with others,                            para suportar interações em tempo real.
+including over the Web. Developing a real-time collaborative editor                             A literatura registra que usuários estão cada vez mais famili-
+(RCE) that enables geographically dispersed users to simultaneously                          arizados com a interação síncrona em plataformas como Google
+edit the same document relies on specific algorithms and techniques.                         Docs [35, 51] e Etherpad [9]. Videoconferências evoluíram [6] para
+To understand how real-time collaborative editors are developed                              apoiar pessoas com deficiência [1] e oferecer blended whiteboards
+and tested, and which algorithms or techniques are crucial for their                         [21]. Pesquisadores investigam aspectos da autoria colaborativa
+development, we conducted a systematic review addressing the                                 textual [9] e de software [11] via web, da autoria multimídia via
+following questions: For which types of objects does the literature                          dispositivos móveis [68], opções de colaboração em redes sociais
+present real-time collaborative editing systems (RTCE)? What is                              [13], e a demanda por serviços web que suportem comunicação e
+the most commonly used architecture by researchers to implement                              coordenação [70].
+RTCE systems, how are they represented, and which works present                                 A capacidade de múltiplos usuários trabalharem em sincronia
+models or roadmaps for the development of RCEs? Between Op-                                  e de forma eficiente vai além da simples edição de documentos,
+erational Transformation (OT) and Conflict-free Replicated Data                              configurando-se como um paradigma fundamental para inovação,
+Types (CRDTs) algorithms, which one appears most frequently in                               educação e comunicação global. Organizações têm observado um
+the selected works? What are the main types of tests conducted to                            aumento significativo na colaboração, eficiência e produtividade de
+evaluate collaborative editors, which articles conducted user tests,                         suas equipes ao permitir que documentos, como relatórios técnicos e
+and what is the average number of users involved in these tests?                             propostas de trabalho, sejam editados simultaneamente por diversos
+Which works discuss undo/redo techniques? Which works discuss                                usuários [56].
+the use of comments, chat, or history as tools to support collabo-                              Na computação, sistemas que permitem a colaboração simultâ-
+rative work? After screening 365 records published between 1993                              nea entre usuários geograficamente dispersos são conhecidos como
+and 2024, the review analyzed 23 studies published between 2002                              groupware em tempo real [15]. Estes sistemas baseiam-se em algo-
+and 2022. The results revealed various approaches and techniques                             ritmos complexos que garantem a consistência dos documentos e a
+employed in the implementation of RTCEs, offering a comprehen-                               sincronização das edições, evitando restrições de usabilidade e de
+sive view of research in this area. This, in turn, allowed for the                           conflitos [19].
+identification of challenges that future research should address.                               A edição colaborativa em tempo real (RTCE) se tornou uma ca-
+                                                                                             racterística essencial para muitos sistemas, oferecendo benefícios
+KEYWORDS                                                                                     como a eliminação de conflitos e perdas de dados [10]. A evolu-
+                                                                                             ção contínua da internet impulsiona o desenvolvimento dessas
+Edição colaborativa em tempo real, editor colaborativo em tempo
+                                                                                             tecnologias, refletindo uma tendência em direção a plataformas
+real, groupware, revisão sistemática
+                                                                                             verdadeiramente interativas e inclusivas nas quais a distância ge-
+                                                                                             ográfica não é obstáculo para a criação e o compartilhamento de
+1    INTRODUÇÃO
+                                                                                             conhecimento.
+A colaboração síncrona remota em ambientes de autoria tornou-se                                 A literatura sobre escrita colaborativa online e programação co-
+uma opção cada vez mais acessível para os usuários. Em 2024, por                             laborativa em tempo real fornece direções sobre desafios e métodos
+exemplo, o Google Workspace conta com mais de três bilhões de                                na área de editores colaborativos em tempo real (RCEs). Montanelli
+usuários, enquanto o Google Docs sozinho possui mais de um bilhão                            and Ruskov [38] realizaram uma revisão sistemática da escrita cola-
+de usuários ativos mensais.1 Embora nem todos esses usuários                                 borativa de histórias online, identificando formas de envolvimento
+utilizem a colaboração síncrona, esses números destacam o vasto                              dos usuários e propondo direções de pesquisa futuras, como recru-
+1 https://explodingtopics.com/blog/google-workspace-stats                                    tamento de colaboradores e modalidades de contribuição. Tan et al.
+                                                                                             [65] estudaram a programação colaborativa em tempo revelando
+In: I Workshop de Revisões Sistemáticas de Literatura em Sistemas Multimídia e Web           cenários de uso, requisitos não atendidos por ferramentas atuais
+(WRSL+ 2024). Anais Estendidos do XXX Simpósio Brasileiro de Sistemas Multimídia e
+Web (WRSL+’2024). Juiz de Fora/MG, Brasil. Porto Alegre: Brazilian Computer Society,
+                                                                                             e desafios como atrasos e conflitos de permissões. Tsan et al. [67]
+2024.                                                                                        compararam configurações de programação em par para estudantes
+© 2024                                                                                       do ensino fundamental, destacando preferências por pares com
+ISSN 2596-1683                                                                               computadores separados. Esses estudos ilustram a diversidade de
+
+
+
+                                                                                       129
+WRSL+’2024, Juiz de Fora/MG, Brasil                                                                                                     Dantas et al.
+
+
+abordagens e desafios na colaboração em tempo real de modo geral,              incluindo texto, imagens [5], objetos JSON [27], documentos PDF
+e na construção de sistemas apoio à colaboração de modo particular.            [28] e objetos 3D [49], entre outros.
+   Diante da relevância e da atualidade desse tema, o presente tra-               Para funcionar eficazmente, um RCE deve atender a vários re-
+balho se propõe a realizar uma revisão sistemática da literatura,              quisitos comuns, de acordo com Cherif [7]:
+com o objetivo de elucidar aspectos cruciais no desenvolvimento de
+                                                                                   • Alta responsividade local: O sistema deve ter uma perfor-
+editores colaborativos em tempo real (RCE). Esse esforço está ali-
+                                                                                     mance comparável àquelas de editores de usuário único [14,
+nhado a vários tópicos de interesse do WebMedia, inclusive “autoria
+                                                                                     61, 63];
+e anotação” e “interação multiusuário.”
+                                                                                   • Alta concorrência: O sistema deve permitir que os usuá-
+   Assim, apresentamos uma Revisão Rápida (RR) para identificar,
+                                                                                     rios modifiquem simultaneamente qualquer parte do docu-
+de maneira objetiva, sistemática e reprodutível, os trabalhos relevan-
+                                                                                     mento [14, 61];
+tes sobre o tema. As Revisões Rápidas utilizam métodos abreviados
+                                                                                   • Consistência: Todos os usuários devem eventualmente visua-
+em comparação com as revisões sistemáticas padrão para acelerar
+                                                                                     lizar uma versão convergente do documento [14, 61];
+o processo de tomada de decisão [57], mas mantêm um caráter
+                                                                                   • Coordenação descentralizada: Atualizações concorrentes de-
+sistemático [50]. Seguindo as melhores práticas para RR [16], ini-
+                                                                                     vem ser sincronizadas de forma descentralizada para evitar
+cialmente foi definido um protocolo PRISMA2 para especificar os
+                                                                                     pontos únicos de falha [14, 61];
+passos e os resultados esperados da pesquisa.
+                                                                                   • Escalabilidade do número de usuários: O sistema deve suportar
+   Um dos motivos de classificarmos nosso trabalho como uma
+                                                                                     um número dinâmico de usuários, permitindo que se juntem
+Revisão Rápida é o fato de utilizarmos a indexação realizada pela
+                                                                                     ou saiam do grupo a qualquer momento [23].
+ACM Digital Library para acessar os registros de trabalhos da área
+de computação disponibilizados em outras bases de dados. O outro                 Os algoritmos de RCE que suportam esses requisitos são geral-
+motivo é que aplicamos a string de busca para a seleção dos artigos            mente classificados em dois grupos [2]:
+nos títulos e nos resumos dos registros, e não no texto do artigo
+                                                                                   • Algoritmos centralizados: Esses algoritmos exigem um ser-
+como um todo.
+                                                                                     vidor central para coordenar as atualizações do documento,
+   O restante deste texto está organizado como segue. A Seção 2
+                                                                                     gerenciando a concorrência e a ordem das operações. Exem-
+apresenta uma compilação de conceitos importantes para o desen-
+                                                                                     plos incluem SOCT4 [69], GOT [61], e Jupiter [40].
+volvimento de editores colaborativos em tempo real. A Seção 3
+                                                                                   • Algoritmos descentralizados: Esses algoritmos permitem que
+detalha o protocolo adotado na revisão bem como o processo de
+                                                                                     as atualizações sejam executadas em qualquer ordem, sem
+seleção dos estudos. A Seção 4 apresenta os resultados obtidos
+                                                                                     a necessidade de um servidor central. Exemplos incluem
+relativamente às questões de pesquisa e um resumo dos estudos
+                                                                                     adOPTed [48] e SOCT2 [59].
+analisados relativamente às questões. A Seção 5 identifica riscos à
+validade dos resultados da revisão. A Seção 6 discute desafios de                 Além de permitir a edição simultânea e visualização em tempo
+pesquisa associados aos resultados obtidos. A Seção 7 sumariza o               real das alterações, muitos RCEs oferecem recursos adicionais, e.g.:
+trabalho reportado neste estudo.
+                                                                                   • Histórico de alterações: Registra a sequência de operações e
+                                                                                     os usuários envolvidos [17];
+2    EDITORES COLABORATIVOS EM TEMPO
+                                                                                   • Comunicação em tempo real: Inclui recursos como chat para
+     REAL (RCE)                                                                      facilitar a comunicação durante a edição [17];
+Editores colaborativos em tempo real, ou Real-Time Collaborative                   • Desfazer e Refazer (undo/redo): Permite reverter ações reali-
+Editors (RCEs), são ferramentas de software que permitem a múlti-                    zadas [20];
+plos usuários trabalharem simultaneamente em um mesmo docu-                        • Comentários: Possibilita a inserção de notas em partes espe-
+mento, independentemente de suas localizações geográficas. Esses                     cíficas do documento [28].
+editores oferecem uma interface onde um grupo de usuários pode
+visualizar e editar o mesmo documento em tempo real, com todas                   Atualmente, existem diversos RCEs disponíveis na web, incluindo:
+as alterações sendo propagadas e exibidas instantaneamente para                    • Google Docs: Plataforma para edição colaborativa de docu-
+todos os participantes [5].                                                          mentos, planilhas e apresentações com recursos de histórico
+   O processo de edição colaborativa é complexo e envolve múlti-                     de versões e comentários;
+plas considerações [22, 36]. A principal delas é a manutenção da                   • Microsoft Office Online: Versões online do Word, Excel e
+sincronização entre diversas cópias do documento editadas simulta-                   PowerPoint com funcionalidades colaborativas;
+neamente por usuários distintos. É essencial que os sistemas de RCE                • Notion: Ferramenta que combina notas, tarefas, wikis e bases
+integrem camadas de controle de acesso para garantir responsivi-                     de dados com colaboração em tempo real;
+dade e consistência, sem introduzir cargas excessivas. Além disso,                 • Visual Studio Code com Live Share: Permite edição colabora-
+deve-se assegurar que todos os usuários vejam a versão atualizada                    tiva de código com colaboração simultânea em projetos;
+do documento compartilhado [7].                                                    • Overleaf : Plataforma para edição colaborativa de documen-
+   Os RCEs são amplamente utilizados em ambientes como desen-                        tos LaTeX, amplamente utilizada no meio acadêmico.
+volvimento de software, educação e colaboração em documentos.
+Eles suportam a edição de uma variedade de tipos de conteúdo,                     Conforme Gadea [19], o design e a implementação de algoritmos
+                                                                               de controle de consistência otimista apresentam desafios significa-
+2 https://www.prisma-statement.org/prisma-2020-statement                       tivos. Ao longo de mais de três décadas de pesquisa em coedição,
+
+
+                                                                         130
+Desenvolvimento de Editores Colaborativos em Tempo Real: Revisão Rápida                                                WRSL+’2024, Juiz de Fora/MG, Brasil
+
+
+surgiram duas principais abordagens para o controle de consistên-               3.1.2 Objetivos e Questões de Pesquisa.
+cia otimista: Transformações Operacionais (OT) e Tipos de Dados                 Utilizamos os fatores PICO para definir as questões de pesquisa.
+Replicados Comutativos (CmRDTs).
+   Transformações Operacionais (OT) utilizam transformações que
+preservam a intenção das operações em ambientes colaborativos,
+                                                                                 QP1. Para edição de quais tipos de objetos a literatura apresenta
+mesmo diante de concorrência. O primeiro algoritmo de OT foi
+                                                                                      sistemas RTCE?
+introduzido por Ellis and Gibbs [14] e era baseado em uma aborda-
+                                                                                 QP2. Qual a arquitetura mais utilizada pelos pesquisadores para
+gem ponto-a-ponto. Por outro lado, Oster et al. [43] propuseram os
+                                                                                      implementar sistemas RTCE , como eles são representados
+CmRDTs, que utilizam estruturas de dados projetadas para garantir
+                                                                                      e quais trabalhos apresentam modelos ou roteiros para o
+a comutatividade das operações, eliminando a necessidade de trans-
+                                                                                      desenvolvimento de RCEs?
+formações [53]. Os CmRDTs baseiam-se em operações posicionais
+                                                                                 QP3. Entre os algoritmos OT e CRDT, qual o que aparece com
+e são projetados para garantir a consistência sem conflitos [52].
+                                                                                      mais frequência nos trabalhos selecionados?
+Sun et al. [62, 64] analisaram e compararam as duas estratégias, e
+                                                                                 QP4. Quais os principais tipos de testes realizados para avaliar os
+detalham as vantagens de OT em relação CRDT.
+                                                                                      editores colaborativos, quais os artigos realizaram testes com
+                                                                                      usuários e qual o número médio de usuários que realizaram
+3 REVISÃO RÁPIDA                                                                      os testes?
+3.1 Protocolo da revisão                                                         QP5. Quais trabalhos discutem técnicas de undo/redo?
+                                                                                 QP6. Quais trabalhos discutem a utilização dos comentários, chat
+Foi definido como protocolo de trabalho para esta pesquisa, o mé-
+                                                                                      ou histórico como ferramentas de apoio ao trabalho colabo-
+todo denominado Revisão Rápida (RR) [16, 50] utilizando a base de
+                                                                                      rativo?
+dados indexada pela ACM e dividindo a seleção e a análise entre
+dois avaliadores apoiados por uma pessoa árbitra de conflitos. Para
+análise dos estudos, foram selecionados trabalhos que descreves-                A seguir, detalhamos os aspectos específicos que buscamos investi-
+sem o desenvolvimento de sistemas com suporte a RTCE, incluindo                 gar em nossa revisão.
+trabalhos que descrevessem a implementação de um RCE. Também
+foram analisados trabalhos que, mesmo que não apresentassem a                      QP1. Para edição de quais tipos de objetos a literatura apresenta
+implementação de um RCE, descrevessem algoritmos ou técnicas                    sistemas RTCE? Buscamos identificar os tipos de objetos que são
+importantes para o seu desenvolvimento.                                         alvo de edições em tempo real nos sistemas colaborativos, como
+                                                                                texto, código-fonte, gráficos, multimídia, entre outros.
+3.1.1 Fatores PICO.                                                                QP2. Qual a arquitetura mais utilizada pelos pesquisadores para
+Conforme descrito por Moher et al. [37], no contexto de uma revisão             implementar sistemas RTCE, como eles são representados e quais tra-
+sistemática, critérios de elegibilidade são os critérios pré-definidos          balhos apresentam modelos ou roteiros para o desenvolvimento de
+que formam a base para a definição de uma boa questão de pes-                   RCEs? Analisamos quais arquiteturas são preferidas para a imple-
+quisa. Esses critérios incluem fatores como o tipo de população                 mentação de sistemas RTCE, como cliente-servidor, peer-to-peer,
+alvo estudada (P), a intervenção realizada ou tratamento aplicado               entre outras. Investigamos também como essas arquiteturas são re-
+(I), a comparação com outras intervenções (C), e os desfechos de                presentadas nos artigos e quais deles fornecem modelos ou roteiros
+interesse ou resultados esperados (O). De acordo com Shin et al.                detalhados para o desenvolvimento de editores colaborativos.
+[55], o termo intervenção, no caso de revisão sistemática na área                  QP3. Entre os algoritmos OT e CRDT, qual o que aparece com mais
+de computação, corresponde à inovação investigada pela pesquisa                 frequência nos trabalhos selecionados? Verificamos a frequência de
+relatada no artigo analisado.                                                   uso dos algoritmos de Transformação Operacional (OT) e Tipos de
+                                                                                Dados Replicados sem Conflitos (CRDT) nos artigos, identificando
+   P (População/Problema): Tipos de objetos editáveis, arquiteturas             qual deles é mais recorrente e em quais contextos são aplicados.
+de sistemas RTCE, tipos de diagramas usados, modelos e roteiros                    QP4. Quais os principais tipos de testes realizados para avaliar os
+para desenvolvimento, algoritmos de sincronização OT e CRDT,                    editores colaborativos, quais os artigos realizaram testes com usuários
+tipos de testes realizados, técnicas de undo/redo, e utilização de              e qual o número médio de usuários que realizaram os testes? Exa-
+comentários, chat ou histórico.                                                 minamos os tipos de testes empregados para avaliar a eficácia dos
+   I (Intervenção): Sistemas RTCE, implementação de sistemas RTCE,              editores colaborativos, distinguindo entre testes de desempenho,
+representação de editores colaborativos, desenvolvimento de siste-              usabilidade, robustez, entre outros. Procuramos identificar artigos
+mas RTCE, algoritmos de OT e CRDT, e técnicas de undo/redo.                     que realizaram testes com usuários e a média de participantes en-
+   C (Comparação): Comparação entre diferentes tipos de objetos,                volvidos nesses estudos.
+arquiteturas, modelos ou roteiros, algoritmos de OT e CRDT, tipos                  QP5. Quais trabalhos discutem técnicas de undo/redo? Investiga-
+de testes, e técnicas de undo/redo.                                             mos quais artigos abordam a implementação de técnicas de desfa-
+   O (Resultado): Tipos de objetos editáveis, arquitetura mais utili-           zer/refazer (undo/redo) nos editores colaborativos, destacando as
+zada e modelos para desenvolvimento, principais tipos de diagramas              abordagens utilizadas e os desafios enfrentados.
+utilizados, frequência de algoritmos de OT e CRDT, tipos e número                  QP6. Quais trabalhos discutem a utilização dos comentários, chat
+de testes realizados, discussões sobre técnicas de undo/redo, e uso             ou histórico como ferramentas de apoio ao trabalho colaborativo?
+de ferramentas de apoio ao trabalho colaborativo.                               Analisamos artigos que discutem a integração de funcionalidades
+
+
+                                                                          131
+WRSL+’2024, Juiz de Fora/MG, Brasil                                                                                                                       Dantas et al.
+
+
+como comentários, chat e histórico nos editores colaborativos, avali-             expand=all&field1=Abstract&text1=edit*&field2=Abstract&text2=synchron*+
+ando como essas ferramentas contribuem para a eficácia do trabalho                OR+%22real-time%22&field3=Abstract&text3=collaborat*
+colaborativo.
+   Essas questões de pesquisa nos orientaram a focar nos aspec-
+tos mais relevantes e recorrentes do desenvolvimento de editores                  3.2     Processo de seleção dos estudos
+colaborativos em tempo real, garantindo uma análise abrangente                    A seleção dos estudos, sumarizada no fluxograma da Figura 1, ocorreu como
+e detalhada das práticas, algoritmos e inovações documentadas                     detalhado a seguir.
+na literatura. Através dessas perguntas, buscamos compreender                        A consulta foi realizada na base de dados ACM Digital Library com
+as metodologias e tecnologias envolvidas no desenvolvimento de                    seleção de artigos estendida ao serviço ACM Guide to Computing Literature
+sistemas RTCE.                                                                    que engloba trabalhos da área de computação disponibilizados por outras
+   Além disso, este estudo também se interessa em entender como                   editoras como IEEE, Springer-Verlag e Elsevier.
+                                                                                     Destacamos que a base The ACM Guide to Computing Literature contém,
+se dá o processo de desfazer e refazer em sistemas colaborativos
+                                                                                  na data de preparação deste manuscrito (27 de agosto de 2024) um total de
+em tempo real, assim como em examinar como a literatura aborda                    3.748.089 registros, dos quais 754.670 registros (20%) são publicados pela
+os recursos de histórico, comentários e chat nesses sistemas, que                 ACM (The ACM Full-Text Collection). Esse valores corroboram a afirmação da
+muitas vezes são utilizados como suporte ao trabalho colaborativo.                própria ACM de que esse é o banco de dados bibliográfico mais abrangente
+                                                                                  existente hoje focado exclusivamente no campo da computação.3
+3.1.3 Critérios de elegibilidade.
+Apresentamos os critérios de inclusão dos estudos com base nos                    3.2.1 Identificação. A consulta foi realizada no dia 20/03/2024. Como re-
+fatores PICO utilizados na definição da questão de pesquisa.                      sultado, foram obtidos 370 registros, dos quais 5 (cinco) foram identificados
+                                                                                  como duplicados e removidos.4
+   Population (P): Devem ser incluídos artigos que reportam mode-                     Uma verificação dos 365 registros obtidos depois da eliminação das
+los, algoritmos, técnicas ou formas de desenvolver editores cola-                 duplicatas permitiu identificar as editoras responsáveis pela publicação dos
+                                                                                  trabalhos: ACM (162), IEEE (64), Springer-Verlag (41), Elsevier (12), Kluwer
+borativos em tempo real, bem como aqueles que discutem formas
+                                                                                  (7), Addison-Wesley (5), e os 74 trabalhos restantes foram publicados por
+originais ou customizadas para implementar recursos como histó-                   outras editoras como Microsoft Press e Australian Computer Society.
+rico, desfazer/refazer, chat, comentários, etc.                                       A Figura 2 mostra a distribuição do ano de publicação dos 365 artigos.
+   Intervention (I): Devem ser incluídos artigos que apresentam                   Nota-se que o período de maior ocorrência foi entre 2010 e 2017 e que, nos
+novos editores colaborativos em tempo real, novas formas de im-                   últimos cinco anos, o número de registros está entre quatro e dez por ano.
+plementação desses editores, ou novos recursos que possam ser                         Utilizamos a ferramenta Rayyan5 para apoiar a triagem de artigos e a
+aplicados aos mesmos, além de formas inovadoras de implementar                    extração de dados.
+esses recursos.
+                                                                                  3.2.2 Seleção. Considerando os critérios de elegibilidade enumerados na
+   Comparison (C): Devem ser incluídos artigos que explicitam o
+                                                                                  Seção 3.1.3, a triagem correspondente à leitura dos títulos e dos resumos
+desenvolvimento de editores colaborativos em tempo real, algo-                    foi realizada paralelamente por dois pesquisadores, que avaliaram todos os
+ritmos e técnicas utilizados, implementação de novos recursos e                   registros.
+novas formas de implementá-los. Preferencialmente, artigos que                        A análise foi conduzida em modo cego, de forma que cada pesquisador
+apresentam as avaliações realizadas e os dispositivos empregados.                 realizou sua análise sem tomar conhecimento da decisão do outro. Ao final
+   Outcome (O): Devem ser incluídos artigos que explicitam técnicas,              dessa etapa, o modo cego foi desativado. As divergências entre as classifica-
+algoritmos, arquiteturas ou modelos empregados no desenvolvi-                     ções dos revisores foram arbitradas por uma terceira pessoa revisora. Do
+mento de editores colaborativos em tempo real, dando preferência                  total de 365 trabalhos, foram selecionados 65 artigos completos.
+àqueles que apresentam testes e resultados obtidos.                                   Embora todos os tipos de materiais tenham sido analisados, a fase de
+                                                                                  análise resultou na seleção exclusivamente de artigos completos.
+3.1.4 String de busca.
+                                                                                  3.2.3 Elegibilidade. Na etapa de elegibilidade, dois pesquisadores fizeram a
+Considerando que as palavras necessárias ao estudo são comuns
+                                                                                  leitura completa de cada artigo e os classificaram de acordo com os critérios
+e utilizadas com frequência no texto acadêmico, restringimos a
+                                                                                  de elegibilidade. A seguir, as divergências foram sanadas pela terceira pessoa
+consulta ao resumo e ao título dos trabalhos. Portanto, a string de               revisora. Além disso, nesta etapa foi possível identificar a língua utilizada
+busca foi criada a identificar, no abstract e/ou no título, estudos que           nos artigos, e foram considerados artigos em inglês ou português.
+trouxessem as palavras edição ou editores, colaborativos em tempo
+real ou síncrono.                                                                 3.2.4 Inclusão. Ao final foram identificados 23 artigos que atendiam aos
+   Além disso, não foi utilizado filtro para seleção de categorias (e.g.          critérios de elegibilidade. A Figura 3 apresenta a distribuição dos estudos
+research article ou short paper).                                                 ao longo do período entre 2002 e 2021, sendo que 2012 apresenta o maior
+                                                                                  número de publicações (4).
+   Ainda, não foi incluída restrição quanto ao período de publicação
+                                                                                      Uma síntese da análise desses 23 artigos, relativamente às questões de
+dos trabalhos.
+                                                                                  pesquisa, é apresentada na Seção 4.1. O resumo de cada um dos artigos é
+   Assim, string de busca utilizada foi:                                          apresentado na Seção 4.2.
+
+full query syntax: "query": Abstract:(edit*) AND Abstract:(synchron* OR
+"real-time") AND Abstract:(collaborat*) "filter": { }                             3 https://libraries.acm.org/digital-library/acm-guide-to-computing-literature
+                                                                                  4 Observamos    que a consulta realizada na data de conclusão deste manuscrito
+A URL correspondente é como segue:                                                (27/08/2024), utilizando a URL informada, retorna 381 registros.
+https://dl.acm.org/action/doSearch?fillQuickSearch=false&target=advanced&         5 https://rayyan.ai/
+
+
+
+
+                                                                            132
+Desenvolvimento de Editores Colaborativos em Tempo Real: Revisão Rápida                                                            WRSL+’2024, Juiz de Fora/MG, Brasil
+
+
+
+
+                                           Figura 1: Síntese da estratégia de identificação dos estudos.
+
+
+
+
+Figura 2: Distribuição dos 365 registros retornados por ano.                           Figura 3: Distribuição dos 23 artigos selecionados por ano.
+
+
+4 RESULTADOS
+4.1 Síntese das respostas às questões da RR                                           Para edição de quais tipos de objetos a literatura apresenta sistemas
+A etapa de análise de cada artigo permitiu extrair as respostas às questões           RTCE?
+de pesquisa, sumarizadas nesta seção.                                                 A análise dos estudos identificou editores para os seguintes tipos de objeto:
+   A Tabela 1 sumariza o tipo de objeto editado, de arquitetura utilizada, de         texto [3, 31, 32, 39, 54, 71, 73], imagens [5] [20] [49], páginas web [24, 44, 45],
+algoritmo de sincronização adotado, bem como se o editor foi desenvolvido             diagramas UML [12, 66], modelos de recursos [30], modelo de software [41],
+ou não como uma aplicação Web. A Figura 4 apresenta graficamente os                   objetos JSON [27], dados geográficos [17], documentos PDF [28], e docu-
+resultados descritos na Tabela 1.                                                     mentos XML [72].
+   A Tabela 2 indica quais trabalhos contemplaram testes de modo geral, e
+os que realizaram testes com usuários. A Figura 5 apresenta graficamente              Qual a arquitetura mais utilizada pelos pesquisadores para imple-
+os trabalhos que executaram testes.                                                   mentar sistemas RTCE , como eles são representados e quais tra-
+   A Tabela 3 especifica quais trabalhos oferecem quais recursos de edição.           balhos apresentam modelos ou roteiros para o desenvolvimento de
+A Figura 6 apresenta os totais referentes aos trabalhos que exploraram os             RCEs?
+recursos de undo/redo, chat, histórico e comentários.                                 A arquitetura predominante nos trabalhos analisados foi a cliente-servidor,
+                                                                                      presente em 18 dos 23 estudos, o que representa 75% do total.
+
+
+
+                                                                                133
+WRSL+’2024, Juiz de Fora/MG, Brasil                                                                                                               Dantas et al.
+
+
+        Tabela 1: Objeto editado, arquitetura empregada, algoritmos de sincronização (se informados) e plataforma web
+
+                    Referência                 Tipo de objeto editado                 Arquitetura                     OT / CRDT      Web
+                    Bath et al. [5]            Raster e Vetor de imagem               Cliente-Servidor                OT             Sim
+                    Kuiter et al. [30]         Modelos de Recursos (gráfico)          Cliente-Servidor                OT             Sim
+                    Nicolaescu et al. [41]     Modelo de software                     Centralizada e ponto a ponto    OT             Sim
+                    Alsulami and Cherif [2]    Não especificado                       Redes Oportunísticas            OT             Não
+                    Gao et al. [20]            Imagens Bitmap                         Ponto a Ponto                   -              Não
+                    Jungnickel and Herb [27]   Objetos JSON                           Cliente-Servidor                OT             Sim
+                    Nédelec et al. [39]        Documentos de texto                    Descentralizado                 CRDT           Não
+                    Fechner et al. [17]        Dados geográficos                      Cliente-Servidor                -              Sim
+                    Salvati et al. [49]        Imagens Poligonais                     Ponto a Ponto                   -              Sim
+                    Katayama et al. [28]       Documentos PDF                         Cliente-Servidor                -              Sim
+                    Inoue et al. [24]          Páginas WEB                            Cliente-Servidor                -              Sim
+                    Ozono et al. [45]          Páginas WEB                            Cliente-Servidor                -              Sim
+                    Ozono et al. [44]          Páginas WEB                            Cliente-Servidor                -              Sim
+                    Lautamäki et al. [31]      Código fonte Java (texto)              Cliente-Servidor                -              Sim
+                    Thum et al. [66]           Diagramas UML                          Cliente-Servidor                -              Sim
+                    Wei et al. [71]            Textos que representam moléculas       Cliente-Servidor                -              Não
+                    Bani-Salameh et al. [3]    Código fonte de software (texto)       Cliente-Servidor                -              Não
+                    De Lucia et al. [12]       Diagramas UML                          Cliente-Servidor                -              Não
+                    Lin et al. [33]            Documentos Visio Microsoft             Cliente-Servidor                OT             Não
+                    Leone et al. [32]          Documentos de texto                    Cliente-Servidor                -              Não
+                    Wong [72]                  Documentos XML                         Cliente-Servidor                -              Não
+                    Xia et al. [73]            Documentos de texto                    Cliente-Servidor                OT             Não
+                    Shen and Sun [54]          Texto                                  Cliente-Servidor                -              Não
+
+
+
+
+                               Figura 4: Arquitetura adotada, algoritmo de sincronização, e plataforma Web
+
+
+    A prevalência da arquitetura cliente-servidor pode ser explicada pelo          Os algoritmos de Transformação de Operações (OT) foram mais frequen-
+fato de ser o modelo mais adotado na internet atualmente. Essa populari-           temente utilizados do que os algoritmos de Estado Replicado (CRDT): 7
+dade é reforçada pela estatística de que, em 2023, 86% dos desenvolvedores         (sete) estudos utilizaram OT enquanto 2 (dois) utilizaram CRDT. Os demais
+utilizaram APIs REST [47] que segue a arquitetura cliente-servidor [18].           estudos não especificaram o algoritmo de resolução de conflitos adotado. A
+                                                                                   preferência por OT pode ser atribuída ao fato de ser o método mais tradici-
+Entre os algoritmos OT e CRDT, qual o que aparece com mais frequên-                onal e melhor adaptado ao modelo cliente-servidor [19].
+cia nos trabalhos selecionados?
+
+
+
+
+                                                                             134
+Desenvolvimento de Editores Colaborativos em Tempo Real: Revisão Rápida                                                            WRSL+’2024, Juiz de Fora/MG, Brasil
+
+
+                                            Tabela 2: Avaliação com ou sem envolvimento de usuários
+
+                             Referência                    Testes    Testes com usuários       Quantidade de usuários
+                             Bath et al. [5]               Sim       Sim                       27 + 16
+                             Kuiter et al. [30]            Sim       Sim                       17
+                             Nicolaescu et al. [41]        Sim       Sim                       20 + 16
+                             Alsulami and Cherif [2]       Não       Não                       -
+                             Gao et al. [20]               Não       Não                       -
+                             Jungnickel and Herb [27]      Não       Não                       -
+                             Nédelec et al. [39]           Sim       Não                       -
+                             Fechner et al. [17]           Sim       Sim                       39
+                             Salvati et al. [49]           Sim       Sim                       12
+                             Katayama et al. [28]          Sim       Não                       -
+                             Inoue et al. [24]             Não       Não                       -
+                             Ozono et al. [45]             Sim       Não                       5 (simulados)
+                             Ozono et al. [44]             Sim       Não                       Simulado de 3 a 30 com intervalos de 3
+                             Lautamäki et al. [31]         Não       Não                       -
+                             Thum et al. [66]              Não       Não                       -
+                             Wei et al. [71]               Não       Não                       -
+                             Bani-Salameh et al. [3]       Não       Não                       -
+                             De Lucia et al. [12]          Não       Não                       -
+                             Lin et al. [33]               Não       Não                       -
+                             Leone et al. [32]             Não       Não                       -
+                             Wong [72]                     Sim       Não                       -
+                             Xia et al. [73]               Não       Não                       -
+                             Shen and Sun [54]             Não       Não                       -
+
+
+
+
+                                                     Figura 5: Testes gerais e testes com usuários.
+
+
+Quais os principais tipos de testes realizados para avaliar os editores                 Quais trabalhos discutem técnicas de undo/redo?
+colaborativos, quais os artigos realizaram testes como usuários e                       Dos 23 trabalhos incluídos, 3 (três) discutem explicitamente técnicas e re-
+qual o número médio de usuários que realizaram os testes?                               cursos de undo/redo. No trabalho de Gao et al. [20] foram apresentados e
+Entre os 23 trabalhos selecionados, 10 realizaram algum tipo de testes, o               discutidos os algoritmos BTMVIC e AnyUndo, ambos com o objetivo de
+que representa aproximadamente 42% dos trabalhos selecionados. Apenas 5                 resolver problemas de consistência nas operações de undo/redo. No trabalho
+(cinco) entre os 23 trabalhos realizaram testes com usuários. Desses cinco              de Shen and Sun [54] foi apresentado o algoritmo SUCA.
+trabalhos que realizaram testes com usuários, 2 (dois) reportaram testes pre-
+liminares. O maior número de usuários foi 39, no trabalho de Fechner et al.             Quais trabalhos discutem a utilização dos comentários, chat ou his-
+[17], e o número mínimo foi 12, no trabalho de Salvati et al. [49]. Além disso,         tórico como ferramentas de apoio ao trabalho colaborativo?
+durante a análise dos 23 trabalhos, não foi possível identificar um processo            De forma diversificada, 6 (seis) dos 23 trabalhos discutiram sobre recursos de
+padronizado que definisse um modelo de teste para o desenvolvimento de                  colaboração utilizando chat, anotações ou histórico. No trabalho de Fechner
+um RCE.                                                                                 et al. [17] foram verificadas as razões da utilização, ou não, do chat e do
+                                                                                        recurso de histórico como ferramenta de auxílio. No trabalho de Salvati et al.
+                                                                                        [49], foi permitido o compartilhamento do histórico de edição para auxílio
+                                                                                        aos outros usuários. Katayama et al. [28] registram o compartilhamento
+
+
+
+
+                                                                                  135
+WRSL+’2024, Juiz de Fora/MG, Brasil                                                                                                               Dantas et al.
+
+
+                                                       Tabela 3: Recursos de edição oferecidos
+
+                            Referência                  undo/redo                             chat, comentário e histórico
+                            Bath et al. [5]             Não                                   Não
+                            Kuiter et al. [30]          Não                                   Não
+                            Nicolaescu et al. [41]      Não                                   Não
+                            Alsulami and Cherif [2]     Não                                   Não
+                            Gao et al. [20]             Algoritmos BTMVIC e AnyUndo           Não
+                            Jungnickel and Herb [27]    Não                                   Não
+                            Nédelec et al. [39]         Não                                   Não
+                            Fechner et al. [17]         Não                                   chat e histórico3
+                            Salvati et al. [49]         Não                                   Compartilhamento de históricos de
+                                                                                              edição
+                            Katayama et al. [28]        Não                                   Compartilhamento das anotações e
+                                                                                              chat por texto
+                            Inoue et al. [24]           Não                                   Não
+                            Ozono et al. [45]           Não                                   chat por texto
+                            Ozono et al. [44]           Não                                   Não
+                            Lautamäki et al. [31]       Não                                   Não
+                            Thum et al. [66]            Não                                   Não
+                            Wei et al. [71]             Não                                   Não
+                            Bani-Salameh et al. [3]     Não                                   chat com Voip
+                            De Lucia et al. [12]        Não                                   Não
+                            Lin et al. [33]             Não                                   Não
+                            Leone et al. [32]           Sim                                   Não
+                            Wong [72]                   Não                                   Não
+                            Xia et al. [73]             Não                                   Não
+                            Shen and Sun [54]           Algoritmo SUCA                        Destaques no documento
+
+
+
+
+                                               Figura 6: Undo/Redo, histórico, chat e comentários.
+
+
+das anotações (comentários) e a uso de chat por texto. Ozono et al. [45]           raster e vetoriais. Para compreender melhor os requisitos dos usuários, foi
+também reportam o uso de chat por texto. Bani-Salameh et al. [3] registram         realizada uma avaliação preliminar, identificando comunicação e sincroniza-
+a disponibilização de um chat com recursos de VoIP (Voice over Internet            ção como elementos essenciais. O sistema desenvolvido utiliza um modelo
+Protocol). No editor reportado por Shen and Sun [54], era possível fazer           de documento centralizado, mantido por um servidor que sincroniza as
+destaques nos textos que eram compartilhados com outros usuários.                  alterações com múltiplos clientes. A implementação prototípica é baseada
+                                                                                   em uma arquitetura cliente-servidor escalável, utilizando WebGL para ren-
+4.2     Resumo dos artigos selecionados                                            derização interativa no navegador e WebSocket para manter a sincronização
+                                                                                   em tempo real. A sincronização é gerenciada de forma centralizada, com um
+O trabalho de Bath et al. [5] centra-se na concepção e na implementação
+                                                                                   sistema de bloqueio que permite apenas a um usuário editar uma camada
+de um aplicativo web para edição colaborativa em tempo real de imagens
+
+
+
+                                                                             136
+Desenvolvimento de Editores Colaborativos em Tempo Real: Revisão Rápida                                                         WRSL+’2024, Juiz de Fora/MG, Brasil
+
+
+por vez. As atualizações são transmitidas por broadcast e serializadas para          pequenos e grandes de usuários. As propriedades do CRATE dependem de
+garantir a consistência. O trabalho foi avaliado qualitativamente através de         dois avanços científicos principais: 1) uma estrutura de sequência replicada
+um estudo como usuários.                                                             com limite superior sublinear na complexidade do espaço, o que evita a
+   O variED é um editor para modelagem de características (feature mo-               necessidade de coletores de lixo distribuídos dispendiosos; 2) um protocolo
+deling) colaborativa e em tempo real apresentado por Kuiter et al. [30].             adaptativo de amostragem por pares, que evita o superdimensionamento de
+O editor foi desenvolvido para permitir que múltiplos usuários trabalhem             tabelas de roteamento, permitindo que redes pequenas não paguem o preço
+simultaneamente na criação e modificação de modelos de características,              das redes grandes.
+que são essenciais para o desenvolvimento de software orientado a linha                  Jungnickel and Herb [27] ampliam o escopo do algoritmo de controle
+de produtos. A ferramenta aborda desafios críticos, como a manutenção                de consistência OT para a edição simultânea de objetos JSON compartilha-
+da consistência do modelo e a sincronização das alterações feitas por dife-          dos. A pesquisa detalha as estruturas de dados e as mecânicas subjacentes
+rentes usuários em tempo real. A arquitetura do variED é baseada em uma              necessárias para suportar a edição colaborativa de objetos JSON, fornecendo
+infraestrutura distribuída que utiliza algoritmos de OT para gerenciar as            uma base teórica robusta para desenvolvedores de aplicações web. Além
+operações concorrentes, garantindo que todas as edições sejam integradas             disso, o artigo discute o design de aplicativos web que utilizam essa extensão
+de forma consistente sem conflitos. Os autores conduziram uma série de               da OT, destacando as vantagens em termos de versatilidade e robustez na
+testes experimentais e estudos de caso para avaliar o desempenho do variED,          colaboração em tempo real. Esta extensão da OT para objetos JSON abre
+demonstrando que a ferramenta é capaz de suportar um grande número de                novas possibilidades, permitindo a edição colaborativa de uma gama mais
+usuários simultâneos sem comprometer a integridade e a consistência do               ampla de dados estruturados, desde configurações de software até dados
+modelo. A análise dos resultados mostra que variED melhora a eficiência              de aplicações complexas. A implementação desta técnica oferece benefícios
+e a produtividade do processo de modelagem de características, e também              significativos para desenvolvedores e usuários, criando um ambiente cola-
+proporciona uma experiência de usuário fluida e interativa.                          borativo mais flexível e poderoso. A capacidade de editar simultaneamente
+   Nicolaescu et al. [41] abordam a necessidade de colaboração eficiente             objetos JSON em tempo real pode transformar a maneira como dados es-
+entre stakeholders geograficamente distribuídos em ambientes de modela-              truturados são manipulados colaborativamente, promovendo uma maior
+gem conceitual. Para atender a essa necessidade, os autores introduzem               eficiência e inovação no desenvolvimento de software e em outras áreas
+a SyncMeta, uma ferramenta de modelagem colaborativa que opera em                    que dependem de dados complexos.
+navegadores web, permitindo a edição compartilhada em tempo quase real.                  O trabalho de Gao et al. [20] foca nos desafios de garantir que múltiplos
+SyncMeta é projetada para suportar a modelagem baseada em visões, na                 usuários possam editar simultaneamente uma imagem bitmap sem causar
+qual diferentes perspectivas de stakeholders podem ser integradas e negoci-          inconsistências ou conflitos nas alterações. Para resolver esses desafios, os
+adas de forma eficaz. A ferramenta permite que stakeholders contribuam               autores propõem um modelo que integra algoritmos de OT para gerenciar e
+simultaneamente, minimizando conflitos e inconsistências nas operações               sincronizar as operações de edição realizadas por diferentes usuários. Este
+de modelagem. A ferramenta permite a rápida geração de protótipos a                  modelo permite que as operações de undo e redo sejam tratadas de forma
+partir de especificações, facilitando a análise de impacto e a tomada de             consistente, mantendo a integridade do estado do bitmap ao longo do tempo,
+decisões. Os estudos conduzidos pelos autores investigaram tanto os re-              o que é demonstrado através de análises e um protótipo de sistema chamado
+quisitos fundamentais da ferramenta quanto opções de design. Entre os                CoGraphical Editor. Estudos de caso e simulações reforçam a viabilidade
+requisitos fundamentais avaliados, os autores destacam a aceitação da abor-          do sistema em cenários de uso real, destacando melhorias significativas na
+dagem de modelagem baseada em visões. As opções de design exploradas                 precisão e na eficiência das operações de edição colaborativa.
+no trabalho incluem a resolução de pontos de vista de maneira centralizada               Fechner et al. [17] apresentam uma abordagem para a edição colabora-
+versus ponto-a-ponto, considerando o compromisso entre desempenho e                  tiva em tempo real de dados geográficos, exemplificada pelo Ethermap. O
+complexidade de implementação. Os resultados dos estudos indicam que a               sistema Ethermap foi desenvolvido para permitir que múltiplos usuários
+SyncMeta oferece uma solução robusta para os desafios de colaboração em              possam editar simultaneamente mapas geográficos, garantindo a sincroniza-
+ambientes de modelagem distribuídos, melhorando a eficiência e a eficácia            ção imediata e precisa das alterações realizadas. A arquitetura do Ethermap
+das equipes.                                                                         utiliza tecnologias avançadas de comunicação e OT para gerenciar opera-
+   Alsulami and Cherif [2] exploram a viabilidade e os desafios da edição            ções concorrentes, assegurando que todas as edições sejam integradas de
+colaborativa em redes oportunísticas (ON), na qual a conectividade entre             maneira consistente. O sistema é projetado para suportar tanto a criação
+dispositivos é intermitente e imprevisível, focalizando na adaptação de al-          de novos mapas quanto a edição de mapas existentes, oferecendo uma in-
+goritmos baseados em OT para RTCE em ON. São discutidos os principais                terface intuitiva que facilita a colaboração entre os usuários. Estudos de
+desafios como alta mobilidade, dinâmica dos nós e atrasos de rede, e revisa-         caso são apresentados para demonstrar a eficácia do sistema em melhorar
+das as versões dos algoritmos OT segundo critérios relevantes para ON. O             a colaboração e a produtividade dos usuários durante a manipulação e a
+artigo oferece uma visão abrangente para o desenvolvimento e avaliação               atualização de informações geoespaciais.
+de editores colaborativos em ambientes ON. O artigo também aborda as                     Salvati et al. [49] propõem o editor MeshHisto como uma aborda-
+estratégias para sincronização de dados em tempo real, adaptando-os à na-            gem inovadora para a modelagem colaborativa de objetos 3D, centrada no
+tureza assíncrona e intermitente das comunicações em redes oportunísticas,           compartilhamento e redirecionamento de históricos de edição. MeshHisto
+e métodos são propostos para reconciliar versões divergentes de documen-             permite que múltiplos usuários colaborem em projetos de modelagem 3D,
+tos editados por dispositivos desconectados. Resultados experimentais são            compartilhando seus históricos de edição de forma granular e reutilizável. A
+apresentados, demonstrando o desempenho das abordagens propostas em                  metodologia proposta utiliza uma estrutura de dados eficiente para capturar
+cenários simulados e reais, com análises quantitativas de consistência de            e armazenar as operações de edição, permitindo que estas possam ser rea-
+dados, tempo de sincronização e eficiência operacional.                              plicadas ou adaptadas a diferentes modelos 3D. Isso facilita a transferência
+   Nédelec et al. [39] apresentam o desenvolvimento e a implementação                de técnicas e estilos de modelagem entre colaboradores, promovendo uma
+de um sistema de edição colaborativa em tempo real, chamado CRATE,                   integração harmoniosa e eficiente do trabalho em equipe. A arquitetura do
+que é um editor colaborativo descentralizado em tempo real que funciona              sistema MeshHisto incorpora mecanismos para resolver conflitos de edição
+diretamente em navegadores da web utilizando o WebRTC. CRATE foi um                  e manter a consistência dos modelos em cenários de edição concorrente.
+editor em tempo real pioneiro na utilização apenas de navegadores para               Estudos de caso demonstram a eficácia do sistema em diversos contextos
+suportar a edição colaborativa, manejando de forma transparente grupos               de modelagem, evidenciando melhorias significativas na produtividade e
+
+
+
+
+                                                                               137
+WRSL+’2024, Juiz de Fora/MG, Brasil                                                                                                                    Dantas et al.
+
+
+na qualidade dos modelos produzidos. Além disso, a análise empírica dos               proporciona uma experiência de usuário suave, mesmo sob alta carga de
+resultados revela que o compartilhamento de históricos de edição não ape-             usuários simultâneos.
+nas acelera o processo de modelagem, mas também enriquece a experiência                   Thum et al. [66] descrevem o desenvolvimento e a implementação
+colaborativa ao possibilitar a aprendizagem e a inspiração mútua entre os             do SLIM, um ambiente projetado para suportar a modelagem colaborativa
+usuários.                                                                             síncrona. O sistema SLIM visa facilitar a colaboração em tempo real entre
+    Katayama et al. [28] reportam uma aplicação web colaborativa para                 múltiplos usuários na criação e edição de modelos, com foco especial em mo-
+editar documentos PDF usando navegadores. O sistema permite que os                    delos de sistemas de software. A arquitetura do SLIM incorpora tecnologias
+usuários editem o mesmo documento em tempo real e compartilhem anota-                 que permitem a sincronização imediata de alterações feitas por diferentes
+ções em documentos simultaneamente. Os autores propõem um mecanismo                   participantes, garantindo consistência e integridade do modelo em tempo
+de sincronização eficiente para aplicações web colaborativas utilizando as            real. O ambiente utiliza técnicas avançadas de OT para gerenciar operações
+capacidades avançadas do HTML5. Este mecanismo visa resolver desafios                 concorrentes de maneira eficiente, minimizando conflitos e assegurando que
+de latência e consistência que surgem quando múltiplos usuários intera-               todas as alterações sejam devidamente integradas. O artigo também discute
+gem simultaneamente com uma aplicação web. A abordagem se baseia                      estudos de caso e experimentos realizados para avaliar o desempenho e
+na utilização de WebSockets para comunicação bidirecional em tempo real               a eficácia do SLIM em cenários reais de uso. Os resultados demonstram
+entre clientes e servidores, permitindo atualizações instantâneas e redu-             que o ambiente é capaz de suportar uma colaboração eficiente e produtiva,
+ção de atrasos. O trabalho detalha a arquitetura do sistema, que incorpora            promovendo uma interação fluida entre os participantes durante o processo
+algoritmos de OT para gerenciar as operações concorrentes e assegurar                 de modelagem.
+que todas as mudanças feitas pelos usuários sejam integradas de maneira                   Wei et al. [71] abordam o desenvolvimento e a implementação de um
+consistente. A infraestrutura inclui um servidor central que coordena as              ambiente colaborativo de edição científica focado na química. O sistema
+operações de sincronização, garantindo que todas as instâncias da aplicação           foi projetado para facilitar a colaboração entre cientistas e pesquisadores
+web permaneçam atualizadas.                                                           na criação e edição colaborativa de documentos científicos relacionados à
+    Lautamäki et al. [31] detalham o desenvolvimento e a implementação                química. A arquitetura do ambiente colaborativo incorpora funcionalidades
+de CoRED, um editor colaborativo em tempo real baseado em navegador                   específicas para apoiar a edição em tempo real de documentos científicos
+para aplicações web Java. O CoRED foi projetado para permitir que múlti-              complexos, incluindo formulações químicas, estruturas moleculares, dia-
+plos desenvolvedores editem simultaneamente o código fonte de aplicações              gramas e textos técnicos especializados. O ambiente oferece recursos como
+Java diretamente em um navegador web, promovendo uma colaboração                      controle de versões, que permitem rastrear e gerenciar alterações feitas por
+eficiente e integrada. O CoRED é um editor Java completo que inclui ve-               diferentes colaboradores ao longo do tempo. Além disso, são implementadas
+rificação de erros e recursos de geração automática de código, além de                ferramentas para suportar a análise e a visualização de dados químicos,
+ser complementado por funcionalidades comumente associadas às mídias                  facilitando a comunicação e a colaboração entre os membros da equipe de
+sociais. A arquitetura do CoRED incorpora tecnologias avançadas como                  pesquisa. O artigo também destaca estudos de caso e experimentos práticos
+WebSockets para comunicação bidirecional em tempo real, garantindo a                  realizados para validar a eficácia e a usabilidade do ambiente colaborativo
+sincronização imediata das edições feitas por diferentes usuários. Além               em cenários reais de pesquisa química. Os resultados demonstram que o
+disso, o sistema utiliza algoritmos de OT para gerenciar operações concor-            sistema é capaz de melhorar a eficiência e a produtividade dos pesquisadores,
+rentes, assegurando que todas as modificações sejam aplicadas de maneira              ao mesmo tempo que promove uma colaboração mais integrada e eficaz no
+consistente e sem conflitos. A ferramenta foi testada em diversos cenários            desenvolvimento de documentos científicos na área da química.
+de desenvolvimento colaborativo, demonstrando melhorias significativas                    Bani-Salameh et al. [3] registram o design e a implementação de uma
+na produtividade e eficiência das equipes de desenvolvimento.                         de um IDE colaborativo chamado ICI (Idaho Collaborative IDE) que permite
+    Inoue et al. [24] apresentam o WFE, um RCE que permite a um grupo                 que desenvolvedores em diferentes locais colaborem em uma variedade de
+de pessoas editarem uma página web em um navegador compartilhando o                   atividades de desenvolvimento de software em tempo real. O ICI combina
+conteúdo de edição em tempo real. Além disso, os autores também propõem               um editor de programa colaborativo síncrono e um depurador colaborativo
+a aplicação do WFE para um ambiente de computação em nuvem, chamada                   em tempo real em um ambiente virtual multiusuário 3D. O ICI permite que
+WFE-S, com o objetivo de melhorar a escalabilidade, a elasticidade, a ca-             desenvolvedores compartilhem, em tempo real, o processo de edição, com-
+pacidade de resposta, bem como de reduzir a necessidade de manutenção.                pilação, execução e depuração de seus projetos de software. A arquitetura
+A arquitetura do sistema é baseada em uma combinação de algoritmos de                 do ICI é composta por quatro componentes principais: 1) um editor colabo-
+OT e técnicas de controle de versão, que juntos asseguram que as edições              rativo 2) um ambiente colaborativo shell 3) um conjunto de ferramentas de
+concorrentes sejam integradas sem conflitos. Os autores detalham a infraes-           comunicação, como chat de texto e voz, e 4) uma interface para colaboração
+trutura técnica, incluindo o uso de servidores intermediários para gerenciar          controle. A contribuição deste trabalho é uma IDE colaborativa que integra
+as comunicações entre os clientes e assegurar a integridade das operações             edição colaborativa responsiva e em tempo real e depuração. Os resultados
+de edição. Os estudos experimentais realizados demonstram a eficácia do               de testes de usabilidade e estudos de caso indicam que o ICI melhora a
+sistema, mostrando que ele é capaz de lidar com um grande número de                   produtividade e a eficiência da equipe, reduzindo o tempo necessário para
+usuários simultâneos sem degradação significativa de desempenho. Além                 detectar e corrigir erros.
+disso, o sistema inclui funcionalidades como a visualização das edições em                De Lucia et al. [12] apresentam e ferramenta STEVE, destinada à mo-
+tempo real e a capacidade de desfazer e refazer mudanças, oferecendo uma              delagem colaborativa síncrona com gerenciamento de versionamento, que
+experiência de usuário rica e interativa. A análise dos resultados indica que         suporta a modelagem distribuída em UML de sistemas de software. STEVE
+o mecanismo proposto melhora a eficiência da colaboração em tempo real e              permite que desenvolvedores distribuídos editem simultaneamente o mesmo
+aumenta a produtividade e a qualidade do trabalho colaborativo.                       diagrama UML, decompostos em sub-artefatos gerenciados hierarquica-
+    Ozono et al. [44] também apresentam o ambiente WFE-S para edição co-              mente, oferecendo gerenciamento de alterações e configurações tanto para
+laborativa de páginas web em tempo real. Além de detalhar a infraestrutura            diagramas quanto para objetos gráficos. Isso possibilita a reutilização e o
+e os algoritmos, os autores realizaram uma série de testes experimentais              compartilhamento consistentes de componentes de diagramas em diferentes
+e estudos de caso para avaliar o desempenho do WFE-S, demonstrando                    projetos. Integrada ao sistema ADAMS, que oferece funcionalidades refi-
+que o sistema é altamente eficiente em termos de latência e escalabilidade.           nadas de gerenciamento de artefatos e compartilhamento de diagramas, a
+Os resultados mostram que o WFE-S mantém a consistência dos dados e
+
+
+
+
+                                                                                138
+Desenvolvimento de Editores Colaborativos em Tempo Real: Revisão Rápida                                                            WRSL+’2024, Juiz de Fora/MG, Brasil
+
+
+ferramenta destaca a importância do controle preciso de versões. Ela incor-             experimentais são apresentados para demonstrar a eficácia do CoWord,
+pora mecanismos de versionamento que rastreiam alterações nos elementos                 evidenciando melhorias significativas na produtividade e na experiência
+individuais do modelo, promovendo a sincronização eficiente e a resolu-                 colaborativa dos usuários. Estudos de caso exemplificam a aplicabilidade da
+ção de conflitos. A arquitetura do sistema, que combina ferramentas de                  abordagem em diversos contextos profissionais e educacionais, realçando a
+modelagem UML com um robusto sistema de controle de versões, permite                    versatilidade e a robustez da solução proposta.
+operações colaborativas em tempo real. Comparações com métodos tradici-                     Shen and Sun [54], considerando oferta do recurso de destacar texto
+onais de versionamento demonstram melhorias significativas em precisão                  de modo síncrono, identificaram três necessidades principais: 1) diferenciar
+e eficiência na gestão de alterações concorrentes. Estudos de caso e testes             destaques feitos por diferentes usuários; 2) resolver problemas de incon-
+empíricos validam a eficácia da ferramenta, mostrando que ela facilita a                sistência causados por operações simultâneas; 3) oferecer uma função de
+colaboração contínua e a integração de mudanças de maneira fluida.                      desfazer flexível, permitindo reverter qualquer operação de destaque a qual-
+    Leone et al. [32] reportam TeNDaX, um editor colaborativo em tempo                  quer momento. Para atender a essas necessidades, foi desenvolvido o sistema
+real, baseado em um sistema de banco de dados, conforme descrito no tra-                REDUCE (Real-time Distributed Unconstrained Collaborative Editing). O
+balho de . O editor armazena documentos, incluindo conteúdo, estrutura,                 artigo apresenta soluções específicas, incluindo os algoritmos de transfor-
+tabelas e imagens, em um banco de dados semiestruturado, o que facilita                 mação IT_EH e IT_HH, além do algoritmo de controle OSCA, que resolvem
+a edição colaborativa e o layout dos documentos. Além disso, o TeNDaX                   problemas de divergência causados por operações de destaque sobrepostas.
+oferece funcionalidades avançadas como operações de desfazer e refazer,                 Adicionalmente, o algoritmo GOTO foi estendido para controlar a transfor-
+definição e execução de processos de negócios, e recursos de segurança                  mação de operações de destaque em relação às operações de edição. A função
+e conscientização do contexto. Durante a criação e uso dos documentos,                  de desfazer foi aprimorada com os algoritmos de transformação IT_HU e o
+metadados são coletados automaticamente, permitindo a criação de pas-                   algoritmo de controle SUCA, permitindo desfazer seletivamente qualquer
+tas dinâmicas, rastreamento da proveniência dos dados, e a realização de                operação de destaque a qualquer momento. Resultados experimentais, obti-
+mineração e pesquisa visual e de texto. A plataforma é comparada a uma                  dos através de estudos de caso e de testes de usabilidade, demonstram que
+"LAN-Party"de processamento de texto, suportando múltiplos editores e                   o uso do highlighting melhora significativamente a compreensão mútua,
+sistemas operacionais diferentes. Esse ambiente colaborativo permite a exe-             reduz o tempo de resolução de tarefas colaborativas e aumenta a satisfação
+cução de operações locais e globais de desfazer e refazer, facilitando a edição         dos usuários. A análise quantitativa e qualitativa dos dados coletados sus-
+em tempo real. Além disso, o TeNDaX demonstra a utilização eficiente de                 tenta a eficácia da ferramenta em diversos cenários de aplicação, incluindo
+dados e metadados para criar pastas dinâmicas, visualizar a proveniência                edição de documentos, design gráfico e programação em pares.
+dos dados, realizar mineração visual de texto e oferecer funcionalidades
+de pesquisa avançadas. O sistema também destaca a extensão do banco de                  5    RISCO À VALIDADE
+dados para gerenciar texto, mostrando como a integração de dados e metada-
+                                                                                        Em relação aos resultados relatados nos artigos, o principal viés está asso-
+dos pode aprimorar significativamente a experiência de edição colaborativa
+                                                                                        ciado à fase inicial e exploratória de muitos dos estudos, dado que apenas
+em tempo real.
+                                                                                        10 dos estudos apresentam algum tipo de avaliação e, dentre eles, apenas 5
+    Wong [72] estudam como múltiplos usuários podem colaborar de forma
+                                                                                        (cinco) relatam estudos com a participação de usuários.
+eficaz na criação e edição de documentos hipertextuais usando disposi-
+                                                                                            No viés associado à realização da revisão, os principais riscos e as ações
+tivos móveis, considerando as limitações típicas desses ambientes, como
+                                                                                        tomadas para minimizá-los foram:
+conectividade intermitente e recursos limitados. Os autores apresentam
+um protótipo de sistema de edição colaborativa com um mecanismo para                        (1) A pesquisa foi restrita a trabalhos classificados como sendo da área
+sincronizar atualizações de editores simultâneos, integrado ao sistema de                       de Computação pela ACM. Não foram tomadas ações neste caso
+gerenciamento de banco de dados XML nativo SODA. A pesquisa discute                             pois considerou-se que os principais veículos estão indexados;
+diversas estratégias e tecnologias para facilitar a colaboração em tempo                    (2) A string de busca restringiu a pesquisa aos campos de título e resumo.
+real, incluindo o uso de protocolos de comunicação eficientes, algoritmos de                    Não foram tomadas atitudes porque considerou-se que os trabalhos
+reconciliação de conflitos e interfaces de usuário adaptadas para dispositivos                  mais relevantes foram identificados;
+móveis. São exploradas técnicas para garantir a consistência e a sincroni-                  (3) A distinta experiência dos 3 avaliadores. Para diminuir o risco de
+zação das edições realizadas por diferentes usuários, mesmo em condições                        viés associado, a seleção foi realizada individualmente por dois ava-
+adversas de rede e mobilidade. O artigo também apresenta estudos de caso                        liadores de forma que um não soubesse as escolhas do outro, e
+e experimentos práticos para avaliar a viabilidade e a eficácia das soluções                    divergências foram definidas por uma pessoa árbitra.
+propostas. Resultados experimentais são discutidos para demonstrar a per-
+formance e a usabilidade do sistema em cenários reais de uso, destacando
+melhorias na colaboração e na produtividade dos usuários móveis durante                 6    DESAFIOS DE PESQUISA
+a edição de documentos hipertextuais.
+    Xia et al. [73] investigam a transformação de aplicações de usuário                 Os resultados obtidos com esta revisão fornecem uma base para o desenvol-
+único em plataformas colaborativas multiusuário através da abordagem                    vimento futuro de sistemas com suporte a RTCE. Os estudos identificados
+CoWord. Os autores apresentam um trabalho com o objetivo central de                     sugerem múltiplas vias para alcançar eficiência e eficácia na edição colabo-
+adaptar o Microsoft Word, uma aplicação originalmente concebida para uso                rativa em tempo real, cujos temas são reportados na literatura recente.
+individual, para suportar a edição colaborativa em tempo real. A metodo-
+logia empregada envolve a integração de um mecanismo de sincronização                   Testes e Avaliação com Usuários: Realizar testes abrangentes é um desa-
+que permite a múltiplos usuários editar simultaneamente o mesmo docu-                   fio fundamental para a pesquisa em RTCE. A maioria dos estudos ainda é
+mento, mantendo a consistência e a integridade das alterações. Utilizando               limitada em termos de número de usuários e de cenários avaliados. Garantir
+técnicas de OT e algoritmos de resolução de conflitos, o CoWord assegura                a condução de estudos que envolvam um número apropriado de partici-
+que as edições concorrentes sejam harmonizadas eficientemente. O artigo                 pantes, participantes com diferentes papéis e em ambientes variados, como
+descreve a arquitetura do sistema CoWord, destacando componentes essen-                 no estudo de de Lange et al. [11], pode proporcionar uma compreensão
+ciais como o servidor de sincronização, os clientes distribuídos e o protocolo          mais completa dos desafios enfrentados pelos usuários e das características
+de comunicação utilizado para garantir uma colaboração fluida. Resultados               desejadas nos sistemas colaborativos.
+
+
+
+
+                                                                                  139
+WRSL+’2024, Juiz de Fora/MG, Brasil                                                                                                                    Dantas et al.
+
+
+Algoritmos de resolução de conflitos: Estudos ainda são necessários                    implementa undo/redo de acordo com a semântica modelada pelos autores
+neste tema dado que, apesar das análises de Sun et al. [62, 64] explicitarem           a partir de um conjunto de ambientes de edição investigados.
+as vantagens de OT em relação CRDT, pesquisadores continuam a advogar
+pelo uso de CRDT. Por exemplo, Kleppmann [29] apresenta um algoritmo                   Representação e Diagramação: Outro desafio importante é o desenvol-
+para operações de movimentação de elementos em CRDTs de listas, e Litt                 vimento de técnicas e de ferramentas de representação que capturem de
+et al. [34] tratam da edição de texto rico. Outros exemplos são os frameworks          forma eficaz as interações dinâmicas e o comportamento em tempo real
+YJS [26], para compartilhamento de dados, e Hocuspocus [25], para edição               dos sistemas RTCE. Inovar na criação de diagramas e modelos que possam
+colaborativa.                                                                          representar adequadamente essas interações é crucial para melhorar a com-
+                                                                                       preensão e o gerenciamento desses sistemas. Por exemplo, Yu and Lu [74]
+Diversidade de Objetos Editáveis e ambientes heterogêneos: Um de-                      propõem uma ferramenta de discussão colaborativa adaptada para ambien-
+safio significativo na pesquisa de sistemas RTCE é expandir a capacidade               tes MOOC, utilizando de um esquema de Address Space Transformation para
+desses sistemas para suportar uma gama mais ampla de objetos editáveis.                simular a interação entre usuários históricos e atuais. Essa abordagem pode
+Atualmente, muitos sistemas são otimizados para tipos de objetos relati-               inspirar novas maneiras de representar interações dinâmicas em sistemas
+vamente simples, como textos e planilhas. No entanto, a demanda está                   RTCE, especialmente em ambientes educacionais.
+crescendo por sistemas que possam lidar com modelos gráficos complexos
+e diagramas interativos, entre outros [11, 29, 34]. Desenvolver abordagens             Integração de Comentários, Chat e Histórico: Melhorar a integração
+que garantam a consistência visual e a integridade dos dados para esses                e a gestão de ferramentas de apoio colaborativo, como comentários, chat
+tipos de objetos apresenta uma oportunidade para avanços significativos na             e histórico de edições, representa um desafio significativo, entre outros,
+área. Outro desafio é a construção de sistemas de co-edição heterogêneos,              relativamente à interação. No contexto da edição de imagens, por exemplo,
+permitindo que múltiplos usuários utilizem editores diferentes para editar             Bath et al. [4] optaram por posicionar a janela de troca de mensagens sobre
+documentos compartilhados na mesma sessão [8]. Essa abordagem destaca                  a imagem sendo editada. Desenvolver métodos que otimizem o uso dessas
+a necessidade de maior flexibilidade e adaptabilidade nos sistemas de edi-             ferramentas e avaliem seu impacto na produtividade e na eficácia do traba-
+ção colaborativa, evidenciando a importância de suportar uma diversidade               lho em equipe são relevantes para permitir integração sem comprometer a
+maior de objetos e editores para melhorar a experiência colaborativa.                  interação dos usuários nem o desempenho do sistema.
+
+Edição Colaborativa de Texto Rico: A edição colaborativa de texto rico,                Colaboração Humano-Computador: A colaboração entre humanos e
+que inclui formatação e outras características visuais, apresenta desafios             computadores na edição pode representar um avanço significativo na eficá-
+específicos em comparação com a edição de texto simples. Por exemplo, Litt             cia e eficiência dos sistemas RTCE. O trabalho de Pan et al. [46] introduz
+et al. [34] descrevem um algoritmo CRDT para edição colaborativa de texto              uma ferramenta de edição colaborativa que divide a tarefa entre o humano e
+rico. A estratégia armazena spans de formatação ao lado da sequência de                o computador, permitindo que cada um se concentre em suas especialidades.
+caracteres do texto e deriva o texto formatado final de forma determinística           Explorar e desenvolver ferramentas que integrem a colaboração humano-
+para que operações concorrentes sejam comutativas.                                     computador pode reduzir o esforço necessário para operações complexas e
+                                                                                       melhorar a eficiência na edição colaborativa.
+Edição Colaborativa de Vídeo: O design de ferramentas para edição cola-
+borativa de vídeo também levanta questões importantes e oportunidades                  Inclusão de Usuários com Deficiências: Um desafio constante na pes-
+de pesquisa. Por exemplo, Okopnyi et al. [42] exploram as complexidades                quisa em RTCE é garantir que os sistemas de edição colaborativa sejam
+do design para edição colaborativa de vídeo, destacam a necessidade de                 acessíveis e eficazes para pessoas com deficiências. O trabalho de Akter
+integrar recursos colaborativos específicos para software de edição não-               et al. [1] revela as barreiras enfrentadas por facilitadores de reuniões com
+linear, e discutem os desafios associados à introdução desses recursos. A              deficiência visual ao usar ferramentas de videoconferência, destacando a
+pesquisa sugere que, além dos recursos colaborativos convencionais, pode               necessidade de interfaces mais inclusivas e adaptáveis. Investigar como as
+ser necessário desenvolver representações abstratas alternativas para mí-              tecnologias de edição colaborativa podem ser projetadas para atender às
+dias baseadas em tempo para facilitar a colaboração eficaz na edição de vídeo.         necessidades específicas de diferentes grupos de usuários é crucial para
+                                                                                       promover a equidade e a acessibilidade no ambiente colaborativo.
+Integração de Modelagem e Edição Colaborativa em Processos de
+Desenvolvimento: Além dos avanços na edição colaborativa de textos e
+vídeos, a integração de técnicas colaborativas em processos de desenvolvi-
+                                                                                       7    CONSIDERAÇÕES FINAIS
+mento web também apresenta desafios. Por exemplo, de Lange et al. [11]                 No presente trabalho apresentamos uma Revisão Rápida que buscou iden-
+investigam a integração de modelagem colaborativa e edição de código em                tificar pesquisas que descrevessem o desenvolvimento de sistemas com
+um processo de engenharia web orientado a modelos (MDWE). O estudo                     suporte a RTCE, bem como algoritmos ou técnicas importantes para o seu
+propõe uma abordagem que combina edição ao vivo e wireframing com                      desenvolvimento.
+modelagem colaborativa em tempo real, abordando a sincronização entre                      Os dados extraídos desses artigos foram organizados de maneira a des-
+código-fonte, wireframes e modelos.                                                    tacar aspectos importantes como o tipo de objeto editado, a arquitetura
+                                                                                       adotada, os algoritmos de sincronização utilizados, os tipos de avaliações
+Implementação de Undo/Redo: A implementação de operações de undo                       realizadas, e os recursos de edição oferecidos. A análise revelou diversas
+e redo continua a ser um desafio de pesquisa no contexto de edição cola-               abordagens e técnicas empregadas na implementação de RTCE, proporcio-
+borativa em tempo real, em particular no contexto de objetos complexos                 nando uma visão abrangente das pesquisas nessa área, e permitiu identificar
+e interativos. Sun [60] propõe uma solução para operações de undo em                   desafios para pesquisas futuras.
+editores colaborativos, permitindo desfazer qualquer operação a qualquer
+momento, independentemente do contexto de undo. A solução usa OT para
+garantir que uma operação possa ser desfeita, suportando múltiplos modos               AGRADECIMENTOS
+de undo (único, cronológico e seletivo) na mesma sessão. Já Stewen and
+Kleppmann [58] utilizam CRDT para implementar um novo algoritmo que                    Agradecemos as pessoas revisoras pelas valiosas sugestões que contribuíram
+                                                                                       para o aprimoramento do conteúdo e da apresentação deste trabalho.
+
+
+
+                                                                                 140
+Desenvolvimento de Editores Colaborativos em Tempo Real: Revisão Rápida                                                                            WRSL+’2024, Juiz de Fora/MG, Brasil
+
+
+REFERÊNCIAS                                                                                        [24] Ryota Inoue, Yudai Kato, Takushi Goda, Tadachika Ozono, Shun Shiramatsu, and
+ [1] Taslima Akter, Yoonha Cha, Isabela Figueira, Stacy M. Branham, and Anne Marie                      Toramatsu Shintani. 2012. A real-time collaborative mechanism for editing a
+     Piper. 2023. “If I’m supposed to be the facilitator, I should be the host”: Un-                    web page and its applications. In 2012 Fifth International Symposium on Parallel
+     derstanding the Accessibility of Videoconferencing for Blind and Low Vision                        Architectures, Algorithms and Programming. IEEE, 186–193.
+     Meeting Facilitators. In Proceedings of the 25th International ACM SIGACCESS                  [25] Kevin Jahns. 2018. HocusPocus - Collaborative editing. https://tiptap.dev/docs/
+     Conference on Computers and Accessibility (ASSETS ’23). ACM, Article 45, 14 pages.                 hocuspocus/guides/collaborative-editing
+     https://doi.org/10.1145/3597638.3608420                                                       [26] Kevin Jahns. 2018. YJS - A CRDT framework with a powerful abstraction of
+ [2] Noha Alsulami and Asma Cherif. 2017. Collaborative editing over opportunistic                      shared data. https://github.com/yjs/yjs
+     networks: State of the art and challenges. International Journal of Advanced                  [27] Tim Jungnickel and Tobias Herb. 2016. Simultaneous editing of JSON objects via
+     Computer Science and Applications 8, 11 (2017).                                                    operational transformation. In Proceedings of the 31st Annual ACM Symposium
+ [3] Hani Bani-Salameh, Clinton Jeffery, Ziad Al-Sharif, and Iyad Abu Doush. 2008.                      on Applied Computing. 812–815.
+     Integrating collaborative program development and debugging within a virtual                  [28] Shin-Ya Katayama, Takushi Goda, Shun Shiramatsu, Tadachika Ozono, and To-
+     environment. In Groupware: Design, Implementation, and Use: 14th International                     ramatsu Shintani. 2013. A fast synchronization mechanism for collaborative
+     Workshop, CRIWG 2008, 2008, Revised Selected Papers 14. Springer, 107–120.                         web applications based on HTML5. In 2013 14th ACIS International Conference on
+ [4] Ulrike Bath, Sumit Shekhar, Jürgen Döllner, and Matthias Trapp. 2021. Colier:                      Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed
+     Collaborative editing of raster images. In 2021 International Conference on Cy-                    Computing. IEEE, 663–668.
+     berworlds (CW). IEEE, 33–40.                                                                  [29] Martin Kleppmann. 2020. Moving elements in list CRDTs. In Proceedings of the
+ [5] Ulrike Bath, Sumit Shekhar, Julian Egbert, Julian Schmidt, Amir Semmo, Jürgen                      7th Workshop on Principles and Practice of Consistency for Distributed Data (PaPoC
+     Döllner, and Matthias Trapp. 2022. CERVI: collaborative editing of raster and                      ’20). ACM, Article 4, 6 pages. https://doi.org/10.1145/3380787.3393677
+     vector images. The Visual Computer 38, 12 (2022), 4057–4070.                                  [30] Elias Kuiter, Sebastian Krieter, Jacob Krüger, Gunter Saake, and Thomas Leich.
+ [6] Zane L Berge. 1995. Facilitating computer conferencing: Recommendations from                       2021. variED: an editor for collaborative, real-time feature modeling. Empirical
+     the field. Educational technology 35, 1 (1995), 22–30.                                             Software Engineering 26, 2 (2021), 24.
+ [7] Asma Cherif. 2012. Access control models for collaborative applications. Ph. D.               [31] Janne Lautamäki, Antti Nieminen, Johannes Koskinen, Timo Aho, Tommi Mik-
+     Dissertation. Université de Lorraine.                                                              konen, and Marc Englund. 2012. CoRED: browser-based Collaborative Real-time
+ [8] Bryden Cho, Chengzheng Sun, and Agustina Ng. 2019. Issues and Experiences in                       Editor for Java web applications. In Proceedings of the ACM 2012 conference on
+     Building Heterogeneous Co-Editing Systems. Proc. ACM Hum.-Comput. Interact.                        Computer Supported Cooperative Work. 1307–1316.
+     3, GROUP, Article 245 (dec 2019), 28 pages. https://doi.org/10.1145/3361126                   [32] Stefania Leone, Thomas B Hodel-Widmer, Michael Boehlen, and Klaus R Dittrich.
+ [9] Gabriele D’Angelo, Angelo Di Iorio, and Stefano Zacchiroli. 2018. Spacetime                        2006. Tendax, a collaborative database-based real-time editor system. In Advances
+     Characterization of Real-Time Collaborative Editing. Proc. ACM Hum.-Comput.                        in Database Technology-EDBT 2006: 10th International Conference on Extending
+     Interact. 2, CSCW, Article 41 (nov 2018), 19 pages. https://doi.org/10.1145/3274310                Database Technology, Munich, Germany, March 26-31, 2006 10. Springer, 1135–
+[10] Gabriele d’Angelo, Angelo Di Iorio, and Stefano Zacchiroli. 2018. Spacetime                        1138.
+     characterization of real-time collaborative editing. Proceedings of the ACM on                [33] Kai Lin, David Chen, Chengzheng Sun, and Geoff Dromey. 2007. Leveraging
+     Human-Computer Interaction 2, CSCW (2018), 1–19.                                                   Single-User Microsoft Visio for Multi-user Real-Time Collaboration. In Coope-
+[11] Pieter de Lange, Paul Nicolaescu, Andreas T. Neumann, et al. 2020. Integrating                     rative Design, Visualization, and Engineering, Yuhua Luo (Ed.). Springer Berlin
+     Web-Based Collaborative Live Editing and Wireframing into a Model-Driven                           Heidelberg, 353–360.
+     Web Engineering Process. Data Sci. Eng. 5 (2020), 240–260. https://doi.org/10.                [34] Geoffrey Litt, Sarah Lim, Martin Kleppmann, and Peter van Hardenberg. 2022.
+     1007/s41019-020-00131-3                                                                            Peritext: A CRDT for Collaborative Rich Text Editing. Proc. ACM Hum.-Comput.
+[12] Andrea De Lucia, Fausto Fasano, Giuseppe Scanniello, and Genny Tortora. 2007.                      Interact. 6, CSCW2, Article 531 (nov 2022), 36 pages. https://doi.org/10.1145/
+     Enhancing collaborative synchronous UML modelling with fine-grained versio-                        3555644
+     ning of software artefacts. Journal of Visual Languages & Computing 18, 5 (2007),             [35] Ming Liu, Leping Liu, and Li Liu. 2018. Group awareness increases student
+     492–503.                                                                                           engagement in online collaborative writing. The Internet and Higher Education
+[13] Thiago A. de S. Silva, Glívia A. R. Barbosa, and Ismael S. Santana. 2018. Evaluation               38 (2018), 1–8.
+     of User Experience and Sociability on Platforms of Ephemeral Narratives: an                   [36] Paul Benjamin Lowry, Aaron Mosiah Curtis, and Michelle Rene Lowry. 2004.
+     Instagram Stories Case Study. In Proceedings of the 24th Brazilian Symposium                       A taxonomy of collaborative writing to improve empirical research, writing
+     on Multimedia and the Web (WebMedia ’18). ACM, 331–337. https://doi.org/10.                        practice, and tool development. International Journal of Business Communication
+     1145/3243082.3243084                                                                               41, 1 (2004), 66–99.
+[14] Clarence A Ellis and Simon J Gibbs. 1989. Concurrency control in groupware                    [37] David Moher, Larissa Shamseer, Mike Clarke, Davina Ghersi, Alessandro Liberati,
+     systems. In Proceedings of the 1989 ACM SIGMOD international conference on                         Mark Petticrew, Paul Shekelle, Lesley A Stewart, and Prisma-P Group. 2015.
+     Management of data. 399–407.                                                                       Preferred reporting items for systematic review and meta-analysis protocols
+[15] Clarence A Ellis, Simon J Gibbs, and Gail Rein. 1991. Groupware: some issues                       (PRISMA-P) 2015 statement. Systematic reviews 4 (2015), 1–9.
+     and experiences. Commun. ACM 34, 1 (1991), 39–58.                                             [38] Stefano Montanelli and Martin Ruskov. 2023. A Systematic Literature Review of
+[16] R M Featherstone, D M Dryden, M Foisy, J Guise, M D Mitchell, R A Paynter,                         Online Collaborative Story Writing. In Human-Computer Interaction – INTERACT
+     K A Robinson, C A Umscheid, and L Hartling. 2015. Advancing knowledge of                           2023: 19th IFIP TC13 International Conference, York, UK, August 28 – September
+     rapid reviews: an analysis of results, conclusions and recommendations from                        1, 2023, Proceedings, Part III (York, United Kingdom). Springer-Verlag, 73–93.
+     published review articles examining rapid reviews. Systematic reviews 4, 1 (2015),                 https://doi.org/10.1007/978-3-031-42286-7_5
+     1–8.                                                                                          [39] Brice Nédelec, Pascal Molli, and Achour Mostefaoui. 2016. Crate: Writing stories
+[17] Thore Fechner, Dennis Wilhelm, and Christian Kray. 2015. Ethermap: real-time                       together with our browsers. In Proceedings of the 25th International Conference
+     collaborative map editing. In Proceedings of the 33rd annual ACM conference on                     Companion on World Wide Web. 231–234.
+     human factors in computing systems. 3583–3592.                                                [40] David A Nichols, Pavel Curtis, Michael Dixon, and John Lamping. 1995. High-
+[18] Roy Thomas Fielding. 2000. REST: architectural styles and the design of network-                   latency, low-bandwidth windowing in the Jupiter collaboration system. In Procee-
+     based software architectures. Doctoral dissertation, University of California (2000).              dings of the 8th annual ACM symposium on User interface and software technology.
+[19] Cristian Gadea. 2021. Architectures and Algorithms for Real-Time Web-Based                         111–120.
+     Collaboration. Ph. D. Dissertation. Université d’Ottawa/University of Ottawa.                 [41] Petru Nicolaescu, Mario Rosenstengel, Michael Derntl, Ralf Klamma, and Matthias
+[20] Liping Gao, Fangyu Yu, Qingkui Chen, and Naixue Xiong. 2016. Consistency                           Jarke. 2018. Near real-time collaborative modeling for view-based web informa-
+     maintenance of do and undo/redo operations in real-time collaborative bitmap                       tion systems engineering. Information Systems 74 (2018), 23–39.
+     editing systems. Cluster Computing 19 (2016), 255–267.                                        [42] Pavel Okopnyi, Oskar Juhlin, and Frode Guribye. 2022. Designing for Collabora-
+[21] Jens Emil Sloth Grønbæk, Juan Sánchez Esquivel, Germán Leiva, Eduardo Velloso,                     tive Video Editing. In Norddic Human-Computer Interaction Conference (NordiCHI
+     Hans Gellersen, and Ken Pfeuffer. 2024. Blended Whiteboard: Physicality and                        ’22). ACM, Article 3, 11 pages. https://doi.org/10.1145/3546155.3546664
+     Reconfigurability in Remote Mixed Reality Collaboration. In Proceedings of the                [43] Gérald Oster, Pascal Urso, Pascal Molli, and Abdessamad Imine. 2006. Data con-
+     CHI Conference on Human Factors in Computing Systems (CHI ’24). ACM, Article                       sistency for P2P collaborative editing. In Proceedings of the 2006 20th anniversary
+     798, 16 pages. https://doi.org/10.1145/3613904.3642293                                             conference on Computer supported cooperative work. 259–268.
+[22] Claudia-Lavinia Ignat and Moira C Norrie. 2003. Customizable collaborative                    [44] Tadachika Ozono, Robin ME Swezey, Shun Shiramatsu, Toramatsu Shintani,
+     editor relying on treeOPT algorithm. In ECSCW 2003: Proceedings of the Eighth                      Takushi Goda, Yudai Kato, and Ryota Inoue. 2012. Differential Synchronizaiton
+     European Conference on Computer Supported Cooperative Work 14–18 September                         Mechanism for a Real-Time Collaborative Web Page Editing System WFE-S. In
+     2003, Helsinki, Finland. Springer, 315–334.                                                        2012 IIAI International Conference on Advanced Applied Informatics. IEEE, 242–
+[23] Abdessamad Imine. 2009. Coordination model for real-time collaborative editors.                    247.
+     In Coordination Models and Languages: 11th International Conference, COORDI-                  [45] Tadachika Ozono, Robin ME Swezey, Shun Shiramatsu, Toramatsu Shintani,
+     NATION 2009, Lisboa, Portugal, June 9-12, 2009. Proceedings 11. Springer, 225–246.                 Ryota Inoue, Yudai Kato, and Takushi Goda. 2012. A real-time collaborative web
+
+
+
+
+                                                                                             141
+WRSL+’2024, Juiz de Fora/MG, Brasil                                                                                                                                              Dantas et al.
+
+
+       page editing system WFE-S based on cloud computing environment. In 2012 IIAI                   [61] Chengzheng Sun, Xiaohua Jia, Yanchun Zhang, Yun Yang, and David Chen. 1998.
+       International Conference on Advanced Applied Informatics. IEEE, 224–229.                            Achieving convergence, causality preservation, and intention preservation in
+[46]   Lihang Pan, Chun Yu, Zhe He, and Yuanchun Shi. 2023. A Human-Computer                               real-time cooperative editing systems. ACM Transactions on Computer-Human
+       Collaborative Editing Tool for Conceptual Diagrams. In Proceedings of the 2023                      Interaction (TOCHI) 5, 1 (1998), 63–108.
+       CHI Conference on Human Factors in Computing Systems (CHI ’23). ACM, Article                   [62] Chengzheng Sun, David Sun, Agustina Ng, Weiwei Cai, and Bryden Cho. 2020.
+       360, 29 pages. https://doi.org/10.1145/3544548.3580676                                              Real Differences between OT and CRDT under a General Transformation Fra-
+[47]   Postman. 2023. 2023 State of the API Report. Accessed: 2024-06-10.                                  mework for Consistency Maintenance in Co-Editors. Proc. ACM Hum.-Comput. In-
+[48]   Matthias Ressel, Doris Nitsche-Ruhland, and Rul Gunzenhäuser. 1996. An inte-                        teract. 4, GROUP, Article 06 (jan 2020), 26 pages. https://doi.org/10.1145/3375186
+       grating, transformation-oriented approach to concurrency control and undo in                   [63] Chengzheng Sun, Steven Xia, David Sun, David Chen, Haifeng Shen, and Wentong
+       group editors. In Proceedings of the 1996 ACM conference on Computer supported                      Cai. 2006. Transparent adaptation of single-user applications for multi-user real-
+       cooperative work. 288–297.                                                                          time collaboration. ACM Transactions on Computer-Human Interaction (TOCHI)
+[49]   Gabriele Salvati, Christian Santoni, Valentina Tibaldo, and Fabio Pellacini. 2015.                  13, 4 (2006), 531–582.
+       Meshhisto: Collaborative modeling by sharing and retargeting editing histories.                [64] David Sun, Chengzheng Sun, Agustina Ng, and Weiwei Cai. 2020. Real Diffe-
+       ACM Transactions on Graphics (TOG) 34, 6 (2015), 1–10.                                              rences between OT and CRDT in Correctness and Complexity for Consistency
+[50]   Holger J Schünemann and Lorenzo Moja. 2015. Reviews: rapid! rapid! rapid!. . .                      Maintenance in Co-Editors. Proc. ACM Hum.-Comput. Interact. 4, CSCW1, Article
+       and systematic. Systematic reviews 4, 1 (2015), 1–3.                                                21 (may 2020), 30 pages. https://doi.org/10.1145/3392825
+[51]   Sharifahtun Naim Shahidan, Zuraina Ali, and Norsuhaily Abu Bakar. 2022. Moti-                  [65] Xin Tan, Xinyue Lv, Jing Jiang, and Li Zhang. 2024. Understanding Real-Time
+       vational Impacts of the Google Docs Integration to Support Collaborative Writing:                   Collaborative Programming: A Study of Visual Studio Live Share. ACM Trans.
+       A Review Approach. Intl. Journal of Advances in Social Sciences and Humanities                      Softw. Eng. Methodol. 33, 4, Article 110 (apr 2024), 28 pages. https://doi.org/10.
+       1, 3 (2022), 166–171.                                                                               1145/3643672
+[52]   Marc Shapiro and Nuno Preguiça. 2007. Designing a commutative replicated                       [66] Christian Thum, Michael Schwind, and Martin Schader. 2009. SLIM—A
+       data type. arXiv preprint arXiv:0710.1784 (2007).                                                   lightweight environment for synchronous collaborative modeling. In Model Dri-
+[53]   Marc Shapiro, Nuno Preguiça, Carlos Baquero, and Marek Zawirski. 2011.                              ven Engineering Languages and Systems: 12th International Conference, MODELS
+       Conflict-free replicated data types. In Stabilization, Safety, and Security of Distri-              2009, Denver, CO, USA, October 4-9, 2009. Proceedings 12. Springer, 137–151.
+       buted Systems: 13th International Symposium, SSS 2011, Grenoble, France, October               [67] Jennifer Tsan, Jessica Vandenberg, Zarifa Zakaria, Joseph B. Wiggins, Alexan-
+       10-12, 2011. Proceedings 13. Springer, 386–400.                                                     der R. Webber, Amanda Bradbury, Collin Lynch, Eric Wiebe, and Kristy Elizabeth
+[54]   Haifeng Shen and Chengzheng Sun. 2002. Highlighting: a gesturing communi-                           Boyer. 2020. A Comparison of Two Pair Programming Configurations for Upper
+       cation tool for real-time collaborative systems. In Fifth International Conference                  Elementary Students. In Proceedings of the 51st ACM Technical Symposium on
+       on Algorithms and Architectures for Parallel Processing, 2002. Proceedings. IEEE,                   Computer Science Education (Portland, OR, USA) (SIGCSE ’20). ACM, 346–352.
+       180–187.                                                                                            https://doi.org/10.1145/3328778.3366941
+[55]   Jaemyung Shin, Bumsoo Kang, Taiwoo Park, Jina Huh, Jinhan Kim, and Junehwa                     [68] A. Omar M. Uscamayta, Bruna C.R. Cunha, Diogo S. Martins, and Maria G.
+       Song. 2016. Beupright: Posture correction using relational norm intervention. In                    Pimentel. 2017. Collaborative Ad-hoc Multimedia Authoring via Mobile Devices.
+       Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems.                       In Proceedings of the 23rd Brazillian Symposium on Multimedia and the Web
+       6040–6052.                                                                                          (WebMedia ’17). ACM, 61–64. https://doi.org/10.1145/3126858.3131572
+[56]   Scott Solomon. 2016. Google and Microsoft’s Battle for the Enterprise: How                     [69] Nicolas Vidot, Michelle Cart, Jean Ferrié, and Maher Suleiman. 2000. Copies
+       Users Are Interacting With SaaS Applications - BetterCloud Monitor. BetterCloud                     convergence in a distributed real-time collaborative environment. In Proceedings
+       Monitor. https://www.bettercloud.com/monitor/google-apps-and-office-365-                            of the 2000 ACM conference on Computer supported cooperative work. 171–180.
+       differences/ Accessado em 10/06/2024.                                                          [70] Victor H. Vieira, Daniel G. Sante, André P. Freire, and Renata P. M. Fortes. 2005. A
+[57]   Adrienne Stevens, Mona Hersi, Chantelle Garritty, Lisa Hartling, Beverley J                         web service for CSCW applications. In Proceedings of the 11th Brazilian Symposium
+       Shea, Lesley A Stewart, Vivian Andrea Welch, and Andrea C Tricco. 2024. Ra-                         on Multimedia and the Web (WebMedia ’05). ACM, 1–3. https://doi.org/10.1145/
+       pid review method series: interim guidance for the reporting of rapid revi-                         1114223.1114241
+       ews. BMJ Evidence-Based Medicine (2024). https://doi.org/10.1136/bmjebm-                       [71] Ruipeng Wei, Ruisheng Zhang, Chen Zhao, Dongmei Yue, and Lian Li. 2009.
+       2024-112899 arXiv:https://ebm.bmj.com/content/early/2024/07/21/bmjebm-2024-                         Design and Implementation of Scientific Collaborative Editing Environment
+       112899.full.pdf                                                                                     on Chemistry. In 2009 Eighth International Conference on Grid and Cooperative
+[58]   Leo Stewen and Martin Kleppmann. 2024. Undo and Redo Support for Repli-                             Computing. IEEE, 188–192.
+       cated Registers. In Proceedings of the 11th Workshop on Principles and Practice                [72] Raymond K Wong. 2004. Collaborative hypertext editing in mobile environment.
+       of Consistency for Distributed Data (Athens, Greece) (PaPoC ’24). Association                       In 10th International Multimedia Modelling Conference, 2004. Proceedings. IEEE,
+       for Computing Machinery, New York, NY, USA, 1–7. https://doi.org/10.1145/                           300–307.
+       3642976.3653029                                                                                [73] Steven Xia, David Sun, Chengzheng Sun, David Chen, and Haifeng Shen. 2004.
+[59]   Maher Suleiman, Michele Cart, and Jean Ferrié. 1998. Concurrent operations in                       Leveraging single-user applications for multi-user collaboration: the coword
+       a distributed and mobile collaborative environment. In Proceedings 14th Interna-                    approach. In Proceedings of the 2004 ACM conference on Computer supported
+       tional Conference on Data Engineering. IEEE, 36–45.                                                 cooperative work. 162–171.
+[60]   Chengzheng Sun. 2000. Undo any operation at any time in group editors. In                      [74] Xinyue Yu and Tun Lu. 2022. An AST-Based Collaborative Discussion Tool for
+       Proceedings of the 2000 ACM Conference on Computer Supported Cooperative Work                       the MOOC Environment. In CCF Conference on Computer Supported Cooperative
+       (CSCW ’00). ACM, 191–200. https://doi.org/10.1145/358916.358990                                     Work and Social Computing. Springer, 284–294.
+
+
+
+
+                                                                                                142
+

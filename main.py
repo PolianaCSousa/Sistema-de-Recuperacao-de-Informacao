@@ -11,9 +11,6 @@ from time import sleep
 # Verificar se o arquivo existe antes de extrair o vocabulário
 # Tratar as stopwords
 
-
-
-
 #palavrasParaRetirar
 stopWords = [
     "eu", "tu", "ele", "ela", "nós", "vocês", "eles", "elas",
@@ -23,21 +20,17 @@ stopWords = [
     "nosso", "nossa", "nossos", "nossas",
     "esse", "essa", "isso", "este", "esta", "isto",
     "aquele", "aquela", "aquilo",
-    "quem", "que", "qual", "sim", "não", "com", "tem", "yes", "not"
+    "quem", "que", "qual", "sim", "não", "com", "tem", "yes", "not","para","uma","dos","como"
 ]
 
 def index_collection(vocabulary):
 
     collection = create_collection_dictionary()
-
-    # index = list() [0 = para, 1 = que, 2 = arquivos, ... etc.]
-    # aux = 0
     index = dict()
 
     for vocabulary_key, total_freq in vocabulary.items():
         index[vocabulary_key] = [total_freq,
                                  {}]  # começa com uma lista contendo a frequência total e um dicionário vazio
-
         for doc_name, terms in collection.items():
             if vocabulary_key in terms:
                 freq = terms[vocabulary_key]
@@ -49,7 +42,6 @@ def index_collection(vocabulary):
 
 def bool_index(vocabulary):
     collection = create_collection_dictionary()
-    #print(collection)
     bool = dict()
 
     for word, total_freq in vocabulary.items():
@@ -59,20 +51,10 @@ def bool_index(vocabulary):
                 bool[word][doc_name] = 1;
             else:
                 bool[word][doc_name] = 0;
-
-    #print(bool)
     return bool
-#Lê o arquivo e extrai o vocabulário colocando em um array.
-# O vocabulário é toda palavra com mais de 2 caracteres que não sejam stopwords  (pronomes, caracteres especiais, não, sim, e etc.)
 
 
 #OPERADORES: AND, OR e NOT
-'''
-ideia: primeiro passo é pegar termo por termo da consulta (separar os termos dos operadores)
-ex: doce AND mel
-[doce, AND, mel]
-
-'''
 operators = ['and', 'or', 'not']
 def boolean_model():
     #wordsAndOperators is the consult
@@ -95,8 +77,10 @@ def boolean_model():
             return print('Está faltando um operador!')
 
     vocabulary = get_most_relevant_terms()
+
     #Verifica se o usuario fez uma consulta que contém termos indexados
     consult_boolean = words_in_vocabulary(wordsAndOperators, vocabulary)
+    print(consult_boolean)
     if consult_boolean == -1:
         print('Os termos da consulta não estão no vocabulário. Tente fazer uma consulta diferente!')
     else:
@@ -106,29 +90,22 @@ def boolean_model():
         pass
 
 
-""" antes
-    def calculate_result(wordsAndOperators,consult_boolean):
-
-    if len(wordsAndOperators) == 3: #temos apenas um operador para calcular
-        calculate_operator(wordsAndOperators,consult_boolean)
-        pass
-    else: #temos 2 operadores para calcular
-        pass """
-
 def calculate_result(wordsAndOperators, consult_boolean):
     if len(wordsAndOperators) == 3:  # temos apenas um operador para calcular
         calculate_operator(wordsAndOperators, consult_boolean)
     else:  # temos 2 operadores para calcular
         partial_result = calculate_operator(wordsAndOperators[0:3], consult_boolean)
         new_consult = [partial_result] + wordsAndOperators[3:]
+        print('partial_result: ', partial_result)
+        print('new_consult: ', new_consult)
         calculate_operator(new_consult, consult_boolean)
-
 
 
 #vou fazer o metodo sempre receber apenas dois termos e um operador
 def calculate_operator(consult, consult_boolean):
 
     docs = list(next(iter(consult_boolean.values())).keys())
+    print('docs: ',docs)
 
     if consult[1] == 'and':
         result = {}
@@ -152,10 +129,6 @@ def calculate_operator(consult, consult_boolean):
         return result
 
 
-
-
-
-
 def words_in_vocabulary(words,vocabulary):
 
     boolean_index = bool_index(vocabulary)
@@ -172,17 +145,11 @@ def words_in_vocabulary(words,vocabulary):
         return consult_boolean_index
 
 
-
-
-
-
-
-
-
 def extract_vocabulary(fileName):
     try:
         file = open(fileName, 'r', encoding='utf-8')
     except FileNotFoundError:
+        pass
         print(f'Arquivo {fileName} não encontrado.')
         return []
 
@@ -196,6 +163,7 @@ def extract_vocabulary(fileName):
     file.close()
     return vocabulary
 
+
 def create_dictionary(fileName):
 
     vocabulary = extract_vocabulary(fileName)
@@ -205,19 +173,18 @@ def create_dictionary(fileName):
     #print(counter)
     return dict(counter)
 
+
 def create_collection_dictionary():
 
     dictionary = dict()
-    qtd_files = 3
+    qtd_files = 360
 
     for i in range(1, qtd_files + 1): #o range é exclusivo no final, entao para chegar até o 2 precisa adicionar mais um. Ex, se for range(1,5) ele vai do 1 ao 4
         dictionary['doc'+str(i)+'.txt'] = create_dictionary('doc'+str(i)+'.txt')
 
     return dictionary
-    #print(dictionary)
     #para ver o dicionario formatado jogue o resultado do terminal nesse link: https://jsonformatter.curiousconcept.com/#
 
-#def indexar(arrayComPalavrasRepetidas):
 
 def get_most_relevant_terms():
 
@@ -233,11 +200,10 @@ def get_most_relevant_terms():
    # print(vocabulary)
     sorted_vocabulary = dict(sorted(vocabulary.items(),key=lambda word: word[1], reverse=True))
 
-    vocabulary_50 = dict(islice(sorted_vocabulary.items(), 20))
+    vocabulary_50 = dict(islice(sorted_vocabulary.items(), 50))
 
-
-    #print(vocabulary_50)
     return vocabulary_50
+
 
 def menu():
 
@@ -265,9 +231,13 @@ def menu():
 
             case 2:
                 vocabulary = get_most_relevant_terms()
-                print('\nVOCABULÁRIO (20 termos mais frequentes):')
+                print('\nVOCABULÁRIO (50 termos mais frequentes):')
                 for word, freq in vocabulary.items():
                     print(f'{word}: {freq}')
+
+                with open('vocabulario.txt', "w") as file:
+                    file.write(str(vocabulary))
+
 
             case 3:
                 vocabulary = get_most_relevant_terms()
@@ -276,12 +246,20 @@ def menu():
                 for word, docs in matrix.items():
                     print(f'{word}: {docs}')
 
+                with open('matriz_de_ocorrencias.txt', "w") as file:
+                    file.write(str(matrix))
+
+
             case 4:
                 vocabulary = get_most_relevant_terms()
                 matrix = index_collection(vocabulary)
                 print('\nMATRIZ DE FREQUÊNCIAS:')
                 for word, data in matrix.items():
                     print(f'{word}: {data[1]}')
+
+                with open('matriz_de_frequencias.txt', "w") as file:
+                    file.write(str(matrix))
+
 
             case 5:
                 boolean_model()
@@ -290,37 +268,6 @@ def menu():
                 break
 
 
-
 if __name__ == "__main__":
-    #boolean_model()
-    # menu()
-    #vocabulary = extract_vocabulary('doc1.txt')
-    # result = get_most_relevant_terms() #menu 2
-    #print(result)
-
-    # index = bool_index(result)
 
     menu()
-
-    '''
-    vocabulary2 = create_dictionary('doc2.txt')
-    vocabulary1 = create_dictionary('doc1.txt')
-    
-    arquivos["doc1.txt"] = vocabulary1
-    arquivos["doc2.txt"] = vocabulary2
-    '''
-
-
-    '''for fileName in arquivos:
-        print(arquivos[fileName]['doce'])
-        break
-        #print(arquivos)
-    '''
-
-
-
-
-
-
-
-

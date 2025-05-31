@@ -1,10 +1,1824 @@
-Doce, doce, doce
-A vida é um doce, vida é mel
-Que escorre da boca feito um doce de batata doce
-Doce, doce, doce
-A vida é um doce, vida é mel
-Que escorre da boca feito um doce de batata doce
-Mas pode ser amarga, se não for levada a sério
-Pode virar drama, se não tiver mistério
-Pode ser veneno, se vivida sem critério
-Pode ser doçura, se vivida com amor
+Redes de Computadores e Internet
+
+transparências baseadas no livro
+“Computer Networking: A Top-Down Approach Featuring the Internet”
+James Kurose e Keith Ross
+http://occawlonline.pearsoned.com/bookbind/pubbooks/kurose-ross1/
+
+1: Introdução
+
+1
+
+Histórico Das Redes De Comunicação
+•
+
+Primeiros computadores:
+- máquinas complexas, grandes, caras
+- ficavam em salas isoladas com ar condicionado
+- operadas apenas por especialistas
+- programas submetidos em forma de jobs seqüenciais
+
+•
+
+Anos 60:
+- primeiras tentativas de interação entre tarefas concorrentes
+- surge técnica time-sharing, sistemas multiusuários
+- usuários conectados ao computador por terminais
+- terminais necessitavam técnicas de comunicação de dados
+com computador central => inicio das redes
+1: Introdução
+
+2
+
+Sistemas Multiusuários
+Terminal 4
+
+Terminal 3
+
+Terminal 1
+
+Mainframe com
+time-sharing OS
+st4
+st3
+
+st1
+
+Terminal 2
+st2
+
+RR
+
+1: Introdução
+
+3
+
+Histórico Das Redes De Comunicação
+•
+
+Anos 70:
+- surgem microprocessadores
+- computadores muito mais baratos => difusão do uso
+
+•
+
+Após década de 70:
+- computadores cada vez mais velozes, tamanho menor, preço
+mais acessível
+- aplicações interativas cada vez mais freqüentes
+- necessidade crescente de incremento na capacidade de cálculo
+e armazenamento
+- vários computadores conectados podem ter desempenho melhor
+do que um mainframe, além de custo menor
+- necessidade de desenvolver técnicas para interconexão de
+computadores => redes
+1: Introdução
+
+4
+
+Importância Das Redes De Comunicação
+-
+
+Nas empresas modernas temos grande quantidade de
+computadores operando em diferente setores.
+
+- Operação do conjunto mais eficiente se estes computadores
+forem interconectados:
+- possível compartilhar recursos
+- possível trocar dados entre máquinas de forma simples e
+confortável para o operador
+- vantagens gerais de sistemas distribuídos e downsizing
+atendidas
+- Redes são muito importantes para a realização da filosofia
+CIM (Manufatura Integrada por Comput.)
+1: Introdução
+
+5
+
+Extensão Das Redes De Comunicação
+LAN (Local Area Network) ou Rede Local Industrial : interconexão de
+computadores localizados em uma mesma sala ou em um mesmo
+prédio. Extensão típica: até aprox. 200 m.
+CAN (Campus Area Network): interconexão de computadores situados
+em prédios diferentes em um mesmo campus ou unidade fabril.
+Extensão típica: até aprox. 5 Km.
+MAN (Metropolitan Area Network): interconexão de computadores em
+locais diferentes da mesma cidade. Pode usar rede telefônica
+pública ou linha dedicada. Extensão típica: até aprox. 50 Km.
+WAN (Wide Area Network) ou Rede de Longa Distância: interconexão
+de computadores localizados em diferentes prédios em cidades
+distantes em qualquer ponto do mundo. Usa rede telefônica, antenas
+parabólicas, satélites, etc. Extensão >50 Km.
+
+1: Introdução
+
+6
+
+Topologia Das Redes De Comunicação
+- Topologia: definição da maneira como as estações estão
+
+associadas
+- Duas formas básicas: ponto-a-ponto e difusão
+- Canais ponto-a-ponto: rede composta de diversas linhas de
+comunicação associadas a um par de estações de cada vez
+- comunicação entre estações não adjacentes feita por
+estações intermediárias
+- política conhecida como “comutação de pacotes”
+- topologia usada na maioria de redes WAN, MAN, CAN e
+algumas LAN
+1: Introdução
+
+7
+
+Topologias De Redes Ponto-a-ponto
+
+(a)
+
+(c)
+
+(b)
+
+(d)
+
+(e)
+
+(a) estrela; (b) anel; (c) árvore; (d) malha regular;
+(e) malha irregular.
+
+1: Introdução
+
+8
+
+Topologia Das Redes De Comunicação
+- Canais de difusão: rede composta por uma única linha de
+
+comunicação compartilhada por todas as estações
+- mensagens são difundidas no canal e podem ser lidas por
+qualquer estação
+- destinatário identificado por um endereço codificado na
+mensagem
+-
+
+possível enviar mensagens para todas as estações
+(broadcasting) ou a um conjunto delas (multicasting)
+usando endereços reservados para estas finalidades
+
+- topologia mais comum em LAN mas também possível em
+WAN
+- requer mecanismos de arbitragem de acesso para evitar
+conflitos
+1: Introdução
+
+9
+
+Topologias De Redes De Difusão
+satélite
+
+(a)
+
+(b)
+
+(c)
+
+(a) barramento; (b) satélite; (c) anel.
+
+1: Introdução
+
+10
+
+Serviços Necessários à Comunicação
+computador
+central
+terminal
+
+•
+
+CASO 1: Como enviar informações entre um terminal e um
+computador ?
+•
+
+Enviar unidades binárias (BInary uniT = BIT) em série ou paralelo
+
+•
+
+Codificação dos BITs (representação para 0 e 1 e duração de cada
+bit)
+
+•
+
+Codificação dos caracteres (ex.: ASCII, EBCDIC)
+
+•
+
+Sincronização entre emissor e receptor
+
+•
+
+Tratamento de erros de transmissão
+
+•
+
+Controle de fluxo
+
+•
+
+Estabelecer regras de troca de dados (protocolo)
+
+1: Introdução
+
+11
+
+Serviços Necessários à Comunicação
+computador
+central
+
+terminais
+
+• Múltiplos terminais
+• Surge necessidade de endereçamento
+
+1: Introdução
+
+12
+
+Parte I: Introdução
+Visão geral:
+• o que é Internet
+• o que é um protocolo?
+• borda da rede
+• núcleo da rede
+• rede de acesso, meio físico
+• desempenho: perdas, atrasos
+• camadas de protocolo, modelos
+
+de serviço
+• backbones, NAPs, ISPs
+• histórico
+
+1: Introdução
+
+13
+
+O que é Internet: visão “componentes”
+•
+
+milhões de dispositivos
+computacionais conectados:
+hosts, sistemas finais
+o
+o
+
+•
+
+servidor
+
+estação trabalho
+móvel
+
+ISP local
+
+executando aplicações de
+rede
+links de comunicação
+o
+
+•
+
+workstations, servidores
+telefones PDAs, torradeiras
+
+roteador
+
+ISP regional
+
+fibra, cobre, rádio, satélite
+
+roteadores: passam adiante
+(forward) pacotes de dados
+através da rede
+rede
+corporativa
+1: Introdução
+
+14
+
+O que é Internet: visão “componentes”
+• protocolos: envio e
+
+recepção de msgs
+o
+
+e.g., TCP, IP, HTTP, FTP, PPP
+
+• Internet: “rede de redes”
+o aproximadamente hierárquica
+
+router
+server
+
+workstation
+mobile
+
+local ISP
+
+regional ISP
+
+• Padrões Internet
+o RFC: Request for comments
+o IETF: Internet Engineering
+Task Force
+company
+network
+
+1: Introdução
+
+15
+
+O que é Internet: visão “de serviços”
+• infraestrutura de
+
+comunicação possibilita
+aplicações distribuídas:
+o
+
+WWW, email, jogos, ecommerce, database,
+votações, compartilhamento
+de arquivos (MP3)
+
+• serviços de comunicação
+
+fornecidos:
+o
+o
+
+sem conexão
+orientada a conexão
+
+1: Introdução
+
+16
+
+O que é protocolo?
+protocolos humanos:
+• “que horas são?”
+• “Eu tenho uma
+questão”
+… msgs específicas
+enviadas
+… ações específicas
+tomadas quando msgs
+recebidas, ou outros
+eventos
+
+protocolos de rede:
+• máquinas em vez de
+humanos
+• toda atividade de
+comunicação na
+Internet governada
+por protocolos
+protocolos definem
+formatos, ordens de
+mensagens enviadas e
+recebidas entre entidades
+de rede, e ações tomadas
+1: Introdução
+
+17
+
+O que é protocolo?
+um protocolo humano e um protocolo computacional de rede:
+
+requisição
+conexão TCP
+
+Oi
+Oi
+
+conexão TCP
+resposta.
+
+Tem horas?
+
+Get http://gaia.cs.umass.edu/index.htm
+
+2:00
+
+<arq>
+tempo
+
+Q: Outro protocolo humano?
+1: Introdução
+
+18
+
+Estrutura de rede:
+• borda da rede: aplicações
+
+e hosts
+• núcleo da rede:
+o
+o
+
+roteadores
+rede de redes
+
+• redes de acesso, meios
+
+físicos: links de
+comunicação
+
+1: Introdução
+
+19
+
+A borda da rede:
+• sistemas finais (hosts):
+o
+
+o
+o
+
+executam programas de
+aplicação
+e.g., WWW, e-mail
+situam-se na “borda da rede”
+
+• modelo cliente/servidor
+o
+
+o
+
+cliente host faz requisições,
+recebem serviços do servidor
+e.g., WWW cliente (navegador)/
+servidor; e-mail cliente/servidor
+
+• modelo par-a-par:
+o
+o
+
+interação simétrica entre hosts
+e.g.: Gnutella, KaZaA
+
+1: Introdução
+
+20
+
+Borda da rede: serviço orientado a conexão
+Objetivo: transferência de
+•
+
+dados entre sistemas.
+handshaking: setup
+(prepara para)
+transferência de dados
+
+•
+
+•
+
+TCP - Transmission Control
+Protocol
+
+•
+
+o
+
+o
+
+Serviço orientado a
+conexões da Internet
+
+confiável, transferência de
+dados ordenada byte-stream
+o
+
+Alô, alô protocolo humano
+de telefone
+setup “estado” em dois
+hosts se comunicando
+
+o
+
+•
+
+serviço TCP [RFC 793]
+perdas: acknowledgements
+(reconhecimentos) e
+retransmissões
+
+controle de fluxo:
+o
+
+emissor não pode “oprimir”o
+receptor
+
+controle de congestão
+o
+
+emissores “reduzem a taxa de
+envio” qdo a rede está
+congestionada
+
+1: Introdução
+
+21
+
+Borda da rede: serviço sem conexão
+Objetivo: transferência de
+dados entre sistemas finais
+o
+
+•
+
+Aplics usando TCP:
+•
+
+mesmo que o anterior!
+
+UDP - User Datagram
+Protocol [RFC 768]: serviço
+sem conexão da Internet
+o transferência de dados
+não-confiável
+o sem controle de fluxo
+o sem controle de
+congestão
+
+HTTP (WWW), FTP (transf.
+arq.), Telnet (login remoto),
+SMTP (email)
+
+Aplics usando UDP:
+•
+
+streaming media,
+teleconferencing, Internet
+telephony
+
+1: Introdução
+
+22
+
+O núcleo da rede
+•
+•
+
+malha de roteadores
+interconectados
+questão fundamental: como os
+dados são transferidos através
+da rede?
+o chaveamento (comutação)
+de circuitos: circuito
+dedicado por chamada: rede
+telefônica
+o chaveamento de pacotes:
+dados enviados através da
+rede em “pedaços”
+
+1: Introdução
+
+23
+
+Núcleo da rede: comutação de circuitos
+Recursos fim a fim
+reservados por
+chamada
+• largura de banda no
+
+enlace (link),
+capacidade no switch
+• recursos dedicados:
+sem compartilhamento
+• desempenho garantido
+• requer setup na
+chamada
+1: Introdução
+
+24
+
+Núcleo da rede: chaveamento de circuitos
+recursos de rede (e.g.,
+largura de banda)
+dividida em
+“pedaços”
+• pedaços alocados para
+
+• dividindo largura de
+
+banda:
+o divisão de
+freqüências
+o divisão de tempos
+
+chamadas
+• pedaço do recurso idle
+(disponível) se não usado
+pelo próprio chamador
+(sem compartilhamento)
+
+1: Introdução
+
+25
+
+Chaveamento de circuitos: FDMA e TDMA
+Exemplo:
+FDMA
+
+4 usuários
+
+freqüência
+tempo
+TDMA
+
+freqüência
+tempo
+
+1: Introdução
+
+26
+
+Núcleo da rede: chaveamento de pacotes
+cada stream de dados fim-a-fim
+dividido em pacotes
+• pacotes de usuários A, B
+compartilham recursos de redes
+• cada pacote usa toda largura de
+banda do link
+• recursos usados quando
+necessário
+
+Divisão de largura de banda
+Alocação dedicada
+Reserva de recursos
+
+competição por recurso:
+• demanda por recurso
+agregada pode exceder a
+capacidade disponível
+• congestionamento: fila de
+pacotes, espera pelo uso do
+link
+• armazena e repassa:
+pacotes se movem um hop
+vez
+o transmitidos sobre link
+o espera a vez no próximo
+link
+
+1: Introdução
+
+27
+
+Núcleo da rede: chaveamento de pacotes
+10 Mbs
+Ethernet
+
+A
+B
+
+multiplexação estatística
+
+C
+
+1.5 Mbs
+fila de pacotes
+esperando pelo link de saída
+
+D
+
+45 Mbs
+
+E
+
+Chaveamento de pacotes versus chaveamento de
+circuito: analogia com restaurante
+1: Introdução
+
+28
+
+Núcleo da rede: chaveamento de pacotes
+Chaveamento de pacotes:
+comportamento armazena e repassa
+
+• quebra mensagens em
+
+pequenos pedaços:
+“pacotes”
+• Armazena-e-repassa:
+switch aguarda até
+pedaço chegar
+completamente, então
+repassa/roteia
+
+1: Introdução
+
+29
+
+Chaveamento de pacotes vs de circuitos
+Chaveamento de pacotes permite mais usuários usarem a rede!
+
+• 1 Mbit link
+• cada usuário:
+o 100Kbps qdo “ativo”
+o ativo 10% do tempo
+• chaveamento de
+
+N usuários
+
+circuito:
+o
+
+1 Mbps link
+
+10 usuários
+
+• chaveamento de
+
+pacotes:
+o
+
+com 35 usuários,
+probabilidade > 10 ativos
+menos que .0004
+1: Introdução
+
+30
+
+Chaveamento de pacotes vs de circuitos
+Será chaveamento de pacotes o “grande vencedor da disputa?”
+
+• Excelente para dados em rajadas
+
+compartilhamento de recursos
+o sem setup na chamada
+• Qdo congestionamento excessivo: atrasos e perdas
+de pacotes
+o protocolos necessários para transferência de
+dados confiável, controle de congestão
+• Q: Como fornecer comportamento ”de circuito”?
+o aplics de áudio/vídeo necessitam de garantias de
+largura de banda
+o esse ainda é um problema não resolvido!
+1: Introdução
+o
+
+31
+
+Redes chaveamento de pacotes: roteamento
+• Objetivo: mover pacotes entre roteadores da
+
+origem para destino
+o
+
+iremos estudar algoritmos de roteamento
+
+• rede datagrama:
+o endereço de destino determina próximo hop
+o rota pode mudar durante sessão
+o analogia: dirigir perguntando direção
+• rede de circuito virtual:
+o cada pacote carrega um tag (virtual circuit ID), que
+determina o próximo hop
+o caminho fixo determinado em tempo de setup de chamada,
+permanece fixo durante chamada
+o roteadores mantêm estado por chamada
+
+1: Introdução
+
+32
+
+Redes de acesso e meios físicos
+Q: Como conectar sistemas finais
+aos roteadores de borda?
+• redes de acesso residencial
+• redes de acesso institucional
+(escola, companhia)
+• redes de acesso móveis
+Tenha em mente:
+• bandwidth (bits por segundo)
+da rede de acesso?
+• compartilhados ou dedicados?
+
+1: Introdução
+
+33
+
+Acesso residencial: acesso ponto a ponto
+• Discagem via modem
+
+até 56Kbps acesso direto ao
+roteador (conceitualmente)
+• ISDN: integrated services
+digital network: 128Kbps
+conectados ao roteador
+• ADSL: asymmetric digital
+subscriber line
+o até 1 Mbps casa-roteador
+o até 8 Mbps roteador-casa
+o ADSL ainda em
+desenvolvimento
+o
+
+1: Introdução
+
+34
+
+Acesso residencial: modens a cabo
+• HFC: hybrid fiber coax
+
+assimétrico: até 10Mbps downstream, 1 Mbps
+upstream
+• rede de cabo e fibra interliga casas ao
+roteador ISP
+o acesso compartilhado ao roteador
+o questões: congestionamento,
+dimensionamento
+• disponíveis através de companhias de cabo
+o
+
+1: Introdução
+
+35
+
+Acesso institucional: redes locais
+• local area network (LAN)
+
+conectam sistemas finais a
+roteador de borda
+• Ethernet:
+o cabo compartilhado ou
+dedicado conecta
+sistema final e roteador
+o 10 Mbs, 100Mbps,
+Gigabit Ethernet
+
+1: Introdução
+
+36
+
+Redes de acesso sem fio
+• rede de acesso sem fio
+
+e compartilhada
+conecta sistema final ao
+roteador
+• wireless LANs:
+o
+
+o
+
+espectro de rádio
+substitui fio
+e.g., Lucent Wavelan 11
+Mbps
+
+roteador
+estação
+base
+
+• wider-area wireless
+
+access
+o
+
+CDPD: acesso sem fio ao
+roteador ISP via rede
+celular
+
+hosts
+móveis
+
+1: Introdução
+
+37
+
+Meio físico
+• link físico:
+o bit de dado transmitido
+propaga através de um
+link
+• meio guiado:
+o sinais propagam em meio
+sólido: cobre, fibra
+
+Par trançado (TP)
+• dois fios de cobres
+o
+
+o
+
+Categoria 3: fio de
+telefone tradicional, 10
+Mbps Ethernet
+Categoria 5 TP:
+100Mbps Ethernet
+
+• meio não guiado:
+o sinais propagam
+livremente, e.g., rádio
+
+1: Introdução
+
+38
+
+Meio físico: coaxial, fibra
+Cabo coaxial:
+•
+
+fio (condutor de sinal)
+dentro de fio (protetor)
+o
+
+o
+
+•
+•
+
+baseband: canal único no
+cabo
+broadband: múltiplos canais
+no cabo
+
+bidirecional
+uso comum em Ethernet
+10Mbs
+
+Cabo de fibra ótica:
+•
+•
+
+fibra de vidro conduzindo
+pulsos de luz
+operação em alta-velocidade:
+o
+o
+
+•
+
+Ethernet 100Mbps
+transmissão ponto-a-ponto
+de alta-velocidade (e.g., 5
+Gps)
+
+baixa taxa de erros
+
+1: Introdução
+
+39
+
+Meio físico: rádio
+• sinal conduzido no
+
+Tipos de link de Rádio:
+
+espectro
+eletromagnético
+• sem “fio” físico
+• bidirecional
+• efeitos de propagação
+do ambiente:
+
+• microondas
+o e.g. canais até 45 Mbps
+
+o
+o
+o
+
+reflexão
+obstrução por objetos
+interferência
+
+• LAN (e.g., WaveLAN)
+o 2Mbps, 11Mbps
+• wide-area (e.g., celular)
+o e.g. CDPD, 10’s Kbps
+• satélite
+o canal até 50Mbps (ou vários
+canais menores)
+o atraso fim-a-fim 270 Msec
+
+1: Introdução
+
+40
+
+Atrasos em redes de chav. de pacotes
+pacotes experimentam atrasos
+no caminho fim-a-fim
+• quatro fontes de atraso em
+cada hop
+
+•
+
+processamento no nó:
+o
+o
+
+•
+
+enfileiramento
+o
+
+o
+
+transmissão
+
+A
+
+checagem de bits de erros
+escolha do link de saída
+tempo de espera no link de
+saída para transmissão
+depende do nível de
+congestionamento do
+roteador
+
+propagação
+
+B
+
+processamento
+enfileiramento
+no nó
+1: Introdução
+
+41
+
+Atrasos em redes de chav. de pacotes
+Atraso de transmissão:
+• R=link bandwidth (bps)
+• L=tam. pacote (bits)
+• tempo de envio de bits no
+link = L/R
+
+Atraso de propagação:
+• d = tamanho do link físico
+• s = veloc. propagação no meio
+(~2x108 m/sec)
+• atraso propagação = d/s
+
+Obs: s e R são quantidades muito
+diferentes!
+transmissão
+
+A
+
+propagação
+
+B
+
+processamento
+enfileiramento
+no nó
+
+1: Introdução
+
+42
+
+Atraso na fila (revisitado)
+• R=link bandwidth (bps)
+• L=tam. pacote (bits)
+• a=taxa média de
+
+chegada de pacotes
+intensidade de tráfego = La/R
+• La/R ~ 0: pequeno atraso médio na fila
+• La/R -> 1: atrasos se tornam grandes
+• La/R > 1: mais “trabalho” chegando do que
+
+pode ser servido, atraso médio infinito!
+1: Introdução
+
+43
+
+“Camadas” de protocolos
+Redes são complexas!
+• muitas “peças”:
+o hosts
+o roteadores
+o vários tipos de links
+o aplicações
+o protocolos
+o hardware, software
+
+Questão:
+Existe alguma esperança em
+organizar a estrutura de
+rede?
+Ou pelo menos a discussão
+sobre redes?
+
+1: Introdução
+
+44
+
+Por que usar camadas?
+Para lidar com sistemas complexos:
+• estrutura explícita permite identificar o
+
+relacionamento entre peças do sistema complexo
+o
+
+modelo de referência em camadas facilita discussão
+
+• modularização facilita manutenção e atualização do
+
+sistema
+o
+
+mudança na implementação de serviços de camadas
+transparentes para o resto do sistema
+
+• uso de camadas pode ser prejudicial?
+
+1: Introdução
+
+45
+
+Pilha de protocolos da Internet
+•
+
+aplicação: suporta aplicações de rede
+o
+
+•
+
+transporte: transferência de dados entre
+hosts
+o
+
+•
+
+aplicação
+transporte
+rede
+
+ip, protocolos de roteamento
+
+enlace: transferência de dados entre
+elementos de rede “vizinhos”
+o
+
+•
+
+tcp, udp
+
+rede: roteamento de datagramas da origem
+para destino
+o
+
+•
+
+ftp, smtp, http
+
+ppp, ethernet
+
+física: bits “no fio”
+
+enlace
+física
+
+1: Introdução
+
+46
+
+Camadas: comunicação lógica
+Cada camada:
+• distribuída
+• “entidades”
+implementam
+funções de
+camadas em
+cada nó
+• entidades
+executam
+ações, trocam
+mensagens com
+seus pares
+
+aplicação
+transporte
+rede
+enlace
+física
+aplicação
+transporte
+rede
+enlace
+física
+
+rede
+enlace
+física
+
+aplicação
+transporte
+rede
+enlace
+física
+
+aplicação
+transporte
+rede
+enlace
+física
+
+1: Introdução
+
+47
+
+Camadas: comunicação logica
+E.g.: transporte
+•
+•
+
+•
+•
+
+•
+
+pega dados da
+aplic.
+adiciona endereço,
+informação de
+confiabilidade p/
+formar
+“datagrama”
+envia datagrama
+para seu par
+espera
+confirmação de
+recepção de seu
+par
+analogia: correio
+
+dados
+aplicação
+transport
+transporte
+rede
+enlace
+física
+ack
+aplicação
+transporte
+rede
+enlace
+física
+
+dados
+
+rede
+enlace
+física
+
+aplicação
+transporte
+rede
+enlace
+física
+
+dados
+aplicação
+transport
+transporte
+rede
+enlace
+física
+
+1: Introdução
+
+48
+
+Camadas: comunicação física
+dados
+aplicação
+transporte
+rede
+enlace
+física
+aplicação
+transporte
+rede
+enlace
+física
+
+rede
+enlace
+física
+
+aplicação
+transporte
+rede
+enlace
+física
+
+dados
+aplicação
+transporte
+rede
+enlace
+física
+
+1: Introdução
+
+49
+
+Protocolo em camadas e dados
+Cada camada recebe dados da camada acima
+• adiciona cabeçalho de informação para criar nova
+unidade de dados
+• passa nova unidade de dados para camada abaixo
+origem
+destino
+M
+Ht M
+Hn Ht M
+Hl Hn Ht M
+
+aplicação
+transporte
+rede
+enlace
+física
+
+M mensagem
+aplicação
+segmento
+Ht M
+transporte
+Hn Ht M datagrama
+rede
+Hl Hn Ht M frame
+enlace
+física
+
+1: Introdução
+
+50
+
+Aspectos Arquiteturais
+• Estruturação em camadas: modelo baseado em
+
+hierarquização e descentralização
+
+Sistema B
+
+Sistema A
+
+Interface
+camadas
+6/7
+Interface
+camadas
+5/6
+Interface
+camadas
+4/5
+Interface
+camadas
+3/4
+Interface
+camadas
+2/3
+Interface
+camadas
+1/2
+
+Camada
+7
+
+Camada
+6
+
+Camada
+5
+
+Camada
+4
+
+Camada
+3
+
+Camada
+2
+
+Camada
+1
+
+Protocolo da camada 7
+
+Protocolo da camada 6
+
+Protocolo da camada 5
+
+Protocolo da camada 4
+
+Protocolo da camada 3
+
+Protocolo da camada 2
+
+Protocolo da camada 1
+
+Camada
+7
+
+Camada
+6
+
+Camada
+5
+
+Interface
+camadas
+6/7
+Interface
+camadas
+5/6
+Interface
+camadas
+4/5
+
+Camada
+4
+
+Camada
+3
+
+Interface
+camadas
+3/4
+Interface
+camadas
+2/3
+
+Camada
+2
+
+Camada
+1
+
+Interface
+camadas
+1/2
+
+Meio de Transmissão
+
+1: Introdução
+
+51
+
+Aspectos Arquiteturais
+• Estruturação em camadas: processo de
+
+comunicação
+
+TRANSMISSÃO
+protocolo da
+
+m
+
+interface
+6/7
+
+protocolo da
+
+M
+
+M
+
+camada 6
+
+interface
+5/6
+
+interface
+5/6
+
+protocolo da
+
+M
+
+M
+
+camada 5
+
+H4 M2
+
+protocolo da
+camada 4
+
+H3 H4 M1
+
+m
+
+camada 7
+
+interface
+6/7
+
+H4 M1
+
+RECEPÇÃO
+
+H3 H4 M2
+
+H2 H3 H4 M1 T2 H2 H3 H4 M2 T2
+
+SISTEMA
+FONTE
+
+H4 M1
+
+H4 M2
+
+protocolo da
+camada 3
+protocolo da
+camada 2
+
+H3 H4 M1
+
+H3 H4 M2
+
+H2 H3 H4 M1 T2 H2 H3 H4 M2 T2
+
+SISTEMA
+DESTINO
+
+1: Introdução
+
+52
+
+Arquitetura a Sete Camadas Do RM-OSI
+7
+
+Aplicação
+
+6
+
+Apresentação
+
+5
+
+Sessão
+
+4
+
+Transporte
+
+Protocolo de Aplicação
+
+Protocolo de Apresentação
+
+Protocolo de Sessão
+
+Protocolo de Transporte
+
+Aplicação
+
+APDU
+
+Apresentação
+
+PPDU
+
+Sessão
+
+SPDU
+
+Transporte
+
+TPDU
+
+SUB-REDE
+
+3
+
+Rede
+
+Rede
+
+Rede
+
+Rede
+
+PACOTE
+
+QUADRO
+
+protocolos internos
+da sub-rede
+
+2
+
+Enlace de
+Dados
+
+Enlace de
+Dados
+
+Enlace de
+Dados
+
+Enlace de
+Dados
+
+1
+
+Física
+
+Física
+
+Física
+
+Física
+
+IMP
+
+IMP
+
+SISTEMA A
+
+IMP - Interface Message Processor
+
+BIT
+
+SISTEMA B
+
+1: Introdução
+
+53
+
+Ilustração Da Comunicação No Modelo OSI
+processo
+receptor
+
+processo
+emissor
+DADOS
+
+Aplicação
+
+protocolo de
+aplicação
+
+AH
+
+protocolo de
+Apresentação apresentação
+
+Sessão
+
+protocolo de
+sessão
+
+Transporte
+
+protocolo de
+transporte
+
+Rede
+Enlace
+Física
+
+TH
+
+DADOS
+
+Aplicação
+Apresentação
+
+DADOS
+
+Sessão
+
+DADOS
+
+Transporte
+
+SH
+
+protocolo de
+NH
+rede
+DH
+
+PH
+
+DADOS
+
+DADOS
+
+Rede
+
+DADOS
+
+Enlace
+
+BITS
+
+Física
+
+meio de transmissão de dados
+
+1: Introdução
+
+54
+
+Estrutura da Internet: rede de redes
+•
+•
+
+mais ou menos hierárquica
+national/international backbone
+providers (NBPs)
+o
+
+o
+
+•
+
+regional ISP
+
+NBP B
+NAP
+
+NAP
+
+ISPs regionais
+o
+
+•
+
+e.g. Embratel, BBN/GTE,
+Sprint, AT&T, IBM, UUNet
+interconecta cada par com
+outro privativamente, ou em um
+Network Access Point (NAP)
+público
+
+local
+ISP
+
+conecta em NBPs (ex. Telesc)
+
+ISP local, companhia
+o
+
+conecta em ISP regional (ex.
+UOL, UFSC)
+
+NBP A
+regional ISP
+local
+ISP
+
+1: Introdução
+
+55
+
+Histórico da Internet
+1961-1972: Primeiros princípios de chaveamento de pacotes
+1980-1990: Novos protocolos, proliferação de redes
+•
+•
+•
+•
+
+1983: TCP/IP
+1983: DNS (tradução
+nome-endereçoIP)
+1985: protocolo ftp
+1988: controle de
+congestão TCP
+
+1990’s: comercialização, o WWW
+o
+
+o
+
+1994: Mosaic, depois
+Netscape
+final de 1990:
+comercialização do WWW
+
+Final de 1990:
+•
+•
+•
+
+50 milhões computadores
+na Internet
+100 milhões+ usuários
+links no backbone
+executando a 1 Gbps
+
+1: Introdução
+
+56
+
+

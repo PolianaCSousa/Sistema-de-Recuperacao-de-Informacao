@@ -1,0 +1,196 @@
+The Modular Monolith: Rails Architecture
+
+One of the hardest things about building a startup is handling the rapid growth in team and technology. The best way to build software with a team of three engineers is different than with ten engineers, or twenty, or fifty. Make a change to your process today, and you’re doing it too soon. Wait until tomorrow, and it feels too late.
+
+We’ve been mindful of this while building Root. When we started building the backend platform to run an auto insurance carrier, we focused on productively building a greenfield app with a few engineers. Our goal was to launch our product and get customer validation of our business model. We thought the best way to start was by going MonolithFirst. We ran rails new and got to work.
+
+Businesses can go pretty far with a monolith. Indeed, it’s possible to become one of those fabled horse startups with a monolith. However, several of us at Root had experienced the challenges of trying to grow an engineering team on top of a large Rails code base, and we knew at some point we’d want to consider alternative architectures. If all went well, we weren’t going to be staying small forever, and our initial Majestic Monolith wouldn’t end up being so majestic if we tried to continue down that path.
+
+In early 2016, about a year after we started building Root, we decided to start splitting up our Rails monolith. We were hesitant to start making microservices, though. While they have some advantages, they also have many disadvantages. We’ve heard of teams ending up with a Distributed Monolith: code in independent services that is as difficult to work with as a Monolith. One underlying cause of that is poor architecture. If your application’s dependency graph looks like spaghetti, understanding the impact of changes is difficult. You have one big application, even if it’s deployed in pieces and managed across multiple repos.
+
+Rather than extracting microservices, we decided to first focus on making our app modular. Our goal was to identify good architectural boundaries before we extracted code out into independent services. This would set us up to be able to migrate to microservices in the future, by having the code structured in a way to make a smooth transition.
+
+Our approach has been working exceptionally well. Based on our experience, I’d highly recommend this strategy for almost any team at our size and scale. We have a code base that’s been under development for over two years with twenty-five software engineers now working on it. We have 50,000+ lines of Ruby/Rails application code and 100,000+ lines of test code.
+
+The Modular Monolith
+Here’s how we do it.
+
+We don’t have an app/ directory in our Rails project. All of our code is either in gems/ or engines/.
+Gems contain Ruby code that does not depend on Rails. We use ActiveSupport, but we do not use ActiveRecord or ActionPack. The gems are all stateless.
+Engines contain Ruby code that does depend on Rails. Persistence happens at this layer through ActiveRecord. API and Web interfaces are exposed at this layer through ActionPack.
+Implementation
+We use Bundler to load engines and gems in our application by looping over the directories in our Gemfile.
+
+Dir.glob(File.expand_path(“../engines/*”, __FILE__)).each do |path|
+  gem File.basename(path), :path => path
+end
+Dir.glob(File.expand_path(“../gems/*”, __FILE__)).each do |path|
+  gem File.basename(path), :path => path
+end
+Each engine and gem has its own gemspec that defines its dependencies. Those dependencies can be internal dependencies (other engines or gems in the app), or they can be external dependencies (gems hosted on Rubygems).
+
+We’ve found this approach to be more productive than extracting the gems all the way out into separate repos and then importing them through bundler. Effectively, we’re using a monorepo. The advantage is that we can make changes across multiple gems if we want to, while simultaneously updating callers so that backwards compatibility isn’t an issue.
+
+In addition to having an actual dependency graph for a Rails application being hugely valuable, having the engine/gem delineation has also helped us build better software. For example, we have a gem for each of our third-party integrations. This ensures that we have a way of communicating with all third-party APIs that we use which is completely separated from any persistence or application logic. Of course, that’s a good way to build software for integrations regardless of using a Modular Monolith, but the engine/gem setup naturally guides us to doing this and enforces that we don’t muddle any persistence into the communication. Otherwise, even for a talented engineer, it’s easy to inadvertently write code that violates that separation without realizing it.
+
+We’ve also had a couple scenarios where we have application logic which is almost but not quite stateless. For example, our Rating Engine is a complex piece of domain logic that is responsible for generating insurance quotes. Our initial implementation had dependencies on a few database models for things like available insurance coverages. Out of our desire to get that domain logic into a stateless service, we realized we could change the implementation to avoid the database dependency, which made our architecture better. When the Rating Engine was directly in Rails, it was easy to add a dependency on a database model and not think anything of it.
+
+In the engine layer, we’ve extracted engines based on domain concepts. For example, we have engines for claims, policies, and quotes. Our logic for claims need to know about policies. However, we’ve implemented all of the logic pertaining to policies independent of claims. Similarly, policies need to know about quotes, but the inverse isn’t true.
+
+
+Partial view of Root’s dependency graph
+Pushing the concept further, this approach allows us to build a lot of functionality on top of our policies domain model without needing all of the logic to live in the policies engine. For example, we also have a policy_exports engine that sends policy information to various Departments of Insurance.
+
+Having our application logic organized by domain concept has given us improved clarity in the architecture. Traditionally, Rails apps are organized by technical layer, with everything within a layer, such as all models, thrown in together. It’s much nicer, especially for ramping up new people on the code base, to have logic organized according to the domain.
+
+First Steps Towards Implementing a Modular Monolith
+When we first started down this path, we created three engines: Admin, API, and Domain. The dependency graph looked like this.
+
++----------+      +------------+
+|  Admin   |      |    API     |
++--+-------+      +---------+--+
+   |                        |
+   |                        |
+   |     +-------------+    |
+   +---> |   Domain    | <--+
+         +-------------+
+Although much of the value in this strategy also lies in breaking up the domain logic, this was a great place to start. Our internal admin dashboard was isolated from our API, and vice versa. Our domain logic was implemented independently of how it was exposed via our admin dashboard our API.
+
+This was also helpful for putting third-party dependencies in context. For example, our admin engine had dependencies for web-UI things that were isolated to only being available to the admin engine, but not the API or Domain engine.
+
+Enforcing Boundaries
+In our Gemfile we have some logic in place to only require a specific engine if the ENGINE environment variable is set. This is an important part of the strategy. Because we’re ultimately deploying our code as a single Rails application, and because in Ruby all classes can be reached globally, there technically isn’t anything that prevents a class in one engine from using a class in another engine without specifying the dependency between those engines. The way that we prevent that is through our test suite. Let’s say we have three engines: A, B, and C. A depends on B, and B depends on C. When we run our tests for engine C, we only load engine C; we do not load A or B. This ensures that code in C cannot use any code in A or B. When we run the tests for B, we load C (since B depends on C), but we do not load A. When we run the test suite for A, we load B and C.
+
+To enable that, our Gemfile for loading engines actually looks like this:
+
+if ENV["ENGINE"].nil?
+  if Dir.pwd.split("/")[-2] == "engines"
+    ENV[“ENGINE”] = Dir.pwd.split("/").last
+  end
+end
+Dir.glob(File.expand_path("../engines/*", __FILE__)).each do |path|
+  engine = File.basename(path)
+  gem engine, :path => "engines/#{engine}", :require => (ENV["ENGINE"].nil? || ENV["ENGINE"] == engine)
+end
+When we run the test suites for the individual engines, we cd into the engine directory, which results in the environment variable being set, and only that engine and its dependencies being loaded.
+
+Our team does an exceptionally good job with testing, so we haven’t had any issues with untested code crossing a boundary that it shouldn’t. Our test suite is an effective mechanism for enforcing boundaries.
+
+Speeding up Builds
+Because we have a solid understanding of dependencies in our application, we also understand which code can be broken by changes to other code. This is helpful conceptually, but we can also leverage it for build optimization.
+
+As an analogy: in a normal Rails app, when you make changes to your code, do you run the tests for Rails to make sure you didn’t break Rails? Of course not. Your application code depends on Rails, but Rails doesn’t depend on your application code. It’s not possible to break Rails by making changes to your application (crazy Ruby metaprogramming aside).
+
+We leverage this to speed up our builds. When we run the test suite for our application, we look at which code has changed, and we only run the tests for the code that changed, and any code that depends on the changed code. Going back to the A, B, C example (where A depends on B, and B depends on C):
+
+When changing A, we only run the test suite for A. We do not run the tests for B and C. It’s not possible to break B or C when changing A.
+When changing B, we run the test suite for B and A. It’s not possible for changes in B to break C, but because A depends on B, it is possible for changes in B to affect A.
+When changing C, we run the test suite for A, B, and C.
+For our builds on master and release branches, we do run the test suites for all engines and gems to be conservative and make sure we didn’t mess any of this up. In over a year of executing this strategy though, I can’t recall any instances of our selective build strategy producing a false positive and passing when it shouldn’t have. Here’s the code that enables this.
+
+def dirty_libraries
+  changed_files = `git diff $(git merge-base origin/master HEAD) --name-only`.split("\n")
+  raise "failed to get changed files" unless $CHILD_STATUS.success?
+  changed_gems = Set.new
+  changed_engines = Set.new
+  changed_db = false
+  changed_top_level = false
+  changed_files.each do |file|
+    case file
+    when %r{^gems/(\w+)}
+      changed_gems << Regexp.last_match[1]
+    when %r{^engines/(\w+)}
+      changed_engines << Regexp.last_match[1]
+    when %r{^db/} then
+      changed_db = true
+    when %r{^scripts/} then # rubocop:disable Lint/EmptyWhen
+      # scripts do not affect the build
+    else
+      changed_top_level = true
+    end
+  end
+  if changed_top_level
+    # something outside of gems/ engines/ and db/ changed, consider everything dirty
+    libraries
+  elsif changed_db
+    # database changed, run all engines
+    changed_gems + engines
+  else
+    changed_gems + changed_engines
+  end
+end
+To run the tests for engines that depend on engines that have changed, we build a graph of our dependencies.
+
+def self._build_dependency_tree
+  pattern = File.expand_path("../../{engines,gems}/*/*.gemspec", __FILE__)
+  gemspecs = Dir.glob(pattern).map do |gemspec_file|
+    Gem::Specification.load(gemspec_file)
+  end
+  names = gemspecs.each_with_object({}) do |gemspec, hash|
+    hash[gemspec.name] = []
+  end
+  gemspecs.each_with_object(names) do |gemspec, hash|
+    deps = Set.new(gemspec.dependencies.map(&:name)) + Set.new(gemspec.development_dependencies.map(&:name))
+    local_deps = deps & Set.new(names.keys)
+    local_deps.each do |local_dep|
+      hash[local_dep] << gemspec.name
+    end
+  end
+end
+We then build an entire list of affected engines/gems. This code is a little dense, but here it is.
+
+def self.dirty_libraries_with_dependencies_by_depth                       
+  result = {}                                                             
+                                                                          
+  add_library = proc do |library, depth|                                  
+    result[library] = depth                                               
+    dependency_tree[library].each do |dependency|                         
+      next if result.key?(dependency) && result[dependency] <= (depth + 1)
+      add_library.call(dependency, depth + 1)                             
+    end                                                                   
+  end                                                                     
+                                                                          
+  dirty_libraries.each do |library|                                       
+    add_library.call(library, 0)                                          
+  end                                                                     
+                                                                          
+  result.keys.group_by { |key| result[key] }                              
+end
+We analyze the dependencies by depth so that we can first test the engines/gems that were modified directly, then test first-order dependencies before second-order dependences, and so on.
+
+Circular Dependencies
+There’s one aspect of this implementation that has provided the biggest benefit to our architecture and is crucial to the success of this approach: we load engines and gems via Bundler, and Bundler prevents circular dependencies. If you try to create a circular dependency, Bundler errors out.
+
+$ bundle
+Fetching gem metadata from https://rubygems.org/.............
+Resolving dependencies....
+Your bundle requires gems that depend on each other, creating an infinite loop. Please remove either gem 'foo' or gem 'bar' and try again.
+One realization we had while working on extracting code is that some of our worst architecture was caused by circular dependencies. If module A depends on module B, and module B depends on module A, then they’re not independent. Changes to A could break B, changes to B could break A. They might be structured or deployed separately, but they’re really one thing.
+
+In almost all cases where we encountered circular dependencies among classes in our code base, we felt our architecture would be improved by eliminating them. Before we implemented a modular architecture though, it was difficult to realize when we had them. Without an easy way to visualize the entire dependency graph of a large application, it’s difficult to be aware that adding a call from one class to another is introducing a circular dependency that wasn’t previously there. This is especially true in Ruby/Rails, where all classes are loaded at runtime and dependencies do not need to be declared.
+
+Using the Observer Pattern
+To untangle domain logic and build an elegant application architecture, it’s often necessary to have flexibility over the direction of dependencies. We make heavy use of the observer pattern to achieve this.
+
+For example, we have a driving_score engine that contains all of the data that we use at Root pertaining to gathering driving data from our users. For some domain context: Root is a car insurance carrier that prices insurance primarily based on how people drive. Every night, we produce a DrivingScore for our users. As part of each score, we determine if a user is eligible, which for us means we’ve gathered enough data to generate a quote for them. Pseudo-code for that logic used to look something like:
+
+score = ScoringService.generate_score(user)
+if score.eligible?
+  QuoteService.generate_quotes(user)
+end
+This implementation introduces a dependency from our driving_score engine to our quoting engine. We need to make the call into the QuoteService when the user becomes eligible. As we were working on extracting domain logic, we wanted to eliminate this. We wanted all of our driving scoring logic to live on its own, and not be aware of other parts of the system that needed to use that score. We introduced a pub/sub facility for handling this.
+
+score = ScoringService.generate_score(user)
+if score.eligible?
+  DRIVING_SCORE_PUB_SUB.publish(:eligible_score, :user_id => user_id)
+end
+Now, our scoring logic is unaware of how it’s used. Our quoting engine can depend on our driving_score engine to generate quotes when a user becomes eligible.
+
+# in engines/quoting/config/initializers/pub_sub.rb
+DRIVING_SCORE_PUB_SUB.subscribe(:eligible_score) do |user_id:|
+  QuoteService.generate_quotes(user_id)
+end
+This is a small change, but it’s hugely valuable in decoupling portions of the code. I’d go as far as saying that it’d be difficult to build a good application architecture without using this pattern. Right now we implement this using a pub/sub pattern via a Ruby class that runs in process, but it’d only be small change to do this via Kafka or a message queue.
+
+Conclusion
+Based on our experience, I’d highly recommend this strategy for almost any team at our size and scale. We have 25 engineers, 50,000+ lines of Ruby/Rails application code, and 100,000+ lines of test code. We’ve been able to improve our application architecture and identify strong boundaries before fully extracting services. We can also make changes across services efficiently; it doesn’t take 5 PRs across 5 projects with deployment order dependencies to implement a feature. Our code is structured by domain concept, which especially helps new team members navigate and understand the project. The boundary between stateful and stateless logic helps us think about implementing some of our most complex business logic in pure Ruby, completely separated from Rails. We can leverage our dependency graph in interesting ways, including selectively running test suites for builds. Ultimately, whenever we do want to extract services that we can manage and run more independently, we’ll be well positioned to make it happen. The Modular Monolith is simple in its concepts, but powerful in enabling us to scale our team and software.

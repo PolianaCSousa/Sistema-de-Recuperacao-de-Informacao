@@ -1,0 +1,1687 @@
+                                                        Uma análise comparativa de
+                                                       ferramentas de análise estática
+                                                      para deteção de erros de memória
+
+                                                       Patrícia Monteiro, João Lourenço, e António Ravara
+
+                                          Faculdade de Ciências e Tecnologia da Universidade Nova de Lisboa (FCT-NOVA)
+                                              NOVA Laboratory for Computer Science and Informatics (NOVA LINCS)
+arXiv:1807.08015v1 [cs.SE] 20 Jul 2018
+
+
+
+
+                                                               ps.monteiro@campus.fct.unl.pt
+                                                           {joao.lourenco, aravara}@fct.unl.pt
+
+
+                                                Resumo As falhas de software estão com frequência associadas a aci-
+                                                dentes com graves consequências económicas e/ou humanas, pelo que se
+                                                torna imperioso investir na validação do software, nomeadamente daquele
+                                                que é crítico. Este artigo endereça a temática da qualidade do software
+                                                através de uma análise comparativa da usabilidade e eficácia de quatro
+                                                ferramentas de análise estática de programas em C/C++. Este estudo
+                                                permitiu compreender o grande potencial e o elevado impacto que as
+                                                ferramentas de análise estática podem ter na validação e verificação de
+                                                software. Como resultado complementar, foram identificados novos erros
+                                                em programas de código aberto e com elevada popularidade, que foram
+                                                reportados.
+
+                                                Palavras-chave: Ferramentas · Estudo comparativo · Análise estática
+                                                · Erros de software · Validação · Verificação
+
+
+                                         1    Introdução
+                                                 “Program testing can be a very effective way to show the presence of
+                                              bugs, but is hopelessly inadequate for showing their absence.”
+                                              (Edsger Dijkstra, The Humble Programmer, ACM Turing Lecture 1972)
+                                             A crescente necessidade de desenvolvimento de software cada vez mais com-
+                                         plexo, no menor tempo possível e com baixo custo, conduz ao aumento da den-
+                                         sidade de erros, sendo o controlo de qualidade frequentemente assegurada com
+                                         base em testes e revisão manual de código. Estas técnicas, apesar de eficazes,
+                                         não permitem garantir a ausência total de erros num programa.
+                                             A presença de defeitos no software pode conduzir a problemas variados, tais
+                                         como erros funcionais (o programa não cumpre os requisitos), falhas e/ou vul-
+                                         nerabilidades de segurança, baixa performance ou a interrupção da execução
+                                         do programa. As falhas de software crítico são muitas vezes associadas a desas-
+                                         tres com graves consequências económicas e/ou humanas. São exemplos disso
+                                         casos como a autodestruição do Ariane 5 (1996)1 e do Mars Climate Orbiter
+                                         1
+                                             https://around.com/ariane.html
+2       P. Monteiro, J. M. Lourenço, A. Ravara
+
+(1999) [S+ 99], o bloqueio do terminal 5 no Aeroporto de Londres-Heathrow
+(2008)2 e, mais recentemente, o erro encontrado pela Amazon no Jedis (2018)3 .
+    No software escrito em C/C++ é comum a existência de erros de memória,
+tais como desreferências inválidas, acesso a variáveis não inicializadas e fugas
+e operações inválidas de libertação de memória. Este tipo de erros são de difí-
+cil deteção pois normalmente conduzem ao comportamento indefinido do pro-
+grama [Reg10], isto é, tanto podem causar a sua falha imediata como permitir
+que este continue a funcionar de forma silenciosamente defeituosa.
+    A verificação e validação de software é feita, essencialmente, através de três
+técnicas: revisão manual de código [Gee16], análise automática (dinâmica [Bal99]
+ou estática [W+ 95]) e semi-automática com provadores de teoremas [Duf91]. As
+duas últimas são rigorosas e permitem analisar a totalidade do código, verifi-
+cando propriedades que são definidas matematicamente e identificando todas as
+situações em que as mesmas são violadas: os erros.
+    A análise automática de software exige menos esforço por parte das equipas
+de desenvolvimento, fator importante no contexto atual da industria. A análise
+dinâmica implica a execução do programa ou de uma sua representação, en-
+quanto que a estática analisa o programa sem executar o código fonte ou uma
+sua representação. A utilização precoce de técnicas de análise estática permite a
+identificação de erros numa fase inicial do desenvolvimento, o que reduz conside-
+ravelmente os custos [Pat06]. Como estas ferramentas utilizam frequentemente
+um processo de sobre-aproximação das propriedades que pretendem verificar,
+reportam com frequência falsos positivos, i.e., erros que não existem. Os falsos
+positivos requerem um tratamento adicional que tem custos não negligenciáveis
+e cuja filtragem automática pode facilmente gerar falsos negativos, ou seja, erros
+reais que não são reportados.
+    Interessa-nos estudar a viabilidade de usar ferramentas automáticas para pro-
+curar erros de memória, e o objetivo deste artigo é apresentar uma análise com-
+parativa preliminar de quatro ferramentas de análise estática de código aberto:
+Cppcheck4 [Mar17], Clang Static Analyzer5 , Infer6 [CD11] e Predator7 [DPV13].
+O processo e critérios de seleção destas ferramentas encontra-se descrito na Sec-
+ção 2.1. Através desta análise pretende-se identificar o tipo de padrões de erros
+de memória que as ferramentas conseguem detetar, identificando aquelas que
+são funcionalmente equivalentes, por reportarem os mesmos erros, e as que são
+complementares, por reportarem erros distintos.
+    Neste artigo apresenta-se a análise de dois programas, um de pequena e ou-
+tro de média dimensão, estando a decorrer a análise de outros dois programas
+de grande dimensão. Como seria de esperar, verificou-se que havia considera-
+2
+    http://www.computerweekly.com/news/2240086013/
+    British-Airways-reveals-what-went-wrong-with-Terminal-5
+3
+    https://github.com/xetorthio/jedis/issues/1747
+4
+    https://github.com/danmar/cppcheck
+5
+    http://clang.llvm.org/
+6
+    https://github.com/facebook/infer
+7
+    https://github.com/kdudka/predator
+                          Uma análise comparativa de ferramentas de análise estática                                         3
+
+
+
+
+ 1. Seleção das     2. Seleção dos   3. Análise do    5. Analisar as   6. Validação dos   7. Identificação   8. Construção
+ ferramentas        softwares.       histórico de     várias versões   relatórios de      de padrões de      de exemplos
+ de análise                          erros dos        dos softwares    resultados:        erros.             mínimos.
+ estática.                           repositórios     com todas as     comparação
+                                     dos softwares.   ferramentas      com o histórico
+                                                      selecionadas.    de erros e
+                                                                       revisão manual.
+
+
+
+
+                  Figura 1. Etapas seguidas durante a realização da experiência.
+
+
+velmente mais erros de memória reportados no software de média dimensão
+que no de pequena dimensão. Naturalmente, o número de falsos positivos tam-
+bém aumentou. No entanto, através dos resultados obtidos foi possível construir
+exemplos mínimos que permitiram perceber de forma clara o tipo de padrões
+de erros identificados pelas várias ferramentas. Os padrões de erros descobertos
+permitiram identificar as diferenças e falhas na análise das ferramentas. Além
+disso, foram descobertos novos erros nos programas escrutinados, sendo que os
+mesmos foram reportados nos respetivos repositórios.
+
+
+2      Metodologia
+
+A Figura 1 apresenta o processo seguido durante este trabalho. O processo teve
+início com a identificação e seleção das ferramentas de análise estática a estu-
+dar (Secção 2.1) e dos programas alvo (Secção 2.2). Concluída a fase de seleção
+das ferramentas e dos programas, seguiu-se a análise dos mesmos. Inicialmente,
+foram recolhidas informações sobre o número e tipo de erros de memória já iden-
+tificados nos programas, pesquisando os repositórios dos mesmos. Os erros repor-
+tados como questões de utilizadores (i.e., issue) foram verificados manualmente,
+de maneira a verificar se são erros reais ou falsos positivos e se já estão ou não
+corrigidos. Por outro lado, os erros reportados como commit foram considerados
+erros reais e classificados como corrigidos. As versões onde foram identificados
+erros foram selecionadas e analisadas por todas as ferramentas. Uma vez que as
+ferramentas de análise estática devolvem falsos positivos, seguiu-se a fase de vali-
+dação dos seus relatórios de resultados. Esta validação, foi feita em duas etapas:
+i) comparação com o histórico de erros dos repositórios; e ii) revisão manual. A
+comparação com o histórico de erros, para além de permitir validar resultados,
+também permitiu calcular a percentagem de erros identificados corretamente
+e detetar a existência de novos erros. Estes foram, posteriormente, verificados
+através da revisão manual do código. Por fim, com as informações recolhidas foi
+4      P. Monteiro, J. M. Lourenço, A. Ravara
+
+          Tabela 1. Funcionalidades das ferramentas de análise estática.
+
+                                                   Operações inválidas
+                          Fuga de Desreferências     de libertação        Variáveis
+         Ferramenta       memória   inválidas         de memória       não inicializadas
+
+      Cppcheck
+      CppLint                x          x                   x                  x
+      Clang Static An.
+      Cobra                  x          x                   x                  x
+      Flawfinder             x          x                   x                  x
+      Frama-C                x                              x
+      Infer                                                                    x
+      Predator                                                                 x
+      Uno                    x                              x
+      VisualCodeGrepper      x          x                   x                  x
+
+
+
+
+possível identificar padrões de erros reconhecidos pelas ferramentas e construir
+exemplos mínimos para cada um deles.
+
+
+2.1   Escolha de ferramentas
+
+A escolha das ferramentas de análise estática a utilizar nesta experiência foi
+feita com base nos seguintes critérios: i) analisarem programas em C/C++;
+ii) serem ferramentas de código aberto; iii) serem ferramentas de projetos ativos;
+e iv) identificarem pelo menos dois dos seguintes erros: desreferenciação inválida,
+operação de libertação inválida, fuga de memória e variáveis não inicializadas.
+     Assim, numa primeira seleção foram identificadas 32 ferramentas, que foram
+dispostas na Tabela 5 (ver Apêndice A), onde cerca de metade corresponde a
+ferramentas de código aberto e outra metade a ferramentas comerciais. Ficámos
+com uma seleção de apenas 10 ferramentas que eram simultaneamente projetos
+ativos e de código aberto. Posteriormente, estas 10 ferramentas foram classifica-
+das relativamente às suas funcionalidades de verificação de software (Tabela 1),
+tendo sido selecionadas as ferramentas que garantissem pelo menos duas das
+funcionalidades listadas.
+     Foram identificadas 6 ferramentas que cumpriam com todos os critérios re-
+feridos (cerca de 19% da lista de ferramentas inicial), que foram dispostas na
+Tabela 2, onde se fez a sua caracterização relativamente à facilidade de insta-
+lação, facilidade de utilização, teoria e correção. Nesta última tabela podemos
+observar que as ferramentas se baseiam em diferentes teorias para realizar a sua
+análise, sendo que a descrição de cada uma delas pode ser consultada no Apên-
+dice B. Além disso, na Tabela 2, é importante ressaltar que a correção de uma
+ferramenta é influenciada pelo facto de esta apresentar, ou não, filtragem de
+falsos negativos. Relativamente à facilidade de instalação, a maioria das ferra-
+mentas tem de ser instalada manualmente. Por outro lado, todas as ferramentas
+estão disponíveis nas três plataformas mais comuns (Linux, macOS e Windows)
+excepto o Predator, que apenas funciona em Linux. Relativamente à facilidade
+de utilização, metade das ferramentas selecionadas não precisa de uma função
+                     Uma análise comparativa de ferramentas de análise estática                  5
+
+              Tabela 2. Características das ferramentas de análise estática.
+
+      Ferramenta Teoria Correção        Instalação                    Utilização
+
+                                    Fornece      Multi-   Requere Requere Análise de Interface
+                                   executável -plataforma main anotações ficheiros gráfica
+
+      Cppcheck      AST     x                               x        x
+      Clang Static
+                    CFG                                     x        x                   x
+        Analyzer
+      Frama-C       AST                x                             x
+      Infer        SL, AI              x                    x        x                   x
+      Predator      SMG                x          x                                      x
+      Uno           CFG     x          x                             x                   x
+
+
+
+
+main e apenas o Predator requere anotações adicionais no código fonte, que ape-
+nas são necessárias para imprimir informação e não para a execução da análise.
+Por fim, todas as ferramentas permitem a análise de ficheiros isolados e algumas
+delas (Cppcheck e Frama-C) disponibilizam interface gráfica, o que facilita a sua
+utilização.
+    No final do processo de seleção obtiveram-se as seguintes ferramentas: Cpp-
+check [Mar17], Clang Static Analyzer8 , Frama-C [C+ 17], Infer [CD11], Predator [DPV13]
+e UNO [Hol02]. Numa primeira análise experimental, não conseguimos que as
+ferramentas UNO e Frama-C produzissem resultados relevantes, pelo que optá-
+mos por excluir estas ferramentas da análise comparativa final.
+
+
+2.2     Escolha de projetos a analisar
+
+Através de uma pesquisa de software aberto no GitHub, selecionámos 16 projetos
+escritos nas linguagens C/C++, que foram classificados e ordenados de de acordo
+com os seguintes critérios:
+
+Prioridade: a nossa avaliação ponderada (1 = mais prioritário) dos demais
+   critérios, tendo em especial consideração a quantidade de operações de ma-
+   nipulação de memória (malloc, calloc, realloc, free e utilização de
+   ponteiros) e tipo de impacto que os erros têm.
+Popularidade: determinada pela quantidade de estrelas atribuídas pelos utili-
+   zadores ao repositório no GitHub.
+Número de versões: favorecemos os programas com múltiplas versões, veri-
+   ficando se uma ferramenta identifica os erros presentes numa determinada
+   versão e confirma que os mesmos foram corrigidos nas versões seguintes.
+Dimensão: Assumindo que 1kB corresponde aproximadamente a 40 linhas no
+   programa fonte, os programas foram divididos por dimensão (Tabela 3).
+   Agrupámos programas com a mesma dimensão para facilitar a seleção, uma
+   vez que nos interessava testar projetos com dimensões diferentes.
+Erros de memória: número e percentagem de erros de memória reportados
+   nos commits.
+8
+    http://clang.llvm.org/
+6        P. Monteiro, J. M. Lourenço, A. Ravara
+
+               Tabela 3. Classificação das dimensões dos Programas.
+
+                                               Dimensão
+                     Classificação
+                                        (kB)        (# linhas)
+                     Pequeno            50–400       2000–6000
+                     Médio             400–1600      6000–64000
+                     Grande          16000–128000   64000–512000
+
+
+
+Falha: impacto dos erros identificados no software, classificado em 3 categorias
+   (por ordem decrescente): falha, performance e segurança. Consideramos mais
+   prioritários programas com maior percentagem de falhas.
+Questões sobre erros: submetidas pelos utilizadores e referentes a erros de
+   memória identificados durante a instalação ou utilização do software. Em
+   alguns casos, os programas poderão não ter erros de memória identificados,
+   mas ter uma grande quantidade de questões sobre esse tipo de erros por
+   responder ou resolver.
+Manipulação de memória: operações de manipulação de memória e quanti-
+   dade de ponteiros utilizados.
+    Seguindo os critérios apresentados, os programas foram agrupados por dimen-
+são, e depois ordenados por prioridade. Os com a mesma dimensão e prioridade
+foram ordenados por popularidade. Na Tabela 4 estão listados, de forma já or-
+denada, todos os programas analisados e respetivas características. Os quatro
+escolhidos (um de pequena dimensão, um de média dimensão e dois de grande
+dimensão) são os que se encontram posicionados no topo de cada um grupos,
+tendo eles prioridade igual a 1 e elevada popularidade:
+Simple Dynamic String (SDS) 9 biblioteca de strings dinâmicas, projetada
+   para aumentar as funcionalidades limitadas das strings da biblioteca C;
+Beanstalkd 10 gestor de tarefas para aplicações distribuídas;
+Tmux 11 multiplexador de terminal, que permite que uma série de terminais
+   possam ser acedidos e controlados a partir de um único terminal;
+Memcached 12 sistema distribuído de cache em memória, que é frequentemente
+   utilizado para acelerar sites dinâmicos, colocando os dados dos mesmos em
+   cache para reduzir o número de vezes que uma fonte de dados externa precisa
+   de ser acedida.
+
+
+3     Experimentação e análise
+3.1    Relatório de resultados
+Neste artigo apresentamos os resultados referentes a dois programas. O SDS
+é um software de pequena dimensão com apenas 2 versões no seu repositório.
+9
+     https://github.com/antirez/sds
+10
+     https://github.com/kr/beanstalkd
+11
+     https://github.com/tmux/tmux
+12
+     https://github.com/memcached/memcached
+                           Uma análise comparativa de ferramentas de análise estática                                             7
+
+                                 Tabela 4. Características dos programas.
+
+                                                                              Erros      Casos (issues)
+                                                              Erros de       causam       sobre erros          Manipulação
+  Software       Prioridade Dimensão Popularidade Versões     memória         falha       de memória           de memória
+                                      (# Estrelas)          (%) total erros (%) erros mem. (%) total casos # Operações # Apontadores
+Simple Dynamic
+                     1      Pequena      2215         2           0              0              23           121           71
+     String
+TinyVM               1      Pequena      1254         1          25              4              25           64            115
+Twemcache            1      Pequena       811         8          0               0              21           257           205
+GloVe                2      Pequena      2204         2          18              0              28           118            64
+Sparkey              2      Pequena       784         2           5              0              0            86            69
+Beanstalkd           1       Média        4405        34          6              7              10            93           129
+Openwebrtc           1       Média        1519         1          3              1               2           439           323
+Redcarpet            2       Média        4169        23          4              0               7           66             44
+Http-Parser          2       Média        3816        20          5              0               5           30             96
+Leveldb              3       Média       12915        18          4              6               7            37           173
+Tmux                 1      Grande       9530          20        8              11               3           1116         918
+Memcached            1      Grande       7452         73          3              7               9           591          395
+The foundation       1      Grande       2810         670        3               6               7            682         1342
+Timescaledb          1      Grande       4259         25         3               1               3            59          214
+Lwan                 2      Grande       4131          1         15              8              21            462          700
+Ziparchive           2      Grande       3368         37          1              2               3            67           284
+
+
+
+
+Os respetivos commits não reportam erros de memória, mas existem vários erros
+deste tipo identificados por utilizadores (i.e., issue), sendo que alguns desses erros
+ainda se encontram por corrigir e/ou validar. Portanto, todos os erros reportados
+no repositório e devolvidos pelas ferramentas foram verificados através de revisão
+manual de código. O Beanstalkd é um software de dimensão média e possui 34
+versões no repositório. As ferramentas foram executadas em 12 versões deste
+software onde haviam sido identificados erros de memória, permitindo assim
+comparar os resultados destas com o histórico de erros disponível.
+    Os erros identificados no SDS e no Beanstalkd, quer pelos programadores e
+utilizadores, quer pelas ferramentas, encontram-se listados nas Tabelas 9 e 10
+(Apêndice C). No total foram analisados 30 erros no SDS, dos quais 24 foram
+identificados pelas ferramentas, e 188 erros no Beanstalkd, dos quais 175 fo-
+ram identificados pelas ferramentas. De notar que, na Tabela 10 foram omitidos
+os 135 falsos positivos identificados pelo Predator. Na secção seguinte é feita
+uma descrição da análise dos relatórios obtidos.
+
+
+3.2      Análise dos resultados
+
+Os resultados obtidos pela execução das ferramentas de análise estática foram
+comparados com o histórico de erros dos repositório e os novos erros foram
+sujeitos a revisão manual de código. Assim, a partir da análise dos resultados foi
+possível calcular a percentagem de falsos positivos (FP), falsos negativos (FN),
+verdadeiros positivos (TP) e verdadeiros negativos (TN) identificados por cada
+uma das ferramentas. Para uma determinada ferramenta a classificação dos erros
+em cada uma das categorias segue os seguintes critérios:
+     Falso positivo                   —     erro     não real mas reportado pela ferramenta
+     Falso negativo                   —     erro     real mas não reportado pela ferramenta
+Verdadeiro positivo                   —     erro     real e reportado pela ferramenta
+Verdadeiro negativo                   —     erro     não real e não reportado pela ferramenta
+8         P. Monteiro, J. M. Lourenço, A. Ravara
+
+   Um erro foi considerado real quando está reportado no histórico de erros do
+repositório ou quando é identificado por uma das ferramentas e validado com
+revisão manual de código.
+
+
+Simple Dynamic String (SDS). Na versão 1 foram reportados 7 erros no
+repositório, sendo um desses um falso positivo identificado por um utilizador. Na
+versão 2 foram reportados 2 erros, mas um já existia na versão 1. Por outro lado,
+as ferramentas encontram um total de 24 erros diferentes, sendo que 21 desses
+não foram reportados. No entanto, apenas 6 dos 21 erros poderão ser classificados
+como reais. Assim, no SDS foram identificados 26 erros, dos quais 13 são reais.
+Os erros reais que encontrámos na última versão e que reportámos são:
+
+    – sds.c:1123: error: null dereference, identificado pelo Infer13 ;
+    – sds.c:1240: error: dead store, identificado pelo Clang e pelo Infer14 .
+
+Na Figura 2(a) está representado um gráfico com as percentagens dos vários
+tipos de erros identificados pelas ferramentas no SDS. Este software retorna,
+intencionalmente, apontadores para o meio de blocos de memória alocados com
+malloc. Portanto, as operações de desreferência ou libertação de memória apli-
+cadas a ponteiros nestas situações são reportadas pelas ferramentas Clang Static
+Analyzer e Predator como erros, que nós classificámos como falsos positivos.
+    Verificámos que o Clang Static Analyzer apresentou uma percentagem re-
+lativamente baixa de falsos positivos, mas verificou-se também 30% de falsos
+negativos. Esta percentagem deve-se ao facto da Clang não identificar um pa-
+drão de erros relevante, nomeadamente a verificação dos resultados de operações
+de alocação de memória (i.e., malloc, calloc e realloc).
+    Por princípio, a ferramenta Predator não permite chamadas de funções exter-
+nas, a fim de excluir qualquer efeito colateral que possa potencialmente quebrar
+a segurança da memória. As únicas funções externas permitidas são aquelas que
+o Predator reconhece como funções integradas e as modela apropriadamente,
+provando a segurança da memória (malloc, free, e algumas funções da bibli-
+oteca do C tais como memset, memcpy e memmove [DPV13]). Por este motivo,
+o Predator não foi capaz de identificar nenhum erro real neste software, sendo a
+ferramenta que devolveu a maior percentagem de falsos positivos e falsos nega-
+tivos.
+    Apesar de falhar na identificação de alguns erros, o Infer é a ferramenta que
+devolve uma maior percentagem de verdadeiros positivos e a menor percentagem
+de falsos negativos neste software. Como a análise realizada pelo Infer consiste
+numa execução simbólica do código, mantendo uma heap simbólica, quando a
+ferramenta não consegue provar a segurança da memória, pode reportar um
+erro, se encontrar uma desreferência nula ou uma fuga de memória, ou pode
+perceber que se encontra num estado inconsistente. Em ambos os casos, a análise
+é interrompida, porque a tentativa de prova não faz sentido. Outra razão para
+13
+     https://github.com/antirez/sds/issues/99
+14
+     https://github.com/antirez/sds/issues/100
+                                  Uma análise comparativa de ferramentas de análise estática                                                              9
+
+       70                                                                           90
+                                                                                    80
+       60
+                                                                                    70
+       50
+                                                                                    60
+       40                                                                           50
+ (%)
+
+
+
+
+                                                                              (%)
+       30                                                                           40
+                                                                                    30
+       20
+                                                                                    20
+       10
+                                                                                    10
+        0                                                                            0
+             FP                   TP                   FN                TN              FP                   TP                   FN                TN
+                                       Tipo de erro                                                                Tipo de erro
+              Clang Static Analyzer    Cppcheck       Infer   Predator                    Clang Static Analyzer    Cppcheck       Infer   Predator
+
+
+                                (a) SDS.                                                            (b) Beanstalkd.
+
+            Figura 2. Percentagem de cada tipo de erros identificado nos programas.
+
+
+que o Infer não consiga reportar erros que poderia identificar é a existência de
+um tempo limite para execução da análise, que é por vezes atingido antes da
+análise chegar ao fim [CD11], e que parece não ser possível de parametrizar.
+    O Cppcheck é a ferramenta que devolve a menor quantidade de erros. Por
+uma opção de engenharia, esta ferramenta realiza filtragem dos erros para reduzir
+o número de falsos positivos reportado, mas nesse processo acabar por eliminar
+erros reais gerando falsos negativos.
+
+Beanstalkd. Este software tem uma dimensão e complexidade maior que o
+SDS. Como o Predator não está preparado para analisar programas muito com-
+plexos [DPV13], a análise do Beanstalkd revelou-se pouco conclusiva. Numa
+tentativa de extrair algum tipo de resultado relevante, o Predator foi utilizado
+para testar cada um dos ficheiros do software individualmente, tendo sido obti-
+dos 135 falsos positivos (cerca de 72% do total de erros reportados) que se devem
+às chamadas de funções externas que são ignoradas.
+    O Infer foi mais uma vez a ferramenta que devolveu uma maior percentagem
+de verdadeiros positivos. No entanto, foi também a ferramenta com a segunda
+maior percentagem de falsos positivos. O Cppcheck não devolveu falsos positivos,
+no entanto, revelou-se pouco eficaz devolvendo a menor percentagem de verda-
+deiros positivos e a maior percentagem de falsos e verdadeiros negativos. Estes
+resultados devem-se ao facto desta ferramenta fazer filtragem de falsos positi-
+vos. Por fim, o Clang Static Analyzer foi a ferramenta que devolveu uma maior
+quantidade de verdadeiros negativos (80%), juntamente com o Cppcheck. Além
+disso, esta ferramenta identificou a segunda maior percentagem de verdadeiros
+positivos no Beanstalkd.
+    Os novos erros identificados e classificados como verdadeiros positivos no
+repositório do Beanstalkd foram os seguintes:
+   – prot.c:501: error: null dereference, identificado pelo Infer15 ;
+   – testheap.c:222: error: memory leak, identificado pelo Cppcheck e Predator16 .
+15
+       https://github.com/kr/beanstalkd/issues/384
+16
+       https://github.com/kr/beanstalkd/issues/382
+10      P. Monteiro, J. M. Lourenço, A. Ravara
+
+Estes erros, tal como aconteceu para o software SDS, foram reportados e aguar-
+dam feedback por parte dos programadores responsáveis pelo repositório.
+
+
+4    Conclusões
+
+Como se pode verificar nas Tabelas 9 e 10 do Apêndice F, é útil usar as 4 ferra-
+mentas, pois obtém-se resultados complementares: cada ferramenta identificou
+erros que nenhuma das outras identificou. Este facto valida a seleção feita.
+    É também importante salientar que as utilização destas ferramentas não pesa
+significativamente no desenvolvimento de software, pois os tempos que cada uma
+leva a analisar os softwares escolhidos são muito reduzidos, como se pode ver nas
+Tabelas 11 e 12 do Apêndice G: vão de alguns segundos, no caso do SDS, a no
+máximo pouco mais de um minuto, no caso do Beanstalkd.
+    Note-se que vários dos erros encontrados pelas ferramentas estiveram presen-
+tes nos softwares por longos períodos de tempo, como se vê nas Tabelas 13 e 14
+do Apêndice H: o SDS teve erros que foram corrigidos só passados dois anos e
+tem erros que presentes há cerca de quatro anos; o Beanstalkd teve erros que
+foram corrigidos só passados quatro anos e tem erros presentes há quase dez
+anos.
+    A deteção destes erros pelas ferramentas foi no entanto muito rápida (como
+se referiu acima) e a verificação de que se tratavam de erros reais levou poucas
+horas. É então muito vantajosa a utilização destas ferramentas de análise estática
+no processo de desenvolvimento de software para evitar erros de memória.
+    A partir desta experiência foi possível identificar padrões de erros e construir
+exemplos mínimos capazes de reproduzir os resultados observados nos programas
+analisados. Na Tabela 8 (Apêndice D) estão representados os padrões identifi-
+cados para cada tipo de erro. Os exemplos mínimos e respetivos relatórios de
+resultados podem ser consultados no Apêndice E.
+    A ferramenta Infer é a única que identifica a possibilidade da ocorrência
+de uma desreferência nula quando não é feita a verificação dos resultados das
+operações de alocação de memória. Se as funções malloc, calloc e realloc
+falharem, estas retornam o valor NULL e, portanto, a desreferência dessa variável
+poderá gerar um erro. O Infer é também a única ferramenta que identifica que
+o valor de um endereço não está a ser utilizado (i.e., dead store), caso esse
+valor seja 0 ou NULL. A ferramenta Clang Static Analyzer não considera esta
+situação um erro, uma vez que considera que o valor 0 ou NULL ao ser atribuído
+à variável na sua inicialização não é um valor não utilizado. O Infer (até à versão
+0.13.1) não conseguia identificar qualquer tipo de erro de memória relacionado
+com a utilização de uma variável alocada usando o padrão sizeof(*ptr), e.g., ptr
+= malloc(sizeof(*ptr)). Na versão mais recente do Infer (versão 0.14.0,
+lançada no dia 1 de Maio de 2018) este defeito já foi corrigido. No Apêndice E
+deste artigo encontra-se um exemplo mínimo da situação descrita.
+    Apesar de o Infer ser a única ferramenta que reporta a não verificação das
+chamadas a funções de alocação de memória, observou-se que o também o Cpp-
+check, em algumas situações, reporta este tipo erros. No entanto, os erros repor-
+                 Uma análise comparativa de ferramentas de análise estática     11
+
+tados pelo Cppcheck e Infer são diferentes. O Cppcheck identifica uma possível
+fuga de memória, enquanto que o Infer identifica uma desreferência nula. Isto
+acontece porque é feita uma atribuição sem que seja verificado o resultado da
+chamada à função realloc, ficando assim a memória anteriormente atribuída
+inacessível no caso de esta operação falhar.
+    Este tipo de ferramentas está já a ser incluído no processo de desenvolvimento
+de alguns programas de grande dimensão e relevância, como o LibreOffice17 . Atu-
+almente, este software usa duas ferramentas, o Cppchecke o Coverity [Lla17].
+Segundo o relatório disponibilizado, até ao momento foram analisadas mais de 6
+milhões de linhas de código do projeto LibreOffice, onde foram identificados
+mais de 25 mil erros, dos quais foram corrigidos 99% [Proa]. No caso do Cpp-
+check, segundo o último relatório disponível(de 27 de Janeiro de 2018), foram
+identificados através desta ferramenta cerca de 6 mil erros no repositório do
+LibreOffice [Prob].
+    O trabalho futuro passa pela análise dos programas de grande dimensão já se-
+lecionados (Tmux e Memcached). Os dados recolhidos dessa análise serão depois
+utilizados para identificar novos padrões de erros e construir exemplos mínimos,
+tal como foi feito para o SDS e para o Beanstalkd. Desta forma espera-se obter
+novos dados para o desenvolvimento do estudo comparativo das ferramentas.
+
+
+Agradecimentos. Este trabalho foi suportado pela FCT-NOVA e parcialmente fi-
+nanciado pela FCT-MCTES e pelo programa POCI-COMPETE2020 nos projetos UID/-
+CEC/04516/2013 e PTDC/CCI-COM/32456/2017.
+
+
+Referências
+
+All70. Frances E. Allen. Control flow analysis. SIGPLAN Not., 5(7), 1970.
+Bal99. Thoms Ball. The concept of dynamic analysis. SIGSOFT Softw. Eng. Notes,
+       24(6), 1999.
+BCGG13. R. Bagnara, M. Carlier, R. Gori, and A. Gotlieb. Symbolic path-oriented
+       test data generation for floating-point programs. In ICST. IEEE, 2013.
+BCLR04. Tom Ball, Byron Cook, Vladimir Levin, and Sriram Rajamani. SLAM and
+       Static Driver Verifier: Technology Transfer of Formal Methods inside Micro-
+       soft. In iFM, volume 2999 of LNCS, pages 1–20. 2004.
+Bol16. C. Bolduc. Lessons learned: Using a static analysis tool within a continuous
+       integration system. In ISSREW. IEEE, 2016.
+C+ 17. Loïc Correnson et al. Frama-C User Manual, 2017. https://frama-c.
+       com/download.html.
+CC77. Patrick Cousot and Radhia Cousot. Abstract interpretation: A unified lattice
+       model for static analysis of programs by construction or approximation of
+       fixpoints. In POPL. ACM, 1977.
+CD11. Cristiano Calcagno and Dino Distefano. Infer: An Automatic Program Verifier
+       for Memory Safety of C Programs. In NFM, volume 6617 of LNCS. Springer,
+       2011.
+17
+     https://github.com/LibreOffice/core
+12      P. Monteiro, J. M. Lourenço, A. Ravara
+
+DPV13. Kamil Dudka, Petr Peringer, and Tomáš Vojnar. Byte-Precise Verification of
+       Low-Level List Manipulation. In SAS, volume 7935 of LNCS. Springer, 2013.
+DS07. David Delmas and Jean Souyris. Astrée: From Research to Industry. In SAS,
+       volume 4634 of LNCS. Springer, 2007.
+Duf91. David A. Duffy. Principles of Automated Theorem Proving. John Wiley &
+       Sons, 1991.
+EGHT94. David Evans, John Guttag, James Horning, and Yang Meng Tan. Lclint: A
+       tool for using specifications to check code. In FSE. ACM, 1994.
+EL02. D. Evans and D. Larochelle. Improving security using extensible lightweight
+       static analysis. IEEE Software, 19(1), 2002.
+F+ 07. Ansgar Fehnker et al. Goanna—A Static Model Checker. In FMICS/PDMC,
+       volume 4346 of LNCS. Springer, 2007.
+G+ 08. Eric Goubault et al. Static Analysis of the Accuracy in Control Systems:
+       Principles and Experiments. In FMICS, volume 4916 of LNCS. Springer,
+       2008.
+Gee16. Trisha Gee. What to Look for in a CodeReview. JetBrains Technical Series,
+       2016.
+Gim14. J. Gimpel. Software that checks software: The impact of pc-lint. IEEE Soft-
+       ware, 31(1), 2014.
+Hen78. M. A. Hennell. An experimental testbed for numerical software. The Com-
+       puter Journal, 21(4), 1978.
+Hoa69. C. A. R. Hoare. An axiomatic basis for computer programming. Commun.
+       ACM, 12(10), 1969.
+Hol02. Gerard J. Holzmann. Static source code checking for user-defined properties.
+       In Integrated Design and Process Technology, volume 2, 2002.
+Hol17. Gerard J. Holzmann. Cobra: Fast structural code checking. In SPIN. ACM,
+       2017.
+Lla17. Mel Llaguno. 2017 coverity scan report. Technical report, Synopsys,
+       2017.       https://www.synopsys.com/blogs/software-security/
+       2017-coverity-scan-report-open-source-security/.
+Mar17. Daniel Marjamaki.           Cppcheck 1.81, 2017.       http://cppcheck.
+       sourceforge.net/.
+NFH05. Iulian Neamtiu, Jeffrey S. Foster, and Michael Hicks. Understanding source
+       code evolution using abstract syntax tree matching. SIGSOFT Softw. Eng.
+       Notes, 30(4), 2005.
+Pat06. Ron Patton. Software testing. Pearson Education India, 2006.
+Proa.  Coverity Project. Coverity Scan – Static Analysis. https://scan.
+       coverity.com/projects/211.
+Prob.  LibreOffice Project.       Cppcheck - HTML report – LibreOffice 2018-
+       01-27. https://dev-builds.libreoffice.org/cppcheck_reports/
+       master/index.html.
+PRQ17. PRQA Programming Research.            QA-C static analyzer.    Technical re-
+       port, 2017.       http://www.prqa.com/static-analysis-software/
+       qac-qacpp-static-analyzers/.
+Reg10. John Regehr. A Guide to Undefined Behavior in C and C++, Part 1 – Em-
+       bedded in Academia. https://blog.regehr.org/archives/213, 2010.
+Rey02. J. C. Reynolds. Separation logic: a logic for shared mutable data structures.
+       In LICS. IEEE, 2002.
+RVP06. Aoun Raza, Gunther Vogel, and Erhard Plödereder. Bauhaus – A Tool Suite
+       for Program Analysis and Reverse Engineering. In Ada-Europe 2006, volume
+       4006 of LNCS. Springer, 2006.
+                 Uma análise comparativa de ferramentas de análise estática    13
+
+S+ 99. Arthur G. Stephenson et al. Mars Climate Orbiter Mishap Investigation Board
+       Phase I Report November 10, 1999. Technical report, NASA, 1999.
+SMM12. Pavel Shved, Mikhail Mandrykin, and Vadim Mutilin. Predicate Analysis
+       with BLAST 2.7. In TACAS, volume 7214 of LNCS. Springer, 2012.
+W+ 95. B. A. Wichmann et al. Industrial perspective on static analysis. Software
+       Engineering Journal, 10(2), 1995.
+Whe17. David A. Wheeler. Flawfinder. Technical report, 2017. https://www.
+       dwheeler.com/flawfinder/#documentation.
+Wis07. Klaus Wissing. Static Analysis of Dynamic Properties-Automatic Program
+       Verification to Prove the Absence of Dynamic Runtime Errors. In INFOR-
+       MATIK, volume 110 of LNI. GI, 2007.
+XA05. Yichen Xie and Alex Aiken. Saturn: A SAT-Based Tool for Bug Detection.
+       In CAV, volume 3576 of LNCS. Springer, 2005.
+14        P. Monteiro, J. M. Lourenço, A. Ravara
+
+A       Escolha das ferramentas de análise estática
+
+
+                       Tabela 5. Ferramentas de análise estática.
+
+
+                         Ferramenta                  Código aberto Ativo
+             AdLint18                                               x
+             Astrée [DS07]                                 x
+             Axivion Bauhaus Suite [RVP06]                 x
+             BLAST [SMM12]                                          x
+             Cppcheck [Mar17]
+             Cppdepend19                                   x
+             Cpplint20
+             Clang Static Analyzer21
+             Cobra [Hol17]
+             Codacy22                                      x
+             CodeSonar23                                   x
+             Coverity [Lla17]                              x
+             ECLAIR [BCGG13]                               x
+             Flawfinder [Whe17]
+             Fluctuat [G+ 08]                              x
+             Frama-C [C+ 17]
+             Goanna [F+ 07]                                x
+             Infer [CD11]
+             Klocwork Static Code Analysis [Bol16]         x
+             LCLint [EGHT94]                                        x
+             LDRA Testbed [Hen78]                          x
+             Parasoft C/C++ test24                         x
+             PC-Lint [Gim14]                               x
+             Polyspace [Wis07]                             x
+             Predator [DPV13]
+             PVS-Studio25                                  x
+             PRQA QAC [PRQ17]                              x
+             Saturno [XA05]                                         x
+             SLAM project [BCLR04]                         x        x
+             Splint [EL02]                                          x
+             Uno [Hol02]
+             VisualCodeGrepper26
+
+
+
+
+18
+     http://adlint.sourceforge.net/
+19
+     https://www.cppdepend.com/
+20
+     https://github.com/google/styleguide/tree/gh-pages/cpplint
+21
+     http://clang.llvm.org/
+22
+     https://www.codacy.com/
+                  Uma análise comparativa de ferramentas de análise estática   15
+
+B      Teorias
+
+B.1      Interpretação Abstrata (AI):
+
+Abordagem que serve para modelar o efeito que cada declaração tem sobre o
+estado de uma máquina abstrata. Isto é, dada uma linguagem de programação,
+a interpretação abstrata consiste em atribuir várias semânticas ligadas por rela-
+ções de abstração. Uma semântica é uma caracterização matemática do possível
+comportamento do programa. Portanto, o programa é executado com base nas
+propriedades matemáticas de cada declaração. Nem todas as propriedades ver-
+dadeiras do sistema original são verdadeiras no sistema abstrato, portanto, o
+sistema abstrato é mais simples de analisar devido à sua incompletude. Se esta
+abordagem for aplicada corretamente, todas as propriedades verdadeiras do sis-
+tema abstrato podem ser mapeadas para uma propriedade verdadeira do sistema
+original [CC77].
+
+
+B.2      Árvore de Sintaxe Abstrata (AST):
+
+Uma representação abstrata em árvore do código-fonte de um programa, na qual
+as folhas representam as constantes e as variáveis e os nós internos representam
+os operadores ou declarações [NFH05].
+
+
+B.3      Grafo de Controlo de Fluxo (CFG):
+
+Consiste num grafo orientado, no qual são representados todos os caminhos
+lógicos que podem ser percorridos durante a execução de um programa [All70].
+
+
+B.4      Lógica de Separação (SL):
+
+Uma lógica matemática, que consiste numa extensão da lógica de Hoare [Hoa69]
+para o raciocínio sobre programas que acedem e alteram dados mantidos em
+estruturas de dados dinâmicas. Esta lógica permite a escalabilidade ao partir o
+raciocínio em várias partes, correspondentes às operações locais na memória e,
+seguidamente, juntar as partes do raciocínio novamente [Rey02].
+
+
+B.5      Grafo de Memória Abstrata (SMG):
+
+Grafo direcionado que representa simbolicamente a memória e que é composto
+por objetos (espaço alocado), valores (endereços) e arestas que ligam os vários
+elementos do grafo. Assim, cada bloco de memória utilizado pelo programa dá
+origem a um SMG [DPV13].
+23
+     https://www.grammatech.com/products/codesonar
+24
+     https://www.parasoft.com/products/ctest
+25
+     https://www.viva64.com/en/pvs-studio/
+26
+     https://github.com/nccgroup/VCG
+16   P. Monteiro, J. M. Lourenço, A. Ravara
+                       Uma análise comparativa de ferramentas de análise estática                         17
+
+C      Relatórios de erros
+
+                  Tabela 6. Resultados da análise do software Beanstalkd.
+
+                                                                                  Falso
+Erro                                               Versão            Reportado               Ferramenta
+                                                                                 positivo
+                                            Identificado Corrigido
+beanstalkd.c:667: error: memory leak            0.3         0.4                     x              x
+                                                                                            Clang Static An.
+net.c:28: error: dead store                     0.3         1.4          x          x
+                                                                                                 Infer
+beanstalkd.c:41: error: resource leak           0.3        1.5           x          x            Infer
+reserve.c:51: error: null dereference           0.3        1.5           x          x            Infer
+prot.c:140: error: null dereference             0.3        1.5           x          x            Infer
+beanstalkd.c:395: error: null dereference       0.3        0.5           x          x            Infer
+beanstalkd.c:737: error: memory leak            0.3        0.5           x          x            Infer
+beanstalkd.c:205: error: memory leak            0.4        0.5                      x              x
+tube.c:60: error: memory leak                   0.8        1.2                      x              x
+ms.c:56: error: memory leak                     0.8         x            x                       Infer
+prot.c:320: error: null dereference             0.8        1.5           x          x            Infer
+prot.c:374: error: null dereference             0.8        1.5           x          x            Infer
+prot.c:946: error: dead store                   0.8         x            x                       Infer
+prot.c:1134: error: dead store                  0.8         x            x                       Infer
+prot.c:1170: error: dead store                  0.8         x            x                       Infer
+prot.c:1230: error: dead store                  0.8         x            x                       Infer
+prot.c:1388: error: dangling pointer            1.2        1.3                      x              x
+job.c:170: error: memory leak                   1.2        1.4                      x              x
+prot.c:1493: error: memory leak                 1.2        1.4                      x              x
+job.c:48: error: dead store                     1.2         x            x                       Infer
+tube.c:86: error: dead store                    1.2         x            x                       Infer
+job.c:95: error: dead store                     1.2         x            x                       Infer
+conn.c:224: error: dead store                   1.2         x            x                       Infer
+prot.c:1583: error: null dereference            1.2         x            x          x            Infer
+cut.c:222: error: resource leak                 1.2        1.5           x          x          Cppcheck
+job:52:error: invalid dereference               1.2         x            x                     Predator
+binlog.c:176: error: buffer overflow           1.4.1      1.4.2                     x              x
+binlog.c:215: null dereference                 1.4.1      1.4.2          x          x       Clang Static An.
+binlog.c:723: error: null dereference          1.4.1       1.5           x          x            Infer
+job.c:70: error: memory leak                   1.4.2      1.4.3                     x          Predator
+prot.c:974: error: memory leak                 1.4.2      1.4.3                     x              x
+prot.c:1017: error: memory leak                1.4.3      1.4.4                     x              x
+                                                                                            Clang Static An.
+net.c:31: error: dead store                     1.5         1.9          x          x
+                                                                                                 Infer
+heap.c:98: error: memory leak                   1.5          x           x                       Infer
+walg.c:293: error: memory leak                  1.5          x           x                       Infer
+walg.c:293: error: resource leak                1.5          x           x                       Infer
+walg.c:357: error: memory leak                  1.5          x           x                       Infer
+walg.c:357: error: resource leak                1.5          x           x                       Infer
+walg.c:426: error: resource leak                1.5          x           x                       Infer
+prot.c:514: error: null dereference             1.5         1.8          x          x            Infer
+prot.c:554: error: null dereference             1.5         1.8          x          x            Infer
+file.c:204: error: null dereference             1.6         1.7                     x       Clang Static An.
+file.c:325: error: null dereference             1.6         1.7                     x       Clang Static An.
+prot.c:501: error: null dereference             1.6          x           x          x            Infer
+conn.c:244: error: invalid free                 1.8         1.9                     x              x
+integ-test.c:343: error: invalid free           1.8         1.9                     x              x
+prot.c:710: error: invalid free                 1.8         1.9                     x              x
+darwin.c:84: error: dead store                  1.8          x           x          x            Infer
+                                                                                            Clang Static An.
+walg.c:416: dead store                          1.9         1.10                    x
+                                                                                                 Infer
+                                                                                               Cppcheck
+testheap.c:222: error: memory leak             1.10          x           x          x
+                                                                                               Predator
+18          P. Monteiro, J. M. Lourenço, A. Ravara
+
+                           Tabela 7. Resultados da análise do software SDS.
+
+                                                                                                                   Falso
+Erro                                                                                  Versão          Reportado               Ferramenta
+                                                                                                                  positivo
+                                                                             Identificado Corrigido
+sds.c:303: error: memory leak                                                     1            2                     x              x
+sds.c:470: error: memory leak                                                     1            x                                    x
+sds.c:882: error: memory leak                                                     1            2                     x              x
+sds.c:881: error: memory leak                                                     1            2                     x              x
+sds.c:159: error: memory leak                                                     1            2                     x          Cppcheck
+sds.c:160: error: null dereference                                                1            2                     x            Infer
+sds.c:717: error: null dereference                                                1            x                     x              x
+sds.c:817: error: null dereference                                                1            x          x          x            Infer
+sds.c:891: null pointer                                                           1            2          x          x       Clang Static An.
+sds.c: 894: null pointer                                                          1            2          x          x       Clang Static An.
+sds.c:63: error: invalid dereference                                              1            x          x                     Predator
+sds.c:147: error: invalid dereference                                             1            x          x                     Predator
+sds.c:793: error: memory leak                                                     1            x          x                     Predator
+sds.c:92: error: null dereference                                                 2            x                     x            Infer
+sds.c:1123: error: null dereference                                               2            x          x          x            Infer
+sds.c:580: error: dead store                                                      2            x          x                       Infer
+sds.c:136: error: invalid dereference                                             2            x          x                     Predator
+sds.c:98: error: dereferencing object   of   size   8B   out   of   bounds        2            x          x                     Predator
+sds.c:96: error: dereferencing object   of   size   4B   out   of   bounds        2            x          x                     Predator
+sds.c:94: error: dereferencing object   of   size   2B   out   of   bounds        2            x          x                     Predator
+sds.c:92: error: dereferencing object   of   size   1B   out   of   bounds        2            x          x                     Predator
+                                                                                                                             Clang Static An.
+sds.c:161: error: invalid free                                                    2            x          x
+                                                                                                                                Predator
+sds.c:161: error: memory leak                                                     2            x          x                     Predator
+sds.c:1121: error: memory leak                                                    2            x          x                     Predator
+sds.h:87: error: dereference NULL value with offset -1B                           2            x          x                     Predator
+sds.h:197 error: invalid dereference                                              2            x          x                     Predator
+sds.c:229: invalid free                                                           2            x          x                  Clang Static An.
+                                                                                                                             Clang Static An.
+sds.c:1240: dead store                                                            2            x          x          x
+                                                                                                                                  Infer
+Uma análise comparativa de ferramentas de análise estática   19
+20     P. Monteiro, J. M. Lourenço, A. Ravara
+
+D    Padrões de erros
+
+                           Tabela 8. Padrões de erros.
+
+Padrão                           Erro                       Ferramenta
+                                                           Clang Static
+                                                Cppcheck                Infer Predator
+                                                            Analyzer
+
+Apontador inicializado com Desreferência nula
+o valor NULL e desreferenci-
+ado na mesma função.
+Apontador inicializado com Desreferência nula      x
+o valor NULL noutra função
+e desreferenciado.
+Falta de verificação após Desreferência nula       x            x                x
+uma alocação de memória.
+O valor passado como ar- Desreferência nula        x                     x
+gumento à função de aloca- Fuga de memória
+ção de memória (malloc ou    Operação de
+calloc) é do tipo *ptr. libertação inválida
+O valor escrito no endereço Valor do endereço      x            x                x
+é inicializado com o valor nunca é usado
+NULL ou 0 e nunca é usado.
+O valor escrito no endereço Valor do endereço      x                             x
+é inicializado com um va- nunca é usado
+lor diferente de NULL e 0 e
+nunca é usado.
+O valor do apontador é al- Fuga de memória                      x                x
+terado através da função
+realloc, sem garantir que
+esta tem sucesso (sem cha-
+madas a funções).
+O valor do apontador é al- Fuga de memória         x            x                x
+terado através da função
+realloc, sem garantir que
+esta tem sucesso (com cha-
+madas a funções).
+Alocação e libertação de Fuga de memória
+memória explicita.
+Alocação e libertação de Fuga de memória           x
+memória não explicita.
+Libertação da estrutura an- Fuga de memória        x
+tes da libertação da me-
+mória alocada para aponta-
+dores que fazem parte da
+mesma.
+                    Uma análise comparativa de ferramentas de análise estática                   21
+
+E     Exemplos mínimos
+Este apêndice está organizado por tipo de erro, contendo cada secção listagens
+com o código dos exemplos mínimos e os relatórios das ferramentas utilizadas.
+
+E.1    Dead store
+A Listagem 1.1 corresponde ao exemplo mínimo de um falso positivo identificado
+pelo Infer (Listagem 1.2). Este erro é considerado um falso positivo, porque o
+endereço é inicializado com o valor NULL e, portanto o valor do mesmo só é
+utilizado depois de lhe ser atribuído um novo valor. Caso o endereço tivesse
+sido inicializado com o valor 0, o Infer iria devolver o mesmo tipo de resultado.
+Quando este erro surge com este tipo de padrão não é reportado por mais ne-
+nhuma das restantes ferramentas. Na Listagem 1.3 o erro é corrigido e o Infer
+não devolve qualquer tipo de resultado. Por fim, na Listagem 1.4 está represen-
+tado um exemplo de um erro do mesmo tipo, inicializado com um valor diferente
+de NULL ou 0, que é reportado por todas as ferramentas capazes de identificar
+erros do tipo dead store (Listagem 1.5 e Figura 3).
+Listing 1.1. Exemplo mínimo de um erro dead store classificado como falso positivo.
+#include <s t d i o . h>
+
+int main ( ) {
+        int var = 2 0 ;
+        int ∗ ptr_a = NULL;
+
+             ptr_a = &var ;
+             p r i n t f ( " Value :%d\n" , ∗ ptr_a ) ;
+
+             return 0 ;
+}
+
+Listing 1.2. Relatório de resultados d0 Infer para o exemplo mínimo da Listagem 1.1.
+Found 1 i s s u e
+
+d e a d _ s t o r e _ f a l s e _ p o s i t i v e _ i n f e r . c : 7 : e r r o r : DEAD_STORE
+   The v a l u e w r i t t e n t o &ptr_a i s n e v e r used .
+    5.      int main ( ) {
+    6.         int var = 2 0 ;
+    7 . > int ∗ ptr_a = NULL;
+    8.
+    9.        ptr_a = &var ;
+
+Summary o f t h e r e p o r t s
+
+    DEAD_STORE: 1
+22       P. Monteiro, J. M. Lourenço, A. Ravara
+
+        Listing 1.3. Exemplo mínimo de um erro do tipo dead store corrigido.
+#include <s t d i o . h>
+
+int main ( ) {
+        int var = 2 0 ;
+        int ∗ ptr_a = &var ;
+        p r i n t f ( " Value :%d\n" , ∗ ptr_a ) ;
+
+             return 0 ;
+}
+
+
+Listing 1.4. Exemplo mínimo de um erro do tipo dead store classificado como verda-
+deiro positivo.
+#include <s t d i o . h>
+
+int main ( )        {
+        int         a = 20;
+        int         b = 10;
+        int         ∗ ptr_a = &a ;
+
+             ptr_a = &b ;
+             p r i n t f ( " Value :%d\n" , ∗ ptr_a ) ;
+
+             return 0 ;
+}
+
+
+Listing 1.5. Relatório de resultados da ferramenta Infer para o exemplo mínimo da
+Listagem 1.4.
+Found 1 i s s u e
+
+d e a d _ s t o r e _ f a l s e _ p o s i t i v e _ i n f e r . c : 8 : e r r o r : DEAD_STORE
+   The v a l u e w r i t t e n t o &ptr_a i s n e v e r used .
+    6.         int a = 2 0 ;
+    7.         int b = 1 0 ;
+    8 . > int ∗ ptr_a = &a ;
+    9.
+    10.                        ptr_a = &b ;
+
+Summary o f t h e r e p o r t s
+
+     DEAD_STORE: 1
+                 Uma análise comparativa de ferramentas de análise estática                23
+
+
+Figura 3. Relatório de erros devolvido pela ferramenta Clang Static Analyzer para o
+exemplo mínimo da Listagem 1.4.
+      1    /*Exemplo minimo de um suposto erro do tipo DEAD STORE
+      2    identificado pela ferramenta Infer - falso positivo*/
+      3    #include <stdio.h>
+      4
+      5    int main ()    {
+      6            int    a = 20;
+      7            int    b = 10;
+      8            int    *ptr_a = &a;
+
+                         Value stored to 'ptr_a' during its initialization is never read
+
+      9
+   10              ptr_a = &b;
+   11              printf("Value:%d\n",*ptr_a);
+   12
+   13              return 0;
+   14      }
+
+
+
+
+E.2       Fuga de memória
+Argumento passado ao malloc. Na Listagem 1.6 está representado o exemplo
+mínimo onde o argumento passado à função malloc é do tipo ptr* e, portanto,
+o Infer (até à versão 0.13.1) não é capaz de identificar a fuga de memória presente
+no código. Por outro, o Predator e o Clang Static Analyzer conseguem identificar
+o erro, como pode ser observado no relatório de resultados da Listagem 1.7 e
+da Figura 4. Na Listagem 1.8 a fuga de memória foi corrigida e não é reportada
+por nenhuma das ferramentas. De notar que, qualquer erro que exista no código
+depois da chamada à função malloc, passando o argumento ptr*, é ignorado
+pelo Infer. Na Listagem 1.9 o argumento passado à função malloc é do mesmo
+tipo da estrutura utilizada, logo, qualquer versão do Infer é capaz de identificar a
+fuga de memória presente no código (Listagem 1.10). Além disso, o Predator e o
+Clang Static Analyzer (Listagem 1.11 e Figura 5) também conseguem identificar
+o erro, tal como já acontecia no exemplo mínimo anterior.
+24      P. Monteiro, J. M. Lourenço, A. Ravara
+
+         Listing 1.6. Exemplo mínimo de um erro do tipo fuga de memória.
+
+
+
+#include <s t d i o . h>
+#include < s t d l i b . h>
+
+typedef struct s t {
+     int v a l u e ;
+} st ;
+
+s t ∗ c r e a t e ( int v a l u e ) {
+    s t ∗new = m a l l o c ( s i z e o f ( ∗ new ) ) ;
+    i f ( new == NULL) return NULL;
+    new −> v a l u e = v a l u e ;
+    return new ;
+}
+
+int main ( ) {
+    s t ∗new = c r e a t e ( 5 ) ;
+    p r i n t f ( " Value :%d\n" , new−>v a l u e ) ;
+    return 0 ;
+}
+
+
+
+
+Listing 1.7. Relatório de resultados da ferramenta Predator para o exemplo mínimo
+da Listagem 1.6.
+
+
+
+mem ory_leak _false_ negative _infer . c : 2 0 : 1 1 : warning : memory
+l e a k d e t e c t e d while d e s t r o y i n g a v a r i a b l e on s t a c k
+[− f p l u g i n= l i b s l . s o ]
+/home/ f c t / p r e d a t o r / c l / c l _ e a s y . c c : 8 3 : n o t e : clEasyRun ( )
+took 0 . 0 0 1 s [ i n t e r n a l l o c a t i o n ] [− f p l u g i n= l i b s l . s o ]
+                   Uma análise comparativa de ferramentas de análise estática                     25
+
+
+Figura 4. Relatório de erros devolvido pela ferramenta Clang Static Analyzer para o
+exemplo mínimo da Listagem 1.6.
+                          1   /*Exemplo minimo de um erro do tipo "memory leak"
+                          2   que nÃ£o Ã© identificado pela ferramenta Infer - falso negativo*/
+                          3
+                          4   #include <stdio.h>
+                          5   #include <stdlib.h>
+                          6
+                          7   typedef struct st{
+                          8      int value;
+                          9   }st;
+                         10
+                         11   st * create(int value){
+                         12      st *new = malloc(sizeof(*new));
+
+                                                 2     ← Memory is allocated →
+
+                         13       if(new == NULL) return NULL;
+
+                                        3     ← Assuming 'new' is not equal to null →
+
+
+                                   4    ← Taking false branch →
+
+                         14       new -> value = value;
+                         15       return new;
+                         16   }
+                         17
+                         18   int main(){
+                         19       st *new = create(5);
+
+                                                   1   Calling 'create' →
+
+
+
+                                                   5   ← Returned allocated memory →
+
+                         20        printf("Value:%d\n",new->value);
+
+                                    6       ← Potential leak of memory pointed to by 'new'
+
+                         21        return 0;
+                         22   }
+
+
+
+
+    Listing 1.8. Exemplo mínimo de um erro do tipo fuga de memória corrigido.
+#include <s t d i o . h>
+#include < s t d l i b . h>
+
+typedef struct s t {
+     int v a l u e ;
+} st ;
+
+s t ∗ c r e a t e ( int v a l u e ) {
+    s t ∗new = m a l l o c ( s i z e o f ( s t ) ) ;
+    i f ( new == NULL) return NULL;
+    new −> v a l u e = v a l u e ;
+    return new ;
+}
+
+int main ( ) {
+    s t ∗new = c r e a t e ( 5 ) ;
+    f r e e ( new ) ;
+    return 0 ;
+}
+26      P. Monteiro, J. M. Lourenço, A. Ravara
+
+Listing 1.9. Exemplo mínimo de um erro do tipo fuga de memória identificado pelo
+Infer.
+#include <s t d i o . h>
+#include < s t d l i b . h>
+
+typedef struct s t {
+     int v a l u e ;
+} st ;
+
+s t ∗ c r e a t e ( int v a l u e ) {
+    s t ∗new = m a l l o c ( s i z e o f ( s t ) ) ;
+    i f ( new == NULL) return NULL;
+    new −> v a l u e = v a l u e ;
+    return new ;
+}
+
+int main ( ) {
+    s t ∗new = c r e a t e ( 5 ) ;
+         i f ( new ) {
+                       p r i n t f ( " Value :%d\n" , new−>v a l u e ) ;
+         }
+    return 0 ;
+}
+
+Listing 1.10. Relatório de resultados da ferramenta Infer para o exemplo mínimo da
+Listagem 1.9.
+Found 1 i s s u e
+
+memory_leak_true_positive_infer . c : 2 1 : e r r o r : MEMORY_LEAK
+ memory d y n a m i c a l l y a l l o c a t e d t o ‘ new ‘ by c a l l t o
+  ‘ c r e a t e ( ) ‘ a t l i n e 1 9 , column 15 i s not r e a c h a b l e
+  a f t e r l i n e 2 1 , column 5 .
+  19.                s t ∗new = c r e a t e ( 5 ) ;
+  20.                i f ( new ) {
+  21. >              p r i n t f ( " Value :%d\n" , new−>v a l u e ) ;
+  22.                }
+  23.                return 0 ;
+
+Summary o f t h e r e p o r t s
+
+     MEMORY_LEAK: 1
+                   Uma análise comparativa de ferramentas de análise estática                 27
+
+Listing 1.11. Relatório de resultados da ferramenta Predator para o exemplo mínimo
+da Listagem 1.9.
+memory_leak_true_positive_infer . c : 2 0 : 1 1 : warning : memory
+l e a k d e t e c t e d while d e s t r o y i n g a v a r i a b l e on s t a c k
+[− f p l u g i n= l i b s l . s o ]
+/home/ f c t / p r e d a t o r / c l / c l _ e a s y . c c : 8 3 : n o t e : clEasyRun ( )
+took 0 . 0 0 1 s [ i n t e r n a l l o c a t i o n ] [− f p l u g i n= l i b s l . s o ]
+
+
+
+
+Figura 5. Relatório de erros devolvido pela ferramenta Clang Static Analyzer para o
+exemplo mínimo da Listagem 1.9.
+                           1   /*Exemplo minimo de um erro do tipo "memory leak"
+                           2   que Ã© identificado pela ferramenta Infer - true positive*/
+                           3
+                           4   #include <stdio.h>
+                           5   #include <stdlib.h>
+                           6
+                           7   typedef struct st{
+                           8      int value;
+                           9   }st;
+                          10
+                          11   st * create(int value){
+                          12      st *new = malloc(sizeof(st));
+
+                                                  2     ← Memory is allocated →
+
+                          13       if(new == NULL) return NULL;
+
+                                         3     ← Assuming 'new' is not equal to null →
+
+
+                                    4    ← Taking false branch →
+
+                          14       new -> value = value;
+                          15       return new;
+                          16   }
+                          17
+                          18   int main(){
+                          19       st *new = create(5);
+
+                                                    1   Calling 'create' →
+
+
+
+                                                    5   ← Returned allocated memory →
+
+                          20        printf("Value:%d\n",new->value);
+
+                                     6       ← Potential leak of memory pointed to by 'new'
+
+                          21        return 0;
+                          22   }
+
+
+
+
+Estrutura com apontadores. Na Listagem 1.12 está representado o exemplo
+mínimo de um erro do tipo fuga de memória que é identificado por todas as
+ferramentas (consultar a Listagem 1.13, a Listagem 1.14 e a Listagem 1.15),
+exceto pelo Clang Static Analyzer. Na Listagem 1.16 a fuga de memória foi
+corrigida e, portanto, não é reportada por nenhuma das ferramentas.
+28       P. Monteiro, J. M. Lourenço, A. Ravara
+
+Listing 1.12. Exemplo mínimo de um erro do tipo fuga de memória numa estrutura
+com apontadores.
+#include <s t d i o . h>
+#include < s t d l i b . h>
+
+typedef struct s t {
+     int ∗ v a l u e ;
+} st ;
+
+int main ( ) {
+    s t ∗new = m a l l o c ( s i z e o f ( s t ) ) ;
+         i f ( ! new ) return −1;
+         new−>v a l u e = m a l l o c ( s i z e o f ( int ) ) ;
+         f r e e ( new ) ;
+         return 0 ;
+}
+
+Listing 1.13. Relatório de erros devolvido pela ferramenta Cppcheck para o exemplo
+mínimo da Listagem 1.12.
+Checking m e m o r y _ l e a k _ t r u e _ p o s i t i v e _ s t r u c t w i t h p o i n t e r . c . . .
+[ memory_leak_true_positive_structwithpointer_infer . c : 1 9 ] :
+( e r r o r ) Memory l e a k : new . v a l u e
+
+Listing 1.14. Relatório de erros devolvido pela ferramenta Infer para o exemplo mí-
+nimo da Listagem 1.12.
+Found 1 i s s u e
+
+memory_leak_true_positive_structwithpointer . c : 1 9 :
+e r r o r : MEMORY_LEAK memory d y n a m i c a l l y a l l o c a t e d t o
+‘ new−>va lue ‘ by c a l l t o ‘ m a l l o c ( ) ‘ a t l i n e 1 4 ,
+column 15 i s not r e a c h a b l e a f t e r l i n e 1 9 , column 2 .
+    17.                           return −1;
+    18.              }∗/
+    19. >            f r e e ( new ) ;
+    20.              return 0 ;
+
+Summary o f t h e r e p o r t s
+
+     MEMORY_LEAK: 1
+                    Uma análise comparativa de ferramentas de análise estática               29
+
+Listing 1.15. Relatório de erros devolvido pela ferramenta Predator para o exemplo
+mínimo da Listagem 1.12.
+memory_leak_true_positive_structwithpointer . c : 1 9 : 6 :
+warning : memory l e a k d e t e c t e d while d e s t r o y i n g a
+heap o b j e c t [− f p l u g i n= l i b s l . s o ]
+/home/ f c t / p r e d a t o r / c l / c l _ e a s y . c c : 8 3 : n o t e : clEasyRun ( )
+took 0 . 0 0 1 s [ i n t e r n a l l o c a t i o n ] [− f p l u g i n= l i b s l . s o ]
+
+Listing 1.16. Exemplo mínimo de um erro do tipo fuga de memória numa estrutura
+com apontadores corrigido.
+#include <s t d i o . h>
+#include < s t d l i b . h>
+
+typedef struct s t {
+     int ∗ v a l u e ;
+} st ;
+
+int main ( ) {
+    s t ∗new = m a l l o c ( s i z e o f ( s t ) ) ;
+         i f ( ! new ) return −1;
+         new−>v a l u e = m a l l o c ( s i z e o f ( int ) ) ;
+         f r e e ( new−>v a l u e ) ;
+         f r e e ( new ) ;
+         return 0 ;
+}
+
+
+Falta de verificação do realloc A falta de verificação de uma operação de
+memória é um tipo de erro apenas identificado pelo Infer. No entanto, quando
+se trata da verificação de uma chamada à função realloc (Listagem 1.17) o
+Cppcheck identifica um erro do tipo fuga de memória, no caso do exemplo mí-
+nimo apresentado nesta secção o Infer também identifica um erro deste tipo. Os
+relatórios de resultados do Infer e do Cppcheck encontram-se na Listagem 1.18
+e na Listagem 1.19, respetivamente. O Clang Static Analyzer não reporta qual-
+quer resultado para este exemplo. O Predator devolve um falso positivo, uma
+vez que esta ferramenta ignora a chamada à função realloc. Na Listagem 1.20
+encontra-se representada a correção da fuga de memória do exemplo anterior,
+sendo que não é reportado qualquer tipo de erro pelas ferramentas, com a exceção
+do Predator que, como já foi referido, reporta um falso positivo.
+30       P. Monteiro, J. M. Lourenço, A. Ravara
+
+Listing 1.17. Exemplo mínimo de um erro do tipo fuga de memória utilizando uma
+função realloc.
+#include <s t d i o . h>
+#include < s t d l i b . h>
+
+typedef struct s t {
+     int v a l u e ;
+} st ;
+
+int main ( ) {
+    s t ∗new = m a l l o c ( s i z e o f ( s t ) ) ;
+         i f ( ! new ) return −1;
+         new = r e a l l o c ( new , 2 ∗ s i z e o f ( s t ) ) ;
+         f r e e ( new ) ;
+         return 0 ;
+}
+
+Listing 1.18. Relatório de erros devolvido pela ferramenta Cppcheck para o exemplo
+mínimo da Listagem 1.17.
+Checking m e m o r y _ l e a k _ t r u e _ p o s i t i v e _ r e a l l o c . c . . .
+[ memory_leak_true_positive_realloc_infer . c : 1 4 ] :
+( e r r o r ) Common r e a l l o c m i s t a k e : ’ new ’ n u l l e d
+but not f r e e d upon f a i l u r e
+
+Listing 1.19. Relatório de erros devolvido pela ferramenta Infer para o exemplo mí-
+nimo da Listagem 1.17.
+Found 1 i s s u e
+
+memory_leak_true_positive_realloc_infer . c : 1 4 : e r r o r :
+MEMORY_LEAK memory d y n a m i c a l l y a l l o c a t e d by c a l l t o
+‘ m a l l o c ( ) ‘ a t l i n e 1 2 , column 15 i s not r e a c h a b l e
+a f t e r l i n e 1 4 , column 2 .
+    12.               s t ∗new = m a l l o c ( s i z e o f ( s t ) ) ;
+    13.                      i f ( ! new ) return −1;
+    14. >                   new = r e a l l o c ( new , 2 ∗ s i z e o f ( s t ) ) ;
+    15.                      f r e e ( new ) ;
+    16.                     return 0 ;
+
+Summary o f t h e r e p o r t s
+
+     MEMORY_LEAK: 1
+                   Uma análise comparativa de ferramentas de análise estática   31
+
+Listing 1.20. Exemplo mínimo de um erro do tipo fuga de memória utilizando uma
+função realloc corrigido.
+#include <s t d i o . h>
+#include < s t d l i b . h>
+
+typedef struct s t {
+     int v a l u e ;
+} st ;
+
+int main ( ) {
+         s t ∗tmp ;
+    s t ∗new = m a l l o c ( s i z e o f ( s t ) ) ;
+         i f ( ! new ) return −1;
+         tmp = r e a l l o c ( new , 2 ∗ s i z e o f ( s t ) ) ;
+         i f ( tmp )
+         {
+                      new = tmp ;
+         }
+         f r e e ( new ) ;
+         return 0 ;
+}
+
+
+E.3    Desreferência nula
+O Infer é a única ferramenta que reporta um erro quando não é feita a verifica-
+ção da chamada a uma função de alocação de memória. Portanto, no exemplo
+mínimo da Listagem 1.21, apenas foram obtidos relatórios de resultados do Infer
+(Listagem 1.22). Na Listagem 1.23 o erro é corrigido e não deixa de ser reportado
+pelo Infer.
+32      P. Monteiro, J. M. Lourenço, A. Ravara
+
+        Listing 1.21. Exemplo mínimo de um erro do tipo desreferência nula.
+#include <s t d i o . h>
+#include < s t d l i b . h>
+
+typedef struct s t {
+     int v a l u e ;
+} st ;
+
+s t ∗ c r e a t e ( int v a l u e ) {
+    s t ∗new = m a l l o c ( s i z e o f ( s t ) ) ;
+    new −> v a l u e = v a l u e ;
+    return new ;
+}
+
+int main ( ) {
+    s t ∗new = c r e a t e ( 5 ) ;
+    f r e e ( new ) ;
+    return 0 ;
+}
+
+Listing 1.22. Relatório de erros devolvido pela ferramenta Infer para o exemplo mí-
+nimo da Listagem 1.21.
+Found 1 i s s u e
+
+null_dereference_true_positive_mallocverification . c :13:
+e r r o r : NULL_DEREFERENCE p o i n t e r ‘ new ‘ l a s t a s s i g n e d on
+l i n e 12 c o u l d be n u l l and i s d e r e f e r e n c e d a t l i n e 1 3 ,
+column 4 .
+    11.      s t ∗ c r e a t e ( int v a l u e ) {
+    12.          s t ∗new = m a l l o c ( s i z e o f ( s t ) ) ;
+    13. >        new −> v a l u e = v a l u e ;
+    14.          return new ;
+    15.      }
+
+Summary o f t h e r e p o r t s
+
+     NULL_DEREFERENCE: 1
+                        Uma análise comparativa de ferramentas de análise estática                33
+
+    Listing 1.23. Exemplo mínimo de um erro do tipo desreferência nula corrigido.
+#include <s t d i o . h>
+#include < s t d l i b . h>
+
+typedef struct s t {
+     int v a l u e ;
+} st ;
+
+s t ∗ c r e a t e ( int v a l u e ) {
+    s t ∗new = m a l l o c ( s i z e o f ( s t ) ) ;
+    i f ( ! new ) return NULL;
+    new −> v a l u e = v a l u e ;
+    return new ;
+}
+
+int main ( ) {
+    s t ∗new = c r e a t e ( 5 ) ;
+    f r e e ( new ) ;
+    return 0 ;
+}
+
+
+
+F      Síntese dos relatórios de resultados das ferramentas
+
+
+                              Tabela 9. Erros identificados no SDS.
+
+                                                                                 Identificados
+                                                              Não identificados
+Tipo de erro       Cppcheck Clang Static An. Infer Predator                     apenas p/ uma Total
+                                                               p/ ferramentas
+                                                                                  ferramenta
+                   FP    TP   FP    TP      FP TP FP     TP
+
+Memory leak        0     1    0      0       0   0   3   0           4           1(Cppcheck)      8
+Null dereference   0     0    0      2       0   4   1   0           1        4(Infer) + 2(CSA)   8
+Invalid dereference 0    0    0      0       0   0   4   0           1                0           4
+Invalid free       0     0    2      0       0   0   1   0           0                0           2
+Dead store         0     0    1      0       1   1   0   0           0                0           2
+Out of bounds      0     0    0      0       0   0   4   0           0               0            4
+
+
+
+
+G       Tempos de execução das ferramentas
+34                       P. Monteiro, J. M. Lourenço, A. Ravara
+
+
+
+
+                    16
+
+                    14
+
+                    12
+ Tempo (segundos)
+
+
+
+
+                    10
+
+                    8
+
+                    6
+
+                    4
+
+                    2
+
+                    0
+                             Cppcheck               Clang Static Analyzer                  Infer                  Predator
+                                                                        Ferramenta
+
+                                                                   1.0.0   2.0.0
+
+
+
+            Figura 6. Tempos de execução em segundos das ferramentas na análise do SDS.
+
+
+
+
+                    80
+
+                    70
+
+                    60
+ Tempo (segundos)
+
+
+
+
+                    50
+
+                    40
+
+                    30
+
+                    20
+
+                    10
+
+                    0
+                             Cppcheck               Clang Static Analyzer                  Infer                  Predator
+                                                                        Ferramenta
+
+                               0.3      0.4   0.8   1.2   1.4.1    1.4.2   1.4.3     1.5     1.6   1.8   1.9   1.10
+
+
+
+Figura 7. Tempos de execução em segundos das ferramentas na análise do Beanstalkd.
+                        Uma análise comparativa de ferramentas de análise estática                                 35
+
+                         Tabela 10. Erros identificados no Beanstalkd.
+
+                                                                                           Identificados
+                                                                    Não identificados
+Tipo de erro       Cppcheck Clang Static An. Infer Predator                               apenas p/ uma          Total
+                                                                     p/ ferramentas
+                                                                                            ferramenta
+                   FP   TP     FP    TP          FP TP FP      TP
+
+Memory leak        0    1      0     0            4   1    3   2            7           1(Infer) + 1(Predator)    17
+Resource leak      0    1      0     0            2   2    0   0            0           2(Infer) + 1(Cppcheck)     5
+Null dereference   0    0      0     3            0   9    1   0            0             9(Infer) + 3(CSA)       13
+Invalid dereference 0   0      0     0            0   0 125    0            0                     0               125
+Invalid free       0    0      0     0            0   0    1   0            3                     0                4
+Dead store         0    0      0     3            8   4    0   0            0                  1(Infer)           12
+Buffer overflow    0    0      0     0            0   0    0   0            1                     0                1
+Dangling pointer   0    0      0     0            0   0    0   0            1                     0                1
+
+
+  Tabela 11. Tempos de execução em segundos das ferramentas na análise do SDS.
+
+
+                             Versão Cppcheck Clang Infer Predator
+
+                             1.0.0        0,292           5,961 12,562          0,409
+                             2.0.0        0,75            9,037 14,891          1,075
+
+
+
+H       Tempo de permanência dos erros nos softwares.
+36      P. Monteiro, J. M. Lourenço, A. Ravara
+
+
+
+
+Tabela 12. Tempos de execução em segundos das ferramentas na análise do Beans-
+talkd.
+
+                    Versão Cppcheck Clang Infer Predator
+
+                    0.3         0,397      3,489 40,881       0,673
+                    0.4         0,401      3,311 42,349       0,682
+                    0.8         0,657      2,683 51,502       0,81
+                    1.2         1,075     11,453 59,923       1,06
+                    1.4.1       1,152     13,027 31,358       0,727
+                    1.4.2       1,14      12,685 37,149       0,761
+                    1.4.3       1,179     13,631 32,641       0,773
+                    1.5         1,831      5,323 26,556       2,379
+                    1.6         2,241     15,923 63,914       2,421
+                    1.8         2,144      5,194 27,499        2
+                    1.9         2,031      15,93 71,174       2,116
+                    1.10        2,255     15,982 64,306       2,365
+
+
+
+
+Tabela 13. Datas e tempo em meses decorrido desde a introdução até à correção dos
+erros no SDS.
+
+Erro                                 Introduzido Corrigido Intervalo de tempo
+
+sds.c:159: error: memory leak          06/02/2014 25/11/2014          9
+sds.c:160: error: null dereference     06/02/2014 25/11/2014          9
+sds.c:817: error: null dereference     06/02/2014         x           x
+sds.c:891: null dereference            06/02/2014 25/07/2015          17
+sds.c: 894: null dereference           06/02/2014 25/07/2015          17
+sds.c:92: error: null dereference      25/07/2015 07/02/2018          30
+sds.c:1123: error: null dereference 25/07/2015            x           x
+sds.c:1240: dead store                 25/07/2015         x           x
+                    Uma análise comparativa de ferramentas de análise estática   37
+
+
+
+
+Tabela 14. Datas e tempo em meses decorrido desde a introdução até à correção dos
+erros no Beanstalkd.
+
+Erro                                    Introduzido Corrigido Intervalo de tempo
+
+net.c:28: error: dead store              08/11/2007 03/10/2009            22
+beanstalkd.c:41: error: resource leak    08/11/2007 28/01/2012            50
+reserve.c:51: error: null dereference    08/11/2007 28/01/2012            50
+prot.c:140: error: null dereference      08/11/2007 28/01/2012            50
+beanstalkd.c:395: error: null dereference 08/11/2007 17/01/2009           14
+beanstalkd.c:737: error: memory leak     08/11/2007 11/12/2007            1
+prot.c:320: error: null dereference      01/02/2008 28/01/2012            47
+prot.c:374: error: null dereference      01/02/2008 28/01/2012            47
+prot.c:1583: error: null dereference     17/01/2009       x               x
+cut.c:222: error: resource leak          17/02/2009 28/01/2012            36
+binlog.c:215: null dereference           14/10/2009 18/10/2009           0,13
+binlog.c:723: error: null dereference    14/10/2009 28/01/2012            27
+job.c:70: error: memory leak             18/10/2009 30/11/2009            1
+net.c:31: error: dead store              28/01/2012 14/04/2013            14
+prot.c:514: error: null dereference      28/01/2012 03/11/2012            9
+prot.c:554: error: null dereference      28/01/2012 03/11/2012            9
+walg.c:426: error: resource leak         28/01/2012       x               x
+file.c:204: error: null dereference      10/05/2012 02/09/2012            3
+file.c:325: error: null dereference      10/05/2012 02/09/2012            3
+prot.c:501: error: null dereference      10/05/2012       x               x
+darwin.c:84: error: dead store           03/11/2012       x               x
+walg.c:416: dead store                   13/04/2013 05/08/2014            15
+testheap.c:222: error: memory leak       05/08/2014       x               x
+

@@ -1,0 +1,1391 @@
+115
+Computação Afetiva personalizando interfaces,
+interações e recomendações de produtos, serviços e
+pessoas em ambientes computacionais
+Maria Augusta Silveira Netto Nunes
+Resumo. Este capítulo descreve o trabalho que vem sendo realizado no Departamento
+de Ciência da Computação da Universidade Federal de Sergipe no que tange o uso de
+Computação Afetiva e Sistemas de Recomendação. A gama de trabalhos aqui apresentados
+representam o estado da arte e o estado da técnica das pesquisas científicas e tecnológicas
+orientadas e/ou co-orientadas pela prof. Maria Augusta S. N. Nunes. O capítulo também,
+abre perspectivas considerando a prospecção tecnológica internacional, incentivando
+que a produção acadêmica e tecnológica de qualidade consiga de forma efetiva atingir o
+empresariado produtor de software, especialmente no que tange o e-commerce e e-services,
+no Brasil.
+Palavras-chave: Computação Afetiva. Sistemas de Recomendação. Personalidade.Emoção.
+PersonalityML.
+1 Introdução
+Estudos recentes de psicólogos, neurologistas, antropólogos e cientistas computacionais
+(Damásio, 1994), (Simon, 1983), (Picard, 1997), (Trappl et al, 2003), (Thagard, 2006) e (Nunes,
+2009) têm provado o quão importante os aspectos psicológicos humanos, tais como emoção e
+personalidade, são no processo de tomada de decisão humana.
+Os mesmos estudos provam que esses aspectos sutis e inerentes a personalidade humana
+influenciam de maneira efetiva e particular suas interações interpessoais potencializando a
+personalização na interação humano-humano podendo substancialmente favorecer aspectos de
+processos comerciais convencionais na oferta de produtos e serviços no mundo real. Alguns
+estudos (Reeves and Nass, 1996) têm sido conduzidos indicando que os humanos respondem
+psicologicamente a computadores e outras mídias como se esses fossem, também, humanos.
+Considerando esse aspecto, não importa que recurso computacional o computador estará
+usando, entretanto, em todos os casos, o computador estará, potencialmente, tomando decisões
+e trabalhando com as pessoas e para as pessoas. Assim, para o computador, o entendimento
+da natureza psicológica humana é extremamente relevante e necessária para que o mesmo 
+116 117
+possa melhorar sua compreensão do ser com quem interage, melhorando, assim, o nível de
+personalização e otimização dos seus processos de tomada de decisão visando potencializar a
+interação humano-computador e conseqüentemente a personalização de ambientes comerciais
+também em ambientes web por meio de Sistemas de Recomendação em e-commerce e e-services,
+por exemplo.
+Considerando a sobrecarga de informação disponibilizadas na web dificilmente a
+personalização de informações, produtos e serviços tem se dado de forma efetiva no Brasil. Na
+Europa e Estados Unidos esse problema tem sido contornado pelo uso efetivo de Sistemas de
+Recomendação que manipulam a grande massa de informação disponível na web filtrando o que
+realmente interessa ao usuário de e-commerce e e-services.
+Dessa forma, a web brasileira vem perdendo um grande potencial mercadológico porque o
+empresariado vem negligenciando esse aspecto. Há uma estranha contradição nessa questão, pois
+a Academia brasileira produz ciência e tecnologia suficiente para inovar as técnicas utilizadas
+em e-commerce e em e-services no Brasil, entretanto o conhecimento produzido é subutilizado
+pelo empresariado brasileiro, o que acaba acarretando o déficit de nossa tecnologia comercial se
+comparado a Europa e Estados Unidos.
+Assim, esse capítulo propõe diminuir esse déficit disponibilizando um portfólio dos trabalhos
+no que tange tanto o estado da arte como o da técnica dos trabalhos em andamento que
+direcionam a área de Computação Afetiva e Sistemas de Recomendação, principalmente na linha
+de e-commerce e e-services.
+1.1 Como ler o capítulo
+ Como descrito anteriormente esse capítulo é um conjunto de trabalhos de IC, IT e TCC
+desenvolvidos no DCOMP, todos eles orientados e/ou co-orientados pela autora. Os trabalhos
+de IC, IT e TCC que deram origem ao capítulo em apresentação são oriundos de propostas
+da autora já descritas como perspectivas futuras da sua Tese de Doutorado (Nunes, 2008) e
+também contemplados em seu projeto de Estágio Probatório1
+. A metodologia de apresentação
+dos trabalhos seguirá por seções autocontidas indicando a origem da autoria (trabalho de IC, IT
+ou TCC desenvolvidos sob a guarda do projeto guarda-chuva de Estágio Probatório da autora).
+1.2 Organização do texto
+Na seção 2, a Computação Afetiva é descrita, disserta-se sobre personalidade, suas
+abordagens e alguns instrumentos de mensuração, seguindo-se pela descrição de emoção e
+alguns instrumentos de mensuração.
+Logo, disserta-se sobre identidade e como ela pode ser modelada, padronizada e implementada
+em computadores. A seguir, introduz-se Sistemas de Recomendação e Sistemas de Combinação
+Social, incluindo perspectivas do uso de personalidade.
+Finalmente, apresenta-se os trabalhos em desenvolvimento com parceria de outras instituições,
+seguido pelos potenciais cenários de aplicação futuros, apresentando-se por fim, na seção 3, a
+conclusão e trabalhos futuros.
+Note que o objetivo desse capítulo não é esgotar a teoria sobre os assuntos tratados, a
+perspectiva do texto é apresentar como a equipe da autora tem contribuído nesses assuntos,
+dissertando-se brevemente sobre os mesmos e apresentando as contribuições da equipe. Caso o
+leitor deseje aprofundar-se sobre os assuntos por favor dirija-se às referências citadas em cada
+seção.
+1 “E-Psico Um Sistema de Recomendação baseado em Traços de personalidade: influenciando a tomada
+de decisão computacional no contexto de E-services «
+2 Áreas de pesquisa relacionadas
+2.1 Computação Afetiva
+Desde a década de 70, cientistas computacionais, como citado na seção anterior, principalmente
+da área de Computação Afetiva buscam modelar e implementar aspectos psicológicos humanos
+em ambientes computacionais. Na Computação Afetiva estuda-se como os computadores
+podem reconhecer, modelar e responder às emoções humanas (dentre outros aspectos) e, dessa
+forma, como podem expressá-las através de uma interface/interação computacional (Picard,
+1997). Acredita-se que permitindo que agentes artificiais expressem/compreendam fisiológica
+e verbalmente uma emoção e/ ou personalidade, em uma interação humano-computador, é
+possível induzir e despertar emoções em humanos.
+O principal objetivo de se promover esse interfaceamento afetivo é contribuir para o aumento
+da coerência, consistência, predicabilidade e credibilidade das reações e respostas computacionais
+providas durante a interação humana via interface humano-computador.
+2.1.1 Personalidade
+2.1.1.1 Abordagens (Souza and Nunes, 2011)
+Não existe na literatura em psicologia uma definição única para a personalidade. De fato,
+talvez uma conceituação que se aproxime daquela em que o termo é utilizado corriqueiramente
+seja trazida por Schultz (1990), que o define como um conjunto permanente e único de
+características que produzem respostas que não se modificam ainda que em diferentes situações.
+No entanto, embora essa operacionalização possa ser utilizada de forma razoavelmente genérica,
+as definições de personalidade são muito melhor compreendidas se encaradas a partir da teoria
+(ou abordagem) da Personalidade à qual pertencem.
+As Teorias da Personalidade foram criadas para facilitar a compreensão acerca de si mesmo
+e dos outros (Cartwright, 1979). Mas existe uma pluralidade de conceitos com pontos de vistas
+epistemológicos diferentes, onde cada abordagem teórica possui suas próprias definições, origem
+e desenvolvimento acerca da personalidade. Afinal, pensar em personalidade é mesmo pensar
+em um construto complexo. Hall et al (1998) separam as diversas teorias existentes acerca da
+personalidade em quatro grandes grupos de abordagens: (1) ênfase na psicodinâmica; (2) ênfase
+na realidade percebida; (3) ênfase na aprendizagem; e (4) ênfase na estrutura. Os trabalhos
+nessa seção referem-se a esta última, pois as teorias com ênfase na estrutura foram as que
+mais influenciaram o desenvolvimento de testes para mensuração da personalidade (maiores
+informações sobre as outras ênfases em (Santos e Nunes, 2011).
+As teorias com ênfase na estrutura possuem, como sua própria categorização deixa claro,
+uma preocupação central com a forma como se estrutura a personalidade. Isto é, ainda que
+a dinâmica e o desenvolvimento da personalidade também recebam alguma atenção, a
+característica definidora das teorias nesta abordagem é a busca por uma taxonomia, por um
+conjunto sistemático de características que possa ser usado para resumir a personalidade de
+um indivíduo. Três dos grandes estudiosos da personalidade que desenvolveram teorias que se
+encaixam nessa abordagem foram Henry Murray, Gordon Allport e Raymond Cattell (Hall et al,
+1998).
+Murray desenvolveu uma teoria da personalidade conhecida como Personologia. O autor
+enfatizava que a personalidade é uma abstração formulada pelos teóricos e não simplesmente uma
+descrição do comportamento do indivíduo. Para Murray, a personalidade de um indivíduo se refere
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+118 119
+a uma série de eventos que idealmente abrangem toda a sua vida. A definição da personalidade
+deveria, portanto, refletir os elementos duradouros e recorrentes do comportamento, bem como
+os elementos novos e únicos.
+A teoria da personalidade de Murray parte de alguns postulados. O teórico afirmava que a
+personalidade funcionaria como agente organizador cujas funções seriam integrar os conflitos e
+as limitações aos quais o indivíduo está exposto, satisfazer suas necessidade e fazer planos para
+a conquista de metas futuras. Assim, os comportamentos humanos estariam relacionados uns
+aos outros de forma temporal através de ações que desembocam na tentativa de satisfazer dadas
+necessidades, que são acompanhadas de um determinado sentimento ou emoção (Hall et al,
+1998).
+Murray et al (1938) definem uma necessidade como um potencial ou prontidão para responder
+de determinada forma sob dadas circunstâncias. Assim, a necessidade representaria o fato de que
+certa tendência deve ser recorrente no comportamento do indivíduo. As necessidades que guiam
+o comportamento e formam a personalidade foram categorizadas pelos autores em primárias
+(de base biológica), como fome, sede, sexo e evitar a dor; e secundárias (derivadas daquelas de
+base biológica ou inerentes à natureza psicológica), como agressão, autonomia, reconhecimento,
+entre outras.
+Necessidades mais fortes em um indivíduo se expressariam mais freqüentemente e levariam
+a determinados comportamentos recorrentes – dos quais, por fim, poder-se-ia abstrair a sua
+personalidade. Allport foi o primeiro teórico a trabalhar o conceito de traços psicológicos para
+embasar uma teoria da personalidade, conhecida como Teoria do Traço (Allport & Allport,
+1921; Allport, 1927). Para o autor, cada ser humano possui traços de personalidade comuns e
+individuais, e a intensidade com que esses traços se expressam é diferente para cada indivíduo.
+Por exemplo, duas pessoas podem ter um traço de personalidade “calmo”, e cada uma delas ter
+um nível de “calma” diferente. Essas diferenças seriam fruto da história de vida de cada um e das
+influências externas e ambientais sobre a pessoa. No entanto, o traço latente seria o mesmo, e a
+personalidade dos indivíduos poderia, portanto, ser descrita com base nos traços.
+Com base nos estudos da linguagem natural, seguindo uma hipótese de que analisar a
+linguagem ajudaria a entender a personalidade, Allport e Odbert (1936, como citado por Hutz
+et al, 1998; Loehlin, 1992) selecionaram um amplo número de palavras – 17.953 palavras, entre
+traços comuns e individuais –, em sua maioria adjetivos, que fossem capazes de descrever traços
+de personalidade como, por exemplo, os adjetivos agressivo e sociável.
+O uso de descritores de traços da linguagem natural para identificar fatores que permitam
+entender características de personalidade decorre da idéia léxica que afirma que as diferenças
+individuais mais significativas nas interações diárias das pessoas são codificadas na linguagem
+(Goldberg, 1982, como citado por Hutz et al, 1998). Isto é, se um traço de personalidade é
+saliente, capaz de gerar diferenças individuais socialmente relevantes, as pessoas notarão essa
+característica e, já que ela é importante, vão querer falar sobre ela. Como conseqüência, uma
+palavra ou expressão terminará sendo inventada para descrevê-la.
+Cattell desenvolveu a Teoria de Traço Fatorial-Analítica, uma tentativa de elaborar uma “tabela
+periódica” de elementos da personalidade. De início, o autor reduziu a lista criada por Allport a
+4.500 adjetivos que descreveriam os traços de personalidade. Com o avanço de suas pesquisas,
+Cattell destilou essa lista e novamente reduziu-a drasticamente, dessa vez para 171 adjetivos,
+os quais foram agrupados empírica e conceitualmente em 35 pares bipolares (Goldberg, 1990;
+Hutz et al, 1998; Loehlin, 1992). Os trabalhos de Cattell e de outros autores serviram de base
+para várias análises fatoriais, que em grande parte convergiram em uma solução similar de cinco
+fatores. Essa solução fatorial ficou popularmente conhecida como o Big Five, expressão traduzida
+para o português como o modelo dos Cinco Grandes Fatores (CGF).
+O modelo dos Cinco Grandes Fatores (CGF), ou Big Five, da personalidade é uma versão
+moderna da Teoria do Traço. Este modelo representa um avanço conceitual e empírico no campo
+da personalidade, descrevendo dimensões humanas básicas de forma consistente e replicável
+(Hutz et al, 1998). Norman (1963, como citado por Loehlin, 1992) denominou os Cinco Fatores
+de Surgency, Agreeableness, Conscientiousness, Emotional Stability e Culture. Atualmente,
+diversas outras denominações já foram sugeridas.Em língua portuguesa, os Cinco Grandes
+Fatores podem ser definidos como Extroversão, Amabilidade (ou Socialização), Conscientização
+(ou Realização), Neuroticismo (ou Instabilidade Emocional) e Abertura (ou Abertura à mudança)
+(Hutz et al, 1998; Berger, 2003).
+Cada um dos fatores resume aspectos distintos do comportamento que tendem a se apresentar
+juntos empiricamente (Loehlin, 1992). O fator Extroversão caracteriza pessoas sensíveis,
+assertivas, ativas e impulsivas. O fator Socialização, pessoas gentis, úteis e despreocupadas, com
+comportamento pró-social. O fator Realização representa pessoas organizadas e deliberadas,
+com comportamento de responsabilidade social. O Neuroticismo caracteriza pessoas ansiosas,
+mal-humoradas e autopunitivas. Por fim, o fator Abertura reflete pessoas criativas, curiosas,
+abertas a novas experiências e com traços de facilidade intelectual (Berger, 2003; Loehlin, 1992).
+A tabela 1, adaptada de Loehlin (1992), apresenta alguns adjetivos que caracterizam os cinco
+fatores. McAdams (1992 como citado por Hutz et al, 1998) observa que os Cinco Fatores se
+referem a informações fundamentais que geralmente se quer ter sobre pessoas com quem se
+interage. As pessoas costumam querer saber se o estranho, o visitante ou o aprendiz com quem
+vão interagir é: 1) ativo e dominante ou passivo e submissivo; 2) socialmente agradável ou
+desagradável, amigável ou frio, distante; 3) responsável ou negligente; 4) louco, imprevisível ou
+“normal”, estável; 5) esperto ou tolo, aberto a novas experiências ou desinteressado pelo que foge
+ao cotidiano.
+Segundo as teorias estruturais, são os traços de personalidade que levam os indivíduos a
+procurar, interpretar e depois reagir aos eventos da vida de maneira própria. Durante a idade
+adulta, por exemplo, a principal fonte de continuidade do desenvolvimento é a estabilidade da
+personalidade. E, em geral, os Cinco Grandes Fatores permanecem estáveis nessa fase da vida. A
+classificação alta ou baixa de um indivíduo em cada um dos Cinco Fatores é determinada pelas
+influências interativas dos genes, da cultura, da forma inicial de criação e das experiências e
+escolhas feitas no final da adolescência e no início da idade adulta.
+Tabela 1: Adjetivos característicos dos Cinco Grandes Fatores de Personalidade.
+Extroversão Socialização Realização Neuroticismo Abertura
+Pólo
+do
+rótulo
+Ativo
+Aventureiro
+Barulhento
+Energético
+Entusiástico
+Exibido
+Sociável
+Tagarela
+Altruísta
+Amigável
+Carinhoso
+Confiante
+Cooperativo
+Gentil
+Sensível
+Simpático
+Confiável
+Consciente
+Eficiente
+Minucioso
+Organizado
+Prático
+Preciso
+Responsável
+Ansioso
+Apreensivo
+Emotivo
+Instável
+Nervoso
+Preocupado
+Temeroso
+Tenso
+Artístico
+Curioso
+Engenhoso
+Esperto
+Imaginativo
+Inteligente
+Original
+Sofisticado
+Pólo
+oposto
+Acanhado
+Introvertido
+Quieto
+Reservado
+Silencioso
+Tímido
+Antipático
+Brigão
+Bruto
+Crítico
+Frio
+Insensível
+Desatento
+Descuidado
+Desorganizado
+Distraído
+Imprudente
+Irresponsável
+Calmo
+Contido
+Estável
+Indiferente
+Sereno
+Tranqüilo
+Comum
+Simples
+Superficial
+Tolo
+Trivial
+Vulgar
+Fonte: (Souza and Nunes, 2011).
+A força desses Fatores pode flutuar antes dos 30 anos, porque o contexto social e as escolhas
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+120 121
+pessoais da adolescência e do início da idade adulta despertam novos padrões de personalidade
+que não eram manifestos na primeira infância. Entretanto, por volta dos 30 anos, os Cinco Fatores
+geralmente se estabilizam por completo, e assim permanecem por toda a vida (Berger, 2003).
+Cabe aqui, no entanto, a ressalva de que a estabilidade da personalidade não é regra imutável.
+Mudanças significativas no ambiente do qual faz parte o adulto, especialmente quando as
+circunstâncias da vida são drasticamente alteradas, são de fato capazes de produzir modificações
+na personalidade. O divórcio ou morte do cônjuge, um novo casamento ou uma nova carreira,
+o abandono de um antigo vício, a transferência para uma cultura estrangeira ou uma conversão
+religiosa são alguns exemplos de fatores sócio-ambientais capazes de exercer forte influência
+sobre a personalidade, mesmo na idade adulta (Berger, 2003).
+2.1.1.1.1 Abordagem de Traços
+Como descrito anteriormente na Psicologia não existe um consenso para a definição de
+Personalidade sendo que a mesma pode ser definida segundo muitas abordagens. Uma abordagem
+bastante interessante é a abordagem de Traços de Personalidade que permite diferenciar
+psicologicamente pessoas usando traços mesuráveis e conceituáveis factíveis de modelagem e
+implementação em computadores (Nunes, 2009).
+Os Traços de Personalidade, como já descrito, foram historicamente definidos por Allport
+(1927) que criou 17.953 Traços (Traços “comuns” e “individuais”) para descrever a personalidade
+de um indivíduo. Considerando que a maioria das diferenças individuais (representadas pelos
+Traços individuais) eram insignificantes nas interações diárias humanas, objetivando limitar
+exponencialmente o número de definições de Traços, os pesquisadores assumiram que todos os
+homens eram identificáveis “como algum outro homem”.
+Considerando isso, pesquisadores reduziram mais de 99% dos Traços, pois eles consideraram
+que somente cinco fatores eram replicáveis. Como resultado, o modelo Big Five (John and
+Srivastava, 1999) foi criado. Porém, mesmo que o Big Five representasse grande eficiência na
+representação da estrutura de Personalidade, ele não garantia exaustivamente todas as dimensões
+de personalidade. Dessa forma, facetas também foram criadas e usadas pelos psicólogos para
+dotar o Big Five de características mais detalhadas (Goldberg et al, 2006). Para extrair Traços
+humanos (baseado nas dimensões do Big Five e suas respectivas facetas) psicólogos geralmente
+usam diferentes instrumentos de mensuração.
+2.1.1.2 Instrumentos de Mensuração
+2.1.1.2.1 Testes de Personalidade
+Um teste psicológico pode ser definido como “um conjunto de tarefas pré-definidas, que o
+sujeito precisa executar numa situação geralmente artificializada ou sistematizada, em que o seu
+comportamento na situação vai ser observado, descrito e julgado, e essa descrição é geralmente
+feita utilizando-se números” (Pasquali, 2001, p. 18).
+Os testes, baseados em pesquisas empíricas, são capazes de descrever diferenças psicológicas
+entre os indivíduos. Como já referido, a teoria da personalidade proveniente da abordagem com
+ênfase na estrutura foi a que mais influenciou o desenvolvimento dos testes para mensuração
+da personalidade. Um teste de personalidade com base nessas teorias geralmente revela um
+conjunto de traços do sujeito que o diferencia dos outros. Existem inúmeros testes e inventários
+que se propõem a investigar e avaliar traços de personalidade e, em geral, eles tomam por base
+uma das muitas teorias que se sustentam na abordagem com ênfase na estrutura. Um exemplo
+é o Inventário Fatorial de Personalidade (IFP). O IFP é um instrumento baseado no Edwards
+Personal Personality Schedule (EPPS), desenvolvido por Allen L. Edwoods, baseado na teoria
+das necessidades básicas formuladas por Murray (Murray et al, 1938).
+Este inventário traz diversas afirmativas inseridas em uma escala tipo Likert, composta de
+sete pontos. Os pontos da escala definem o item progressivamente como “nada característico”
+ao sujeito do teste até “totalmente característico”. O inventário visa avaliar o indivíduo em 15
+necessidades ou motivos psicológicos, expostos na tabela 2. Essas necessidades indicariam
+taxonomicamente a personalidade do indivíduo.
+Tabela 2: Necessidades da Teoria da Personalidade de Murray avaliadas pelo IFP.
+Necessidades Sujeito com Alto Escore
+Assistência Tem grandes desejos e sentimentos de piedade, compaixão e ternura.
+Intracepção É intraceptivo, se deixa conduzir por sentimentos e inclinações difusas.
+Afago Busca apoio e proteção , desejo de satisfação, de afago, apoio e proteção.
+Deferência Demonstra respeito, admiração e reverência.
+Afiliação Procura dar e receber afeto dos amigos. É confiante e de boa vontade.
+Dominância Possui autoconfiança, desejo de controlar, influenciar ou dirigir.
+Denegação Tende a submeter-se passivamente à força externa, aceitar desaforos.
+Desempenho Mostra ambição e empenho, dominação, manipulação e organização.
+Exibição É vaidoso, deseja impressionar, ser ouvido e visto.
+Agressão Tem tendência à raiva, irritação e ódio.
+Ordem Costuma manter a ordem, limpeza, organização, equilíbrio e precisão.
+Persistência Leva a cabo qualquer trabalho iniciado, por mais difícil que pareça.
+Mudança Tem desejo por novidade, aventura. Não constrói ligação permanente com
+lugares, objetos ou pessoas.
+Autonomia Possui alta resistência à coerção e à oposição
+Heterossexualidade Demonstra interesse em manter relações com indivíduos do sexo oposto.
+Fonte: (Souza and Nunes, 2011).
+Nunes (2008) cita outros exemplos de testes como o 16PF (Cattell’s 16 Personality Factors
+Questionnaire) e o o 6FPQ (Six Factor Personality), ambos baseados nos trabalhos de Cattell,
+e diversos outros baseados no modelo do Big Five ou Cinco Grandes Fatores (CGF). Para o
+presente projeto, foram elencados testes baseados no Big Five, pois as pesquisas mais recentes
+na área da testagem em personalidade parecem ter estabelecido um consenso entre os teóricos
+quanto à solidez dos Cinco Grandes Fatores, que têm sido considerados como o melhor modelo
+estrutural disponível na atualidade para a descrição da personalidade (Hutz et al,1998).
+Pesquisas longitudinais extensivas e transversais entre homens e mulheres em diversos países
+e etnias têm evidenciado esses cinco grupos básicos de traços de personalidade como sempre
+presentes (Hutz et al., 1998) e, por isso, optou-se por testes com base nesta teoria para o uso em
+computadores. Foram escolhidos o Neo-International Personality Item Pool (NEO-IPIP) e o
+Ten-Item Personality Inventory (TIPI).
+O IPIP é um consórcio de domínio público, definido como uma colaboração científica para
+o desenvolvimento de medidas avançadas de personalidade e outras diferenças individuais
+(Goldberg, 1999; Goldberg et al, 2006). Este inventário utiliza a estrutura fatorial do Big Five
+para avaliar a personalidade. O Inventário NEO-IPIP é um inventário de 300 itens criado
+por meio do consórcio IPIP, e é uma versão gratuita do inventário Neo Personality Inventory
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+122 123
+(NEO-PI-R), o qual é descrito como um dos inventários comerciais mais robustos, conhecidos e
+validados no mundo, e utiliza o modelo dos Big Five (Johnson, 2000a). O Inventário NEO-IPIP
+foi utilizado e validado por Johnson (2000b, 2005), As 300 questões do NEO-IPIP são divididas
+igualmente entre os Cinco Grandes Fatores, e cada um dos Fatores se subdivide em seis facetas.
+Às afirmativas nos itens do inventário, o sujeito respondente atribui um valor de concordância
+do quanto elas o representam em uma escala tipo Likert de cinco pontos.
+O TIPI é uma inventário bastante resumido, composto por dez itens, também de domínio
+público. Gosling et al (2003) aplicaram este inventário a estudantes universitários americanos e
+encontraram uma correlação forte com as escalas no NEO-PI-R. No entanto, os autores alertam
+que o TIPI é um instrumento de mensuração bastante curto, que deve ser utilizado apenas se a
+personalidade não for o tópico primário de interesse na pesquisa, já que uma mensuração breve
+é mais frágil quanto a suas propriedades psicométricas.
+Ambos os inventários (NEO-IPIP e TIPI), embora de domínio público, são apresentados
+em língua inglesa. A equipe da autora desenvolveu uma versão brasileira (língua portuguesa
+do Brasil) dos testes TIPI e NEO-IPIP. A tradução foi realizada pela equipe composta por
+uma tradutora, Danilo Reinert e Diogo Araújo Sousa. (A versão traduzida dos inventários na
+integra encontra-se em (Sousa e Nunes, 2011) ou no software desenvolvido por Daniel Moraes
+apresentado a seguir (Nunes et al, 2010b).
+2.1.1.2.1.1 Personality Inventory PV1.0 (Portuguese Version) (Nunes et al,
+2010b)
+O Personality Inventory PV1.0 (Nunes et al, 2010b) torna-se então uma opção interessante
+a ser utilizada como ferramenta de entrada de dados explícita para obtenção dos traços de
+personalidade dos usuários. Este teste possui um feedback positivo em mais de 99% dos casos,
+como descrito por Johnson (2005). Dessa forma, a equipe da autora propôs uma inovação em
+termos de interface ao NEO-IPIP e TIPI, oferecendo mais usabilidade ao ambiente proposto
+originalmente por Johnson e Gosling.
+(i) Detalhes da modelagem:
+As medições de Personalidade extraídas seguem os padrões propostos por Johnson (2000a).
+Para que os resultados pudessem ser mantidos em um local seguro e persistente, optou-se por
+uma aplicação web, com interface web e um banco de dados virtual, localizado em nossos
+servidores. A interface foi desenvolvida de forma simplificada e objetiva para que os resultados
+fossem obtidos com eficácia, como apresentado na Figura 1.
+Figura 1: Interface inicial do ambiente.
+Fonte: Nunes et al (2010a).
+Conforme a Figura 1, para que a medição de Personalidade seja feita, o usuário precisa
+criar uma conta e responder pelo menos um dos questionários disponíveis, como apresentado na
+Figura 2.
+Figura 2: Medidas Disponíveis.
+Fonte: Nunes et al (2010).
+Após a seleção do inventário o usuário deve responder o questionário como apresentado na
+Figura 3.
+Figura 3: Questão 1 do Teste NEO-IPIP.
+Fonte: Nunes et al (2010).
+Uma vez respondido o questionário do NEO-IPIP, por exemplo, os valores atribuídos a cada
+uma das questões respondidas são utilizados para calcular o resultado. No cálculo, o resultado é
+normalizado e é atribuído um valor entre 1-100 para cada um dos itens do Big Five, bem como
+para as suas facetas. Note que somente então o relatório descritivo dos traços de personalidade
+do usuário é gerado e disponibilizado.
+Na Figura 4, parte do relatório descritivo dos traços de personalidade do usuário, extraído
+do inventário de Personalidade NEO-IPIP é apresentado.Uma vez visualizado seu prognóstico,
+o usuário poderá re-visualizar o resultado através da própria aplicação ou exportá-la via
+PersonalityML (descrito nas próximas seções desse capítulo).
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+124 125
+Figura 4: Relatório descritivo parcial do NEO-IPIP.
+Fonte: Nunes et al (2010).
+Detalhes da implementação:
+A solução para o problema da medição de personalidade envolve basicamente três tarefas: (1)
+Cadastro do Usuário, (2) Aplicação de Teste de Personalidade, (3) Cálculo dos Resultados com
+base no Big Five e normalização precisa. As tarefas são apresentadas na Figura 5.
+Figura 5: Diagrama dos Módulos do Personality Inventory PV1.0
+Fonte: (Nunes et al, 2010)
+A aplicação foi desenvolvida com o uso de tecnologias bastante utilizadas no desenvolvimento
+de aplicações web, entre elas, HTML, CSS, Javascript, Ajax, PHP e Base de Dados MySQL.
+•	 A aplicação foi segmentada basicamente em três camadas: Camada de Interface: foi
+desenvolvida com o uso de HTML, CSS e JavaScript. Esta camada é responsável pela
+interação homem-máquina, ou seja, é ela que apresenta as janelas da aplicação, as
+imagens, os textos, os botões e tudo mais que esteja relacionado à interface com o usuário.
+•	 Camada do meio – Middleware: é a camada que gerencia a comunicação entre a Camada
+de Interface e a Camada de Dados. A Camada de Interface através de requisições HTTP,
+com o uso de Ajax, solicita uma determinada informação da base de dados e a Middleware
+retorna os dados requeridos em forma de JSON. Esta camada foi desenvolvida em PHP.
+•	 A Camada de Dados: foi desenvolvida com o uso do MySQL, que é um Sistema de
+Gerenciamento de Banco de Dados (SGBD) livre (com base na GPL2
+) e que utiliza a
+linguagem SQL como interface. É nesta camada que todos os dados dos usuários ficarão
+armazenados para futura utilização, tais como as informações de autenticação dos
+usuários, as suas questões respondidas, os seus resultados e tudo mais que precisar ser
+mantido de forma persistente na aplicação.
+Note que o grande diferencial do Personality Inventory PV1.0 é que o software permitirá
+exportar os valores referentes à personalidade de cada usuário cadastrado. A exportação é
+realizada através de um padrão de arquivo pré-definido em forma de XML (PersonalityML
+(Nunes et al 2010a; Bezerra et al, 2011)). Desta forma, estes dados poderão ser usados em
+quaisquer sistemas computacionais.
+2.1.1.2.2 Teclado e Mouse (Porto et al, 2011)
+Segundo Gosling (2008) “deixamos pistas sobre nossa Personalidade em tudo o que fazemos,
+em nossos objetos, onde interagimos, onde vivemos”. Sendo assim, através dos padrões de
+navegação, digitação, entre outros, de cada usuário, seria possível adquirir características
+psicológicas, através de uma abordagem implícita e transparente ao usuário. Um pensamento
+natural é que esta seria a melhor forma de obtenção dos traços de personalidade dos usuários,
+uma vez que esta abordagem exigiria menor esforço cognitivo se comparado aos tradicionais
+testes de Personalidade aplicados, como discutido anteriormente.
+Segundo Porto et al (2011), existem muitos trabalhos que tentam extrair a personalidade
+dos usuários a partir de técnicas não intrusivas, tais como trabalhos que avaliam a escolha dos
+usuários para customização de algumas aplicações, a saber, Windows Media Player, ICQPlus
+e o Winamp, através da tecnologia de skins, e dependendo da escolha, pode-se prever a
+personalidade do usuário, fazendo comparações com a escolha de outros usuários. O objetivo
+inicial desse IC/TCC era usar tanto o ritmo de digitação como o uso do mouse para tentar extrair
+a personalidade do usuário, mas ao decorrer do trabalho, acabou-se por focar apenas no uso do
+teclado. A extração de traços de personalidade é realizada pelo teclado, através da plataforma
+desenvolvida apresentada na Figura 6 e 7.
+Figura 6: Tela inicial do PersonaliKey.
+Fonte: Porto et al (2011).
+2 “GNU General Public License (Licença Pública Geral), GNU GPL ou simplesmenteGPL, é a designação
+da licença para software livre idealizada por Richard Stallmanno final da década de 1980, no âmbito do
+projeto GNU da Free Software Foundation(FSF)” (Wikipedia 2010).
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+126 127
+Figura 7: Interface de extração de padrões de digitação.
+Fonte: Porto et al (2011).
+O PersonalyKey inicia o processo de extração da personalidade do usuário obtendo
+informações de como o usuário digita determinado texto, essa informação pode ser obtida através
+da latência entre teclas consecutivas (o tempo entre o apertar de uma tecla e da subseqüente).
+Esse tempo é obtido através de um evento de teclado, o keyPress. O evento aciona um timer que
+é interrompido quando o evento é acionado novamente, ou seja, o timer conta o tempo decorrido
+entre uma tecla pressionada e outra, o tempo de latência.
+Segundo Porto et al (2011), o processo de extração de traços de personalidade através do ritmo
+de digitação pode ser dividido em duas fases. A primeira fase é a coleta de dados, e a segunda fase
+é extração da personalidade através de técnicas de agrupamento de dados (clustering).
+Na primeira fase, existe uma frase padrão que um usuário deve digitar duas vezes, como
+apresentado na Figura 7, enquanto o usuário está digitando o timer no evento keyPress está
+recolhendo os tempos de intervalos e colocando-os em um vetor, quando por fim o usuário tecla
+“Enter” indicando o término da digitação, os valores são armazenados num vetor chamado D.
+Como o usuário digita a mesma frase duas vezes, então ao final são formados dois vetores, D1 e
+D2.
+Na segunda fase do algoritmo, intitulado PersonaliKey, é feita a extração da personalidade
+utilizando técnicas de clustering. Quando um usuário forma os vetores D1 e D2 este é armazenado
+num banco de dados. Este banco de dados já foi alimentado previamente com os valores de
+D1 e D2, ou seja, ritmo de digitação, de outros usuários, assim como os valores dos traços de
+personalidade desses mesmos usuários no modelo Big Five (extraídos através do questionário
+NEO-IPIP implementado em português no Personality Inventory PV1.0, já apresentado
+anteriormente).
+Com esses dados o algoritmo PersonaliKey faz uma clusterização com todos os usuários,
+inclusive o usuário que acabou de digitar levando em conta somente os valores de ritmo de
+digitação. Ao fim do processo, o usuário que acabou de digitar é alocado com outros usuários que
+tem um ritmo de digitação similar.
+A partir desse grupo, o algoritmo monta uma matriz com os valores da personalidade dos
+usuários, menos o do usuário que acabou de digitar, porque este valor ainda não foi inferido,
+obviamente. Mas tendo as personalidades dos usuários que se assemelham em ritmo de digitação,
+nossos testes demonstraram que é possível inferir alguns traços no usuário que acabou de digitar,
+são eles, Extroversão, Interesses artísticos e Autodisciplina (ainda em análise no TCC de Porto
+e Costa).
+Ou seja, tendo a informação de como um usuário digita, este pode ser comparado com
+um banco de dados que contem informações de outros usuários, informações estas que são o
+ritmo de digitação e a personalidade do usuário, e através de técnicas de agrupamento de dados
+(clustering), o usuário é isolado em um grupo que tem o mesmo padrão de digitação, e então os
+traços de sua personalidade são inferidas a partir dos usuários que fazem parte do mesmo grupo.
+Os testes realizados para essa abordagem tendem a confirmar que quando os usuários são
+agrupados levando em consideração o ritmo de digitação, os traços Extroversão (um dos cinco
+grandes fatores do BIG FIVE, como já apresentado anteriormente), Interesses Artísticos (que é
+uma das facetas do fator Abertura a Experiências) e Autodisciplina (faceta do fator Realização)
+(ver sobre facetas no trabalho de (Nunes, 2008)) são correlacionados. Usuários que são agrupados
+num mesmo cluster tendem a ter o mesmo valor para estes traços, e, portanto usuários que não
+soubessem o valor desses traços, tendo sido agrupados em um cluster, poderiam ter seus valores
+inferidos pelos outros elementos do mesmo cluster.
+2.1.2 Emoção
+Considerando que os aspectos psicológicos, tais como emoção e personalidade, são
+importantes e influenciam o processo de tomada de decisão dos humanos; considerando ainda
+que a intensidade e/ou tipo de emoção despertado em um humano sofre grande influência da
+personalidade (mesmo que a personalidade humana não aparece explicitamente ela influencia as
+emoções diretamente), agora é o momento, também de introduzir emoções.
+Pesquisadores em Computação Afetiva têm extraído e implementado as emoções
+explicitamente. Isso porque as emoções são mais facilmente mensuráveis e interpretáveis e podem
+influenciar diretamente na ação-interação dos usuários e tomada de decisão computacional.
+Na realidade, as emoções são instantâneas, têm uma vida curta e mudam constantemente,
+diferentemente da personalidade que é muito mais estável e, normalmente, em circunstâncias
+normais, imutável. Segundo trabalhos (Bianchi- Berthouze et al, 2002; Lisetti, 2002) é possível
+perceber que a personalidade é mais abrangente e implica na emoção.
+Lisetti (2002) descreve um modelo complexo para representar esses aspectos psicológicos em
+agentes inteligentes (virtual/real) que interagem socialmente. Este modelo é composto de uma
+taxonomia de afeição, estado de ânimo, emoção e personalidade, como apresentado na Figura 8.
+Figura 8: Modelo hierárquico de personalidade, afeição, estado de ânimo e emoção.
+Fonte: Adaptado de Lisetti (2002).
+Na Figura 8, apresenta-se a personalidade no topo do modelo hierárquico (o que demonstra
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+128 129
+seu maior poder). Note que em sistemas de agentes inteligentes, os mesmos, dotados de diferentes
+personalidades, podem experienciar diferentes tipos e intensidades de emoções. Emoções, essas,
+que podem predizer e influenciar as ações desse agente (real/virtual) durante sua interação
+em um ambiente computacional. Note, também, que a emoção está na base hierárquica do
+modelo e, conseqüentemente, ela não influencia os outros aspectos. Ao contrário, ela tende a ser
+influenciada por eles. Assim a personalidade, no topo do modelo, influencia as emoções na base.
+A emoção é volátil e dinâmica, muda constantemente e afeta diretamente as ações do
+usuário/agente gerando atitudes positivas e/ou negativas em um ambiente. Em contrapartida, a
+personalidade é muito mais estável, porém muito mais difícil de ser extraída durante a interação
+humano-computador podendo predizer as necessidades e comportamento do usuário.
+Na versão do Affective Knowledge Representation (AKR - Representação do Conhecimento
+Afetivo) descrito por Lisetti (2002), as emoções são modeladas em 16 diferentes dimensões
+chamadas de componentes emocionais, sendo que cada emoção difere das demais quanto aos
+valores atribuídos a cada componente. Note que existem várias linhas divergentes que descrevem
+a teoria da emoção. Essas teorias são baseadas geralmente numa das seguintes abordagens: (i)
+Biológicas; (ii) Comportamentais; (iii) Relacionadas a fenômenos; (iv) Expressões faciais; (v)
+Cognitivas.
+No entanto, existe um ponto importante entre todas estas diferentes teorias: há uma aceitação
+universal de que existe um conjunto básico de emoções (geralmente menor que dez). Segundo
+Lisetti (2002) a partir desse conjunto de 9 emoções básicas existem a formação de outras emoções
+derivadas. As emoções derivadas são formadas a partir de variações entre os atributos e/ou
+combinação das emoções básicas. O modelo de Lisetti (2002) é uma derivação da OCC model
+(1988) que é, ainda uma variação das emoções básicas (que são 6) definidas por Ekman (1994) e
+representáveis através de expressões faciais.
+2.1.2.1 Instrumentos de Mensuração
+Considerando que emoções são voláteis e mais facilmente extraídas em uma curta interação
+com o usuário alguns pesquisadores vem estudando em como extrair emoções de uma forma
+menos intrusiva do que os tradicionais sensores fisiológicos. Leão em seu TCC sob orientação
+de Leonardo N. Matos e co-orientação da autora (Leão, 2010) inicia um trabalho nesse sentido,
+usando expressões faciais como forma de extração da emoção do usuário, ele utiliza como base
+as 6 emoções básicas de Ekman.
+2.1.1.2.1 Detecção de Expressões Faciais ( Leão, 2010; Leão et al 2011)
+Segundo Leão (2010), Ekman em um de seus trabalhos sobre as expressões faciais humanas,
+demonstra evidências que suportam a universalidade das expressões faciais. Essas “expressões
+faciais universais” são as que representam felicidade, tristeza, raiva, medo, surpresa e aversão
+(Ekman 1994). Também foram estudadas as expressões em diversas culturas e tipos faciais
+(ocidentais, africanos, chineses, japoneses, por exemplo). Ekman desenvolveu um sistema
+de codificação para as expressões faciais onde os movimentos faciais são descritos como um
+conjunto de action units (AU).
+Cada AU tem como base estudos relacionados à anatomia dos músculos faciais. Muitos
+pesquisadores se inspiraram nessas AU fazendo o uso de processamento de imagem e vídeo
+para automaticamente rastrear características faciais e então utilizá-las para categorizar as
+diferentes expressões. Ainda segundo Leão (2010) vários pesquisadores tal como Pantic e
+Rothkrantz fornecem um apanhado de abordagens diferentes utilizadas na tentativa de fazer o
+reconhecimento automático de expressões faciais.
+Assim, Leão (2010) e Leão et al (2011) descreve um sistema de detecção automática, em tempo
+real, que utiliza como entrada um vídeo ou as imagens capturadas através de uma webcam.
+Inicialmente ocorre a detecção da face do indivíduo na tomada de vídeo e a marcação de pontos,
+denominados pontos de leitura, em regiões de interesse (olhos e boca, por exemplo), como
+mostrado na Figura 9.
+Figura 9: Regiões de interesse apontadas pelo sistema implementado na face inicialmente detectada.
+Fonte: Leão et al (2011).
+E é baseado nos movimentos faciais que ocorre a classificação da expressão facial, como
+apresentado na Figura 10.
+Figura 10: Movimentos faciais e classificação da expressão facial.
+Fonte : Leão et al (2011).
+Para a utilização da implementação basta que o usuário execute a aplicação. A captura
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+130 131
+das imagens é feita através da webcam ou do vídeo e, assim, é iniciado o algoritmo detector
+automático de expressões faciais que é utilizado até que a face do usuário seja detectada. Após
+isso, o mesmo algoritmo é executado na região da face encontrada para segmentar as regiões dos
+olhos esquerdo e direito, boca e nariz.
+No término dessa etapa esse algoritmo deixa de ser executado. Na próxima etapa o algoritmo
+de fluxo óptico entra em execução para realizar a leitura contínua da movimentação dos pontos
+colocados nas diferentes regiões da face. As mudanças na movimentação dos pontos em relação
+à distância inicial entre esses pontos na face inicial, que é interpretada como neutra, caracteriza
+a presença de algumas AU, além da presença ou ausência de rugas, a Figura 10 mostra o sistema
+sendo utilizado. Para mais informações por favor consultar (Leão, 2010; Leão et al, 2011).
+2.2 Identidade (Jesus e Nunes, 2011)
+Segundo Jesus e Nunes (2011) para falar de identidade é necessário inicialmente falar do
+processo de socialização que se inicia no ingresso do indivíduo ao mundo. Ao nascerem todos se
+deparam com um cenário social, resultante da produção humana, que já está pronto e organizado
+– realidade objetiva.
+A socialização é um processo pelo qual a realidade objetiva se apresenta como realidade
+subjetiva, ou seja, ao nascer, a criança entra e se apropria de uma realidade cuja construção não
+participou. Sobretudo não quer dizer que o indivíduo seja apenas um reflexo puro e simples
+dessa realidade objetiva. Assim, a socialização, que tem como primeiro grupo socializador a
+família (a não ser em casos excepcionais), se refere à maneira como o indivíduo se insere em
+uma determinada cultura. A diferença e a igualdade são a primeira noção de identidade, uma vez
+que vamos nos diferenciando e nos igualando conforme os vários grupos sociais de que fazemos
+parte.
+Quando alguém fala sobre sua identidade, de fato descreve características da sua personalidade:
+sua história de vida, suas atividades, fala-se de algo que é igual a si mesmo e traz coerência aos
+diferentes elementos da vida do indivíduo, unindo três tempos em um relato – presente, passado
+e futuro. Para Brandão (1986), a identidade explica o sentimento pessoal e a consciência da posse
+de um eu, de uma realidade individual que a cada um se torna, diante dos outros “eus”, um
+sujeito que é único e é reconhecido pela sua individualidade. O termo identidade se aplica à
+delimitação que permite a distinção de uma unidade gerada pela socialização e garantida pela
+individualização.
+A formação da identidade depende da diferenciação do eu em relação ao outro. Os
+psicanalistas e psicólogos sociais relatam que a diferenciação do eu acontece no momento em que
+nos diferenciamos do outro, ou seja, ao descobrir o outro é possível se tornar alguém. Segundo
+a visão da psicologia clássica, Identidade é definida pela autoconsciência/visão que cada pessoa
+possui de si mesma, enquanto que na Psicologia Social e Sociologia, Identidade pode ser definida
+como a forma que cada pessoa é vista sob os olhos da sociedade.
+O modo como se define a identidade é influenciado em grande parte pelo contexto,
+considerando que a identidade é o fundamento da personalidade, já que por meio daquela
+podemos ter indicações destas, ambientes diferentes podem moldar a personalidade.
+Ciampa (1993) usa a concepção psicossocial e define a identidade como uma metamorfose, ou
+seja, está em constante mudança, mas apresenta-se de forma estática por meio da aparência da
+identidade. Isto é, a ação é que constrói a identidade, porém essa é fragmentada e coisificada sob
+a forma de personagem: “Eu sou o que faço em determinado momento”. E não é possível, a todo
+instante, mostrar todas as facetas que o indivíduo possui. Sendo assim, a dinâmica da construção
+da identidade é congelada tornando-se uma não metamorfose.
+No seu processo de construção, que perdura a vida do indivíduo, a identidade, para Jacques
+(1998), se configura como determinada e determinante ao mesmo tempo. Essa configuração
+decorre em um contexto histórico social em que o sujeito constrói, se insere e se apropria do seu
+contexto de forma ativa. Gosling (2008) diz que um aspecto importante que pode revelar algo
+sobre como vemos e como queremos ser vistos no mundo, são as afirmações de identidade, que
+é o modo que tomamos posse de nossos espaços pessoais. Essas afirmações podem dizer muito
+sobre nossa história de vida. Uma maneira comum e simples dessa apropriação do ambiente é
+adorná-lo com objetos que trazem lembranças e simbolismos deliberados. Dessa forma, essas
+afirmações estão presentes em nossas vidas em tudo o que fazermos.
+Boyd (2002) descreve dois aspectos diferentes da Identidade: a noção internalizada do “eu”
+(Identidade Interna) e a versão projetada da internalização do “eu” (Identidade Social). Nessa
+mesma linha, Erikson (1980), por exemplo, acredita que Identidade (EGO) tem uma representação
+pessoal interna (Identidade Interna) bem como uma representação social (Identidade Social).
+Giddens (1991) concorda que sem experiências sociais o “eu” não pode internalizar evolução.
+Giddens ainda afirma que a identidade de um indivíduo não é estática, ela pode ser representada
+em constante evolução, principalmente porque o componente social é dinâmico e está sempre
+sendo modificado.
+Mead (1934), ainda define “eu” e “mim”, onde “mim” representa o aspecto socializado da
+pessoa (Identidade Social), enquanto que o “eu” representa como a pessoa se define em relação
+aos outras pessoas da sociedade (Identidade Individual). Ainda, para Gosling (2008), essas
+afirmações de identidade são dirigidas a si mesmo (identidade interna) e aos outros (identidade
+social). As duas maneiras possuem função psicológica específica. As afirmações direcionadas
+aos outros servem para sinalizar como as pessoas desejam ser vistas e por esse motivo, utilizamse de significados comuns a todos – como exemplo, no Brasil, onde o voto é secreto, é comum
+em período de eleição, notar que eleitores usam afirmações de suas escolhas, colando adesivos,
+vestindo camisas (...) do partido eleitoral escolhido em locais visíveis a todos.
+São afirmações direcionadas ao outro que transmitem em seu significado não só a escolha
+eleitoral, mas os valores, crenças e a visão que o indivíduo tem do mundo e que por meio da
+manifestação, nesse caso, da escolha partidária, comunicam como deseja ser visto e informa
+como vê o mundo. Já as afirmações direcionadas a si mesmo podem não dar o significado certo
+para quem observa – como exemplo, a foto de um líder político muito influente, colada na parte
+interior da porta de um guarda-roupa. Essa é uma afirmação de identidade direcionada a si
+mesmo, já que está em um lugar visível apenas pelo usuário do ambiente, a nível individual, e
+individual também será o significado.
+A identidade tratada como um dado (informação) capta um aspecto representacional
+deixando de lado aspectos constitutivos de sua produção. É introduzida nessa perspectiva uma
+complexidade – uma vez que a identidade pressuposta é resposta, ela é vista como dada anulando
+o contínuo processo de identificação (Ciampa, 1993). Constitui-se, assim, uma expectativa
+generalizada onde o indivíduo agirá de acordo com o que é.
+Gosling (2008), afirma que traços da personalidade podem ser encontrados nas pistas que as
+pessoas deixam em seus ambientes pessoais. Impressões que são percebidas através de minuciosas
+decodificações de decorações de ambientes pessoais, como quarto, escritório e banheiro pessoal.
+Nessa perspectiva, as generalidades transmitidas pelos estereótipos, apesar de desconsiderarem
+a variedade das características dentro de um grupo social, podem ser utilizados como hipóteses
+de trabalho, no sentido de ter uma “dica” que direciona as observações.
+Gosling (2008) traz como instrumento para agrupar traços da personalidade, a estrutura Big
+Five, o Modelo dos Cinco Grandes Traços, são eles: abertura, conscienciosidade, extroversão,
+sociabilidade e neurose (como já visto anteriormente). Nesse sentido as impressões percebidas
+pelas pistas deixadas pelos indivíduos em seus ambientes podem e vão dizer algo sobre a
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+132 133
+personalidade. É importante ressaltar que entender a personalidade não se resume apenas em
+somar traços de caráter, mas assemelha-se a resolução de um enigma.
+No mundo virtual, que é também considerado um ambiente em que relações sociais acontecem,
+a perspectiva da identidade é percebida pelas posições tomadas diante de determinadas situações.
+Características entendidas como próprias do indivíduo são consideradas parte de sua identidade
+e nas relações sociais, tanto virtuais quanto “reais”, para que o outro possa ter contato e identificarse com o eu, faz-se necessário manifestações de sua identidade.
+O adorno do ambiente virtual, participação de grupos virtuais (comunidades do Orkut) são
+exemplos de manifestações de sentimento de pertença a determinados grupos, uma vez que o
+grupo é formado a partir de algum significado comum a todos do grupo. Essa é uma maneira
+de observar uma característica da identidade. Porém no ambiente virtual existem os “fakes”,
+considerados como uma falsificação da identidade, porém o uso de fake pode acontecer como
+a maneira de ser outro, já que no mundo “real” não é permitido a essa pessoa demostrar e viver
+determinadas características que permanecem no anonimato no âmbito real, mas virtualmente,
+encontra o espaço para se manifestar. Donath (1999; 2000) afirma que conhecer a identidade da
+pessoa é vital para uma adequada personalização de um ambiente no mundo virtual. Goffman
+(1959) afirma, ainda, que as pessoas se esforçam para se apresentarem como pessoas “aceitáveis”
+aos olhos da sociedade (em comunidades virtuais, por exemplo).
+Considerando que o usuário é um agente em um ambiente computacional (web, por exemplo)
+onde a interface, ou a adaptação da mesma, é fundamental para que se crie uma personalização da
+interação com o usuário contextualizado-o em sua zona de conforto e necessidades emergentes.
+Muitas características da identidade pessoal (aspectos psicológicos e habilidades sociais)
+do usuário devem ser percebidas e podem ser captadas por meio de símbolos disponíveis na
+interface dos ambientes computacionais.
+Porém cada símbolo pode ser interpretado diferentemente por cada sujeito/usuário,
+considerando como o mesmo os projeta durante suas interações com o mundo real. Da mesma
+forma, os símbolos projetados via interface são, também, interpretados diferentemente por
+cada usuário, emergindo, dessa forma, diferentes aspectos psicológicos dos mesmo durante
+sua interação no ambiente podendo influenciar definitivamente (positiva ou negativamente) na
+interação do usuário nos ambientes computacionais atuais.
+Considerando a identidade como um canal importante onde as características objetivas
+e subjetivas das pessoas emergem, denomina-se de fundamental importância seu uso em
+computadores. Note que tecnicamente, em Ciência da Computação, a tecnologia usada para
+formalizar a identidade em um dado ambiente computacional é pelo uso de Perfil do Usuário
+(Identidade Interna) e Reputação do Usuário (Identidade Social). A próxima seção descreve,
+principalmente, a identidade interna (Para mais informações sobre reputação ver em (Cazella et
+al, 2010)).
+2.2.1 Identidade Interna: Perfil do usuário /Modelo do Aluno
+Donath (1999) afirma que para a formação eficiente de uma identidade virtual é crucial que o
+usuário tenha definida sua identidade interna. No mundo virtual a identidade interna do usuário
+é definida por ele próprio similar ao mundo real (algumas vezes também é descoberta através
+de técnicas de Machine Learning). A identidade interna é geralmente armazenada no Perfil do
+Usuário.
+Perfis de Usuários são conceitos aproximados, eles refletem o interesse do usuário com relação
+a vários assuntos em um momento particular. Cada termo que um perfil de usuário expressa
+é, num certo grau, características de um usuário particular (Poo et al, 2003) incluindo todas
+informações diretamente solicitadas a ele e aprendidas implicitamente durante sua interação na
+web (Carreira et al, 2004). Fisicamente, o perfil do usuário pode ser visto como uma base de
+dados onde a informação sobre o usuário, incluindo seus interesses e preferências, é armazenada
+e pode ser dinamicamente mantida (Rousseau et al, 2004), (Poo et al, 2003).
+Na web encontram-se muitos tipos de perfis de usuário com diferentes graus de complexidade,
+eles são desenvolvidos no contexto de e-commerce e e-services, por exemplo. Kobsa (2007) cria
+uma Modelagem Genérica de Usuário para ser usada como um shell para a criação de categorias
+de informação sobre o usuário objetivando personalizar as aplicações web. O modelo proposto
+por Kobsa é um dos mais reputados. Paiva (Paiva and Self, 1995) também desenvolveu um Shell
+de Modelo de Aluno chamado TAGUS, criado para melhor modelar os alunos para atividades de
+aprendizado. Outros Modelos de Aluno foram propostos por Self (1974), Boulay (2003) e são
+historicamente referenciados.
+Considerando ainda definições de Modelo/perfil de Usuário, Heckmann (2005), (Heckmann
+and Kruguer, 2003) propôs uma Ontologia de um Modelo Geral de Usuário (GUMO). O GUMO
+é a ontologia mais completa existente hoje, abrange desde as informações mais básicas do usuário,
+como dados demográficos e informações de contato, incluindo características fisiológicas
+e características psicológicas.Essa ontologia foi criada inicialmente para ser utilizada na
+Computação Ubíqua, servindo para armazenar e compartilhar os dados do usuário provenientes
+de diferentes recursos tecnológicos interligados entre si.
+A Ontologia de Heckmann é extremamente detalhada e pode ser implementada de acordo
+com o interesse do projetista de um shell de perfil de usuário. Na Figura 11 apresenta-se as
+dimensões básicas propostas por Heckmann no GUMO.
+Figura 11: Dimensões básicas do usuário segundo modelo GUMO.
+Fonte: Heckmann (2005).
+Como o interesse dessa seção é a representação de componentes psico-afetivos na identidade
+interna do usuário (Perfil/Modelo de Usuário), abaixo destaca-se a ontologia de Heckmann
+(2005) no tocante a estes aspectos:
+•	 Emoção: essa dimensão da ontologia GUMO permite representar o humor e o estado
+emocional do usuário. O estado emocional geralmente é ativado por uma emoção
+relacionada a algum evento que o usuário está envolvido em determinado momento,
+podendo ter uma duração curta, de poucos minutos a uma hora; enquanto, o humor é
+mais difuso e de longa duração, considerando de poucas horas a poucos dias.
+A representação das características do humor é apresentado na Figura 12, seguido pela
+representação do estado emocional através do uso de emoções, apresentado na Figura 13.
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+134 135
+Figura 12: lista de humores segundo modelo GUMO .
+Fonte: Heckmann (2005).
+Figura 13: lista de emoções segundo modelo GUMO.
+Fonte: Heckmann (2005).
+•	 Personalidade: essa dimensão da ontologia GUMO permite representar as características
+de personalidade de um usuário. Apesar de existirem diversas teorias de personalidade,
+Heckmann optou por utilizar algumas delas, como por exemplo, a teoria de abordagem
+de tipos de Jung, a abordagem de Traços de Allport, a abordagem de Eysenck, entre
+outras. Heckmann (2005) também propõe o uso das características propostas pela teoria
+Interpessoal.
+A Personalidade, diferentemente da emoção, possui traços/características estáveis, ou seja,
+após ser extraída do usuário, dificilmente irá modificar-se. A representação da personalidade e
+das características é apresentada na Figura 14.
+Figura 14: Personalidade e características representadas no modelo GUMO.
+Fonte: Heckmann (2005).
+Em se tratando de Modelos de Usuário dotados exclusivamente de características psicológicas,
+essa seção ilustra dois momentos:
+•	 o primeiro, permite a representação de emoções do usuário;
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+136 137
+•	 o segundo permite a representação da personalidade do usuário.
+(i) Emoções
+Lisetti (2002) propõe o MOUE objetivando modelar as Emoções utilizando o Affective
+Knowledge Representation. O AKR utiliza da abordagem cognitiva baseada em tendências
+de ação ligadas as emoções. Ele apresenta uma taxonomia de personalidade, afeição, humor
+e emoções bem como modela as emoções em 16 diferentes dimensões que são chamadas de
+componentes emocionais, sendo que cada emoção difere das demais nos valores que são atribuídos
+a um ou mais componentes. Os 16 componentes emocionais utilizados por (Lisetti, 2002) são
+Expressão Facial, Valência, Intensidade, Duração, Foco, Agência, Novidade, Intencionalidade,
+Controlabilidade, Modificabilidade, Segurança, Legitimidade, Norma Externa, Norma Interna,
+Tendência de Ação e Cadeia de Eventos, como visto na tabela 3.
+Tabela 3: Componentes emocionais do AKR.
+Fonte: Lisetti (2002).
+ No MOUE o User Model é implementado sobre a ótica do AKR, e armazena as informações
+relativas às emoções do usuário obtidas através de multisensores (câmeras, mouse, teclado,
+microfone e computadores portáveis) e modeladas nas 16 diferentes dimensões chamadas de
+componentes emocionais. Nesse modelo cada emoção difere das outras pelos valores que são
+atribuídos a cada componente (informações adicionais em (Bianchi-Berthouze e Lisetti, 2002)).
+Considerando ainda emoções, Bezerra et al (2011) citam o XEP-0107 - User Mood. O
+XEP-0107 - User Mood (Saint and Meijer, 2008) é uma extensão feita em xml para o protocolo
+XMPP (Extensible Messaging and Presence Protocol), projeto ainda em andamento, criada para
+guardar e transportar informações referentes ao humor do usuário. Esse modelo foi baseado,
+em sua maior parte, no AKR, mas também levou em consideração os estudos de Ortony et al
+(1988) e Frijda (1986), bem como uma lista de humores e estados físicos retirados de estudos
+de freqüências de palavras na língua inglesa para definir quantas e quais são as emoções básicas.
+Ainda em emoções, existe a EmotionML (Emotion Markup Language) criada pelo W3C
+(WWW Consortium) com o objetivo de padronizar a representação das emoções utilizando XML
+(W3C, 2009). A EmotionML e foi projetada para servir em três áreas distintas:
+•	 Anotação manual de dados, para ser utilizada quando a informação advém da análise de
+vídeos (web-cam), fala, textos e análise de expressão facial.
+•	 Reconhecimento automático dos estados emocionais relacionados com o comportamento
+do usuário, utilizada quando a informação advém de sensores específicos, tais como
+medidor de frequência cardíaca, temperatura corporal, etc;
+•	 Geração do comportamento do sistema.
+A EmotionML é uma linguagem dinâmica, apesar do fato de ainda ser muito jovem. Seus
+principais elementos são: (<emotion>; <category>; <dimensions>; <appraisals>; <actiontendencies>; <intensity>; <metadata>. Onde <emotion> é a tag que representa uma única
+emoção, e seus filhos (opcionais): <category> que serve para identificar em que grupo a emoção
+pertence; <dimensions> serve para definir as dimensões que serão trabalhadas na emoção;
+<appraisals> descreve variáveis de avaliação como, por exemplo, agradabilidade; <actiontendences> representa a tendência de ação, ou conjunto de tendências de ação; <intensity>
+representa a intensidade da emoção; <metadata> representa os dados sobre os próprios dados,
+essa tag possui alguns filhos, por exemplo <confidence> que é utilizada para saber se os dados
+estão descritos de forma segura.
+(ii) Personalidade
+Considerando que a personalidade implica em Emoções e cada pessoa ou agente que tem
+emoções tem uma personalidade; e, geralmente, a personalidade não aparece explicitamente
+mesmo que influencie as emoções diretamente. Pesquisadores em Computação Afetiva têm
+modelado, padronizado e implementado as emoções explicitamente. Isso acontece porque as
+emoções são mais facilmente mensuráveis e interpretáveis e podem influenciar diretamente na
+ação-interação dos usuários e tomada de decisão computacional. Na realidade, como já discutido,
+as emoções são instantâneas, têm uma vida curta e mudam constantemente, diferentemente
+da personalidade que é muito mais estável e, normalmente, imutável. Dessa forma, é possível
+perceber que a personalidade é mais abrangente e implica na emoção. Buscando aumentar o
+poder representativo da EmotionML, Nunes e equipe tem trabalhado na tentativa de modelar e
+padronizar a representação de personalidade. Em termos de modelagem de personalidade Nunes
+(2008; 2009) e Nunes et al (2008) propõe um Modelo Psicológico de Usuário (UPP Model) capaz
+de armazenar a personalidade de um usuário considerando a abordagem de traços. Esse perfil
+foi utilizado pela autora em um Sistema de Recomendação, provando que a implementação dos
+traços de personalidade e seu uso em um perfil de usuário efetivamente melhoram a tomada de
+decisão computacional personalizando satisfatoriamente o feedback ao usuário.
+O UPP é utilizado pela autora e sua equipe em outras aplicações, tais como, no Software
+Personality Inventory PV 1.0 utilizado para extrair os traços psicológicos do usuário através
+do inventário NEO-IPIP (Johnson, 2000a) e TIPI (Gosling, 2008) traduzidos para a língua
+portuguesa (Nunes et al 2011b). Ainda em personalidade, a equipe tem trabalhado na criação da
+PersonalityML com o objetivo de padronizar a representação da personalidade utilizando XML.
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+138 139
+2.2.1.1 Estendendo a EmotionML (Nunes et al, 2010c)
+A primeira tentativa da equipe em padronizar a representação da personalidade foi pensando
+em uma extensão da EmotionML. Nunes et al (2010c) propõem estudos iniciais para uma extensão
+da EmotionML 1.0 permitindo a inclusão de outros elementos psico-afetivos que aumentam o
+poder representativo da linguagem. Esses elementos consideraram o modelo hierárquico AKR
+(Lisetti 2002), estendendo a linguagem com o objetivo de aumentar a capacidade representativa
+da mesma. O aumento da representatividade permite aos sistemas computacionais identificar
+com maior precisão a Emoção em foco. A proposta de extensão inclui os componentes psicoafetivos: Afeição, estados de Ânimo e Personalidade. Um fragmento da estrutura proposta para
+EmotionML é:
+<personality>
+<affection>
+<mood>
+<emotion>
+<dimensions set = “emotionComponents”>
+<facialExpression>
+<valence>
+<intensity>
+<duration>
+<focality>
+<agency>
+<novelty>
+<controlability>
+<intentionality>
+<modifiability>
+<certainty>
+<legitimacy>
+<externalNorm>
+<internalStandard>
+<actionTendency>
+<casualChain>
+</dimensions>
+<category> </category>
+<appraisals> </appraisals>
+<action-tendencies> </action-tendencies>
+<intensity> </intensity>
+</emotion>
+</mood>
+</affection>
+</personality>
+Onde <personality> indica um tipo de personalidade, <affection> afeição, <mood> o estado
+de ânimo, <emotion> uma emoção, <dimensions set = “emotionComponents”> as dimensões
+daquela emoção. Os elementos filhos e os atributos definidos na versão original da EmotionML
+continuam válidos na extensão, já que complementam a descrição da emoção.
+2.2.1.1 PersonalityML(Bezerra et al, 2011)
+Considerando que a Personalidade é o ponto chave da representação da cadeia afetiva e que sua
+representação está limitada pela atual versão da EmotionML 1.0. A primeira versão da extensão
+continuou um pouco limitada no sentido da representação da personalidade, dessa forma a
+equipe de Nunes decidiu criar primeiramente a PersonalityML e depois futuramente incormorala a EmotionML. A partir do estudo da Personalidade buscou-se a criação de um novo XML
+Schema para definir a estrutura de um documento representativo especifico da personalidade. A
+seguir, na Figura 15 apresenta-se um exemplo dos dados modelados na PersonalityML e gerados
+pelo Personality Inventory PV1.0, já apresentado anteriormente.
+Figura 15: Exemplo do PersonalityML para o TIPI
+A PersonalityML esta ainda em desenvolvimento.
+2.3 Sistemas de Recomendação
+Recomendação é um processo social deliberativo executado por pessoas quando as mesmas
+desejam demonstrar seu grau de apreciação sobre alguém ou alguma coisa. No mundo digital,
+Sistemas de Recomendação (SR) surgiram a partir da década de 90 como aplicações que
+forneciam sugestões personalizadas aos usuários sobre produtos e serviços que eles poderiam se
+interessar, diminuindo consideravelmente a sobrecarga de ofertas (Resnick, 1997).
+Atualmente, as recomendações tendem a ser bastante solicitadas. Note que no processo
+humano de recomendação de produtos ou serviços, as pessoas que tomam a decisão e geram a
+recomendação tendem a utilizar não só fatores técnicos para essa tomada de decisão, utilizando
+também fatores psicológicos. Os Sistemas de Recomendação são considerados como uma rica
+área de pesquisa que têm várias aplicações práticas, inclusive como sistemas que promovem
+recomendação de pessoas tão bem como promove a recomendação de produtos e serviços. Em
+2005, Terveen e McDonald (2005) redefiniram esses Sistemas de Recomendação específicos,
+chamando-os de Sistemas de Combinação Social.
+Entretanto tem se notado que Sistemas de Recomendação e de Combinação Social está
+engatinhando no uso de aspectos psicológicos humanos em suas recomendações. Muitas vezes
+devido a dificuldade de extração intencional desse aspecto psicológicos humanos, outras vezes
+pelo não (re) conhecimento de sua relevância. Porém as pesquisas emergentes na área (Gonzalez,
+2007), (Nunes, 2008) bem como outras descritas em (Nunes e Cazella, 2011) vem demonstrando
+a crescente importância desses aspectos considerados como altamente significante em processos
+de tomada de decisão humanos e por conseguinte também na tomada de decisão computacional,
+principalmente, em Sistemas de Recomendação, por exemplo.
+Nesse contexto Gonzalez (2007) propõe um primeiro modelo baseado em aspectos
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+140 141
+psicológicos. Ele usa Inteligência Emocional para melhorar a recomendação de cursos em
+um site de e-training. Em 2008, Nunes (2008) publica o primeiro trabalho que usa traços de
+personalidade para recomendar produtos, serviços ou pessoas em Sistemas de Recomendação.
+Este trabalho revelou indícios de que o uso de traços de personalidade efetivamente proporciona
+uma melhora na recomendação, podendo efetivamente ser um aliado à criação de eficientes
+grupos/equipes de trabalho, como descrito a seguir.
+2.3.1 Sistemas de Combinação Social
+Segundo Forsyth apud in (Wikipedia 2010) “um grupo são duas ou mais pessoas que estão
+mutuamente conectadas por relacionamentos sociais”. Sociologicamente, um grupo é definido
+como “um conjunto de seres humanos que compartilha certas características, interagem uns
+com os outros, aceitam expectativas e obrigações como membros do grupo, e compartilham
+uma identidade em comum”. Para Bartle (2007): “a principal razão para a formação de um
+grupo é a interação física baseada em uma necessidade ou em um problema comum. Quanto
+mais indivíduos compartilharem suas atividades, mais eles interagem entre si e mais alta será a
+probabilidade de eles virem a formar um grupo”. Segundo Shaw (1976) a composição do grupo
+pode influenciar em seu desempenho contemplando, assim, duas dimensões significativas para
+a composição do mesmo: homogeneidade/heterogeneidade de competências e homogeneidade/
+heterogeneidade de traços sócio-emocionais e de personalidade.
+A teoria de atração interpessoal pode predizer a maneira como personalidades humanas
+interagem entre si. Nass et al (1995) têm demonstrado um extenso estudo na literatura psicológica
+que indica forte relacionamento entre similaridade/homogeneidade e atração, isto significa que
+pessoas preferem interagir com outros (estranhos ou não) que tenham personalidade similar/
+homogênea a si, a interagir com outros que tenham personalidades diferentes/heterogêneas.
+Normalmente, as pessoas preferem interagir com outras que tenham a personalidade similar a
+sua (Nass e Lee, 2000), (Reeves e Nass, 1996).
+Grupos que são mais homogêneos em termos sócio-emocionais e de personalidade despendem
+menos tempo em interações sócio-emocionais necessárias para manter a coesão do grupo e,
+portanto, concentram-se mais nas interações que são relevantes para a resolução de tarefas. Por
+outro lado, grupos incompatíveis em termos de características sociais e emocionais têm mais
+problemas para atingir a resolução de tarefas e despendem muito mais tempo com problemas
+sócio-emocionais. Além de que, membros em grupos compatíveis são, na maioria dos casos,
+mais satisfeitos com as interações do grupo.
+De acordo com Moerk (1972), “um grupo é formado por indivíduos com uma ampla
+variedade de experiências e expectativas prévias, que freqüentemente se apresentam como
+traços de personalidade, e que influenciam o comportamento dos indivíduos no grupo”. Como
+descrito anteriormente, o ingresso de um indivíduo em um determinado grupo, bem como
+sua permanência neste, são decisões tomadas pelos sujeitos e sobre as quais as características
+psicológicas dos envolvidos possuem grande peso. Nos últimos anos pesquisadores, como
+Damásio (1994) entre outors, vêm percebendo o quão fundamental as características psicológicas
+são no processo de tomada de decisão humana e por isso vêm ampliando as tentativas em aliá-los
+também ao processo de tomada de decisão computacional, como discutido anteriormente.
+Note que cientistas da Computação começaram a considerar o uso de personalidades (e
+outros aspectos sócio-emocionais) em computadores para, entre outros objetivos, seja possível
+a criação de dinâmicas de grupo mais poderosas e eficientes que possam ser usadas das mais
+diferentes formas, desde recomendação de pessoas em redes sociais, em cursos EaD, até a criação
+de agentes virtuais mais credíveis (Prada et al, 2010), (Prada et al, 2009), (Nunes et al, 2010a).
+2.3.1. 2 Group Recommender 1.0 (Nunes et al 2010)
+Atualmente existem alguns estudos que demonstram como a utilização de Sistemas de
+Recomendação/Combinação Social para a formação de grupos de trabalho pode auxiliar no
+processo do e-learning, como em (Romero et al, 2009), onde o banco de dados de alunos de
+e-learning é utilizado como base para a construção de um sistema de descoberta de grupos,
+baseados em algoritmos de lógica difusa. Este processo se mostrou eficaz, quanto ao rendimento
+das turmas.
+Os aspectos psicológicos humanos são fatores de grande peso no processo de tomada de
+decisão humano, como já descrito anteriormente. No entanto, os Sistemas de Recomendação
+não tem utilizado efetivamente esses fatores psicológicos. Essa seção mostra uma ferramenta,
+desenvolvida por Danilo Reinert, onde o foco principal é a possibilidade de criação de equipes de
+trabalho eficientes coordenado por tutores (considere a esfera de ação de um curso de EAD na UAB
+criado para atender um publico de 5000 alunos por turma) onde alunos deverão ser distribuídos
+em subgrupos. O papel dessa ferramenta é recomendar equipes de trabalho considerando as
+características do tutor e a similaridade de Traços de Personalidade de seus alunos. A interface
+do Sistema de Recomendação intitulado Group Recommender 1.0 é apresentado na Figura 16.
+Figura 16: Group Recommender V1.0.
+Fonte: Nunes et al (2010).
+O software experimental foi desenvolvido na plataforma JAVA a fim de proporcionar maior
+mobilidade de execução. O propósito desse Sistema de Recomendação é recomendar pessoas
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+142 143
+baseado exclusivamente na personalidade. A personalidade das pessoas foi medida utilizando o
+Personality Inventory PV1.0.
+Esse inventário classifica as pessoas em trinta características derivadas do Big-Five. Cada um
+dos cinco domínios do Big Five possui seis facetas que o compõe. Para fins de validação do
+software, foi utilizada uma database de dados já existente com mais de 20.000 pessoas classificadas
+de acordo com o NEO-IPIP extraída e fornecida por Johnson (2005). A recomendação busca
+levantar as pessoas mais similares a alguma selecionada (na UAB, será o Tutor).
+O algoritmo utilizado na recomendação foi o k-NN (Nunes 2009). Ele mostrou-se o mais
+adequado para o propósito do sistema. O princípio do k-NN (Schafer et al 2001) é extrair de um
+determinado repositório de dados, os k exemplos mais próximos a um que se deseja comparar.
+Com o k-NN, tem-se a opção de determinar uma quantidade k de pessoas, a qual se deseja que o
+sistema recomende. O Sistema então faz o cálculo levando em consideração sua base de dados, e
+retorna, assim, as k pessoas mais similares à que foi previamente selecionada.
+A fórmula utilizada para calcular a proximidade dos perfis nesse sistema foi a distância
+Euclidiana. Outra fórmula que seria interessante de ser utilizada para esse fim - similaridade -
+seria a distância dos cossenos, mas essa não foi implementada nessa primeira versão experimental.
+Outro ponto positivo em se utilizar o k-NN é a versatilidade que ele dispõe de se comparar um
+ou mais atributos que se deseje, não necessariamente todos. Vê-se, também, na figura 9, que o
+usuário tem a opção de selecionar quais atributos ele deseja comparar com o intuito de trazer os
+k mais similares de acordo somente com esses atributos.
+2.3.1. 3 Group Recommender 2.0 (Telles et al 2010)
+O sistema implementado, chamado Group Recommender 2.0, foi uma atualização da versão
+anterior. A primeira versão do Group Recommender foi uma versão desktop proporcionando
+somente a geração de equipes através da similaridade.
+O Group Recommender 2.0 foi desenvolvido para arquitetura web, facilitando seu acesso e
+uso. Além de inovar no quesito similaridade & complementaridade na formação de grupos/
+equipes. Para utilização do sistema é necessário que os usuários/alunos respondam ao Personality
+Inventory PV1.0 (Nunes et al 2011b). Através do modelo de personalidade extraído via inventário
+são gerados os dados necessários para a geração de grupos/equipes.
+Os dados utilizados para o calculo da recomendação de grupos/equipes são os scores
+(pontuação) de cada característica de personalidade atribuída ao usuário que finalizou o
+inventário. Para tanto, o método define aleatoriamente um usuário chamado “perfil referência”
+(perfil é o conjunto de informações de um usuário: scores, nome e e-mail), que será utilizado de
+base para o cálculo da distância entre os demais perfis. A forma de calcular é através da fórmula
+da distância euclidiana n-dimensional, pois o calculo da distância poderá ser composto por n
+características psicológicas entre os usuários.
+Depois de obtido o resultado entre o perfil referência e cada um dos outros perfis, é listado
+num vetor ordenado de forma crescente todas as pessoas para retirar K (número representando a
+quantidade de pessoas por grupo) usuários do começo da lista (pois tiveram a maior similaridade,
+ou seja, menor distância) e formar o primeiro grupo. Estes perfis serão excluídos da lista e o
+processo será repetido com os demais até não restar mais perfis sem grupos formados.
+O Group Recommnder 2.0 utiliza a base de dados real do Personality Inventory PV1.0 para
+realizar sua recomendação com veracidade. Com o uso dos e-mails dos alunos o sistema buscará
+seus resultados e fará os cálculos necessários para criar uma lista de outros alunos com maior
+similaridade/compatibilidade psicológica. Na versão dois, além de informar as características
+similares desejáveis no grupo, é possível também informar os pesos em percentual para cada uma
+das características marcadas (aplica-se o percentual em cima da característica antes de aplicar
+a fórmula da distância euclidiana). Na Figura 17 temos um exemplo do Group Recommender
+2.0, note que os e-mails são informados, as características e pesos são fornecidos, bem como a
+quantidade de integrantes de cada grupo.
+Figura 17: Group Recommender V2.0.
+Fonte: Nunes et al (2010).
+Após o envio dos dados para realização dos cálculos necessários, são exibidas na mesma tela
+várias tabelas representando cada grupo recomendado pelo software, informando o nome do
+usuário e a distância entre o perfil referência e o perfil corrente.
+2.4 Cenários de aplicação de Computação Afetiva em parceria com outras
+IES
+2.4.1 TV Digital (Trevisan 2011)
+O trabalho aqui apresentado é resultado de uma parceria do orientador Silvio César Cazella
+prof. Adjunto da UFCSPA e UNISINOS no Rio Grande do Sul. O trabalho ora apresentado
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+144 145
+concorreu com mais de 60 trabalhos oriundos da UFRGS, PUC e UNISINOS sendo agraciado
+através de uma premiação: Primeiro Lugar na categoria de Inovação – Prêmio ASSESPRO-RS
+2011.
+O protótipo em TVD implementado por Trevisan (2011) acessa um servidor HTTP e busca
+as recomendações de programação disponíveis para o usuário. O telespectador pode identificar
+o quanto o programa recomendado atende às suas necessidades ou desejos. Esta informação
+alimenta o sistema como uma nova avaliação, aumentando a precisão de futuras sugestões. A
+base de dados de programas de televisão foi disponibilizada pela empresa Revista Eletrônica para
+o presente trabalho e pôde ser obtida via FTP, no formato XML.
+A grade de programação utilizada no protótipo foi extraída entre 21/06/2010 a 05/07/2010
+(quinze dias). A fim de viabilizar o experimento e devido à quantidade de usuários e o tempo
+de experimentação, foi decidido pela importação de somente programas dos canais abertos da
+televisão brasileira: o SBT, a RBS, a Bandeirantes, a TV COM, a TV Futura e a Rede TV. Desta
+forma, foi obtida uma base de dados com uma esparcialidade não tão alta e com programas mais
+conhecidos.
+O contexto cujo usuário está inserido no momento da recomendação é informado pelo
+mesmo de forma explícita a partir de uma lista pré-definida, porém configurável. Estes contextos
+foram elencados empiricamente a partir da análise dos gêneros, subgêneros e classificação etária
+dos programas disponíveis na grade de programação. Como os contextos são configuráveis, é
+possível a aplicação de um algoritmo de mineração de dados no momento em que há a posse de
+uma base de dados com uma quantidade maior de avaliações e extrair novos contextos, talvez
+mais significativos.
+Os contextos elencados para a execução do protótipo foram por exemplo, 1) Nome do
+contexto: Sozinho; Descrição: Adulto assistindo sozinho; Aparelho: Televisor; 2) Nome do
+contexto: Com Crianças; Descrição: Acompanhado de crianças; Aparelho: Televisor; 3) Nome
+do contexto: Recebendo Amigos; Descrição: Recebendo amigos para um jantar; Aparelho:
+Televisor; 4) Nome do contexto: Com Namorado(a); Descrição: Acompanhado do namorado(a)/
+esposo(a); Aparelho: Televisor; 5) Nome do contexto: Locomovendo-se; Descrição: Viajando de
+ônibus para o trabalho; Aparelho: Celular.
+Os testes de personalidade foram realizados utilizando a aplicação Personality Inventory
+PV1.0 ja descritos anteriormente nesse capítulo. A seleção do contexto em que o usuário se
+encontra é realizada de forma explícita pelo mesmo antes de receber uma recomendação. Pode
+ser alterada a qualquer momento, pressionando a tecla verde do controle remoto. Quando a lista
+é exibida, basta clicar com a tecla de comando “para cima” e “para baixo” do controle remoto até
+posicionar sobre o contexto desejado e, então, pressionar o botão “ok” do mesmo, conforme a
+Figura 18.
+Uma vez definido o contexto do usuário, o sistema acessa o servidor e busca uma lista de
+recomendação para o usuário. É possível que nenhum programa seja recomendado para o
+usuário, neste momento, pelo algoritmo descrito no modelo do sistema anteriormente. Para que
+o usuário não fique sem receber nenhuma recomendação, o sistema busca por programas que se
+enquadrem no contexto selecionado e que possua os gêneros, subgêneros e classificações etárias
+melhor avaliadas por este usuário no passado.
+Neste ponto, o sistema acaba realizando uma filtragem baseada em conteúdo e, desta forma, o
+usuário não fica frustrado por não receber nenhum item recomendado e acaba com o problema
+do cold start. Outro ponto positivo de recomendar itens mesmo que o algoritmo de filtragem
+colaborativa não retorne nenhuma recomendação é a alimentação do sistema com o feedback
+do usuário que é enviado para cada recomendação gerada, o que de certa forma contribui para o
+sucesso das suas próximas utilizações.
+Figura 18: Seleção explícita de contexto.
+Fonte: Trevisan (2011).
+A lista de itens recomendados apresenta o título do programa, o ícone do canal, a classificação
+etária e a avaliação dada pelo usuário representada pelas estrelas ao lado de cada programa (Figura
+19). Para navegar pelos itens e avaliá-los, basta que o usuário utilize as teclas de navegação do
+controle remoto “para cima” e “para baixo” a fim de posicionar-se no item desejado, e a tecla “para
+esquerda” e “para direita” para aumentar ou diminuir a nota dada para o programa recomendado.
+Figura 19: Lista de recomendações fornecidas pelo TvPlus.
+Fonte: Trevisan (2011).
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+146 147
+Cada avaliação realizada pelo usuário pela TV é enviada para o servidor e armazenada na tabela
+de avaliações. Quando o algoritmo de recomendação for executado novamente por qualquer
+usuário do sistema, estas informações transmitidas no feedback realizado serão processadas e
+poderão gerar uma recomendação diferente das anteriormente criadas.
+2.5 Outros cenários possíveis
+Recomendação de produtos baseados nas características subjetivas dos mesmos
+Este cenário é original e , futuramente, será usado largamente em Sistemas de Recomendação
+comerciais (e-commerce). Atualmente os Sistemas de Recomendação convencionais usados
+em e-commerce oferecem produtos e serviços para os seus clientes, geralmente, baseados em
+informações convencionais do usuário, tais como, informação demográfica, preferências, entre
+outras. Como exemplos: livros, na Amazon.com, Submarino.com.br, musicas no MyStrands e
+filmes no MovieLens. Na intenção de fornecer uma melhor otimização e personalização nas
+recomendações prestadas pelos Sistemas de Recomendação os sites comerciais deveriam mudar
+drasticamente a maneira que tem representado as informações de usuários e de produtos:
+Dados do usuário : devem ser enriquecidos com aspectos psicológicos, tais como, Traços de
+Personalidade, Inteligência Emocional e Habilidades Sociais (Nunes, 2008);
+Informações de produtos: uma descrição mais subjetiva deve ser adicionada a descrição
+tradicional de dados do produto. Características subjetivas em dados convencionais podem ser
+descritas como meta-dados dos dados, baseados na perspectiva dos aspectos psicológicos já
+medidos em humanos.
+Na tabela 4, apresenta-se uma hipótese de como os dados convencionais podem ser
+representados subjetivamente usando características psicológicas.
+Tabela 4: Representação das informações convencionais e subjetivas de produtos e usuários.
+Fonte: Nunes (2008).
+3 Conclusões e Trabalhos futuros
+Segundo Nunes e Aranha (Nunes e Aranha 2009), do ponto de vista mercadológico, a
+identificação do comportamento social assim como a interação entre as pessoas sempre foi algo
+valioso a ser explorado pela área de marketing das empresas. Saber identificar o público alvo e a
+disseminação viral de uma informação pode significar altas margens de lucro.
+Com a Internet, essas informações começaram a ser mais facilmente mapeadas digitalmente.
+Não demorou para aparecer ferramentas como IRC, ICQ, MSN que centralizam a comunicação
+das pessoas em um único mapa. Logo depois ParPerfeito começa a relacionar as pessoas
+segundo afinidades conjugais. O MySpace encontrou a música como um grande fio condutor de
+relacionamentos afetivos e popularizou o conceito. O Orkut e o Facebook deram continuidade e
+aproximaram pessoas com afinidades perdidas no tempo. O último chegou a ser avaliado em 50
+bilhões de reais. O fenômeno chamou tanta atenção para as redes sociais que iniciativas simples
+como o sistema Geni que faz a disseminação viral traçando um mapa genealógico global foi logo
+em seguida avaliado em 100 milhões de reais.
+Encontrar afinidades psicológicas continuam entre os itens de maior valor. Os novos nichos
+são LinkedIn -afinidade profissional, CineDica-afinidades por filmes e GoodReads-afinidades
+por livros. Como as iniciativas começaram a se proliferar, as novas tendências são novamente de
+centralização. O forte crescimento do Twitter que abrange qualquer informação e o lançamento
+do Google Talk como unificador de Gmail e MSN. A grande vantagem do Twitter é que ele é
+partidário de serviços abertos, sendo assim, todos terão acesso às informações para construir sua
+própria aplicação de afinidades psicológicas sem se preocupar na divulgação do canal.
+Dessa forma, conclui-se que existe uma tendência e necessidade de que os programas web se
+utilizem na essência de seus processos internos de tomada de decisão de tecnologias que permitam
+incorporar a extração, modelagem e uso de características psicológicas do usuário, produtos ou
+serviços em questão nos processos recomendatórios. Sem dúvida, essas novas representações
+criarão uma nova perspectivas de como essas informações serão tratadas, representadas e
+manipuladas na web em um futuro muito próximo. Nesse contexto serão criadas novas técnicas
+de mineração que possam contextualizar conhecimento afetivo, seja através de web-mining na
+análise de clickstreams associados a símbolos de conotação afetiva, ou seja através de text-mining
+analisando o sentimento do autor expresso em um texto.
+Essas tecnologias inteligentes, juntamente com novas markup languages criadas para
+representar características psicológicas, seguindo-se o exemplo da W3C que padroniza Emoções,
+podem ajudar a enriquecer os textos na web com informações relevantes para a tomada de
+decisão. Finalmente, tudo isso, aparecerá como uma febre viral que potencializará e, muito, os
+lucros empresariais
+Esse capítulo apresentou um portfólio dos trabalhos desenvolvidos e em desenvolvimento
+pela autora e sua equipe. Muitos deles possuem ainda um vasto caminho de contribuições , o que
+aponta linhas de trabalhos futuras. Os principais interesses atuais nas linhas de Computação
+Afetiva, é o desenvolvimento de Sistemas de Recomendação que usem aspectos afetivos visando
+melhorar a performance da personalização em dispositivos móveis tanto em termos de interfaces,
+interação ou mesmo técnica de personalização que efetivamente busque a satisfação dos clientes
+quando da busca por produtos serviços ou pessoas em ambientes do mundo real.
+Agradecimentos
+Esse capítulo foi desenvolvido baseado numa coletânea de textos já publicados em Livros,
+Journals, Congressos e Relatórios técnicos/pesquisa referente a projetos da autora.
+Referências Bibliográficas
+Allport, F. H., & Allport, G. W. Personality Traits: Their Classification And Measurement. Journal Of
+Abnormal And Social Psychology, 16, 6–40, 1921.
+Allport, G. W. Concepts Of Trait And Personality. Psychological Bulletin, 24, 284–93.
+Bartle, Phil. Formação e Desenvolvimento de Grupos, 1927. Disponivel em http://www.scn.org/mpfc/
+modules/bld-grpp.htm . Acesso em 20/08/2010.
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+148 149
+Berger, K. S. The Developing Person Through The Life Span. 6ª Ed. Worth Publishers, 2003.
+Bezerra, J. S. ; Nunes, M. A. S. N. . Desenvolvimento De Metodologias De Extração De Perfil Psicológico
+De Usuário Para Aplicação Em Sistemas De Recomendação Objetivando Personalização De Produtos E
+Serviços Em E-Commerce- Interface- Plano 1. 2011. (Relatório De Pesquisa).
+Bianchi-Berthouze, N., Lisetti, C. Modeling Multimodal Expression Of User’s Affective Subjective
+Experience. User Modeling And User-Adapted Interaction 12: 49-84, 2002.
+Boulay, B. du. Caring for the Learner in honour of John Self. Int. J. Artif. Intell. Ed. 13, 1, 2003.
+Boyd, D. Faceted id/entity: Managing representation in a digital world. Master’s thesis, Cambridge, MA,
+2002.
+Brandão, Carlos R. Identidade E Etnia, Construção Da Pessoa E Resistência. São Paulo, Brasiliense,
+1986.
+Cartwright, D. Theories And Models Of Personality. Wcb, 1979.
+Carreira, R., Crato, J.M., Gonçalves, D. and Jorge, J. A. Evaluating adaptive user profiles
+for news classification. In IUI ’04: Proceedings of the 9th international conference on Intelligent user
+interfaces, pages 206–212, New York, NY, USA. ACM Press, 2004.
+Cazella S. C., Nunes, M. A. S. N., Reategui, E. A  . A ciência da opinião: estado da arte em sistemas
+de recomendação. In: andré ponce de leon f. De carvalho; tomasz kowaltowski. (org.).. (org.). Jai: jornada
+de atualização em Informática da SBC. Rio de Janeiro: Editora da PUC Rio, 2010, v. , p. 161-216.
+Ciampa, Antônio Da Costa. A Estória Do Severino E A História Da Severina – Um Ensaio De Psicologia
+Social. São Paulo, Brasiliense, 1993.
+Damasio, Antonio R. Descartes’ Error: Emotion, Reason, and the Human Brain. Quill, New York, 1994.
+Donath, J. S. Being Real: Questions of Tele-Identity. In: Ken Goldberg, editor, The Robot in the Garden:
+Telerobotics and Telepistemology in the Age of the Internet, chapter 16, pages 296–311. The MIT Press,
+first edition, 2000.
+Donath, J.S. Identity and Deception in the Virtual Community. In M. A. Smith and P. Kollock, editors,
+1999.
+Ekman, P.. Strong Evidence For Universals In Facial Expressions. Psychol. Bull., 1994.
+Erikson, Erik H. Identity and the Life Cycle. Norton, 1980.
+Fiori, A. R. T. Romantic regressions: An analysis of behavior in online dating systems. Master’s thesis, MIT
+Media Lab, 2004.
+Fiori, A. R. T.; Donath, J. S Online personals: an overview. In CHI’04: CHI ’04 extended abstracts on
+Human factors in computing systems, pages 1395–1398, New York, NY, USA.ACM Press, 2004.
+Frijda, N. The Emotions. New York: Cambridge University Press. 1986.
+Giddens, A. Modernity and Self-Identity. Self and Society in the Late Modern Age. Stanford university
+Press, Stanford, California, 1991.
+Goffman, E. The Presentation of Self in Everyday Life. Anchor Book, 1959.
+Goldberg, L. R. An alternative “Description of personality”: The Big-Five factor structure. Journal of
+Personality and Social Psychology, 59, 1216-1229, 1990.
+Goldberg, L. R. A Broad-Bandwidth, Public-Domain, Personality Inventory Measuring The LowerLevel Facets Of Several Five-Factor Models. Personality Psychology In Europe, 7, 7–28, 1999.
+Goldberg, L. R., & Cols. The International Personality Item Pool And The Future Of Public-Domain
+Personality Measures. Journal Of Research In Personality, 40, 84–96, 2006.
+Gonzalez, G., De La Rosa, J.L., And Montaner, M. Embedding Emotional Context Inrecommender
+Systems. In The 20th International Florida Artificial Intelligence Research Society Conference-Flairs,
+Key West, Florida, 2007.
+Gosling, S. D., Rentfrow, P. J., Swann Jr., W. B. A Very Brief Measure Of The Big-Five Persoanlity
+Domains. Journal Of Research In Personality, 37, 504–528, 2003.
+Gosling, Sam. Psiu, Dê Uma Espiadinha: O Que As Suas Coisas Dizem Sobre Você; Tradução Marcio De
+Paula S. Hack. – Rio De Janeiro: Elsevier, 2008.
+Hall, Calvin S.; Lindzey, Gardner; Campbell, John, B. Theories Of Personality. John Wiley & Sons,
+Inc., 1998.
+Heckmann, D. Ubiquitous User Modeling. Phd thesis, Technischen Fakultlaten der Universitlat des
+Saarlandes, Saarbrucken-Germany, 2005.
+Heckmann, D. and Kruger, A. A user modeling markup language (UserML) for ubiquitous computing.
+In 8th International Conference on User Modeling, LNAI 2702, page 393-397, Johnstown, PA, USA.
+Springer, Berlin Heidelberg. 2003.
+Hutz, C. S., Nunes, C. H., Silveira, A. D., Serra, J., Anton, M., & Wieczorek, L. S. O
+Desenvolvimento De Marcadores Para A Avaliação Da Personalidade No Modelo Dos Cinco Grandes
+Fatores. Psicologia: Reflexão E Crítica, 11(2), 1998.
+Jacques, M. G. et al Psicologia Social Contemporânea: Livro-Texto. Petrópolis, Rj. Vozes, 1998.
+Johnson, J. A. Predicting Observers Ratings Of The Big Five From The Cpi, Hpi, And Neo-Pi-R: A
+Comparative Validity Study. European Journal Of Personality, 14, 1–19, 2000a.
+Johnson, J. A. Web-Based Personality Assessment. In 71st Annual Meeting Of The Eastern Psychological
+Association, Baltimore, Usa, 2000b. Retirado Em Http://Www.Personal.Psu.Edu/ J5j/Vita.Html.
+Jesus, S. G. ; Nunes, M. A. S. N. . Percepção De Aspectos Da Identidade De Usuários Em Um Ambiente
+Computacional. 2011. (Relatório De Pesquisa).
+Johnson, J. A. Ascertaining The Validity Of Individual Protocols From Webbased Personality Inventories.
+Journal Of Research In Personality, 39(1), 103–129, 2005.
+Kobsa, A. Generic user modeling systems. In P. Brusilovsky, A. Kobsa, and W. Nejdl, editors, The Adaptive
+Web, volume 4321 of Lecture Notes in Computer Science, chapter 4, pages 136–154. Springer Verlag,
+2007.
+Leao, L. P. Detecção De Expressões Faciais Para Plataforma Moodle. 2010. Trabalho De Conclusão De
+Curso. (Graduação Em Ciência Da Computação) - Universidade Federal De Sergipe.
+Leao, L. P. ; Matos, L. N. ; Nunes, M. A. S. N. . Detecção De Expressões Faciais: Uma Abordagem
+Baseada Em Análise Do Fluxo Optico. In: Wticg, 2011, Salvador. Wticg 2011, 2011.
+Lisetti, C. Personality, Affect And Emotion Taxonomy For Socially Intelligent Agents. In Proceedings Of
+The Fifteenth International Florida Artifficial Intelligence Research Society Conference, Pages 397-401.
+Aaai Press, 2002.
+Loehlin, J. C. Genes And Environment In Personality Development. United States Of America: Sage
+Publications, 1992.
+Lorenz, K. Z. Os Fundamentos Da Etologia. (P. M. Cruz & C. C. Alberts, Trad.) São Paulo: Unesp (Obra
+Original Publicada Em 1981), 1995.
+Mead, G. H. Mind, Self, and Society, volume 1. Univeristy of Chicago,Chicago, charles w. morris edition,
+1934.
+Moerk, E. L. Effects of personality structure on individual activities in a group and on agroup process,
+Human Relations, v.25 n.6 pp. 505-513, 1972.
+Murray, H. A., et al. Explorations In Personality. New York: Oxford University Press, 1938.
+Nass, C et al. Can computer personalities be human personalities? International Journal Human-Computer
+Studies, 43(2):223–239, 1995.
+Nass, C. and Lee, K. M. Does computer-generated speech manifest personality? an experimental test
+of similarity-attraction. In Proceedings of the SIGCHI Conference on Human Factors in Computing
+Systems (The Hague, The Netherlands, April 01 - 06, 2000). CHI ‘00. ACM, New York, NY, 329-336,
+2000.
+Nunes, M. A. S. N. ; Cerri, Stefano A. ; Blanc, N. Improving Recommendations By Using Personality
+Traits In. In: International Conference On Knowledge Management-In: International Conference On
+Knowledge Management-I.Know08, 2008, Graz-Austria. International Conference On Knowledge
+Management-I.Know08. V. 1. P. 92-100, 2008.
+Nunes, M. S. N. Recommender System Based On Personality Traits. (Tese De Doutorado). Université
+Montpellier 2-Lirmm- França, 2008.
+Nunes, M. A. S. N. ; Aranha, C. N. . Tendências à Tomada de Decisão computacional. In: W3C, 2009,
+São Paulo. W3C, 2009.
+Nunes, M. A. S. N. Psychological Aspects In Lifelike Synthetic Agents: Towards To The Personality Markup
+Language (A Brief Survey). Renote. Revista Novas Tecnologias Na Educação, V. 7, 2009a.
+Nunes, M. A. S. N. Recommender Systems Based On Personality Traits: Could Human Psychological
+Aspects Influence The Computer Decision-Making Process?. 1. Ed. Berlin: Vdm Verlag Dr. Müller. V.
+1. 2009.
+Nunes, M. A. S. N. ; Bezerra, J. S. ; Reinert, D. ; Moraes, D. ; Pereira, E. ; Pereira, A. J.
+S. . Computação Afetiva E Sua Influência Na Personalização De Ambientes Educacionais: Gerando
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 
+150 151
+Equipes Compatíveis Para Uso Em Ava Na Ead. In: Glaucio José Couri Machado. (Org.). Educação E
+Ciberespaço: Estudos, Propostas E Desafios. Aracaju: Virtus Editora, 2010, V. 1, P. 308-347
+Nunes, M. A. S. N. ; Moraes, D. ; Reinert, D. . Personality Inventory - Pv 1.0 (Portuguese Version).
+2010b. (Registrado No Inpi) (Disponível em http://www.personality-research.com/)
+Nunes, M. A. S. N., Bezerra, J. S., Oliveira, A. Estendendo O Conhecimento Afetivo Da Emotionml
+In: Ihc, 2010, Belo Horizonte. Ihc2010. Porto Alegre: Sbc,. P.197 -200.,2010c
+Nunes, M.A.S.N. e Cazella, S. C. O que sua personalidade révéla ? Fidelizando clientes web através de
+Sistemas de Recomendação e traços de personalidade. Minicursos do Webmedia. SBC.Capítulo 5. 2011
+Ortony, A., Clore, G. L., And Collins, A. The Cognitive Structure Of Emotions. Cambridge
+University Press, Usa, 1988.
+Paiva, A. and Self, J.A. Tagus - a user and leamer modelling workbench. User Model. User-Adapt.
+Interact., 4(3):197–226, 1995.
+Pasquali, L. (Org.). Técnicas de exame psicológico – TEP. São Paulo: Casa do Psicólogo, 2001.
+Picard, R.W., «Emotion research by the people, for the people». Emotion Review. July 2010 vol. 2 no. 3
+p.250-254. 2010.
+Picard, R. W. Affective Computing. MIT Press, Cambridge, MA, USA, 1997.
+Poo, D., Chng, B. and Goh, J.M. A hybrid approach for user profiling. In HICSS ’03: Proceedings of the
+36th Annual Hawaii International Conference on System Sciences (HICSS’03) Washington, DC, USA.
+IEEE Computer Society, 2003.
+Porto, S. M.; Costa, W.S. ; Nunes, M. A. S. N; Matos, L. N. Desenvolvimento De Metodologias De
+Extração De Perfil Psicológico De Usuário Para Aplicação Em Sistemas De Recomendação Objetivando
+Personalização De Produtos E Serviços Em E-Commerce. Relatório Técnico De Pesquisa. Universidade
+Federal De Sergipe, 2011.
+Prada, R., MA, S., Nunes, M. A. S. N. Personality in Social Group Dynamics In: International Conference
+on Computational Science and Engineering- CSE ‘09, 2009, Vancouver. International Conference on
+Computational Science and Engineering- CSE ‘09. v.4. p.607 – 612, 2009.
+Prada, R. ; Camilo, J. ; Nunes, M. A. S. N. . Introducing Personality Into Team Dynamics. In: Ecai
+- European Conference On Artificial Intelligence-Frontiers In Artificial Intelligence And Applications,
+2010, Lisbon. Ecai. Ios Press, 2010. V. 215. P. 667-672, 2010.
+Reeves, B. and Nass, C. The media equation: how people treat computers, television, and new media like
+real people and places. Cambridge University Press, New York, NY, USA, 1996.
+Resnick, P., & Varian, H. R. Recommender Systems. Communications Of The Acm, 40(3), 56-8, 1997.
+Romero, C., & Cols. Evolutionary Algorithms For Subgroup Discovery In E-Learning: A Practical
+Application Using Moodle Data. University Of Córdoba, 2009.
+Rousseau, B., Browne, P. , Malone, P. Foster, P. and Mendis, V. Personalised resource discovery
+searching over multiple repository types: Using user and information provider profiling. In ICEIS (5),
+pages 35–43, 2004.
+Saint, P., Meijer, A. R. (2008). Xep-0107: User Mood. Xmpp. In Standards Foundation. Disponível Em
+Http://Xmpp.Org/Extensions/Xep-0107.Html. Acesso Em Agosto De 2010.
+Santos, A. B. Nunes, M. A. S. N. . Desenvolvimento De Metodologias De Extração De Perfil Psicológico
+De Usuário Para Aplicação Em Sistemas De Recomendação Objetivando Personalização De Produtos E
+Serviços Em E-Commerce Reconhecimento De Traços Psicológicos Via Conversação. 2011. (Relatório
+De Pesquisa).
+Schafer, J. B. Konstan, J. and Riedl, J. E-commerce recommendation applications. Data Mining
+Knowledge Discovering, 5(1-2):115-153, 2001.
+Schultz, D. Theories Of Personality. 4ª Ed. Brooks/Cole, 1990.
+Self, J.: Student Models in Computer-Aided Instruction.  International Journal of Man-Machine Studies
+6(2): 261-276 , 1974.
+Simon, H.A. Reason in Human Affairs. Stanford University Press, California, 1983.
+Sousa, D. A. Nunes, M. A. S. N. . Aspectos Teóricos E Mensuração Do Construto Psicológico
+Personalidade Desenvolvimento De Plugin Moodle Para A Formação De Grupos De Trabalho Para Uso
+Na Ead Ufs. 2011. (Relatório De Pesquisa).
+Shaw, M. E. (1976) Group Dynamics. McGraw-Hill,1976.
+Teerven, L. and McDonald, D.W. Social matching: A framework and research agenda. Acm Trans.
+Comput.-Hum. Interact., 12(3):401–434, 2005.
+Teles, I. P. ; Nunes, M. A. S. N. . Desenvolvimento De Plugin Moodle Para Recomendação De Objetos
+De Aprendizagem Para Uso Na Ead Ufs, 2011. (Relatório De Pesquisa).
+Thagard, Paul. Hot Thought: Machanisms and Applications of Emotional Cognition.A Bradford BookMIT Press, Cambridge, MA, USA, 2006.
+Trappl, Robert; Payr, Sabine and Petta, Paolo editors. Emotions in Humans and Artifacts. MIT Press,
+Cambridge, MA, USA, 2003.
+Trevisan, Luiz. Tv Plus: Um Modelo De Sistema De Recomendação De Programas Para Tv Digital.
+Trabalho De Conclusão De Curso (Graduação Em Sistemas De Informação) - Universidade Do Vale Do
+Rio Dos Sinos, São Leopoldo, RS, 2011.
+W3C 2009. Emotion Markup Language (EmotionML) 1.0 W3C - Working Draft 29 October 2009.
+Disponível em: http://www.w3.org/TR/2009/WD-emotionml-20091029/.
+Wikipédia 2010. Disponível em http://pt.wikipedia.org/wiki/Ambiente_virtual_de_aprendizagem.
+Acesso em 20/08/2010.
+Computação Inteligente Computação Afetiva personalizando interfaces, interações e recomendações de produtos, serviços 

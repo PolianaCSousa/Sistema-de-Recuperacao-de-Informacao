@@ -1,0 +1,931 @@
+A MINERAÇÃO DE CRIPTOMOEDAS DE FORMA IMODERADA E SEUS
+IMPACTOS AMBIENTAIS: UMA ANÁLISE À LUZ DA LEI Nº 9.605/98
+João Victor Machado Medeiros1
+Walber Cunha Lima2
+RESUMO
+O presente artigo objetiva estudar de forma precisa a Lei de Crimes Ambientais
+(9.605/98) e questionar sua eficácia no que tange a penalização da prática da
+criptomineração de forma irregular, uma vez que a mesma causa impactos
+ambientais. Busca-se demonstrar pelo método analítico, explicativo,exploratório e
+pela técnica de revisão bibliográfica que a grande quantidade de energia
+demandada para a mineração de criptomoedas afeta de forma direta a quantidade
+de gás carbônico emitido na atmosfera terrestre, bem como traz consigo uma série
+de outros efeitos negativos. Os primeiros capítulos são responsáveis pela
+abordagem explicativa do que é uma criptomoeda e como ela funciona, com o foco
+no uso da energia elétrica. Em seguida, há a demonstração analítica dos impactos
+pelo uso excessivo de energia e a demonstração de forma dedutiva dos efeitos das
+práticas atuais de mineração de criptomoedas. Por fim, o trabalho analisa a Lei
+Federal nº 9.605/98, que sistematiza as condutas lesivas aos bens ambientais, com
+base em diferentes críticas doutrinárias. Em seguida, discute os objetivos
+norteadores do Direito Ambiental, que são a prevenção ao dano ambiental e a
+reparação do meio ambiente degradado e verifica a (in)aplicabilidade desses
+institutos inseridos na presente Lei Federal ante a prática da mineração de
+criptomoedas, observando se é necessária ou não uma mudança neste dispositivo
+legislativo a fim de que o mesmo se torne eficaz.
+Palavras-chave: Mineração de criptomoedas. Impactos ambientais. Lei de Crimes
+Ambientais. Aplicabilidade. Eficácia.
+2 Professor-orientador. Doutor em Ciências Sociais - UFRN. Docente do Curso de Direito do Centro
+Universitário do Rio Grande do Norte – UNI-RN. E-mail: walber@unirn.edu.br
+1 Acadêmico do Curso de Direito do Centro Universitário do Rio Grande do Norte. E-mail:
+jvmm1311@outlook.com
+1
+ABSTRACT
+This article aims to accurately study the Environmental Crimes Law (9.605/98) and
+question its effectiveness in terms of penalizing the practice of cryptomining in an
+irregular manner, since it causes environmental impacts. It seeks to demonstrate by
+the analytical method and the bibliographic review technique that the large amount of
+energy demanded for cryptocurrency mining directly affects the amount of carbon
+dioxide emitted into the Earth's atmosphere, as well as brings with it a series of other
+negative effects. The first chapters are responsible for the explanatory approach of
+what a cryptocurrency is and how it works, with a focus on the use of electricity.
+Then there is the analytical demonstration of the impacts of excessive energy use
+and the deductive demonstration of the effects of current cryptocurrency mining
+practices. Finally, the work analyzes Federal Law nº 9.605/98, which systematizes
+harmful conducts to environmental goods, based on different doctrinal criticisms.
+Then, it discusses the guiding objectives of Environmental Law, which are the
+prevention of environmental damage and the repair of the degraded environment
+and verifies the (in)applicability of these institutes inserted in the present Federal
+Law before the practice of cryptocurrency mining, observing if it is necessary or not a
+change in this legislative device in order for it to become effective.
+Keywords: Cryptocurrency mining. Environmental impacts. Environmental Crimes
+Law. Applicability. Efficiency.
+1. INTRODUÇÃO
+Criptomoedas são moedas digitais destinadas à circulação de valores e
+mercadorias que pretendem substituir ou ao menos acompanhar a moeda corrente
+tradicional adotada pelos países. Seu caráter de universalidade e presença permite
+com que seja transacionada em qualquer hora e em qualquer lugar do mundo.
+Sua criação foi em 2008, por meio da invenção da plataforma blockchain
+de Satoshi Nakamoto. Nesse cenário, ao mesmo tempo, nasce também a primeira
+criptomoeda: a Bitcoin (BTC). Para a criação e geração desse bem imaterial,
+torna-se necessária a existência de um binômio: computadores físicos e energia
+elétrica. A plataforma blockchain, resumidamente, fornece desafios algorítmicos
+para seus usuários e aqueles que eventualmente conseguem resolvê-los adquire
+como recompensa uma parte de uma criptomoeda, eis aí a prática da mineração. Se
+2
+visualizada individualmente, essa premissa pode parecer simplória. Contudo, se
+observada coletivamente e mundialmente, verificam-se reflexos consideráveis.
+Nesse diapasão, entendido o sistema pode-se chegar a conclusão de
+que quanto mais rápido e mais eficiente for o trabalho do minerador, mais retorno
+financeiro ele recebe. Com esse retorno, ele compra mais máquinas, ganha mais
+dinheiro e assim o ciclo vicioso se perdura eternamente. Por demandar cada vez
+mais força computacional, o sistema precisa de quantidades enormes de energia,
+que vêm, em sua grande maioria, de combustíveis fósseis, portanto, o aumento da
+criptomineração acaba indo contra toda a discussão global sobre emissões de
+gases, uso renovável de energia e vários outros impactos ambientais.
+Com isso, diante de todos esses efeitos negativos decorrentes da
+criptomineração na qual nos deparamos, tem-se a seguinte problemática: a atual
+Lei de Crimes Ambientais (9.605/98) é realmente eficaz no que tange a prevenção,
+proteção e segurança do meio ambiente perante essa prática?
+Para tanto, essas perguntas pretendem ser respondidas a partir da
+análise de cada capítulo abordado. o rumo do estudo passa pelos ditames
+constitucionais relativos à possível criminalização da criptomineração irregular,
+demonstrando, com base na doutrina especializada, que a utilização do Direito
+Penal em face dessa lide poderia ser a última ratio do Direito. Além disso, analisa
+a questão do Direito Econômico como forma de alicerce para regular a prática da
+criptomineração. Desse modo, discute se o ideal seria lançar-se mão, em um
+primeiro momento, de mecanismos estatais diversos, como os Direitos Civil e
+Administrativo, como meios capazes de garantir a tutela dos recursos ecológicos.
+Após tal discussão, adentra-se no estudo da Lei Federal nº 9.605/98,
+cotejando a citada norma com o princípio máximo do Direito Ambiental, que é a
+reparação do meio ambiente por meio da valorização das penas alternativas,
+presentes na Lei de Crimes Ambientais e questiona se quem eventualmente fosse
+penalizado pela prática da mineração de criptomoedas poderia fazer jus às essas
+penas alternativas que estão dispostas em seu artigo 76.
+Por fim, adentra-se na figura da composição dos danos e da transação
+penal, buscando a melhor interpretação da norma penal ambiental e realizando
+apontamentos críticos sobre uma eventual sistemática que venha a ser adotada no
+processamento da reparação ao meio ambiente degradado referente à mineração
+3
+de criptomoedas.
+2. A PECÚNIA E SUA EVOLUÇÃO HISTÓRICA: DO ESCAMBO ÀS
+CRIPTOMOEDAS
+Na origem da humanidade, época em que o conceito de dinheiro ainda
+era desconhecido, os indivíduos contribuiam em um modelo de divisão de trabalho
+para produzir bens. Nesse processo, as atividades produtivas eram mais simples, e
+todos podiam ajudar. Foi assim que surgiu a troca direta, mais conhecida como
+escambo.
+Contudo, à medida que a sociedade se tornava mais complexa, com o
+surgimento de ofícios e profissões, por exemplo, a troca de bens não se mostrou um
+modelo sustentável. Foi com base nessa problemática que a definição de um meio
+de troca se fez necessária, algo que fosse fácil de negociar e que tivesse valor
+praticamente universal. Surgiu então um conceito inicial de dinheiro.
+Embora tenha permitido grande evolução no sistema financeiro, a
+utilização de moedas metálicas ainda gerava problemas. Era difícil e perigoso
+acumular grandes quantidades desse ativo, além de impraticável do ponto de vista
+da mobilidade. Foi por conta disso que surgiu a casa de custódia, uma espécie de
+forma primitiva dos bancos.
+O sistema financeiro passou por grandes alterações nas últimas décadas,
+mas nada se compara às mudanças recentes possibilitadas pela internet. Hoje, o
+dinheiro não é apenas um pedaço de papel ou moeda, mas também números na
+tela de um computador ou smartphone. Por conta dos sistemas de internet banking,
+é possível fazer grandes transações sem precisar sair de casa.
+Até o ano de 2008, antes da criação da plataforma blockchain para
+utilização da Bitcoin e posteriormente outras criptomoedas, inexistiam possibilidades
+de se verificar ou autenticar atividades, dados e tarefas individuais realizadas no
+âmbito digital sem a intervenção de uma entidade centralizada com a finalidade de
+garantir sua veracidade e autenticidade.
+4
+A solução encontrada por Satoshi Nakamoto3
+foi a criação de uma moeda
+mundial, descentralizada, à prova de inflação e que traria confiança a partir de um
+sistema de Blockchain, sendo esta a Bitcoin, a primeira moeda digital já inventada,
+isto é, um sistema com modus operandi distribuído, sem um elemento central e
+autorregulado baseando-se em transações digitais criptografadas (ULRICH;
+FERNANDO, 2017).
+A criptografia do dinheiro confere às operações virtuais os benefícios de
+confidencialidade, integridade, rapidez nas transações e autenticação, e foi
+projetada com base em objetivos que tornam o uso das criptomoedas uma
+alternativa atrativa para a moeda corrente e, por meio de softwares específicos,
+fornece aos usuários liberdade de pagamento, segurança, taxas muito baixas e
+menos riscos para comerciantes (ULRICH; FERNANDO, 2017).
+Assim, foi justamente por influência dessas características que o valor da
+Bitcoin foi sendo valorizado ano após ano, atrelado à criação de novas
+criptomoedas como por exemplo a Ethereum, Binance coin, Cardano, Tether,
+Solana, XRP, Polkadot, Dogecoin, etc.
+Destaca-se que a Bitcoin foi, de longe, o melhor investimento dos últimos
+10 (dez) anos em qualquer parte do mundo, valorizando mais de 9.000.000% nesse
+período. Desta forma, quem investisse US$ 1,00 (um dólar) em bitcoin no início de
+2010, agora teria mais de US$ 90.000 (noventa mil dólares) (BANK OF AMERICA,
+2019).
+Somente no ano de 2019, o Bitcoin valorizou cerca de 95% (noventa e
+cinco por cento) e, no caso do Brasil foi o melhor investimento do ano com outras
+aplicações financeiras como ações na bolsa de valores, tesouro, títulos pré fixados,
+poupança, índices atrelados a selic, entre outros ( BANCO CENTRAL, 2020).
+2.2 - BLOCKCHAIN: REVOLUÇÃO TECNOLÓGICA E SUAS APLICAÇÕES PRÁTICAS
+NO COTIDIANO DE FORMA INTERDISCIPLINAR
+O blockchain é uma tecnologia nunca antes vista, baseada em um
+simples princípio:, como por exemplo as criptomoedas. É um sistema que está
+revolucionando o mundo.
+Este dispositivo nada mais é do que um livro de razão pública (ou livro
+3 Satoshi Nakamoto é o pseudônimo da pessoa – ou grupo – que criou o Bitcoin (BTC), a primeira
+criptomoeda do mundo.
+5
+contábil) que faz o registro de uma transação de moeda virtual, de forma que esse
+registro seja confiável e imutável (DE CARVALHO; DAYANA, 2021).
+O blockchain registra informações como: a quantia de moedas virtuais
+transacionadas, quem enviou, quem recebeu, quando essa transação foi feita e em
+qual lugar do livro ela está registrada. Isso mostra que a transparência é um dos
+principais atributos desta tecnologia.
+Esse sistema armazena as informações de um grupo de transações em
+blocos, marcando cada bloco com um registro de tempo e data. A cada período de
+tempo (10 minutos no blockchain), é formado um novo bloco de transações, que se
+liga ao bloco anterior.
+Os blocos são dependentes um dos outros e formam uma cadeia de
+blocos. Isso torna a tecnologia muito útil para registro de informações que
+necessitam de confiança, como no caso de uma transação de bitcoin e outras
+criptomoedas, sendo possível visualizar toda a sistemática na imagem a seguir.
+Imagem 1 - Como funciona a Blockchain
+Fonte: ( DIGICONOMIST, 2021)
+Nessa ótica, este procedimento muda totalmente a forma como os
+agentes econômicos transacionam no mercado e impacta diretamente na atuação
+dos profissionais nos âmbitos mais diversos de trabalho.
+6
+Como já mencionado, uma das principais aplicações do Blockchain é
+destinado às criptomoedas. A descentralização oriunda dessa tecnologia faz com
+que essas moedas fiquem livres de autoridades regulamentadoras e intermediários
+para a realização das transações, aumentando a segurança do modelo.
+Outras aplicações práticas podem ser vistas, como é o caso dos
+contratos inteligentes. Essa plataforma permite que qualquer pessoa possa fazer
+seu próprio modelo de código para ser utilizado nos mais variados tipos de acordos.
+É uma das aplicações do blockchain com maior potencial de popularização, visto a
+infinidade de contratos existentes.
+Seguindo nessa mesma linha de raciocínio, a área da educação também
+já deu início ao uso dessa tecnologia. Atualmente, um problema muito comum e
+grave são as fraudes decorrentes de falsificações em currículos e até mesmo de
+exercer a profissão ilegalmente. Com o blockchain, as instituições podem
+disponibilizar as certificações em uma rede segura e assim a organização que
+necessitasse verificar essas credenciais teria o fácil acesso à elas.
+Juntamente à educação, a área da saúde é um setor que necessita de
+um rigoroso controle de registros médicos dos pacientes, tanto de medicamentos
+receitados, quanto de procedimentos realizados. Esse registro pode ser baseado
+em blockchain. Assim, haveria uma ficha médica ao decorrer da vida com a
+segurança, o sigilo e a confiabilidade que o sistema poderia fornecer. Além disso, os
+perfis de saúde dos usuários poderiam ser usados em pesquisas sem que os dados
+pessoais fossem divulgados, visto que eles seriam criptografados.
+Outro uso dessa tecnologia refere-se ao armazenamento em nuvem.
+Hoje, muitas organizações utilizam o serviço de grandes empresas como Google e
+Microsoft. No entanto, além de ser um serviço muito oneroso, as informações
+sigilosas acabam sendo divulgadas para essas empresas que cuidam desse
+armazenamento. Fazendo com que o sistema descentralizado e o blockchain
+possam auxiliar no aumento da segurança dos dados.
+Daí se vê que praticamente qualquer coisa pode ser validada no
+Blockchain, sendo também incluídas as informações intangíveis como a questão do
+voto em eleições, ou mesmo no Direito Digital em autenticação de documentos,
+certificação digital, contratos eletrônicos (smart contracts4
+), registros de Prova de
+4 Os smart contracts são contratos digitais autoexecutáveis que usam a tecnologia para garantir que
+os acordos firmados serão cumpridos.
+7
+Autoria, etc.
+3. MINERAÇÃO DE CRIPTOMOEDAS SOB A ÓTICA AMBIENTAL - A
+EXCESSIVA DEMANDA ENERGÉTICA
+Na busca pela prata ou ouro, garimpeiros e mineradoras escavam
+terrenos e rios em busca dos metais preciosos. Quanto mais pedregoso ou profundo
+o local de extração, maior a necessidade de equipamentos, como sondas,
+escavadeiras e dragas.
+A mineração de criptomoedas é semelhante. Para “extrair” uma moeda
+digital, grupos de pessoas e empresas mergulham na rede da moeda digital à caça
+de algumas unidades. Quanto mais complexa e competitiva a busca, mais
+computadores potentes eles precisam.
+A mineração, portanto, consiste no processo responsável por validar os
+dados na blockchain. Nele, vários mineradores tentam achar a solução de equações
+complexas com seus computadores ao mesmo tempo, na base da tentativa e erro.
+Em síntese, a mineração é a responsável por colocar mais criptomoedas em
+circulação, assim como faz um banco central ao “imprimir” dinheiro. A diferença é
+que, no caso de moedas digitais como o Bitcoin, não há uma autoridade
+gerenciando o processo, tudo é regido por algoritmos.
+Dessa forma, existem alguns sistemas nos quais uma blockchain pode
+escolher operar. O escolhido pela Bitcoin e pela Ethereum é o chamado “Proof of
+Work”, ou PoW (prova de trabalho, em inglês). No PoW, para minerar determinado
+bloco, os computadores ficam competindo entre si para encontrar a resposta a um
+enigma criptográfico. Fundamentalmente, para encontrar a resposta certa, é preciso
+participar de um jogo de adivinhações (DE VRIES, Alexander, 2021).
+No caso da criptomoeda Ethereum, os mineradores profissionais
+recebem cerca de 2 ether a cada bloco minerado, cerca de R$ 14.500,00 (quatorze
+mil e quinhentos reais) na cotação atual (DE VRIES, Alexander,2021).
+Ou seja, quanto mais rápido e mais eficiente for o trabalho do minerador,
+mais retorno financeiro ele recebe. Com esse retorno, ele compra mais máquinas,
+ganha mais dinheiro e assim o ciclo perdura eternamente. Por demandar cada vez
+mais força computacional, o sistema precisa de quantidades enormes de energia,
+que vêm, em sua grande maioria, de combustíveis fósseis.
+Estima-se que o processo de mineração do Bitcoin consome cerca de
+8
+114 terawatt-horas (TWh) por ano. Esse gasto é maior que o registrado por países
+como Paquistão (103.5 TWh) e Holanda (111 TWh). Além disso, esse montante
+representa 25% do consumo total de eletricidade no Brasil (Cambridge University,
+2020).
+Nota-se então, que a quantidade de energia para tornar a mineração de
+criptomoedas possível está sendo cada vez maior, isto se traduz na utilização de
+energia elétrica superior ao consumo da Argentina, como pode ser observado no
+gráfico abaixo:
+Imagem 2 - Uso de energia da Bitcoin
+(Fonte - University of Cambridge Bitcoin electricity consumption index,
+2021)
+Percebe-se que a demanda existente para geração de criptomoedas,
+principalmente a Bitcoin, está intrinsecamente ligada ao fator energia elétrica, pois
+os resultados advêm da utilização de computadores destinados ao processamento
+do algoritmo.
+Nessa esteira, em pesquisa de campo feita no dia 08/08/2022, o
+9
+minerador de criptomoedas profissional Augusto Oliveira foi procurado para realizar
+uma entrevista. Nela, Augusto afirma que possui uma fazenda de mineração da
+criptomoeda Ethereum, contendo 170 placas de vídeos que ficam ligadas durante
+24 horas por dia para exercer a “extração” dessa moeda digital.
+Já sobre a questão financeira, argumentou-se que por mês, a prática da
+mineração rende para Augusto cerca de 8,10 Ethereum. Convertendo esse valor na
+cotação do dia em que a entrevista foi realizada, isso é o equivalente a US$
+14.570,27 ou R$ 74.798,01. Foi reiterado ainda que esse mercado é um mercado
+volátil, podendo ter momentos de altas e baixas nos valores das criptomoedas.
+Ao ser questionado sobre o consumo energético de sua fazenda, o
+entrevistado aponta que a média de consumo é em torno de 30.800 kWh/mês.
+Fazendo um comparativo, segundo o Laboratório de Eficiência Energética em
+Edificações (LABEEE), o consumo médio de energia elétrica nas residências
+brasileiras é de 152,2 kWh/mês, tendo variações em algumas regiões que chegam
+até 273,1 kWh/mês. Isso comprova a exorbitante demanda energética que é
+necessária para a prática de mineração, utilizando recursos de forma excessiva e
+aumentando cada vez mais as chances de sérios impactos ambientais no Brasil.
+Esses impactos só são possíveis devido a ausência de legislação
+específica que verse sobre essa temática no país e, a aplicabilidade e eficácia da
+atual Lei de Crimes Ambientais (Lei nº 9.605/98) será discutida em capítulo próprio
+posteriormente.
+3.1 IMPACTOS AMBIENTAIS DA MINERAÇÃO EM EXCESSO - DEMANDA POR
+COMBUSTÍVEIS FÓSSEIS
+Como já abordado anteriormente, os supercomputadores utilizados na
+mineração de criptomoedas têm um gasto enorme de energia. A poluição ambiental
+ocorre na geração energética para consumo dessas redes blockchain, em especial
+com a queima de combustíveis fósseis: petróleo, carvão e gás natural.
+Segundo levantamento da Faculdade Getúlio Vargas (FGV), Os
+combustíveis fósseis, que são grandes emissores de Gases de Efeito Estufa (GEE),
+predominam na matriz energética global: Petróleo: 33%; Carvão: 27%; Gás Natural:
+24%; Hidrelétricas: 6%; Nuclear: 4%; Eólica: 2%. (FGV ENERGIA - STATISTICAL
+REVIEW, 2020).
+As emissões de carbono geradas em apenas um ano com o
+10
+processamento total de criptomoedas é de 92,07 quilotoneladas desse gás,
+comparável à emissão de carbono anual do Chile. Uma única transação de Bitcoin
+gera, somando o desperdício energético de mineradores sem sucesso: 910,96 kg de
+gás carbônico, equivalente a 151 mil horas de vídeos no YouTube; 1917 kWh,
+equivalente a 65 dias de energia elétrica de uma família americana média
+(DIGICONOMIST, 2021)
+Portanto, a cripto-mineração acaba indo contra toda a discussão mundial
+sobre emissões de gases e uso renovável de energia, sendo um dos principais
+fatores que estimulam o avanço do aquecimento global.
+Um artigo científico publicado pela Revista “Nature” (NATURE -CLIMATE
+CHANGE, 2018) aponta que apenas as emissões relacionadas ao Bitcoin podem
+elevar o aquecimento global em 2ºC em menos de 30 anos. Já o New York Times
+aponta que a mineração de Bitcoin utiliza 0,5% de toda a energia consumida na
+Terra. O jornal ainda indica que a prática representa sete vezes o consumo
+energético de todo o Google (THE NEW YORK TIMES, 2020).
+Sob essa ótica, no ano de 2021, uma série de protestos chamou a
+atenção do mundo. Foi apurado uma reclamação de uma comunidade sobre o
+aquecimento do Lago Seneca, localizado no no sul do estado de Nova York, que
+ficou mais quente devido à mineração de criptomoedas. Segundo a população, o
+aumento da temperatura começou a acontecer quando a usina de elétrica movida a
+gás da região foi convertida em uma usina de mineração, algo que aconteceu em
+2019 (NBC NEWS, 2021).
+Entretanto, as consequências negativas dessa prática não se limitam à
+propagação do aquecimento global. Outro grave resultado que se observa em
+decorrência da cripto-mineração é o aumento exponencial dos lixos eletrônicos ou
+e- lixo. Esse termo se remete a equipamentos eletrônicos descartados ou obsoletos.
+Atualmente, os equipamentos que estão sendo comprados com o intuito
+de minerar estão cada vez mais especializados. Em virtude disso, os desgastes dos
+componentes dessas máquinas são mais rápidos. Um computador de uso comum
+tem a média de tempo de vida útil estimada em 4 anos, podendo diminuir ou
+aumentar dependendo do cuidado. Já um computador utilizado em mineração, tem
+a vida útil estimada, em média, de 1 ano e meio.
+É nesse cenário que houve um aumento significativo de lixo eletrônico,
+11
+pois apenas a atividade de mineração gera 30,7 toneladas de lixo eletrônico por
+ano. Cada transação de Bitcoin, por exemplo, equivale a 150g de lixo eletrônico, o
+que corresponde à meio Tablet (RESOURCES, CONSERVATIONS & RECYCLING,
+2022).
+Com isso, além da quantidade enorme de lixo, a produção e consumo
+elevado gerado por essa constante troca das máquinas demonstra uma utilização
+de recursos naturais de forma não sustentável. Também há uma preocupação com
+o descarte desses equipamentos. Isso porque devido a sua composição de metais
+pesados o e-lixo gera problemas tanto ao meio ambiente quanto à saúde pública
+caso não seja descartado corretamente.
+Nessa órbita, segundo a Associação Brasileira de Empresas de
+Tratamento de Resíduos e Efluentes (ABETRE), em 2019, no Brasil, foram
+descartados 2,9 milhões de toneladas de lixo eletrônico, mas apenas 600 mil
+toneladas foram destinadas corretamente. No resto do mundo, os dados seguem
+ritmo semelhante no mesmo ano, apenas 17,4% de todo o lixo eletrônico gerado foi
+reciclado.
+Outro severo impacto ambiental são os apagões de energia
+generalizados. Todos os mineradores buscam as mesmas coisas: energia barata e
+relativamente estável para operar. O que tende a levá-los aos mesmos locais (DE
+VRIES, Alexander, 2021).
+Ocorre que, muitos desses locais não têm capacidade para lidar com
+essa demanda. A consequência são os apagões de energia. Com a demanda cada
+vez mais nichada, países que possuem energia barata e não possuem qualquer tipo
+de regulamentação que versem sobre essa prática, correm o risco de terem
+apagões de energia generalizados.
+Dentro dessa mesma perspectiva, a cripto mineração de forma
+desregularizada está resultando em uma grave crise energética no Irã. Múltiplas
+cidades sofrem com apagões enquanto usinas fósseis são forçadas a utilizar
+combustíveis de baixa qualidade. Como resultado, densas nuvens negras de
+poluição são formadas na capital do país e em outros municípios (NBC NEWS,
+2021).
+Dessa forma, economias como a China, Egito e Catar, impõem fortes
+barreiras à cripto-mineração e, até o banimento, aliando-se ao grupo de 51 países
+que proibiram esse mercado objetivando a prevenção e a conservação do
+12
+meio-ambiente (COINTELEGRAPH, 2021).
+Ainda na questão das infelizes consequências, por ser um fenômeno
+global e inovador, os impactos da cripto mineração se estendem a outros
+segmentos. Além do tema ambiental, a escassez de chips também se mostra
+diretamente ligada às práticas desse mercado.
+A pandemia da COVID-19 levou a economia global a uma recessão
+econômica nos últimos anos, alterando as cadeias de suprimentos e mudando o
+padrão de consumo dos consumidores. Atrelado a isso, ao mesmo tempo em que
+as fabricantes diminuíram a produção dos componentes, as empresas de
+tecnologias, cujos produtos foram impulsionados pela mineração de criptomoedas,
+compraram grande parte dos dispositivos no mercado.
+Assim, quando há um aumento no valor de alguma criptomoeda, a
+demanda por equipamentos também sobe, acarretando a queima de estoques dos
+produtos. Dessa forma, ao passo em que cresce exponencialmente a busca desses
+aparelhos que são utilizados para minerar, o fornecimento desses semicondutores
+(chips) entra em crise, acarretando atrasos na fabricação toda sorte de produtos, de
+geladeiras e carros até cartões de crédito.
+Desse modo, verifica-se que por necessitar de demasiada energia que é
+obtida, em grande parte, por combustíveis fósseis, a prática de minerar
+criptomoedas pode proporcionar sérias consequências ao meio ambiente, tais
+como: o desenvolvimento do aquecimento global; A produção em larga escala de
+lixo eletrônico; Apagões de energia generalizados e a contribuição em agravar a
+crise de fornecimentos de chips.
+Daí se vê a necessidade da criação ou alteração de legislações que
+regulem essa prática, juntamente com o intuito de prevenir e remediar os resultados
+descritos. Nesse diapasão, percebe-se que alguns países já visam regulamentar o
+uso de criptomoedas, como é o caso do Brasil, Estados Unidos, Austrália e Japão.
+Porém, é imprescindível que além dos objetivos comerciais que se buscam diante
+disso, a questão ambiental também seja abordada como prioridade.
+4. REGULAMENTAÇÃO JURÍDICA DAS CRIPTOMOEDAS - A IMPORTÂNCIA DO
+DIREITO ECONÔMICO
+Criptomoedas são acessíveis, têm menores custos de transação,
+e funcionam como válvula de escape para pessoas que almejam uma alternativa à
+13
+moeda depreciada de seu país ou a mercados estrangulados.
+Se existir a possibilidade de que um mercado competitivo de moedas
+traga tais benefícios como maior equilíbrio e igualdade social, talvez valha a pena
+olhar para ele, e viabilizar sua realização. A partir desta indagação, segue uma
+análise do melhor uso da lei, ou de contratos, de maneira que esses
+benefícios estejam acessíveis à população.
+O Legislador deste início de milênio não pode ser mero espectador
+do panorama social, tendo que acompanhar as mudanças e transformações
+sociais. Desde 2008, foram criadas milhares de criptomoedas, muitas já
+morreram, outras persistem. De acordo com o projeto de Lei do senador Flavio
+Arns “ em 2018 o volume negociado de moedas virtuais correspondeu a R$ 6,8
+bilhões, [...]. No mesmo ano existiam cerca de 35 exchanges no Brasil, sendo que
+23 delas foram criadas ainda em 2018, o que denota o crescimento exponencial
+deste novo setor.
+Tanto o legislador já está atento para a mudança deste cenário
+que vem ocorrendo, como já se discutem projetos de lei, contudo, que
+benefícios uma lei especial para criptomoedas e exchanges pode trazer?
+A partir da perspectiva da Segurança Jurídica: uma lei
+assentaria o entendimento de todos sobre o assunto, discussões como ‘é moeda,
+não é moeda’ morreriam, e por consequência traria estabilidade ao novo mercado.
+Outro ponto é liquidez, quanto mais seguro mais novos usuários,
+os mais conservadores, se sentiriam confiantes para adentrar ao mercado,
+o que consequentemente aumentaria a oferta e a demanda por novas moedas,
+trazendo à tona o melhor de um mercado inteligente.
+Hoje a Receita Federal já tem instrução normativa para a cobrança
+de impostos sobre as atividades realizadas em criptomoedas, principalmente o
+Bitcoin. Num contexto maior, quanto mais valor fático fosse agregado à uma
+criptomoeda mais atraente seria ao Governo receber outras tributações nessas
+moedas. Sobre esse assunto o Ex Presidente Michel Temer através do
+Decreto nº 9.580/2018 que regulamenta a tributação, a fiscalização, a
+arrecadação e a administração do Imposto sobre a Renda e Proventos de Qualquer
+Natureza, já abriu a possibilidade de que bens diversos sejam tributados.
+Nesse sentido, para que possamos discutir os impactos ambientais
+decorrentes da criptomineração e a eficácia da Lei de Crimes Ambientais ante essa
+14
+problemática, é necessário primeiramente trazer à tona a questão do Direito
+Econômico, pois é justamente esse instituto que elaborará normas jurídicas que
+possam regular a circulação desses criptoativos. Após isso, quando já se tornasse
+presente essa regularização, a discussão sobre outros temas, como a questão
+ambiental, por exemplo, seria muito mais fácil e didático, justamente pelo
+esclarecimento que o Direito Econômico oferece.
+5. A LEI Nº 9.605/98 E SUA (IN)APLICABILIDADE ANTE A PROBLEMÁTICA DA
+CRIPTO MINERAÇÃO NO BRASIL
+A complexidade econômica do mundo moderno requer a apropriação dos
+bens naturais. Contudo, especialmente em razão do esgotamento dos recursos
+ambientais, a humanidade vive uma mudança de paradigmas que exige, de modo
+crescente, a utilização racional e equilibrada desses recursos.
+Dessa forma, a Constituição Federal de 1988 (BRASIL, 1988) reservou
+seu artigo 225 para tratar do tema ambiental, cominando o direito de todos “...ao
+meio ambiente ecologicamente equilibrado, bem de uso comum do povo e essencial
+à sadia qualidade de vida, impondo-se ao Poder Público e à coletividade o dever de
+defendê-lo e preservá-lo...”
+A partir da nova Carta Política, o meio ambiente ganhou, no país, status
+de direito fundamental do ser humano e verdadeiro desdobramento da proteção do
+direito à vida. Isso porque a salvaguarda das condições adequadas à vida depende,
+logicamente, da proteção dos valores ambientais (GOMES, 1999, p. 172).
+Com a constitucionalização da problemática ambiental, deu-se um
+importante passo rumo ao respeito e ao atendimento às necessidades ecológicas de
+um país com tamanha diversidade e quantidade de recursos naturais como o Brasil.
+Essa constitucionalização da tutela ambiental trouxe reflexos em várias esferas
+jurídicas de forma interdisciplinar, como é o caso da esfera penal atrelada ao ramo
+digital no cenário ambientalista.
+É exatamente nesse contexto de progresso com os temas ambientais que
+nos deparamos com certos questionamentos. Percorridos os dispositivos
+constitucionais que tratam do meio ambiente advinda da Carta Política Brasileira,
+adentra-se na análise dos preceitos da Lei Federal que dispõe, especificamente,
+sobre as sanções penais derivadas de condutas e atividades lesivas ao meio
+ambiente.
+15
+A Lei Federal nº 9.605/98 (BRASIL, 1998), conhecida como “Lei de
+Crimes Ambientais”, veio com o condão de prevenir e reprimir condutas praticadas
+contra a natureza (SIRVINKAS, 2009). A contribuição desta Lei para o ordenamento
+jurídico é controversa, sendo festejada especialmente pelos doutrinadores
+especializados na temática ambiental. Por outro lado, a lei em referência é
+questionada por uma gama de juristas, como Reale Júnior, que se coloca
+criticamente frente à mesma:
+Em sua aplicação, passados 10 anos de sua edição, a lei revelou suas
+deficiências: puniram-se atos irrelevantes e remanesceram impunes fatos
+gravemente lesivos ao meio ambiente. A incômoda sabedoria dos
+provérbios, neste caso, encontra inteira razão: quem tudo quer nada tem. O
+legislador, animado de boas intenções em defesa do meio ambiente,
+pretendeu impor a repressão penal a tudo e a todos. No entanto,
+contradições e inconsistências brotam a cada passo. (REALE JÚNIOR,
+2009, p. 23)
+Uma boa acepção da “Lei dos Crimes contra o Meio Ambiente” aponta
+como importantes características dessa norma a valorização das penas alternativas
+à pena privativa de liberdade e a preocupação com a reparação do dano ambiental.
+Para tanto, a norma lançaria mão dos instrumentos trazidos pela Lei dos Juizados
+Especiais Criminais (Lei Federal n. 9.099/95) como a composição do dano, a
+transação penal e a suspensão condicional do processo (LECEY, 2007, p. 92)
+É exatamente nesse contexto acima descrito que surgem as discussões a
+respeito da criptomineração no Brasil, uma vez que a mesma não possui nenhum
+tipo de regularização neste dispositivo legal ou em qualquer outro e, sua prática de
+forma excessiva é comprovadamente prejudicial ao meio ambiente. Ou seja, há uma
+grande lacuna legislativa no que tange à determinação de medidas preventivas e
+regulamentadoras referentes à mineração de moedas digitais, podendo qualquer
+indivíduo exercer essa atividade como bem entender, acarretando impactos
+ambientais e não sofrendo nenhuma penalização decorrentes da sua conduta.
+O fato é que o legislador infraconstitucional ordenou, em um único
+diploma legal, grande gama de condutas que possam causar dano ou colocar em
+perigo o meio ambiente. Com isso, objetivou não só consolidar mas também
+sistematizar, dentro de uma lógica formal, os delitos ambientais e suas penas
+16
+(CRUZ, 2003, p. 63).
+Porém, o que se observa é que esses mesmos legisladores não estão
+percebendo ou simplesmente ignoram que essa gama de condutas e resultados
+estão sendo ultrapassadas por novas condutas com resultados ainda mais
+avassaladores. Diferente da realidade brasileira, em alguns lugares do mundo, já é
+possível visualizar medidas regulamentadoras da criptomineração com o objetivo de
+reduzir os danos ambientais. O Senado do Estado de Nova York, por exemplo,
+aprovou um projeto de lei que proíbe a mineração de criptomoedas. No entanto, a
+lei vai proibir apenas a instalação de novos projetos, sem prejuízo às atividades que
+já estão em operação. Esse projeto visa reduzir o impacto ambiental da atividade de
+mineração.
+Enquanto isso no Brasil, ainda não se tem previsão de quando haverá
+qualquer tipo de alteração ou inovação legislativa capaz de abordar essa temática.
+É sabido que a discussão sobre a utilização de criptomoedas no país já vem
+avançando bastante, tanto que seu uso já está se tornando cada vez mais comum,
+inclusive na compra de automóveis e imóveis. Entretanto, no que tange a parte
+ambientalista dessa matéria, nota-se que a atual Lei Federal de crimes ambientais
+(9.605/98), o Código Florestal (12.651/12) e a Política Nacional do Meio Ambiente
+(6.938/81), tornam-se inaplicáveis ante a complexidade dessa questão, uma vez
+que não se tem estrutura e nem recursos para penalizar aqueles que até o momento
+“não estão infringindo nenhuma lei”. Salienta-se que o resultado da criptomineração
+está incluído nas leis aqui mencionadas, pois trata-se diretamente de impactos
+ambientais, porém, as condutas causadoras desses impactos ainda são imunes a
+qualquer tipo de sanção.
+5.1 A TUTELA PENAL DA LEI Nº 9.605/98 E SUA EFICÁCIA: UM DITAME
+CONSTITUCIONAL
+A proteção penal ao meio ambiente foi abarcada pela Carta
+Constitucional no artigo 225, §3º (BRASIL, 1988), o qual determina que “as
+condutas e atividades consideradas lesivas ao meio ambiente sujeitarão os
+infratores, pessoas físicas ou jurídicas, a sanções penais e administrativas,
+independentemente da obrigação de reparar os danos causados.”
+Diante dessa cominação, pode-se inferir que a Constituição de 1988
+afastou, acertadamente, qualquer eventual dúvida quanto à indispensabilidade de
+17
+uma proteção penal do ambiente, reconhecendo a existência e a relevância do
+ambiente para o homem. Reconheceu, também, a sua autonomia como bem
+jurídico, devendo, para tanto, o ordenamento jurídico lançar mão, inclusive, da pena,
+ainda que como última ratio, para garanti-lo (PRADO, 2001, p. 59).
+Nesse aspecto, há doutrinadores que entendem que a utilização do
+Direito Penal, em face das lides ambientais, deve ocorrer apenas como última
+alternativa do Direito, dentro da concepção do princípio da intervenção mínima.
+Pode-se citar, dentro dessa linha, o entendimento de Viegas, ao defender que o
+Direito Penal deverá subsistir como meio de tutela ambiental estatal apenas quando
+os demais mecanismos não forem capazes de proteger a natureza e somente
+naquelas agressões consideradas socialmente intoleráveis, de modo que o direito
+de punir do Estado, na seara penal, seja exercido como exceção do sistema jurídico
+(VIEGAS, 2008, p. 3).
+Acontece que, quando se adentra no mundo da criptomineração, há uma
+grande dificuldade, quase que impossível, em identificar os sujeitos que praticam
+essas atividades, uma vez que os mesmos apenas ficam em suas residências e
+ligam seus supercomputadores para minerar o dia todo, isentando-se de qualquer
+tipo de fiscalização. Assim, a única etapa visível dessa relação, de fato, são os
+impactos ambientais causados. Dessa forma, é notório a indispensabilidade da
+aplicação de sanções penais para com os criptomineradores que atuam de forma
+inconsequente, entretanto, antes de mais nada, é imprescindível a criação de
+medidas capazes de fiscalizar e identificar todo o procedimento desse trabalho,
+desde a compra dos computadores, até a estipulação de limites de energia que
+cada pessoa pode utilizar, para posteriormente serem aplicadas as sanções penais
+proporcionais ao dano causado.
+É delicada a tarefa de determinar como deve ocorrer a reparação em
+função do dano causado e quais os critérios e metodologias a serem utilizadas para
+tanto. Afinal, o meio ambiente não cabe dentro de conceitos e fórmulas
+matemáticas, devendo o operador do Direito considerar que “o meio ambiente, com
+todos os elementos que ele pode compreender, é inescapavelmente holístico e
+sistêmico” (MILARÉ, 2004, p. 1.014).
+As variadas nuances ambientais certamente dificultam a aplicação e a
+interpretação da Lei 9.605/98, vez que os inúmeros tipos penais dispostos em tal Lei
+suportam grande gama de interpretações, atrelado à ausência de tipificação da
+18
+criptomineração, fato que, na mais das vezes, atenta contra a própria segurança
+jurídica dos indivíduos.
+De outra banda, aqueles que consideram promissoras as medidas
+penalizantes na defesa ambiental comentam que a luta pela proteção à natureza
+teria encontrado, no Direito Penal, um de seus mais significativos instrumentos,
+entre outros motivos, porque o estigma de um processo penal gera efeitos que as
+demais formas de repressão não alcançariam (FREITAS, 2001, p. 32).
+Portanto, o que se extrai dessa discussão, primeiramente é salientar a
+importância da tutela penal em relação ao meio ambiente e questionar como ela
+seria implementada nos casos da criptomineração. É certo que é extremamente
+necessária a imposição de sanções àqueles que de alguma forma prejudiquem o
+meio ambiente. Porém, quando se trata dos impactos decorrentes da mineração de
+criptomoedas, destaca-se a dificuldade em como penalizar os sujeitos responsáveis
+por esses resultados, sendo imperioso a elaboração e atualização dos dispositivos
+legais presentes na Lei Federal nº 9.605/98, para que assim a sua eficácia seja
+plena e consiga englobar a defesa do meio ambiente como um todo.
+5. A EVENTUAL COMPOSIÇÃO DOS DANOS E A TRANSAÇÃO PENAL NO
+CASO DA CRIPTOMINERAÇÃO SOB A ÉGIDE DA LEI DE CRIMES AMBIENTAIS
+Por não existir qualquer tipo de regularização no viés ambientalista até o
+momento, os impactos ecossistêmicos causados pela mineração de criptomoedas
+não possuem uma espécie de classificação que mensure a gravidade e o potencial
+ofensivo danoso advindos dessa prática. Isso significa que, ao passo em que o
+legislador finalmente decida implementar limites e regramentos a essas condutas e
+identifique os sujeitos, o mesmo deve se atentar para a tipificação do crime, da pena
+e das demais condições que venham a surgir a partir do possível ato ilícito da
+criptomineração.
+Essa observação é de extrema importância pois a Lei de Crimes
+Ambientais traz esculpida, em seu artigo 27, a possibilidade de ser oferecida, nos
+casos de crimes de menor potencial ofensivo, a proposta de aplicação imediata de
+pena restritiva de direitos ou multa, prevista no art. 765 da Lei nº 9.099, de 26 de
+5 Art. 76. Havendo representação ou tratando-se de crime de ação penal pública incondicionada, não
+sendo caso de arquivamento, o Ministério Público poderá propor a aplicação imediata de pena
+restritiva de direitos ou multas, a ser especificada na proposta.
+19
+setembro de 1995. Mas esta somente poderá ser formulada caso tenha havido a
+prévia composição do dano ambiental, de que trata o art. 746 da mesma lei, salvo
+em caso de comprovada impossibilidade. A intenção do legislador foi criar um
+instrumento voltado à reparação do dano ambiental. Sobre o tema, vale destacar
+que o viés reparatório da justiça criminal, que foi adotado de modo bastante claro na
+Lei 9.099/95 (Lei dos Juizados Especiais), “pode ter encontrado seu apogeu na
+recente Lei Ambiental (Lei 9.605/98) que, com efeito, ao cuidar dos institutos da
+‘transação penal’ e da ‘suspensão condicional do processo’, conferiu relevância
+ímpar à ‘reparação do dano ambiental’” (GRINOVER, 2005, p. 387).
+A necessidade de composição dos danos ambientais da forma como
+proposta na Lei 9.605/98 é vista por muitos estudiosos como uma importante
+contribuição à preservação do meio ambiente. Nesse aspecto, o art. 27 da Lei
+9.605/98, comina que nos crimes de menor potencial ofensivo, a proposta prevista
+no art. 76 da Lei 9.099/95 somente será formulada se tivermos a prévia composição
+do dano ambiental, salvo no caso de impossibilidade.
+É exatamente nesse cenário que surgem as dúvidas a respeito da
+classificação do delito e da composição do dano nos casos da criptomineração.
+Supõe-se que em um futuro próximo já exista a regularização dessas atividades em
+nosso ordenamento jurídico brasileiro. A partir disso, se um indivíduo ultrapassar os
+limites legais estabelecidos para a prática da mineração de criptomoedas e realizar
+essa execução de forma ilegal, vindo a causar futuramente severos impactos
+ambientais, como se daria a penalização desse sujeito? como seria classificado o
+delito que o mesmo praticou? seria possível haver a reparação do dano ambiental?
+ele poderia fazer jus aos crimes de menor potencial ofensivo e ser penalizado
+apenas como multa?
+Primeiramente, é necessário ter em mente que os efeitos negativos da
+criptomineração não são imediatos, podem levar dias, meses ou até anos para as
+primeiras consequências advindas dessa prática surgirem. Além disso, nota-se
+também que grande parte desses impactos ambientais são subjetivos, como por
+exemplo o aumento da emissão de gás carbônico contribuindo para o aquecimento
+global ou até mesmo os apagões de energia generalizados. Nesse diapasão, muito
+se questiona qual o potencial ofensivo desse eventual crime, e se for considerado
+6 Art. 74. A composição dos danos civis será reduzida a escrito e, homologada pelo Juiz mediante
+sentença irrecorrível, terá eficácia de título a ser executado no juízo civil competente.
+20
+como menor potencial, seria possível haver a prévia composição do dano ambiental
+visto o caráter subjetivo e o longo lapso temporal de surgimento desses efeitos?
+De fato, essas questões são de extrema importância para uma futura
+regularização dessas atividades, entretanto, como estamos falando de algo que
+ainda não existe, as mesmas só poderão ser respondidas pelo próprio legislador no
+momento em que elaborar um dispositivo que verse sobre o assunto e nele conste
+todos os elementos capazes de rechaçar qualquer outra dúvida que venha a surgir
+sobre a temática.
+De antemão, é cristalino o entendimento de que essa futura legislação
+tenha um caráter preventivo ante a problemática, já que se houver essas trágicas
+consequências, a reparação do dano ambiental se daria de forma bastante
+complexa ou até mesmo impossível, não fazendo jus aos direitos previstos no art 27
+da Lei 9.605/98 c/c art. 76 da Lei 9.099/95.
+Dito isso, uma vez que a reparação ambiental deva ser considerada o fim
+máximo da tutela ambiental, quando já ocorrido o dano, há uma forte inclinação de
+parte da doutrina por considerar outros ramos do Direito (como o Administrativo)
+muito mais eficazes para a correta reparação ambiental.
+Cabe lembrar que a tutela penal é uma via complementar ao poder
+punitivo do Estado, no que concerne à temática ambiental, pois “a danosidade
+ambiental tem repercussão jurídica tripla, já que o poluidor, por um mesmo ato, pode
+ser responsabilizado, alternativa ou cumulativamente, na esfera penal, na
+administrativa e na civil” (MILARÉ, 2004, p. 971).
+No caso da criptomineração esse entendimento ainda é tema de bastante
+discussão, já que uma parte da doutrina compreende que por não haver o dano
+ambiental de forma objetiva em alguns casos, seria impossível a sua reparação e
+portanto o poluidor seria penalizado em uma das três esferas (cível, administrativa
+ou penal) a depender da situação. Já outra parte da doutrina compreende que
+devido a dimensão e proporção do dano causado, ainda que de forma subjetiva, o
+poluidor deve ser responsabilizado na esfera penal como forma pedagógica e
+punitiva, já que os efeitos desta tutela são mais repressivos e estão a altura da
+consequência danosa.
+Assim, importa analisar e relacionar se é possível a atuação estatal na
+reparação do dano, pelas vias administrativa e cível referente a criptomineração, as
+quais possuem grande gama de artifícios tanto técnicos quanto procedimentais. E, a
+21
+partir dessa relação, perguntar se existe real necessidade e efetividade em lançar
+mão, o Estado, do Direito Penal como forma de repressão ao dito degradador.
+Dito isso, pode-se referir que quando “as demais esferas de
+responsabilização forem suficientes para atingir integralmente aqueles dois objetivos
+primordiais (prevenção e reparação tempestiva e integral), a verdade é que, em
+tese, não há mais razão jurídica para a incidência do Direito Criminal” (MILARÉ,
+2004, p. 971).
+Quanto à dificuldade da composição na reparação do dano, mesmo a
+doutrina receptiva à Lei nº 9.605/98 refere às dificuldades de mensurar, por
+exemplo, a proposta de reparação, pois “nem sempre o representante do Ministério
+Público dispõe de elementos para, na proposta, sugerir o valor a ser estabelecido.
+Como anotado, o dano ambiental é de difícil quantificação e muitas vezes o seu
+alcance somente surge muito tempo após o ocorrido (FREITAS, 2005, p. 134).
+Amiúde, são frequentes as críticas sobre o objeto dos acordos
+despenalizadores, posto que, em razão da dificuldade encontrada para dimensionar
+a reparação do dano, estes se resolvem em mera prestação pecuniária, entrega de
+coisa ou prestação de serviços para organizações que não têm qualquer relação
+com a proteção do meio ambiente (NETO et al., 2009).
+Elucidando acerca do tema, pode-se inferir que é praticamente
+impossível imaginar que o infrator compareça à audiência preliminar já com a
+recuperação ambiental efetuada. Ora, o lapso temporal entre o fato e a audiência
+certamente não seria suficiente para atos tão complexos. Além disso, na mais das
+vezes, a audiência preliminar é a primeira oportunidade em que o infrator é
+orientado tanto sobre sua conduta quanto sobre os prejuízos a que, supostamente,
+deu causa. Assim, quase impossível dita composição antes da audiência (NETO et
+al., 2009).
+Posto isso, o mais lógico é acreditar que o legislador objetivou garantir
+que as partes componham não somente os meios, mas também as condições de
+reparar o dano, sendo que a forma para tanto poderá ser objeto da própria
+composição, por meio de cláusulas a serem cumpridas (BUZAGLO, 2000, p. 457).
+Embora essa posição seja mais coerente, do ponto de vista fático, persiste a
+problemática sobre as condições técnicas das partes para decidirem, com seriedade
+e segurança, sobre a referida composição e sobre os benefícios ambientais. Como
+já comentado anteriormente, há impactos ambientais causados pela
+22
+criptomineração que são subjetivos, em outras palavras, impossíveis de serem
+reparados. Isso quer dizer que, nesses casos, durante a negociação de
+composição, o poluidor pode ver vantagem em continuar com a conduta delituosa,
+visto que as sanções aplicadas a ele são insuficientes e inadequadas, tornando-se
+inúteis.
+Diante de tais dificuldades técnicas e procedimentais, na mais das vezes,
+a tão aplaudida composição dos danos e a subsequente transação penal acabam
+transformando-se em “alto negócio”. Por essa razão, deve se evitar “trocar a
+degradação por outros bens que não de interesse ao meio ambiente, como dação
+de computadores ou veículos” (LECEY, 1999, p. 15).
+Por tais motivos, filiamo-nos à crítica de Grinover (2005, p. 385), que
+afirma ter a Lei Ambiental privilegiado a sanção de natureza penal numa concepção
+puramente dissuasória e intimidatória, porque, em concreto, a preocupação primeira
+é com o restabelecimento do meio ambiente lesado. Restabelecimento esse que, de
+fato, não vem ocorrendo por esse intermédio.
+Ante o exposto, cabe discutir se em uma possível regularização da
+mineração de criptomoedas no Brasil, seria necessário lançarmos mão da esfera
+criminal, se considerarmos que a reparação do dano ambiental, uma vez ocorrido, é
+o maior interesse da coletividade. Nesse passo, grifa-se que a via administrativa,
+por exemplo, mesmo diante dos problemas estruturais que lhe são afetos, possui
+não só agentes capacitados como também dispõe de ótimos mecanismos
+coercitivos que fazem jus à sua utilização.
+Com isso, giza-se que não se questiona, nesse escopo, o cabimento da
+regularização da criptomineração, o que é correto em razão da relevância do bem
+jurídico em voga e da própria disposição do texto constitucional. O raciocínio busca
+questionar como a penalização das condutas deve ocorrer, levando em
+consideração todos os graus de dano ao meio ambiente. Vem ao encontro da
+proposição posta, a doutrina que aponta que, se o bem jurídico puder ser protegido
+de outro modo cabe abrir mão da opção legislativa penal “para não banalizar a
+punição, tornando-a, por vezes, ineficaz porque não cumprida pelos destinatários da
+norma e não aplicada pelos órgãos estatais encarregados da segurança pública”
+(NUCCI, 2009, p.45).
+No campo ambiental, como vimos, a legislação é voltada a prevenir o
+dano e, após sua ocorrência concreta, volta-se à sua reparação tempestiva e
+23
+integral. Dessa maneira, com o fortalecimento do princípio da subsidiariedade da
+ação penal, é possível conceber que existe uma evolução no sentido de que o
+Direito Penal deverá incidir sobre o caso concreto naquelas lides em que as
+instâncias civil e administrativa tenham se mostrado insuficientes para intimidar a
+conduta que seja potencial ou efetivamente voltada ao prejuízo do bem ambiental
+(MILARÉ, 2004, p. 973).
+Ante todo o exposto, apesar de não haver ainda uma regularização, no
+que concerne à criptomineração, é importante avaliar as possíveis condições dessa
+atividade no que tange os processos de ações de ordem criminal que versam sobre
+condutas contra o meio ambiente, analisando como se dará a aplicação da
+pena/sanção nesses casos, bem como a capacidade e eficácia dos juizados
+especiais para tanto. Nessa linha, há que se refletir, também, acerca do instituto da
+transação penal, a fim de se evitar que a almejada reparação do meio ambiente
+degradado reverta em mera doação de cestas básicas ou direcionamento de valores
+a entidades assistenciais, que nenhuma ligação possuem com a causa ambiental.
+6. CONCLUSÃO
+Demonstrou-se a partir do presente estudo que a grande quantidade de
+energia demandada para a mineração de criptomoedas pode acarretar graves
+impactos ambientais de difícil reparação, já que essa prática afeta de forma direta a
+quantidade de gás carbônico emitido na atmosfera terrestre, bem como, também é
+responsável pelo aumento de apagões generalizados de energia, aumento dos lixos
+eletrônicos ao redor do mundo, tem influência na escassez dos chips, dentre outros
+efeitos negativos que não se limitam ao ramo ambiental.
+Com isso, a partir da pesquisa realizada, foi possível vislumbrar que a
+Constituição Federal de 1988 atribui ao meio ambiente status de direito
+fundamental. Sob a ótica protecionista, a Carta Política tratou de incluir, em seu
+artigo 225, §3º a possibilidade de sanções penais às condutas lesivas ao bem
+ambiental.
+Nessa ótica, após análise dos dispositivos constitucionais acerca do
+tema, adentra-se no estudo da atual Lei Federal que dispõe sobre os crimes
+ambientais, e questiona-se se essa atual lei é aplicável aos casos da
+critomineração, no sentido de penalizar aqueles que de alguma forma extrapolaram
+os limites dessa prática.
+24
+Para poder tentar responder esses questionamentos, primeiramente é
+necessário visualizar um procedimento ideal que possa eventualmente tratar de
+forma eficaz essa problemática dentro do nosso atual ordenamento jurídico. Assim,
+vislumbrou o estudo que a utilização do Direito Penal em face das lides ambientais
+deve ser a última ratio do Direito, justificando se apenas quando o bem jurídico
+tutelado tiver sido exposto a um dano significativo e culturalmente reprovável,
+cabendo aos demais casos a utilização de outros instrumentos estatais que
+possibilitem, por exemplo, a adequada reparação do ambiente impactado.
+Entretanto, a lei é omissa quanto a demonstração da dimensão do dano da
+criptomineração, fazendo com que tenhamos dúvidas quanto ao método a ser
+adotado.
+A pesquisa verificou que a doutrina mais voltada ao estudo do Direito
+Ambiental reconhece a lei em destaque como ótimo instrumento não só de
+prevenção e reparação dos danos ambientais, bem como de reparação dos
+mesmos. Em outra acepção, vários pensadores do Direito apontam falhas na
+legislação ou na estrutura estatal de aplicação da norma, quer pela sua imprecisão
+técnica, quer pela existência de alternativas mais eficazes na defesa ambiental.
+Dessa forma, a partir do estudo aprofundado sobre o assunto,
+constatou-se que a atual Lei de Crimes Ambientais (9.605/98), ainda que rodeada
+de princípios e características legais acima apontadas, se torna ineficaz ante a
+prática da criptomineração de forma irregular no Brasil. Isso se justifica pelo fato de
+ainda haver dúvidas quanto ao procedimento a ser adotado para penalizar o
+indivíduo, e principalmente pelo fato da ausência de tipificação dessa conduta na lei.
+Por exemplo, ainda não existe uma forma de identificar o sujeito poluidor com
+precisão, também é desconhecido qual tipo de pena seria adotada, se seria possível
+a aplicação de multa ou penas restritivas de direitos, se poderia haver a composição
+do dano ou não.
+Ou seja, qualquer pessoa que esteja em sua casa e decida comprar
+alguns supercomputadores para criar uma fazenda de criptomineração, não haverá
+algo ou alguém que possa regularizar ou impedir isso. Nessa esteira, não haverá
+delito algum, porém, as consequências futuras dessa simples conduta podem se
+tornar ponto central das próximas discussões ambientalistas.
+Isso quer dizer que somente o legislador, no momento em que elaborar
+um dispositivo que contenha a tipificação da conduta e a discriminação de todo o
+25
+procedimento, poderá responder todas essas indagações realizadas, já que no
+momento, apenas hipóteses são elaboradas e discutidas. Salienta-se a importância
+do Direito Econômico como forma de regularizar e guiar as decisões do legislador
+quando o mesmo estabeleça essas legislações dos criptoativos.
+Por fim, esse trabalho busca chamar a atenção de toda a sociedade e do
+poder público a respeito da atual situação da mineração de criptomoedas de forma
+irregular no Brasil. Ao longo do texto, é demonstrado que há lacunas na atual Lei de
+Crimes ambientais que ainda não foram preenchidas, sendo de extrema urgência a
+elaboração de novas medidas sociais e legais, no intuito de assegurar um
+cumprimento integral dos direitos ambientalistas, para que seja obtido um
+desenvolvimento plenamente eficaz.
+REFERÊNCIAS
+AIROLDI. Paulo Fernando. Legitimidade das sanções administrativas
+ambientais e as inovações da nova lei federal. In: Direito Ambiental em Evolução.
+Org. FREITAS, Vladimir Passos. Curitiba: Juruá, 2011.
+ALMEIDA, Luis. Sustentabilidade ambiental. O poder do estado em fomentar o
+desenvolvimento tecnológico em prol de um ambiente sustentável. Rio de
+Janeiro: Ed. Baraúna, 2017. Disponível em: https://bit.ly/2SCI9S4. Acesso em: 20
+out. 2022.
+BELLO FILHO, Ney de Barros et alii. Crimes e infrações administrativas
+ambientais: comentários à Lei n° 9605/98. 2. ed. Brasília: Brasília Jurídica, 2001.
+BOTTINI, Pierpaolo Cruz. Crimes de perigo abstrato: Uma análise das novas
+técnicas de tipificação no contexto da sociedade de risco. 4. ed. rev. e atual.
+São Paulo: Thomson Reuters Brasil, 2019.
+BOZOLA, Tulio Arantes. Os crimes de perigo abstrato no Direito Penal
+contemporâneo. Belo Horizonte: Del Rey, 2015.
+BRASIL. [Constituição(1988)]. Constituição da República Federativa do Brasil de
+1988. Brasília, DF: Presidência da República, 1988. Disponível em:
+https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm. Acesso em: 25
+out. 2022.
+BRASIL. Lei nº 9605 de 12 de fevereiro de 1998. Institui a Lei de Crimes
+Ambientais. Diário Oficial da República Federativa do Brasil, Brasília, DF, 12 fev.
+1998. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l9605.htm. Acesso
+em: 16 set. 2022.
+BRASIL. Lei nº 9099 de 26 de setembro de 1995. Dispõe sobre a Lei dos Juizados
+26
+Especiais. Diário Oficial da República Federativa do Brasil, Brasília, DF, 26 set.
+1995. Disponível em: http://www.planalto.gov.br/ccivil_03/leis/l9099.htm. Acesso em:
+28 set. 2022.
+BUZAGLO, Samuel Auday; DANTAS, Marcelo Buzgalo. Transação penal e
+suspensão do processo-crime e o dano ambiental, considerações sobre os artigos
+27 e 28 da lei 9.605/98. In: Revista dos Tribunais. v. 779, São Paulo: set. 2000.
+CAMBRIDGE. Bitcoin Electricity Consumption Index, 2020. Disponível em:
+https://cbeci.org/. Acesso em: 27 ago. 2022.
+CARVALHO UHDRE, Dayana. Blockchain, tokens e criptomoedas: Análise
+jurídica. 1. ed. São Paulo: Almedina, 2021.
+CRIDDLE, Cristina. Bitcoin consumes 'more electricity than Argentina'. BBC
+News. 2021. Disponível em: https://www.bbc.com/news/technology-56012952.
+Acesso em: 27 ago. 2022.
+CRUZ, Ana Paula Fernandes Nogueira. A importância da Tutela Penal do Meio
+Ambiente. In: Revista de Direito Ambiental. São Paulo: RT, n.8, jul./set. 2003.
+DIGICONOMIST. Bitcoin Energy Consumption Index, 2021. Disponível em:
+https://digiconomist.net/bitcoin-energyconsumption/. Acesso em: 28 set. 2022.
+FIGUEIREDO. Guilherme Gouvêa de. Crimes Ambientais à luz do conceito de
+bem jurídico penal: (des)criminalização típica e (in)ofensividade. 1ª ed. São
+Paulo: IBCCRIM, 2008.
+FIORILLO, Celso Antônio Pacheco. Curso de direito ambiental brasileiro. 18. ed.
+São Paulo: Saraiva Jur, 2018.
+FREITAS, Gilberto Passos de. Ilícito Penal Ambiental e Reparação do Dano. São
+Paulo: Editora Revista dos Tribunais, 2005.
+FREITAS, Vladimir Passos de. Crimes contra a natureza. 7.ed. São Paulo: Revista
+dos Tribunais, 2001.
+GOODKIND, Andrew L.; JONES, Benjamin A.; BERRENS, Robert P.
+Cryptodamages: Monetary value estimates of the air pollution and human
+health impacts of cryptocurrency mining. Energy Research & Social Science. v.
+59, n. 2020, p., 1-10.
+GRANZIERA, Maria Luiza Machado. Direito ambiental. 5. ed. Indaiatuba, SP:
+Editora Foco, 2019.
+GRINOVER, Ada Pelegrini et al. Juizados Especiais Criminais. São Paulo:
+Revista dos Tribunais, 2005.
+HILEMAN, Garrick; RAUCHS, Michael. Global blockchain benchmarking study.
+27
+Cambridge: University of Cambridge: Judge Business School, 2017, p. A14.
+Disponível em: https://ssrn.com/abstract=3040224. Acesso em: 10 out. 2022.
+INTERNATIONAL ENERGY AGENCY, Key World Energy Statistics 2018.
+Disponível em: https://webstore.iea.org/key-world-energy-statistics-2018. Acesso
+em: 14 set. 2022.
+LECEY, Eladio. Direito ambiental penal reparador: composição e reparação do
+dano ao ambiente: reflexos no juízo criminal e a jurisprudência. In: Revista de
+Direito Ambiental. São Paulo: RT, n. 12, jan./mar 2007.
+LEITE, José Rubens Morato; BELLO FILHO, Ney de Barros (org.). Direito
+Ambiental Contemporâneo. Barueri: Manole, 2004.
+LOVISCACH, J. The Environmental Cost of Bitcoin. 2012; Disponível em:
+https://j3l7h.de/talks/2012-09-20_Environmental_Cost_of_Bitcoin.pdf. Acesso em: 02
+out 2022.
+LYRA, João Guilherme. Blockchain e organizações descentralizadas. 1. ed. Rio
+de Janeiro: Brasport, 2019.
+MACHADO. Paulo Afonso Leme. Da poluição e de outros crimes ambientais na
+Lei 9.605/98. Rev. de Direito Ambiental. São Paulo. v.4, n.14, p. 9-19, abr./jun.1999.
+MILARÉ, Édis. Direito do Ambiente: doutrina, jurisprudência, glossário. 3. ed. São
+Paulo: Editora Revista dos Tribunais, 2004.
+NUCCI, Guilherme de Souza. Código Penal Comentado. 9.ed. São Paulo: Editora
+Revista dos Tribunais.
+PRADO, Luis Regis. Apontamentos sobre o ambiente como bem jurídico penal.
+In: Revista de Direito Ambiental. São Paulo: Revista dos Tribunais, p. 133, abr./jun.
+2008.
+SALVADOR NETTO, Almiro Velludo; SOUZA, Luciano Anderson de. Comentários à
+Lei de Crimes Ambientais. São Paulo: Editora Quartier Latin, 2009.
+VIEGAS, Thaís Emília de Sousa. Gestão de conflitos ambientais pelo Direito
+Penal: reflexões sobre a aplicação do princípio da insignificância numa
+sociedade de risco. Anais do IV Encontro Nacional da Anppas. Brasília, 2008.
+VRIES, Alex de. Bitcoin’s energy consumption is underestimated: A market
+dynamics approach. Energy Research & Social Science, v. 70, n. 2020, p. 1.
+VRIES, A. de. Bitcoin’s growing energy problem, Joule, v. 2, n. 5, 16 May 2018, p.
+801-805. DOI: https://doi. org/10.1016/j.joule.2018.04.016. Disponível em:
+https://www.sciencedirect.com/science/article/pii/S2542435118301776. Acesso em:
+13 nov. 2022.
+VRIES, Alex. Renewable Energy Will Not Solve Bitcoin’s Sustainability
+28
+Problem. Joule, v. 3, p. 893–898, 2019, doi:10.1016/j.joule.2019.02.007.
