@@ -2,14 +2,9 @@
 import re
 from collections import Counter
 from itertools import islice
+import numpy as np
+import pandas as pd
 from time import sleep
-
-#O QUE PRECISAMOS FAZER:
-# Implementar o modelo booleano
-# Fazer o menu funcionar
-# Salvar as informações em arquivos
-# Verificar se o arquivo existe antes de extrair o vocabulário
-# Tratar as stopwords
 
 
 
@@ -23,7 +18,7 @@ stopWords = [
     "nosso", "nossa", "nossos", "nossas",
     "esse", "essa", "isso", "este", "esta", "isto",
     "aquele", "aquela", "aquilo",
-    "quem", "que", "qual", "sim", "não", "com", "tem", "yes", "not"
+    "quem", "que", "qual", "sim", "não", "com", "tem", "yes", "not", "para", "uma", "dos", "como", "por"
 ]
 
 def index_collection(vocabulary):
@@ -31,6 +26,7 @@ def index_collection(vocabulary):
     collection = create_collection_dictionary()
 
     # index = list() [0 = para, 1 = que, 2 = arquivos, ... etc.]
+
     # aux = 0
     index = dict()
 
@@ -66,13 +62,6 @@ def bool_index(vocabulary):
 # O vocabulário é toda palavra com mais de 2 caracteres que não sejam stopwords  (pronomes, caracteres especiais, não, sim, e etc.)
 
 
-#OPERADORES: AND, OR e NOT
-'''
-ideia: primeiro passo é pegar termo por termo da consulta (separar os termos dos operadores)
-ex: doce AND mel
-[doce, AND, mel]
-
-'''
 operators = ['and', 'or', 'not']
 def boolean_model():
     #wordsAndOperators is the consult
@@ -95,8 +84,10 @@ def boolean_model():
             return print('Está faltando um operador!')
 
     vocabulary = get_most_relevant_terms()
+
     #Verifica se o usuario fez uma consulta que contém termos indexados
     consult_boolean = words_in_vocabulary(wordsAndOperators, vocabulary)
+    print(consult_boolean)
     if consult_boolean == -1:
         print('Os termos da consulta não estão no vocabulário. Tente fazer uma consulta diferente!')
     else:
@@ -105,21 +96,12 @@ def boolean_model():
         print(f'retorno: {consult_boolean}')
         pass
 
-
-""" antes
-    def calculate_result(wordsAndOperators,consult_boolean):
-
-    if len(wordsAndOperators) == 3: #temos apenas um operador para calcular
-        calculate_operator(wordsAndOperators,consult_boolean)
-        pass
-    else: #temos 2 operadores para calcular
-        pass """
-
 def calculate_result(wordsAndOperators, consult_boolean):
     if len(wordsAndOperators) == 3:  # temos apenas um operador para calcular
         result = calculate_operator(wordsAndOperators, consult_boolean)
         print(f'\nResultado final da consulta: {result}')
     else:  # temos 2 operadores para calcular
+<<<<<<< HEAD
         result1 = calculate_operator(wordsAndOperators[0:3], consult_boolean)
         
         # Cria um dicionário simulado com os resultados parciais como se fosse um termo
@@ -130,6 +112,13 @@ def calculate_result(wordsAndOperators, consult_boolean):
         final_consult = [partial_term, wordsAndOperators[3], wordsAndOperators[4]]
         result2 = calculate_operator(final_consult, consult_boolean)
         print(f'\nResultado final da consulta: {result2}')
+=======
+        partial_result = calculate_operator(wordsAndOperators[0:3], consult_boolean)
+        new_consult = [partial_result] + wordsAndOperators[3:]
+        print('partial_result: ', partial_result)
+        print('new_consult: ', new_consult)
+        calculate_operator(new_consult, consult_boolean)
+>>>>>>> parte-2/main
 
 
 
@@ -137,6 +126,7 @@ def calculate_result(wordsAndOperators, consult_boolean):
 def calculate_operator(consult, consult_boolean):
 
     docs = list(next(iter(consult_boolean.values())).keys())
+    print('docs: ',docs)
 
     if consult[1] == 'and':
         result = {}
@@ -159,12 +149,16 @@ def calculate_operator(consult, consult_boolean):
         print(f'\nResultado da operação NOT: {result}')
         return result
 
+<<<<<<< HEAD
 
 
 
 
 
 """ def words_in_vocabulary(words,vocabulary):
+=======
+def words_in_vocabulary(words,vocabulary):
+>>>>>>> parte-2/main
 
     boolean_index = bool_index(vocabulary)
     consult_boolean_index = dict()
@@ -179,6 +173,7 @@ def calculate_operator(consult, consult_boolean):
     else:
         return consult_boolean_index
 
+<<<<<<< HEAD
  """
 
 def words_in_vocabulary(words, vocabulary):
@@ -204,6 +199,8 @@ def words_in_vocabulary(words, vocabulary):
 
 
 
+=======
+>>>>>>> parte-2/main
 def extract_vocabulary(fileName):
     try:
         file = open(fileName, 'r', encoding='utf-8')
@@ -264,6 +261,72 @@ def get_most_relevant_terms():
     #print(vocabulary_50)
     return vocabulary_50
 
+def vetorial_model(term1, term2):
+    import numpy as np
+    import pandas as pd
+
+    # Obter vocabulário e documentos indexados
+    vocabulary = get_most_relevant_terms()
+    collection = index_collection(vocabulary)
+    terms = list(vocabulary.keys())
+
+    # Vetor da consulta (binário)
+    consult_matrix = []
+    for term in terms:
+        value = 1 if term in [term1.lower(), term2.lower()] else 0
+        consult_matrix.append(value)
+
+    # Lista de documentos e matriz de frequência termo-documento
+    docs = sorted({doc for _, d in collection.values() for doc in d})
+    matriz = []
+    for termo in terms:
+        freq_dict = collection[termo][1]
+        linha = [freq_dict.get(doc, 0) for doc in docs]
+        matriz.append(linha)
+
+    # Converter para matriz NumPy
+    matriz_numpy = np.array(matriz)
+
+    # === Cálculo de TF-IDF ===
+    N = len(docs)
+    df_terms = np.count_nonzero(matriz_numpy > 0, axis=1)
+    idf = np.log(N / (df_terms + 1e-10))
+    tf_idf = matriz_numpy * idf[:, np.newaxis]
+
+    # === Vetor da consulta TF-IDF ===
+    consult_vector = np.array(consult_matrix)
+    consult_tf_idf = consult_vector * idf
+
+    # === Normalizar vetores (consulta e documentos) ===
+    def normalize(vec):
+        norm = np.linalg.norm(vec)
+        return vec / norm if norm != 0 else vec
+
+    consult_tf_idf_norm = normalize(consult_tf_idf)
+
+    # Normalizar todos os vetores de documentos
+    doc_vectors = []
+    for i in range(tf_idf.shape[1]):
+        vec = tf_idf[:, i]
+        doc_vectors.append(normalize(vec))
+
+    # Calcular similaridade por produto escalar direto (pois todos estão normalizados)
+    print("\n=== Similaridade com a consulta (vetores normalizados) ===")
+    resultados = []
+    for doc, vec in zip(docs, doc_vectors):
+        sim = np.dot(consult_tf_idf_norm, vec)
+        resultados.append((doc, round(sim, 4)))
+
+    # Normalizar para que o maior valor seja 1.0000 (como você quer)
+    max_sim = max(sim for _, sim in resultados)
+    resultados = [(doc, round(sim / max_sim, 4)) for doc, sim in resultados]
+
+    # Mostrar resultados
+    for doc, sim in resultados:
+        print(f'{doc}: {sim:.4f}')
+
+
+
 def menu():
 
     while True:
@@ -277,6 +340,7 @@ def menu():
               "********** 3 - PARA IMPRIMIR A MATRIZ DE OCORRÊNCIAS *********\n"
               "********** 4 - PARA IMPRIMIR A MATRIZ DE FREQUENCIAS *********\n"
               "********** 5 - PARA APLICAR O MODELO BOOLEANO ****************\n"
+              "********** 6 - REALIZAR CONSULTA PARA O MODELO VETORIAL ******\n"
               "********** 0 - SAIR ******************************************\n"
               "**************************************************************\n"
               "DIGITE A OPÇÃO DESEJADA: "))
@@ -311,6 +375,13 @@ def menu():
             case 5:
                 boolean_model()
 
+            case 6:
+                print("\n\n********** CONSULTA PARA O MODELO VETORIAL ***********\n")
+                term1 = input("Informe o primeiro termo da consulta: ")
+                term2 = input("Informa o segundo termo da consulta: ")
+                #print(term1,term2)
+                vetorial_model(term1,term2)
+
             case 0:
                 break
 
@@ -341,7 +412,6 @@ if __name__ == "__main__":
         break
         #print(arquivos)
     '''
-
 
 
 
