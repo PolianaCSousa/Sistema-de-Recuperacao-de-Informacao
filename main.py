@@ -211,58 +211,68 @@ def get_most_relevant_terms():
     return vocabulary_50
 
 def vetorial_model(term1, term2):
-    #vocabulary
+    import numpy as np
+    import pandas as pd
+
+    # Obter vocabulário e documentos indexados
     vocabulary = get_most_relevant_terms()
     collection = index_collection(vocabulary)
-    terms = vocabulary.keys()
+    terms = list(vocabulary.keys())
 
+    # Vetor da consulta (binário)
     consult_matrix = []
-    vetor_consulta = []
-
     for term in terms:
-        value = 1 if term in [term1, term2] else 0
-        consult_matrix.append([value])
-        vetor_consulta.append([term, value])
+        value = 1 if term in [term1.lower(), term2.lower()] else 0
+        consult_matrix.append(value)
 
-    print(f'MATRIZ CONSULTA: {vetor_consulta}\n {consult_matrix}\n')
-
-    #MATRIZ DOCUMENTOS
-    print('\nGPT\n')
-
-    docs = sorted({doc for _, d in collection.values() for doc in d}) #lista com o nome dos documentos
-    termos = sorted(collection.keys())
+    # Lista de documentos e matriz de frequência termo-documento
+    docs = sorted({doc for _, d in collection.values() for doc in d})
     matriz = []
-
-    for termo in termos:
+    for termo in terms:
         freq_dict = collection[termo][1]
         linha = [freq_dict.get(doc, 0) for doc in docs]
         matriz.append(linha)
 
+    # Converter para matriz NumPy
     matriz_numpy = np.array(matriz)
 
     # === Cálculo de TF-IDF ===
     N = len(docs)
-    df_terms = np.count_nonzero(matriz_numpy > 0, axis=1)  # documentos por termo
-    idf = np.log(N / (df_terms + 1e-10))  # IDF com proteção contra divisão por zero
-    tf_idf = matriz_numpy * idf[:, np.newaxis]  # broadcasting IDF em cada termo
+    df_terms = np.count_nonzero(matriz_numpy > 0, axis=1)
+    idf = np.log(N / (df_terms + 1e-10))
+    tf_idf = matriz_numpy * idf[:, np.newaxis]
 
-    # === Vetor da consulta ===
-    consult_vector = np.array(consult_matrix).flatten()
-    consult_tf_idf = consult_vector * idf  # consulta também usa IDF
+    # === Vetor da consulta TF-IDF ===
+    consult_vector = np.array(consult_matrix)
+    consult_tf_idf = consult_vector * idf
 
-    # === Similaridade cosseno ===
-    def cosine_similarity(a, b):
-        dot = np.dot(a, b)
-        norm_a = np.linalg.norm(a)
-        norm_b = np.linalg.norm(b)
-        return dot / (norm_a * norm_b + 1e-10)
+    # === Normalizar vetores (consulta e documentos) ===
+    def normalize(vec):
+        norm = np.linalg.norm(vec)
+        return vec / norm if norm != 0 else vec
 
-    print("\nSimilaridade com a consulta (por documento):")
-    for i, doc in enumerate(docs):
-        doc_vector = tf_idf[:, i]
-        similarity = cosine_similarity(consult_tf_idf, doc_vector)
-        print(f'{doc}: {similarity:.4f}')
+    consult_tf_idf_norm = normalize(consult_tf_idf)
 
+    # Normalizar todos os vetores de documentos
+    doc_vectors = []
+    for i in range(tf_idf.shape[1]):
+        vec = tf_idf[:, i]
+        doc_vectors.append(normalize(vec))
+
+    # Calcular similaridade por produto escalar direto (pois todos estão normalizados)
+    print("\n=== Similaridade com a consulta (vetores normalizados) ===")
+    resultados = []
+    for doc, vec in zip(docs, doc_vectors):
+        sim = np.dot(consult_tf_idf_norm, vec)
+        resultados.append((doc, round(sim, 4)))
+
+    # Normalizar para que o maior valor seja 1.0000 (como você quer)
+    max_sim = max(sim for _, sim in resultados)
+    resultados = [(doc, round(sim / max_sim, 4)) for doc, sim in resultados]
+
+    # Mostrar resultados
+    for doc, sim in resultados:
+        print(f'{doc}: {sim:.4f}')
 
 
 
