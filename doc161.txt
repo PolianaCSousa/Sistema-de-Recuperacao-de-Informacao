@@ -1,2 +1,0 @@
-1. Alan Turing – O Pai da Computação Moderna
-Alan Turing foi um matemático britânico responsável por idealizar a "Máquina de Turing", um modelo teórico que fundamenta o funcionamento dos computadores modernos. Durante a Segunda Guerra Mundial, ajudou a decifrar códigos nazistas com a máquina Enigma, acelerando o fim do conflito. Seu trabalho é a base da ciência da computação e da inteligência artificial.

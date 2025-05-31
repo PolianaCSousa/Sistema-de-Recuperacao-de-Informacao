@@ -2,14 +2,12 @@
 import re
 from collections import Counter
 from itertools import islice
+import numpy as np
+import pandas as pd
 from time import sleep
 
-#O QUE PRECISAMOS FAZER:
-# Implementar o modelo booleano
-# Fazer o menu funcionar
-# Salvar as informações em arquivos
-# Verificar se o arquivo existe antes de extrair o vocabulário
-# Tratar as stopwords
+
+
 
 #palavrasParaRetirar
 stopWords = [
@@ -20,17 +18,22 @@ stopWords = [
     "nosso", "nossa", "nossos", "nossas",
     "esse", "essa", "isso", "este", "esta", "isto",
     "aquele", "aquela", "aquilo",
-    "quem", "que", "qual", "sim", "não", "com", "tem", "yes", "not","para","uma","dos","como"
+    "quem", "que", "qual", "sim", "não", "com", "tem", "yes", "not", "para", "uma", "dos", "como", "por"
 ]
 
 def index_collection(vocabulary):
 
     collection = create_collection_dictionary()
+
+    # index = list() [0 = para, 1 = que, 2 = arquivos, ... etc.]
+
+    # aux = 0
     index = dict()
 
     for vocabulary_key, total_freq in vocabulary.items():
         index[vocabulary_key] = [total_freq,
                                  {}]  # começa com uma lista contendo a frequência total e um dicionário vazio
+
         for doc_name, terms in collection.items():
             if vocabulary_key in terms:
                 freq = terms[vocabulary_key]
@@ -42,6 +45,7 @@ def index_collection(vocabulary):
 
 def bool_index(vocabulary):
     collection = create_collection_dictionary()
+    #print(collection)
     bool = dict()
 
     for word, total_freq in vocabulary.items():
@@ -51,10 +55,13 @@ def bool_index(vocabulary):
                 bool[word][doc_name] = 1;
             else:
                 bool[word][doc_name] = 0;
+
+    #print(bool)
     return bool
+#Lê o arquivo e extrai o vocabulário colocando em um array.
+# O vocabulário é toda palavra com mais de 2 caracteres que não sejam stopwords  (pronomes, caracteres especiais, não, sim, e etc.)
 
 
-#OPERADORES: AND, OR e NOT
 operators = ['and', 'or', 'not']
 def boolean_model():
     #wordsAndOperators is the consult
@@ -89,7 +96,6 @@ def boolean_model():
         print(f'retorno: {consult_boolean}')
         pass
 
-
 def calculate_result(wordsAndOperators, consult_boolean):
     if len(wordsAndOperators) == 3:  # temos apenas um operador para calcular
         calculate_operator(wordsAndOperators, consult_boolean)
@@ -99,6 +105,7 @@ def calculate_result(wordsAndOperators, consult_boolean):
         print('partial_result: ', partial_result)
         print('new_consult: ', new_consult)
         calculate_operator(new_consult, consult_boolean)
+
 
 
 #vou fazer o metodo sempre receber apenas dois termos e um operador
@@ -128,7 +135,6 @@ def calculate_operator(consult, consult_boolean):
         print(f'\nResultado da operação NOT: {result}')
         return result
 
-
 def words_in_vocabulary(words,vocabulary):
 
     boolean_index = bool_index(vocabulary)
@@ -144,12 +150,10 @@ def words_in_vocabulary(words,vocabulary):
     else:
         return consult_boolean_index
 
-
 def extract_vocabulary(fileName):
     try:
         file = open(fileName, 'r', encoding='utf-8')
     except FileNotFoundError:
-        pass
         print(f'Arquivo {fileName} não encontrado.')
         return []
 
@@ -163,7 +167,6 @@ def extract_vocabulary(fileName):
     file.close()
     return vocabulary
 
-
 def create_dictionary(fileName):
 
     vocabulary = extract_vocabulary(fileName)
@@ -173,18 +176,19 @@ def create_dictionary(fileName):
     #print(counter)
     return dict(counter)
 
-
 def create_collection_dictionary():
 
     dictionary = dict()
-    qtd_files = 360
+    qtd_files = 3
 
     for i in range(1, qtd_files + 1): #o range é exclusivo no final, entao para chegar até o 2 precisa adicionar mais um. Ex, se for range(1,5) ele vai do 1 ao 4
         dictionary['doc'+str(i)+'.txt'] = create_dictionary('doc'+str(i)+'.txt')
 
     return dictionary
+    #print(dictionary)
     #para ver o dicionario formatado jogue o resultado do terminal nesse link: https://jsonformatter.curiousconcept.com/#
 
+#def indexar(arrayComPalavrasRepetidas):
 
 def get_most_relevant_terms():
 
@@ -200,9 +204,66 @@ def get_most_relevant_terms():
    # print(vocabulary)
     sorted_vocabulary = dict(sorted(vocabulary.items(),key=lambda word: word[1], reverse=True))
 
-    vocabulary_50 = dict(islice(sorted_vocabulary.items(), 50))
+    vocabulary_50 = dict(islice(sorted_vocabulary.items(), 20))
 
+
+    #print(vocabulary_50)
     return vocabulary_50
+
+def vetorial_model(term1, term2):
+    #vocabulary
+    vocabulary = get_most_relevant_terms()
+    collection = index_collection(vocabulary)
+    terms = vocabulary.keys()
+
+    consult_matrix = []
+    vetor_consulta = []
+
+    for term in terms:
+        value = 1 if term in [term1, term2] else 0
+        consult_matrix.append([value])
+        vetor_consulta.append([term, value])
+
+    print(f'MATRIZ CONSULTA: {vetor_consulta}\n {consult_matrix}\n')
+
+    #MATRIZ DOCUMENTOS
+    print('\nGPT\n')
+
+    docs = sorted({doc for _, d in collection.values() for doc in d}) #lista com o nome dos documentos
+    termos = sorted(collection.keys())
+    matriz = []
+
+    for termo in termos:
+        freq_dict = collection[termo][1]
+        linha = [freq_dict.get(doc, 0) for doc in docs]
+        matriz.append(linha)
+
+    matriz_numpy = np.array(matriz)
+
+    # === Cálculo de TF-IDF ===
+    N = len(docs)
+    df_terms = np.count_nonzero(matriz_numpy > 0, axis=1)  # documentos por termo
+    idf = np.log(N / (df_terms + 1e-10))  # IDF com proteção contra divisão por zero
+    tf_idf = matriz_numpy * idf[:, np.newaxis]  # broadcasting IDF em cada termo
+
+    # === Vetor da consulta ===
+    consult_vector = np.array(consult_matrix).flatten()
+    consult_tf_idf = consult_vector * idf  # consulta também usa IDF
+
+    # === Similaridade cosseno ===
+    def cosine_similarity(a, b):
+        dot = np.dot(a, b)
+        norm_a = np.linalg.norm(a)
+        norm_b = np.linalg.norm(b)
+        return dot / (norm_a * norm_b + 1e-10)
+
+    print("\nSimilaridade com a consulta (por documento):")
+    for i, doc in enumerate(docs):
+        doc_vector = tf_idf[:, i]
+        similarity = cosine_similarity(consult_tf_idf, doc_vector)
+        print(f'{doc}: {similarity:.4f}')
+
+
 
 
 def menu():
@@ -218,6 +279,7 @@ def menu():
               "********** 3 - PARA IMPRIMIR A MATRIZ DE OCORRÊNCIAS *********\n"
               "********** 4 - PARA IMPRIMIR A MATRIZ DE FREQUENCIAS *********\n"
               "********** 5 - PARA APLICAR O MODELO BOOLEANO ****************\n"
+              "********** 6 - REALIZAR CONSULTA PARA O MODELO VETORIAL ******\n"
               "********** 0 - SAIR ******************************************\n"
               "**************************************************************\n"
               "DIGITE A OPÇÃO DESEJADA: "))
@@ -231,13 +293,9 @@ def menu():
 
             case 2:
                 vocabulary = get_most_relevant_terms()
-                print('\nVOCABULÁRIO (50 termos mais frequentes):')
+                print('\nVOCABULÁRIO (20 termos mais frequentes):')
                 for word, freq in vocabulary.items():
                     print(f'{word}: {freq}')
-
-                with open('vocabulario.txt', "w") as file:
-                    file.write(str(vocabulary))
-
 
             case 3:
                 vocabulary = get_most_relevant_terms()
@@ -246,10 +304,6 @@ def menu():
                 for word, docs in matrix.items():
                     print(f'{word}: {docs}')
 
-                with open('matriz_de_ocorrencias.txt', "w") as file:
-                    file.write(str(matrix))
-
-
             case 4:
                 vocabulary = get_most_relevant_terms()
                 matrix = index_collection(vocabulary)
@@ -257,17 +311,50 @@ def menu():
                 for word, data in matrix.items():
                     print(f'{word}: {data[1]}')
 
-                with open('matriz_de_frequencias.txt', "w") as file:
-                    file.write(str(matrix))
-
-
             case 5:
                 boolean_model()
+
+            case 6:
+                print("\n\n********** CONSULTA PARA O MODELO VETORIAL ***********\n")
+                term1 = input("Informe o primeiro termo da consulta: ")
+                term2 = input("Informa o segundo termo da consulta: ")
+                #print(term1,term2)
+                vetorial_model(term1,term2)
 
             case 0:
                 break
 
 
+
 if __name__ == "__main__":
+    #boolean_model()
+    # menu()
+    #vocabulary = extract_vocabulary('doc1.txt')
+    # result = get_most_relevant_terms() #menu 2
+    #print(result)
+
+    # index = bool_index(result)
 
     menu()
+
+    '''
+    vocabulary2 = create_dictionary('doc2.txt')
+    vocabulary1 = create_dictionary('doc1.txt')
+    
+    arquivos["doc1.txt"] = vocabulary1
+    arquivos["doc2.txt"] = vocabulary2
+    '''
+
+
+    '''for fileName in arquivos:
+        print(arquivos[fileName]['doce'])
+        break
+        #print(arquivos)
+    '''
+
+
+
+
+
+
+
