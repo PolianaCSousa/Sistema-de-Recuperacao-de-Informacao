@@ -1,0 +1,1050 @@
+IOP Conference Series:
+Materials Science and
+Engineering
+
+PAPER • OPEN ACCESS
+Grey wolf optimizer and other metaheuristic
+optimization techniques with image processing as
+their applications: a review
+To cite this article: Alok Kumar et al 2021 IOP Conf. Ser.: Mater. Sci. Eng. 1136 012053
+View the article online for updates and enhancements.
+You may also like
+Comparative analysis of optimization
+strategies by software complex
+“Metaheuristic nature-inspired methods of
+global optimization”
+A V Panteleev, I A Belyakov and A A
+Kolessa
+-
+Multi-Objective Metaheuristic Optimization
+for Enhancing Wear Characteristics in
+Al6060/Si3N4/Bn Hybrid Composites
+P Jai Rajesh, V. Balambica and M.
+Achudhan
+-
+Frigatebird optimizer: a novel
+metaheuristic algorithm
+Xiaowei Wang
+-
+This content was downloaded from IP address 177.221.182.152 on 26/04/2025 at 19:18
+Content from this work may be used under the terms of theCreative Commons Attribution 3.0 licence. Any further distribution
+of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI.
+Published under licence by IOP Publishing Ltd
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+1
+Grey wolf optimizer and other metaheuristic optimization
+techniques with image processing as their applications: a
+review
+Alok Kumar1
+, Lekhraj1
+, Safalata Singh2
+and Anoj Kumar1
+1
+Motilal Nehru National Institute of Technology Allahabad, India
+2
+United Institute of Technology, Allahabad, India
+E-mail: alokkumar@mnnit.ac.in1
+, lekhraj@mnnit.ac.in 2
+, safalsingh.as@gmail.com3
+,
+anojk@mnnit.ac.in4
+Abstract. Image processing is an evolutionary field in the domain of computer vision that
+currently has a comprehensive spectrum of applications. It is being employed in image
+segmentation, image classification, medical imaging, image compression, etc. A lot of realworld prominent issues are tackling employed through these application techniques. These
+techniques can be employed by means of various algorithms; however, these offered
+immensely dominant outcomes with existing and modified optimization algorithms. Some of
+the metaheuristic optimization algorithms applied during the above techniques include Ant
+Colony Optimization (ACO), Genetic Algorithm (GA), Bat Algorithm (BA), Grey Wolf
+Optimizer (GWO), Evolutionary Strategy (ES), Particle Swarm Optimization (PSO), Genetic
+Programming (GP), and so forth. Hence, this manuscript's main objective is that the study of
+several applied optimization algorithms and their variants thus lead to the various domain of
+image processing concludes it work more efficiently and robustly.
+Keywords: Grey Wolf Optimizer, Metaheuristic Algorithms, Support Vector Machine, Image
+Segmentation, Image Classification, Medical Imaging, Image Compression.
+1. Introduction
+Now days, Image processing is a very dominant research area from last two decades for the researcher.
+Image processing is a process by which operations are performed on the image to get intensified image
+and to extract useful information from the images. Digital image processing and analog image
+processing are two significant classifications of image processing. However, digital image processing
+being an efficient mechanism to visualize any image, restore the distorted image, eradicate noise, and
+image recognition. It is intensively employed in numerous areas such as face detection, remote
+sensing, moving object sensing, etc. Although analog image processing is a continuous process
+applied to analog signals and cannot be segmented into small components, it is eventually imposed as
+slow and costly. It is intensively employed in numerous areas such as remote sensing, Intelligent
+Vehicle and Highway System (abbreviated as IVHS) [1], etc.
+Typically, the pixel is a fundamental component of an image. In other words, an image is a
+combination of rows and columns (matrix) of pixels stored in electronic form and can be modified,
+copied, or transferred by the computer. Significantly, an image is a two-dimensional visual
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+2
+representation that contains color information. The various types of operations are employed on the
+image in image processing, whereas some of them are discussed in this section.
+Image segmentation is an integral aspect of image processing that fundamentally segregates the
+image into distinct segments to extract valuable information that is more significant, subsequently;
+obtained isolated pixels are called super-pixels. In other words, image segmentation is a preprocessing
+strategy in order to analyze an image that segregates the foreground from a background of an image.
+The numerous applications to tackle diverse real-life problems are adopted by image segmentation
+such as machine vision, object detection, content-based image retrieval, etc.
+Medical imaging is a technique employed to fabricate a visual portrayal of the interior body. This
+technique predominantly revealing the intramural structure of the skin to diagnose various diseases.
+This imaging technique is widely used to detect various diseases using image processing and is
+broadly employed in ultrasound, elastography, nuclear medicine, and so forth in the medical field.
+Image compression is a process in which the data is compressed to minimize the expense of storage
+and transmission. Image compression is of two types, lossless and lossy compression. The image
+compression prohibits the redundancy of the image which occupies less storage. Lossless image
+compression (reversible image compression) does not slacken the size of an image, i.e., it can be
+reverted to its veritable form and less data-holding capacity. In contrast, lossy image compression
+(irreversible image compression) slackens the size of an image, i.e., it does not revert or reform toward
+its original form and contains immense data holding capacity than Lossless image compression.
+The way toward classifying an object is based on its visual substance that is called image
+classification. Image classification can be divided into two categories, firstly supervised classification
+in which the training region is elected and subsequently generates signature files to classify it further.
+In contrast, in unsupervised classification, the image clusters are formed and further the classes are
+characterized for the image classification. The various applications of image classification are object
+recognition, image labeling, robotic vision, etc.
+Over the most recent two decades, the metaheuristic algorithm frameworks are becoming more
+popular considering how to tackle broad range type problems, issues regarding design patterns, behave
+like a black-box function, the problem-independent high-level algorithmic paradigm, etc. In contrast,
+the heuristic algorithms are usually problem-dependent, such as choosing the random pivot element
+from a list of elements through quick sort. In the context of one word, Metaheuristic generally known
+as heuristics about heuristics i.e. it provides a set of guidelines or strategy to develop such
+optimization algorithms those are considered to be heuristic. The heuristic algorithms, moreover,
+formulating "good guess" function to provide 'good enough' solution in order to regarding problem.
+The Classification of Heuristic and Metaheuristic Optimization Algorithms are shown in figure 1.
+Although, the metaheuristic algorithms have been discussed in this research manuscript hence the key
+focus on it.
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+3
+Figure 1. Classification of Heuristic and Metaheuristic Optimization Algorithms
+During the next section, a remarkable discussion about numerous fairly well-known meta-heuristic
+optimization algorithms assists in optimizing various real-world applications and several fields of
+study. Surprisingly, No free lunch theorem [2] state that a unique optimization algorithm cannot tackle
+all types of problems; however, all kinds of optimization algorithms cannot solve a single problem. As
+such it encourages constituting novel meta-heuristic optimization algorithms and renovating existing
+algorithms. The essential focal point of this section, a concise but lofty survey, is addressed about
+various striking meta-heuristic optimization algorithms that assist the various image processing
+domains to consider image segmentation, medical imaging, image compression, and image
+classification. Let’s discuss the following section to get various application domains employed by
+various meta-heuristics algorithms and their improved variants. The many abbreviated forms are
+utilized throughout this manuscript in sorted order (A to Z) tabulated in Table 1.
+Table 1. List of Abbreviation
+Abbreviated
+Form
+Expanded Form Abbreviated
+Form
+Expanded Form
+ABC Artificial Bee Colony LBG Linde–Buzo–Gray
+ACO Ant Colony Optimization LDA Linear Discriminant Analysis
+BA Bat Algorithm MPL Multi-layer perceptron
+BFO Bacterial Foraging
+Optimization
+MSE Mean-Squared Error
+CSA Cuckoo Search Algorithm OSMF Optimum Spectrum Mask Fusion
+CT Images Computed Tomography
+Images
+PCA Principle Component Analysis
+DE Differential Evolution PSNR Peak Signal-to-Noise Ratio
+ES Evolutionary Strategy PSO Particle Swarm Optimization
+FA Firefly Algorithm QP Quadratic Programming
+FCM Fuzzy C-means Clustering SA Simulated Annealing
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+4
+FSIM Feature Similarity Index SI Swarm Intelligence
+GA Genetic Algorithm SSIM Structural Similarity Index
+GP Genetic Programming SVM Support Vector Machine
+GSA Gravitational Search
+Algorithm
+TSA Tabu Search Algorithm
+GWO Grey Wolf Optimizer UCI University of California, Irvine
+HS Harmony Search WDO Wind Driven Optimization
+In Section 1, the introduction has been discussed regarding image processing and the critical
+requirement of various metaheuristic optimization algorithms. The rest of this manuscript is organized
+as follows: the literature review has been discussed in section 2, whereas section 3 concerns results
+and discussion of this research article. Conclusively, the conclusion has been discussed in section 4 of
+this manuscript.
+2. Literature Review
+In this section, a comprehensive discussion regarding various metaheuristic optimization techniques
+and various applications of digital image processing. In addition, the advantages, disadvantages,
+limitations, and future scope have been discussed for respective strategies.
+2.1 Genetic Algorithm
+During 1960, a marvelous as well as prestigious optimization algorithm innovated by John Holland
+namely Genetic Algorithm (GA) [3, 4] in order to practically implements the principle of “Darwin’s
+theory of evolution”. This principle getting the direction toward survival of fitness i.e. dissolves such
+species from that environment whose cannot fit or survive in corresponding environment. The
+algorithm begins with a random population and incorporates three biological evolution operators:
+selection, crossover, and mutation have been executed respectively and recursively until getting the
+desired outcome or course of terminated conditions. To impose the optimization algorithm's desired
+properties, i.e., exploration and exploitation, are mathematically obtained by crossover and mutation
+operators. Manifold research problems are optimized by means of GA; image segmentation and image
+classification are the most popular out of them whose described in the coming section of this article.
+2.1.1. Application of Genetic Algorithm
+Hung and Wu [5] inaugurated a novel clustering method known as FCM (fuzzy c-means) using
+genetic algorithm to overcome the disadvantages of FCM in form of cluster detection. The utilization
+of genetic algorithm improves the quality of recognizing the cluster center, identifying several
+diseases, and visualizing the anatomical structure. GFCM2G algorithm has been proposed in order to
+implement GAFCM (the fundamental thought behind this algorithm is to split the genetic population
+into multiple sub-populations) on the numerous embedded graphics processing units based gadgets. To
+implement algorithmically and computability, proposed algorithm executing two programming models
+parallel; the first one is Message-Passing Interface: MPI which is a broadcast mechanism that carries
+out the execution of the algorithm, and the other one is Compute Unified Device Architecture: CUDA
+that is used to enhance the computational features of the MRI segmentation.
+2.2 Genetic Programming
+During 1992, Genetic Programming (GP) [6-7] was inaugurated by JoneKoza. Reproduction,
+crossover, and mutation operators are implemented in the initial phase, architecture-altering operation
+applied during final phase in order of implementation of GP. This algorithm is a domain independent
+method and based on theory of evolution which comes under Evolutionary Algorithm. Many
+applications are very popular on which GP work well and provide satisfactory results as compare to
+other metaheuristic optimization algorithms. Image segmentation and image classification are more
+trending application areas for research work which is done by GP studying during this article.
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+5
+2.2.1. Applications of Genetic Programming
+Liang et al. [8] proposed three feature selection process for the image segmentation using genetic
+programming, first one abbreviated as PGP-FS (Parsimony Genetic Programming Feature Selection)
+that is implemented for single-objective applications, NSGP-FS (Non-dominated Sorting GPFS) and
+SPGP-FS (Strength Pareto GPFS) are second and third respectively which are multi-objective,
+however GP has not been looked into fairly in the field of feature selection. Single-objective as well as
+multi-objective are deployed together for the feature selection and compare the method capacity for
+searching effective feature subset which is to be tested on two benchmark datasets, the Weizmann and
+Pascal datasets which have high variation. The proposed method is able to produce lower feature set
+than the original set which contain 53 features. The goal of multi-objective in the consideration of
+reducing the number of features selected and grow up the performance of segmentation, on the other
+hand, the single-objective contains the ability to furnish potent feature subset on which bases the
+performance has to varying. However, the multi-objective employed more powerfully in order to
+generate the subset of effective feature. The diversity of the non-dominated solution is better
+maintained by the NSGP-FS.
+Liang et al. [9] proposed a new approach for the problem of image segmentation employed using
+genetic programming. This algorithm does not require specifying the solution structure, it evolves the
+segmentors that conduct the figure ground segmentation instinctual and explicitly. The segmentation
+problem can be resolved more logically using top down approach and acquire the learning from object
+information. The testing of this approach is done on four different datasets (bitmap, Brodatz texture,
+Weizmannand, and Pascal databases) to validate the model and mature the segmentors. After the
+different testing and comparison, it has been found that the proposed model is more efficient for the
+purpose of image segmentation.
+ In order to deal with complex image classification problems, Iqbal et al. [10] proposed a novel
+method. The proposed methodology is centered on genetic programming and exchange of learning.
+The proposed technique explores genetic programming's ability to seek and extract valuable
+information from a straightforward errand to help become acquainted with an unpredictable
+assignment alongside the utilization of transfer learning. Kylberg, Brodatz, and Outex standard data
+sets are being used here, whereas they have been used unrotated earlier and rotated later to perform the
+implementation. This technique involves extracting blocks of knowledge from simple images (without
+considering noise and rotation) in code fragments. The previous step's extracted knowledge is used to
+learn more intricate undertakings (various rotated and noisy renditions of the original images). The
+extracted knowledge is reused for learning concerning multiple domains and complex images as well.
+The aforesaid exchange learning technique considers GP has enhanced the classification performance
+over the traditional strategies such as completed local binary count (abbreviated as CLBC), dominant
+rotated LBPs (DRLBPs), and DeCAFs.
+2.3. Differential Evolution
+Storn and Price [11-14] proposed another evolutionary algorithm named Differential Evolution (DE)
+during 1990. The DE is a population-based algorithm and no need to evaluate differentiation or
+gradient to compute the candidate solution. The DE is also known as a metaheuristic optimization
+algorithm covering a large search space to evaluate more optimal solutions regarding candidate
+problems. While DE is not suitable for continuous problems, but it is provided a greater chance of
+obtaining optimal solutions despite incomplete information or no assumptions about the candidate
+problem.
+2.3.1. Application of Differential Evolution
+Sarkar et al. [15] proposed an unsupervised technique dependent on entropy and multi-level
+thresholding to image segmentation. In this regard, the entropies are named Renyi’s entropy as well as
+Cross entropy which are adopted for maximization and minimization problems respectively in order to
+optimal thresholding. Decomposition-based Multi-Objective Evolutionary Algorithms with DE
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+6
+(shortened as MOEA/D-DE) are bestowed to assess Pareto optimal solution's set. Moreover, to bring
+out the approximated Pareto fronts, the MOEA/D algorithm alongside differential evolution operator
+is utilized. To automatically bring out the solutions which are most appropriate for the Pareto optimal
+set, the method is claimed that depends on the fuzzy membership function. Surprisingly, the
+remarkable performance of proposed algorithms had been compared with other highly developed
+MOEAs such as NSGA-II and MOPSO, conclude that MOEA/D-DE were dominated over them. A
+comprehensive evaluation alongside neoteric single-objective global optimizer methods is likewise
+carried out. Moreover, the proposed technique has been used to detect brain tumors and it worked
+proficiently.
+2.4. Ant Colony Optimization
+In his research work of Doctor of Philosophy, Marco Dorigo submits a marvelous proposal regarding
+the behavior of ants that found the food source and choose the optimal path toward their nest. The ants
+follow the behavior of swarm intelligence and such algorithms are known as swarm-based algorithms.
+To communicate with each other, ants disperse a special type of chemical which is known as a
+pheromone. In 1992, Ant Colony Optimization abbreviated as ACO [16-18] came into the picture that
+follows the intelligence behavior of ants which is discussed in his thesis article of doctor of
+philosophy. ACO is the very famous metaheuristic algorithm. ACO is applying in the enormous
+application of various domains. During this research article, the impressive performance of ACO
+arises in the application of image classification.
+2.4.1. Application of Ant Colony Optimization
+JayaBrindha and GopiSubbu [19] proposed a machine vision for varietal identification on the images.
+For the process of identifying other distinguishable variety in the seed testing laboratory, a machine
+vision technique is used instead of manual operation. The proposed approach conducted experiments
+on sunflower seeds for varietal identification. The data used here contains the sunflower seeds of ten
+varieties. The techniques used here for varietal identification are Kernel LDA (Linear Discriminant
+Analysis) based boundary features and Principle Component Analysis (PCA). LDA and PCA are
+dimensionality reduction techniques. In this proposed approach, ant colony optimization technique is
+used for obtaining the order of cascaded SVM by maximizing the total probability of correct decision.
+The above system contains the ability to distinguish other seed varieties.
+2.5. Bat algorithm
+Bat algorithm [20] is one more latest and trending metaheuristic optimization algorithm. It was
+developed by Xin-She Yang during 2010. Bat algorithm is a swarm based algorithm which applied
+social intelligence to compute global optimal solution from many feasible solutions. The echolocation
+behavior of microbats was the inspiration to propose this algorithm in which attempt the
+communication between bats based on echoes. Easy to design, simplicity and flexibility are the
+strength of this algorithm and it can be solved complex types of optimization problems. Performance
+of this algorithm is discussed in next section of this research article, in which image compression
+considered as the real-world application.
+2.5.1. Applications of Bat algorithm
+Karri and Jena [21] are enforcing Bat algorithm for image compression using fast vector quantification
+in present fabrication. The bat algorithm offers a comprehensive codebook alongside the minimum
+number of iterations including two parameters: loudness and pulse rate which are presumed as tuning
+parameters. Existing approaches for image compression are used, yet they have some deficiencies
+such as Linde–Buzo–Gray (LBG) originates lower peak signal-to-noise ratio value. PSO and Quantum
+PSO [22] goes beneath instability in convergence, Honey-Bees Mating Optimization (HBM) algorithm
+generates a near-optimum codebook in a limited time, firefly algorithm is shakiness when brighter
+fireflies do not exist, and the convergence is the volumetric challenge in continuation of particle
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+7
+swarm optimization, whenever, the velocity of the particle becomes high. The proposed mechanism
+schemed uses BA on the underlying Solution of LBG. The PSNR value and quality of the
+reconstructed (compressed) image are preferable over LBG, PSO-LBG, QPSO-LBG, HBMO-LBG,
+and FA-LBG. Additionally, BA-LBG produces remarkable outcomes as compare to HBMO-LBG and
+FA-LBG.
+To Understand the unwavering quality of multispectral satellite images for examining the temporal
+variations, Senthilnath et al. [23] proposed a novel approach to deal with the classification process for
+assorted crop types using bat algorithm (BA-based clustering). The proposed partitional clustering
+algorithm is utilized to infuse information from training samples in the form of optimal cluster centers.
+Test samples are used to validate selected cluster centers. A real-time multispectral satellite image and
+one benchmark data set from the UCI repository have been obliged algorithm's reliability. The fruition
+of this approach is coordinated with several techniques such as BKM, GA, and PSO. Classification
+efficiency and time complexity are considered as evaluating parameters to figure out the outcomes.
+Compared to other metaheuristic techniques such as GA and PSO, BA is more computationally
+efficient. It is concluded that BA precisely converges optimal cluster centers and can be applied for
+tackling crop type classification problems.
+2.6. Particle Swarm Optimization
+During 1995, a prestigious research came into the picture to simulate social behavior firstly by
+Kennedy and Eberhart in the proposal of Particle Swarm Optimization (PSO) [24]. PSO is a swarm
+based optimization algorithm and simulate social intelligence to compute optimal solution for complex
+optimization problems. There are two evaluating parameters to implement this algorithm, one is
+PBEST which is the personal best and other is GBEST which contain the global best or group best.
+PBEST is individual best and best out of PBEST considered as GBEST. The velocity and position
+vector (calculated by equation (1)) are mathematical model computing parameters on which PBEST
+got evaluate. A lot of real life optimization problems and applications are describing in literature,
+although, the performance of this algorithm is discussed in next section of this research article, out of
+those applications image segmentation as well as medical image is the discussing application.
+The ‘w’ maintains the harmony between exploitation and exploration to ably performance of
+the algorithm. Although, it implies a constant value and is known as inertia weight. In comparison,
+‘ ’ and ‘ ’ are also constant variables and well perform a balance among exploitation and
+exploration parameters. Hence, (t+1) is the updated position for the next iteration. The above
+process is iteratively repeated till maximum number of iterations.
+2.6.1. Applications of Particle Swarm Optimization
+Mozafarri and Lee [25] proposed an algorithm for the image segmentation using image thresholding
+and for better optimization particle swarm optimization is used. The basic idea is to divide the
+particles into four sub-swarms for searching problem space. The method uses a new modified version
+of PSO which is Convergent Heterogeneous PSO algorithm; it gives better convergence, better
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+8
+jumping to local position to global position. The Otsu’s and Kapur’s multilevel thresholding method
+have been used and the benchmark images is considered as dataset for the evaluation. All the
+experimental results show that CHPSO gives significantly remarkable accuracy and outstanding
+performances.
+Zhang et al. [26] introduced the approach regarding real time segmentation that distinguish
+target image from the navigation image. To implement this approach, the Quantum Particle Swarm
+Optimization abbreviated as QPSO along with 2D fuzzy fisher are used to accomplish more accurate
+and quick segmentation in form of results corresponding to the input image. The 2D fuzzy fisher
+employed to make the adaptability between positioning target regions and retaining the boundaries of
+target fuzzy, based on criterion based integral image and the QPSO is used to encode current location
+of particles and mutative manipulation adds diversity to the particle swarm. The enhancements in its
+local searching capacity during the course of each iteration and to get the fast convergence, results is
+obtain by adding random orthogonal component along with quasi –optimum particle. The model is
+validated to check its competency of getting hasty segmentation and less valid signals simultaneously.
+To determine the bone age maturity, Sabeti et al. [27] in this proposed work adopted three
+various versions of PSO. Various image processing methods are also owned. The dataset considered
+here contains left hand-wrist radiographs source of sixty-five referred children. The reason behind
+adopting three PSO versions is to magnify the segmentation accuracy. “The three versions of particle
+swarm optimization are standard PSO, Worst Behavior-based version of PSO abbreviated as WB-PSO
+and Adaptive Inertia Weight version of PSO abbreviated as AIW-PSO along with Otsu algorithm and
+an reiteratively statistical method are operated for segmentation of hand radiographs” [27]. The
+outcomes of Otsu algorithm along with above various versions of particle swarm optimization as well
+as iteratively statistical methods yielded 81.76, 82.49, 83.08, 84.27, and 69.04 percent classification
+accuracy respectively. White Gaussian noise along with various intensities was assembled to the
+compiled images to check vigorousness of schemed techniques. The fruition indicated that while
+increases the noise level the robustness against this white gaussian noise for the PSO variants also
+raised in more advertised manner as compared to Otsu as well as statistical methods. AIW-PSO image
+segmentation works efficiently for bone age estimation.
+The other swarm-based algorithms such as ABC can be applied in other application areas such
+as wireless sensor network. Whereas, Karaboga [28] proposed a swarm-based metaheuristic
+optimization algorithm named artificial bee colony in 2005. The artificial bee colony is abbreviated as
+ABC and it has been inspired by the foraging behavior of honey bee swarm. The three group
+formation has been classified based on the intelligent foraging behavior of honey bees in order to the
+mathematical model. The author has proposed an approach namely SBHRA [29] to improving the
+stability, throughput, and lifetime of sensor node based on cluster network through ABC.
+2.7. Cuckoo Search
+In 2009, Yang and Deb [30] proposed a novel meta-heuristic optimization algorithm called Cuckoo
+Search (CS). The CS algorithm is an evolutionary population-based algorithm propelled by the
+lifestyle of the cuckoo bird family. The fascinating singing style and attractive voice are implied to be
+controlling paradigms that emphasize movement gradually to obtain the best solution from the
+previous solution. The cuckoo throws alien eggs from the current nest of host birds or searches the
+new nest to keep their egg that is considered the rule of thumb of this bird. The selection or locating
+the best nest to the cuckoo is considered as the main objective in the biological analogy. Similarly,
+explore the optimal solution concerning the real-world problem is the primary objective of the cuckoo
+search algorithm.
+2.7.1. Application of Cuckoo Search
+Bhandari et al. [31] proposed an advanced approach for image segmentation concerning color images
+using the Cuckoo Search algorithm utilized by Tsallis entropy for multilevel thresholding arranged by
+red, green, and NIR band. The fundamental objective of the applied algorithm is to pick the optimal
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+9
+threshold value for the segmentation process. The algorithm is benchmarked upon ten different
+colored images that were captured by satellite. Additionally, SSIM, FSIM, PSNR, and MSE are
+considered as performance evaluation matrices. Furthermore, the performance has compared to DE,
+WDO, PSO, and ABC meta-heuristics algorithms and it has been found that implemented algorithm
+outperforms them. The accuracy of this algorithm is defined as far as the threshold's best objective
+value and computational cost in terms of CPU time. The limitation of this algorithm is in regard to
+color image multilevel thresholding, and the algorithm is found to be intricate. In contrast, this
+algorithm's profitability has meager control parameters, unlike DE, WDO, PSO, and ABC algorithms.
+This work's future scope can be utilized in real-time sophisticated image processing in which image
+classification, satellite image enhancement; various computer vision problems, etc. can be considered.
+2.8. Firefly algorithm
+Yang [32] introduced a meta-heuristic optimization algorithm that was inspired by flashing pattern of
+fireflies and mimic the characteristics of them, named Firefly algorithm (FA). The objective function
+is formed from brightness of firefly and the main objective has to consider the improvement in
+brightness of the fireflies. The light intensity is inversely square proportional to the distance.
+Consequentially, low light intensity implies large distance and vice versa. Hence, every firefly is
+considered as solution and the objective is to minimize the distance between them. To achieve the
+above objective, the equation (3) is applied to movement of ith firefly (position ) toward jth firefly
+(position ) (jth firefly is more attractive than ith firefly):
+Whereas, α is randomization parameter {α∈[0, 1]} and rand contains a random value [0, 1].
+Although, the equation of β is derived from light intensity formula and calculated as:
+β0 is known as attractiveness coefficient [β0= 1]. Whereas, rij is the Cartesian distance between
+position of ith firefly and jth firefly and calculated as:
+The above equations are repeated till maximum iteration and produced an optimal solution for
+the optimization problem.
+2.8.1. Application of Firefly algorithm
+In image segmentation, conventional methods interpolate exceptionally high computational costs and
+breakdowns of their efficiency to accomplish the optimal threshold. This limitation motivates the
+application of meta-heuristics algorithms such as evolutionary algorithms or swarm intelligence
+algorithms. Naidu et al. [33] have proposed a multilevel thresholding algorithm utilized by the firefly
+algorithm to accomplish the above limitation. The objective is to maximize the Fuzzy entropy and
+Shannon entropy for the image segmentation. The algorithm is tested upon a natural and standard set
+of images (Lena, Goldhill, Pirate, and Starfish) to validate the performance and is additionally
+compared with other optimization techniques such as DE, BA, and PSO. PSNR, CPU Time, SSIM,
+Misclassification Error, Computational Complexity, and Stability Analysis are considered evaluation
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+10
+metrics. The outcomes of the simulation clarify that the firefly algorithm outperforms the DE, BA, and
+PSO with respect to all evaluation matrices. In consideration of future work, the efficiency and
+convergence time will be enhanced by distinct optimization algorithms or an improved firefly
+algorithm.
+2.9. Grey wolf optimizer
+Grey wolf optimizer is a neoteric meta-heuristic optimization algorithm that is designed, formulated
+mathematically, and coded by Mirjalili et al. [34] during 2014. The grey wolf is non-domestic and
+found in North America as well as Eurasia and it is famous with a scientific name canis lupus
+subspecies. The hunting behaviour of grey wolves was the inspiration toward this meta-heuristics
+optimization algorithm. The grey wolves follow special type of strategy to attempt hunting their target
+in which a leadership hierarchy getting implements between pack of wolves. This leadership hierarchy
+(Figure (2)) contains top level i.e. leader of the pack known as alpha, wolf at the next level known to
+be beta, wolf at the next subsequent level known as delta, and omega types of wolves considered at the
+bottom level, out of which top three hierarchy are considered as best three solutions and calculated by
+equation (4) during this algorithm. GWO performs remarkable in many research applications and
+provide good results while solving complex types of problems. The performance of this algorithm is
+discussed in the next section of this research article in which image segmentation and medical image
+are considering as research domain.
+Figure 2. Leadership Social Hierarchy of Grey Wolf
+During the hunting process, the alpha, beta, and delta indicate the best position of prey and
+accordingly update the position of the remaining wolves (omega) of the pack. The hunting process is
+imposed as follows:
+Where X1, X2, and X3 are the positions of the prey according to alpha, beta, and delta grey wolf,
+respectively that is calculated as:
+, , and are distance between prey and alpha, beta, and delta grey wolf, respectively
+that is calculated as:
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+11
+Where , , and are the position of alpha, beta, and delta grey wolf, respectively.
+However, , , and are the constant parameters.
+2.9.1. Applications of Grey wolf optimizer
+With rise in the number of thresholds computational, complications also increase in multilevel
+thresholding. Understanding this hitch, Khairuzzaman and Chaudhury [35] adopted Grey wolf
+optimizer algorithm for multilevel thresholding in this proposed work. Here, in the consideration of
+GWO, Kapur’s entropy as well as Otsu’s between class variance functions are also owned. The
+validation of this proposed work is done on various standard test images sets which are showing in the
+summarizing table. To figure out the traits of segmented images, mean structural similarity is
+abbreviated as MSSIM exploited as an index. The outcome of testing phase shows that the above
+scheme provides high quality solutions as compared to particle swarm optimization as well as bacterial
+foraging optimization. When compared to bacterial foraging optimization, grey wolf optimizer is
+faster but slower than particle swarm optimization.
+Li et al. [36] suggested and proposed a technique to extricate multi-level thresholding in the
+domain of image segmentation. In order to retrieve a bunch of thresholds, Modified Discrete GWO,
+abbreviated as MDGWO, is possessed to improve (optimize) the objective function adopted by Fuzzy
+Kapur’s entropy. MDGWO, however, is utilized as the apparatus, which infers pseudo-trapezoidal
+shape to form a fuzzy membership. Further, by owning local information aggregation image
+segmentation is done. When this applied with fuzzy it becomes FMDGWO. Improved PSNR and
+objective function values are ensured by FMDGWO while Electro-magnetism Optimization
+abbreviated as EMO, MDGWO, and Fuzzy entropy based Differential Evolution algorithm that is
+abbreviated as FDE are not as efficient as FMDGWO. FMDGWO performs high-level segmentation
+and has to ensure more stability.
+Although, determining discrete wavelet transform based methods [37] yield a prominent
+degree of approximation yet the availability of edge features is less in medical image fusion for
+clinical disease identification. Daniel et al. [38] proposed a scheme of cascaded laplacian wavelet
+mask abbreviated as CLWM is reliant on fusion utilization of Hybrid variant in which Cuckoo search
+combined with Grey wolf optimizer, named as HCS-GWO to the fusion of the multimodal medical
+image in this proposed work. During the initial phase, several fusion evaluation indexes are
+considered, the introduced strategy is checked to Magnetic Resonance- Single Photon Emission
+Tomography (shortened as MR-SPECT), MR-Positron Emission Tomography, MR Computerized
+Tomography (shortened as MR-CT), and MR T1-T2 image fusion. GWA is combined with the CSA in
+the implementation of the final phase. CLWM is compared with other highly developed fusion
+techniques for validation and robustness that considers Entropy, MI, QAB/F, and standard deviation
+values as the appraisal of parameters. The developed framework is remarkably more effective than
+other highly developed enhancements techniques. The complementary feature fusions are acquired
+through using this proposed methodology, which offers the significance for medical diagnosis.
+Finishing up the multi-modal image fusion scaling techniques taking into account static value
+selection reduces the quality of the fusion. To conquer the above limitation, Daniel et al. [39]
+developed an Optimal Spectrum Mask Fusion that is abbreviated as an OSMF for medical image
+fusion through a standard GWO algorithm to enhance clinical diagnosis. The GWO algorithm
+performs the fastest and selects dynamic scale; whereas the spectrum mask based fusion technique is
+adopted to enhance image contrast and edge quality. Plenty of information is gathered by the optimum
+mask in the multi-modality fusion. Brain’s images MR: T1-T2, MR-SPECT, MR-PET, and MR-CT
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+12
+are being used for the validation of the proposed OSFM. This approach dominates other customary
+techniques involving fusion based on pixels and yields enhanced outcomes.
+Ramakrishnan and Sankaragomathi [40] proposed a research work in order to classification
+and segmentation of Computed Tomography images (CT images) to assess the existence of tumor.
+The support vector machine classifier assists in the classification process to classify the images that
+involve tumor-containing and tumor-free images alongside certain kernel functions (such as Quadratic
+kernel function, Radial basis function, Linear kernel, Polynomial kernel, and MLP function) and
+various optimization techniques (such as Sequential Minimal Optimization, Least-Squares, and
+Quadratic Programming abbreviated as SMO, LS, and QP respectively). After the implementation of
+classification operation, segmentation is performed using Modified Region Growing (MRG) along
+with certain optimization algorithms (such as HS, GWO, and EP) are employed. The CT images data
+set is fetched from specialists (M/s Aarthi scans, Tirunelveli, India). The outcomes are validated using
+various parameters such as sensitivity, explicitness, and precision. The proposed tumor detection
+approach (MRG-GWO) is more precise than the other two techniques (HS and EP).
+3. Results and Discussion
+The problem-independent definition sparkle a significant milestone to meta-heuristic techniques.
+These techniques are becoming increasingly plausible day to day because of their versatility,
+simplicity, and flexibility. The meta-heuristic techniques are greatly ingenious to understand, readily
+adjustable, and utilized in various fields of analysis, real-world applications, and research areas.
+Conversely, low convergence rate and stuck in local optima are such limitations that constitute it more
+challenging. Introduce, produce, and innovate in order to novel meta-heuristics algorithms and their
+variants are utilized to overcome the aforementioned limitations and to conform with the no free lunch
+theorem [2].
+Table 2. Applications and corresponding optimization techniques with references
+Applications Optimization Techniques [References]
+Image
+Segmentation
+Genetic Algorithm (GA) [5]
+Genetic Programming (GP) [8, 9]
+Particle Swarm Optimization (PSO) [25, 26]
+Cuckoo Search algorithm (CSA) [31]
+Firefly Algorithm (FA) [33]
+Grey Wolf Optimizer (GWO) [35, 36, 40]
+Image
+Classification
+Genetic Programming (GP) [10]
+Ant Colony Optimization (ACO) [19]
+Bat Algorithm (BA) [23]
+Medical Imaging
+Differential Evolution (DE) [15]
+Particle Swarm Optimization (PSO) [27]
+Grey Wolf Optimizer (GWO) [38, 39]
+Image
+Compression Bat Algorithm (BA) [21]
+The various optimization algorithms applied to various applications of image processing are
+tabulated in table 2 and depicted in figure 3. The final conclusion based on various parameters is
+eventually tabulated in table 3.
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+13
+Figure 3. Various Image Processing Applications employed with various Optimization Algorithms
+Table 3. Conclusion table based on various parameters
+Referenc
+es Application
+Utilized
+Optimization
+Algorithm
+Data Set Base
+Technique
+Comparative
+Techniques
+Performance
+Evaluating
+Parameters/
+Comparative
+Parameters
+Simulation
+Environment
+[5]
+Magnetic
+Resonance
+Imaging
+[MRI]
+segmentation
+Genetic
+Algorithm Brain web dataset
+Fuzzy cmeans
+clustering
+GFCM2G on
+different GPU
+devices
+Speedup, Execution
+Time
+NVIDIA
+Kepler based
+Tegra K1
+(TK1) system
+[8]
+Figureground
+segmentation
+Genetic
+Programming
+Weizmann and
+Pascal dataset SVM SPGP-FS, NSGP-FS Accuracy, Fitness
+Function Koza (1992)
+[9]
+Figureground
+segmentation
+Genetic
+Programming
+Bitmap, Brodatz
+texture,
+Weimannand,
+Pascal dataset
+Clustering
+Conventional
+segmentation’s
+techniques (active
+contour model,
+region growing, Kmeans clustering, and
+thresholding)
+Negative Rate
+Metric (NRM),
+F1score, accuracy
+MATLAB
+R2014b
+[10] Image
+Classification
+Genetic
+Programming
+Kylberg, Brodatz,
+and Outex TLGP-criptor
+CLBC, DRLBPs and
+DeCAFs Mean, Standard
+Deviation
+EC Java-based
+software
+[15] Medical
+Image
+Differential
+Evolution
+BRATS 2012,
+Cameraman, Gold
+Hill, L Pepper
+House, etc.
+SVM NSGA-II and
+MOPSO
+Misclassification
+Probability
+Error(MSE),
+Threshold values,
+Uniformity
+measures
+MATLAB
+R2012a
+[19] Image
+Classification
+Ant Colony
+Optimization
+Images that
+contains ten
+varieties of
+sunflower seeds
+LDA, PCA Manual operation of
+seed distinguishing
+Boundary, Cosine,
+and Fourier
+descriptors
+Montecarlo
+simulation
+[21] Image
+Compression
+Bat
+Algorithm
+Goldhill, Barb,
+Peppers, Baboon,
+and Lena images
+Vector
+Quantization
+FA-LBG, LBG,
+QPSO-LBG, HBMOLBG, and PSO-LBG
+PSNR, MSE
+MATLAB
+version 7.9.0
+(R2009b)
+[23] Image
+Classification
+Bat
+Algorithm
+Real-time
+multispectral
+satellite image for
+Clustering GA, PSO, BKM Efficiency,
+Accuracy
+Matlab
+7.12.0.635
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+14
+Crop, image
+segmentation data
+set from UCI
+[25] Image
+Segmentation
+Particle
+Swarm
+Optimization Benchmark images Thresholding HS, PSO, GA Standard deviation,
+PSNR
+MATLAB
+2016
+[26] Image
+Segmentation
+Particle
+Swarm
+Optimization
+Random test image 2D fuzzy
+fisher
+AGA, PSO, QPSO
+and RLQPSO
+Cost functions,
+Calculation Time
+PC with 2G
+memory
+ and Inter(R)
+Core(TM)2CP
+U@2.40GHz
+[27] Medical
+Image
+Particle
+Swarm
+Optimization
+Left hand X-ray
+images of 65
+children referred to
+the Namazi hospital
+(Shiraz, Iran) for
+bone assessment
+PSO version Otsu and statistical
+methods
+PSNR, Uniformity
+Measure (UM),
+Structural
+Similarity Index
+Measure (SSIM),
+Accuracy
+An auxiliary
+diagnostic tool
+[31] Image
+Segmentation
+Cuckoo
+Search
+algorithm
+10 Satellite color
+images
+Tsallis
+entropy
+DE, WDO, PSO,
+ABC
+SSIM, FSIM,
+PSNR, and MSE
+#repetition: 10
+Population
+Size: 25 Max
+iteration: 300
+[33] Image
+Segmentation
+Firefly
+Algorithm
+Standard images or
+natural images
+(Lena, Goldhill,
+Pirate, Starfish)
+Shannon and
+Fuzzy entropy DE, BA, PSO
+PSNR, CPU Time,
+SSIM,
+Misclassification
+Error,
+Computational
+Complexity,
+Stability Analysis
+Intel Core i5
+Preprocessor,
+2GB RAM,
+Matlab 2009b
+[35] Image
+Segmentation
+Grey Wolf
+Optimizer
+Zebra, Snake,
+Starfish, Airplane,
+Man, Baboon,
+Peppers, and Lena
+Multilevel
+thresholding BFO and PSO
+Mean Structural
+SIMilarity index
+(MSSIM), Average
+CPU time
+Matlab R2010a
+[36] Image
+Segmentation
+Grey Wolf
+Optimizer
+Berkeley
+Segmentation Data
+Set Benchmarks
+500
+Fuzzy
+Multilevel
+Image
+Thresholding
+EMO, MDGWO,
+FDE
+Standard Deviation
+(STD), fuzzy
+entropy, PSNR,
+Lenovo Laptop
+configuration
+with 4GB
+memory and
+Intel Core i3
+processor
+[38] Medical
+Image
+Grey Wolf
+Optimizer
+Brain’s images MR:
+T1-T2, MRSPECT, MR-PET,
+and MR-CT
+Cascaded
+Laplacian
+Wavelet
+Mask
+Discrete wavelet
+transform (db4)
+Entropy, Edge
+based similarity
+measure, Standard
+deviation
+-
+[39] Medical
+Image
+Grey Wolf
+Optimizer
+Brain’s images MR:
+T1-T2, MRSPECT, MR-PET,
+and MR-CT
+Optimum
+Spectrum
+Mask Fusion
+Conventional pixel
+based fusion
+techniques
+Entropy, Edge
+based similarity
+measure, Standard
+deviation
+MATLAB
+2010a
+[40]
+Image
+Segmentation
+and
+Classification
+Grey Wolf
+Optimizer
+CT images dataset
+fetched from M/s
+Aarthi scans,
+Tirunelveli, India
+authorities
+SVM HS and EP
+False Discovery
+Rate (FDR),
+Random Index (RI)
+MATLAB
+2012
+4. Conclusion
+Image processing is a vast area for researchers at the current time, gives rise to several new algorithms
+to implement and use image processing in efficient ways. The different application domains of image
+processing like image segmentation can be implemented more efficiently with GA, GP, FA, GWO,
+and PSO optimization algorithms which help obtain the results quickly and in a wide range.
+An optimization algorithm like BAT algorithm, when applied to the image compression it assists in
+increasing the compression ratio leaving no effect on the image quality. The algorithms like GP, BAT,
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+15
+and ACO when applied to employ image classification then the techniques can easily trigger the
+complexity of the image variation providing fruitful results. The medical field also has various image
+processing applications like anatomical study, detection of tumors, and other disease prediction and
+treatment. The metaheuristic optimization algorithms such as PSO, GWO, and DE are used for more
+efficacious results to implement medical imaging more efficiently. These algorithms help obtain more
+specific information from the image, which is used to predict more precisely.
+Finally, in this manuscript, it has been discussed that optimization algorithms used in image
+processing and its applications eventually provide remarkable outcomes and these are less dependent
+on the input image acquired. It has been also found that GA, ACO, GWO, GP, etc., algorithms have
+provided superior results even in cluttered and high variation images compared to standard algorithms.
+References
+[1] Reinhart C, Johnson K, Cerreta B and Mathur BP 1995 January.Analog image processing for
+IVHS applications Intelligent Vehicle Highway Systems (Vol. 2344 pp. 54-60).International
+Society for Optics and Photonics.
+[2] Wolpert DH and Macready WG 1997 No free lunch theorems for optimization IEEE transactions
+on evolutionary computation 1(1) pp. 67-82.
+[3] Holland JH 1992 Genetic algorithms Scientificamerican 267(1) pp. 66-73.
+[4] Davis L 1991 Handbook of genetic algorithms.
+[5] Hung CL and Wu YH 2017 Parallel genetic-based algorithm on multiple embedded graphic
+processing units for brain magnetic resonance imaging segmentation Computers & Electrical
+Engineering 61pp. 373-383.
+[6] Koza JR 2010 Human-competitive results produced by genetic programming Genetic
+programming and evolvable machines 11(3-4) pp. 251-284.
+[7] Kinnear KE, Langdon WB, Spector L, Angeline PJ and O'Reilly UM1994 Advances in genetic
+programming (Vol. 3). MIT press.
+[8] Liang Y, Zhang M and Browne WN2017 Image feature selection using genetic programming for
+figure-ground segmentation Engineering Applications of Artificial Intelligence 62 pp. 96-108.
+[9] Liang Y, Zhang Mand Browne WN2017 Genetic programming for evolving figure-ground
+segmentors from multiple features Applied Soft Computing 51 pp. 83-95.
+[10] Iqbal M, Xue B, Al-Sahaf Hand Zhang M 2017 Cross-domain reuse of extracted knowledge in
+genetic programming for image classification IEEE Transactions on Evolutionary
+Computation 21(4) pp. 569-587.
+[11] Storn R1996 June. On the usage of differential evolution for function optimization Proceedings of
+North American Fuzzy Information Processing (pp. 519-523). IEEE.
+[12] Storn R and Price K 1997 Differential evolution–a simple and efficient heuristic for global
+optimization over continuous spaces Journal of global optimization 11(4) pp. 341-359.
+[13] Price K, Storn RM andLampinen JA 2006 Differential evolution: a practical approach to global
+optimization Springer Science & Business Media.
+[14] Rocca P, Oliveri G and Massa A 2011 Differential evolution as applied to electromagnetics IEEE
+Antennas and Propagation Magazine 53(1) pp. 38-49.
+[15] Sarkar S, Das SandChaudhuri SS2017 Multi-level thresholding with a decomposition-based
+multi-objective evolutionary algorithm for segmenting natural and medical images Applied
+Soft Computing 50 pp. 142-157.
+[16] Dorigo M, Maniezzo V andColorni A 1996 Ant system: optimization by a colony of cooperating
+agents IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics) 26(1) pp.
+29-41.
+[17] Parsons S 2005 Ant Colony Optimization by Marco Dorigo and Thomas Stützle, MIT Press, 305
+pp. $40.00, ISBN 0-262-04219-3 The Knowledge Engineering Review 20(1) pp. 92.
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+16
+[18] Colorni A, Dorigo M and Maniezzo V 1991 December. Distributed optimization by ant
+colonies Proceedings of the first European conference on artificial life (Vol. 142 pp. 134-
+142).
+[19] JayaBrindha G and Subbu EG 2017 Ant colony technique for optimizing the order of cascaded
+SVM classifier for sunflower seed classification IEEE Transactions on Emerging Topics in
+Computational Intelligence 2(1) pp. 78-88.
+[20] Yang XS 2010 A new metaheuristic bat-inspired algorithm Nature inspired cooperative strategies
+for optimization (NICSO 2010) (pp. 65-74). Springer, Berlin, Heidelberg.
+[21] Karri C and Jena U2016 Fast vector quantization using a Bat algorithm for image
+compression Engineering Science and Technology, an International Journal 19(2) pp. 769-
+781.
+[22] Wang Y, Feng XY, Huang YX, Pu DB, Zhou WG, Liang YC and Zhou CG2007 A novel
+quantum swarm evolutionary algorithm and its applications Neurocomputing 70(4-6) pp. 633-
+640.
+[23] Senthilnath J, Kulkarni S, Benediktsson JAand Yang XS 2016A novel approach for multispectral
+satellite image classification based on the bat algorithm IEEE Geoscience and Remote Sensing
+Letters 13(4) pp. 599-603.
+[24] Kennedy J and Eberhart R 1995 November. Particle swarm optimization Proceedings of
+ICNN'95-international conference on neural networks (Vol. 4 pp. 1942-1948).IEEE.
+[25] Mozaffari MHand Lee WS 2017 Convergent heterogeneous particle swarm optimisation
+algorithm for multilevel image thresholding segmentation IET Image Processing 11(8) pp.
+605-619.
+[26] Zhang C, Xie Y, Liu Dand Wang L 2016 Fast threshold image segmentation based on 2D fuzzy
+fisher and random local optimized QPSO IEEE Transactions on Image Processing 26(3) pp.
+1355-1362.
+[27] Sabeti M, Boostani R and Davoodi B 2017 Improved particle swarm optimisation to estimate
+bone age IET Image Processing 12(2) pp. 179-187.
+[28] Karaboga D 2005 An idea based on honey bee swarm for numerical optimization (Vol. 200 pp. 1-
+10). Technical report-tr06, Erciyes University, engineering faculty, computer engineering
+department
+[29] Yadav AS, Khushboo K, Singh VKandKushwaha DS 2020 Increasing Efficiency of Sensor
+Nodes by Clustering in Section Based Hybrid Routing Protocol with Artificial Bee
+Colony Procedia Computer Science 171 pp. 887-896.
+[30] Yang XSand Deb S 2009 December. Cuckoo search via Lévy flights 2009 World congress on
+nature & biologically inspired computing (NaBIC) (pp. 210-214). Ieee.
+[31]Bhandari AK, Kumar Aand Singh GK 2015Tsallis entropy based multilevel thresholding for
+colored satellite image segmentation using evolutionary algorithms Expert systems with
+applications 42(22) pp. 8707-8730.
+[32] Yang X S 2010 Nature-inspired metaheuristic algorithms. Luniver press.
+[33] Naidu M SR, Kumar PRandChiranjeevi K 2018 Shannon and fuzzy entropy based evolutionary
+image thresholding for image segmentation Alexandria engineering journal 57(3) pp. 1643-
+1655.
+[34] Mirjalili S, Mirjalili S M and Lewis A 2014 Grey wolf optimizer Advances in engineering
+software 69 pp. 46-61.
+[35] Khairuzzaman A K M andChaudhury S2017 Multilevel thresholding using grey wolf optimizer
+for image segmentation Expert Systems with Applications 86 pp. 64-76.
+[36] Li L, Sun L, Kang W, Guo J, Han C and Li S 2016 Fuzzy multilevel image thresholding based on
+modified discrete grey wolf optimizer and local information aggregation IEEE Access 4 6438-
+6450.
+IC4M 2021
+IOP Conf. Series: Materials Science and Engineering 1136 (2021) 012053
+IOP Publishing
+doi:10.1088/1757-899X/1136/1/012053
+17
+[37] Vijayarajanand Muttan S 2015 Discrete wavelet transform based principal component averaging
+fusion for medical images AEU-International Journal of Electronics and Communications 69(6)
+pp. 896-902.
+[38] Daniel E, Anitha J and Gnanaraj J 2017 Optimum laplacian wavelet mask based medical image
+using hybrid cuckoo search–grey wolf optimization algorithm Knowledge-Based Systems 131
+pp. 58-69.
+[39]Daniel E, Anitha J, Kamaleshwaran K K and Rani I 2017 Optimum spectrum mask based medical
+image fusion using Gray Wolf Optimization Biomedical Signal Processing and Control 34 pp.
+36-43.
+[40]Ramakrishnan T and Sankaragomathi B 2017A professional estimate on the computed
+tomography brain tumor images using SVM-SMO for classification and MRG-GWO for
+segmentation Pattern Recognition Letters 94pp. 163-171.
+[41] Russell SJ andNorvig P2003 Artificial Intelligence: A Modern Approach (2nd ed.), Upper Saddle
+River, New Jersey: Prentice Hall, pp. 111–114, ISBN 0-13-790395-2.
+[42] Geem Z W, Kim J HandLoganathan G V 2001 A new heuristic optimization algorithm: harmony
+search simulation 76(2) pp. 60-68.
+[43] Rashedi E, Nezamabadi-Pour H and Saryazdi S2009 GSA: a gravitational search
+algorithm Information sciences 179(13) pp. 2232-2248.
+[44] Van Laarhoven P J and Aarts E H 1987Simulated annealing Simulated annealing: Theory and
+applications (pp. 7-15), Springer, Dordrecht.
+[45] Hofmeyr S A and Forrest S 2000 Architecture for an artificial immune system Evolutionary
+computation 8(4) pp. 443-473. 

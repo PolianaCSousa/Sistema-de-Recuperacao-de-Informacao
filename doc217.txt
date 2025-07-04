@@ -1,0 +1,386 @@
+UNIVERSIDADE ESTADUAL DE CAMPINAS
+INSTITUTO DE COMPUTAÇÃO
+Aprendizado Federado
+Hierárquico
+B. Rosano L. Bittencourt J. Anjos
+Relatório Técnico - IC-PFG-22-03
+Projeto Final de Graduação
+2022 - Julho
+The contents of this report are the sole responsibility of the authors.
+O conteúdo deste relatório é de única responsabilidade dos autores.
+Aprendizado Federado Hier´arquico
+Bruno Rosano Julio Anjos Luiz F. Bittencourt
+Resumo
+Cada vez mais dispositivos eletrˆonicos tˆem se tornado mais conectados e inteligentes,
+gerando uma grande quantidade de dados. Com isso, o Aprendizado Federado possibilita explorar esse grande banco de dados distribu´ıdo de forma inteligente e mantendo
+a privacidade dos dados, j´a que eles n˜ao precisam sair do dispositivo que os gerou, ao
+contr´ario do que geralmente ocorre nas t´ecnicas de aprendizado de m´aquina tradicionais. Neste trabalho, ´e proposta a utiliza¸c˜ao de um modelo de Aprendizado Federado
+Hier´arquico visando diminuir problemas de comunica¸c˜ao existentes no Aprendizado Federado Tradicional. Primeiramente, descrevemos a implementa¸c˜ao de um framework
+para possibilitar criar essa rede hier´arquica e posteriormente mostramos os resultados
+iniciais de testes de desempenho realizados no modelo proposto comparados ao tradicional.
+1 Introdu¸c˜ao
+Devido o crescimento da internet das coisas e a populariza¸c˜ao de dispositivos inteligentes,
+como celulares, equipamentos eletrˆonicos est˜ao cada vez mais conectados e gerando uma
+grande quantidade de dados[1], o que possibilita que esses dados sejam utilizados em conjunto com t´ecnicas de aprendizado de m´aquina para que esses sistemas inteligentes consigam
+responder quest˜oes complexas sobre eles mesmos de forma totalmente independente.
+Um problema que decorre da utiliza¸c˜ao dessa grande quantidade de dados em sistemas
+de machine learning ´e a privacidade dos usu´arios [1, 2, 5] ´e que esses dados podem conter
+informa¸c˜ao sens´ıvel e n˜ao ´e desej´avel que sejam treinados de forma centralizada em um sistema externo como seria proposto para grande partes dos algoritmos de machine learning
+nos dias de hoje. Com isso, t´ecnicas como Aprendizado Federado, onde os dados gerados podem ser treinados de forma local na borda da rede e os apenas os resultados desse
+treinamento s˜ao passados para fora do equipamento mantendo todos os dados gerados locais, tˆem recebido uma grande aten¸c˜ao, al´em disso esses dados do treinamento podem ser
+agrupados com resultados de treinamento de outros equipamentos formando um rede final
+mais robusta, pois o treinamento est´a sendo feito em uma quantidade maior de dados mais
+heterogˆeneos.
+Um exemplo que mostra os benef´ıcios dessa abordagem ´e a ´area da sa´ude [4], onde uma
+grande quantidade de dados gerada dos pacientes s˜ao utilizadas em algoritmos de machine
+learning para ajudar a interpretar sintomas auxiliando na decis˜ao dos pr´oximos passos
+para o tratamento de um paciente, como os dados gerados s˜ao extremamente sens´ıveis o
+aprendizado federado pode ser utilizado por fazer com que a privacidade deles seja mantida,
+1
+2 Rosano, Bittencourt e Anjos
+j´a que nunca saem do ambiente onde foram gerados e ainda podem ser agrupados com
+dados de outros hospitais o que diminui a chance de que os treinamento seja enviesado pelo
+composi¸c˜ao demogr´afica dos pacientes em determinado centro m´edico [4].
+No entanto, mesmo com a crescente ades˜ao do 5G no mundo facilitando a quantidade
+troca de dados entre equipamentos na borda de rede e servidores, os sistemas de FL ainda
+podem ter problema de comunica¸c˜ao entre os servidores na nuvem e a borda da rede, devido
+a grande quantidade de dados que s˜ao trocados constantemente.
+Neste trabalho, ´e descrita a implementa¸c˜ao de uma rede de Aprendizado Federado
+hier´arquica utilizando como base o framework Flower1
+, onde os equipamentos na borda
+da rede se comunicam com servidores intermedi´arios que por sua vez se comunicam com
+a nuvem, ao inv´es da comunica¸c˜ao direta com a nuvem como ´e feita na maioria das redes
+desse tipo buscando aumentar a eficiˆencia e velocidade dessa comunica¸c˜ao. Por fim, mostrou resultados de testes realizados com a rede hier´arquica para comparar seu desempenho
+em rela¸c˜ao a rede comum.
+2 Referencial Te´orico
+Antes de entrar na implementa¸c˜ao do Aprendizado Federado Hier´arquico ´e necess´ario entender alguns conceitos que ser˜ao utilizados durante este trabalho.
+2.1 Aprendizado Federado
+Com dispositivos cada vez mais conectados e gerando uma grande quantidade de dados,
+como celulares, tablets e ve´ıculos, a utiliza¸c˜ao de aprendizado de m´aquina ´e de suma
+importˆancia para explorar esse grande banco de dados de forma inteligente e responder
+quest˜oes complexas para eles mesmos. No entanto, boa parte das solu¸c˜oes de aprendizado
+de m´aquina necessitam que os dados sejam agrupados em grandes servidores com capacidade de processamento suficiente para treinar os modelos. Al´em do grande custo para
+armazenar e processar esses dados de forma centralizada, tamb´em existem preocupa¸c˜oes
+em rela¸c˜ao `a privacidade desses dados, que pode ser perdido ao entreg´a-los a um servidor
+externo.
+Para ajudar a solucionar esses problemas foi proposto o Aprendizado Federado [2, 5], que
+´e uma abordagem de machine learning distribu´ıda onde diversos equipamentos na borda da
+rede trabalham de forma colaborativa para treinar um modelo de predi¸c˜ao compartilhado
+em cima de dados mantidos localmente por esses equipamentos tirando a necessidade de
+enviar esses dados para um servidor externo na nuvem e assim mantendo esses dados, que
+podem ser sens´ıveis em alguns contextos, privados.
+Nesta abordagem os dispositivos na borda da rede baixam o modelo global e realizam
+uma etapa de treinamento em cima dele gerando um modelo local, ap´os isso os modelos
+atualizados por todos os clientes s˜ao enviados novamente para o servidor central a fim de
+que os resultados enviados sejam agrupados atualizando o modelo global do servidor e por
+1Flower, dispon´ıvel em https://github.com/adap/flower
+Aprendizado Federado Hier´arquico 3
+Figura 1: Uma rede de Aprendizado Federado[7]
+fim esse modelo central ´e novamente enviado para a bordas da rede para que os passos
+possam se repetir para cada rodada de treinamento [2, 3] como pode ser visto na Figura 1.
+Durante este trabalho foi utilizado o Federated Averaging(FedAvg) [5, 6] como m´etodo
+de agrega¸c˜ao, que consiste nos dispositivos realizarem um passo da descida de gradiente
+com os dados locais para atualizar os modelos e o resultado disso ´e enviado para o servidor,
+que realiza uma m´edia ponderada dos resultados para construir o modelo central.
+2.2 Latˆencia
+Uma das m´etricas que ser´a utilizada para analisar o desempenho das redes testadas durante
+o trabalho ´e a latˆencia. Ela ´e o tempo que demora entre uma chamada realizada por um
+cliente e a resposta do servidor retornar para o cliente, em geral esse tempo ´e medido em
+milissegundos. Em geral a primeira comunica¸c˜ao pode ter uma latˆencia maior,j´a que ´e
+necess´ario estabelecer uma comunica¸c˜ao inicial com o servidor e comunica¸c˜ao subsequentes
+ter˜ao menor latˆencia j´a que a comunica¸c˜ao j´a foi estabelecida.
+Uma rede com alta latˆencia significa que existem diversos atrasos na comunica¸c˜ao, o
+que afeta o desempenho como um todo, pois mesmo que a opera¸c˜ao realizada no servidor
+seja r´apida esta latˆencia torna a atrasa a obten¸c˜ao do resultado final gerando a percep¸c˜ao
+de que a opera¸c˜ao como todo foi lenta.
+4 Rosano, Bittencourt e Anjos
+2.3 Tipos de Computa¸c˜ao
+Neste projeto a computa¸c˜ao realizada na rede de Aprendizado Federado Hier´arquico ser´a
+dividida em trˆes tipos, descritos nesta se¸c˜ao.
+2.3.1 Computa¸c˜ao nos dispositivos de borda
+Este tipo de computa¸c˜ao ´e realizada diretamente nos dispositivos na borda da rede, como
+celulares, computadores e tablets. No Aprendizado Federado ele ´e utilizado para realizar
+o treinamento dos modelos locais baseado nos dados gerados pelos dispositivos ativos, ou
+seja, aqueles que tˆem capacidade de processamento para realizar o treinamento[12].
+2.3.2 Computa¸c˜ao em nuvem
+Outro conceito que teve grande crescimento nos ´ultimos anos ´e o de computa¸c˜ao em nuvem
+que pode ser definida conjunto de servi¸cos computacionais oferecidos atrav´es da rede, esses
+servi¸cos podem ser poder de processamento, armazenamento, inteligˆencia artificial, entre
+outros, ou seja, ´e uma forma de ser acessar recursos computacionais sem possu´ı-los localmente, apenas acessando eles em servidores de forma remota[8, 9]. Em geral a computa¸c˜ao
+em nuvem ´e bastante centralizada, possui menor n´umero de equipamentos e possui altas
+latˆencias em rela¸c˜ao a borda da rede e tem grande poder de processamento[10].
+No caso de modelos tradicionais de Aprendizado Federado esse tipo de computa¸c˜ao ´e
+usado para coordenar o treinamento e agregar os modelos enviados pelos clientes, como
+a comunica¸c˜ao entre a nuvem e a borda ´e constantes e com uma grande quantidade de
+dados a latˆencia pode interferir de forma negativa no tempo para se obter resultados de
+treinamento satisfat´orios. Esse ´e um dos principais problemas que tentamos abordar ao
+propor um Aprendizado Federado Hier´arquico com servidores intermedi´arios na n´evoa da
+rede com uma latˆencia menor.
+2.3.3 Computa¸c˜ao na n´evoa
+Um conceito menos popular que os outros citados, mas que vem ganhando relevˆancia com
+a populariza¸c˜ao de dispositivos IOT ´e a computa¸c˜ao na n´evoa devido ela busca aumentar a eficiˆencia, performance e reduzir a quantidade de dados trocados diretamente com
+a nuvem. Podemos definir computa¸c˜ao na n´evoa como uma arquitetura de computa¸c˜ao
+geograficamente distribu´ıda de forma descentralizada com dispositivos heterogˆeneos e onipresentes que distribui recursos e servi¸cos de computa¸c˜ao de forma mais pr´oxima da borda
+da rede[10]. E poss´ıvel ver a arquitetura dessas camadas da rede na Figura 2. ´
+Este tipo de computa¸c˜ao ´e utilizado no modelo de Aprendizado Federado Hier´arquico
+nas camadas entre o servidor e os clientes, devido a sua maior proximidade a borda da
+rede o que leva a uma latˆencia reduzida se comparado com a computa¸c˜ao em nuvem em
+geral[10]. No caso de dispositivos passivos na borda da rede, ou seja, aqueles que n˜ao tem a
+capacidade para realizar o treinamento do modelo, os dados gerados por esses dispositivos
+podem ser transferidos para um servidor-cliente local na n´evoa que por sua vez realiza o
+Aprendizado Federado Hier´arquico 5
+Figura 2: Arquitetura das camadas de borda, n´evoa e nuvem[11]
+treinamento, esse ´e o caso em alguns sistemas em hospitais que possuem um servidor local
+central que recebe os dados gerados pelos equipamentos hospitalares[12].
+3 Objetivos
+Grande parte dos estudos em Aprendizado Federado ´e feito em cima de redes com os clientes
+na borda da rede e os servidores na nuvem. Neste trabalho ser´a descrita a implementa¸c˜ao de
+modifica¸c˜oes realizadas no framework Flower, o que permite testar de forma simples modelos
+de Aprendizado Federado em dispositivos de borda reais[13]. No entanto, por padr˜ao, assim
+como a maioria dos frameworks nesta ´area, ele suporta apenas redes com duas camadas.
+Com as adapta¸c˜oes feitas ao Flower, foi criada uma rede Aprendizado Federado Hier´arquico
+com 4 camadas, sendo elas: (i) a dos clientes na borda da rede; (ii e iii) duas camadas intermedi´arias com servidores na n´evoa da rede; e (iv) uma ´ultima camada com o servidor na
+nuvem. Foram realizados testes preliminares de desempenho com essa rede e com uma rede
+de 2 camadas tradicionais a fim de entender poss´ıveis vantagens e desvantagens do modelo
+hier´arquico. Os principais aspectos a serem avaliados foram como a rede utilizada afeta
+o tempo de execu¸c˜ao do Aprendizado Federado, al´em de sua acur´acia e fun¸c˜ao de perda.
+Entender esses pontos ´e de grande importˆancia para entender a viabilidade de se adotar
+uma nova topologia de rede em projetos de grande escala.
+4 Metodologia
+Para responder `as quest˜oes levantadas neste trabalho foi necess´ario implementar um framework que tornasse poss´ıvel criar a rede hier´arquica proposta. Nesta sess˜ao s˜ao apresen-
+6 Rosano, Bittencourt e Anjos
+tadas as altera¸c˜oes que foram realizadas no Flower e que permitiram que fossem realizados
+os testes propostos. Al´em disso, ser˜ao explicadas quais decis˜oes foram tomadas de como
+montar nosso sistema para os testes.
+4.1 Comunica¸c˜ao
+O Flower utiliza um ciclo de FL no servidor para coordenar todas as etapas a serem executadas no Aprendizado Federado, esse ciclo pede para a Strategy, que ´e a estrat´egia de
+agrega¸c˜ao utilizada como FedAvg por exemplo, qual o pr´oximo passo a ser tomado e envia
+essas configura¸c˜oes aos clientes para executar o passo e ap´os um tempo recebe os resultados
+das opera¸c˜oes dos clientes para serem agregados de acordo com a Strategy selecionada[13].
+E importante para a coordena¸c˜ao desse sistema complexo definir como ser´a feita a comu- ´
+nica¸c˜ao dos dados entre clientes e servidores. O Flower ´e agn´ostico a stack de comunica¸c˜ao
+devido seu proxy de cliente(ClientProxy), que ´e uma interface abstrata que encapsula detalhes de como se comunicar com cada cliente, por padr˜ao existe apenas a implementa¸c˜ao
+GrpcClientProxy, onde a comunica¸c˜ao entre o cliente e o servidor ´e feita utilizando streams bi-direcionais de gRPC(Google Remote Procedure Call), que funciona bem em redes
+com baixa largura de banda e permitem que a conex˜ao entre servidor e cliente n˜ao precise
+ser restabelecida a cada nova comunica¸c˜ao [13]. Cada cliente conectado ´e guardado como
+um ClientProxy pelo servidor dentro de um ClientManager que permite o servidor escolher
+quais clientes conectados ser˜ao utilizados para algum passo do Aprendizado Federado e a
+partir do momento que um cliente se torna inativo seu ClientProxy ´e removido[13].
+Para as novas camadas implementadas foi mantida comunica¸c˜ao feita por gRPC a fim
+de se aproveitar dos benef´ıcios trazidos por ela e utilizar dos tipos de mensagens RPC j´a
+existentes, eliminando a necessidade de se alterar componentes presentes do framework.
+4.2 Camadas Intermedi´arias
+Outro passo importante para permitir uma rede hier´arquica foi a implementa¸c˜ao de camadas intermedi´arias adicionais. Para isso, foi criada uma nova estrutura dentro do Flower,
+chamada de combinador, que possui dentro de si um cliente, que se comunica com a camada superior, e um servidor, que se comunica com a camada inferior. Essa nova estrutura
+foi criada usando como base o modelo de combinador existente no framework FedN 2
+, que
+permite apenas redes de Aprendizado Federado com trˆes camadas, sendo a intermedi´aria o
+combinador.
+O cliente do combinador se comunica com o servidor da camada superior para receber
+as instru¸c˜oes dos pr´oximos passos a serem executados, a mensagem recebida ´e processada
+e repassada para o servidor do combinador para que ele possa repassar as instru¸c˜oes para
+os clientes conectados a ele na camada inferior. Ap´os isso, o servidor recebe a resposta dos
+clientes em rela¸c˜ao `as instru¸c˜oes que foram passadas, fazem o processamento delas e envia
+para o cliente do combinador o que deve ser respondido para o servidor da camada acima
+que por sua vez processa essa mensagem e envia ela com a resposta das instru¸c˜oes passadas.
+2FedN, dispon´ıvel em https://github.com/scaleoutsystems/fedn
+Aprendizado Federado Hier´arquico 7
+Um exemplo dessa comunica¸c˜ao em uma rede com trˆes camadas, sendo a intermedi´aria
+o combinador, ´e o servidor da ´ultima camada envia para o combinador um pedido para
+que seja realizado o treinamento no modelo global. Essa mensagem ´e processada pelo
+combinador e enviada para os clientes na camada inferior que por sua vez realizam esse
+treinamento e enviam os parˆametros dos modelos atualizados para o combinador. Ap´os
+isso, esses dados s˜ao agrupados pelo combinador para gerar um modelo ´unico a partir dos
+parˆametros dos clientes e enviar esses parˆametros para o servidor da camada superior, que
+recebe os dados de todos os combinadores conectados a ele e faz a agrega¸c˜ao de todos os
+parˆametros para gerar um modelo global atualizado.
+Algo importante para permitir mais de trˆes camadas ´e que a comunica¸c˜ao entre dois
+combinadores seja poss´ıvel. Isso ´e proporcionado pelos clientes do combinador ao implementarem a interface do ClientProxy e os servidores se comunicarem com essas interfaces
+do ClientProxy atrav´es de um ClientManager. Dessa forma todos os clientes e servidores
+tradicionais do Flower podem se comunicar com os combinadores sem necessitar qualquer
+altera¸c˜ao a l´ogica de comunica¸c˜ao deles e o mesmo vale para a comunica¸c˜ao entre combinadores. Al´em disso, o combinador utiliza o mesmo conceito de Strategy j´a existente, no
+entanto apenas a agrega¸c˜ao ´e utilizada pois a coordena¸c˜ao continua sendo feita pelo servidor. A arquitetura do Flower ap´os a implementa¸c˜ao do combinador, mostrando tamb´em a
+comunica¸c˜ao entre camadas, pode ser vista na Figura 3. Por fim, a implementa¸c˜ao do combinador no Flower pode ser encontrada em https://github.com/brunorosano/flower.
+4.3 Redes Utilizadas
+Com todos os componentes necess´arios implementados foi necess´ario decidir quais redes
+seriam utilizadas para os testes do Aprendizado de M´aquina Hier´arquico e Tradicional,
+levando em considera¸c˜ao os equipamentos dispon´ıveis. Para o primeiro experimento foi
+criada uma rede com 4 camadas, onde a camada inferior possui 4 clientes, a segunda camada
+possui 2 combinadores, a terceira camada possui 1 combinador e a ´ultima camada possui 1
+cliente. As conex˜oes entre as estruturas de cada camada podem ser vistas na Figura 4. J´a
+para o segundo, foi criada uma rede de 2 camadas com 4 clientes na primeira e 1 servidor
+na segunda de forma que a ´unica diferen¸ca entre as duas redes fossem as novas camadas
+introduzidas. conforme ilustrado na Figura 5.
+4.4 Ambiente de testes
+Esta se¸c˜ao apresenta a configura¸c˜ao do Aprendizado Federado para os testes realizados.
+Decidimos utilizar o Pytorch para criar uma rede neural convolucional, descrita pela Figura
+6, para os treinos e para obter o dataset de treino CIFAR10, que consiste em 60000 imagens
+32x32 divididas igualmente entre 10 classes, para cada teste realizamos os treinamentos por
+5 ´epocas e com uma taxa de aprendizagem de 0.003. O treinamento nos clientes foi feito
+utilizando GPU atrav´es do suporte para CUDA existente no Pytorch. Ademais, escolhemos
+como estrat´egia de agrega¸c˜ao para todos os servidores e combinadores nas duas redes o
+FedAvg.
+Os testes da rede hier´arquica foram realizados utilizando 2 notebooks e duas m´aquinas
+8 Rosano, Bittencourt e Anjos
+Figura 3: Arquitetura do Flower com o combinador.
+Aprendizado Federado Hier´arquico 9
+Figura 4: Rede com 4 camadas utilizada para Aprendizado Federado Hier´arquico
+10 Rosano, Bittencourt e Anjos
+Figura 5: Rede com 2 camadas utilizada para Aprendizado Federado Tradicional
+virtuais em uma rede LAN, para minimizar as latˆencias entre os computadores. Para a rede
+tradicional foram utilizados apenas os 2 notebooks. Em ambos os casos uma m´aquina era
+respons´avel por exatamente uma das camadas utilizadas.
+Como todas as m´aquinas estavam na mesma rede, foi necess´ario introduzir uma latˆencia
+sint´etica entre elas para simular um ambiente real com cada m´aquina em locais distintos.
+A fim de se obter esse efeito, utilizamos o Linux Traffic Control, que permite configurar
+o agendador de pacotes do kernel Linux, para criarmos filtros de rede com determinados
+atrasos na comunica¸c˜ao entre os IPs das m´aquinas conectadas entre si. O tempo de atraso
+foi escolhido de forma aleat´oria dentro de um intervalo selecionado em cada teste realizado
+para representar diversas topologias de rede poss´ıveis com diferentes n´ıveis de carga. Os
+intervalos de latˆencia escolhidos para cada camada podem ser vistos na Tabela 1.
+Aprendizado Federado Hier´arquico 11
+Figura 6: Rede neural utilizada durante os experimento
+12 Rosano, Bittencourt e Anjos
+Intervalo de atrasos entre camadas
+Camadas Rede Hier´arquica Rede Tradicional
+1-2 [2-15] [42-165]
+2-3 [20-50] -
+3-4 [20-100] -
+Tabela 1: Intervalo de atraso entre camadas em milissegundos
+para a Rede Hier´arquica e Tradicional
+5 Resultados
+Com todas as configura¸c˜oes feitas, realizamos 30 execu¸c˜oes em cada uma das duas redes
+para avaliarmos diferentes atrasos provenientes de varia¸c˜oes nas topologias das redes, pois
+eram gerados novos valores de latˆencia para a rede a cada nova rodada de testes. Ap´os
+isso, agrupamos os valores dos testes de cada rede para que fosse realizada uma an´alise nos
+resultados obtidos do tempo de execu¸c˜ao, da acur´acia e da fun¸c˜ao de perda para a rede
+hier´arquica e tradicional.
+5.1 Tempo de execu¸c˜ao
+Analisando os dados agrupados do tempo de execu¸c˜ao presentes na Tabela 2 ´e poss´ıvel
+perceber que a nossa rede hier´arquica obteve resultados melhores em todos os pontos analisados, sendo que a m´edia encontrada foi cerca de 2,86% mais baixa, enquanto a mediana
+foi 1,8% menor. Algo que chamou a aten¸c˜ao foi o alto desvio padr˜ao da Rede Tradicional,
+onde foi poss´ıvel perceber que existem dois valores de tempo de execu¸c˜ao de cerca de 152
+segundos enquanto o terceiro maior valor ´e de 141 segundos. Esses valores podem ter sido
+causados tamb´em por limita¸c˜oes no hardware, pois a maior parte do tempo de execu¸c˜ao
+´e de processamento e n˜ao ´e esperado que apenas a latˆencia resulte em valores t˜ao altos.
+Removendo esses dois valores outliers, o desvio padr˜ao da Rede Tradicional diminui para
+4.701, sua m´edia para 132.636 e a mediana para 131.982, no caso das propor¸c˜oes em rela¸c˜ao
+a Rede Hier´arquica para a m´edia e mediana ficaram em 1,8% e 1,3%, respectivamente.
+Portanto, essa an´alise, apesar de n˜ao conclusiva, mostra que o modelo proposto ´e promissor em rela¸c˜ao ao tempo de execu¸c˜ao, visto que houve uma disparidade percept´ıvel entre
+as duas redes. J´a era esperado que a diferen¸ca proporcional encontrada fosse baixa, j´a que,
+como citado anteriormente, o tempo gasto com comunica¸c˜ao ´e baixo se comparado com o
+tempo de processamento para o treinamento da rede.
+Aprendizado Federado Hier´arquico 13
+Tempo de execu¸c˜ao em 30 testes
+Tempo de execu¸c˜ao Rede Hier´arquica Rede Tradicional
+M´edia 130.233 133.969
+Desvio Padr˜ao 4.067 6.807
+25% 127.767 130.182
+50% 130.181 132.47
+75% 133.491 136.880
+M´ınimo 121.100 122.389
+M´aximo 136.277 152.912
+Tabela 2: Tempo de execu¸c˜ao em segundos para 30 testes
+para a Rede Hier´arquica e Tradicional
+5.2 Acur´acia e Fun¸c˜ao de Perda
+Em rela¸c˜ao a acur´acia das redes ´e poss´ıvel perceber pelos dados da Tabela 3 que os resultados
+foram extremamente pr´oximos sendo que a m´edia e a mediana da Rede Hier´arquica foram
+apenas 0.55% maiores em rela¸c˜ao a da Rede Tradicional. Ao analisar a fun¸c˜ao de perda
+com os dados descritos na Tabela 4, ´e poss´ıvel observar um padr˜ao similar, onde a diferen¸ca
+entre os dois ´e pequena, sendo que a m´edia da Rede Hier´arquica foi 0,5% maior enquanto
+a mediana foi 0,6% maior em rela¸c˜ao a Rede Tradicional.
+Nesses casos as latˆencias n˜ao possuem influˆencia em rela¸c˜ao ao resultado final, no entanto
+foi poss´ıvel perceber que mesmo com a complexidade adicionada ao treino pela agrega¸c˜ao
+feita com o FedAvg nas duas camadas intermedi´arias da Rede Hier´arquica os resultados de
+treinamento finais n˜ao foram afetados de maneira significativa. Com isso, percebemos que
+no caso da nossa configura¸c˜ao de redes os valores de acur´acia e da fun¸c˜ao de perda n˜ao se
+depreciaram devido a Rede Hier´arquica
+14 Rosano, Bittencourt e Anjos
+Acur´acia em 30 testes
+Acur´acia Rede Hier´arquica Rede Tradicional
+M´edia 0.542 0.539
+Desvio Padr˜ao 0.018 0.018
+25% 0.526 0.534
+50% 0.544 0.541
+75% 0.5531 0.549
+Tabela 3: Acur´acia em 30 testes
+para a Rede Hier´arquica e Tradicional
+Fun¸c˜ao de perda em 30 testes
+Fun¸c˜ao de Perda Rede Hier´arquica Rede Tradicional
+M´edia 1.005 1.000
+Desvio Padr˜ao 0.137 0.0137
+25% 0.998 0.990
+50% 1.004 0.998
+75% 1.047 1.005
+Tabela 4: Fun¸c˜ao de Perda em 30 testes
+para a Rede Hier´arquica e Tradicional
+6 Trabalhos Futuros
+Apesar de trazer resultados promissores, a nossa abordagem possui diversas limita¸c˜oes que
+podem ser vistas como oportunidades para trabalhos futuros. Nossos testes foram realizados apenas em um ambiente local, com um n´umero reduzido de dados homogˆeneos e com
+poucos elementos na rede. Devido a isso, algumas limita¸c˜oes existentes em rede reais n˜ao
+Aprendizado Federado Hier´arquico 15
+estavam presentes, como perdas de pacotes e baixas larguras de banda. Al´em disso, todas as
+camadas das redes possuem elementos homogˆeneos, j´a que todos estavam sendo simulados
+no mesmo computador sem levar em conta diferen¸cas consider´aveis que podem existir entre
+dois computadores com poder de processamento desiguais, por exemplo.
+Algo que pode ser explorado s˜ao testes utilizando o modelo de Aprendizado Federado
+Hier´arquico com m´aquinas em diferentes localidades e com poder de processamento distintos
+se conectando entre si atrav´es de uma rede real, a fim de poder analisar como nosso modelo se
+desempenha nesse ambiente. Ademais, ´e poss´ıvel realizar experimentos com equipamentos
+passivos na borda da rede, necessitando que os dados sejam transferidos para a n´evoa ao
+realizar o treinamento e utilizar dados heterogˆeneos nos dispositivos da borda de rede, visto
+que ´e esperado que os dados gerados por essas m´aquinas n˜ao sejam idˆenticos.
+Al´em de alterar o ambiente de execu¸c˜ao, trabalhos futuros podem utilizar redes neurais
+complexas, com um elevado n´umero de parˆametros para analisar os resultados onde a largura
+de banda influˆencia na performance da rede hier´arquica. Outra mudan¸ca poderia ser a
+fun¸c˜ao de agrega¸c˜ao utilizada, pois usamos apenas o FedAvg e outras fun¸c˜oes podem afetar
+os resultados finais da rede devido a complexidade introduzida pelas camadas adicionais.
+Por fim, devido ao Flower ser agn´ostico a stack de comunica¸c˜ao poderiam ser feitos testes
+com outras al´em do gRPC, j´a que alguns equipamentos mais simples na borda de rede
+podem necessitar que a comunica¸c˜ao seja realizada de outra forma.
+7 Conclus˜ao
+Durante este projeto apresentamos um modelo de Aprendizado Federado Hier´arquico buscando melhorar alguns aspectos no modelo tradicional, como a eficiˆencia e velocidade da
+comunica¸c˜ao entre os n´os da rede a partir da introdu¸c˜ao de camadas intermedi´arias na n´evoa
+que possuem um latˆencia reduzida em rela¸c˜ao `a borda da rede. A partir desse modelo, adaptamos o framework Flower de forma a podermos implementar uma rede hier´arquica, devido
+a maioria dos frameworks de Aprendizado Federado existentes aceitarem apenas redes com
+duas camadas tradicionais.
+Com isso, criamos um ambiente de teste local com uma rede hier´arquica e tradicional utilizando o Linux Traffic Control para simular diversas topologias de rede que podem
+existir no Aprendizado Federado e testar como nosso modelo se desempenha em rela¸c˜ao
+ao tradicional. Os resultados encontrados, apesar de n˜ao conclusivos, s˜ao promissores por
+mostrarem que n˜ao houve queda de desempenho consider´avel no treinamento do Aprendizado Federado, al´em de apontarem uma diferen¸ca percept´ıvel no tempo de execu¸c˜ao no
+treinamento em rela¸c˜ao ao Aprendizado Federado Tradicional.
+Em raz˜ao dos experimentos terem sido realizados apenas em uma rede local, com uma
+quantidade pequena de dados homogˆeneos e de elementos na rede, existem diversas oportunidades para serem exploradas por trabalhos futuros. Eles podem explorar experimentos
+em redes reais, com diferentes stacks de comunica¸c˜ao e algoritmos de agrega¸c˜ao, assim como
+utilizar modelos de aprendizado de m´aquina mais complexos treinados com uma quantidade
+maior de dados mais heterogˆeneos. Por fim, podemos dizer que este trabalho atingiu seu
+objetivo de criar um framework que possibilita testes em redes hier´arquicas e de analisar
+16 Rosano, Bittencourt e Anjos
+de maneira inicial um novo modelo de Aprendizado Federado.
+Referˆencias
+[1] Abad, Mehdi Salehi Heydar, et al Hierarchical federated learning across heterogeneous
+cellular networks. ICASSP 2020-2020 IEEE International Conference on Acoustics,
+Speech and Signal Processing (ICASSP). IEEE, 2020.
+[2] Federated Learning: Collaborative Machine Learning without Centralized Training Data, dispon´ıvel em https://ai.googleblog.com/2017/04/
+federated-learning-collaborative.html
+[3] Bonawitz, Keith, et al. Towards federated learning at scale: System design. Proceedings
+of Machine Learning and Systems 1 (2019): 374-388.
+[4] Medical AI Needs Federated Learning, So Will Every Industry, dispon´ıvel em https:
+//blogs.nvidia.com/blog/2021/09/15/federated-learning-nature-medicine/
+[5] Brendan McMahan, Eider Moore, Daniel Ramage, Seth Hampson, and Blaise 4era
+y Arcas (2017). Communication-efficient learning of deep networks from decentralized
+data. Artificial Intelligence and Statistics, 1273–1282
+[6] Collins, Liam, et al. FedAvg with Fine Tuning: Local Updates Lead to Representation
+Learning. arXiv preprint arXiv:2205.13692 (2022).
+[7] Federated Learning: Predictive Model Without Data Sharing, dispon´ıvel em https:
+//sparkd.ai/federated-learning
+[8] Qian, Ling, et al. Cloud computing: An overview.”IEEE international conference on
+cloud computing. Springer, Berlin, Heidelberg, 2009.
+[9] What is cloud computing? An overview of the cloud, dispon´ıvel em https://www.
+atlassian.com/microservices/cloud-computing
+[10] Bonomi, Flavio, et al. ”Fog computing and its role in the internet of things.”Proceedings
+of the first edition of the MCC workshop on Mobile cloud computing. 2012.
+[11] Gedeon, Julien, et al. ”Fog computing: Current research and future challenges.”KuVSFachgespr¨ach Fog Comput 1 (2018): 1-4.
+[12] What Is Federated Learning?, dispon´ıvel em https://blogs.nvidia.com/blog/2019/
+10/13/what-is-federated-learning/
+[13] Beutel, Daniel J., et al. ”Flower: A friendly federated learning research framework.”arXiv preprint arXiv:2007.14390 (2020).

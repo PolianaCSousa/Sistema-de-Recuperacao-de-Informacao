@@ -1,0 +1,771 @@
+﻿Desenvolvimento  do  pensamento  computacional  por  meio  da
+C
+iência  da
+C
+omputação
+D
+esplugada e do
+S
+cratch
+Developing computer thinking through
+U
+nplugged
+C
+omputer
+S
+cience and
+S
+cratch
+Patricia Cristina Venturini
+1
+RESUMO
+Este  trabalho
+relata
+uma  atividade  d
+e  extensão,  desenvolvida  pela  Universidade  Federal  de
+Uberlândia em uma escola pública da cidade de Ituiutaba
+,
+M
+inas Gerais
+,
+no âmbito do projeto
+“
+Pensamento  Computacional  na  Escola
+”
+,  tendo  como
+intuito  estimular  e  desenvolver  o
+pensamento  computacional
+de
+crianças  do  sexto  ano  do  ensino  fundamental
+.
+A
+bordagem  de
+C
+iência  de
+C
+omputação
+D
+esplugada
+e  ferramenta  de  programação
+Scratch
+foram  utilizadas
+para  este  fim.  Ficou  evidenciado  que  atividades  desplugadas  servem  de  apoio  e  agente
+facilitador  para  compreens
+ão  e  criação  de  programas  computacionais.  A  falta  de  maturidade
+da  maior  parte  das  crianças
+nessa
+faixa  etária  exige  que,  inicialmente,  as  atividades  de
+programação aconteçam de forma guiada.
+Palavras
+-
+chave
+: Pensamento
+c
+omputacional
+.
+Ciência da
+c
+omputação
+d
+esplugada
+.
+Scratch
+.
+ABSTRACT
+This work reports an extension activity, developed by the Federal University of Uberlândia, in
+a  public  school  in  the  city  of  Ituiutaba,
+State  of
+Minas  Gerais,
+within  the  scope  of  the
+Computational Thinking at
+s
+chool project
+,
+aiming to stimulate and develop the
+computational
+thinking  of  sixth  grade
+children  in
+middle
+school  year.  Unplugged
+C
+omputer
+S
+cience
+approach  and
+Scratch
+programming  tool  were  used  for  this  purpose.  It  was  evidenced  that
+unplugged  activities  help  in  the  su
+pport  and  facilitating  agent  for  the  comprehension  and
+creation  of  computer  programs.  The  lack  of  maturity  of  most  children  in  this  age  group
+requires that,
+initially, programming activities take place on a guided basis.
+Keywords:
+Computational
+t
+hinking. U
+nplugged
+c
+omputer
+s
+cience
+.
+Scratch
+.
+Contexto do Relato
+A  difusão  e  utilização  de  tecnologias  na  educação  brasileira  pass
+aram
+a  ser  assegurada
+s
+e
+exigida
+s
+a partir de 1996 com a Lei de Diretrizes e Bases (LDB) (BRASIL, 1996). Em 1997,
+foi  lançado
+,  pelo  Min
+istério  da  Educação,
+o  Programa  Nacional  de  Tecnologia  Educacional
+(ProInfo) pela Portaria nº 522
+(BRASIL, 1997)
+, no intuito de promover o uso pedagógico das
+tecnologias de informática e comunicações na rede pública de ensino fundamental e médio.
+1
+Doutora  em  Física  pela  Universidade  Federal  de  São  Carlos,  São  Pa
+ulo,  Brasil;  professora  adjunta  da
+Universidade Federal de Uberlândia, Campus Pontal, Minas Gerais, Brasil (
+pcventurini@ufu.br
+).
+Em Extensão
+, Uberlândia, v. 18, n.
+2
+, p.
+2
+00
+-
+2
+08
+,
+jul
+./dez. 2019
+.
+201
+Em  2014,
+foi  sancionada  a  Lei  13.005/2014,  conhecida  como  Plano  Nacional  de  Educação
+(PNE)  (BRASIL,  2014).
+Essa
+lei,  de  duração  decenal,  traz  em  seu  âmago  um  conjunto  de
+metas  a  serem  alcançadas  no  intuito  de  erradicar  o  analfabetismo,  melhorar  a  qualidade  da
+educa
+ção,  além  de  valorizar  os  profissionais  da  educação  brasileira.  Ficaram  estabelecidas,
+assim,  ações  conjuntas,  em  regime  de  colaboração  entre  os  poderes  públicos  das  diferentes
+esferas  federativas,  objetivando  assegurar  e  desenvolver  o  ensino  em  todos  os  s
+eus  níveis  e
+modalidades  no  país.  Seria  uma  espécie  de  parceria,  articulada  entre  União,  os  estados,  o
+Distrito  Federal  e  os  municípios,  no  intuito  de  promover  o  aperfeiçoamento  do  sistema
+educacional   brasileiro.   Dentre   as   estratégias   previstas   no   PNE   esta
+va   um   aumento
+considerável  (triplicação)  da  relação  computador/aluno  nas  escolas  da  rede  pública  de
+educação  básica,  de  modo  a  promover  a  utilização  das  tecnologias  da  informação  e  da
+comunicação.
+Vemos, de fato, que o uso de tecnologias está presente em n
+osso dia a dia e que, muitas vezes,
+nos  tornamos  dependentes  dela.  As  escolas  estão  se  equipando  de  computadores  como
+ferramentas  de  apoio  ao  ensino,  porém
+,  segundo
+KOLOGESKI
+et  al.
+(2016),
+a  forma  como
+têm  sido  utilizados  não  exige  grandes  desafios  lógico
+s,  uma  vez  que,  normalmente,  são
+usados  para  a
+realização  de  pesquisas,  formatação  de  trabalhos,  realização  de  cálculos  em
+planilhas, e atividades que, em geral, são de conhecimento básico, operacional
+.
+Não  faz  sentido,  diante  da  possibilidade  de  acesso
+fu
+ll
+-
+time
+a  dados  e  a
+informações, que se priorize a memorização, a repetição e a cópia pela cópia.
+Pelo  contrário,  o  mais  importante  é  ensinar  a  buscar  e  a  selecionar  a
+informação  necessária,  abstrair,  decompor,  reconhecer  padrões  e  programar
+para que o alu
+no possa, de modo criativo e dinâmico, enfrentar os problemas
+propostos  em  determinada  circunstância,  através  do  pensamento  crítico  e
+uma  metodologia  para  auxiliar  no  processo  de  resolução  de  problemas.
+(BRACKMANN, 2017, p. 20)
+.
+Claramente, é preciso que s
+e faça uma distinção entre usar ferramentas computacionais e ter a
+habilidade  do
+P
+ensamento
+C
+omputacional
+.  A  primeira  trata  de  uma  capacidade  operacional,
+enquanto  a  segunda  diz  respeito  à  habilidade  intelectual  de  estruturar  problemas  e  encontrar
+soluções
+para os mesmos. Wing (2006) definiu
+P
+ensamento
+C
+omputacional
+como a utilização
+de   conceitos   fundamentais   à   ciência   da   computação   como   ferramentas   mentais   para
+solucionar problemas, projetar sistemas e compreender o comportamento humano.
+Este  trabalho  des
+creve  uma  atividade  realizada  em  uma  instituição  educacional  pública  da
+cidade  de  Ituiutaba
+,  Minas  Gerais,
+no  primeiro  semestre  de  2019,  como  parte  do  projeto  de
+Em Extensão
+, Uberlândia, v. 18, n.
+2
+, p.
+2
+00
+-
+2
+08
+,
+jul
+./dez. 2019
+.
+202
+extensão “Pensamento Computacional na Escola”, desenvolvido pela Universidade Federal de
+Uberl
+ândia.  A  ferramenta  de  programação  de  computadores
+Scratch
+,  bastante  difundida  no
+processo de aquisição das habilidades do Pensamento Computacional (
+COSTA
+; AZEVEDO;
+MADEIRA,
+2018
+),  foi  trabalhada  com  12  alunos  do  sexto  ano  do  ensino  fundamental  da
+referida
+escola.
+Nesse
+processo, verificou
+-
+se a necessidade de se complementar as atividades
+trabalhadas  fazendo  uso  da  Computação  Desplugada,  isto  é,  por  meio  de  elementos  de  fácil
+acesso  e  de  atividades  lúdicas,  sem  a  preocupação  com  as  dificuldades  e  distrações
+que  um
+computador pode ocasionar (BELL
+;
+WITTEN
+;
+FELLOWS
+, 2011).
+Detalhamento das
+a
+tividades
+Foram  selecionados,  pela  direção  da  escola,  um  total  de  20  alunos  do  sexto  ano  do  ensino
+fundamental,  integrantes  de
+quatro
+turmas  diferentes.  A  direção  da  escola
+não  revelou  os
+critérios  de  seleção  para  a  coordenação
+desse
+curso,  de  modo  que,  acabaram  compondo  o
+grupo de alunos selecionados crianças tidas com maior e menor desempenho na sala de aula.
+Foi disponibilizado para uso de cada uma delas um
+notebook
+com a
+cesso à internet. O curso
+teve duração de 12 semanas com duração de
+uma
+hora e meia em cada semana.
+No primeiro dia de curso, compareceram à aula 13 alunos. Foi
+-
+lhes apresentada a ferramenta
+de programação
+Scratch
+, explicado sem maiores  detalhes cada recur
+so da mesma e, por  fim,
+criados,   de   forma   guiada,   programas   computacionais   explorando   algumas   de   suas
+funcionalidades.
+Nest
+a
+etapa,  foram  evidenciadas  algumas  dificuldades  por  parte  dos  alunos,  das  quais
+citaremos  duas  por  parecerem  mais  relevantes.  A  pri
+meira  delas  diz  respeito  à  compreensão
+de que o computador consegue realizar apenas tarefas que lhe são ensinadas, passo a passo e
+de forma sequencial. Os alunos tiveram dificuldade de compreender que o computador não é
+capaz  de  “adivinhar”  o  que  o  program
+ador  quer  que  ele  faça,  apenas  segue  instruções
+passadas
+. Tendo em vista que os programas criados no
+Scratch
+são obtidos a partir de blocos
+de  instruções  que  se  encaixam  uns  aos  outros
+,
+não  gerando  mensagens  de  erros,  os  alunos
+começaram  a  dispor  os  blocos
+encaixados  aleatoriamente,  sem  qualquer  controle  sobre  o
+programa que estavam criando.
+A  segunda  dificuldade  é  referente  ao  fato  do
+Scratch,
+sendo  um  ambiente  de  visualização
+gráfica  em  que  são  criadas  animações,  trabalhar  com  sistemas  de  coordenadas  car
+tesianas.
+Em Extensão
+, Uberlândia, v. 18, n.
+2
+, p.
+2
+00
+-
+2
+08
+,
+jul
+./dez. 2019
+.
+203
+Apesar  de  estar  previsto  na  Base  Nacional  Comum  Curricular  (BRASIL,  2018),  a  partir  do
+quinto ano do ensino fundamental, as primeiras noções de coordenadas cartesianas, os alunos
+participantes
+desse
+curso tiveram grande dificuldade de compreensão
+e uso das mesmas.
+Entendendo  que  es
+s
+as  dificuldades  precisavam  ser  sanadas  logo  no  início,  a  coordenação  do
+curso optou por utilizar, no segundo dia de aula, a metodologia da Computação Desplugada.
+Duas  atividades  foram,  então,  desenvolvidas  utilizando  ap
+enas  papel  e  caneta  com
+os  12
+alunos  que  compareceram.  A  primeira  visava  exemplificar  que  os  computadores  seguem  as
+instruções ao pé da letra, ainda que produza resultado não desejado
+,
+e  está proposta no livro
+Computer  Science  Unplugged
+(
+BELL
+;
+WITTEN
+;
+FELL
+OWS
+,  2011
+).  Para  exemplificar,  a
+ministrante do curso deu instruções aos alunos de como reproduzir um desenho que estava em
+um  cartão  que  só  ela  poderia  ver.  Cada  aluno  faria  seu  próprio  desenho  utilizando  papel  e
+caneta  que  foram  distribuídos,  seguindo  as
+orientações  transmitidas.  A  Figura  1  apresenta  o
+desenho descrito pela ministrante. As instruções passadas foram as seguintes:
+a)
+Desenhe um
+ponto  no  centro  do  papel;
+b)
+Começando  da  ponta  superior  esquerda  da  página,  trace  uma
+linha  reta  passando  pelo  po
+nto  até  a  ponta  inferior  direita;
+c)
+Começando  da  ponta  superior
+direita  da  página,  trace  uma  linha  reta  passando  pelo  ponto  até  a  ponta  inferior  esquerda;
+d)
+Escreva seu nome no centro do triângulo do lado esquerdo do papel.
+Figura 1
+–
+Imagem contida no
+livro
+Computer Science Umplugged
+Fonte:
+BELL;
+WITTEN; FELLOWS (
+2011
+).
+Para  um  melhor  entendimento  da  atividade,  a  ministrante  precisou  responder
+a
+algumas
+perguntas técnicas como: O que é superior e inferior? Qual é o lado direito e o esquerdo?
+Em Extensão
+, Uberlândia, v. 18, n.
+2
+, p.
+2
+00
+-
+2
+08
+,
+jul
+./dez. 2019
+.
+204
+Fei
+to
+isso
+, os alunos compreenderam o que deveriam fazer e conseguiram realizar a atividade
+a  contento.  Em  seguida,  um  aluno  que  estava  animado  com  a  aula  foi  escolhido  para  dar  as
+instruções para seus colegas de como deveriam desenhar uma imagem que só ele p
+oderia ver.
+A Figura 2 é uma representação da imagem descrita
+por ele
+.
+Figura 2
+–
+Imagem descrita
+na atividade
+Fonte: A autora (2019).
+O aluno criou e transmitiu as instruções a seguir:
+a)
+Desenhe uma bola.
+Indagado  por seus co
+legas a  respeito do tamanho da bola, o  aluno respondeu que era média.
+Nes
+s
+e  momento,  alguns  alunos  pediram  para  receber  um  novo  papel  porque  tinham  feito  de
+tamanho errado.
+b)
+Desenhe um X no meio da bola.
+Quando  os  colegas  terminaram,  compararam  seus  desenho
+s  com  o  do  aluno  que  estava
+passando as instruções. Vários estavam diferentes do modelo e alguns ficaram chateados, pois
+não “acertaram” o desenho. A ministrante explicou que a atividade era apenas uma analogia
+ao  funcionamento  do  computador  e  que  eles  tin
+ham  “acertado”
+,
+pois  tinham  seguido
+corretamente a instrução passada pelo “programador”. A questão estava em como criar um
+programa capaz de produzir o resultado desejado.
+A segunda atividade foi inspirada no “Jogo da Conquista”, proposta por Costa
+,  Azeved
+o  e
+Madeira
+(2018)
+,
+que trabalha o sistema de coordenadas cartesian
+as
+utilizando o mapa
+-
+múndi e
+estabelece  alguns  objetivos  de  conquista  para  os  jogadores.  Diferentemente  do  jogo  citado,
+cada  aluno  recebeu  um  papel  em  que  estava  impresso  a  grade  do  sistema
+de  coordenadas  e
+Em Extensão
+, Uberlândia, v. 18, n.
+2
+, p.
+2
+00
+-
+2
+08
+,
+jul
+./dez. 2019
+.
+205
+navios da própria biblioteca de palcos e personagens do
+Scratch
+.
+Essa
+atividade foi nomeada
+de “Batalha Naval” e sua esquematização está representada na Figura 3.
+Figura 3
+–
+Imagem ilustrativa do jogo de Batalha Naval
+construído a partir da ferramenta
+Scratch
+Fonte: A autora (2019)
+.
+A novidade aqui está no fato de se misturarem elementos do tradicional jogo de batalha naval,
+de fácil compreensão, com aquele que se pretendia
+ensinar, no caso o sistema de coordenadas
+cartesi
+a
+nas, utilizando imagens da ferramenta de programação
+Scratch
+.
+Os  alunos  se  posicionar
+a
+m  em  pares
+,
+frente  a  frente
+,  c
+ada  um  com  uma  configuração  de
+disposição   de   navios.   Um   aluno   precisava   adivinhar   a   posiç
+ão   do   navio   adversário
+informando  uma  coordenada  (x,
+y).  Se  na  coordenada  informada  existisse  alguma  parte  de
+navio  do  adversário,  o  aluno  que  adivinhou  a  posição  pontuava.  Os  alunos  de  cada  par
+revezaram
+-
+se em tentar pontuar e, ao final de 15 minutos, aqu
+eles de cada par que alcançaram
+maior  pontuação  venciam  a  brincadeira.
+Nessa
+atividade,  a  todo  o  momento  foi  solicitada  a
+ajuda  da  ministrante  para  que  se  certificassem  se  tinham  pontuado  ou  não.  Ao  final  da  aula,
+foi feita a devida correspondência entre o
+sistema de coordenadas do jogo de Batalha Naval e
+aquele utilizado no ambiente do
+Scratch
+.
+A
+nálise e
+Discussão
+Ao  final  das  atividades
+d
+esplugadas,  solicitamos  que  os  alunos  criassem  um  programa  no
+Scratch
+explorando a movimentação de uma personagem. Ver
+ificamos que eles se esforçaram
+Em Extensão
+, Uberlândia, v. 18, n.
+2
+, p.
+2
+00
+-
+2
+08
+,
+jul
+./dez. 2019
+.
+206
+para cumprir a atividade e que tentaram cumprir o solicitado, ao invés de se vangloriarem por
+construírem um programa aleatoriamente como tinha ocorrido na aula anterior. Alguns alunos,
+inclusive, foram além e exploraram
+a
+c
+riação de um programa com várias personagens que se
+movimentavam e interagiam entre si.
+Nas  aulas  que  se  seguiram,  pudemos  observar  que  aqueles  que  haviam  faltado  à  aula  onde
+foram   desenvolvidas   as   atividades   desplugadas   tiveram   uma   dificuldade   maior   de
+co
+mpreender  o  processo  de  estruturação  de  um  programa  computacional  e,  também,  de
+trabalhar  com  o  sistema  de  coordenadas  cartesianas  utilizado  a  todo
+o
+momento  no
+Scratch
+.
+Essa
+disparidade entre os alunos
+,
+aliada
+ao fato d
+e
+o
+Scratch
+nunca enviar mensagens d
+e erros,
+uma  vez  que  os  blocos  com  as  instruções  encaixados  sempre  produzem  um  programa  a  ser
+visualizado,   exigiu   que   até   a   nona   aula   os   programas   desenvolvidos   precisassem   ser
+construídos  de  forma  guiada.  Nas  três  últimas  aulas  do  curso
+,
+os  alunos  estavam
+aptos,
+finalmente, a  construir seus próprios programas,  recebendo apenas uma orientação inicial do
+que se esperava que eles fizessem.
+CONSIDERAÇÕES
+FINAIS
+A   abordagem   de
+P
+rogramação
+D
+esplugada   para   se   trabalhar   o   desenvolvimento   do
+Pensamento   Computacion
+al   revelou
+-
+se   valiosa
+,
+uma   vez   que   se   utiliza   de   elementos
+corriqueiros  no  ambiente  escolar,  não  necessitando  de  uma  formação  especializada  em
+qualquer  tipo  de  tecnologia  para  ser  aplicada.  O  raciocínio  lógico  é  explorado  e  estimulado
+sem  a  preocupação  com
+o  domínio  de  um  computador  ou  com  as  distrações  que  e
+l
+e  pode
+oferecer.  Entretanto,  es
+s
+a  metodologia,  por  si  só,  não  é  suficiente  para  garantir  que  nossos
+alunos   se   tornem   agentes   responsáveis   e   transformadores   do   mundo   em   que   vivem,
+dominando tecnologias.
+A Programação Desplugada serviu também como um apoio no ensino
+de sistema de coordenadas cartesianas. A aprendizagem
+por meio
+da atividade lúdica torna
+-
+se
+mais agradável e, aparentemente, mais fácil de ser assimilada.
+A  ferramenta
+Scratch
+,  muito  difundida
+em  práticas  que  visam
+ao
+desenvolvimento  do
+Pensamento   Computacional,   torna   mais   simples   o   processo   de   criação   de   programas
+computacionais,  uma  vez  que  disponibiliza  blocos  de  encaixar  com  as  instruções
+,
+que
+,
+conforme
+a
+disposição
+,
+geram um programa cujo
+resultado pode ser visualizado. Assim sendo,
+não existem mensagens de erros, diminuindo a frustração do programador. Espera
+-
+se que
+ele
+Em Extensão
+, Uberlândia, v. 18, n.
+2
+, p.
+2
+00
+-
+2
+08
+,
+jul
+./dez. 2019
+.
+207
+seja capaz de analisar o resultado obtido e produzir alterações em seu programa até alcançar o
+resultado esperado.
+Por  o
+utro  lado,  a  pouc
+a
+maturidade  de  crianças  do
+6º
+ano  faz  com  que  seus  primeiros
+programas  precisem  ser  guiados,  para  que  eles  não  fiquem  satisfeitos,  simplesmente,  com
+qualquer  resultado  obtido  a  partir  da  disposição  aleatória  dos  blocos  de  instrução.  A  for
+ma
+guiada deve persistir até que
+eles
+estejam aptos a compreender que eles próprios devem estar
+no controle do processo criativo.
+O fascínio que jogos, em especial os de computador, despertam em nossos jovens e crianças
+pode  sim  ser  utilizado  como  um  catal
+izador  no  processo  ensino
+-
+aprendizagem.  Ao  final  do
+curso,  os  alunos  perceberam  que  não  eram  mais  meros  usuários  da  tecnologia  e  estavam
+ansiosos  para  ter
+em
+oportunidade  de  dar  um  próximo  passo,  aprendendo  uma  linguagem  de
+programação de computador
+es
+.
+REF
+ERÊNCIAS
+BELL, T
+.
+,
+WITTEN, I. H.; FELLOWS, M.
+Ensinando
+ciência da computação
+sem o uso do
+computador
+.
+2011.
+Disponível
+em:
+https
+://classic.csunplugged.org/wp
+-
+content/uploads/2014/12/CSUnpluggedTeachers
+-
+portuguese
+-
+brazil
+-
+feb
+-
+2011.pdf
+.  Aces
+s
+o  em:
+20 ago. 2019.
+BRACKMANN,   C
+.
+P.
+Desenvolvimento   do   pensamento   computacional   através   de
+atividades  desplugadas  na  educação  básica
+.
+2017. 22
+6 f. Tese (Doutorado em  Informática
+da  Educação)
+–
+Centro  Interdisciplinar  de  Novas  Tecnologias  na  Educação
+,
+Universidade
+Federal do Rio Grande do Sul
+Porto Alegre,
+2017.
+BRASIL
+.
+Ministério da Educação.
+Lei de Diretrizes e Bases da Educação Nacional
+.
+Lei
+nº
+9.394,  de  20  de  dezembro  de  1996.  Estabelece  as  diretrizes  e  bases  da  educação  nacional.
+Brasília,
+DF,
+1996.
+BRASIL
+.
+Lei  nº.  13.005,  de  25  de  junho  de  2014.  Aprova  o  Plano  Nacional  de  Educação
+–
+PNE e dá outras providências. Brasília,
+DF,
+2014.
+BRASIL.
+M
+inistério  da
+E
+ducação
+.
+Base
+N
+acional
+C
+omum
+C
+urricular
+:  educação  é  a  base.
+2018.
+COSTA, K
+.
+P
+.
+C
+.
+; AZEVEDO, M
+.
+; MADEIRA, C. Facilitando o uso do Scratch por meio de
+atividade   desplugada   que   introduz   o   estudo   do   plano   cartesiano.
+In:   CONGRESSO
+BRASILEIRO DE
+INFORMÁTICA NA EDUCAÇÃO, 2018, Porto Alegre
+.
+Anais
+[...].
+Doi:
+10.5753/cbie.wcbie.2018.778
+.
+Em Extensão
+, Uberlândia, v. 18, n.
+2
+, p.
+2
+00
+-
+2
+08
+,
+jul
+./dez. 2019
+.
+208

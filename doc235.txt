@@ -1,0 +1,429 @@
+
+Sistemas de recuperação da informação: uma discussão a partir de parâmetros enunciativos1
+                                                                                                                                      SISTEMA ARTIGO DE RECUPERAÇÃO DA INFORMAÇÃO
+Information retrieval systems: a discussion
+based on enunciative parameters
+
+Vera Maria Araujo Pigozzi de ARAUJO2
+
+
+Resumo
+A temática deste artigo são os Sistemas de Recuperação da Informação na interface com a teoria da enunciação. O objetivo é
+discutir a relação que se estabelece entre os sistemas de informação e os usuários. Com o propósito de identificar como se dá essa
+relação, examinam-se os modelos de comunicação documentária vistos em revisão de literatura, e identificam-se os parâmetros
+sob os quais são construídos. Por questionar a validade desses modelos, analisam-se as características dessa relação. Identifica-se,
+no aparelho formal da enunciação formulado por Benveniste, a possibilidade de se contemplarem as peculiaridades que a
+caracterizam, considerando os seguintes parâmetros: categorias de pessoa (eu-tu), espaço (aqui) e tempo (agora). Conclui com
+uma proposta alternativa aos modelos apresentados, considerando bibliotecários, usuários e sistemas como interlocutores, e
+sugerindo ser uma relação de interação e não de comunicação. Esta proposta é fundamentada nas noções de subjetividade,
+intersubjetividade, categorias de pessoa, de espaço e de tempo.
+Palavras-chave: Aparelho formal da enunciação. Comunicação documentária. Sistemas de recuperação da informação. Teoria da
+enunciação.
+
+
+Abstract
+The theme of this article is the interface of Information Retrieval Systems with the theory of enunciation. The aim of this study was to discuss
+the relationship established between information systems and users. In order to identify how this relationship works, it examines the
+documentary communication models seen in a literature review, and identifies the parameters they are built on. By questioning the validity
+of these models, it analyzes the characteristics of this relationship. In the formal apparatus of enunciation proposed by Benveniste, it identifies
+an opportunity to contemplate the peculiarities that characterize the relationship, considering the following parameters: the categories of
+person, space and time. It concludes with an alternative proposal to the models presented, considering librarians, users and systems as
+interlocutors, and suggests that it is a relationship of interaction and not one of communication. This proposal is based on notions of
+subjectivity, intersubjectivity, categories of person, space and time.
+Keywords: Formal apparatus of enunciation. Documentary communication. Information retrieval systems. Theory of enunciation.
+
+
+
+Introdução
+
+       Este artigo trata dos Sistemas de Recuperação da                        Biscalchin e Boccato (2011). Por questionar a validade
+Informação (SRI), e examina-se nele a comunicação                              desses modelos, que identificam sistema e usuário
+documentária, a partir dos referenciais de Araujo                              como emissor e receptor desse processo de comu-
+(1995), Lima (1998), Lara (2002), Ortega e Lara (2010) e                       nicação, examinam-se os SRI, apresentando sucinta-
+
+1
+    Artigo elaborado a partir da pesquisa de doutorado em curso, desenvolvido por V.M.A.P. ARAUJO.
+2
+    Doutoranda, Universidade Federal do Rio Grande do Sul, Programa de Pós-Graduação em Letras. Av. Bento Gonçalves, 9500, 90040-060, Porto Alegre, RS,
+    Brasil. E-mail: <verapigozzi@hotmail.com>.
+    Recebido em 29/10/2011, reapresentado em 21/5/2012 e aceito para publicação em 5/6/2012.
+
+
+                                                                                       TransInformação, Campinas, 24(2):137-143, maio/ago., 2012
+                  mente sua conceituação e função sob a visão de                                  comunicação e que viabiliza a transferência da infor-
+                  Cendón (2005) e Souza (2006).                                                   mação. Essa teoria, ainda que tenha recebido alterações
+                          No exame da relação dos SRI com os usuários,                            no decorrer do tempo, é a que usualmente fundamenta
+                  identificam-se diversas peculiaridades que não estão                            o processo de comunicação documentária.
+                  contempladas nos modelos apresentados. Na busca de                                      Lara (2002) entende que as representações docu-
+                  um referencial mais satisfatório, percebe-se a possibilidade                    mentárias são utilizadas para transmitir informação. No
+                  de desenvolver uma proposta alternativa a esses modelos.                        processo de transferência da informação, é possível
+                  É no aparelho formal da enunciação que essa possibi-                            identificar: 1) o emissor (instituição que formula o sistema
+                  lidade é visualizada.                                                           documentário); 2) o canal (veículo pelo qual são veiculadas
+                                                                                                  as mensagens documentárias e que seriam os catálogos
+                           Para discutir a relação que se estabelece entre os
+                                                                                                  eletrônicos3); 3) o código intermediário (a linguagem
+                  SRI e os usuários, o artigo apresenta uma breve revisão
+                                                                                                  documentária usada na indexação e na recuperação da
+                  de literatura sobre comunicação documentária e sistemas
+                                                                                                  informação e que deve funcionar, simultaneamente,
+                  de recuperação da informação. A partir da análise dos
+                                                                                                  como um sistema de comunicação e de significação); 4)
+                  modelos de comunicação e dos sistemas na sua relação
+                                                                                                  o destinatário (usuário final do sistema). Pelo modelo de
+                  com os usuários, oferece-se, ainda, uma proposta funda-
+                                                                                                  comunicação documentária assim proposto, a relação
+                  mentada no aparelho formal da enunciação formulado
+                                                                                                  entre SRI e usuários é caracterizada de forma bem simpli-
+                  por Benveniste.
+                                                                                                  ficada (Quadro 1).
+                                                                                                           Conforme Ortega e Lara (2010, p.9):
+                  Comunicação documentária
+                                                                                                                  O usuário é o ator que dispara uma situação de
+                                                                                                                  comunicação, pois é o ato da recepção que
+                          Comunicação documentária, conforme Lima
+                                                                                                                  determina o estabelecimento ou não de uma
+                  (1998), é o processo de comunicação entre o acervo de                                           comunicação. [...] para que a comunicação docu-
+                  um sistema de informação e o seu usuário. Ela é alcançada                                       mentária ocorra é necessário que a informação
+                  quando um sistema codifica o conteúdo informacional                                             documentária - produto que é transmitido nesse
+                  dos documentos, objetivando sua recuperação pelo                                                processo - seja portadora de um significado tal
+                  usuário. A linguagem documentária é o código utilizado                                          que o usuário possa ser capaz de processá-la
+                                                                                                                  mentalmente, a fim de obter a informação dese-
+                  nesse processo.
+                                                                                                                  jada. A comunicação documentária é então um
+                         Os modelos de comunicação documentária têm                                               processo que exige, de um lado, a informação
+                  origem na teoria da informação proposta por Shannon e                                           documentária e, de outro, o usuário que se apro-
+                                                                                                                  pria desta informação. Os sistemas documen-
+                  Weaver (1949), que entende que o processo de comu-
+                                                                                                                  tários lidam com atos de comunicação material-
+                  nicação se dá a partir de um sistema (fonte), que influencia                                    mente explícitos, isto é, o documento, sua repre-
+                  outro sistema (receptor), transmitindo signos por inter-                                        sentação, a pergunta do usuário, a ação comu-
+                  médio de um canal. O canal é o meio que permite a                                               nicativa do profissional de informação etc.
+
+138
+
+                  Quadro 1. Modelo de comunicação documentária.
+
+                      Elementos da comunicação na teoria da informação            Representação dos elementos da comunicação na comunicação documentária
+                      Emissor                                                     Instituição que formula o sistema documentário
+                      Canal                                                       Catálogo eletrônico
+                      Código intermediário                                        Linguagem documentária
+                      Destinatário                                                Usuário final do Sistema
+V.M.A.P. ARAUJO
+
+
+
+
+                  Fonte: Elaborado pela autora.
+
+                  3
+                      Os catálogos eletrônicos são reconhecidos como SRI por integrarem diferentes atividades: seleção, desenvolvimento de coleções, processamento técnico,
+                      busca e recuperação da informação.
+
+
+                  TransInformação, Campinas, 24(2):137-143, maio/ago., 2012
+        Ainda, para que esse processo de comunicação              fiel possível a representação do conteúdo temático de             139
+ocorra, é necessário que: 1) a informação documentária -          um documento, como ao conhecimento das estratégias
+
+
+
+
+                                                                                                                                    SISTEMA DE RECUPERAÇÃO DA INFORMAÇÃO
+produto que é transmitido nesse processo - seja portadora         de busca oferecidas pelo sistema.
+de um significado, e 2) o usuário - ator que dispara uma                  Neste artigo, o aspecto a ser considerado é o da
+situação de comunicação - seja capaz de processar a               representação fiel do conteúdo temático do documento.
+informação documentária para obter a informação                   Para Lima (1998), a compatibilização das linguagens docu-
+desejada.                                                         mentárias com a terminologia oferece condições propí-
+        Tendo como foco a insatisfação do usuário na              cias a uma comunicação documentária mais eficaz.
+relação com os SRI, aborda-se, a seguir, a relação que
+ocorre entre ambos. Dentre os autores que questionam e            Sistemas de recuperação da informação
+procuram respostas para essa insatisfação presente nos
+processos de busca e recuperação da informação, Araujo                    Os sistemas de informação tratam da represen-
+(1995, p.1), cuja tese discute essa questão, faz a seguinte       tação, do armazenamento, da organização e da locali-
+afirmação:                                                        zação dos itens de informação. Para organizar e comunicar
+                                                                  a informação, eles utilizam linguagens documentárias,
+             Por que vêm falhando os sistemas de infor-
+                                                                  que estabelecem um importante elo entre os SRI e os
+             mação? E não há dúvidas de que vêm falhando:
+             uma rápida análise da literatura da área evidencia   usuários. Conforme Souza (2006), as funções de um SRI
+             uma série de estudos, projetos etc., visando         são as seguintes: 1) representação das informações conti-
+             corrigir, ao menos parcialmente, suas falhas e       das nos documentos e expressas pelos processos de
+             proporcionar ‘maior satisfação aos usuários’.        indexação e descrição dos documentos; 2) armazena-
+             Observa-se, inclusive, que tais estudos incluem      mento e gestão física e ou lógica desses documentos e
+             ‘modernas abordagens’ ao planejamento, gestão        de suas representações; e 3) recuperação das informações
+             e, principalmente, marketing de seus serviços e
+                                                                  ali contidas e dos próprios documentos armazenados no
+             produtos, buscando a inserção dos sistemas de
+                                                                  sistema.
+             informação em uma sociedade pós-industrial,
+             pós-moderna, conhecimento-intensiva.                         Das vantagens que Cendón (2005, p.62) apresenta
+        Em resposta à pergunta por que vêm falhando os            a favor dos sistemas no formato eletrônico, há a consi-
+sistemas de informação e à consequente insatisfação do            derar:
+usuário, Biscalchin e Boccato (2011), em um estudo sobre                      [...] as facilidades que os SRI automatizados
+o uso de linguagem documentária em catálogos coletivos                        oferecem para busca de informação [...] maior
+de bibliotecas universitárias, apontaram três aspectos                        número de pontos de acesso que os SRI não-
+                                                                              -automatizados [...]. Além disso, permitem reali-
+principais: 1) a incompatibilidade existente entre a lingua-
+                                                                              zar pesquisas mais complexas, em que vários
+gem de busca e a adotada pelo sistema; 2) a ausência de
+                                                                              conceitos necessitam ser relacionados pois pode-
+remissivas; e 3) as inconsistências sintático-semânticas                      -se combinar grande número de termos de bus-
+verificadas na linguagem. A pesquisa revelou que a grande                     ca [...], de maneiras que não seriam possíveis nos
+maioria dos usuários desconhece a linguagem usada pelo                        SRI impressos.
+sistema. Acrescenta-se a isso o desconhecimento dos                       Com a intenção de apresentar uma proposta
+recursos de pesquisa que o catálogo eletrônico oferece.           alternativa que caracterize a relação estabelecida entre
+Lima (1998) observa, ainda, que a presença de várias lingua-      SRI e usuários, desenvolve-se a seguir uma reflexão sobre
+gens documentárias em um único SRI prejudica a transfe-           as características apresentadas por esses sistemas. Pela
+rência da informação e, desse modo, a comunicação                 identificação de tais características, verificou-se que os
+entre o sistema e o usuário.                                      modelos de comunicação até então apresentados não
+        Em busca de uma maior satisfação do usuário,              configuram essa relação.
+são feitas algumas considerações sobre o fato de o                       Essa reflexão parte do entendimento de que a
+bibliotecário, como profissional da informação, ter sob           função principal de um SRI é dispor de informações
+sua responsabilidade o gerenciamento dos SRI. Ele precisa         contidas nos documentos indexados, a partir de uma
+estar atento tanto ao modo de expressar da maneira mais           descrição sintética, objetiva e representativa de seu con-
+
+                                                                        TransInformação, Campinas, 24(2):137-143, maio/ago., 2012
+                  teúdo formal e temático. Um SRI integra diferentes           processos anteriormente mencionados. Entende-se que
+                  processos: seleção, aquisição, indexação e, ainda, busca e   a relação que ocorre entre SRI e usuários não se limita ao
+                  recuperação das informações.                                 processo de busca e recuperação da informação. A
+                           Na análise da relação que se estabelece entre os    construção de um sistema que se propõe a estabelecer
+                  SRI e os usuários, observa-se que ela apresenta pecu-        uma relação mais satisfatória com o usuário precisa levar
+                  liaridades que não são explicadas nos modelos de comu-       em consideração aquela que ocorre entre o bibliotecário
+                  nicação documentária vistos em revisão de literatura. O      e o usuário durante o processo de indexação. Mas ainda
+                  que se verifica é que esses sistemas apresentam caracte-     fica a pergunta: que tipo de relação é esta? Trata-se mesmo
+                  rísticas bem diferenciadas e muito mais complexas do         de uma relação de comunicação? Busca-se esta resposta
+                  que aquelas que fundamentam esses modelos, como              na teoria de Benveniste.
+                  descrito a seguir:
+                         1) São sistemas em que os locutores (bibliotecário,   Teoria da enunciação de Benveniste
+                  usuário e SRI) são de natureza heterogênea e não estão
+                  presentes quando o alocutário busca a informação;                    Visando compreender o funcionamento das lin-
+                                                                               guagens documentárias, e a relação SRI e usuário, recorre-
+                         2) Os códigos utilizados e representados pelas
+                                                                               -se à teoria da enunciação. É sob a ótica da semântica, e
+                  linguagens documentárias são reveladores de diferentes
+                                                                               não da semiótica, que se desenvolve essa reflexão. O
+                  sistemas semânticos; uma mesma Unidade de Informação
+                                                                               semântico toma a seu encargo o conjunto de referentes,
+                  (cabeçalho de assunto ou descritor) não cobre a mesma
+                                                                               e é produzido pelo discurso e se identifica com a enun-
+                  noção de um vocabulário para outro, e a gramática das
+                                                                               ciação.
+                  linguagens documentárias é diferente de um sistema para
+                  o outro;                                                             Do texto A forma e o sentido na linguagem (Ben-
+                                                                               veniste, 1989), apresenta-se a ideia de que a forma é o
+                         3) O processo de indexação faz uso de mais de
+                                                                               arranjo formal dos elementos linguísticos ao nível
+                  uma linguagem: linguagem especializada (linguagem do
+                                                                               linguístico relevante, enquanto o sentido é o conjunto
+                  documento) e vocabulário controlado (lista de cabeçalho
+                                                                               de procedimentos de comunicação identicamente
+                  de assuntos ou tesauro);
+                                                                               compreendidos por um grupo de locutores. Para o lin-
+                         4) O processo de busca e recuperação da informa-      guista, a significação é da natureza da linguagem.
+                  ção oferece pesquisas por palavras, em catálogos
+                                                                                        Com a noção de semântica, Benveniste entende a
+                  eletrônicos diferenciados quanto à estrutura e estratégias
+                                                                               língua em emprego e em ação. A frase é a expressão
+                  de pesquisa;
+                                                                               semântica por excelência; com ela nos comunicamos e
+                        5) Os processos que viabilizam a recuperação da        nos deslocamos para a produção do discurso, para aquilo
+                  informação e a produção do conhecimento se manifes-          que o locutor quer dizer. O sentido da frase é sua ideia,
+                  tam em lugares e momentos múltiplos;                         que é sempre única, e o das palavras, seu emprego. O
+                          6) No processo de indexação, bibliotecários e        sentido da frase se constitui no momento da enunciação,
+140               usuários se posicionam como interlocutores, mas no           ou seja, quando o locutor exprime sua ideia. Sendo a
+                  processo de busca e recuperação da informação, usuários      palavra a unidade semântica, ela mesma guarda suas
+                  e sistemas são os interlocutores;                            referências e significações próprias. Entretanto, quando
+                        7) As marcas da subjetividade e intersubjetividade     há o agenciamento de palavras para a construção da
+                                                                               frase, a referência passa a ser o próprio ato de enunciação;
+                  estão presentes e são relevantes nos processos de
+                                                                               dele decorre o sentido da frase. A noção de referência é
+                  indexação e de busca e de recuperação da informação;
+                                                                               essencial no processo de construção do sentido. Sobre
+                        8) O documento processado é a fonte da informa-
+V.M.A.P. ARAUJO
+
+
+
+
+                                                                               as noções de sentido e de referência, o linguista propõe
+                  ção em ambos os processos.                                   que se estabeleça uma distinção entre elas.
+                        Visando ao uso da informação e à produção do                        Se o ‘sentido’ da frase é a ideia que ela exprime,
+                  conhecimento, propõe-se uma aproximação entre os                          a ‘referência’ da frase é o estado de coisas que a
+
+
+                  TransInformação, Campinas, 24(2):137-143, maio/ago., 2012
+             provoca, a situação de discurso ou de fato a que     tados na literatura documentária; 4) caracteriza-se por           141
+             ela se reporta e que nós não podemos jamais          ser construída a partir de noções como linguagem, subje-
+
+
+
+
+                                                                                                                                    SISTEMA DE RECUPERAÇÃO DA INFORMAÇÃO
+             prever ou fixar [...]. A frase é então cada vez um
+                                                                  tividade, intersubjetividade, referência e contexto, que
+             acontecimento diferente; ela não existe senão
+             no instante em que é proferida e se apaga neste      são características presentes no referencial teórico que
+             instante [...] (Benveniste, 1989, p.231).            fundamenta a proposta apresentada.
+        Subjetividade é um conceito fundamental na sua                    No tópico a seguir, discute-se o aparelho formal
+teoria; ela procede da relação ‘eu e tu’, ou seja, ‘pessoa        da enunciação com a intenção de propor um novo refe-
+subjetiva e pessoa não-subjetiva’. Mas as noções de               rencial para a relação que se estabelece entre os SRI e os
+intersubjetividade, locutor, referência e categorias de           usuários.
+pessoa, espaço e tempo também são importantes.
+Quanto ao tempo da enunciação, segundo o linguista,               Aparelho formal da enunciação
+ele é sempre presente, uma vez que corresponde ao                 e a relação SRI e usuários
+momento em que ‘eu’ se diz ‘eu’.
+                                                                           O aparelho formal da enunciação proposto por
+       Em A natureza dos pronomes, Benveniste (1988)
+                                                                  Benveniste pode ser entendido como um dispositivo que
+aborda a categoria de pessoa. A noção de pessoa está
+presente apenas nas duas primeiras pessoas, estando               permite que as línguas possam ser enunciadas; ele nada
+ausente na terceira pessoa. O ‘ele’ é diferente de ‘eu e tu’      mais é do que a marcação da subjetividade na estrutura
+pela sua função e pela sua natureza, e se caracteriza por         da língua. Segundo Benveniste (1989, p.82), “A enunciação
+não remeter a ele mesmo, mas a uma situação objetiva.             é esse colocar em funcionamento a língua por um ato
+                                                                  individual de utilização”, pois, conforme Flores e Teixeira
+        No texto Da subjetividade na linguagem (Benve-
+                                                                  (2005, p.37), “[...] cada vez que o locutor se apropria do
+niste, 1988), a subjetividade é entendida como a capa-
+                                                                  aparelho formal da enunciação - e por ele se apropria da
+cidade do locutor para se propor como sujeito. Ao inserir
+                                                                  língua toda - produz um uso novo e como tal irrepetível.
+a noção de referência no contexto da comunicação, o
+linguista questiona a função da linguagem como fer-               Essa irrepetibilidade deve-se ao fato de que jamais tempo,
+ramenta da comunicação. Fundamentado no argumento                 espaço e pessoa - categorias fundamentais em enun-
+de que opor o homem à linguagem é colocá-lo em opo-               ciação - podem ser perenizados no uso da língua”.
+sição a sua própria natureza, ele nega o aspecto instru-                 Pela compreensão das noções advindas do apa-
+mental da linguagem e afirma que a língua não é um                relho formal da enunciação - subjetividade, intersubje-
+instrumento de comunicação, pois isso vai contra o prin-          tividade, referência e contexto - e pelas categorias funda-
+cípio segundo o qual a linguagem está na natureza do              mentais em enunciação - pessoa (eu e tu), espaço (aqui) e
+homem.
+                                                                  tempo (agora) -, tornou-se possível perceber as
+       Dentre as teorias revisadas a fim de se formular           peculiaridades e a complexidade da relação que se
+uma proposta alternativa aos modelos de comunicação               estabelece entre SRI e usuários, assim como elaborar e
+documentária, identificados em revisão de literatura, foi         construir outro referencial sobre essa relação, que con-
+na teoria da enunciação de Benveniste, em especial no             templa os diversos aspectos que a caracterizam. A partir
+aparelho formal da enunciação, que foram identificados            da configuração registrada (Quadro 2), são feitas algumas
+vários elementos capazes de contemplar as peculiari-              considerações.
+dades da relação que ocorre entre SRI e usuários.                        Ao se inserirem as noções de subjetividade e de
+        A opção por essa teoria justifica-se pelas seguintes      intersubjetividade, reconhece-se uma situação de inte-
+razões: 1) ela entende que é pela linguagem que o homem           ração entre os diferentes interlocutores envolvidos. A
+se inter-relaciona, recebe e transmite uma mensagem; 2)           noção de referência aparece como definidora de sentido
+olha para o estudo da língua do ponto de vista do sentido;        no nível semântico, sendo a referência ao mundo parte
+3) permite considerar peculiaridades próprias do tipo de          integrante do ato de enunciação: aqui entra a noção de
+relação que se estabelece entre os SRI e os usuários, e que       contexto. É em relação ao contexto de situação que o
+não são visíveis nos modelos de comunicação apresen-              sentido de uma palavra é obtido; fora do contexto, nem
+
+                                                                        TransInformação, Campinas, 24(2):137-143, maio/ago., 2012
+                  Quadro 2. Aparelho formal da enunciação e a relação SRI e usuários.
+
+                  Aparelho formal da enunciação                                    Relações SRI e usuários
+                                                                  Primeiro momento                 Segundo momento
+                  Categoria de pessoa subjetiva (eu)              Bibliotecário (eu)               Usuário (eu)
+                  Categoria de pessoa não-subjetiva (tu)          Usuário (tu)                     SRI (tu)
+                  Categoria de não-pessoa (ele)                   Linguagem especializada (ele)    Linguagem especializada (ele)
+                  Categoria de espaço (aqui)                      Vocabulário controlado (aqui)    Catálogo eletrônico (aqui)
+                  Categoria de tempo (agora)                      Processo de indexação (agora)    Processo de busca e recuperação da informação (agora)
+
+                  Fonte: Elaborado pela autora.
+
+
+
+
+                  sempre é possível compreender o sentido que resulta da                ou seja, a partir de um emissor, canal, código intermediário
+                  junção das palavras.                                                  e destinatário.
+                          Compreendendo que não se trata de uma situação
+                  de comunicação, mas de interação, essa proposta intro-                Considerações Finais
+                  duz a noção de interlocutores, identificando como interlo-
+                                                                                                Finaliza-se este artigo afirmando que a teoria da
+                  cutores não apenas o sistema e o usuário, mas também o
+                                                                                        enunciação apresenta vantagens teóricas e metodo-
+                  bibliotecário. São identificadas duas situações de intera-
+                                                                                        lógicas importantes aos estudos desenvolvidos em lin-
+                  ção, que ocorrem em espaço e tempo diferenciados: 1)
+                                                                                        guagens documentárias. Esse referencial conduz o bi-
+                  uma entre bibliotecários e usuários, interagindo durante
+                                                                                        bliotecário a novas reflexões e posicionamentos diante
+                  o processo de indexação, e 2) outra entre usuários e catá-
+                                                                                        das atividades documentárias, seja na execução das
+                  logos eletrônicos, também reconhecidos como SRI, na
+                                                                                        atividades de indexação, seja na elaboração de vocabu-
+                  qual a ação de interlocução acontece durante o processo
+                                                                                        lários controlados, seja no estabelecimento de uma
+                  de busca e recuperação da informação.
+                                                                                        política de indexação para os sistemas.
+                          Ressalta-se, ainda, que os termos e expressões que
+                                                                                                O questionamento sobre a relação que se esta-
+                  identificam o conteúdo informacional de um documento
+                                                                                        belece entre os SRI e os usuários é o seguinte: é essa
+                  são localizados nos vocabulários controlados e nos catá-
+                                                                                        realmente uma situação de comunicação? Essa discus-
+                  logos eletrônicos. Os vocabulários controlados são as
+                                                                                        são, feita a partir de parâmetros enunciativos, possivel-
+                  ferramentas com as quais os bibliotecários reconhecem
+                                                                                        mente levará a uma mudança de paradigma no âmbito
+                  a terminologia que identifica o conteúdo informacional
+                                                                                        documentário. Por ora, entende-se que, entre usuários e
+                  de um documento. Os catálogos eletrônicos são as fer-
+                                                                                        SRI, estabelece-se uma ação de interação, mas não de
+                  ramentas utilizadas pelos usuários para recuperar a infor-            comunicação documentária, e como tal não pode ser
+                  mação que desejam. Nas duas situações, caracterizadas                 descrita pelos elementos que usualmente a representam:
+                  pelos processos de indexação e de busca e recuperação                 emissor, canal, código intermediário e usuário.
+142               da informação, a linguagem especializada é a fonte de
+                                                                                                A insatisfação do usuário na consulta aos catálogos
+                  informação.
+                                                                                        eletrônicos leva à conclusão de que os SRI não estão
+                          Assim, entende-se que a relação estabelecida entre            cumprindo sua função de transferência da informação.
+                  os SRI e os usuários não se limita ao processo de busca e             Hoje, uma das maiores dificuldades enfrentadas pelo
+                  recuperação da informação. É preciso que seja consi-                  usuário de um sistema não é exatamente a recuperação
+                  derada também a relação de interação que ocorre du-                   de documentos, mas a recuperação de informações rele-
+                  rante o processo de indexação entre bibliotecários e                  vantes para seus propósitos de pesquisa, nos documentos
+V.M.A.P. ARAUJO
+
+
+
+
+                  usuários. A partir desses pressupostos, conclui-se que                recuperados. Essa realidade leva à seguinte pergunta: o
+                  essa relação não pode ser vista do modo como tem sido                 que se espera de um SRI? Seu verdadeiro papel será o da
+                  apresentada em modelos de comunicação documentária,                   transferência da informação?
+
+
+                  TransInformação, Campinas, 24(2):137-143, maio/ago., 2012
+Referências                                                                                                                           143
+
+
+
+
+                                                                                                                                      SISTEMA DE RECUPERAÇÃO DA INFORMAÇÃO
+ARAUJO, V.M.R.H. Sistemas de informação: nova abordagem            FLORES, V.N.; TEIXEIRA, M. Introdução à lingüística da enun-
+teórico conceitual. Ciência da Informação, v.24, n.1, p.54-76,     ciação. São Paulo: Contexto, 2005.
+1995.
+                                                                   LARA, M.L.G. O processo de construção da informação docu-
+BENVENISTE, E. Problemas de linguística geral I. 2.ed. Campinas:   mentária e o processo de conhecimento. Perspectivas em
+Pontes, 1988. p.277-293.                                           Ciência da Informação, v.7, n.2, p.127-139, 2002.
+BENVENISTE, E. Problemas de linguística geral II. Campinas:        LIMA, V.M.A. Terminologia, comunicação e representação
+Pontes, 1989.                                                      documentária. 1998. Dissertação (Mestrado em Ciências da
+                                                                   Informação) - Escola de Comunicação e Artes, Universidade
+BISCALCHIN, R.; BOCCATO, V.R.C. Estudo do uso de linguagem         de São Paulo, São Paulo, 1998. Disponível em: <http://www.
+documentária em catálogos coletivos de bibliotecas univer-         teses.usp.br/teses>. Acesso em: 20 mar. 2012.
+sitárias: uma abordagem qualitativa-sociocognitiva pela            ORTEGA, C.D.; LARA, M.L.G. A noção de estrutura e os registros
+perspectiva do usuário. In: CONGRESSO BRASILEIRO DE                de informação dos sistemas documentários. TransInformação,
+BIBLIOTECONOMIA, DOCUMENTAÇÃO E CIÊNCIA DA INFOR-                  v.22, n.1, p.7-17, 2010. Disponível em: <http://revistas.puc-
+MAÇÃO, 24., 2011, Maceió. Anais eletrônicos... Maceió: CBBD,       campinas.edu.br/transinfo/viewissue.php?id=24#Artigos>.
+2011. Disponível em: <http://febab.org.br/congressos/              Acesso em: 19 maio 2011.
+index.php/cbbd/xxiv/paper/view/39/508>. Acesso em: 23              SHANNON, C.E.; WEAVER, W. The mathematical theory of
+mar. 2012.                                                         communication. Illinois: The University of Illinois, 1949.
+CENDÓN, B.V. Sistemas e redes de informação. In: OLIVEIRA,         SOUZA, R.R. Sistemas de recuperação de informações e
+M. (Coord.). Ciência da informação e biblioteconomia: novos        mecanismos de busca na web: panorama atual e tendências.
+conteúdos e espaços de atuação. Belo Horizonte: UFMG,              Perspectivas em Ciência da Informação, v.11, n.2, p.161-173,
+2005. p.45-75.                                                     2006.
+
+
+
+
+                                                                          TransInformação, Campinas, 24(2):137-143, maio/ago., 2012
+144
+V.M.A.P. ARAUJO
+
+
+
+
+                  TransInformação, Campinas, 24(2):137-143, maio/ago., 2012
+

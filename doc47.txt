@@ -1,0 +1,348 @@
+ASPECTOS GERAIS DO SISTEMA DE MINERAÇÃO DE 
+CRIPTOMOEDAS DOMÉSTICO ALIMENTADO COM ENERGIA 
+SOLAR
+Marcos Vinícius Gadelha
+Resumo: O artigo se propõe a apresentar e analisar a possibilidade real de implementação de um modelo, particular 
+híbrido, de mineração de criptomoedas com o uso de painéis fotovoltaicos como meio de subsistência energética 
+direta. Destacando, a viabilidade da mineração dessas moedas digitais em um país como Brasil, com perspectiva
+no estado do Rio Grande do Norte, que por mais que possua altas tarifas energéticas que atrapalham diretamente 
+no uso intensivo dos equipamentos, ainda, sim, se revela um grande potencial. Para isso, é avaliado brevemente o
+potencial nacional e estadual para a energia solar, não obstante a demonstração do uso da instalação de Sistema 
+Fotovoltaico Conectado à Rede (SFCR) com homologação, dentro da legalidade e, associada ao maquinário de 
+mineração de moedas digitais, com figuras, esquemas e avaliações sobre os mesmos. Tendo em vista que, o projeto 
+é de caráter expositivo, um esboço metodológico de um processo pouco habitual e que cresce desenfreadamente 
+ao longo dos anos dado o seu potencial financeiro, energético e tecnológico.
+Palavras-chave: Mineração de criptomoedas. Painéis fotovoltaicos. Potencial solar no Brasil. Sistema 
+Fotovoltaico Conectado à Rede (SFCR). Esboço metodológico.
+1. INTRODUÇÃO
+A constante busca por sustentabilidade e substituição do uso de combustíveis fósseis está promovendo a 
+rápida ascensão da captação de energia solar renovável e produção de energia elétrica. A cada ano, de forma
+exponencial, a quantidade de unidades de geração centralizada e descentralizada vem aumentando, o preço dos 
+equipamentos diminuindo, expondo uma grande oportunidade para a autossuficiência energética, possibilitando 
+ainda a venda dos excedentes. Além do que, evoluindo em comunhão também, e de forma excepcional, as moedas 
+descentralizadas dominam o mercado moderno associadas diretamente a tecnologia de blockchain (cadeia de 
+blocos).
+Antes de mais, importa perceber o que é a blockchain. É uma “tecnologia que permite o 
+armazenamento de informação numa rede de transações, segura e inviolável, sem necessidade 
+de uma entidade central para gestão e manutenção da mesma”, isto é, sem intermediários. Deste 
+modo, ao contrário de outras tecnologias, que centralizam os registros das transações numa base 
+de dados centralizada, a blockchain guarda a informação de uma forma distribuída [1]. 
+A blockchain se trata de um banco de dados público, dividido em blocos, que registra o histórico de 
+movimentações dos usuários, que caso seja verdadeiro, o bloco é incorporado à rede e ganha um código de 
+criptografia, assim, transações financeiras e outras operações podem ser feitas de forma segura, rápida e de 
+qualquer lugar do mundo. Para que um novo bloco seja criado e adicionado ao blockchain, um problema de hashing
+(algoritmo) criptográfico deve ser solucionado, o usuário que resolve este problema, é chamado de minerador, que 
+na prática, busca a resposta de um algoritmo (hash) com padrão pré-determinado que conecta o novo bloco de 
+informações ao banco de dados. De acordo com [2], os algoritmos são solucionados usando CPUs (Central 
+Processing Units), processadores de computador, que no início da atividade da mineração tinha sua importância. 
+Ademais, com o uso de GPUs (Graphics Processing Units), placas gráficas compostas por um processador com 
+muitos núcleos menores e mais especializados, acabou sendo muito mais eficiente e frequente nos dias de hoje. 
+Assim sendo, o minerador que realiza a atividade é recompensado com criptomoedas. No caso, ele recebe o
+pagamento por cada bloco novo gerado, e a mineração é responsável também por colocar novas moedas em 
+circulação, em vista desse mesmo pagamento e seguindo as regras de cada protocolo de cada moeda.
+Um grande empecilho da viabilidade da mineração de moedas descentralizadas no Brasil, é o alto custo, 
+gasto com eletricidade. Sendo assim, muitos indivíduos optam por meios renováveis de energia para economizar 
+UNIVERSIDADE FEDERAL RURAL DO SEMIÁRIDO - UFERSA
+CURSO DE BACHARELADO EM CIÊNCIA E TECNOLOGIA
+Trabalho de Conclusão de Curso (2023).
+na conta de luz. O uso de painéis fotovoltaicos está em uma alta gigantesca com diversas microempresas abrindo 
+em diversos bairros para suprir a grande demanda. De modo que, ao ser avaliado 3 (três) cenários distintos de
+implementação de módulos FV em um determinado município brasileiro, com suas respectivas cotações e 
+especificações. Tem-se definido então, um dado valor de durabilidade dos materiais empregados.
+Baseado em estimativas e previsões, foram definidos três cenários de reajuste da tarifa de 
+energia para o estudo. No cenário A com reajuste anual de 3,75%, o Valor Presente Líquido 
+(VPL) foi de R$ 50.303,55, a Taxa Interna de Retorno (TIR) foi de 19,36% com payback
+(retorno) descontado de 6 anos e 4 meses; no cenário B com reajuste anual de 5,61%, o VPL 
+foi de R$ 67.444,68, a TIR foi de 21,25% com payback descontado de 6 anos e 1 mês; no 
+cenário C com reajuste anual de 10,00%, o VPL foi de R$ 132.936,82, a TIR foi de 25,67% 
+com payback descontado de 5 anos e 6 meses. Em todos os cenários o VPL foi positivo, 
+indicando que a economia gerada superou o investimento e o payback foi satisfatório levandose em consideração um horizonte de projeto de 25 anos.[3]
+Com isso, entende-se que em geral os painéis solares apresentam um custeamento, financiável, que se 
+paga ao longo de cerca de 5 (cinco) anos. Dessa forma, tendo o sistema montado, e em perspectiva de [4], a 
+atividade de mineração que seria intensificada por conta do próprio sistema integrado, serviria como uma renda 
+extra ou custeamento direto do investimento nos painéis fotovoltaicos. De maneira que, a energia solar seria usada 
+diretamente para economizar nos gastos de luz, e a mineração seria viabilizada pela mesma e usada como fonte de 
+renda extra e ganhos futuros com investimento em criptomoedas. Além do que, a energia solar é uma fonte de 
+energia limpa que degrada minimamente o meio ambiente. Todavia, é de se considerar que os ganhos em operações 
+de mineração possuem determinada volatilidade, sendo necessária a atenção do indivíduo diariamente para 
+manipular e ver as variações de mercado, com o fito de recuperar ao máximo e quanto antes o investimento, 
+tomando boas decisões.
+Para avaliar a viabilidade do uso de Sistemas de Fontes de Energia Renovável para a mineração, é 
+imprescindível levar em conta os parâmetros relacionados à instalação do sistema, seus custos iniciais e de 
+manutenção, bem como, a quantidade de energia elétrica exigida para a atividade de mineração e o custo da 
+eletricidade por área geográfica específica. O artigo se propõe a avaliar e montar o arcabouço de todo o processo, 
+limitando-se em sua maioria a conceitos e sem envolver as mais variadas especificidades de valores, que envolvem
+o sistema diretamente e indiretamente. O esquema escolhido envolve a mineração de moedas digitais utilizando 
+GPUs, desenvolvido por um indivíduo qualquer em sua própria residência, apresentando dados mínimos de 
+projeção real, e tendo como base outros trabalhos acadêmicos e demais fontes. 
+2. MINERAÇÃO DE CRIPTOMOEDAS
+Nos últimos anos, criptomoedas surgiram com o desenvolvimento da internet e das novas 
+tecnologias da informação e comunicação. A criação das criptomoedas impôs mudanças nas 
+atividades econômicas entre os usuários da internet, com a expansão destas e o uso da 
+tecnologia de blockchain que resultou em um novo patamar econômico na rede mundial de 
+computadores (apud [5]).
+O Bitcoin surge como primeira moeda, e a qual também se consolidou no mercado ao longo dos anos, 
+que com sua grande valorização, gerou atenção internacional para o uso das moedas digitais. Assim como, o início 
+da internet na década de 90, onde esta grande inovação trouxe inúmeras dúvidas sobre regulamentação, quais 
+empresas iriam se manter no mercado, inovando nas diferentes camadas desse novo mundo até chegar nos 
+diferentes padrões que se alteram até os dias do hoje. Atualmente, existem inúmeras moedas e os atuais 
+mineradores de pequeno porte, mineram as diferentes novas criptos que aparecem no mercado de acordo com sua 
+valorização ou manutenção, avaliando seu potencial de investimento. No determinado projeto sistemático, exposto
+de forma breve anteriormente, o sistema de mineração será composto por GPUs que funcionarão 24 (vinte e quatro)
+horas por dia, tendo como foco que, para minerar é necessário escolher uma moeda, configurar o hardware, 
+escolher o software ou conjunto de softwares, configurar uma carteira digital que irá reter a receita de moedas e 
+dar-se início então ao processo. 
+3. METODOLOGIA
+Esse artigo baseou-se em um planejamento de divulgação, de caráter expositivo, com a apresentação de 
+ideias e conceitos gerais a respeito dessa determinada conjuntura. Neste capítulo, será apresentado as ideias 
+fundamentais e centrais do procedimento metodológico. Assim como, será abordado os critérios necessários para 
+a construção do universo desse esbouço do sistema.
+3.1 SISTEMA DE MINERAÇÃO
+Com relação à configuração de hardware, um computador pessoal hoje em dia, desktop, é composto por 
+monitor, mouse, teclado, fonte de alimentação e gabinete, este último irá armazenar as unidades lógicas de 
+processamento junto à placa mãe, como CPU e unidades de memória. No sistema em questão, não há a necessidade 
+de vários computadores completos, apenas uma placa mãe associada a várias GPUs, um monitor, como painel de 
+visualização e monitoramento das atividades, um mouse e um teclado, ambos como instrumentos de manipulação,
+e todos eles associados diretamente ao que se chama de rig (sistema de mineração).
+Um gabinete é uma caixa, com determinados parâmetros a serem seguidos para que se abrigue de maneira 
+eficiente uma CPU, placa mãe, seus conectores e GPU, levando em consideração fatores como, temperatura, fluxo 
+de ar e resíduos. A rig é o sistema propriamente dito, com suas principais peças selecionadas e organizadas com 
+seus conectores em uma espécie de alicerce, feito de determinado material, visando ergonomia e produtividade do 
+processo de mineração. Resumindo, uma rig pode ser interpretada como um sistema de várias GPUs, organizada 
+em uma espécie de gabinete especializado, como demonstrado na Figura 1, bem como, também é interpretada 
+como o próprio gabinete especializado, portanto, para fins de entendimento, neste artigo haverá a rotulação dos 
+termos rig e estrutrura rig.
+É importante pontuar que, para que uma única placa mãe abrigue várias GPUs na estrutura rig, é 
+necessário a utilização de um equipamento chamado riser (adaptador), e entender o que seria o mesmo.
+Risers são usados para conectar placas de vídeo ao conector PCI-Express na placa-mãe 
+mediante um cabo de extensão - um cabo USB (Universal Serial Bus) de alta qualidade e 
+forneça um circuito de alimentação separado para a placa de vídeo, desacoplado da placa -mãe. 
+Sua seleção é muito importante para garantir a operação confiável da plataforma. É melhor usar 
+um riser de 12 volts com conector de alimentação de 6 pinos, porque eles geralmente possuem 
+um fusível embutido e também possuem circuitos integrados mais confiáveis para converter a 
+alimentação de 12 volts em outras necessárias para placas de vídeo [7].
+Logo, um riser é um extensor, USB (Universal Serial Bus), PCI Express (Peripheral Component 
+Interconnect Express), que funciona como adaptador para a placa gráfica, o qual irá se conectar via USB com a 
+placa mãe, via PCI Express com a GPU e PCI Express 6 pinos com a fonte de alimentação como demonstrado na 
+Figura 2 e posteriormente na Figura 3.
+Figura 1. Estrutura rig e logo em seguida rig. Fonte: 
+(Adaptado) com base em [6].
+Estrutura rig Rig
+Figura 2. Adaptador riser e seus componentes. (Autoria própria).
+Por consequência, é importante ressaltar que na hora de se obter, na compra, um riser, o mesmo em sua 
+maioria poderá vir com conectores do tipo molex e SATA (Serial Advanced Technology Attachment), porém o 
+mais indicado, recomendado e escolhido para o projeto será o conector PCIe por incorporar potências mais 
+elevadas, fundamental para os processos de minerações mais atuais com GPUs de desempenho ideal ou elevado
+que consomem muita energia, visando com isso, uma boa rentabilidade. Com isso, serão vários risers a serem 
+utilizados junto as placas gráficas e alimentados por uma fonte de alimentação de determinada potência, ambos 
+associados a placa-mãe e organizados na estrutura rig. Além disso, é importante destacar que, a estrutra rig possui 
+diversos espaçamentos e se assemelha a um andaime, com o propósito único organizacional e de arrefecimento, 
+pois as placas irão trabalhar em regime permanente por longos períodos, sendo necessário então o fluxo de ar 
+constante para que elas se mantenham em uma temperatura de operação aceitável. Não obstante, é notório que as 
+frestas são utilizadas para a instalação de coolers, ventoinhas, que são indispensáveis e de baixo custo, para o 
+arrefecimento do sistema.
+ 
+Para simplificar ao máximo o processo com relação ao uso de softwares (programas), serão utilizadas 
+plataformas digitais e sites especializados, ou ambos.
+De acordo com [2], como minerador, é importante sempre estar atento as variações do mercado digital e 
+estar por dentro das novas mudanças, sendo os próprios sites e plataformas bem intuitivos com relação a isso. 
+Dessa forma, para que se organize o processo, serão utilizados 3 (três) tipos de site, um para gerenciar as GPUs e 
+aplicar determinadas configurações como: aumento do consumo de energia, velocidade das ventoinhas e aumento 
+da tensão, sendo esses ajustes com o propósito de aumento de desempenho. Por conseguinte, é necessário um
+determinado site ou plataforma para operar como minerador, após isso, é possível minerar como um operador 
+único ou minerar em pool de mineração (piscina de mineração), dado o projeto, a mineração ocorrerá em pool, 
+pois como informado anteriormente, na mineração os operadores disputam entre si para ver quem irá minerar 
+aquele determinado bloco. Sendo um operador individual, seria necessário um grande investimento, 
+provavelmente em larga escala, para que se dispute e garanta a mineração de um bloco individualmente, ao minerar 
+em conjunto de pool, se tem uma melhor eficiência, já que assim haverá uma rede de várias máquinas integradas
+focadas em minerar, garantindo a atividade e tendo o site ou plataforma como gerente do processo que dado 
+determinado horário, período de tempo, irá distribuir o pagamento em criptomoedas para todos os indivíduos de 
+acordo com suas especificações e capacidades de mineração. Sendo interessante pontuar que, cada GPU utilizada 
+possui um hash rate (taxa de hash), ou seja, possui um nível que revela o quão rápido ela é capaz de resolver a 
+criptografia, nível esse que pode ser verificado nos próprios sites ou plataformas.
+Figura 3. Composição dos principais componentes da rig de mineração, com a única 
+exceção da unidade SSD. Fonte: (Adaptado) com base em [8],[9].
+Utilizando um site como exemplo, nele também irá se encontrar os mais variados tipos de criptomoedas, 
+sua valorização em tempo real, além das demais informações de forma bem intuitiva. Ademais, é necessário o 
+cadastro de uma carteira digital, na qual irá armazenar as criptomoedas, e por fim as corretoras ou exchanges, 
+plataformas especializadas, com o trabalho de realizar o intermédio entre compradores e vendedores de 
+criptomoedas, pois diferente de outros ativos, como fundos de investimento ou tesouro direto, as criptomoedas 
+podem, sim, ser serem compradas e vendidas entre pessoas. Por conseguinte, as corretoras se assemelham a bolsas 
+de valores e nelas é possível trocar as moedas digitais por moeda fiduciária, real ou dólar, ou até mesmo por outras 
+criptos e também é claro, investir nas mais variadas aplicações. Resumindo, os softwares que serão utilizados 
+poderão ser sites especializados, propriamente ditos, e serão do tipo, gerenciamento de rig, plataforma de 
+mineração, carteira digital e corretora como evidenciado na Figura 4, com exceção da exchange.
+3.2 POTENCIAL SOLAR REGIONAL E NACIONAL
+A disponibilidade da irradiância solar no Brasil é bem maior que em outros países do 
+hemisfério norte, embora tenha menor capacidade instalada de energia solar 
+fotovoltaica. Comparando-se a menor incidência de irradiância solar, no estado de 
+Santa Catarina, por exemplo, com valor próximo a 4,25 kWh/m²/d, constata-se, que é 
+ainda superior ao maior da Alemanha, mesmo recebendo 40% menos (apud [10]).
+A energia solar fotovoltaica é obtida através do efeito fotovoltaico, que consiste na conversão direta da 
+irradiância solar em energia elétrica, sendo considerada uma alternativa promissora para expansão da oferta de 
+energia elétrica com baixo impacto ambiental [11]. De modo que, sendo um país de proporções continentais com 
+uma população que cada vez mais consome energia elétrica, dada as novas tecnologias e as novas necessidades,
+se faz necessário o investimento pesado em fontes alternativas de energia, sendo elas, renováveis. De maneira que, 
+como observado no cenário atual, os efeitos do aquecimento global se intensificam a cada ano, sendo necessário,
+reduzir com urgência a emissão de poluentes oriundos do uso de matrizes fósseis. Levando em conta que, o Brasil 
+é uma das maiores economias do mundo e apesar das desigualdades existentes, é de extrema relevância que ele 
+entre como um dos protagonistas nessa marcha para combater o aumento de temperatura mundial, tendo em vista
+a dependência das fontes de petróleo que perdurará ao longo dos anos. 
+Com isso, o país pode ser alvo dos maiores investidores do mundo, tanto na venda de créditos de carbono, 
+que nada mais é, objetivamente, a venda de licenças para países desenvolvidos poderem poluir conforme a relação 
+emissão de carbono e produção de energia limpa. De modo que, a venda de créditos serviria como fonte de 
+investimento em novas tecnologias para expandir a matriz nacional exponencialmente. Ademais, o semi-árido se 
+apresenta como um mar de oportunidades, sendo uma delas o estado do Rio Grande do Norte, que segundo [12], 
+Figura 4. Esquema sequencial ilustrado do processo de mineração. Fonte: [2].
+já possuí uma matriz renovável de grande relevância, a eólica, sendo um polo perfeito para altos investimentos em 
+energia limpa tanto de âmbito estadual como federal. De maneira que, é essencial que grande parte da população 
+tenha ciência dessa conjuntura, para que se invista seu patrimônio de forma eficiente nesse tipo de matriz, sendo 
+o atual estudo, ponte para isso.
+Dessa forma, é mais do que evidente o potencial latente do território nacional para o uso de SFCR, 
+potencial esse verificado na Figura 5.
+.
+3.3 SISTEMA FOTOVOLTAICO
+Após a conclusão da montagem da rig, em vista do potencial solar, segue-se em sequência a modulação
+do sistema de subsistência energética, os módulos FV (fotovoltaico, energia solar fotovoltaica). Desse modo, é 
+importante elencar e descrever os instrumentos básicos que serão utilizados, tendo em vista que, a instalação e 
+escolha dos determinados equipamentos serão de ciência e necessidade do próprio indivíduo, o qual por autoria 
+própria fez a compra e instalação dos equipamentos ou contratou uma companhia para que o fizesse . Por 
+conseguinte, serão informadas nesse projeto as devidas precações, características e orientações necessárias ao 
+montar um sistema FV (fotovoltaico).
+Para que um sistema de painéis solares funcione, é necessário, é claro, os próprios painéis, além do que, 
+conforme o projeto, um micro inversor, equipamento esse responsável por converter a corrente contínua produzida 
+pelas células em corrente alternada. Foi escolhido um micro inversor, pois o mesmo otimiza o funcionamento das 
+placas de maneira individual e a energia já sai como corrente alternada com níveis de tensão baixos, não 
+necessitando assim de uma string-box (caixa de proteção cabeada), equipamento responsável por regular essa 
+tensão junto a corrente contínua, além disso, ele pode ser instalado próximo ao painel, reduzindo o custo de 
+instalação, dado que, o convencional por questões de segurança era instalado longe. Ademais, é necessário um 
+medidor de energia para que se avalie a potência gerada que será consumida nas atividades, além de, indiretamente,
+a inclusão de um quadro elétrico para a manipulação. Outrora, para que os módulos sejam instalados são 
+necessárias as estruturas de fixação, responsáveis por aderir os painéis a estrutura do telhado, e obviamente, o 
+cabeamento, para a condução de energia para os componentes.
+De acordo com [14], em um SFCR são utilizadas comumente placas solares de silício que podem ser do 
+tipo monocristalinas ou policristalinas, é interessante que as mesmas possuam certificado pelo Inmetro (Instituto 
+Nacional de Metrologia, Qualidade e Tecnologia) e o certificado internacional IEC (Comissão Eletrotécnica 
+Internacional) número 61215, visto que, o instituto brasileiro não contempla determinadas especificidades 
+Figura 5. Mapa de recursos solares do Brasil. Fonte: [13]
+importantes com relação aos módulos fotovoltaicos, fora isso, deve-se também atenção a garantia das placas, que,
+em geral, possuem uma longevidade em torno de 25 (vinte e cinco) anos.
+Neste artigo optou-se por escolher os módulos FV conforme a necessidade de um indivíduo comum, visto 
+que, existem diversos modelos, dados de largura, altura, peso e eficiência, observando que todos apresentarão um 
+mínimo de eficiência em torno de 20%. Com isso, para uma projeção real, a área de instalação dos módulos FV 
+foi cotado em 20 m², visando simular um cenário possível de instalação em residências populares de acordo com 
+[4]. Desse modo, os módulos fotovoltaicos instalados seguirão o padrão de telhados residenciais, sobre o inversor, 
+será utilizado o modelo de micro inversor, para fins de praticidade e simplificação do processo, equipamento esse
+com uma durabilidade geral por volta de 10 ou até mesmo 25 anos. Semelhante às placas solares, o cabeamento 
+com base em [15], será feito com condutores feitos à base de compostos de isolação e cobertura termofixos nãohalogenado, sendo que o composto da cobertura possui, adicionalmente, proteção contra os raios UV, o que 
+determina a durabilidade e resistência dos cabos dos painéis que possuem um tempo de vida útil semelhante aos 
+mesmos, durando algo em torno de 25 anos. Ademais, o medidor de energia será do tipo bidirecional, com a função 
+de medir a energia consumida e adquirida da companhia, e também a injetada pelos sistemas de geração, associado
+também a um quadro elétrico, ambos com uma grande durabilidade semelhante aos demais equipamentos, a 
+exceção é claro do inversor que se faz necessário uma avaliação de custo, marca, qualidade para uma longevidade 
+adequada as necessidades.
+4. ANÁLISE DOS RESULTADOS
+Utilizando-se do material teórico, conforme o que foi evidenciado, é notório o potencial nacional e 
+regional para a implementação de um sistema doméstico de mineração de criptoativos alimentado por energia 
+solar, pois o uso da matriz cresce consideravelmente e já é uma realidade. Portanto, conscientizar o indivíduo dessa 
+nova tendência de mercado, mostrando o potencial econômico e político é essencial. Afinal de contas, ao longo 
+dos anos e dado o cenário atual, com problemas de aumento de temperatura global, se faz necessário o uso de 
+matrizes menos poluentes, o quanto antes.
+Esse trabalho, se trata de um esboço metodológico, ou seja, uma construção do processo, que demonstra 
+os principais pontos conceituais necessários, o esqueleto, a espinha dorsal dessa temática. De modo que, com os 
+avanços das tecnologias, tem-se o avanço dos meios de transações comerciais, estar à frente nesse processo, 
+investindo quanto antes, é essencial. Tendo em vista que, com a mineração de criptomoedas, o indivíduo estaria 
+investindo em diversificação do seu patrimônio, descentralização e segurança por se tratar de um meio 100% (cem 
+por cento) digital, protegido contra inflação e desvalorização da moeda de seu respectivo país. Logo, através da 
+projeção apresentada, caracterizando cada etapa fundamental, quaisquer indivíduos terão o conhecimento básico 
+desse arranjo nesse meio. Visto que, em resumo, é necessário em coordenação, dos maquinários de mineração, de 
+energia solar que será integrada a rede da companhia de energia e da administração ou manipulação, recorrente, 
+desses determinados meios. Os maquinários de mineração poderão ser obtidos através 
+Com isso, dada as especificidades gerais conceituais, tem-se o projeto em seu estado final representado 
+na Figura 6.
+Figura 6. Ilustração do sistema de mineração de criptomoedas 
+alimentado por energia solar. Fonte: [4].
+5. CONCLUSÃO
+Tendo o Brasil como um país localizado quase que totalmente na zona tropical, demonstra então um 
+grande potencial para a utilização de energia solar como fonte renovável de abastecimento, ademais a mineração 
+de criptomoedas utilizando essa própria matriz como fonte de eletricidade têm ganhado atenção para o 
+desenvolvimento sustentável nas áreas financeiras. No entanto, poucos estudos foram relatados sobre o uso 
+criptomoedas utilizando energia renovável. 
+Considerando os aspectos gerais sobre a viabilidade da utilização de sistemas de fontes de energia 
+renováveis na mineração de criptomoedas, evidenciado pelos diferentes aspectos apresentados deste cenário e 
+conforme discutido ao longo do artigo. Uma compreensão mais precisa pode ser obtida avaliando parâmetros 
+relacionados a instalação do sistema, custos de aquisição e manutenção, requisitos de energia para atividades de 
+mineração e variações nos preços da eletricidade dependendo da localização geográfica. Não obstante, à 
+viabilidade da empresa escolhida para consultoria e protocolo do processo de instalação e financiamento dos 
+módulos. Ademais, a integração de painéis fotovoltaicos (FV) em SFCR em locais com alta radiação solar, como 
+partes do território brasileiro, poderia tornar a mineração economicamente atrativa em todas as localidades.
+Desse modo, é importante ressaltar que o alto custo das tarifas governamentais de energia podem ter um 
+impacto significativo na rentabilidade do processo. Os estados com taxas elevadas tendem a necessitar de muito 
+mais tempo para ver o retorno do investimento do que as áreas com taxas de eletricidade mais baixas. A necessidade 
+de obter rapidamente um retorno sobre o investimento é impulsionada pela incerteza inerente às operações de 
+mineração. Estas incertezas incluem a redução para metade das recompensas por cada bloco extraído, ajustes de 
+dificuldade da rede, flutuações nos preços da energia, inflação, impostos governamentais, fatores externos como 
+alterações climáticas locais, manutenção preventiva e emergências, incluindo fatores como custos associados. 
+Portanto, aumentar o retorno do investimento reduz a exposição a esses riscos e minimiza o potencial de perda.
+De maneira que, no período da pandemia foi observada uma desvalorização das moedas digitais em virtude da 
+crise financeira causada pela mesma, e pela insegurança das pessoas com relação a outros meios de investimento 
+que pareciam mais concretos em períodos como esse. Mas, as moedas digitais, apesar do impacto geral, maior 
+ainda inclusive, para mineradores que sofreram com o aumento dos preços dos maquinários e demais 
+equipamentos, se mantiveram em um crescimento considerável em um determinado grau de estabilidade, 
+demonstrando seu potencial.
+Contudo, é nítido que qualquer indivíduo que faça uso desse sistema, estaria investindo em sua “liberdade 
+financeira”, dada a independência monetária garantida pelo uso de criptomoedas, com enfoque na sua 
+desapropriação de instituições financeiras convencionais, público ou privadas, por ser em inteiramente digital. 
+Uma opção ou aquisição interessante, considerando os marcos históricos, políticos e sociais não só do Brasil, mas 
+de outros lugares do mundo, com Governos congelando contas bancárias, como medida de segurar a inflação, ou 
+seja, um investimento como sinônimo de segurança. Deve-se notar, que este estudo não se limita a uma simples
+recomendação de investimento ou vislumbre do futuro, mas uma análise de planejamento de integração de módulos 
+fotovoltaicos conectados à rede associados as moedas digitais, que pode ser usada como base informativa para 
+qualquer indivíduo.
+Para trabalhos futuros, recomenda-se um estudo analítico com pesquisa e experimentação para a obtenção 
+de dados precisos, que avaliem os mais variados cenários e especificações, seja com relação à obtenção de 
+equipamentos e tarifas energéticas, seus custos, como em relação às particularidades dos diferentes materiais 
+empregados.
+6. REFERÊNCIAS 
+[1] Padinha, B., Duro, R. & Ribeiro, R. (2018). Blockchain: tecnologia da bitcoin está a chegar a múltiplas 
+indústrias. [Versão electrónica]. Jornal JE. Disponível em: 
+https://leitor.jornaleconomico.pt/download?token=7235299f34ff6d3cebc44451a5a3b235&file=SUP_1920_MT.p
+df. Acesso em: 5 de julho de 2023
+[2] GUNDABOINA, Lokesh. et al. "Mining Cryptocurrency-Based Security Using Renewable Energy as Source", 
+Security and Communication Networks, vol. 2022, p. 1-13, junho, 2022. Disponível em: 
+https://doi.org/10.1155/2022/4808703. Acesso em 10 set. 2023.
+[3] PLANTICKOW, G. B.; CAMPOSTRINI, B. P.; FERREIRA, A. L. Energia solar: estudo da viabilidade 
+econômica da implantação de um sistema fotovoltaico em uma residência unifamiliar em Colatina-ES. UNESC 
+em revista, v. 5, n. 2, p. 16–32, 2021.
+[4] PORTILHO, B. S. Estudo de viabilidade econômica na utilização de sistema fotovoltaico conectado à rede 
+para a mineração de bitcoin. 2023. Monografia - Escola de Engenharia da Universidade Federal do Rio Grande do 
+Sul, Porto Alegre, 2023.
+[5] GOMES, M. A.; SANT'ANNA, E. P. A. O mercado de criptomoedas no Brasil e os investidores: a caminho de 
+um novo patamar?. Revista Brasileira de Administração Científica, v.12, n.2, p.13-22, 2021. DOI:
+http://doi.org/10.6008/CBPC2179-684X.2021.002.0002.
+[6] NIKZAD, A.; MEHREGAN, M. Techno-economic, and environmental evaluations of a novel cogeneration 
+system based on solar energy and cryptocurrency mining. Solar Energy, v. 232, p. 409–420, jan. 2022.
+[7] SHOKHSANAM, Shirinova; JASUR, Ataniyazov. Analysis of the Dependence of the Cryptocurrency Rate on 
+Updates in the Technical Part of the Mining Process. Turkish Journal of Computer and Mathematics Education 
+(TURCOMAT), v. 12, n. 6, p. 2400–2406, 5 abr. 2021.
+[8] 1.217 imagens, fotos stock, objetos 3D e vetores de Ethereum mining rig. Disponível em: 
+<https://www.shutterstock.com/pt/search/ethereum-mining-rig>. Acesso em: 17 set. 2023.
+[9] Motherboard stock vector. Illustration of mother, board - 14419396. Disponível em: 
+<https://www.dreamstime.com/royalty-free-stock-image-motherboard-image14419396>. Acesso em: 17 set. 
+2023.
+[10] ALMEIDA, H. A.; ALMEIDA, E. C.V. Potencial da energia solar fotovoltaica no Semiárido nordestino. 
+Concilium, v. 22, n. 2, p. 197–210, 11 fev. 2022.
+[11] GASPARIN, F. B., LIMA, V. O. D.; MICHELETTI, D. H.; BURINA, E. L. K. A Influência de Políticas 
+Públicas para o Progresso da Geração Solar Fotovoltaica e Diversificação da Matriz Energética Brasileira. Rev. 
+Virtual Quim, p. 1-5, 2021.
+[12] RODRIGUES, Marcus Vinicius Sousa; NEPOMUCENO, Arlean Fernandes; MORAIS, E. Uma breve 
+descrição do setor de energia eólica no estado do Rio Grande do Norte. In: Brazil Windpower Conference & 
+Exhibition (Accessed February, 2020) at:. http://abeeolica. org. br. 2017.
+[13] © 2020 The World Bank, Source: Global Solar Atlas 2.0, Solar resource data: Solargis. Disponível em: 
+https://solargis.com/maps-and-gis-data/download/brazil. Acesso em: 21 set. 2023.
+[14] MODEL, D. A. ANÁLISE DO DESEMPENHO DE UMA USINA FOTOVOLTAICA: VALORES DE 
+PROJETO VERSUS VALORES REAIS. Universidade do Vale do Taquari - UNIVATES: [s.n.]. 2021. 
+Disponível em: https://www.univates.br/bduserver/api/core/bitstreams/2e69d08f-4a59-4983-b62aeaee607454c9/content. Acesso em: 16 set. 2023.
+[15] Dimensionamento de um sistema fotovoltaico conectado à rede para o consumo sustentável da moradia da 
+FCT UNESP de Presidente Prudente. 2018. p. 1-105. Trabalho de Graduação - Faculdade de Ciências e Tecnologia 
+de Presidente Prudente, Universidade Estadual Paulista "Júlio de Mesquita Filho", Presidente Prudente, 2018.

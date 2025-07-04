@@ -1,0 +1,208 @@
+Lecture 18 
+Lecture 18: Fixed-Parameter Algorithms  
+• Vertex Cover 
+• Fixed-Parameter Tractability 
+• Kernelization 
+• Connection to Approximation 
+Fixed Parameter Algorithms 
+Fixed Parameter Algorithms are an alternative way to deal with NP-hard problems 
+instead of approximation algorithms. There are three general desired features of an 
+algorithm: 
+1. Solve (NP-)hard problems 
+2. Run in polynomial time (fast) 
+3. Get exact solutions 
+In general, unless P = NP, an algorithm can have two of these three features, but not 
+all three. An algorithm that has Features 2 and 3 is an algorithm in P (poly-time 
+exact). An approximation algorithm has Features 1 and 2. It solves hard problems, 
+and it runs fast, but it does not give exact solutions. Fixed-parameter algorithms will 
+have Features 1 and 3. They will solve hard problems and give exact solutions, but 
+they will not run very fast. 
+Idea: The idea is to aim for an exact algorithm but isolate exponential terms to a 
+specific parameter. When the value of this parameter is small, the algorithm gets fast 
+instances. Hopefully, this parameter will be small in practice. 
+Parameter: A parameter is a nonnegative integer k(x) where x is the problem 
+input. Typically, the parameter is a natural property of the problem (some k in 
+input). It may not necessarily be efficiently computable (e.g., OPT). 
+Parameterized Problem: A parameterized problem is simply the problem plus 
+the parameter or the problem as seen with respect to the parameter. There are 
+potentially many interesting parameterizations for any given problem. 
+1  
+Fixed-Parameter Algorithms  
+6.046J
+ Spring 2015  
+Lecture 18 
+Goal: The goal of fixed-parameter algorithms is to have an algorithm that is poly
+nomial in the problem size n but possibly exponential in the parameter k, and still 
+get an exact solution. 
+k-Vertex Cover
+ Given a graph G = (V, E) and a nonnegative integer k, is there a set S ⊆ V of 
+vertices of size at most k, |S| ≤ k, that covers all edges. This is a decision problem 
+for Vertex Cover and is also NP-hard. We will use k as the parameter to develop a 
+f
+ ixed-parameter algorithm for k-Vertex Cover. Note that we can have k << |V | as 
+the figure below shows: 
+Brute-force solution (bad) 
+Try all 
+v
+ ( ) ( ) () 
++ 
+v
+ v 
++···+ sets of ≤ k vertices. Can skip all terms smaller than 
+k
+ k−1
+ 0
+ ( )
+ v
+ k
+ because bigger sets have more coverage. Testing coverage takes O(m) time where m 
+is the number of edges. Therefore, the total runtime is O(V k|E|). It is polynomial for 
+f
+ ixed k but not the same polynomial for all k’s. It is inefficient in most cases. Hence 
+we define nf(k) to be bad, where n = |V |+ |E| is the input size. 
+Bounded search-tree algorithm (good) 
+This is a general technique used to improve brute force searches. It works as follows: 
+• pick arbitrary edge e = (u,v) 
+• we know that either u ∈ S or v ∈ S (or both) but don’t know which 
+• guess which one: try both possibilities 
+1. add u to S, delete u and incident edges from G, and recurse with k' = k−1. 
+2. do the same but with v instead of u 
+3. return the OR of the two outcomes 
+2  
+Fixed-Parameter Algorithms  
+6.046J
+ Spring 2015  
+Lecture 18 
+This is like guessing in dynamic programming but memoization doesn’t help here. 
+The recursion tree looks like the following: 
+u,v 
+u v 
+u',v' 
+u'',v'' 
+u' v' u'' v'' 
+At a leaf (k = 0), return YES if | E| = 0 (all edges covered). It takes O(V ) time 
+to delete u or v. Therefore this has a total runtime of (2k| V | ). 
+• O(V ) for fixed k 
+• degree of polynomial is independent of k 
+• also polynomial for k = O(lg | V | ) 
+• practical for e.g. k ≤ 32 
+• Hence we define f(k) ·nO(1) to be good 
+Fixed Parameter Tractability 
+A parameterized problem is fixed-parameter tractable (FPT) if there is an algorithm 
+with running time ≤ f(k) · nO(1), such that f : N → N (non negative) and k is the 
+parameter, and the O(1) degree of the polynomial is independent of k and n. 
+Question: Why f(k) · nO(1) and not f(k)+ n
+ c
+ O(1)?
+ Theorem: ∃ f(k) · n algorithm ⇐⇒ ∃ f ' (k)+ n
+ Proof: 
+(⇐ ) 
+c
+ t
+ Trivial (assuming f ' (k) and n are ≥ 1) 
+(⇒ ) 
+if n ≤ f(k), then f(k) · n
+ c ≤ f(k)c+1
+ c
+ t
+ 3  
+Fixed-Parameter Algorithms  
+6.046J
+ Spring 2015  
+Lecture 18  
+c
+ if f(k) ≤ n then f(k) · n ≤ n 
+c
+ c+1
+ Therefore f(k) · n ≤ max(f(k)c+1,n 
+c+1) ≤ f(k)c+1 + nc+1 
+= f ' (k) + n t D 
+c 
+Alternatively, since xy ≤ x2 + y2, can just make f ' (k) = (f(k))2 and c ' = 2c. 
+Example: O(2k · n) ≤ O(4k + n2) 
+Kernelization 
+Kernelization is a simplifying self-reduction. It is a polynomial time algorithm that 
+converts an input (x,k) into a small and equivalent input (x ' ,k ' ). Here, small means 
+| x ' | ≤ f(k) and equivalent means the answer to x is the same as the answer to x ' . 
+Theorem: a problem is FPT ⇐⇒ ∃ a kernelization 
+Proof: 
+(⇐ ) 
+Kernelize ⇒ n ' ≤ f(k) 
+Run any finite g(n ' ) algorithm 
+Totals to nO(1) + g(f(k)) time 
+(⇒ ) 
+let A be an f(k) · nc algorithm, then assuming k is known: 
+if n ≤ f(k), it’s already kernelized. 
+if f(k) ≤ n, then 
+c
+ 1.  run A → f(k) · n ≤ n time 
+c+1
+ 2. output O(1)-sized YES/NO instance as appropriate (to kernelize) 
+if k is unknown: run A for nc+1 time and if it is still not done, we know it is already 
+kernelized. 
+So we know (exponential) kernel exists. Recent work aims to find polynomial (even 
+linear) kernels when possible. 
+Polynomial kernel for k-Vertex Cover 
+To create a kernel for k-Vertex Cover, the algorithm follows the following steps: 
+•  Make graph simple by removing all self loops and multi-edges 
+•  Any vertex of degree > k must be in the cover (else would need to add > k 
+vertices to cover incident edges) 
+4  
+Fixed-Parameter Algorithms  
+6.046J
+ Spring 2015  
+Lecture 18  
+•  Remove such vertices (and incident edges) one at a time, decreasing k accord
+ingly 
+•  Remaining graph has maximum degree ≤ k 
+•  Each remaining vertex covers ≤ k edges 
+•  If the number of remaining edges is > k, answer NO and output canonical NO 
+instance. 
+•  Else, |E ' | ≤ k2 
+•  Remove all isolated vertices (degree 0 vertices) 
+•  Now |V ' | ≤ 2k2 
+•  The input has been reduced to instance (V ' ,E ' ) of size O(k2) 
+The runtime of the kernelization algorithm is naively O(V E). (O(V + E) with more 
+work.) After this, we can apply either a brute-force algorithm on the kernel, which 
+yields an overall runtime O(V + E + (2k2)kk2) = O(V + E + 2kk2k+2). Or we can 
+apply a bounded search-tree solution, which yields a runtime of O(V + E + 2kk2). 
+The best algorithm to date: O(kV +1.274k) by [Chen, Kanj, Xia - TCS 2010]. 
+Connection to Approximation Algorithms 
+Take an optimization problem, integral OPT and consider its associated decision  
+problem: “OPT ≤ k ?” and parameterize by k.  
+Theorem: optimization problem has EPTAS  
+(EPTAS: efficient PTAS, f(
+ 1) · nO(1) e.g. ApproxP artition[L17])  
+⇒decision problem is FPT 
+Proof: (like FPTAS, pseudopolynomial algorithm) 
+•  Say maximization problem (and ≤ k decision) 
+•  run EPTAS with t = 2
+ 1 
+k 
+in f(2k) ·nO(1) time. 
+• relative error ≤ 2
+ 1 
+k 
+< k 
+1  
+• ⇒absolute error < 1 if OPT ≤ k  
+5  
+Lecture 18 
+Fixed-Parameter Algorithms  
+6.046J
+ Spring 2015  
+• So if we find a solution with value ≤ k, then OPT ≤ (1 + k 
+1 ) · k ≤ k + 2 
+1 
+2 
+Integral ⇒ OPT ≤ k ⇒ YES 
+• else OPT > k 
+D 
+Also: =, ≤, ≥ decision problems are equivalent with respect to FPT. 
+(Can use this relation to prove that EPTASs don’t exists in some cases) 
+6  
+MIT OpenCourseWare
+ http:ocw.mit.edu
+ 6.046J / 18.410J Design and Analysis of Algorithms
+ Spring 1
+ For information about citing these materials or our Terms of Use, visit: http:ocw.mit.eduterms

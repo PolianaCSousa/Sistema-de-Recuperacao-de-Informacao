@@ -1,0 +1,122 @@
+SANTANA, Wesley Jorge Gomes de Souza [1], AGUIAR, Datan Azevedo [2]
+
+SANTANA, Wesley Jorge Gomes de Souza. AGUIAR, Datan Azevedo. Virtualização de data centers e o seu potencial produtivo. Revista Científica Multidisciplinar Núcleo do Conhecimento. Ano. 08, Ed. 01, Vol. 03, pp. 05-15. Janeiro de 2023. ISSN: 2448-0959, Link de acesso: https://www.nucleodoconhecimento.com.br/ciencia-da-computacao/data-centers, DOI: 10.32749/nucleodoconhecimento.com.br/ciencia-da-computacao/data-centers
+
+RESUMO
+As empresas, de um modo geral, vêm passando por sérios problemas com os Data Centers (DC) físicos, visto que estes fazem com que elas e seus funcionários tenham que procurar por fornecedores, manutenções, além de terem preocupações com equipamentos queimados, entre outras, resultando em mais custos e baixo potencial produtivo. Em vista disso, os DCs vêm passando por enormes reestruturações para alinhamento aos negócios empresariais, visando a racionalização e economia dos gastos com infraestrutura de Tecnologia da Informação (TI). Desta forma, o presente trabalho tem como objetivo identificar os aspectos positivos e negativos que são gerados ao implantar a técnica de virtualização em DCs convencionais. Para tanto, foi utilizada a pesquisa bibliográfica, onde foi investigado o maior número de conhecimento técnico à disposição nessa área e em posicionamento sobre o tema. A pesquisa consistiu no estudo da bibliografia, para o levantamento e análise do que já foi produzido sobre o assunto que foi assumido como tema de pesquisa científica. Em suma, é possível concluir que, para solucionar os sérios problemas que as empresas vêm enfrentando com os DCs físicos e, consequentemente, se manterem competitivas, deve-se levar em conta a implantação da virtualização dos DCs, a fim de reduzir o número de servidores e dos processos de sua gerência, visto que facilita a migração para serviços em nuvem.
+
+Palavras-chave: Data Center, Virtualização, Tecnologia da Informação.
+
+INTRODUÇÃO
+Os Data Centers (DC) vêm passando por reestruturações para alinhamento aos negócios empresariais, visando a racionalização e economia dos gastos com infraestrutura de Tecnologia da Informação (TI).
+
+Neste ínterim, os DCs precisam atender algumas requisições, como: a economia de eletricidade e de refrigeração, redução do uso do espaço físico com o maior aproveitamento de processamento, sem limitação de espaço de armazenagem, além de topologias de rede com estabilidade e confiabilidade.
+
+Relatando o contexto histórico dos DCs, sabe-se que, antigamente, dentro dos Centro de Processamento de Dados (CPD), existia um enorme servidor, denominado de mainframe, que possui como características: alto padrão de estabilidade e alto nível de serviços. Entretanto, este possuía um alto custo e dependência do fornecedor por parte do cliente.
+
+Posteriormente, com a baixa no preço dos servidores x86, além da computação cliente-servidor e sistemas distribuídos, a ideia de ambientes centralizados começou a ganhar destaque. Assim, os servidores passaram a ter uma distribuição por toda a organização, tendo como base a utilização de uma plataforma que proporcionasse uma redução de custo.
+
+Com o aumento do poder de processamento, o baixo custo tecnológico envolvido nas redes de storage, aumento da confiabilidade dos links comunicativos e a disponibilidade de banda e a virtualização, a conceituação de consolidar o DC acabou emergindo novamente, com base nos servidores padrão da indústria.
+
+Além do mais, a ideia de consolidar e virtualizar os DCs, traz como vantagem a redução do número dos servidores e dos processos para a gerência, reduzindo, também, o Total Cost of Ownership (TCO).
+
+Desta forma, o presente trabalho tem como objetivo identificar os aspectos positivos e negativos que são gerados ao implantar a técnica de virtualização em Data Centers convencionais.
+
+Para tanto, foi utilizada uma pesquisa bibliográfica, com o objetivo de investigar o maior número de conhecimento técnico à disposição nessa área e em posicionamento sobre o tema. A pesquisa bibliográfica consiste no exame da bibliografia, para o levantamento e análise do que já foi produzido sobre o assunto, sendo este assumido como tema de pesquisa científica (RUIZ, 1992).
+
+DESENVOLVIMENTO 
+Todas as empresas que exercem atividades relacionadas a Tecnologia da Informação (TI), de forma periódica, se veem perante dilemas advindos do surgimento de novas tecnologias. Diversas delas possuem conversão em tendências incoercíveis, determinando a capacidade de uma organização se manter competitiva. E, nesse contexto, surge a virtualização de DC (OKANO e FAVERO, 2008).
+
+Emular é considerado sinônimo de “imitar” comportamento. Abstrair, no contexto computacional, tem seu significado na criação de representações com equivalência que mantenham as características e as propriedades relacionadas ao elemento que está sendo observado. Com isso, a conceituação de virtualização tem relação ao de emulação e ao de abstração, sendo que, para Santana (2013), a virtualização é a emulação transparente de um recurso de TIC, trazendo, para os usuários, benefícios que não estavam à disposição em forma física do recurso. A camada de software que faz a emulação do componente físico leva em consideração a abstração.
+
+Além do mais, Paiva (2018), pontua que algo virtual significa algo “não fisicamente existente”, mas realizado por software para parecer como se fosse. Com isso, dentro desse contexto, é possível pontuar que um elemento virtual é uma abstração particular do elemento em si.
+
+No ano de 2012, 40% dos CIOs fizeram citação da virtualização como tópico prioritário (levando em conta as tecnologias existentes em um DC). Como existe um contínuo aumento da conjuntura de tecnologias de virtualização, é visto que elas acabarão deixando de ser elementos opcionais e, em breve, se tornarão ubíquas, ou seja, onipresentes (SANTANA, 2013).
+
+Esse recurso permite tirar um melhor proveito dos centros de dados. Os benefícios são palpáveis e possuem ligação com custeios e performance do ambiente. Interessante ressaltar que há pouco tempo, somente 8% das cargas trabalhistas dessa área possuíam virtualização (FARIAS, 2007).
+
+Atualmente, por outro lado, observa-se a diminuição, cada vez mais, da necessidade de uma estrutura física, sendo este um fator que reboca a adoção massiva da computação em nuvem. No ano de 2017, esse mercado, em especial, movimentou mais de 145 bilhões de dólares. E, em 2019, as apostas são de que o montante chegue aos R$ 206 bilhões. Os recursos que movimentam esse crescimento de 17% estão relacionados a: Infraestrutura enquanto serviço (IaaS) e a Plataforma enquanto serviço (PaaS). Há, também, diversos outros fatores que favoreceram esse movimento. Um deles é o 5G, que proporcionará aumento do volume de dados compartilhados diariamente através da internet (PAIVA, 2018).
+
+O DC, portanto, pode ser entendido como a conjuntura de recursos de infraestrutura de TIC abrigados em uma estrutura complexa e normalmente especial, levando-se em consideração: os tipos distintos de equipamentos, sua organização e disposição em racks, o consumo energético, a necessidade de refrigeração, o cabeamento com estruturação, sistemas de segurança e monitoramento, e seu gerenciamento, que deve ser realizado por equipe especializada (SANTANA, 2013).
+
+Além do mais, Santana (2013), traz a definição de 3 etapas da evolução dos DC, conforme demonstrado na Figura 1.
+
+Figura 1. Evolução dos DC
+
+Evolução dos DC.
+Fonte: Santana (2013).
+Como é possível observar na Figura 1, Santana (2013), traz a definição de 3 etapas da evolução dos DCs. A primeira é a partir da década de 50, onde as salas eram construídas para abrigar mainframes com sistemas centralizados, embasados em arquitetura de software monolítica.
+
+A segunda iniciou-se na década 80, com o modelo cliente-servidor e a redução de custo dos servidores (x86). Nesta fase, os recursos de TIC passam a ficar mais próximos dos computadores que os acessavam, assim, os DCs tinha distribuição e improvisação, passando a não estarem mais em apenas uma sala;
+
+Por fim, a terceira fase, partindo dos anos 2000, contou com o avanço da interconexão de redes, o que levou os DCs a possuírem, novamente, a consolidação em uma estrutura única por questões de custos, segurança e administração, com servidores fazendo a execução de funções específicas em consonância com o modelo de aplicabilidade em camadas. Os custos para expandir esta estrutura e questões voltadas à energia, surgiram na promoção de estudos para o melhor uso dos recursos que existiam nos DCs, simplificando as operações dos ativos. Nesse cenário, um dos principais caminhos apontados foi a virtualização (SANTANA, 2013).
+
+A virtualização dos DCs, refere-se a prática da divisão de recursos perante servidores físicos e virtuais. Nesse ínterim, a maior parte dos hardwares que eram utilizados seriam substituídos por softwares, através de programas que possuem a capacidade da simulação do funcionamento dos componentes físicos (CARNEIRO e MELO, 2016).
+
+Partindo disso, surgem as denominadas Máquinas Virtuais (VMs). Um dos benefícios dessa tecnologia é a sua capacidade de ter diversos sistemas virtuais em apenas um servidor. É possível, ainda, instalar mais de um sistema operacional. Para a incorporação dessa solução, é adquirido somente um servidor físico. Nesse servidor, haverá a instalação de um sistema operacional que poderá fazer a divisão do hardware em segmentações. O programa computacional chamado Hypervisor possibilita a criação de máquinas virtuais partindo desta divisão. Estas, por sua vez, poderão atuar com independência, possibilitando que sejam experimentados diferentes Sistemas Operacionais em cada servidor (CARNEIRO e MELO, 2016).
+
+Além disso, as máquinas virtuais são consideradas fáceis de serem copiadas para outros ambientes, possibilitando o encapsulamento. Como não são dependentes de hardware, há a viabilidade de sua transferência para outros hardwares ou servidores. Sua facilidade de migração tem acompanhamento, ainda, do isolamento. Resumindo, esta tecnologia pode ser adaptada para qualquer empresa que necessita exercer atividades com mais de um servidor (SANTANA, 2013).
+
+Como pode ser visualizado na Figura 2, a virtualização acaba viabilizando a execução de diversos sistemas operacionais e aplicativos em um único servidor. Isto é, apenas um servidor físico tem a capacidade da hospedagem de vários servidores virtuais. Este processo possui importância na economia de energia, sendo que através de um servidor físico que faz a hospedagem de diversos servidores virtuais, existe a possibilidade do desligamento de máquinas ociosas ou subutilizadas.
+
+Figura 2. Processo de virtualização
+
+Processo de virtualização
+Fonte: Peradeles e Santos (2020).
+O primeiro motivo para realizar investimentos em virtualização é a otimização da gestão do ambiente de TI, tendo em vista que a administração destes recursos virtuais é bem simples. Não existem confusões em relação ao local dos sistemas, o processamento dos relatórios ou a armazenagem dos dados (PERADELES e SANTOS, 2020).
+
+Uma outra vantagem é a diminuição da dependência de componentes físicos, o que proporciona escalabilidade. Os servidores possuem uma forma natural flexível, podendo ser facilmente adaptados às novas demandas, o que permite o aumento da eficácia, possibilitando o uso dos recursos que estão à disposição (PERADELES e SANTOS, 2020).
+
+Além dos benefícios mencionados acima, a virtualização contribui significativamente para a economia dos custos, uma vez que, neste processo, utiliza-se somente um servidor para o trabalho com diversos sistemas. Além disso, a redução dos custos pode ser observada no momento em que se realiza um upgrade para hardwares com maior resistência em memória, o que possibilita ao processamento um gasto menor, quando comparado a aquisição de um novo servidor para cada sistema (CARNEIRO e MELO, 2016).
+
+Como exemplo, ao implementar a virtualização, a empresa obterá a redução de, ao menos, 52% da necessidade de utilização de hardware. Com esta economia, diversos gestores passaram a optar por apenas um servidor possuinte de maior potencial ao invés da pulverização do gasto em vários equipamentos menores.
+
+Essa economia pode ser observada, ainda, em aspectos de energia (FELL, 2018). Isso ocorre, segundo Peradeles e Santos (2020), devido ao fato que os servidores acabam consumindo uma quantidade razoável de eletricidade para que fiquem ativos. Um outro problema que pode ser minimizado é que, em diversos casos, esses hardwares são proprietários de um poder de processamento superior ao que a empresa precisa. Nesse cenário, quanto maior for o poder de processamento, maior será o gasto energético. Assim, a virtualização permite realizar investimentos em soluções bem mais simples.
+
+Nesse ínterim, como demonstrado na Figura 2, empresa do mundo inteiro que investiram em ambientes virtualizados tiveram um crescimento de 330.000 unidades em 2005 para 1.400.000 unidades em 2010, movimentado de cerca de R$ 18 bilhões de dólares com consumos de hardware, software e serviços relacionados para a infraestrutura virtualizada.
+
+Figura 3. Projeção de ascensão da virtualização
+
+Projeção de ascensão da virtualização.
+Fonte: Fell (2018).
+O uso da virtualização tem como intuito principal, segundo Carneiro e Melo (2016), otimizar e economizar energia, entretanto, para o seu uso há a necessidade de uma infraestrutura com capacidade de suportá-la. A virtualização pode trazer benefícios, realizando a ampliação e facilitação do poder computacional do DC, mas também pode trazer impactos negativos, principalmente quando a infraestrutura não for projetada de maneira correta, pois recursos de energia e refrigeração poderão ter maior exigência quando feita a utilização deste processo.
+
+De acordo com Veras e Carissimi (2015), cada organização possui as suas necessidades e características especiais, que devem ser analisadas através de uma indulgente avaliação, aliada a um planejamento elaborado para que seja possível obter benefícios com a virtualização.
+
+Dentre os benefícios que podem ser obtidos, Carneiro e Melo (2016) apontam: redução do espaço físico; redução do consumo energético; flexibilidade na disponibilidade dos novos servidores; padronização; gerenciamento com centralização; alta disponibilidade; a possibilidade de recuperação de desastres; dentre outros.
+
+Veras e Carissimi (2015), afirmam, ainda, que um projeto de virtualização precisa de bastante cuidado, uma vez que a definição da infraestrutura física para suportar o ambiente virtualizado não é considerada uma atividade fácil, pois envolve várias variáveis que devem ser observadas. Por este motivo, é fundamental que seja levado em conta a necessidade de crescimento do ambiente e o consumo dos recursos de várias funcionalidades.
+
+CONCLUSÃO
+Em suma, é possível concluir que, para solucionar os problemas que as empresas vêm enfrentando com os DCs físicos e, consequentemente, se manterem competitivas, deve-se levar em conta a implantação da virtualização dos DCs, a fim de reduzir o número de servidores e dos processos de sua gerência, visto que eles facilitam a migração para serviços em nuvem.
+
+A virtualização tem se tornado um fenômeno em constante crescimento, possuindo, inclusive, alinhamento com tecnologias de hardware e software, como é o caso das consolidações de hardware para DC, que proporcionou: blades,  redes computacionais mais rápidas, banco de dados distribuídos e, especialmente, a utilização de 100% dos recursos dos servidores adquiridos, reduzindo, assim, o número de servidores físicos, de sub-redes e de portas de switches, uma vez que na virtualização tem-se as virtuais switches, implementadas juntamente ao hypervisor.
+
+Por fim, ressalta-se que a virtualização de DCs é uma tecnologia que o mercado tem adotado, e que, de forma rápida, vêm comprovando seus benefícios. Empresas de todos os portes, que necessitam de mais de um servidor e que possuem interesse na melhora de seus processos em TI, precisam pesquisar esta possibilidade, visto que a implementação deste recurso impactará de forma positiva nos negócios empresariais, trazendo muito mais do que uma vantagem, tornando-se um diferencial que coloca a empresa à frente da concorrência.
+
+REFERÊNCIAS
+CARNEIRO, João Bosco Leão; MELO, Daniel Reis Armond de. Análise da Tecnologia de Virtualização de Servidores Em Um Data Center Como Fator Para Obtenção de Ganhos de Produtividade. Espacios, v. 37, n. 27, 2016. Disponível em: https://www.revistaespacios.com/a16v37n27/16372721.html. Acesso em: 17 jan. 2023.
+
+FARIAS, Eduardo Reck. Melhores Práticas de Segurança no Ambiente de Virtualização. Trabalho de Conclusão de Curso (Graduação Tecnológica em Segurança da Informação) – Universidade do Vale do Rio dos Sinos. São Leopoldo – RS, 2007.
+
+FELL, Gerson. Análise de Desempenho Entre Máquinas Virtuais e Containers Para Aplicações Web. Trabalho de conclusão de curso (Bacharelado em Engenharia da Computação) – Universidade do Vale do Taquari – Univates. Lajeado, 2018. 89 f.
+
+OKANO, Marcelo Tsuguio; FAVERO, Fernanda. o impacto da virtualização nas empresas. In: 4 Congresso Nacional de Excelência em Gestão, 2008, Rio de Janeiro. Anais do 4 Congresso nacional de Excelência em Gestão, 2008.
+
+PAIVA, Danilo Almeida. Virtualização da Infraestrutura: Sistematização e Pesquisas Correntes. Monografia (Especialização em Informática) – Departamento de Ciência da Computação do Instituto de Ciências Exatas da Universidade Federal de Minas Gerais. Brasília, 2018. 40 f.
+
+PERADELES, Paulo Henrique Costa Mendes; SANTOS, Vladimir Ramos Fernandes dos. Data center I: Virtualização In: PERADELES, Paulo Henrique Costa Mendes; SANTOS, Vladimir Ramos Fernandes dos. Data Center I: Estudo de Caso de Virtualização e Eficiência Energética. Teleco, 2020. Disponível em: https://www.teleco.com.br/tutoriais/tutorialdatacenter1/pagina_4.asp. Acesso em: 22 jul. 2020.
+
+RUIZ, João Álvaro. Metodologia Científica: guia para eficiência nos estudos. São Paulo: Atlas, 1992.
+
+SANTANA, Gustavo Alessandro Andrade. Data Center virtualization fundamentals: understanding techniques and designs for highly efficient data centers with cisco nexus, ucs, mds, and beyond. Indiana, EUA: Cisco Press, 2013.
+
+VERAS, Manoel; CARISSIMI, Alexandre. Virtualização de Servidores. Rio de Janeiro: Escola Superior de Redes, 2015. 
+
+[1] Bacharel em Sistemas da Informação. ORCID: 0000-0001-6396-1405.
+
+[2] Bacharel em Sistemas da Informação. ORCID: 0000-0002-7623-7480.
+
+Enviado: Dezembro, 2022.
+
+Aprovado: Janeiro, 2023.

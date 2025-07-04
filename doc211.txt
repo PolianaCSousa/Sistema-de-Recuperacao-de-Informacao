@@ -1,0 +1,265 @@
+INTELIGÊNCIA ARTIFICIAL, APRENDIZADO DE MÁQUINA
+Brigiane Machado da Silva, Marcos Vanderlinde
+brigianemachado@gmail.com, marcosvanderlinde@yahoo.com.br
+Prof. Eliana V. Jaeger, Metodologia da Pesquisa Científica
+Prof.Helcio Hermes Hoffmann,Fundamentos da Computação
+Prof Jorge Marcos Bussarelo, Portugues Instrumental
+
+RESUMO: O presente artigo tem como objetivo mostrar de forma sucinta os conceitos de
+inteligência artificial e da subárea aprendizado de máquina, demostrando que ambas estão se
+tornando cada dia mais presente em nossas vidas, através de softwares, aplicativos, e outros
+métodos que facilitam a vida do ser humano, para melhor compreender o conceito foi
+realizada uma entrevista, que deixou mais claro o conceito de inteligência artificial.
+Palavras-chave: Inteligência Artificial. Aprendizado de máquina.
+1 INTRODUÇÃO
+Cada vez mais a Inteligência Artificial tem estado presente em nossas vidas, ela está
+em todos os lugares, na automatização dos carros e das indústrias, nos computadores, na
+medicina. Do histórico, mostrar que a Inteligência Artificial já é utilizada há séculos e como
+ela evoluiu. Além falar de uma subárea da inteligência artificial, o aprendizado de máquina,
+que nada mais é que programas que aprendem por experiência.
+Este artigo tem como finalidade, demonstrar informações sobre IA, além de coletar
+dados através de uma entrevista com o professor da Universidade do Estado de Santa Catarina
+(UDESC), Adilson Vahldick, em maio de 2012,realizada no Centro de Educação do Vale do
+Itajaí (CEAVI) a qual foi analisada a fim de tornar mais claro o conceito do tema.
+2 INTELIGÊNCIA ARTIFICIAL
+Inteligência Artificial é uma area da ciência da computação , neste item será abordado o
+que é inteligência artificial , onde ela surgiu e o futuro das aplicações.
+2
+2.1 O QUE É INTELIGÊNCIA ARTIFICIAL
+Segundo Fernandes (2003), a palavra inteligência artificial vem do latim que se divide
+em inter (entre) e legere (escolher), ou seja, inteligência é aquilo que o homem pode escolher
+entre uma coisa e outra, sendo que a inteligência é o modo de resolver problemas, de realizar
+tarefas. Então se considera inteligência artificial um tipo de inteligência produzida pelo
+homem para beneficiar as máquinas de algum tipo de habilidade que simula a inteligência
+natural do homem. Entretanto existem outros autores que definem de forma diferente a
+artificial intelligence (inteligência).
+De acordo com Feigenbaum (1981, apud, FERNANDES, 2003) inteligência artificial é
+a parte da ciência da computação voltada para o desenvolvimento de sistemas de
+computadores inteligentes, ou seja, sistemas que exibem características, as quais se
+relacionam com a inteligência no comportamento do homem. Pode-se citar como exemplo:
+compreensão da linguagem, aprendizado, raciocínio, resolução do problema.
+2.2 HISTÓRIA DO USO DA INTELIGÊNCIA ARTIFICIAL
+De acordo com Bitttencourt (2001), há séculos a inteligência artificial já é utilizada,
+equipamentos eram usados para marcar o tempo e simular comportamento de animais. Com o
+tempo foram feitos relógios, técnicas para se calcular, como o ábaco, até chegar aos
+computadores. Que tiveram evolução a partir da Segunda Guerra Mundial.
+Segundo Martino (2009), depois disso, teve três gerações de lógica, na inteligência
+artificial dos computadores modernos. No ano de 1943, os pesquisadores Warrem McCulloch
+e Walter Pitts fizeram um trabalho, o qual simulava uma rede de neurônios artificiais. Nessa
+rede, cada neurônio tinha um estado “ligado” e um estado “desligado”, dependia dos
+estímulos recebidos dos “neurônios vizinhos”. Os pesquisadores mostraram que qualquer
+função computável pode ser calculada a partir de redes neuronais adequadas e que as portas
+lógicas podem ser representadas através de uma rede neuronal simples.
+Eles também indicaram que o mesmo modelo aceitasse o aprendizado de máquina.
+Porém, foi em 1949 que Donald Hebb mostrou que isso era possível com seu modelo
+“Aprendizado de Hebb”.
+Segundo Russel e Norvig (2004), no ano de 1956, em um seminário de Dartmouth, o
+termo “Inteligência artificial” foi utilizado pela primeira vez.
+3
+A primeira fase da Inteligência Artificial (1952-1969), foi de grande entusiasmo e
+otimismo, nessa época, houve grandes progressos na área. Na fase inicial, foi obtido sucesso
+nas criações, o que fez os desenvolvedores de sistemas de inteligência artificial se tornassem
+muito confiantes, por isso passaram a estabelecer metas cada vez mais ambiciosas, as quais
+falharam de uma forma desastrosa.
+A partir dos anos 80, os sistemas de inteligência artificiais fundamentados em sistemas
+especialistas abriram portas a enormes economias nas empresas, originando uma demanda de
+sistemas desse tipo por parte das empresas, dando valor a essa área. Nesse tempo (mais ou
+menos 1988), novamente sucederam problemas pelo não cumprimento de metas. Nos últimos
+anos, a inteligência artificial teve um maior amadurecimento, tanto que em 1987 ela foi
+elevada como ciência, conseguindo uma melhor compreensão dos problemas e de suas
+complexidades.
+Segundo Pereira (2005), hoje em dia, as áreas em que a inteligência artificial é mais
+acentuada são as de planejamento autônomo, jogos, controle autônomo, diagnóstico,
+planejamento logístico, e reconhecimento de linguagem e resolução de problemas.
+2.3 APRENDIZADO DE MÁQUINA
+Segundo Coppin (2010), aprendizado está diretamente ligado com a inteligência, pois
+realmente se um sistema é capaz de aprender a exercer determinada tarefa mereça então ser
+chamado de inteligente.
+Um processo de aprendizagem inclui a aquisição de novas formas de conhecimento:
+o desenvolvimento motor e a habilidade cognitiva (através de instruções ou prática),
+a organização do novo conhecimento (representações efetivas) e as descobertas de
+novos fatos e teorias através da observação e experimentação. Desde o início da era
+dos computadores, tem sido realizadas pesquisas para implantar algumas destas
+capacidades em computadores. Resolver este problema tem sido o maior desafio
+para os pesquisadores de inteligência artificial (IA). O estudo e a modelagem de
+processos de aprendizagem em computadores e suas múltiplas manifestações
+constituem o objetivo principal do estudo de aprendizado de máquinas. (SANTOS,
+2005, p10).
+De acordo com Santos (2005, apud, MITCHELL, 1997), o aprendizado de máquina
+nada mais é um aprendizado por experiência, que conforme a tarefa é executada, o problema
+aprende a melhor maneira de resolver. Além de estruturar o conhecimento existente, para
+levar a um entendimento do aprendizado.
+4
+Como sugere Coppin (2010), existem vários métodos de aprendizado de máquina.
+Entre eles o aprendizado por hábito, que tem como característica o programa aprender por
+experiência de acordo com o que foi informado anteriormente, mas programa apenas
+armazena os dados que podem ser classificados, caso ele não conseguir classificar os valores
+informados método falhará. Há o método de aprendizado por conceito, que analisa todas as
+hipóteses e demonstra qual é a correta. No método do conceito existe uma subdivisão, que é a
+“hipótese mais geral”, o que significa que se não existe nenhuma possibilidade correta, o
+programa achará a que mais se aproxima do correto. Mas estes métodos têm alguns
+problemas. Por exemplo, nem sempre o usuário quer saber a hipótese correta, e sim a mais
+comum.
+Coppin (2010), uma forma bastante avançada de aprendizado de máquina são as redes
+neuronais. Que tem semelhança com o funcionamento do cérebro humano, sendo uma grande
+rede de neurônios. Essa rede é organizada geralmente em duas camadas. A primeira recebe as
+informações a serem classificadas, usa aprendizado supervisionado por modificarem a forma
+das conexões de acordo com o que é informado e por último ativam os neurônios de saída. É
+uma forma bastante complexa, mas tem muita utilidade por ser bastante preciso e dificilmente
+acontecer erros, que em outros ambientes de aprendizagem são comuns. Dentro das redes
+neuronais existe a forma de aprendizado não supervisionado que não precisa de nenhum tipo
+de classificação, isso acontece, por exemplo, ao ser feito uma pesquisa na Internet, que traz
+vários resultados ao interpretar a informação sem nenhum tipo de classificação definida pelo
+usuário.
+3 METODOLOGIA
+De acordo com Richardson(1999, apud BEUREN, 2010), a pesquisa qualitativa se
+caracteriza por não usar nenhuma forma de informações através de estatística. Tem como
+finalidade analisar o comportamento das pessoas, além de possibilitar análises mais
+detalhadas sobre o assunto abordado.
+De acordo com Beuren (2010), a pesquisa exploratória tem como finalidade fazer com
+que aumente a familiaridade com o assunto, a fim de tornar mais claro o que é pesquisado.
+Usa pesquisa bibiográfica, e entrevistas pessoas já com conhecimento sobre o assunto.
+5
+Segundo Gil (1999, apud Beuren, 2010), a pesquisa bibliográfica é o estudo de
+materiais que foram publicados anteriormente. Esses materiais devem ser analisados, para
+obter o conhecimento necessário, para por fim elaborar um novo trabalho usando como base o
+material analisado anteriormente.
+De acordo com Dencker (2010), na entrevista há diálogo entre o entrevistado e o
+entrevistador, isso ajuda muito, pois se pode perceber as expressões que ele utiliza nas
+respostas. O entrevistador pode comandar, quando o assunto esta fugindo do foco ele pode
+influenciar para que o assunto a ser abordado volte a ser o do seu interesse, além de não se
+obter conteúdo escrito apenas por diálogo, fazendo com que o entrevistador tenha que ter a
+capacidade de interpretar o conteúdo e fazer sua própria análise.
+3.1 DISCUSSÃO E ANÁLISE DOS DADOS COLETADOS
+
+ A seguir serão elencadas algumas perguntas e respostas, e análise das mesmas
+referentes à entrevista realizada para fins de melhor entendimento sobre o tema abordado
+neste artigo.
+1. Existem conceitos diferentes de inteligência artificial? Qual a definição que o Sr
+acredita estar mais correta?
+Adilson: Aquela que a máquina consegue imitar as atitudes humanas.
+De acordo com Feigernbaum (1981, apud, FERNANDES, 2003), IA é a parte da ciência
+da computação voltada para o desenvolvimento de sistemas de computadores inteligentes, isto
+é que exibem características as quais se se associa com o comportamento humano.
+2. Para o senhor quais os maiores avanços desde o início da inteligência artificial?
+Adilson: Automatização de automóveis, software básicos dos computadores e
+dispositivos móveis. Do mesmo modo que Adilson.
+Segundo Costa (2006), inteligência artificial se tornou um vasto campo de pesquisa,
+sendo empregado com sucesso nas mais diversas áreas de automação e controle,
+reconhecimento de padrões, reconhecimento de voz, detecção de falhas e classificação.
+6
+3. A inteligência humana tem características que a definem. Podem considerar-se, por
+exemplo: a capacidade de efetuar operações sobre números, sobre símbolos, sobre
+conceitos. O que é que é que já existe artificialmente com o mesmo grau de eficácia e
+de integração?
+Adilson: A parte de classificação de doenças, objetos na parte industrial.
+Segundo Koerich (2012), a Inteligência artificial tem se mostrado em muitas
+áreas com um grau próximo de aplicação que a humana no reconhecimento de voz e
+escrita, na classificação de doenças, Classificação de sequência de DNA .
+
+4. Quais as subáreas que o senhor considera mais interessantes?
+Adilson: Na parte de inferência, e raciocínio.
+ Segundo Russel e Norvig (2004), a uma área da inteligência artificial ligada
+diretamente com raciocínio, o raciocínio automatizado que consiste em usar
+informações armazenadas com finalidade de responder as perguntas e tirar novas
+conclusões.
+5. Dentro da inteligência artificial, há uma subárea chamada Aprendizado de Máquina.
+Descreva o que senhor entende como aprendizado de máquina?
+Adilson: É o software conceber novas estruturas e conceber relacionamentos,
+organizar raciocínio e buscar estruturas destes relacionamentos.
+6. Qual aplicação que o Sr considera mais relevante e conhecida?
+Adilson: Assistente pessoal do Iphone.
+7. Quais as perspectivas de futuro da Inteligência Artificial?
+Adilson: Vão depender dos avanços de processamento, Computação Quântica.
+7
+ Segundo Reynol (2010), o futuro da inteligência Artificial pretende ser
+promissor se depender das vantagens da arquitetura computacional baseada nos
+conceitos da física quântica, que consiste em computadores com uma velocidade
+maior do que as dos atuais.
+4 CONCLUSÃO
+A inteligência artificial está diretamente ligada a vida de praticamente toda a
+população. Está em todos os lugares, pois a maioria dos equipamentos eletrônicos a
+utilizam. O aprendizado de máquina, subdivisão da inteligência artificial, traz novas
+formas de programação a serem realizadas, cada vez mais desafios são superados com
+formas cada vez melhores de programação. Se espera do futuro da inteligencia artificial
+tecnologias surpreendentes são cada dia mais desenvolvidas, mas deve-se pensar que toda
+está tecnologia é feita por mãos humanas. E algo que sempre se pensa ao falar de
+inteligência artificial, é de maquinas raciocinam sozinhas, algo que é praticamente
+impossível, pois toda essa tecnologia é feita pelo homem. A máquina faz apenas o que foi
+programado para fazer.
+O que pode-se concluir em relação ao futuro da inteligencia aritificial é que ela
+depende diretamente dos processamentos dos computadores assim tambem como
+da computação quântica.
+A entrevista ao o professor da UDESC-CEAVI, Adilson Vahldick, foi de importância
+ao desenvolvimento do artigo, por deixar o conceito de inteligência artificial e
+aprendizado de máquina mais claros, e dar a sua opinião do futuro dessa área que parece
+bem promissor.
+
+8
+REFERÊNCIAS
+BEUREN, Ilse Maria. Como Elaborar Trabalhos Monográficos em Contabilidade. 3. Ed.
+São Paulo: Atlas S. A., 2010.
+BITTENCOURT, Guilherme. Inteligência artificial: ferramentas e teorias. 2. Ed.
+Florianópolis: UFSC, Ed. da Universidade, 2001.
+COPPIN, Ben. Inteligência artificial. Rio de Janeiro: LTC, 2010.
+COSTA, Herbert Rodrigues do Nascimento. Aplicação de técnicas de inteligência artificial
+em processos de fabricação de vidro. São Paulo, 2006.
+Disponível em:<http://www.teses.usp.br/teses/disponiveis/3/3139/tde-09032007-171929/. php
+>
+Acesso em: 18, junho, 2012, 10h31min.
+DENCKER, Ada de Freitas Maneti. Pesquisa empírica em ciências humanas. São Paulo:
+Futura, 2002. p. 155-167.
+FERNANDES, Anita Maria da Rocha. Inteligência artificial: noções gerais. Florianópolis:
+Visual Books, 2003.
+KOERICH, Alessandro . Aprendizagem de Máquina.Paraná,2012.
+Disponível em: <http://www.ppgia.pucpr.br/~alekoe/AM/2012/0-Apresentacao-AM-2012.pdf
+>
+Acesso em: 18, junho, 2012, 17:17min.
+MARTINO, José Mario De. Elementos de Inteligência Artificial utilizados em Jogos
+Digitais – Conceitos, Objetivos e Tendências. Campinas: 2009.
+Disponível em:
+http://www.dca.fee.unicamp.br/~martino/disciplinas/ia369/trabalhos/t4g1.pdf(pg2)
+Acesso em: 29, maio, 2012, 9:45min .
+PEREIRA, Luís Moniz. Inteligência Articial Mito e Ciência . São Paulo, 2005.
+Disponível em: http://centria.fct.unl.pt/~lmp/publications/online-papers/ia-mito.pdf>
+Acesso em: 29, maio, 2012, 10:50 min.
+REYNOL, Fabio. Pesquisa da Unicamp impulsiona campo da computação quântica . São
+Paulo.2010.
+Disponível
+em:http://www.inovacaotecnologica.com.br/noticias/noticia.php?artigo=brasileiroimpulsiona-campo-computacao-quantica&id=010150100125>
+Acesso em : 18, de junho, 18:06min.
+RUSSEL, Stuart e NOVING, Peter. Inteligência artificial, São Paulo, Campus, 2004.
+9
+SANTOS, Cícero Nogueira dos. Aprendizado de máquina na identificação de sintagmas
+nominais: o caso do português brasileiro. Rio de Janeiro, 2005.
+Disponível em: <http://www2.comp.ime.eb.br/dissertacoes/2005-Cicero_Santos.pdf>
+Acesso em: 29, maio, 2012, 09h55min.
+10
+5 APÊNDICE
+Entrevista
+Nós Brigiane e Marcos alunos da Universidade do Estado de Santa Catarina , estamos desenvolvendo
+um artigo sobre inteligência artificial com a presente entrevista temos como objetivo obter algumas
+informações sobre a inteligência artificial, e sobre a sub área aprendizado de máquina. As informações
+são somente para fins de pesquisa.
+Nome_Adilson Vahldick________
+Idade_35 anos_________
+Formação _Mestre em Computação_____
+
+1. Existem conceitos diferentes de inteligência artificial? Qual a definição que o sr
+acredita estar mais correta?
+2. Para o senhor quais os maiores avanços desde o inicio da inteligência artificial?
+
+3. A inteligência humana tem características que a definem. Podem considerar-se, por
+exemplo: a capacidade de efetuar operações sobre números, sobre símbolos, sobre
+conceitos. O que é que é que já existe artificialmente com o mesmo grau de eficácia e de
+integração?
+
+4. Quais as subáreas que o senhor considera mais interessantes?
+
+5. Dentro da inteligência artificial, há uma subárea chamada Aprendizado de
+Máquina. Descreva que o senhor entende como aprendizado de maquina?
+
+6. Quais aplicações relevantes e conhecidas?
+
+7. Quais as perspectivas de futuro da Inteligência Artificial?
+ 

@@ -1,0 +1,605 @@
+                                                                                                                          OPEN ACCESS
+
+
+
+
+                                                                 REVISTA FAMECOS
+                                                                 mídia, cultura e tecnologia
+
+                                                                 Revista FAMECOS, Porto Alegre, v. 27, p. 1-10, jan.-dez. 2020
+                                                                 e-ISSN: 1980-3729 | ISSN-L: 1415-0549
+
+
+
+       https://dx.doi.org/10.15448/1980-3729.2020.1.34074
+
+
+
+
+VARIA
+
+O papel dos algoritmos de inteligência artificial nas redes
+sociais
+The role of artificial intelligence algorithms in the social web
+El papel de los algoritmos de inteligencia artificial em las redes sociales
+
+Dora Kaufman1                                     Resumo: Desde 2016 nos Estados Unidos e na Europa o tema das fake news
+orcid.org/0000-0001-7060-4887                     (notícias falsas) tornou-se preocupação central do jornalismo em virtude dos
+dkaufman@usp.br                                   prejuízos que esse fenômeno causa especialmente à preservação saudável dos
+                                                  sistemas democráticos. Em 2018, o processo eleitoral trouxe esse tema para
+                                                  o ápice dos debates no Brasil. É nos aplicativos das redes sociais que as fake
+                                                  news proliferam e não é mais novidade saber que tanto as redes sociais quanto
+Lucia Santaella1                                  os motores de busca estão hoje sob o controle dos algoritmos de inteligência
+orcid.org/0000-0002-0681-6073                     artificial. Em função do desconhecimento acerca do modo como esses algoritmos
+lbraga@pucsp.br                                   funcionam e do temor que filmes e séries sobre o assunto têm despertado nas
+                                                  pessoas, desenvolveu-se um pensamento negativista e mesmo certa ojeriza
+                                                  contra os algoritmos, em especial, os de inteligência artificial. Em vista disso,
+                                                  tendo por base uma pesquisa cuidadosa sobre as tendências atuais da inteli-
+Recebido em: 03 mai. 2019.                        gência artificial, este artigo tem por objetivo desmistificar crenças e fantasias
+Aprovado em: 15 out. 2019.                        infundadas ao evidenciar objetivamente como funciona a inteligência artificial
+Publicado em: 28 mai. 2020.                       e o papel que ela desempenha por trás do funcionamento das redes sociais.
+                                                  Palavras-chave: Inteligência Artificial. Redes Sociais. Fake News.
+                                                  Abstract: Since 2016 in the United States and Europe the topic of fake news has
+                                                  become a central concern of journalism because of the damage that this pheno-
+                                                  menon causes especially to the healthy preservation of democratic systems. In
+                                                  2018, the electoral process brought this theme to the climax of debates in Brazil.
+                                                  It is in social networking applications that fake news proliferate and it is no longer
+                                                  unknown that both social networks and browsers are now under the control of
+                                                  artificial intelligence algorithms. Because of the lack of knowledge about how these
+                                                  algorithms work and the fear that films and series on the subject have awakened
+                                                  in people, a certain negative feeling has developed against algorithms, especially
+                                                  the ones of artificial intelligence. In view of this, based on careful research on the
+                                                  current trends in artificial intelligence, this article aims to demystify unfounded
+                                                  beliefs and fantasies by objectively demonstrating how artificial intelligence works
+                                                  and the role it plays behind the functioning of social networks.
+                                                  Keywords: Artificial Intelligence. Social Networks. Fake News.
+                                                  Resumen: Desde 2016 en Estados Unidos y en Europa, el tema de las fake
+                                                  news se ha convertido en una preocupación central del periodismo debido a
+                                                  los perjuicios que este fenómeno causa especialmente a la preservación sana
+                                                  de los sistemas democráticos. En 2018, el proceso electoral trajo ese tema para
+                                                  el ápice de los debates en Brasil. Es en las aplicaciones de las redes sociales
+                                                  que las fake news proliferan y ja es sabido que tanto las redes sociales como los
+                                                  motores de búsqueda están hoy bajo el control de los algoritmos de inteligencia
+                                                  artificial. En función del desconocimiento acerca de cómo funcionan estos algo-
+                                                  ritmos y del temor que las películas y series sobre el tema han despertado en
+                                                  las personas, se ha desarrollado un pensamiento negativista e incluso una cierta
+                                                  ojeriza contra los algoritmos, en especial los de inteligencia artificial. En vista
+                                                  de ello, teniendo como base una investigación cuidadosa sobre las tendencias
+                                                  actuales de la inteligencia artificial, este artículo tiene por objetivo desmitificar
+                                                  creencias y fantasías infundadas al evidenciar objetivamente cómo funciona la
+                                                  inteligencia artificial y el papel que desempeña detrás del funcionamiento de
+                                                  las redes sociales.
+Artigo está licenciado sob forma de uma licença
+Creative Commons Atribuição 4.0 Internacional.    Palabras-clave: Inteligencia Artificial. Redes Sociales. Fake News.
+
+
+1
+    Pontifícia Universidade Católica de São Paulo, São Paulo, SP, Brasil.
+ 2/10            Revista FAMECOS, Porto Alegre, v. 27, p. 1-10, jan.-dez. 2020 | e-34074
+
+
+
+
+Introdução                                                                     Essa advertência é similar à definição que
+  Em 1909, o escritor britânico Edward Morgan                              Bostrom (2006) nos fornece de “risco existencial”
+Forster publicou a novela The Machine Stops                                como aquele que ameaça aniquilar a vida
+(FORSTER, 2011), retratando um cenário futurista                           inteligente no planeta Terra, ou limitar permanente
+no qual os humanos são, simultaneamente,                                   e drasticamente seu potencial. O primeiro risco
+servidos e controlados por uma máquina. Em                                 existencial criado pelo ser humano foi o advento
+uma surpreendente antecipação tecnológica, os                              da bomba atômica.
+habitantes desse planeta Terra (ano indefinido)
+                                                                                           Na época, havia alguma preocupação
+comunicam-se por meio de uma placa redonda,                                                de que a explosão pudesse iniciar uma
+segura pelas mãos, de onde emerge uma luz                                                  reação em cadeia descontrolada ao
+                                                                                           “acender” a atmosfera. Embora agora
+azulada projetando à distância imagem e som.                                               saibamos que tal resultado é fisica-
+  Construída pelo homem, a Máquina                                                         mente impossível, um risco existencial
+                                                                                           estava presente (BOSTROM, 2006, p. 2).
+gradativamente torna-se onipresente, nada
+acontece fora de seu domínio; a dependência
+                                                                               O segundo risco existencial para a humanidade,
+humana é absoluta gerando, consequentemente,
+                                                                           segundo Bostrom, associa-se à potencial explosão
+um poder maquínico igualmente absoluto. Na
+                                                                           da inteligência com a criação da Superinteligência
+novela de Foster, toda ação humana, da mais
+                                                                           de máquina, detentora da vantagem estratégica de
+simples como levantar um objeto do chão até
+                                                                           moldar o futuro da vida inteligente com base em
+os relacionamentos interpessoais, é mediada
+                                                                           suas próprias motivações. A Superinteligência é
+pela Máquina. Seus habitantes vivem “felizes” em
+                                                                           definida como “qualquer intelecto que exceda em
+aceitação das regras vigentes. Vashti, palestrante
+                                                                           muito o desempenho cognitivo dos seres humanos
+plenamente integrada ao sistema, tem cinco
+                                                                           em praticamente todos os domínios de interesse”
+filhos, um dos quais, Kuno, é um rebelde que
+                                                                           (BOSTROM, 2014, p. 26). A Superinteligência
+percebe os riscos, a eminente falência do sistema
+                                                                           visualizaria os humanos como uma ameaça
+e prevê a “parada” da Máquina, mas a quem a
+                                                                           potencial ao seu sistema, devendo portanto ser
+Máquina benevolentemente perdoa as infrações.
+                                                                           eliminados. A primeira Superinteligência poderia
+  As questões que afloram na relação entre mãe
+                                                                           facilmente ter objetivos finais não antropomórficos,
+e filho, Vashti e Kuno, remetem a questões em
+                                                                           causando uma “catástrofe existencial”.
+debate frente ao recente avanço da inteligência
+                                                                               São várias as distopias alusivas à Superinteligência,
+artificial (IA), que rebatem nos dois típicos extremos
+                                                                           como nos explica Cozman: ”a distopia envolve a
+entre a distopia e a eutopia. A primeira,encontra-
+                                                                           destruição da humanidade ou sua redução a uma
+se na advertência final de Kuno a Vashti:
+                                                                           situação de servidão completa (talvez uma servidão
+              Você não percebe, não percebem todos                         na qual os seres humanos remanescentes estejam
+              vocês palestrantes, que somos nós que                        subjugados e inconscientes da sua real situação)”
+              estamos morrendo e que aqui a única
+              coisa que realmente vive é a Máquina?                        (COZMAN, 2018, p. 35).
+              Criamos a Máquina, para realizar nossas
+                                                                               O outro extremo pode ser percebido quando se
+              vontades, mas agora já não podemos
+              fazer com que as atenda. Ela nos roubou                      comparam os dizeres do “Livro” que, na novela de
+              a sensação de espaço e a sensação
+                                                                           Foster, discorrem sobre a onipotêcia da Máquina
+              de toque, confundiu todas as relações
+              humanas e reduziu o amor a um ato car-                       e o atual movimento “Dataísmo”, a religião dos
+              nal, paralisou nossos corpos e nossas
+                                                                           dados. Seus adeptos, concentrados no Vale
+              vontades e agora nos obriga a adorá-la.
+              A Máquina se desenvolve – mas não em                         do Silício, creem que o valor dos fenômenos é
+              nossa direção. A Máquina avança – mas
+                                                                           função de sua contribuição ao processamento
+              não rumo ao nosso objetivo. Existimos
+              apenas como os corpúsculos sanguí-                           de dados, estabelecendo uma equivalência entre
+              neos que correm por suas artérias, e
+                                                                           os algoritmos bioquímicos e os eletrônicos. “Os
+              se ela pudesse funcionar sem nós, nos
+              deixaria morrer (FORSTER, 2011, p. 33).                      dataistas explicam aos que ainda cultuam mortais
+                                                                                       Dora Kaufman • Lucia Santaella
+                                                       O papel dos algoritmos de inteligência artificial nas redes sociais   3/10
+
+de carne e osso que eles estão excessivamente                           Modelo preditivo de inteligência
+atrelados a uma tecnologia ultrapassada. O Homo                         artificial: deep learning
+sapiens é um algoritmo obsoleto” (HARARI, 2016,                            Na segunda década do século XXI, a
+p. 384). Para este autor, no Vale do Silício, os                        convergência de diversas tecnologias − internet
+profetas dataístas exploram conscientemente
+                                                                        das coisas (IoT), blockchain, plataformas digitais,
+a linguagem messiânica tradicional, criticando
+                                                                        impressão 3D, robótica avançada, novos materiais,
+como uma postura religiosa o livro de profecias
+                                                                        manipulação genética − permeadas pela IA, tem
+de Ray Kurzweil, The Singularity is Near, em que
+                                                                        promovido resultados superiores a quaisquer
+“ecoa o brado de João Batista ‘o reino dos céus
+                                                                        previsões precedentes (ainda que aquém da ficção
+está próximo’ (MATEUS 3,2)”.
+                                                                        científica). As máquinas e os sistemas inteligentes
+    Não obstante os temores, de um lado,
+                                                                        estão executando tarefas que até recentemente
+e as euforias, de outro, o estágio atual de
+                                                                        eram prerrogativas dos humanos, em alguns casos
+desenvolvimento da inteligência artificial (IA) é
+                                                                        com resultados mais rápidos e mais assertivos. Elas,
+ainda restrito. Estamos na fase da “Weak AI”, a
+                                                                        porém, ainda estão restritas a prever cenários com
+“Strong AI” ainda é ficção. Segundo os especialistas
+                                                                        base em grandes conjuntos de dados e a executar
+com os quais nos alinhamos (Yoshua Bengio,
+                                                                        tarefas específicas, sob a supervisão direta dos
+Geoffrey Hinton, Yann LeCun, Andrew Ng, Kai-Fu
+                                                                        especialistas em ciência da computação. Esses
+Lee, Davi Geiger, Martin Ford), não há nenhum
+                                                                        sistemas carecem da essência da inteligência
+indicador real de que a Superinteligência será
+                                                                        humana: capacidade de compreender o significado;
+alcançada. A atualidade da novela de Forster é que,
+                                                                        igualmente não possuem senso intuitivo,
+mesmo para os céticos, o debate está colocado
+                                                                        capacidade de formas conceitos abstratos e
+na mídia e nos centros de pesquisa e tecnologia.
+                                                                        de fazer analogias e generalizações, não têm a
+    Um dos caminhos para evitar, ou ao menos
+                                                                        capacidade de compreender o funcionamento
+minimizar, as previsões distópicas é a tomada
+                                                                        do mundo a partir da observação (conceitos como
+de consciência da sociedade sobre os desafios
+                                                                        tridimensionalidade, movimentação e permanência
+envolvidos nos benefícios oriundos da IA, e
+como enfrentá-los. Um dos temas em debate                               dos objetos, gravidade, inércia e rigidez dentre
+
+é a personalização das experiências no acesso                           outros) (LECUN citado por FORD, 2018).
+
+online, acesso esse mediado pelos algoritmos                               Apesar das limitações, tais avanços da IA,
+
+de inteligência artificial. Não há consenso com                         contudo, trouxeram benefícios inéditos para a
+relação a essa intervenção automatizada, de                             humanidade e desafios éticos e regulatórios
+modo que o propósito deste artigo é repensar                            complexos. Apenas para citar a área médica, o
+seus efeitos à luz do funcionamento da tecnologia.                      sistema Watson da IBM3 apresenta uma taxa de
+    Para isso, inicialmente será dada uma breve                         sucesso de 90% comparativamente aos 50% dos
+descrição do estágio atual da inteligência                              médicos humanos nos diagnósticos de câncer de
+artificial, contemplando os fundamentos básicos                         pulmão. O sistema é capaz de processar grandes
+da lógica do machine learning (aprendizado de                           volumes de dados estabelecendo correlações
+máquina), particularmente a técnica de deep                             entre sintomas e/ou imagens em uma dimensão
+learning (aprendizado profundo). Sem adentrar                           impossível de ser alcançada por um ser humano.
+propriamente nos meandros da tecnologia, que                               O banco de dados Medline, por exemplo,
+envolve conceitos matemáticos e estatísticos                            pertencente à Biblioteca Nacional de Medicina
+avançados, a ideia é apenas oferecer uma visão                          dos EUA, tem aptidão para indexar mais de
+geral facilitando a análise posterior sobre as                          5.600 periódicos e milhões de registros médicos,
+implicações da personalização dos acessos à rede.                       históricos de pacientes e estudos de caso que
+
+3
+    Watson é a plataforma de serviços cognitivos/inteligência artificial da IBM para negócios.
+    4/10            Revista FAMECOS, Porto Alegre, v. 27, p. 1-10, jan.-dez. 2020 | e-34074
+
+
+
+
+oferecem importantes insights com o uso de                                    Deep learning diz respeito à previsão, com base
+algoritmos de IA (estima-se que o volume total                                em dados. “Atualmente, quando acessamos um
+dos dados dobre a cada cinco anos). A contribuição                            dispositivo computacional, em qualquer de seus
+da IA na área de saúde transcende os diagnósticos,                            formatos, provavelmente estamos acessando
+abrangendo a prevenção de epidemias e potenciais                              concomitantemente um processo de deep
+anomalias individuais. Os nanorrobôs, em estágio                              learning” (KAUFMAN, 2019, p. 25).
+avançado de desenvolvimento, poderão navegar                                      Por várias décadas, a abordagem dominante no
+na corrente sanguínea identificando doenças e                                 campo da IA foi baseada em programas lógicos
+eliminando patógenos, como células cancerosas                                 de computação, marginalizando a visão baseada
+(KAUFMAN, 2019).                                                              no aprendizado de máquina. O atual crescimento
+    O sucesso atual é “mera” implementação do                                 exponencial dos dados, contudo, inviabiliza o uso da
+modelo estatístico deep learning (aprendizado                                 programação (regras definidas a priori). A Amazon
+profundo, DL), inserido no subcampo da IA                                     não pode codificar os gostos do conjunto de seus
+denominado de machine learning (aprendizado                                   clientes em um programa de computador, assim
+de máquina, ML). Em 1959, Arthur Lee Samuel,                                  como o Facebook desconhece como escrever um
+pioneiro norte-americano no campo de jogos de                                 programa para identificar as melhores atualizações
+computador e IA, enquanto funcionário da IBM,                                 no Feed de Notícias. A Netflix pode ter cem mil
+cunhou o termo machine learning, inaugurando                                  títulos de DVD em estoque, mas se os clientes
+um subcampo da IA cuja finalidade é prover                                    não souberem como encontrar suas preferências
+os computadores da capacidade de aprender                                     de nada adianta. A grande quantidade de dados
+sem serem programados. Evoluindo a partir do                                  não é o único fator restritivo, o conhecimento
+estudo do reconhecimento de padrões e da teoria                               tácito é igualmente um limitador (KAUFMAN,
+de aprendizagem computacional na IA, o ML                                     2019). A contar de 2012 o deep learning tornou-se
+explora o estudo e a construção de algoritmos                                 onipresente, recebendo expressivos investimentos
+que, seguindo instruções, fazem previsões ou                                  das gigantes de tecnologia.
+tomam decisões baseadas em dados − modelos                                        As redes neurais são funções matemáticas
+elaborados a partir de entradas de amostras. O                                biologicamente inspiradas, formadas por neurônios
+aprendizado de máquina é empregado em uma                                     artificiais que interagem entre si. A figura 1 traduz uma
+variedade de tarefas de computação, nas quais                                 arquitetura padrão, em que os círculos representam
+programar os algoritmos é difícil ou inviável. Trata-                         os neurônios artificiais e as setas os pesos.
+se de um processo de solução de um problema
+específico por meio da construção algorítmica de
+um modelo estatístico baseado em um conjunto
+de dados (BURKOV, 2019).
+    Inspirado no funcionamento do cérebro, por
+isso também conhecido como redes neurais,
+o deep learning foi concebido na década de
+1980, concretizado a partir de 2010-2012 com o
+crescimento exponencial dos dados, e a maior
+capacidade computacional − GPUs (Graphic
+Processing Unit) e computação em nuvem −, que                                 Figura 1 – Redes Neurais
+                                                                              Fonte: Wiederer4 ([2016]).
+reduz o tempo de treinamento dos algoritmos.
+
+4
+  WIEDERER, Christine. Redes neurais em JavaScript. Desenvolvimento, IMasters, 20 jun. 2016. Disponível em: https://imasters.com.br/
+desenvolvimento/redes-neurais-em-javascript. Acesso em: 12. jan. 2019.
+                                                                             Dora Kaufman • Lucia Santaella
+                                             O papel dos algoritmos de inteligência artificial nas redes sociais   5/10
+
+   As redes neurais são adequadas a problemas                    A rede geralmente tem entre 10 e 30 camadas
+inteiramente distintos. O treinamento consiste               empilhadas de neurônios artificiais. Em um
+em mostrar exemplos e ajustar gradualmente os                reconhecimento de imagem, por exemplo,
+parâmetros da rede até obter os resultados requeridos,       a primeira camada procura bordas ou cantos;
+denominado aprendizagem supervisionada: são                  as camadas intermediárias interpretam as
+fornecidos os resultados desejados (output) e, por           características básicas para procurar formas
+“tentativa e erro”, através de atualização iterativa         ou componentes gerais; e as últimas camadas
+dos pesos, chega-se ao resultado – meta (back                envolvem interpretações completas. Na
+propagation). A pergunta-chave migrou de “quais              identificação de fotos nas redes sociais, a máquina
+as características de um cachorro?”, elementos               percebe padrões e “aprende” a identificar rostos,
+que permitiam programar um sistema, para “essa               tal como alguém que olha o álbum de fotos de
+imagem é similar a uma imagem que já vi antes?”,             uma família desconhecida e, depois de uma série
+processo que estima a probabilidade da imagem                de fotos, reconhece o fotografado (existe uma
+ser efetivamente de um cachorro.                             hierarquia de memorização). O reconhecimento
+                                                             de voz, que junto com a visão computacional
+               O objetivo de um algoritmo de aprendi-
+               zado supervisionado é usar o conjunto         está entre as aplicações mais bem-sucedidas,
+               de dados para produzir um modelo que          já permite a comunicação entre humanos e
+               tenha um vetor de atributos x como
+               entrada e gerar informações que per-          máquinas, mesmo que ainda precária (Siri, Alexa,
+               mitem deduzir o label desse vetor de          Google Now).
+               atributos (BURKOV, 2019, p. 2).
+                                                                 Parte dos avanços inovadores decorrem da
+                                                             arquitetura Deep Convolutional Neural Network ou
+   Na Figura 2, a imagem 2A é o output (imagem
+                                                             CNN (KRIZHEVSKY; SUTSKEVER; HINTON, 2012),
+a ser reconhecida). As imagens subsequentes,
+                                                             ilustrada na Figura 3, onde aparece explicitamente
+representam o resultado das camadas
+                                                             o delineamento de responsabilidades entre as
+intermediárias (hidden layers), cuja precisão
+                                                             duas GPUs: uma GPU executa as partes da camada
+depende do número de neurônios: a figura C
+                                                             na parte superior da figura, enquanto a outra
+tem 200 neurônios, por exemplo, e a figura D
+                                                             executa as partes da camada na parte inferior.
+tem 2.000 neurônios.
+
+
+
+
+Figura 2 – Reconhecimento de imagem
+Fonte: Gerrish (2018, p. 113).
+ 6/10            Revista FAMECOS, Porto Alegre, v. 27, p. 1-10, jan.-dez. 2020 | e-34074
+
+
+
+
+Figura 3 – CNN – Convolutional Neural Network
+Fonte: Krizhevsky, Sutskever e Hinton (2012, p. 4).
+
+
+
+  As CNNs são usadas na visão computacional,                               Acesso personalizado e os algoritmos de IA
+reconhecimento de fala e processamento de                                      Muito se tem discutido e mesmo demonizado a
+linguagem natural. Sua eficácia é responsável                              presença dos algoritmos de IA nas redes sociais.
+pela rápida adoção em aplicações diversas como                             Embora não seja possível negar que eles, de fato,
+carros autônomos, robótica, drones, segurança,                             lá estão operando, discussões e críticas devem
+diagnósticos médicos e tratamentos para pessoas                            ser, antes de tudo, bem-informadas. A intenção
+com deficiência visual.                                                    deste artigo não é outra se não a de informar sobre
+
+  O nível de precisão dos resultados é função do                           o estado da arte da IA para que discussões sobre
+
+número de camadas, do número de neurônios                                  o funcionamento dos algoritmos nas redes não se
+                                                                           mantenha encoberto por equívocos e fantasias.
+artificiais e da quantidade e qualidade dos dados
+                                                                               Antes de tudo, é preciso levar em consideração
+(inputs), arbitrados pelo operador humano.
+                                                                           que, muito longe da “Máquina” onipotente da
+O que define uma máquina inteligente são
+                                                                           novela de Foster, as operações da aprendizagem
+dois componentes principais: o valor de cada
+                                                                           de máquina na IA apresentam vulnerabilidades
+conexão (“pesos”) e a arquitetura. Deep learning
+                                                                           e limitações, conforme foi evidenciado acima.
+é sobre previsão com base em correlações,
+                                                                           Assim, para evitar a proliferação de ilusões mal
+reduzindo significativamente o custo e o tempo
+                                                                           informadas, escolhemos como foco de discussão
+de processamento dos modelos preditivos. O                                 a personalização dos dados no acesso do usuário
+objetivo não é identificar causalidades entre                              à informação.
+fenômenos, mas descobrir padrões e correlações                                 A recente explosão de dados na internet
+que gerem insights.                                                        trouxe a questão da curadoria, substituindo
+                                                                           a ideia de liberdade dos primórdios da rede
+              Antes do Big Data, nossa análise geral-
+              mente se limitava a testar um pequeno                        pela ideia de relevância. O acesso à informação
+              número de hipóteses que definíamos                           passou a ser personalizado, o que atende
+              bem antes de coletar os dados. Quando
+              deixamos os dados falarem, podemos                           aos usuários das plataformas digitais que não
+              fazer conexões que nunca imaginamos                          desejam ver publicações, anúncios publicitários,
+              que existissem (Mayer-Schönberger;
+              Cukier, 2013, p. 14 ).                                       recomendações de produtos, inadequados às
+                                                                           suas preferências. Atualmente, a maior parte da
+  Os algoritmos de aprendizado não funcionam                               curadoria é efetivada pelos algoritmos de IA,
+da mesma forma, e suas diferenças impactam os                              particularmente pelo processo de deep learning.
+resultados e, por vezes, o próprio modelo utilizado.                       Um dos efeitos colaterais que tem sido mais
+                                                                           Dora Kaufman • Lucia Santaella
+                                           O papel dos algoritmos de inteligência artificial nas redes sociais   7/10
+
+debatido é o da formação de “bolhas” ou “câmara                          emprego, estado civil). Quanto maior
+de eco” (clusters). O objeto que nosso foco tomará                       o conjunto de informações do usuário
+para aproximação será o Feed de Notícias do                              captadas/arquivadas pela plataforma,
+                                                                         maior a assertividade da filtragem de
+Facebook. Contudo, antes de chegarmos ao
+                                                                         conteúdo;
+efeito colateral das “bolhas”, vejamos como o
+Face autodescreve seu funcionamento.                                d) a variável “timing” é soberana, os objetos
+                                                                       mais recentes são privilegiados no pro-
+  De acordo com Moseri (2018), o Feed de
+                                                                       cesso de filtragem (em geral, o Feed de
+Notícias de cada um de nós é feito de histórias
+                                                                       Notícias não publica conteúdo antigo);
+postadas por nossos amigos, aqueles que                                se um determinado conteúdo não está
+escolhemos seguir e grupos que compartilhamos.                         gerando interações (likes, comentários,
+O ranqueamento é o processo que o Face utiliza                         compartilhamentos), ele vai perdendo
+para organizar essas histórias de modo que                             a relevância até desaparecer;
+possamos ver os conteúdos mais relevantes no                        e) os algoritmos priorizam interações ati-
+topo, todas as vezes que abrimos a página do Face.                     vas, definindo “ações de qualidade” as
+Ainda segundo Moseri (2018), o ranqueamento                            que requerem mais esforço do usuário
+apresenta os seguintes elementos: o inventário                         (potencial gerador de mais interações,
+                                                                       mais dados). Fatores mais valoriza-
+das histórias disponíveis, as predições que o Face
+                                                                       dos na classificação: comentário, tipo
+faz, incluindo aí a probabilidade de que iremos
+                                                                       de reação (ícone “amor” vale mais do
+comentar a história, a pontuação de relevância                         que o ícone “curtir”), resposta de co-
+de cada história. Para saber como isso funciona,                       mentário (diálogo entre os usuários,
+seguem as informações fornecidas pelo Face                             conversação), compartilhar links pelo
+sobre a operacionalização de seus algoritmos:                          Messenger (para um grupo é mais va-
+                                                                       lorizado do que para um único amigo),
+      a) o algoritmo de classificação do Feed de                       e engajamento em ações.
+         Notícias, registrado como patente, é o                O Facebook disponibiliza diversos recursos
+         Filtering Content in a Social Networking
+                                                           que permitem ao usuário interferir no sistema de
+         Service, que é um algoritmo de mo-
+         delagem preditiva com base no pro-                filtragem de conteúdo. Com certa frequência, o
+         cesso deep learning. A classificação              próprio Facebook publica posts incentivando o
+         é ligeiramente cronológica, mas não               usuário a configurar as suas preferências (postura
+         rigorosamente;                                    ativa na relação com a plataforma). Naturalmente,
+      b) os algoritmos estabelecem um ranking              a simples movimentação do usuário fornece
+         pela “pontuação de afinidades”, signifi-          indicadores aos algoritmos.
+         cando semelhanças indicativas de um
+         relacionamento entre o usuário e o ob-
+                                                           “Câmara de Eco” como efeito colateral
+         jeto de classificação (post, outro usuário,
+         dentre outros). Em termos estatísticos,               O tema das “bolhas” tem sido intensamente
+         trata-se da probabilidade do objeto ser           explorado na bibliografia acadêmica e não
+         relevante para o usuário, denominado              - acadêmica, particularmente no campo da
+         de Relevance Score;                               comunicação. Não é por acaso, pois a questão
+      c) os algoritmos selecionam um subcon-               das bolhas está na base da proliferação de fake
+         junto de objetos de conteúdo em função            news que tanto tem abalado os princípios do
+         das pontuações de afinidades auferidas
+                                                           jornalismo. A principal crítica às bolhas consiste
+         entre o usuário e os objetos de conte-
+                                                           na homogeneização que estas promovem das
+         údo. Em seguida, esse subconjunto é
+         filtrado automaticamente com base                 relações sociais ao manter os indivíduos em
+         nos atributos do perfil do usuário (loca-         círculos sociais fechados, formados por iguais.
+         lização, idade, interesses, preferencias,         Pariser (2011) alerta para o processo invisível de
+ 8/10           Revista FAMECOS, Porto Alegre, v. 27, p. 1-10, jan.-dez. 2020 | e-34074
+
+
+
+
+filtragem de conteúdo que, ao personalizar nossos                         em câmaras de eco, ou casulos de informação,
+acessos e pesquisas, nos coloca em contato com o                          mas são expostos a uma diversidade de tópicos
+que queremos ver e não com o que devemos ver,                             e ideias. Entretanto, “a maioria dos americanos
+que inclui contemplar o que seja desconfortável,                          atualmente acessa grande parte das notícias
+desafiador, além de pontos de vista contrários e,                         nas redes sociais [...] Quando as pessoas usam o
+por isso mesmo, enriquecedores.                                           Facebook para ver exatamente o que querem ver,
+  Segundo Santaella (2018, p. 17), a personalização                       sua compreensão do mundo pode ser bastante
+dos filtros “apresenta tendenciosidades que afetam                        afetada”; um sistema de livre expressão garante
+significativamente o acesso à informação, na                              a exposição a perspectivas concorrentes. Ao
+medida em que conduzem o usuário a pontos de                              contrário, “arquiteturas de controle” podem levar a
+vista estreitos que impedem a exposição a ideias                          um tipo de distopia, ao passo que uma “arquitetura
+contrárias aos seus preconceitos”. A limitação das                        ao acaso” neutralizaria a homofilia, promovendo a
+pessoas a uma exposição seletiva, alimentada pelos                        liberdade individual. Para que isso seja alcançado,
+algoritmos, intensifica as tendências homofílicas,                        são dois os requisitos defendidos por esse autor: (a)
+ou seja, aquelas de só se buscar concordâncias e                          expor os cidadãos a informações e fatos que não
+fugir das discordâncias, tendências, de resto, que                        teriam escolhido antecipadamente, valorizando
+já fazem parte do funcionamento do psiquismo                              os encontros imprevistos e não planejados e (b)
+humano.                                                                   proporcionar uma ampla gama de experiências
+  De fato, na homofilia encontra-se a fonte                               comuns; para ele, a carência de experiências
+primeira das fake news. Essas são de variadas                             compartilhadas dificulta lidar com os problemas
+espécies, desde a mera brincadeira, o trolling, os                        sociais.
+memes que visam enganar, as meias verdades                                    Ambas as implicações são relevantes para a
+até a mentira a. Infelizmente estas últimas têm                           relação da sociedade com as novas tecnologias.
+muito mais apelo do que as informações honestas.                          Em uma tentativa de contribuir para o debate, o
+Em função de seu apelo, as fake news têm mais                             artigo traz uma reflexão a partir dos algoritmos
+probabilidade de serem compartilhadas do que                              de IA, no contexto da rede social Facebook,
+notícias corretas. Mas as grandes causadoras dos                          especificamente o Feed de Notícias. Suas
+compartilhamentos são as crenças nas quais os                             ponderações são as seguintes:
+indivíduos se enclausuram: só gostam daquilo que
+está em concordância com o que confortavelmente                                   a)      não há evidência empírica de que a
+pensam e sentem. É justamente o perfil de cada                                            filtragem de conteúdo decorre de ideo-
+                                                                                          logias, ou reflete interesses claramente
+um que é rastreado pelos algoritmos. Portanto,
+                                                                                          determinados por setores, grupos, ins-
+o grande vilão não é simplesmente o algoritmo,
+                                                                                          tituições ou indivíduos;
+mas a dificuldade que o ser humano tem para
+                                                                                  b)      a personalização dos acessos online
+transformar seu modo de pensar e ver o mundo.
+                                                                                          é resultado de modelos estatísticos
+  O pior problema encontra-se no fato de que as                                           (algoritmos de IA) treinados com base
+fake news afetam, sobretudo, a vida política. No                                          nos dados gerados da movimentação
+Brasil de 2018, assistiu-se a uma verdadeira guerra                                       dos usuários no ambiente digital, e de
+simbólica nas redes que repercutiu nas tomadas                                            arquiteturas “neutras” do ponto de vista
+de decisões e no modo de agir das pessoas. Isso                                           ideológico e/ou político e/ou quais-
+                                                                                          quer outros interesses afora a eficácia
+não é de se estranhar, pois são as nossas crenças
+                                                                                          dos resultados estimados (agradar os
+que guiam nossas ações.
+                                                                                          clientes, aumentar a movimentação nas
+  Levando a discussão para o contexto                                                     plataformas, gerar mais dados, ampliar
+democrático, Sunstein (2017, p. 3) alega que, em                                          o potencial de ganhos financeiros dos
+uma democracia eficiente, os cidadãos não vivem                                           controladores das plataformas);
+                                                                           Dora Kaufman • Lucia Santaella
+                                           O papel dos algoritmos de inteligência artificial nas redes sociais   9/10
+
+    c)    o tempo de permanência do usuário na             gerar mais movimentação, consequentemente
+          plataforma é estratégico, bem como a             mais dados, potencializando a expansão dos
+          qualidade dessa permanência (tradu-
+                                                           modelos de negócio e a concentração e o poder
+          zida em quantidade e diversidade de
+                                                           das gigantes de tecnologia baseadas em dados.
+          interações). Quanto maior o tempo e a
+          intensidade da interação, mais dados             Os usuários dessas plataformas deveriam ter
+          são gerados, favorecendo os modelos              recursos disponíveis para interferir na filtragem de
+          de negócio baseados em dados;                    conteúdo em vez da entrega passiva ao designo
+    d)    as plataformas não detêm o poder ab-             dos algoritmos. Mas para que isso seja possível,
+          soluto sobre os resultados da filtragem          todos os especialistas são unânimes: uma
+          de conteúdo; parte das variáveis que             formação educacional profunda é indispensável.
+          compõem os resultados é originada
+                                                           Só isso capacita o ser humano para o exercício
+          nos processos automatizados, e parte
+          é originada pela interferência direta do         do pensamento crítico, pois é este que funciona
+          usuário, sobretudo visível no Feed de            como antídoto contra crenças infundadas.
+          Notícias do Facebook;
+    e)    a lógica da filtragem, ou seja, o fun-           Referências
+          cionamento dos algoritmos de IA do
+                                                           BOSTROM, Nick. Dinosaurs, dodos, humans? In:
+          Facebook é relativamente transparente.
+                                                           WORLD ECONOMIC FORUM. Global Agenda. Oxford:
+          A rede social disponibiliza amplamente           WEF, 2006. p. 230-1. Disponível em: https://nickbos-
+          informações sobre seus mecanismos,               trom.com/papers/globalagenda.pdf. Acesso em: 12
+          nos sites e nas redes em geral (que, por         jan. 2019.
+          sua vez, são replicados e comentados             BOSTROM, Nick. Superintelligence: paths, dangers,
+          exaustivamente por estudiosos, jorna-            strategies. Oxford: Oxford Press, 2014.
+          listas, ou simples usuários);
+                                                           BURKOV, Andriy. The hundred-page machine lear-
+     f)   personalização não é o mesmo que in-             ning book. Publisher: Andriy Burkov, 2019.
+          dividualização, de fato ocorre uma “de-
+                                                           COZMAN, Fabio. Inteligência Artificial: uma utopia,
+          sindividualização”. Os algoritmos de IA,         uma distopia. TECCOGS: Revista Digital de Tecno-
+          para estabelecer correlações, precisam           logias Cognitivas, São Paulo, n. 17, p. 32-42, jan./jun.
+          ter acesso a uma grande e diversificada          2018.
+          quantidade de dados. A filtragem de
+                                                           FORD, Martin. Architects of intelligence: the truth
+          conteúdo extrapola a movimentação                about AI from the people building it. Birmingham:
+          de um usuário individual, os algorit-            Pack Publishing, 2018.
+          mos buscam similaridades com outros
+                                                           FORSTER, Edward Morgan. The machine stops.
+          usuários: os algoritmos decodificam o            Londres: Penguin Books, 2011.
+          comportamento e as preferências de
+          “comunidades” afins de usuário.                  GERRISH, Sean. How smart machine think. Cam-
+                                                           bridge: MIT Press, 2018. https://doi.org/10.7551/
+  As posições defendidas pelo autor podem                  mitpress/11440.001.0001
+
+parecer otimistas; Entretanto, elas são necessárias        HARARI, Yuval Noah. Homo Deus: uma breve história
+para se evitar distopias precoces. Quanto aos              do amanhã. São Paulo: Companhia das Letras, 2016.
+
+algoritmos, com o crescimento exponencial da               KAUFMAN, Dora. A inteligência artificial irá suplan-
+informação, não há como evitar uma curadoria. De           tar a inteligência humana? São Paulo: Estação das
+                                                           Letras e Cores, 2019.
+resto, alguma forma de curadoria sempre existiu,
+seja pelos veículos de mídia, pelo professor na            KRIZHEVSKY, Alex; SUTSKEVER, Ilya; HINTON,
+                                                           Geoffrey E. ImageNet classification with deep
+escola, pelas famílias. Além disso, os sistemas            convolutional neural networks. Toronto:[s. n.], 2012.
+automatizados pelos algoritmos de IA não                   p. 1-9. Disponível em: https://papers.nips.cc/paper/
+                                                           4824-imagenet-classification-with-deep-convolu-
+são, em si, movidos por ideologias, interesses             tional-neural-networks.pdf. Acesso em: 20 jan. 2019.
+políticos e de grupos; a finalidade do motor é             https://doi.org/10.1145/3065386
+ 10/10            Revista FAMECOS, Porto Alegre, v. 27, p. 1-10, jan.-dez. 2020 | e-34074
+
+
+
+
+MAYER-SCHÖNBERGER, Viktor; CUKIER, Kenneth.
+Big data: a revolution that will transform how we live,
+work, and think. Nova York: Houghton Mifflin Har-
+court, 2013. https://doi.org/10.3359/oz1314047
+
+MOSSERI, Adam. News Feed Ranking in Three
+Minutes Flat: How Does News Feed Work?. [S. l.: s.
+n.], 2018. Disponível em https://newsroom.fb.com/
+news/2018/05/inside-feed-news-feed-ranking/.
+Acesso em: 12 jan. 2019. https://doi.org/10.18254/
+s0000057-4-1
+
+PARISER, Eli. The filter bubble: what the internet is
+hiding from you. Londres: Penguin Books, 2011.
+
+SANTAELLA, Lucia. A pós-verdade é verdadeira ou
+falsa? São Paulo: Estação das Letras e Cores, 2018.
+
+SUNSTEIN, Cass R. #republic: divided democracy in
+the age of social media. Princeton: Princeton Univer-
+sity Press, 2017. https://doi.org/10.1086/696988
+
+WIEDERER, Christine. Redes neurais em JavaScript.
+Desenvolvimento. IMasters, [S. l.], p. 1-2, 20 jun. 2016.
+Disponível em: https://imasters.com.br/desenvolvi-
+mento/redes-neurais-em-javascript. Acesso em: 12
+jan. 2019. https://doi.org/10.21528/cbrn1994-056
+

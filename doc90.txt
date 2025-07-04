@@ -1,0 +1,1046 @@
+﻿See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/235746261
+
+METODOLOGIA PARA AVALIAÇÃO DA QUALIDADE DE SOFTWARE SOB A
+
+PERSPECTIVA DA QUALIDADE EM SERVIÇOS
+
+Conference Paper · January 2011
+DOI: 10.13140/2.1.4884.0643
+
+CITATIONS READS
+
+0 3,147
+
+2 authors:
+
+Michelle MARIA FREITAS Neto Andre Luis Policani Freitas
+Instituto Federal Fluminense State University of Norte Fluminense
+
+8 PUBLICATIONS   20 CITATIONS    266 PUBLICATIONS   1,385 CITATIONS   
+
+SEE PROFILE SEE PROFILE
+
+All content following this page was uploaded by Andre Luis Policani Freitas on 05 June 2014.
+
+The user has requested enhancement of the downloaded file.
+
+
+
+XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no   
+
+Cenário Econômico Mundial 
+Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+ 
+METODOLOGIA PARA AVALIAÇÃO DA 
+
+QUALIDADE DE SOFTWARE SOB A 
+PERSPECTIVA DA QUALIDADE EM 
+
+SERVIÇOS 
+ 
+
+Michelle Maria Freitas Neto (IFF) 
+mneto@iff.edu.br 
+
+Andre Luis Policani Freitas (UENF) 
+policani@uenf.br 
+
+ 
+ 
+
+ 
+O uso de um software considerado de qualidade pode ser visto como 
+um diferencial competitivo para empresas de diferentes ramos de 
+atuação. Nos últimos anos, muitas organizações têm optado pela 
+aquisição de “Software como um Serviço” (SaaS -- Software as a 
+Service). Considerando os desafios inerentes à qualidade de software e 
+à avaliação da qualidade em serviços, este artigo apresenta a 
+metodologia QualySaaS para avaliar a qualidade de software como um 
+serviço a partir da captação do grau de satisfação dos clientes que 
+contratam o serviço, dos funcionários e da alta direção da empresa 
+que fornece SaaS. Foram definidas dimensões e itens intrínsecos à 
+mensuração da qualidade de SaaS sob enfoque de: (i) serviços 
+prestados (perspectiva dos clientes), (ii) condições de trabalho 
+(perspectiva dos funcionários), e (iii) negócios (perspectiva da alta 
+direção da empresa). Espera-se que o emprego da metodologia 
+proposta forneça resultados que auxiliem os gestores na tomada de 
+decisões em prol da melhoria da qualidade dos serviços de software. 
+ 
+Palavras-chaves: SaaS, Qualidade de Software, Qualidade em 
+Serviços, QualySaaS 
+
+ 
+
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+ 
+
+1. Introdução 
+
+Atualmente a Tecnologia da Informação (TI) é um dos aspectos mais estratégicos para 
+viabilizar o aprimoramento e a inovação de produtos e serviços de uma organização 
+(BARTIÉ, 2002). Com a importância da TI no cotidiano de pessoas e empresas, a comunidade 
+de software busca continuamente desenvolver soluções que tornem mais fácil, mais rápido e 
+menos dispendioso a construção de programas considerados de qualidade (PRESSMAN, 2002). 
+
+Nos últimos anos uma tendência que vem se consolidando é a aquisição de “Software como 
+um Serviço” (SaaS – Software as a Service). Combiucci (2009) relata que o mercado ao redor 
+de SaaS envolve cerca US$ 5 bilhões e que, de acordo com o Gartner Group, SaaS 
+representou cerca de 5% do mercado total de software em 2005 e deverá representar 25% das 
+vendas totais para o segmento corporativo até 2011. 
+
+Na perspectiva do usuário, SaaS é um software que não é instalado localmente na 
+infraestrutura do cliente, mas é utilizado através da web e pago pelo tempo de uso ou volume, 
+por demanda (COMBIUCCI, 2009). Os clientes optam pela aquisição de software, onde as 
+empresas de TI se responsabilizam por toda a infraestrutura física e pelos serviços técnicos. 
+Sendo assim, o cliente tem direitos sobre seus dados e sobre o uso do software, mas não 
+adquire o sistema como se fosse um produto (MA, 2007). 
+
+Porém, optar por SaaS implica em estabelecer uma relação de extrema confiança na empresa 
+que fornece o serviço, uma vez que os clientes “depositam” grande parte de seus negócios na 
+empresa de TI. Além disso, quando o serviço prestado atende a clientes diferenciados (como 
+acontece em SaaS), a avaliação do serviço se torna uma atividade ainda mais complexa. 
+
+Outra dificuldade a ser mencionada é o fato do serviço ser relacionado com fornecimento de 
+software. Problemas clássicos da área de Engenharia de Software (estimativa de tempo para 
+concluir um sistema, custos altos de desenvolvimento, erros encontrados nos softwares em 
+produção, dentre outros) também estão presentes na estratégia de software como um serviço.  
+
+Sendo assim, diante do crescimento da estratégia de aquisição de software como um serviço e 
+os obstáculos encontrados para sua avaliação, o presente artigo busca tratar da seguinte 
+problematica: como avaliar a qualidade de software como um serviço (SaaS), de forma a 
+apoiar simultanteamente o cliente que o adquire e a empresa que o fornece? 
+
+Visando contribuir para o tratamento desta problemática, este artigo apresenta a metodologia 
+QualySaaS (Quality of Software as a Service) para avaliar a qualidade de software à luz de 
+dimensões e critérios da qualidade em serviços, segundo a percepção da satisfação de clientes, 
+de funcionários e dos gestores da organização desenvolvedora do software. 
+
+Sucintamente, este artigo está organizado da seguinte forma: a seção 2 aborda o tema 
+Qualidade de Software; a seção 3 apresenta o conceito de SaaS; a seção 4 apresenta a 
+metodologia para avaliação da qualidade de software com foco na qualidade em serviços; e 
+por fim, a seção 5 apresenta as considerações finais e direcionamentos para trabalhos futuros.  
+
+2. Qualidade de software  
+
+A qualidade de software é uma meta de grande importância para as organizações. O uso de 
+um software considerado de qualidade pode ser visto como um diferencial competitivo para 
+empresas de diferentes ramos de atuação.  
+
+Entretanto, classificar um software como sendo de qualidade não é uma tarefa trivial. Na 
+literatura há diferentes definições para qualidade de software. Bartié (2002) define qualidade 
+
+2 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+de software como um processo que tem como foco todas as etapas e artefatos produzidos 
+visando garantir a conformidade de processos e produtos, prevenindo e eliminando defeitos.  
+
+Pressman (2002) define a qualidade de software como a “conformidade com os requisitos 
+funcionais e de desempenho explicitamente declarados, padrões de desenvolvimento 
+explicitamente documentados e características implícitas, que são esperadas em todo software 
+desenvolvido profissionalmente.” Essa definição é mais facilmente entendida sob a 
+perspectiva da equipe técnica. Em relação ao ponto de vista dos clientes, a qualidade de 
+software pode ser definida como um conjunto de propriedades a serem satisfeitas, de modo que o 
+software satisfaça as necessidades de seus usuários (ROCHA, 1987). 
+
+Além disso, Bartié (2002) destaca que é impossível estabelecer um processo de garantia de 
+qualidade de software sem focar simultaneamente o produto tecnológico e o processo de 
+desenvolvimento do software. Assim, a Figura 1 mostra duas dimensões fundamentais da 
+qualidade de software: 
+
+Qualidade de Software 
+
+Qualidade do Qualidade do 
+Processo Produto 
+
+ 
+Figura 1 – Dimensões para obtenção da qualidade de software  
+
+2.1. Qualidade do processo 
+
+Para que um software seja concebido de forma adequada, é de grande importância que um 
+processo seja definido. Pfleeger (2001) descreve processo como um conjunto de passos 
+envolvendo atividades, limitações e recursos que produzem um resultado.  
+
+Especificamente, em relação a processo de software, uma definição feita por Reis (2003) é: 
+“um conjunto de atividades realizadas para construir software, levando em consideração os 
+produtos construídos, as pessoas envolvidas, e as ferramentas com as quais trabalham.” 
+
+Dentre os diversos processos de desenvolvimento de software existentes, Pressman (2002) 
+cita três fases comuns a todos eles:  
+
+ Fase de definição: foco no “o quê”. Etapa que identifica quais informações devem ser 
+processadas, as funções e desempenhos desejados, os comportamentos esperados pelo 
+sistema, as interfaces que serão estabelecidas, as restrições do projeto e os critérios de 
+validação necessários para obter um sistema bem sucedido.   
+
+ Fase de desenvolvimento: focaliza o “como”. A preocupação desta etapa é em definir 
+como os dados serão estruturados, como será feita a implementação, como o projeto será 
+traduzido em uma linguagem de programação e como os testes serão realizados.  
+
+ Fase de manutenção: tem foco nas modificações associadas com a correção de erros, as 
+adaptações necessárias, seja porque o ambiente do software evolui ou devido às 
+modificações dos requisitos do cliente.   
+
+Com o uso dos sistemas informatizados em diferentes áreas de conhecimento e dada sua 
+notória importância como diferencial competitivo, diversos trabalhos têm sido desenvolvidos 
+almejando a melhoria dos processos de software. Um modelo de reconhecimento 
+internacional é o CMM (Capability Maturity Model). Desenvolvido pelo Software 
+Engineering Institute (SEI) se baseia em um modelo evolutivo, onde as organizações partem 
+
+3 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+de uma total falta de controle e gerenciamento dos processos para aos poucos adquirirem 
+novas competências incrementando seu nível de eficiência e maturidade (BARTIÉ, 2002).  
+
+ 
+
+           Fonte: Adaptção de Bartié (2002) 
+
+Figura 2 - Possíveis níveis de maturidade previstos no modelo CMM 
+
+O modelo com cinco níveis de maturidade apresentado anteriormente ficou conhecido como 
+SW-CMM e seu sucesso incentivou a criação de modalidades do CMM abrangendo outras 
+áreas de interesse. Couto (2007) cita os seguintes exemplos:  
+
+ Software Aquisition CMM (SA-CMM): avalia a maturidade dos processos de seleção, 
+compra e instalação de softwares desenvolvidos por terceiros;  
+
+ Systems Engineering CMM (SE-CMM): avalia a maturidade dos processos de Engenharia 
+de Sistemas; 
+
+ Integrated Product Development (IPD-CMM): inclui processos necessários à produção e 
+suporte ao produto, tais como: suporte ao usuário, processos de fabricação dentre outros.  
+
+ People CMM (P-CMM): avalia a maturidade dos processos de administração de recursos 
+humanos, recrutamento e seleção de desenvolvedores, treinamento, etc.  
+
+O aparecimento de todos esses modelos trouxe alguns problemas, pois apesar de serem 
+desenvolvidos pelo próprio SEI, não havia integração e harmonia entre eles. Desta forma, 
+segundo Couto (2007), o SEI elaborou um modelo integrado chamado CMMI (Capability 
+Maturity Model Integration). 
+
+Semelhante ao CMM, o CMMI também possui cinco níveis, com cada um deles 
+representando um estágio de maturidade no processo de desenvolvimento de software 
+(SOUSA, 2009).  Entretanto, o CMMI é mais flexível, pois permite que a organização opte 
+por focar na capacitação de uma determinada área ou a maturidade da organização como um 
+todo para melhorar os seus processos (COUTO, 2007).  
+
+Apesar da flexibilidade do CMMI em relação ao CMM, poucas empresas brasileiras 
+conseguiram evoluir na escala de maturidade do modelo. Considerando essa realidade, foi 
+criado o MPS.BR que é um programa que visa apoiar as empresas do Brasil no processo de 
+melhoria de qualidade de software.  
+
+4 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+Um dos objetivos do MPS.BR é definir e aprimorar um modelo de melhoria e avaliação de 
+processo de software, focando especialmente as micro, pequenas e médias empresas 
+(SOFTEX, 2009).  
+
+O MPS.BR define sete níveis de maturidade: A (Em Otimização), B (Gerenciado 
+Quantitativamente), C (Definido), D (Largamente Definido), E (Parcialmente Definido), F 
+(Gerenciado) e G (Parcialmente Gerenciado) (SOFTEX, 2009). Uma comparação entre os 
+níveis do MPS.BR e os estágios do CMMI é exibida na Figura 3.  
+
+ 
+  Fonte: Coutinho (2011) 
+
+Figura 3 - Comparação entre CMMI e MPS.BR 
+
+À medida que uma organização evolui nos níveis de maturidade, um maior nível de 
+capacidade para desempenhar o processo deve ser atingido. Os níveis são acumulativos, ou 
+seja, na passagem para um nível de maturidade superior, os processos anteriormente 
+implementados devem passar a ser executados no nível de capacidade exigido neste nível 
+superior (SOFTEX, 2009).  
+
+O MPS.BR vem sendo amplamente utilizado por empresas de todo o Brasil e a aplicação do 
+programa tem alcançado êxito em seu propósito de melhoria de qualidade do processo de 
+software.  
+
+2.2. Qualidade do produto 
+
+A qualidade do produto visa avaliar o resultado do processo de desenvolvimento de software. 
+A atividade de testes é um dos métodos mais usados para a garantia da qualidade do produto 
+(TIAN, 2005). É uma atividade que tem como objetivo verificar a presença de defeitos e 
+aumentar a confiança de que o produto está correto (ROCHA et. al., 2001).  
+
+Bartié (2002) descreve que todas as atividades que tenham o objetivo de explorar telas e 
+funcionalidades de um sistema informatizado podem ser consideradas como garantia da 
+qualidade do produto tecnológico. Segundo o mesmo autor, a qualidade dos produtos de 
+software pode ser garantida através de aplicações de testes durante as diversas etapas do 
+processo de desenvolvimento.  
+
+5 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+Os testes podem ser elaborados de forma categorizada. Cada categoria de testes tem objetivo 
+de encontrar problemas específicos em um software. Bartié (2002) explica algumas delas: 
+
+ Funcional: tem por objetivo garantir que todos os requisitos funcionais sejam 
+implementados, ou seja, o comportamento do software construído deve estar de acordo 
+com as necessidades dos clientes.  
+
+ Usabilidade: categoria de testes que focaliza a facilidade de navegação entre as telas da 
+aplicação, a clareza de textos e mensagens, a padronização visual do produto, dentre outros 
+aspectos.  
+
+ Desempenho: tem por objetivo determinar se o desempenho, nas situações previstas de 
+pico máximo de acesso e concorrência, está consistente com os requisitos definidos.  
+
+ Recuperação: avaliar o comportamento do software após a ocorrência de um erro ou de 
+determinadas condições anormais.   
+
+ Segurança: tem como objetivo detectar falhas de segurança que possam comprometer o 
+sigilo e a fidelidade das informações.  
+
+As categorias de testes citadas anteriormente servirão de base para a elaboração de 
+questionários que serão utilizados na metodologia para avaliação de software como um 
+serviço que será apresentada neste trabalho.  
+
+3. Software como um serviço (Software as a Service – SaaS) 
+
+O uso das Tecnologias da Informação e Comunicação (TICs) é sem dúvida fundamental para 
+que as empresas possam manter-se competitivas. Há algumas décadas, o uso dessas 
+tecnologias era um diferencial. No cenário atual, sua utilização pode ser vista como um 
+requisito mínimo para a entrada nos mercados.  
+
+De acordo com Solari (2008) uma alternativa de competitividade é adotar estratégias que 
+possibilitem a disponibilização de softwares como serviços (SaaS). Blokdijk (2008) considera 
+que SaaS é uma das siglas que referem-se a serviços de software e faz uma comparação entre 
+consumidores de softwares e clientes de uma empresa aérea: é impraticável para aqueles que 
+precisam usar transporte aéreo comprar e manter uma aeronave e toda a infraestrutura 
+necessária para seu funcionamento. Da mesma forma para um cliente de software pode ser 
+inviável adquirir e manter equipamentos (hardware), contratar pessoal especializado na área 
+de TI, comprar licenças de software, etc. 
+
+De maneira geral, ThinkStrategies (2005) definem SaaS como uma solução de software que 
+fica hospedada no provedor do serviço, está disponível na Web e pode ser acessada pelos 
+usuários através da Internet sem necessidade de que o cliente faça a implantação e mantenha a 
+infraestrutura de TI. Sendo assim, o cliente tem direitos sobre seus dados e sobre o uso do 
+software, mas não precisa em nenhuma circunstância adquirir uma licença ou comprar o 
+software como se fosse um produto (MA, 2007). 
+
+A estratégia de fornecer software como um serviço vem amadurecendo e tem tido um 
+crescimento rápido, atraindo fornecedores de diferentes segmentos do mercado de TI e um 
+conjunto de clientes variados (ELIADIS E RAND, 2007).  
+
+Chong e Carraro (2006) destacam duas categorias de softwares como um serviço: 
+
+ Serviços de linha de negócios: serviços oferecidos a empresas de qualquer tamanho. São 
+soluções de negócios grandes e personalizáveis com o intuito de facilitar processos de 
+negócios. Normalmente são vendidos aos clientes como assinatura.   
+
+ Serviços orientados a cliente: oferecidos ao público em geral. Em algumas circunstâncias 
+são vendidos como assinatura, mas comumente são fornecidos sem custo e financiados por 
+
+6 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+anúncios. Um exemplo desse tipo de serviço são os serviços oferecidos pelo Google. 
+
+A Tabela 1 apresenta as principais diferenças entre o modelo tradicional de pacotes de 
+software e o modelo SaaS reportadas por Melo et al. (2007). 
+
+ 
+
+Pacotes de Software Tradicional SaaS 
+- Clientes são responsáveis pela manutenção e - Projetado para ser distribuído como serviço pela 
+gerenciamento. Internet. 
+- Solução é planejada para ser executada por uma - A solução é projetada para executar em clientes 
+companhia individual em uma infraestrutura dedicada. diferentes em um único código.  
+- Atualizações são feitas de 18 a 24 meses. O pacote é - Atualizações são feitas de 3 a 6 meses para 
+vendido individualmente para cada base de cliente minimizar o impacto no cliente e melhorar a 
+instalada satisfação. 
+- Controle de versão e taxa de upgrade. - Ao corrigir um problema para um cliente, a correção 
+
+é propagada para todos os demais 
+Fonte: Adaptado de Melo et. al (2007) 
+
+Tabela 1 - Comparação entre os modelos de pacotes de software tradicional e de software como um serviço 
+
+4. A metodologia proposta (QualySaaS) 
+
+De acordo com os princípios do TQC (Controle da Qualidade Total), o objetivo principal de 
+uma empresa é sobreviver por meio da satisfação das necessidades das pessoas: consumidores 
+(através da qualidade), empregados (crescimento do ser humano), acionistas (através da 
+produtividade) e vizinhos (contribuição social) (CAMPOS, 2004). 
+
+Segundo Freitas (2005), um dos procedimentos mais empregados para avaliar e classificar a 
+qualidade dos serviços é através da mensuração do Grau de Satisfação dos avaliadores 
+(clientes, funcionários ou avaliadores externos) com o desempenho do serviço à luz de um 
+conjunto de critérios considerados relevantes. Em especial, Brady et al (2002) fundamentam 
+essa afirmação relatando que o constructo satisfação pode ser relacionado ao desempenho 
+positivo (ou negativo) de uma empresa prestadora de serviços. 
+
+Diante deste contexto, considerando os princípios do TQC, a importância da estratégia 
+software como um serviço e o constructo satisfação como forma de mensurar a qualidade de 
+serviços, a metodologia QualySaaS (Quality of Software as a Service) foi estruturada com o 
+objetivo de avaliar a qualidade dos serviços de software especialmente para organizações que 
+desenvolvem SaaS, segundo a percepção da satisfação dos clientes, funcionários e gestores. A 
+Figura 4 ilustra o trinômio Clientes - Funcionários – Gestores, representativo da QualySaaS. 
+
+ 
+
+  
+QualySaaS 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ Gestores 
+
+ 
+
+ 
+
+  
+Clientes Funcionários 
+
+7 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+Figura 4 – Trinômio representativo da metodologia QualySaaS 
+
+Para implementação do processo de mensuração da qualidade dos serviços serão 
+desenvolvidos instrumentos de coleta de dados específicos para cada grupo de elementos 
+envolvidos (clientes, funcionários e gestores), cujas dimensões e critérios serão descritos a 
+seguir. Propõe-se o emprego de uma escala de julgamento não comparativa e contínua, 
+conforme ilustra a Figura 5. Segundo Albernaz e Freitas (2010) esse tipo de escala permite o 
+tratamento dos dados com o uso de mais ferramentas estatísticas e de classificação, além de 
+possibilitar ao avaliador expressar sua satisfação de forma menos restrita.   
+
+ 
+Figura 5 – Escala a ser utilizada na metodologia QualySaaS 
+
+4.1. Definição das Dimensões e dos Itens da metodologia QualySaaS 
+
+Nesta seção apresentam-se as Dimensões e itens (critérios) que irão compor a metodologia 
+QualySaaS em processos avaliativos distintos, segundo a percepção dos clientes, dos 
+funcionários e dos gestores da empresa fornecedora do SaaS.  
+
+4.1.1. Dimensões e itens para avaliação dos serviços segundo a percepção dos clientes 
+
+Segundo Albrecht (1998), ao receber um serviço, o usuário vivencia uma seqüência de 
+Momentos da Verdade, denominada Ciclo de Serviço. Cada Momento da Verdade representa 
+o instante em que o usuário entra em contato com qualquer aspecto da organização 
+(funcionários, instalações, tele/fax, e-mail, etc.) e, de acordo com esse contato, ele pode 
+formar sua opinião a respeito da qualidade do serviço.  
+
+Os Momentos da Verdade podem ser observados pelo pesquisador na ocasião da visita técnica 
+à empresa que desenvolva SaaS e também por meio de pesquisa com os membros da empresa, 
+incentivados a identificar as possíveis oportunidades de interface dos clientes com a empresa 
+(um questionário pode ser desenvolvido especificamente para este fim). Após a coleta de 
+dados e do entendimento do ciclo de serviços resultante, eventuais falhas ocorridas podem ser 
+mais facilmente identificadas e, mediante a tomada de ações corretivas/preventivas, estas 
+podem ser evitadas de forma a proporcionar a melhoria na qualidade dos serviços prestados. 
+
+Além dos momentos da verdade, propõe-se o emprego de dimensões sugeridas por 
+Parasuraman, Zeithaml e Berry (1985), com itens/critérios adaptados para a avaliação da 
+qualidade de software como um serviço, segundo a percepção do grau de satisfação dos 
+clientes com o serviço prestado. A Tabela 2 apresenta as dimensões e critérios considerados.  
+
+Dimensões Critérios 
+Prestação de serviço conforme especificação prometida. 
+Interesse dos profissionais envolvidos em resolver os problemas do cliente.  
+Cumprimento de prazos. 
+Informações precisas fornecidas pelos profissionais. 
+
+Confiabilidade 
+Solução de problemas pelo sistema. 
+Exatidão dos dados armazenados no sistema. 
+A ocorrência de erros no sistema. 
+A ocorrência de erros graves no sistema. 
+
+8 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+As funcionalidades do sistema.  
+  
+
+Atualizações implementadas no sistema de acordo com as mudanças do negócio. 
+Prazo para correção de falhas no sistema. 
+Prazo para atualizações no sistema. 
+
+Presteza 
+Atenção dada ao cliente no momento do atendimento. 
+Esclarecimento de dúvidas dos usuários. 
+Feedback dado pela empresa aos clientes. 
+
+  
+Atualizações feitas no sistema representam os requisitos do negócio.  
+Nível de conhecimento dos funcionários na prestação de um atendimento.  
+
+Competência 
+Frequencia de atualização da tecnologia usada nas soluções. 
+Eficiência do serviço de suporte na solução dos problemas. 
+
+  
+Adequação das opções de atendimento. 
+Tempo de espera para ser atendido. 
+Horários de atendimento disponíveis.  
+
+Acessibilidade Facilidade de entendimento da interface do sistema. 
+Clareza das mensagens do sistema. 
+Facilidade de entendimento dos materiais disponíveis (manuais e helps). 
+Facilidade de uso do sistema. 
+
+  
+Paciência dos funcionários no momento do atendimento.  
+
+Cortesia Clareza da linguagem utilizada pelos funcionários no momento do atendimento.  
+Educação do profissional durante o atendimento. 
+
+  
+Segurança no armazenamento dos dados. 
+Políticas de backup utilizadas pela empresa.  
+
+Segurança 
+Manutenção de dados confidenciais de cada cliente. 
+Preocupação da empresa com invasões do sistema por terceiros.  
+
+  
+Velocidade do sistema (Internet). 
+Desempenho do sistema, mesmo nos dias de muitos acessos. 
+A infraestrutura de hardware da empresa.   
+
+Aspectos 
+Organização do portal de informações da empresa (site). 
+
+Tangíveis 
+O custo do serviço.  
+Aparência dos profissionais.  
+Adequação das instalações físicas da empresa.  
+
+Tabela 2 – Dimensões e critérios para avaliação junto aos clientes 
+
+4.1.2. Dimensões e itens para avalição dos serviços em termos das condições de trabalho 
+
+O segundo procedimento avaliativo da metodologia QualySaaS tem o objetivo de avaliar as 
+condições de trabalho oferecidas pela empresa que oferece SaaS, sob a perspectiva dos 
+funcionários. É relevante enfatizar que a mensuração do Grau de Satisfação dos funcionários 
+foi considerada nesta metodologia, visto que esse aspecto influencia diretamente na prestação 
+dos serviços de uma empresa. 
+
+Para tanto, será desenvolvido um instrumento de coleta de dados fundamentados em 
+dimensões do modelo para avaliação da Qualidade de Vida no Trabalho proposto por Walton 
+(1973) e adaptadas para a natureza do serviço em questão. A Tabela 3 apresenta as dimensões 
+e critérios/itens a serem consideradas neste procedimento avaliativo. 
+
+Dimensões Critérios 
+Adequação dos salários pagos pela empresa com as atividades desempenhadas. 
+
+Compensação justa e Coerência entre os salários pagos pela empresa e os salários pagos por outras empresas 
+adequada do ramo. 
+
+Coerência entre as faixas de salários pagos pela empresa, de acordo com cada cargo. 
+
+9 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+  
+Conforto e bem-estar proporcionados pelas instalações da empresa. 
+
+Condições de Trabalho 
+Adequação da jornada de trabalho praticada pela empresa. 
+
+  
+Autonomia do trabalhador para desenvolvimento do seu trabalho. 
+
+Uso e desenvolvimento 
+Incentivo da empresa à criatividade do trabalhador. 
+
+de capacidades 
+Preocupação da empresa na alocação do trabalhador em áreas de maior afinidade. 
+
+  
+Oportunidades oferecidas ao trabalhador para crescimento em sua carreira. 
+
+Chances de Interesse da empresa em qualificar funcionários (treinamentos e capacitações). 
+crescimento e A rotatividade de profissionais é pequena. 
+segurança Condições oferecidas pela empresa para segurança e estabilidade do funcionário. 
+
+Reconhecimento do mérito dos funcionários. 
+  
+
+Valorização dos relacionamentos interpessoais. 
+Estímulo à cooperação entre profissionais. 
+
+Integração social na 
+Valorização de cada funcionário como parte importante de um conjunto. 
+
+empresa 
+Clima do ambiente de trabalho. 
+Igualdade de oportunidades para todos os trabalhadores. 
+
+  
+Cumprimento da data de pagamento dos salários. 
+Preocupação da empresa com o cumprimento das leis trabalhistas como um todo. 
+
+Constitucionalismo Relacionamento da empresa com ex-funcionários. 
+Facilidade de acesso às normas e rotinas da empresa. 
+Liberdade para o trabalhador expressar suas opiniões e desejos. 
+
+Tabela 3 – Dimensões e critérios para avaliação junto aos funcionários  
+
+4.1.3. Dimensões e itens para avaliação dos serviços segundo a percepção dos gestores  
+
+O terceiro procedimento avaliativo da metodologia QualySaaS tem como objetivo captar as 
+percepções da satisfação dos gestores (alta direção) da empresa em relação ao SaaS como um 
+negócio. Para tal serão consideradas Dimensões e itens/critérios fundamentados no Modelo de 
+Excelência da Gestão (MEG) utilizado para a premiação anual que reconhece a excelência nas 
+empresas que operam no Brasil.  
+
+Segundo a Fundação Nacional da Qualidade (2011), o MEG é composto de um conjunto de 
+conceitos fundamentais, critérios e requisitos inerentes à excelência em gestão. Os 
+fundamentos presentes nesse modelo são: pensamento sistêmico, aprendizado organizacional, 
+cultura de inovação, liderança e constância de propósitos, orientação por processos e 
+informações, geração de valor, valorização das pessoas, conhecimento sobre o cliente e o 
+mercado, desenvolvimento de parcerias e responsabilidade social. A Tabela 4 apresenta as 
+dimensões e critérios que serão incorporados à metologia QualySaaS. 
+
+Dimensões Critérios 
+Conhecimento a respeito dos concorrentes da empresa.  
+
+Pensamento Sistêmico Relacionamento da empresa com seus fornecedores.  
+Relacionamento da empresa com seus clientes.  
+
+  
+Frequencia com que a empresa avalia experiências passadas.  
+
+Aprendizado Organizacional Compartilhamento de experiências da empresa com seus clientes.  
+A empresa considera sugestões/críticas dos funcionários. 
+
+  
+Incentivo aos funcionários na implementação de idéias criativas.  
+
+Cultura de Inovação Valorização das sugestões de clientes.  
+Pesquisa sobre o uso de novas tecnologias. 
+
+  
+Orientação por Processos e Consideração de riscos nos investimentos da empresa.  
+
+10 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+Informações Realização de estudos para tomadas de decisão na empresa.  
+  
+
+Retorno financeiro obtido pela empresa. 
+Crescimento da empresa em seu mercado de atuação.  
+Relação custo/benefício dos investimentos da empresa. 
+Ampliação das instalações físicas da empresa.  
+
+Geração de Valor 
+Reconhecimento da empresa por parte de outras empresas.  
+Alcance das metas estabelecidas pela empresa. 
+Ampliação da infraestrutura de hardware. 
+Crescimento dos recursos humanos.  
+
+  
+Criação de condições para crescimento de seus profissionais.  
+
+Valorização das Pessoas 
+Desempenho dos profissionais da empresa. 
+
+  
+Conhecimento dos clientes que possui.  
+
+Conhecimento sobre o Cliente Conhecimento do mercado em que empresa está inserida. 
+e o Mercado Nível de competitividade da empresa. 
+
+Ações de busca por novas oportunidades. 
+  
+
+Ações de busca por parceiros estratégicos.  
+Desenvolvimento de Parcerias Reconhecimento da necessidade de desenvolver atividades em conjunto com 
+
+empresas parceiras. 
+
+Tabela 4 – Dimensões e critérios para avaliação junto aos gestores 
+
+4.2 Elaboração do instrumento de coleta de dados 
+
+Em instrumentos de coleta de dados as sentenças e/ou perguntas são apresentadas aos 
+avaliadores e é onde são registradas as respostas. Como possíveis formas desses instrumentos 
+citam-se: o questionário, formulário para anotações de observações, roteiro de uma entrevista, 
+etc. (MATTAR, 1999). Para implementação da metodologia QualySaaS são considerados  
+três questionários distintos, visando captar as percepções da satisfação de clientes, 
+funcionários e gestores da organização acerca da qualidade do SaaS fornecido. Cada 
+questionário será estruturado em três blocos:  
+
+ Bloco I (composto de itens que visam estabelecer um perfil do avaliador);  
+ Bloco II (composto de itens/critérios à luz dos quais os avaliadores expressarão o seu 
+
+Grau de Satisfação); e  
+ Bloco III (contém item que visa mensurar o Grau de Satisfação Geral do avaliador e dois 
+
+itens de resposta aberta que visam captar aspectos que trazem satisfação e insatisfação).  
+
+Como o preenchimento do quesntionário será realizado individualmente por cada avaliador 
+(auto-preenchimento), especial atenção deve ser dedicada à construção do mesmo. Segundo 
+Mattar (1999), instrumentos de coleta de dados mal elaborados constituem uma das principais 
+fontes de erros não amostrais na pesquisa. Neste contexto, no questionário desenvolvido as 
+questões serão redigidas com afirmações favoráveis (positivas), evitando-se palavras 
+tendenciosas, tais como: termos que indiquem totalidade (nenhum, todos, etc.), advérbios de 
+freqüência (sempre, nunca, etc.) e advérbios de intensidade (muito, pouco, etc.). 
+
+4.3. Análise dos Dados  
+
+Após a coleta de dados, será possível verificar como os avaliadores (clientes, funcionários e 
+gestores) avaliam o SaaS fornecido pela organização sob diferentes aspectos. Técnicas 
+estatísticas e/ou métodos fundamentados no Auxílio Multicritério à Decisão (AMD) poderão 
+ser utilizados para identificar dimensões e itens que precisam ser priorizados em um programa 
+de melhoria da qualidade. Mais especificamente, os resultados das análises poderão indicar: 
+
+11 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+- sob a perspectiva dos clientes: necessidades de melhoria tanto no processo de 
+desenvolvimento quanto em relação ao produto final. Por exemplo, se os resultados indicarem 
+a insatisfação dos clientes com o prazo para atualizações do sistema, ou forem insatisfatórios 
+em relação à ocorrência de falhas no software, essa informação será levada ao setor de 
+desenvolvimento e/ou de testes como um indicador de problemas. 
+
+- sob a perspectiva dos funcionários: o nível de qualidade de vida no trabalho, permitindo que 
+a empresa utilize as informações coletadas para o desenvolvimento de políticas de melhoria 
+nas condições de trabalho. É importante ressaltar que essas melhorias implicam diretamente 
+na prestação de serviços com maior qualidade aos clientes, sendo relevante ao tema SaaS.  
+
+- sob a perspectiva dos gestores: o nível de satisfação dos gestores com o seu negócio, sendo 
+ao menos um incentivo para reflexão sobre pontos estratégicos para os rumos da empresa que, 
+a princípio, podem estar ocultos.  
+
+Uma etapa posterior à análise dos dados consiste no estabelecimento de um plano de ação 
+para cada item/critério considerado crítico. Nesta etapa é fundamental que haja a participação 
+e comprometimento dos profissionais dos setores envolvidos para que seja possível 
+estabelecer as ações de melhoria. Para tanto, sugere-se a ferramenta 5W1H. 
+
+5. Considerações Finais  
+
+Nos dias atuais, o uso de sistemas informatizados é um requisito para a competitividade entre 
+as empresas. Neste contexto, muitas organizações estão optando pela aquisição de Software 
+como um Serviço (SaaS – Software as a Service), especialmente por essas soluções 
+representarem redução de custos e isenções em relação à preocupação com infraestrutura de 
+hardware e de pessoal qualificado em Tecnologia da Informação (TI).  
+
+Entretanto, a opção pelo uso de SaaS exige que o cliente que contrata o serviço e a empresa 
+que o oferece tenham uma relação de extrema confiança, uma vez que dados importantes e até 
+mesmo confidenciais ficam sobre posse de terceiros. Utilizar SaaS vai além da preocupação 
+com o processo de desenvolvimento de software ou com o produto final. Além disso, os 
+serviços que compõem o pacote contratado são fundamentais para o sucesso da escolha. Neste 
+contexto, mensurar a qualidade de SaaS torna-se extremamente relevante nos tempos atuais 
+mas, por outro lado, constitui-se em uma problemática complexa integrada por objetos de 
+estudo de natureza não trivial: avaliação da qualidade de processos de desenvolvimento de 
+software, avaliação de produto de software e avaliação da qualidade de serviços. 
+
+Visando contribuir para o tratamento desta problemática, este artigo apresentou a metodologia 
+QualySaaS, que objetiva avaliar a qualidade dos serviços de software prestados por empresas 
+que desenvolvem SaaS, segundo a percepção da satisfação de clientes, funcionários e 
+gestores. Foram definidas dimensões e itens intrínsecos à mensuração da qualidade de SaaS 
+sob enfoque de: (i) serviços prestados (perspectiva dos clientes), (ii) condições de trabalho 
+(perspectiva dos funcionários), e (iii) negócios (perspectiva da alta direção da empresa). Serão 
+estruturados três questionários incorporando os itens e a escala de julgamento sugerida. 
+
+É importante ressaltar que uma empresa desenvolvedora de SaaS manifestou interesse em 
+participar da implementação da metodologia proposta, sendo considerada uma „empresa-
+laboratório‟. Trata-se de uma empresa localizada no Estado do Rio de Janeiro, atuante na área 
+de Tecnologia da Informação há 18 anos e que possui atualmente mais de 400 clientes-
+empresa em todo o Brasil e aproximadamente 40 funcionários. Os contatos iniciais foram 
+iniciados em novembro de 2010 e atualmente esforços têm sido direcionados na elaboração do 
+Ciclo de Serviços. Estima-se que até meados do segundo semestre de 2011 um estudo-piloto 
+tenha sido realizado junto a uma amostra de clientes da empresa para fins de investigação do 
+
+12 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+
+intrumento de coleta de dados proposto e para análise preliminar dos resultados. É nessa 
+vertente que se direciona o desenvolvimento da metodologia proposta. 
+
+Referências 
+
+ALBERNAZ, C.M.R. & FREITAS, A.L.P. Um modelo para avaliação da qualidade de serviços de suporte de 
+Tecnologia da Informação. Anais do XXX ENEGEP, 2010. 
+
+ALBRECHT, K. Revolução nos Serviços. São Paulo: Editora Pioneira, 1989.  
+
+BARTIÉ, A. Garantia da qualidade de software: adquirindo maturidade organizacional. 9. ed. Rio de Janeiro: 
+Elsevier, 2002. 
+
+BLOKDIJK, G. SaaS 100 success secrets: how companies successfully buy, manage, host and deliver software 
+as a service (SaaS). London: Emereo Pty Ltd, 2008. 
+
+BRADY, M. K., CRONIN, J. J. & BRAND, R. R. “Performance-only measurement of service quality: a 
+replication and extension”, Journal of Business Research, n.55, 17-31. 2002. 
+
+CAMBIUCCI, W. Uma introdução ao Software + Serviços, SaaS e SOA. Disponível em: < 
+http://msdn.microsoft.com/pt-br/library/dd875466.aspx>. Acesso em: 17 abr. 2011. 
+
+CAMPOS, V. F. TQC Controle da Qualidade Total (no estilo japonês).8 ed. Minas Gerais: INDG Tecnologia e 
+Serviços Ltda, 2004. 
+
+CHONG, F. & CARRARO G.  Architecture Strategies for Catching the Long Tail, abril 2006. Disponível em: 
+<http://msdn.microsoft.com/en-us/library/aa479069.aspx> . Acesso em: 17 abr. 2011.  
+
+COUTINHO, R. Workshop de Processos de Software. Disponível em: < 
+http://oglobo.globo.com/blogs/tecnologia/posts/2011/04/01/workshop-processos-de-software-372361.asp>. 
+Acesso em: 17 abr. 2011.   
+
+COUTO, A.B. CMMI: Integração dos modelos de capacitação e maturidade de sistemas. Rio de Janeiro: Ciência 
+Moderna, 2007.  
+
+ELIADIS, H. & RAND, A. Setting Expectations In Saas: The Importance of the Service Level Agreement to 
+Saas Providers and Consumers. SIIA Software as a Service Working Group. Software & Information Industry 
+Association., 2007.  
+
+FUNDAÇÃO NACIONAL DA QUALIDADE. Conceitos Fundamentais da Excelência em Gestão. Disponível 
+em: <http://www.fnq.org.br/site/377/default.aspx.>. Acesso em 17 abr. 2011.  
+
+MA, D. The Business Model of "Software-As-A-Service". Services Computing. 2007. SCC 2007. IEEE 
+International Conference on,  p.701-702, 2007. 
+
+MATTAR, F. N. Pesquisa de Marketing. Edição compacta. Atlas, São Paulo, 1999. 
+
+MELO, C.A; ARCOVERDE D. F.; MORAES E.R.A.; PIMENTEL J. H. C. & FREITAS R.Q. Software 
+como Serviço: Um Modelo de Negócio Emergente. Paper Centro de Informática – Universidade Federal de 
+Pernambuco, 2007.  
+
+PARASURAMAN, A.; ZEITHAML V.A. & BERRY, L.L. A conceptual model of services quality and its 
+implication for future research. Journal of Marketing, Vol. 49, n. 4, p. 41-50, 1985. 
+
+PFLEEGER, S.L. Software Engineering: Theory and Practice. 2 ed. Upper Saddle River, New Jersey: Prentice-
+Hall, 2001. 
+
+PRESSMAN, R. S. Engenharia de Software. 5.ed. Rio de Janeiro: McGraw-Hill, 2002.   
+
+REIS, C. R. Caracterização de um Processo de Software para Projetos de Software Livre. Dissertação 
+(mestrado) – Universidade de São Paulo. Instituto de Ciências Matemáticas e de Computação, 2003.  
+
+ROCHA, A. R. C. Análise e Projeto Estruturado de Sistemas. Rio de Janeiro: Editora campus, 1987. 
+
+ROCHA, A.R.C.; MALDONADO, J.C. & WEBER, K.C. Qualidade de Software – Teoria e Prática. São 
+Paulo: Prentice Hall, 2001. 
+
+SOFTEX - ASSOCIAÇÃO PARA PROMOÇÃO DA EXCELÊNCIA DO SOFTWARE BRASILEIRO. 
+MPS.BR – Guia Geral: 2009, maio 2009. Disponível em: 
+<http://www.softex.br/mpsbr/_guias/guias/MPS.BR_Guia_Geral_2009.pdf>. Acesso em: 17 abr. 2011.  
+
+13 
+
+ 
+ 
+
+
+
+ 
+
+ XXXI ENCONTRO NACIONAL DE ENGENHARIA DE PRODUCAO 
+Inovação Tecnológica e Propriedade Intelectual: Desafios da Engenharia de Produção na Consolidação do Brasil no  
+
+Cenário Econômico Mundial 
+ Belo Horizonte, MG, Brasil, 04 a 07 de outubro de 2011. 
+
+ 
+SOLARI, M. L. B de.  Análise da disponibilização de arquitetura de software como serviço (SaaS – Software as 
+a Service) através de aliança estratégica: Um estudo de caso. Publicação PPGENE.DM-062/2008. Departamento 
+de Engenharia Elétrica, Universidade de Brasília. 105p, 2008.  
+
+SOUSA, S. C. C. O impacto do CMM/CMMI na qualidade do software: um estudo sobre a percepção dos 
+profissionais de TIC. Dissertação (mestrado) – Universidade Federal da Bahia. Escola de Administração, 2009.  
+
+THINKSTRATEGIES, I. The future of  TI in large corporations: A whitepaper on Software as a Service. 2005. 
+Disponível em: <www.thinkstrategies.com > Acesso em: 25/01/2011. 
+
+TIAN, J., Software Quality Engineering - Testing, Quality Assurance, and Quantifiable Improvement. Hoboken, 
+Estados Unidos: John Willey & Sons, 2005. 
+
+WALTON, R.E. Quality of Working Life: What is it? Sloan Management Review, 15, 1, pp. 11-21, 1973.  
+
+14 
+
+ 
+View publica tion stats

@@ -1,0 +1,1312 @@
+1
+
+REVISTA BRASILEIRA DE MECATRÔNICA 
+FACULDADE SENAI DE TECNOLOGIA MECATRÔNICA 
+
+A APLICABILIDADE DA TECNOLOGIA 5G NO CONTEXTO DA INDÚSTRIA 4.0: 
+IMPULSIONANDO IoT, IA, COMPUTAÇÃO EM NUVEM E SEGURANÇA CIBERNÉTICA 
+ 
+THE APPLICABILITY OF 5G TECHNOLOGY IN THE CONTEXT OF INDUSTRY 4.0: EMPOWERING 
+IOT, AI, CLOUD COMPUTING AND CYBERSECURITY 
+ 
+João Victor Delomo Luque
+Daniel Octávio Tambasco Bruno
+Juliane de Almeida Crispim
+José Roberto dos Santos 
+Victor Pereira Bernardes 
+
+Data de submissão: (14/02/2024) 
+Data de aprovação: (09/09/2024)  
+ 
+RESUMO 
+ 
+Este artigo explora a importância do setor de telecomunicações e o avanço tecnológico 
+representado pela tecnologia 5G, a quinta geração de telefonia móvel. O 5G oferece 
+velocidades de dados móveis superiores, menor latência e a capacidade de conectar 
+simultaneamente diversos dispositivos, impulsionando o desenvolvimento em pilares da 
+Indústria 4.0, como Internet das Coisas (IoT), Inteligência Artificial (IA), Computação em 
+Nuvem e Segurança Cibernética. O objetivo geral deste estudo é investigar a influência da 
+implementação do 5G e em seus resultados operacionais e de inovação no contexto da 
+Indústria 4.0. A justificativa para o estudo baseia-se no interesse e no investimento global na 
+tecnologia 5G, que apresenta avanços significativos em relação às gerações anteriores e seu 
+impacto na indústria. Este trabalho é uma Revisão Sistemática da Literatura, que inclui a 
+análise de teses, dissertações e artigos sobre a implementação do 5G. A análise contribui para 
+o avanço do conhecimento científico e tecnológico, subsidiando decisões estratégicas e 
+impulsionando o desenvolvimento socioeconômico. A pesquisa como um todo, apresenta 
+aplicações de 5G integradas em combinações tecnológicas, por meio da conectividade 
+avançada, em laboratórios, simuladores e ambientes controlados. Por outro lado, os 
+resultados do estudo em relação à implementação de 5G e indústria 4.0 na indústria brasileira 
+mostraram que há poucos estudos na área e a maioria deles se trata de revisões de literatura, 
+
+1 Especialista em Tecnologia na Escola SENAI "Engº Octavio Marcondes Ferraz". E-mail: joao.luque@sp.senai.br  
+2 Professor da Faculdade SENAI de Tecnologia Mecatrônica. E-mail: daniel.bruno@sp.senai.br  
+3 Instrutura de Formação Profissional na Escola SENAI “Engº Octavio Marcondes Ferraz”. E-mail: 
+juliane.crispim@sp.senai.br  
+4 Especialista e Docente na Faculdade SENAI de Tecnologia Mecatrônica. E-mail: joseroberto@sp.senai.br  
+5 Supervisor de Projetos e Tecnologia na Escola SENAI "Engº Octavio Marcondes Ferraz. E-mail: 
+victor.bernardes@sp.senai.br  
+
+2
+ 
+o que evidencia a necessidade de verificar, na prática, questões relacionadas à implementação 
+da tecnologia 5G na indústria 4.0, tendo em vista os seus pilares.  
+ 
+Palavras-chave: 5G; aplicabilidade; Indústria 4.0. 
+ 
+ABSTRACT 
+ 
+This article explores the importance of the telecommunications sector and the technological 
+advancement represented by 5G technology, the fifth generation of mobile telephony. 5G 
+offers superior mobile data speeds, lower latency, and the ability to connect multiple devices 
+simultaneously, driving development in pillars of Industry 4.0, such as the Internet of Things 
+(IoT), Artificial Intelligence (AI), Cloud Computing, and Cybersecurity. The general objective of 
+this study is to investigate the influence of 5G implementation and its operational and 
+innovation results in the context of Industry 4.0. The justification for the study is based on the 
+global interest and investment in 5G technology, which presents significant advances 
+compared to previous generations and its impact on the industry. This work is a Systematic 
+Literature Review, which includes the analysis of theses, dissertations, and articles on the 
+implementation of 5G. The analysis contributes to the advancement of scientific and 
+technological knowledge, supporting strategic decisions and boosting socioeconomic 
+development. The research as a whole presents 5G applications integrated into technological 
+combinations, through advanced connectivity, in laboratories, simulators, and controlled 
+environments. On the other hand, the study results regarding the implementation of 5G and 
+Industry 4.0 in the Brazilian industry showed that there are few studies in the area and most 
+of them are literature reviews, which highlights the need to verify, in practice, issues related 
+to the implementation of 5G technology in Industry 4.0, considering its pillars. 
+ 
+Keywords: 5G; applicability; Industry 4.0. 
+ 
+1 INTRODUÇÃO 
+ 
+O setor de telecomunicações desempenha um papel fundamental em qualquer país, 
+
+oferecendo serviços essenciais que geram valor tanto para as gerações atuais quanto para as 
+futuras. Os avanços nesse setor têm ocorrido num ritmo acelerado, a ponto de já não se 
+imaginar a vida em seus variados aspectos sem esses desenvolvimentos, mesmo que muitos 
+tenham ocorrido há apenas cerca de vinte anos atrás. Atualmente, uma parcela significativa 
+da população se beneficia dos serviços móveis por meio de smartphones, acesso a vídeos sob 
+demanda e Internet de alta velocidade por meio de redes de fibra óptica (Spadinger, 2021). 
+
+A tecnologia 5G, considerada a quinta geração de telefonia móvel, oferece 
+velocidades de dados móveis superiores, menor latência e capacidade de conectar 
+simultaneamente um maior número de dispositivos. Trata-se de um avanço significativo em 
+relação ao 4G e é fundamental para o desenvolvimento de tecnologias como inteligência 
+artificial (IA) e Internet das Coisas (IoT). O 5G desempenha um papel importante na produção 
+industrial, impulsionando a Internet industrial e gerando ganhos em produtividade. O 5G 
+configura-se como uma transformação completa na infraestrutura de telecomunicações, 
+sendo altamente integrativo e capaz de fornecer cobertura móvel universal para diversos 
+dispositivos. As redes 5G estão se expandindo rapidamente no mundo todo, com expectativas 
+
+3
+
+de cobrir uma parte significativa da população global até o final de 2022. Países ao redor do 
+mundo estão investindo fortemente em pesquisa e desenvolvimento do 5G, com a China 
+emergindo como líder nessa área. Os países veem o 5G como um setor estratégico para 
+fortalecer suas posições políticas e econômicas e liderar o desenvolvimento global dessa 
+tecnologia (Prestes, 2022). 
+
+As tecnologias estão em constante desenvolvimento e atingem uma infinidade de 
+áreas, transformando a forma como os indivíduos interagem nesses contextos. Desde a 
+Primeira Geração (1G) até a Quarta Geração (4G), houve aprimoramento de serviços e 
+desenvolvimento na área. O 5G veio, portanto, revolucionar este tipo de tecnologia, 
+possibilitando o alcance de inúmeras possibilidades, como as Cidades Inteligentes (Smart 
+Cities), entre várias outras (Lucca e Mauro, 2020). 
+
+Neste contexto, a Indústria 4.0, também conhecida como a Quarta Revolução 
+Industrial, representa uma transformação profunda nos processos de manufatura e produção 
+industrial, impulsionada pelo avanço e integração de tecnologias digitais emergentes. Esse 
+paradigma é caracterizado pela convergência de tecnologias cibernéticas, físicas e biológicas, 
+culminando na criação de fábricas inteligentes, onde sistemas interconectados e autônomos 
+operam em tempo real (Sacomano et al., 2018). 
+
+A transição para a Indústria 4.0 envolve a adoção de tecnologias como a Internet das 
+Coisas (IoT), Inteligência Artificial (IA), Computação em Nuvem, Segurança Cibernética e, mais 
+recentemente, a rede 5G. Esses elementos tecnológicos são integrados em Sistemas 
+Ciberfísicos (CPS), os quais permitem a comunicação e a coordenação entre máquinas, 
+produtos, sistemas de produção e humanos. Assim, a Indústria 4.0 representa uma evolução 
+estratégica e tecnológica no setor industrial, possibilitando uma produção mais eficiente, 
+flexível e customizável. A interconexão de Sistemas Ciberfísicos, impulsionada pela tecnologia 
+5G, é a chave para desbloquear todo o potencial desta nova era industrial, onde a digitalização 
+e a automação são elementos centrais para a competitividade e a inovação contínua, o que 
+justifica o desenvolvimento de pesquisas sobre esta temática. 
+
+1.1 Problema de pesquisa 
+ 
+Qual é a aplicabilidade da tecnologia 5G na Indústria 4.0 e seus impactos em IoT, IA, 
+
+Computação em Nuvem e Segurança Cibernética? 
+ 
+1.2 Objetivo(s) 
+ 
+Este artigo científico versa sobre a tecnologia 5G e sua aplicabilidade na Indústria 4.0. 
+O objetivo geral é investigar as influências da implementação da tecnologia 5G e seus 
+resultados operacionais e de inovação no contexto da Indústria 4.0, com foco em quatro 
+pilares específicos: IoT, IA, Computação em Nuvem e Segurança Cibernética. Esse estudo 
+permitirá primeiramente a verificação de aplicações 5G em estudos de caso feito em 
+simuladores, laboratórios e ambientes controlados na sessão 2 deste artigo e na sessão 4 
+discutiremos as lacunas encontradas em ambientes reais no contexto brasileiro. Para isso, 
+consideraram-se os seguintes objetivos específicos: 
+
+ 
+▪ Caracterizar a tecnologia 5G e suas especificidades; 
+▪ Definir Indústria 4.0 a partir da integração tecnológica de seus pilares; 
+
+4
+
+▪ Discutir o impacto da tecnologia 5G na eficiência e produtividade dos processos 
+industriais e de inovação; 
+▪ Expor a proximidade do setor de telecomunicações com a indústria 4.0; 
+▪ Destacar os desafios da implementação em casos reais, as lacunas do conhecimento 
+e as disparidades entre os achados acadêmicos perante os sites dos fornecedores 
+completos de rede 5G para a indústria 4.0; 
+▪ Por fim, direcionar novos estudos da área, com forte sugestão aos empíricos. 
+ 
+1.3 Justificativa 
+ 
+A implementação da tecnologia 5G tem despertado interesse e atraído investimentos 
+de diversos países ao redor do mundo. Suas características, como maior velocidade, menor 
+latência e capacidade de conectar um número significativamente maior de dispositivos, 
+representam avanços substanciais em relação às gerações anteriores de tecnologia móvel. 
+Atualmente estamos vivenciando o início da quarta revolução industrial e o 5G está sendo 
+visto mais que uma evolução de telefonia e sim como uma revolução. Isso se deve ao 
+aprimoramento que ele traz para soluções 5G, como MIMO massivo, computação em borda 
+e fatiamento de rede, que convergem tecnologicamente com quatro pilares da indústria 4.0: 
+IoT, IA, Computação em Nuvem e Segurança Cibernética. No entanto, é essencial avaliar se 
+esses avanços têm, de fato, gerado resultados positivos. 
+
+Este estudo busca investigar em um primeiro momento a aplicabilidade do 5G em 
+estudos que evidenciam a potencialização tecnológica a partir das combinações de IoT, IA, 
+Computação em Nuvem e Segurança Cibernética em soluções 5G, evidenciando os avanços 
+tecnológicos disponíveis no atual cenário já na sessão 2 deste artigo (Revisão de Literatura). 
+Posteriormente, na sessão 4 deste artigo (Resultados e Discussão), evidenciaremos as lacunas 
+do conhecimento sobre a aplicabilidade do 5G na indústria 4.0, uma vez que encontramos 
+poucos estudos com essa temática ao pesquisarmos com as palavras-chave “Aplicabilidade 
+5G” e “Indústria 4.0” em artigos de língua vernácula. Além disso os autores supracitados 
+apontam a baixa maturidade das empresas brasileiras em relação à Indústria 4.0, que ainda 
+desconhecem seus principais aspectos e a confundem com digitalização ou mera automação 
+(Almeida et al., 2023). 
+
+Ao contextualizar as especificidades do 5G, identificar sua aplicabilidade e descrever 
+os resultados obtidos, será possível verificar se essa tecnologia tem efetivamente 
+demonstrado suas potencialidades e contribuído para o desenvolvimento das áreas em que é 
+aplicada. Compreender os benefícios e os desafios enfrentados na implementação do 5G é 
+fundamental para subsidiar decisões estratégicas, como no contexto das organizações. 
+
+Além disso, essa análise contribui para o avanço do conhecimento científico e 
+tecnológico, permitindo o aprimoramento contínuo dessa tecnologia e de suas aplicações. Ao 
+impulsionar o progresso e o desenvolvimento socioeconômico, a pesquisa fornecerá insights 
+valiosos para a otimização do uso do 5G, promovendo um impacto positivo nas indústrias e 
+na sociedade como um todo e direcionando pesquisas futuras para as lacunas do 
+conhecimento identificadas na pesquisa apresentada. 
+
+5
+ 
+2 REVISÃO DE LITERATURA  
+ 
+2.1 Evolução da Tecnologia sem Fio 
+ 
+No atual contexto, a indústria de dispositivos móveis, impulsionada pelo crescente 
+
+avanço tecnológico, tem se desenvolvido significativamente, lançando, a cada curto ciclo de 
+tempo, dispositivos adaptados às novas técnicas de comunicação móvel (Uguetto, 2022). 
+
+Em termos gerais, a comunicação sem fio se dá entre dois pontos, sem a necessidade 
+de cabos ou fibras, sendo transmitidas por ondas. Ela é utilizada em diversos tipos de 
+dispositivos: GPS, televisão, satélites, telefones, entre outros. 
+
+Em julho de 2024 completaram-se no Brasil dois anos da implementação da 
+tecnologia 5G. Brasília foi a primeira capital a ter a faixa de 3,5 GHz liberada para a tecnologia 
+5G e, até o momento do estudo, o sinal estava ativo a um total de 589 cidades, com uma 
+cobertura média de 45% e 28 milhões de usuários com aparelhos celulares que permitem a 
+conectividade a essa tecnologia, conforme a Agência Nacional de Telecomunicações (ANATEL, 
+2024). 
+
+Por meio da Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD Contínua), 
+divulgada pelo Instituto Brasileiro de Geografia e Estatística (IBGE), no ano de 2022, alguns 
+quesitos da pesquisa já foram alterados devido  inserção da tecnologia 5G no país, o que 
+provocou, por exemplo, a instituição de política pública para substituir gradualmente a 
+transmissão de TV aberta por meio de antenas parabólicas grandes, as quais podem interferir 
+no 5G, por mini parabólicas que não ocasionam interferência. Assim, no ano de 2022, houve 
+inovação na coleta de dados sobre a existência de dispositivos inteligentes que poderiam ser 
+acessados por meio da Internet, como ventiladores, câmeras e caixas de som. Desse modo, 
+segundo a pesquisa, dos 68,9 milhões de domicílios conectados à Internet no território 
+brasileiro, um total de 14,3% já possuía algum tipo de dispositivo inteligente. Considera-se 
+que esse percentual tende a crescer com a implementação da tecnologia 5G, da qual se versa 
+adiante (PNAD Contínua, 2022). 
+
+2.2 Tecnologia 5G: Contextualização e Especificidades 
+ 
+A quinta geração de telefonia móvel, ou 5G, surge como uma evolução da quarta 
+
+geração, ou 4G, oferecendo vantagens significativas em relação à sua antecessora. O 5G 
+apresenta uma série de melhorias em relação ao 4G, incluindo menor latência e maior 
+capacidade de conectividade e segurança. Uma das principais vantagens do 5G em relação ao 
+4G é a sua velocidade. Enquanto o 4G oferece velocidades de download de até 100 megabits 
+por segundo (Mbps), o 5G pode chegar a velocidades de até 10 gigabits por segundo (Gbps). 
+Isso significa que o 5G é capaz de fornecer downloads muito mais rápidos do que o 4G, 
+permitindo que os usuários acessem conteúdo de alta qualidade de maneira mais rápida e 
+eficiente (Wang et al., 2020). 
+
+Conforme os autores, outra vantagem do 5G é a sua menor latência, que é o tempo 
+que leva para uma rede responder a uma solicitação de um dispositivo. Enquanto o 4G tem 
+uma latência média de cerca de 30 milissegundos (ms), o 5G tem uma latência de cerca de 1 
+ms. Isso significa que o 5G é capaz de fornecer uma resposta mais rápida do que o 4G, o que 
+é especialmente importante para aplicativos que requerem resposta imediata, como jogos 
+
+6
+
+online e realidade virtual. Além disso, o 5G oferece uma capacidade de conectividade maior 
+do que o 4G. Enquanto o 4G pode conectar cerca de 1.000 dispositivos por quilômetro 
+quadrado, o 5G é capaz de conectar até um milhão de dispositivos por quilômetro quadrado. 
+Isso significa que o 5G é capaz de suportar uma grande quantidade de dispositivos conectados 
+ao mesmo tempo, permitindo que os usuários acessem a rede de maneira mais eficiente e 
+evitando congestionamentos (Wang et al., 2020). 
+
+O 5G possui características muito distintas das tecnologias anteriores, as quais 
+possibilitam diversas expectativas em comparação, por exemplo, com o 4G. Os avanços 
+observados nesse tipo de tecnologia englobam diversas funcionalidades, conforme 
+caracterizado por Spadinger (2021), sintetizadas no Quadro 1. 
+
+ 
+Quadro 1 - Caracterização da Tecnologia 5G. 
+
+Funcionalidade Características 
+Baixa latência do 5G As redes de baixa latência do 5G oferecem tempos de resposta 
+rápidos para aplicações críticas, como veículos autônomos e 
+robôs, que dependem de respostas instantâneas. 
+
+Maior velocidade na O 5G possibilita o suporte a aplicações que exigem grandes 
+banda larga móvel 5G quantidades de dados em movimento, como aplicativos de 
+realidade virtual ou aumentada (AR/VR). 
+
+Network slicing Com o 5G, será possível fornecer serviços de rede 
+personalizados, adaptando sub-redes virtuais para atender às 
+necessidades específicas de cada aplicação. Cada serviço terá 
+uma rede adaptada às suas necessidades específicas. 
+
+Redes em malha 5G Espera-se uma maior densidade de conexões com o 5G, 
+permitindo que os dispositivos se conectem entre si e 
+melhorem as redes existentes, resultando na criação de novas 
+aplicações. 
+
+Localização 5G O 5G proporcionará suporte para localização em rede em um 
+espaço tridimensional, com precisão de 1 a 10 metros em 80% 
+das ocasiões, e precisão superior a 1 metro em ambientes 
+internos. 
+
+Fonte: Adaptado de Spadinger (2021). 
+ 
+Observa-se, portanto, segundo os pressupostos dos autores, que o 5G oferece maior 
+
+segurança do que o 4G na medida em que usa criptografia de ponta a ponta, o que significa 
+que as informações são criptografadas durante todo o processo de transmissão, desde o 
+dispositivo do remetente até o dispositivo do destinatário. Isso torna mais difícil para 
+invasores interceptar ou roubar informações, oferecendo maior proteção para os usuários e 
+suas informações pessoais Wang et al. (2020). 
+
+Com essas melhorias, espera-se que o 5G abra novas possibilidades para a 
+comunicação móvel, tornando possível a implementação de novas tecnologias integradoras, 
+conhecidas como pilares da Indústria 4.0. Tais aplicabilidades são discutidas por Spadinger 
+(2021), conforme consta na Figura 1. 
+
+7
+
+Figura 1 - Grupos de Aplicações 5G e potenciais serviços associados. 
+Fonte: Spadinger (2021, p. 12). 
+ 
+Considerando o contexto apresentado, observa-se a existência, agora, de fábricas e 
+
+cidades inteligentes, proporcionadas pelos avanços aqui referidos. Este estudo buscou 
+identificar a aplicabilidade da tecnologia 5G especificamente, no contexto da Indústria 4.0, 
+considerando os seguintes pilares: IoT, IA, Computação em Nuvem e Segurança Cibernética. 
+ 
+2.3 Os pilares tecnológicos da Indústria 4.0 para essa temática: IoT, IA, Computação em 
+
+Nuvem e Segurança Cibernética 
+ 
+A Indústria 4.0, também conhecida como a Quarta Revolução Industrial, representa 
+uma transformação significativa no ambiente de manufatura e produção, caracterizada pela 
+integração de tecnologias digitais avançadas em sistemas físicos e biológicos. Essa revolução 
+é sustentada por pilares tecnológicos fundamentais, entre eles a Internet das Coisas (IoT), 
+Inteligência Artificial (IA), Computação em Nuvem e Segurança Cibernética. Esse conceito de 
+indústria surgiu no ano de 2011, na Alemanha, em um evento de tecnologia industrial que 
+apresentou uma nova tendência: smart factories, isto é, fábricas inteligentes. 
+
+A aplicação do conceito de Indústria 4.0 tornará as fábricas inteligentes de forma que 
+sejam capazes de ter maior autonomia na programação de manutenções, antecipação de 
+falhas e adaptação para mudanças não planejadas, por exemplo. O objetivo da indústria 4.0 
+seria o de melhorar os processos de fabricação, considerando uma avultada dimensão, ou 
+seja, os mais variados aspectos para se tornar mais eficiente e satisfazer as necessidades do 
+mercado consumidor. Um detalhe: as fábricas inteligentes deveriam ter todos os seus 
+processos (máquinas, pessoas e sistemas) conectados por meio de Internet, em toda a cadeia 
+produtiva (Yamada e Martins, 2018). 
+
+A integração da IoT, IA, Computação em Nuvem e Segurança Cibernética cria uma 
+base tecnológica que possibilita a inovação contínua e a otimização dos processos industriais, 
+garantindo a competitividade das empresas no mercado global. As implicações dessas 
+
+8
+
+tecnologias são vastas e abrangentes, impactando desde a eficiência operacional até a 
+segurança e a inovação nas indústrias. 
+
+A IoT é muito mais do que coisas conectadas. Trata-se da progressiva automatização 
+de setores inteiros, tanto da economia quanto da vida social, fundamentando-se na 
+comunicação máquina-máquina. A IoT estará presente cada vez mais na “logística, agricultura, 
+transporte de pessoas, saúde, produção industrial”, dentre muitas outras possibilidades 
+(Magrani, 2021, p. 16). 
+
+A Inteligência Artificial é outro pilar essencial, proporcionando capacidades 
+avançadas de análise de dados e automação. Sistemas de IA aplicados na Indústria 4.0 podem 
+“aprender com grandes volumes de dados, identificar padrões e tomar decisões autônomas” 
+(Russell; Norvig, 2016, p. 42). Isso inclui desde a automação de tarefas repetitivas até a 
+implementação de sistemas de controle adaptativo que melhoram a flexibilidade e a resposta 
+dos processos de produção. Além disso, a IA facilita o desenvolvimento de algoritmos 
+preditivos que são vitais para a manutenção preditiva e a gestão eficiente de recursos. 
+
+A Computação em Nuvem oferece uma infraestrutura robusta e escalável para o 
+armazenamento, processamento e análise de grandes volumes de dados gerados pelos 
+dispositivos da IoT e sistemas de IA. A computação em nuvem proporciona acesso sob 
+demanda a um conjunto compartilhado de recursos computacionais configuráveis, 
+permitindo que as empresas industriais aumentem sua capacidade de processamento sem a 
+necessidade de investimentos significativos em hardware. Essa flexibilidade é fundamental 
+para suportar requisitos dinâmicos da Indústria 4.0, como a análise em tempo real de dados 
+de produção e a colaboração global entre diferentes unidades de produção (Buyya; Yeo; 
+Venugopal, 2008). 
+
+A Segurança Cibernética é uma das principais preocupações para as empresas 
+inseridas na Indústria 4.0. À medida que os avanços tecnológicos conectam equipamentos por 
+meio de redes computacionais internas e externas, a gestão de ataques cibernéticos torna-se 
+cada vez mais relevante. A Estratégia de Segurança da Informação e Comunicações e de 
+Segurança Cibernética da Administração Pública Federal define a segurança cibernética como 
+a arte de assegurar a existência da sociedade da informação, protegendo ativos de informação 
+e infraestruturas críticas. Esse cenário complexo desafia conceitos tradicionais, como 
+fronteiras geopolíticas, e destaca a importância de uma compreensão estratégica para 
+garantir a segurança de uma nação e suas empresas. 
+
+Para enfrentar esses desafios, diversas normas e diretrizes foram desenvolvidas, 
+formando um arcabouço normativo para a segurança cibernética na Indústria 4.0. 
+Documentos como a ISO/IEC 27032:2015 e a ISO/IEC 27001:2013 fornecem diretrizes e 
+requisitos para melhorar a segurança cibernética, enquanto frameworks como o NIST 
+Framework (2018) e o Cybersecurity and Resilience Framework abordam à gestão de riscos e 
+a resiliência dos sistemas. A integração de novas tecnologias e a ênfase na dimensão cognitiva 
+do trabalho exigem solidez, resiliência e integração da estratégia organizacional para proteger 
+toda a cadeia de valor na Indústria 4.0. A implementação dessas práticas de segurança é 
+essencial para mitigar os riscos e garantir a continuidade das operações em um ambiente cada 
+vez mais digital e interconectado (Azambuja e Almeida, 2021). 
+
+Portanto, a Indústria 4.0 é sustentada por um conjunto de tecnologias inter-
+relacionadas que, juntas, transformam o ambiente industrial em um ecossistema altamente 
+eficiente, flexível e seguro. A integração da IoT, IA, Computação em Nuvem e Segurança 
+Cibernética cria uma base tecnológica que possibilita a inovação contínua e a otimização dos 
+
+9
+
+processos industriais, garantindo a competitividade das empresas no mercado global. As 
+implicações dessas tecnologias são vastas e abrangentes, impactando desde a eficiência 
+operacional até a segurança e a inovação nas indústrias (Azambuja e Almeida, 2021). 
+
+Os autores supracitados destacam que a Indústria 4.0, com sua capacidade de gerar 
+um volume massivo de dados através de tecnologias como a IoT, necessita de uma estrutura 
+de governança de dados para que esses dados possam ser transformados em um ativo 
+estratégico. A governança de dados é essencial para garantir que os dados sejam não apenas 
+coletados e armazenados, mas também organizados, protegidos, compreendidos e analisados 
+de forma a gerar insights que impulsionem a tomada de decisões, a otimização de processos 
+e a inovação. Sem uma governança de dados eficaz, o potencial da Indústria 4.0 pode ser 
+desperdiçado, com dados se tornando um fardo em vez de um recurso valioso. O artigo reforça 
+que a governança de dados é o alicerce que permite que as empresas extraiam valor real da 
+revolução digital na indústria, transformando dados em conhecimento e conhecimento em 
+vantagem competitiva (Auletta et al., 2023). 
+ 
+2.4 Soluções 5G em MIMO Massivo 
+
+MIMO (Multiple Input Multiple Output) é uma tecnologia que utiliza múltiplas 
+
+antenas para transmissão e recepção de dados, melhorando a qualidade e a velocidade da 
+comunicação. No contexto da evolução do 4G para o 5G, o MIMO de dimensão completa 
+surgiu como um aprimoramento, permitindo o uso de um número expressivo de antenas (até 
+64) para direcionar o sinal em diferentes direções (beamforming), atendendo múltiplos 
+usuários de forma mais eficiente. Essa tecnologia MIMO de dimensão completa foi um passo 
+importante para o desenvolvimento do MIMO. O MIMO massivo é fundamental para a 
+tecnologia 5G, permitindo atender a muitos dispositivos simultaneamente, como nas 
+aplicações de Internet das Coisas (IoT) (Alexandre, 2020). 
+
+O estudo de mestrado aborda o papel crucial das antenas MIMO (Multiple Input 
+Multiple Output) no desenvolvimento da tecnologia 5G, especialmente na faixa de 3,5 GHz, 
+que é uma das frequências-chave para a implementação do 5G no Brasil. A autora destaca que 
+as antenas MIMO, com sua capacidade de transmitir e receber múltiplos fluxos de dados 
+simultaneamente, são essenciais para atender às demandas de alta velocidade e baixa latência 
+da quinta geração de redes móveis. A pesquisa se concentra no projeto, simulação e 
+construção de protótipos de antenas MIMO 2x2 com diferentes geometrias (retangular, 
+circular e dipolo). A análise do desempenho dessas antenas, considerando parâmetros como 
+frequência de ressonância, coeficiente de correlação de envelope (ECC) e ganho de 
+diversidade, revela a influência da geometria no comportamento das antenas. O estudo 
+também explora os desafios de isolamento entre as antenas em sistemas MIMO, 
+especialmente em projetos compactos, como no caso da antena dipolo duplo T. A autora 
+conclui que as antenas MIMO com geometrias circular e retangular, com ganho de diversidade 
+superior a 8 dB em toda a faixa de operação e ECC abaixo de 0,5, são adequadas para 
+aplicações em terminais móveis 5G (Assis, 2022). 
+
+10
+
+2.5 Soluções 5G em Computação de Borda com:  Escalonamento em Nuvem, 
+Processamento de Dados, Aprendizagem de Máquina e Monitoramento Inteligente em 
+Tempo Real 
+
+A computação de borda móvel (MEC) desempenha um papel crucial na realização dos 
+objetivos das redes 5G de Enhanced Mobile Broadband (eMBB), Ultra Reliable Low Latency 
+Communications (URLLC) e Massive Machine Type Communications (mMTC). A MEC aproxima 
+o processamento e armazenamento de dados dos usuários finais, reduzindo a latência e 
+melhorando a experiência do usuário, além de possibilitar novas aplicações que exigem 
+respostas em tempo real. A combinação da MEC com o aprendizado profundo (Deep Learning) 
+permite a automação do gerenciamento de redes, prevendo o comportamento do usuário e 
+otimizando a alocação de recursos, o que pode levar a custos operacionais mais baixos para 
+as empresas de telecomunicações e a uma melhor experiência para o usuário (McClellan et 
+al.,2020). 
+
+O 5G impulsiona a computação de borda (MEC) na Indústria 4.0, aproximando o 
+processamento de dados do usuário final e reduzindo a dependência de data centers remotos. 
+A MEC, combinada com algoritmos de aprendizado profundo (Deep Learning), permite a 
+automação da gestão de recursos e a otimização do desempenho da rede em tempo real. 
+Aplicações como robôs e veículos autônomos beneficiam-se do alto desempenho e da 
+confiabilidade proporcionados pela MEC e pelo 5G. O DL, utilizando algoritmos como DNNs, 
+RNNs e DRL, analisa grandes volumes de dados, podendo prever demandas e tomar decisões 
+em tempo real, otimizando a gestão de redes. Nesse caso o 5G é fundamental para o DL e a 
+MEC, permitindo a transmissão rápida de dados e o treinamento de modelos complexos em 
+tempo real (McClellan et al.,2020). 
+
+2.6 Soluções 5G em Fatiamento de Rede com IA e IoT 
+ 
+Embora o conceito de fatiamento de rede (network slicing) não seja exclusivo do 5G, 
+
+tendo sido utilizado de forma limitada em redes 4G, a quinta geração de redes móveis (5G) 
+otimizou essa tecnologia, proporcionando flexibilidade, escalabilidade e personalização sem 
+precedentes, tornando-a uma ferramenta para o contexto da Indústria 4.0. O 5G, com sua 
+arquitetura definida por software (SDN) e a virtualização de funções de rede (NFV), permite a 
+criação de redes virtuais isoladas de forma mais dinâmica, flexível e granular, com 
+características personalizadas para cada aplicação e serviço, garantindo a qualidade e a 
+segurança cibernética das comunicações. O estudo realizado por meio de um simulador 
+exemplifica essa transformação ao propor o arcabouço SELECTOR, que utiliza o fatiamento de 
+rede do 5G e o aprendizado de máquina para garantir a qualidade da experiência (QoE) em 
+serviços de telemedicina em ambulâncias, demonstrando o potencial do 5G para solucionar 
+problemas complexos de comunicação em tempo real, cruciais para aplicações de missão 
+crítica) Silva, 2023). 
+
+2.7 5G e a convergência com a tecnologia de fibra óptica para transmissão de dados 
+
+sem fio 
+O papel central do 5G é visto na convergência entre redes sem fio e de fibra óptica, 
+
+utilizando um sistema que integra um transmissor de múltiplos comprimentos de onda (MWT) 
+em uma plataforma de fosfeto de índio (InP) para modular e transmitir sinais 5G em diferentes 
+
+11
+
+comprimentos de onda ópticos. Ao otimizar o uso da fibra óptica, o sistema garante a 
+transmissão efetiva dos sinais 5G, com o objetivo de alcançar taxas de dados da ordem de 
+Gbits/s. Essa abordagem inovadora melhora o projeto de transmissores, reduz os custos de 
+implementação da rede 5G e demonstra o potencial do 5G para revolucionar a comunicação 
+sem fio através da sinergia com a tecnologia de fibra óptica. A pesquisa contribui para o 
+desenvolvimento de sistemas de comunicação mais eficientes e de alta capacidade, 
+explorando a convergência entre o 5G e a tecnologia de fibra óptica. Seus resultados 
+demonstram o potencial do 5G para revolucionar a comunicação sem fio, abrindo caminho 
+para novas aplicações e serviços que exigem altas taxas de dados e baixa latência (Cunha et 
+al., 2022). 
+
+A convergência entre o 5G e a fibra óptica surge como uma oportunidade crucial para 
+o desenvolvimento da infraestrutura das redes 6G, permitindo a criação de redes móveis de 
+alta capacidade e baixa latência. A fibra óptica, com sua vasta largura de banda, oferece o 
+potencial para transmissão de dados em altíssima velocidade, complementando as 
+tecnologias sem fio, como as ondas milimétricas (mmWaves), que possibilitam o acesso sem 
+fio de alta performance. No entanto, a integração dessas tecnologias de forma eficiente 
+apresenta desafios, como a necessidade de lidar com a dispersão cromática e os efeitos não 
+lineares nos componentes eletro-ópticos. A superação desses desafios, juntamente com a 
+exploração da arquitetura C-RAN e tecnologias como o Radio over Fiber (RoF), será 
+fundamental para que a convergência óptica-sem fio atinja todo seu potencial e possibilite um 
+futuro de conectividade ultrarrápida e baixa latência, abrindo portas para um mundo ainda 
+mais conectado e digital (Filgueiras et al., 2023). 
+
+2.8 Impactos do 5G no atual cenário da Quarta Revolução Industrial, a experiência 
+
+do Consumidor 4.0 e a segurança cibernética 
+ 
+O consumidor 4.0 destaca-se por buscar processos instantâneos e desejar agilidade 
+
+(Costa, Oliveira e Lepre, 2020) 
+A preocupação da autora com a segurança cibernética e o direito do consumidor 4.0, 
+
+um indivíduo hiper conectado e ávido por experiências instantâneas de consumo e 
+personalizadas, impulsionado pelas tecnologias da Quarta Revolução Industrial, evidencia que 
+a busca por agilidade e conveniência acaba transferindo para as empresas fornecedoras de 
+serviços online a responsabilidade de proteger as informações pessoais do consumidor 
+(Fisciletti, 2021).  
+
+A introdução do 5G, torna esse tema ainda mais relevante. A rede de alta velocidade 
+amplia a superfície de ataque e a quantidade de dados trafegados, aumentando o risco de 
+fraudes. O 5G, no entanto, também oferece oportunidades para fortalecer a proteção do 
+consumidor, por meio de criptografia robusta, segurança por design, autenticação forte e 
+sistemas de detecção de ameaças em tempo real. O autor enfatiza o potencial da tecnologia 
+5G em revolucionar a experiência do consumidor 4.0, impulsionada pela Inteligência Artificial 
+(IA) e aprendizado de máquina (ML) (Figueiredo, 2021). 
+
+2.9 Oportunidades e Desafios da implementação do 5G 
+ 
+O 5G já está em atividade no Brasil desde junho de 2022, e já existem estudos falando 
+sobre os possíveis benefícios do 5G em diversas áreas, como saúde, logística, entretenimento, 
+
+12
+
+agricultura de precisão, inclusive na indústria.  
+Esta pesquisa encontrou estudos feitos em simuladores, laboratórios e ambientes 
+
+controlados, evidenciando oportunidades e desafios dessa implementação e por meio dela 
+detectou-se uma lacuna de evidências em ambientes reais. Isso se deve ao alto custo de 
+implementação, à necessidade de mão de obra qualificada e ao investimento de 
+infraestruturas robustas. Devido ao assunto ainda ser recente, existe a ausência de artigos 
+publicados em língua vernácula com a temática da implementação do 5G na indústria 4.0. Em 
+nossa pesquisa observamos que já existem informações sobre a aplicabilidade do 5G, porém 
+ainda há poucos estudos publicados sobre o uso da tecnologia na indústria 4.0.  
+
+Um exemplo de oportunidades e desafios é o estudo que destaca um marco na área 
+da saúde brasileira: a realização da primeira cirurgia com tecnologia 5G em um hospital 
+público do país, o Instituto do Câncer do Estado de São Paulo (ICESP). Essa conquista, 
+viabilizada pela colaboração entre empresas de telecomunicações e o núcleo de inovação do 
+Hospital das Clínicas, permitiu a transmissão em tempo real de sinais vitais do paciente 
+durante o procedimento cirúrgico, abrindo portas para um acompanhamento médico mais 
+preciso e eficiente, mesmo à distância. Os resultados positivos dessa experiência, como a 
+ausência de interrupções na transmissão de dados via 5G em comparação com o Wi-Fi, 
+evidenciam o potencial transformador dessa tecnologia na área da saúde, impulsionando a 
+telemedicina e a colaboração entre especialistas, com o objetivo de aprimorar o cuidado com 
+o paciente e otimizar os processos hospitalares. O artigo sugere que, para que o potencial do 
+5G na saúde seja plenamente explorado, é fundamental superar os desafios relacionados a 
+investimentos, infraestrutura, capacitação e adaptação dos processos, de modo a 
+democratizar o acesso a essa tecnologia e seus benefícios para toda a população (SILVA et al., 
+2023). 
+
+Contudo, algumas informações são encontradas em sites de empresas fornecedoras 
+de infraestrutura 5G, como Huawei e Ericsson, e operadoras parceiras, sendo escassos os 
+artigos que demonstrem resultados investigados na indústria. Nesse caso, há uma lacuna se 
+abrindo entre os resultados reais da aplicabilidade do 5G, principalmente na indústria 4.0, e 
+os artigos existentes, que pouco ou nada abordam o assunto. 
+
+3  METODOLOGIA  
+
+Com o empreendimento de investigar as influências da implementação da tecnologia 
+
+5G e seus resultados operacionais e de inovação no contexto da Indústria 4.0, fez-se 
+inicialmente um levantamento das dissertações e teses defendidas (a partir de 2018) e 
+disponíveis nos portais científicos CAPES e Google Scholar. Sendo assim, procedimentos da 
+pesquisa qualitativa investigativa foram utilizados, pois a pesquisa aqui descrita é 
+essencialmente descritiva. Além disso, a pesquisa qualitativa tem como foco principal não os 
+resultados nem o produto, mas sim a análise dos dados (Stake, 2016). 
+
+A partir deste levantamento, foram selecionados os trabalhos que continham no título, 
+resumo e/ou palavras-chaves os termos “5G” e/ou “indústria 4.0”, além de suas correlações. 
+Tais trabalhos selecionados compuseram o corpus de análise desta pesquisa em que, por meio 
+da análise das considerações e resultados de cada trabalho buscou-se discutir a temática. 
+
+Isto posto, vale frisar que as argumentações e articulações aqui apresentadas estarão 
+fundamentadas no que Almeida (2012) denomina de estado da arte, um procedimento 
+metodológico de caráter bibliográfico que tem o desafio de mapear e de discutir uma gama 
+
+13
+
+de produção acadêmica em diferentes campos do conhecimento. 
+Destaca-se, ainda, que a escolha metodológica de focar exclusivamente em teses e 
+
+dissertações para a revisão sistemática de literatura sobre a aplicabilidade da tecnologia 5G 
+na Indústria 4.0 foi cuidadosamente deliberada para garantir a profundidade e a relevância da 
+pesquisa. Esta decisão baseia-se em vários fatores que asseguram a robustez e a validade dos 
+achados. Teses e dissertações são tipicamente documentos de pesquisa mais abrangentes e 
+detalhados, apresentando uma análise profunda e uma revisão extensa da literatura 
+existente, oferecendo discussões mais completas e fundamentadas sobre o tema estudado. 
+Além disso, muitos desses trabalhos contribuem com pesquisas originais e inéditas, 
+fundamentais para capturar o estado da arte em áreas emergentes como a tecnologia 5G e 
+sua aplicação na Indústria 4.0. 
+
+Além disso, conforme mencionado por Stake (2016, p. 47), os processos de revisão e 
+aprovação de teses e dissertações são rigorosos, “envolvendo a supervisão e avaliação por 
+comitês acadêmicos qualificados”. Este controle de qualidade assegura que os métodos de 
+pesquisa empregados são sólidos e que as conclusões são derivadas de uma análise rigorosa 
+e criteriosa. Assim, ao focar em teses e dissertações, a revisão sistemática adquire uma 
+camada adicional de credibilidade e precisão. A delimitação do escopo da pesquisa para incluir 
+apenas teses e dissertações permite uma concentração maior nos tópicos centrais da Indústria 
+4.0 e 5G, como IoT, IA, computação em nuvem e segurança cibernética. Esses documentos 
+frequentemente abordam questões específicas e emergentes, proporcionando uma visão 
+clara e direcionada das tendências e desafios atuais. Para isso, buscou-se publicações no 
+Catálogo de Teses e Dissertações da CAPES e no Google Scholar.  
+
+Deve-se considerar, primeiramente, que o estudo objetiva investigar a aplicabilidade 
+da tecnologia 5G na indústria 4.0. Por esta razão utilizou-se como palavras-chave no Catálogo 
+de Teses e Dissertações da CAPES os seguintes vocábulos: 5G e Indústria 4.0. O Quadro 2 a 
+seguir evidencia os resultados obtidos a partir destes termos. 
+
+ 
+Quadro 2 – Processo de seleção de Teses e Dissertações incluídas para esta revisão a partir da CAPES. 
+
+Identificação Pesquisa no Catálogo de Teses e Dissertações da CAPES utilizando as 
+seguintes palavras-chave: 5G e Indústria 4.0, resultando num total n=3* 
+
+Triagem Triagem de Títulos e Resumos n=3 – Artigos excluídos n=0 
+
+Elegibilidade Avaliação do estudo na íntegra n=3 – Artigos excluídos n=0 
+
+Inclusão Estudos incluídos para essa revisão n=3 
+
+Fonte: Elaborado pelo autor. 
+*n = número de publicações 
+ 
+Utilizou-se também o Google Scholar para a busca de publicações que tratassem 
+
+sobre o tema. Ao fazer uso das mesmas palavras-chave utilizadas na CAPES obteve-se um total 
+de 3.610 resultados. Desse modo, fez-se um refinamento na busca, já que dentre os pilares da 
+Indústria 4.0 este estudo tem por enfoque quatro deles: IoT, IA, Computação em Nuvem e 
+Segurança Cibernética. Utilizou-se, portanto, os seguintes termos: 5G, Indústria 4.0 e IoT; 5G, 
+Indústria 4.0 e IA; 5G, Indústria 4.0 e Computação em Nuvem e 5G, Indústria 4.0 e Segurança 
+Cibernética / Cibersegurança. Para isso utilizaram-se os seguintes critérios de inclusão: textos 
+completos, em língua vernácula, artigos científicos publicados em revistas especializadas, 
+teses e dissertações. Excluíram-se publicações anteriores ao ano de 2020 e que não tratavam 
+do uso do 5G na indústria 4.0 nos pilares citados, bem como resumos Trabalhos de Conclusão 
+
+14
+
+de Curso (TCC) e monografias. É importante ressaltar que este estudo envolve a tecnologia 
+5G, a qual está presente no território brasileiro de forma recente, razão pela qual os estudos 
+selecionados, devido a própria temática, são, na mesma medida, recentes. 
+ 
+Quadro 3 – Processo de seleção de publicações incluídas para esta revisão a partir do Google Scholar utilizando as palavras-chave 5G, Indústria 4.0 e os pilares. 
+
+PROCESSO 
+IoT 
+IA Computação Nuvem
+Segurança Cibernética 
+
+Identificação 
+Total de publicações n=35
+Total de publicações n=14
+Total de publicações n=20
+Total de publicações n=10
+
+Triagem
+Triagem de Títulos e Resumos n=35 - Artigos excluídos n=11
+Triagem de Títulos e Resumos n=14 - Artigos excluídos n=09
+Triagem de Títulos e Resumos n=20 - Artigos excluídos n=14
+Triagem de Títulos e Resumos n=10 - Artigos excluídos n=01
+
+Elegibilidade
+Avaliação do estudo na íntegra n=24 - Artigos excluídos n=21
+Avaliação do estudo na íntegra n=05 - Artigos excluídos n=04
+Avaliação do estudo na íntegra n=06 - Artigos excluídos n=05
+Avaliação do estudo na íntegra n=09 - Artigos excluídos n=08
+
+Inclusão
+Estudos incluídos para essa revisão n=3
+Estudos incluídos para essa revisão n=1
+Estudos incluídos para essa revisão n=1
+Estudos incluídos para essa revisão n=1
+
+Total de publicações para análise
+4
+2
+1
+1
+
+Fonte: Elaborado pelo autor. 
+ 
+As publicações foram avaliadas quanto à qualidade metodológica e à relevância para 
+o tema em questão. Este processo incluiu a análise dos métodos de pesquisa, das teorias 
+abordadas e das evidências apresentadas. Foi realizada uma síntese das informações para 
+destacar as contribuições significativas e as possíveis lacunas existentes. 
+
+ 
+4 RESULTADOS E DISCUSSÕES 
+
+ 
+Apresentam-se aqui os resultados e as discussões de trabalhos que versaram sobre a 
+
+aplicabilidade da tecnologia 5G nos quatro pilares da Indústria 4.0. Na primeira base de dados 
+(CAPES), os resultados foram: 
+
+15
+
+Quadro 4 – Teses e Dissertações. 
+Autores 
+Ano 
+Tipo de Publicação 
+Área de Pesquisa 
+
+Ozias Santos da Conceição Oliveira 
+2021 
+Mestrado  
+Economia 
+
+Christian Mailer 
+2022 
+Mestrado 
+Ciências da Computação 
+
+José Marcelo de Freitas Vilela
+2023 
+Doutorado 
+Engenharia da Produção 
+
+Fonte: Elaborado pelo autor. 
+ 
+Observa-se, a partir desses resultados, que, ao cruzar as palavras-chave 5G e 
+Indústria 4.0, são poucas as publicações que trataram sobre o tema. O estudo de Oliveira 
+(2021) objetivou analisar a relação entre o desenvolvimento da tecnologia 5G e a consolidação 
+da Indústria 4.0, partindo da hipótese de que o 5G é essencial para a realização da Indústria 
+4.0. O estudo buscou mostrar como o 5G pode viabilizar a Indústria 4.0 e explorou a influência 
+que os países que lideram o fornecimento da infraestrutura 5G podem ter na divisão 
+internacional do trabalho. A pesquisa destacou a importância do 5G para a Quarta Revolução 
+Industrial e o impacto potencial dessa tecnologia em vários setores econômicos e sociais. A 
+metodologia adotada fundamentou-se em uma revisão da literatura sobre a tecnologia 5G e 
+a Indústria 4.0. Desse modo, destacou os pilares da Indústria 4.0 de forma teórica. 
+
+Mailer (2022) buscou demonstrar quantitativamente como parâmetros, como 
+frequência, largura de banda, numerologia, tamanho dos pacotes e cenários industriais 
+(incluindo altura, distância e obstáculos), influenciam características como latência, jitter e 
+confiabilidade na transmissão de rádio em redes 5G. O estudo buscou avaliar esses aspectos 
+em ambientes industriais por meio de simulações detalhadas. Para alcançar esse objetivo, a 
+metodologia adotada inclui a integração de cenários industriais no simulador de rede 5G, 
+permitindo a criação de um modelo de simulação que refletisse condições reais de operação. 
+O modelo foi então configurado para representar uma arquitetura 5G industrial, ajustando 
+parâmetros cruciais como frequência, largura de banda e numerologia. 
+
+Simulações foram realizadas para medir o nível do sinal sob diferentes cenários, 
+variando potências de transmissão e frequências. Adicionalmente, realizaram-se simulações 
+para avaliar latência, jitter e confiabilidade da transmissão em diferentes condições. Os dados 
+quantitativos obtidos dessas simulações foram analisados por meio de gráficos e tabelas, com 
+o objetivo de entender a influência de cada parâmetro no desempenho da rede. A 
+metodologia também incluiu a identificação de possíveis gargalos ou pontos críticos na 
+arquitetura da rede, os quais podem ser melhorados ou explorados em pesquisas futuras. A 
+discussão dos resultados das simulações permitiu compreender como diferentes parâmetros 
+afetam a latência, jitter e confiabilidade da rede 5G. Por fim, o trabalho propõe melhorias para 
+o software simulador e sugere novos experimentos para continuar o desenvolvimento da 
+pesquisa (Mailer, 2022). 
+
+No que se refere aos pilares da indústria 4.0, Mailer (2022) abordou especialmente a 
+IoT, Computação em Nuvem, Simulação e Comunicação e Redes. No caso da IoT, o estudo 
+voltou-se para a implementação de redes 5G em ambientes industriais, o que está 
+diretamente relacionado com a IoT, pois o 5G facilita a comunicação entre dispositivos 
+conectados e sensores em uma fábrica. A Computação em Nuvem envolveu a simulação de 
+redes 5G devido ao armazenamento e processamento de dados obtidos das simulações. 
+
+16
+
+O estudo de Vilela (2023) examinou o impacto da tecnologia 5G e das iniciativas de 
+Indústria 4.0 na competitividade das empresas. O objetivo foi o de estruturar um modelo que 
+explique como essas tecnologias influenciam as relações competitivas. A pesquisa foi 
+motivada pela expectativa de grandes transformações econômicas e pela necessidade de 
+adaptação das empresas para aproveitar as oportunidades oferecidas pelo 5G. A metodologia 
+incluiu uma revisão bibliográfica e uma pesquisa empírica para identificação do impacto do 
+5G na indústria. O estudo concluiu que a introdução das tecnologias 5G e das iniciativas da 
+Indústria 4.0 teve um impacto significativo na competitividade das empresas, especialmente 
+naquelas de mercados emergentes. Com a evolução das redes 5G, que proporcionavam alta 
+largura de banda e conectividade de baixa latência, as empresas tiveram a oportunidade de 
+investir em suas infraestruturas digitais para aproveitar os benefícios da nova era de 
+conectividade. O 5G visava fornecer uma solução de rede abrangente, atendendo a diversas 
+indústrias verticais como automotivo, energia, saúde e produção industrial. 
+
+Os estudos revisados destacam a importância do 5G para a Indústria 4.0 de diferentes 
+formas. Oliveira (2021) argumentou que o 5G é fundamental para a implementação da Quarta 
+Revolução Industrial e sua influência econômica global. Mailer (2022) realizou simulações para 
+avaliar o desempenho da rede 5G em ambientes industriais, identificando parâmetros críticos 
+para sua eficácia. Vilela (2023) concluiu que o 5G melhora significativamente a 
+competitividade das empresas, especialmente em mercados emergentes, oferecendo uma 
+conectividade avançada que potencializa a adaptação e transformação digital das indústrias. 
+Esses estudos mostram que o 5G é fundamental para o avanço da Indústria 4.0 e para a 
+competitividade empresarial. É importante ressaltar que a temática foi abordada por 
+diferentes áreas (Economia, Ciências da Computação e Engenharia da Produção), o que 
+mostra a relevância dos estudos nos mais variados contextos. O número de publicações 
+encontradas também evidencia a necessidade de estudos que busquem avaliar a 
+implementação do 5G especificamente na Indústria 4.0 que, apesar de ter se mostrado 
+promissor a partir destes estudos revisados, existe uma lacuna para identificar de forma mais 
+robusta, os resultados da implementação desta tecnologia. 
+
+No que se refere aos achados do Google Scholar, tem-se o seguinte: 
+
+17
+
+Quadro 4 – Publicações. 
+
+Autores 
+Ano 
+Tipo de Publicação
+Revista Periódico Repositório
+Pilar da Industria 4.0 
+Metodologia Utilizada 
+Objetivos 
+
+João, Souza e Serralvo
+2019
+Artigo
+Cadernos EBAPE.BR
+loT
+Análise bibliométrica e análise do conteúdo qualitativa
+Analisar a literatura acadêmica atual sobre cidades inteligentes (Cis) e IoT.
+
+Mai e Spohn
+2023
+Artigo
+Revista Brasileira de Computação Aplicada
+loT
+Mapear soluções que utilizem IoT na área de restaurantes.
+a IoT, pode se tornar uma ferramenta útil para o desenvolvimento de restaurante
+
+Ferrari, Bertini, Battistelle e Gobbo Junior
+2021
+Artigo
+Repositório Institucional da UFSC
+loT
+Revisão sistemática da literatura 
+Analisar artigos de pesquisa que tratam da sinergia entre a Indústria 4.0 e a sustentabilidade, com um foco específico nas relações entre a Internet das Coisas (IoT) e a proteção ambiental.
+
+
+Henning, Santos, Cunha, Silva, Souza
+2023
+Artigo
+Repositório Institucional da UFS
+IA
+Revisão sistemática da literatura
+Investigar os principais impactos da IA na educação superior.
+
+Estorilio, Maia e Maia
+2022
+Artigo
+Editora Científica Digital
+IoT, IA, Computação em Nuvem e Segurança Cibernética
+Revisão sistemática da literatura
+Caracterizar as pesquisas existentes sobre a Indústria 4.0, analisando a frequência de publicações e os principais meios de publicação
+
+Fonte: Elaborado pelo autor. 
+
+18
+
+João, Souza e Serralvo (2019) concluíram que a relação CIs e IoT ainda é pouco 
+explorada. A literatura mais proeminente entre CIs e IoT concentrou-se em países avançados 
+com longa tradição de inovação e pesquisa em tecnologia da informação (TI). 
+
+Segundo Mai e Spohn (2023), apesar da importância do setor de restaurantes, 
+presente em todos os 5570 municípios brasileiros, há problemas recorrentes, tais como 
+desperdício alimentar, segurança alimentar, falta de mão de obra qualificada, consumo 
+elevado de energia, gerenciamento de estoque e controle e monitoramento de 
+equipamentos. A utilização de tecnologias para a automação de processos, a coleta de dados 
+e o suporte na tomada de decisões pode possibilitar o desenvolvimento e gerenciamento 
+desses estabelecimentos. Os resultados, obtidos por meio de uma revisão sistemática de 
+literatura, mostram que a aplicação de tecnologias em evolução, como a IoT, pode se tornar 
+uma ferramenta útil para o desenvolvimento de restaurantes, contribuindo para a eficiência 
+e sustentabilidade do setor (Mai e Spohn, 2023). 
+
+O estudo de Ferrari et al. (2021) teve por objetivo identificar estudos que tratam da 
+relação entre a IoT e a proteção ambiental, sintetizando os principais achados sobre a sinergia 
+entre esses conceitos. A revisão sistemática da literatura analisou 14 artigos, evidenciando 
+que a IoT é um meio essencial para promover a proteção ambiental e a eficiência empresarial, 
+ao utilizar recursos de maneira otimizada, gerenciar resíduos, normalizar o monitoramento 
+ambiental e responder rapidamente a emergências. A IoT também permite a coleta precisa 
+de dados, o monitoramento dinâmico, a redução de custos e análises em tempo real, 
+auxiliando na restauração ecológica e na formulação de políticas. No entanto, o estudo 
+identificou barreiras como a integração tecnológica, o comprometimento dos líderes e a falta 
+de regulamentação ambiental. 
+
+Esses estudos mostraram o uso da IoT em ambientes distintos, como no setor de 
+bares e restaurantes e no contexto da sustentabilidade, evidenciando a tecnologia como 
+potencial para auxiliar os empreendimentos na resolução de problemas específicos de suas 
+áreas. No entanto, no que se refere ao 5G, somente fizeram compreender que a IoT se trata 
+de uma tecnologia em evolução e que o 5G se trata de um protocolo de comunicação móvel 
+que assegura este desenvolvimento.  
+
+Conforme observado no estudo de Henning et al. (2023), a educação superior está se 
+alinhando com os princípios da Indústria 4.0 por meio da automatização e da aplicação de 
+Inteligência Artificial (IA). Instituições de ensino estão utilizando a IA para personalizar o 
+aprendizado, automatizar processos administrativos e fornecer feedback em tempo real, 
+refletindo práticas semelhantes àquelas que definem a Indústria 4.0. Além disso, o uso de 
+plataformas de aprendizado adaptativo e análise de dados permitem ajustar o conteúdo e a 
+pedagogia às necessidades individuais dos alunos, o que caracteriza a personalização em larga 
+escala. O ensino a distância, os simuladores virtuais e as plataformas de e-learning são 
+exemplos de como a educação superior estão integrando tecnologias digitais para criar 
+ambientes de aprendizado mais flexíveis e acessíveis. 
+
+Estorilio, Maia e Maia (2022) abordam a Computação em Nuvem como uma 
+tecnologia fundamental para a Indústria 4.0, destacando várias questões relevantes. A 
+Computação em Nuvem facilita a integração de sistemas fisicamente separados, o que é 
+essencial para a implementação de soluções na Indústria 4.0, permitindo o fluxo de dados 
+online e a conectividade entre diferentes partes da cadeia produtiva. Além disso, oferece 
+suporte dinâmico, permitindo que as empresas acessem e processem dados de qualquer 
+localização, contribuindo para a flexibilidade e a eficiência operacional, características 
+desejadas na produção moderna. No entanto, o estudo também aponta desafios associados 
+
+19
+ 
+à adoção da Computação em Nuvem, como a qualidade dos serviços e a proteção da 
+propriedade intelectual, que podem desacelerar a implementação de soluções baseadas em 
+nuvem na manufatura. A importância da segurança cibernética é destacada, pois a proteção 
+de dados e a segurança das informações armazenadas na nuvem são cruciais para garantir a 
+confiabilidade dos processos produtivos. Em resumo, a Computação em Nuvem é vista como 
+uma peça-chave na transformação digital da indústria, oferecendo vantagens significativas, 
+mas também apresentando desafios que precisam ser abordados para sua implementação 
+eficaz. 
+
+O estudo fornece dados e informações sobre a Computação em Nuvem no contexto 
+da Indústria 4.0, revelando que, embora a Computação em Nuvem seja um dos pilares da 
+Indústria 4.0, aparece em menor número nas publicações analisadas, com cerca de 5% dos 
+artigos focando nesse tema específico. Desafios como a qualidade dos serviços e a proteção 
+da propriedade intelectual são identificados como grandes obstáculos que podem desacelerar 
+a adoção da Computação em Nuvem. A tecnologia é destacada pela sua capacidade de facilitar 
+a integração de sistemas e a flexibilidade operacional, permitindo o acesso e processamento 
+dinâmico de dados, o que é essencial para a eficiência na produção. A importância da 
+segurança cibernética também é enfatizada, destacando a necessidade de proteger dados e 
+informações armazenadas na nuvem para garantir a confiabilidade dos processos produtivos. 
+
+Em relação à IoT e à IA, o estudo aponta que a IoT é um dos temas mais recorrentes 
+nas publicações sobre Indústria 4.0, representando cerca de 17% dos artigos analisados. A IoT 
+é mencionada por suas aplicações na logística e flexibilidade dos sistemas ciberfísicos, além 
+de ser vista como um motor para a inovação e eficiência na indústria, permitindo a coleta e a 
+análise de dados em tempo real. Embora o estudo não detalhe a IA tão extensivamente 
+quanto a IoT, a IA é considerada uma tecnologia complementar à IoT, na Indústria 4.0. A IA 
+pode analisar dados coletados por dispositivos da IoT, permitindo a automação inteligente e 
+a otimização de processos, e sua integração com a IoT pode melhorar a tomada de decisões, 
+proporcionando insights valiosos para a gestão e a operação das empresas. Desse modo, a IoT 
+é um componente central da Indústria 4.0, enquanto a IA é vista como uma tecnologia que 
+complementa e potencializa as capacidades da IoT, embora não seja discutida em 
+profundidade no estudo. 
+
+O estudo aborda a Segurança Cibernética no contexto da Indústria 4.0, destacando 
+vários pontos importantes. A Segurança Cibernética é definida como a prevenção e proteção 
+de dados em equipamentos industriais, que são vulneráveis a ataques cibernéticos. Esses 
+ataques podem impactar todo o processo produtivo, tornando a segurança cibernética uma 
+preocupação crítica para as empresas que adotam tecnologias da Indústria 4.0. O estudo 
+menciona que os riscos associados à segurança cibernética incluem a perda de 
+confidencialidade, com o risco de divulgação de dados; a perda de integridade, com o risco de 
+corrupção ou modificação de registros e dados e a perda disponibilidade de informações ou 
+sistemas de informação, com o risco de negação de serviço. Esses riscos podem ter 
+consequências severas para a operação e para a reputação das empresas. É enfatizado que as 
+organizações devem conhecer e gerenciar as vulnerabilidades em seus sistemas. Isso envolve 
+a inclusão da avaliação da segurança cibernética dos processos no planejamento, 
+determinando indicadores para identificar deficiências e vulnerabilidades nos dados. A 
+segurança cibernética é crucial para garantir a confiabilidade do processo produtivo, com 
+sistemas de dados mais seguros ajudando a proteger as operações e a integridade das 
+informações, o que é essencial para a continuidade e a eficiência das atividades industriais. 
+Em resumo, a Segurança Cibernética é apresentada como um aspecto vital da Indústria 4.0, 
+
+20
+ 
+com ênfase na necessidade de proteger os sistemas e dados contra ameaças cibernéticas, 
+gerenciar vulnerabilidades e garantir a confiabilidade dos processos produtivos (Estorilio, 
+Maia e Maia, 2022). 
+
+Apesar da escassez de estudos empíricos na literatura acadêmica, a implementação 
+do 5G na Indústria 4.0 já é uma realidade. Empresas como Nestlé e Huawei têm investido em 
+projetos práticos, demonstrando que a aplicação do 5G está avançando rapidamente. A 
+Nestlé, por exemplo, implementou a primeira rede privada 5G na América Latina em sua 
+fábrica em Toluca, México, com o objetivo de aumentar a eficiência e a produtividade da 
+produção (Ericsson, 2022). Já a Huawei inaugurou a primeira fábrica inteligente de 
+manufatura do Brasil conectada à rede 5G, impulsionando a automação e a digitalização da 
+produção (Huawei, 2022). A Nokia também tem explorado o potencial do 5G na indústria 
+automotiva, desenvolvendo soluções para fábricas inteligentes e conectadas (Nokia, s.d.). 
+Esses exemplos ilustram o potencial do 5G para transformar a indústria e a necessidade de a 
+pesquisa acadêmica acompanhar esse ritmo, focando em estudos empíricos, tanto no 
+contexto brasileiro quanto internacional, de forma que possam gerar insights relevantes para 
+as empresas e para a sociedade. 
+ 
+5 CONCLUSÃO 
+ 
+A quinta geração de telefonia móvel (5G) desponta como um acelerador da Indústria 
+
+4.0, com potencial para revolucionar diversos setores. Suas características únicas, como alta 
+velocidade, baixa latência e conectividade massiva, viabilizam a integração de dispositivos IoT, 
+a coleta e análise de dados em tempo real, a manutenção preditiva e a otimização das cadeias 
+de suprimentos. O 5G não apenas potencializa a eficiência e a produtividade, mas também 
+serve como alicerce para aplicações avançadas de IA e Computação em Nuvem, além de 
+reforçar a segurança cibernética. 
+
+No entanto, a implementação do 5G não está isenta de desafios, como a necessidade 
+de infraestrutura robusta, espectro de radiofrequência adequado e a segurança cibernética. 
+Adicionalmente, os custos elevados e a complexidade regulatória representam obstáculos a 
+serem transpostos. 
+
+A pesquisa aqui apresentada revela uma lacuna crucial: enquanto a literatura 
+acadêmica concentra-se em estudos teóricos, análises laboratoriais e simulações em 
+ambientes controlados, empresas como a Nestlé e a Huawei já estão implementando o 5G em 
+suas fábricas. Essa disparidade entre a teoria e a prática destaca a necessidade urgente de 
+pesquisas empíricas que investiguem a fundo a implementação do 5G em ambientes 
+industriais reais, explorando seus impactos tangíveis na produtividade, eficiência, inovação e 
+segurança. 
+
+É imperativo que a pesquisa acadêmica acompanhe o ritmo da inovação tecnológica, 
+investigando como o 5G está sendo aplicado na prática e quais são os resultados concretos. 
+Somente com dados empíricos e análises aprofundadas será possível fornecer informações 
+relevantes para que empresas e formuladores de políticas públicas tomem as decisões 
+estratégicas sobre a adoção e o desenvolvimento do 5G, impulsionando a transformação 
+digital da indústria e contribuindo para um futuro mais conectado, eficiente e inovador. 
+
+21
+ 
+REFERÊNCIAS 
+ 
+ALEXANDRE, L. C. et al., Indoor coexistence analysis among 5G new radio, LTE-A and NB-IoT 
+in the 700 MHz band. IEEE Access, v. 8, p. 135000-135010, 2020. DOI: 
+10.1109/ACCESS.2020.3011267. Acesso em: 10 mai. 2023. 
+ 
+ALMEIDA, A. T. de S. B. de; GENNARO, D. R. de; IBUSUKI, U. Estudo do nível de maturidade 
+Lean e Indústria 4.0 em empresas brasileiras. Revista Brasileira de Mecatrônica, São 
+Caetano do Sul, SP, v. 6., n. 1, p.48-78, jul.-set., 2023. Disponível em: 
+https://revistabrmecatronica.sp.senai.br/ojs/index.php/revistabrmecatronica/article/view/1
+71 . Acesso em: 24 jul. 2024. 
+ 
+ANATEL. 5G completa dois anos de implantação no Brasil. Disponível em 
+https://www.gov.br/anatel/pt-br/assuntos/noticias/5g-completa-dois-anos-de-implantacao-
+no-brasil. Acesso em: 10 mai. 2023 
+ 
+ASSIS, Katiane Estevam Gurgel de. Antenas MIMO na frequência sub 6-GHz aplicado à 
+tecnologia 5G. 2022. 96 f. Dissertação (Mestrado em Engenharia Elétrica) - Universidade 
+Federal Rural do Semi-Árido, Programa de Pós-graduação em Engenharia Elétrica, Mossoró, 
+2022. Disponível em: https://ppgee.ufersa.edu.br/wp-
+content/uploads/sites/61/2023/03/Katiane-Estevam-Gurgel-de-Assis.pdf . Acesso em: 10 
+mai. 2023. 
+ 
+AULETTA, Guilhermo Bellido; SANTOS, José Roberto dos; CAMUSSO, Daniel. Governança de 
+dados e a Indústria 4.0. Revista Científica SENAI-SP - Tecnologia, Inovação & Educação, São 
+Paulo, v. 1, n. 2, p. 01-12, nov. 2022-jan. 2023. Disponível em: 
+https://periodicos.sp.senai.br/index.php/rcsenaisp/article/view/23 . Acesso em: 24 jul. 
+2024. 
+ 
+AZAMBUJA, A. J. G. de, ALMEIDA, V. R. Um estudo bibliométrico das publicações sobre 
+Segurança Cibernética na Indústria 4.0. Research, Society and Development, v. 10, n. 3, 
+2021. p. e12937. Disponível em: http://dx.doi.org/10.33448/rsd-v10i3.12937. Acesso em: 10 
+mai. 2023. 
+ 
+BATTISTELLE, Rosane Aparecida Gomes; BERRETINI, Alessa; FERRARI, Aline Gabriela; GOBBO 
+JUNIOR, José Alcides. Indústria 4.0 e sustentabilidade: uma aplicação da Internet das Coisas 
+(IoT) na proteção ambiental. 2021. Disponível em: 
+https://repositorio.ufsc.br/handle/123456789/228929. Acesso em: 24 jul. 2024. 
+ 
+BUYYA, R.; YEO, C. S.; VENUGOPAL, S. Market-oriented cloud computing: Vision, hype, and 
+reality for delivering IT services as computing utilities. In: IEEE INTERNATIONAL CONFERENCE 
+ON HIGH PERFORMANCE COMPUTING AND COMMUNICATIONS, 10. Sept. 25-27, 2008, 
+Dalian, China. p. 5-13. [Proceedings…]. Disponível em 
+https://doi.org/10.48550/arXiv.0808.3558. Acesso em 10 mai. 2023. 
+ 
+22
+ 
+COSTA, F. J., OLIVEIRA, A. B., & LEPRE, L. F. O consumidor 4.0 e os novos desafios do 
+marketing digital: um estudo sobre as características e comportamentos de compra do 
+consumidor hiperconectado. Revista de Administração da UFSM, v. 13, n. 3, p. 544-564. 
+2020. 
+ 
+CUNHA, Matheus Sêda Borsato. Sistema Ópticos-Sem fio 5G NR com um Transmissor de 
+Múltiplos Comprimentos de Onda em Óptica Integrada. 2022. 142 f. Tese (Doutorado) - 
+Programa de Pós-Graduação em Engenharia Elétrica, Universidade Federal de Itajubá, 
+Itajubá, 2022. Disponível em 
+https://repositorio.unifei.edu.br/jspui/bitstream/123456789/3887/1/Tese_2022011.pdf. 
+Acesso em 10 mai. 2023. 
+ 
+ELIJAH, O. A., RAHMAN, T., IMRAN, M. A., & MUMTAZ, S. A comprehensive survey on 5G-
+enabled massive MIMO: from key technologies to future research challenges. IEEE Access, 
+10, 10135-10181. 2022. Disponível em 
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8747744/. Acesso em 10 mai. 2023. 
+ 
+ESTORILIO, Carla C. A.; MAIA, Vinicius Sprada; MAIA, William Alves. Oportunidades de 
+pesquisa relacionadas à Indústria 4.0: uma revisão sistemática. In: Open Science Research 
+III. Científica Digital, 2022. v. 3. Disponível em: 
+https://downloads.editoracientifica.com.br/articles/220408549.pdf. 
+ 
+FISCILETTI, Rossana. A quarta revolução industrial e os novos paradigmas do direito do 
+consumidor. 2. ed. São Paulo: Literare Books, 2021. 
+ 
+FIGUEIREDO, A. C. 5G e a revolução na experiência do consumidor 4.0: Um estudo sobre a 
+inteligência artificial e o aprendizado de máquina na personalização e otimização de 
+serviços. Revista de Administração e Inovação, v. 18, v. 2, p. 157-175. 2021. 
+ 
+FILGUEIRAS, H. R. D.; LIMA, E. S.; CUNHA, M. S. B. et al. Wireless and Optical Convergent 
+Access Technologies Toward 6G. IEEE Access, v. 11, p. 9232-9259, 2023. DOI: 
+10.1109/ACCESS.2023.3239807. Disponível em: 
+https://ieeexplore.ieee.org/document/10018431. Acesso em: 15 ago. 2024. 
+ 
+JOÃO, Belmiro do Nascimento; SOUZA, Crisomar Lobo de; SERRALVO, Francisco Antonio. A 
+systematic review of smart cities and the internet of things as a research topic. Cadernos 
+EBAPE.BR, v. 17, n. 4, p. 1115–1130, 2019. Disponível em: 
+https://www.scielo.br/j/cebape/a/mBqjGxPSbRKPsXcS99z8LrD/?format=html&stop=next&la
+ng=pt#.  
+ 
+HENNING, Mauricio; SANTOS, Julius Diego de France; CUNHA, Cristiano J. Castro de Almeida; 
+SILVA, Solange Maria da; SOUZA, João Artur de. Impactos da inteligência artificial na 
+educação superior: uma revisão da literatura. In: COLÓQUIO INTERNACIONAL DE GESTÃO 
+UNIVERSITÁRIA, 22., Florianópolis, 15 dez. 2023. [Anais ...]. Disponível em: 
+https://repositorio.ufsc.br/handle/123456789/253863. Acesso em: 11 ago. 2024. 
+  
+23
+ 
+LIMA, J. C. C de. Garantia de QoS no núcleo da rede móvel celular de quinta geração 
+utilizando redes definidas por software. 2019. 46 f. Dissertação (Mestrado) - Curso de 
+Programa de Pós-Graduação em Ciência da Computação, Centro de Ciências, Universidade 
+Federal do Ceará, Fortaleza, 2019. Disponível em 
+https://repositorio.ufc.br/bitstream/riufc/58628/3/2019_dis_jcclima.pdf. Acesso em: 10 
+mai. 2023. 
+ 
+LUCCA, J. de; MAURO, P. S. G. Desafios da tecnologia 5G. Revista Interface Tecnológica, v. 
+17, n. 1, p. 29–39, 2020. Disponível em: 
+https://revista.fatectq.edu.br/interfacetecnologica/article/view/708. Acesso em 10 mai. 
+2023. 
+ 
+MAGRANI, E. A internet das coisas. Niterói: Cândido, 2021. 
+ 
+MAI, N. J.; SPOHN, M. A. Revisão sistemática de internet das coisas aplicada em restaurantes 
+e bares. Revista Brasileira de Computação Aplicada, v. 15, n. 3, p. 48-62, 2023. DOI: 
+10.5335/rbca.v15i3.14931. Disponível em: 
+https://seer.upf.br/index.php/rbca/article/view/14931. Acesso em: 24 jul. 2024. 
+ 
+MAILER, C. Desenvolvimento e análise de um modelo de simulação para arquiteturas 5G 
+industriais. Dissertação (Mestrado) – Universidade Federal de Santa Catarina, Pós-
+Graduação em Ciência da Computação, Florianópolis, 2022, 83 p. Disponível em: 
+https://repositorio.ufsc.br/bitstream/handle/123456789/244587/PGCC1227-
+D.pdf?sequence=1&isAllowed=y.  
+ 
+MCCLELLAN, J. H., PARKS, T. W., & RABINER, L. R. A tutorial on multirate signal processing. 
+In: Classic papers in digital signal processing. pp. 451-495, 2020. Springer, Cham. 
+  
+OLIVEIRA, Ozias Santos da Conceição. Redes de comunicações móveis 5G: Contextualização 
+a partir de uma revisão da literatura. 2021. 128 f. Dissertação (Mestrado em Economia) - 
+Universidade Estadual Paulista Júlio de Mesquita Filho, Araraquara, 2021. Disponível em: 
+https://economia_2021-10-21_ozias_santos_da_conceição_oliveira.pdf  
+ 
+PNAD Contínua. Acesso à internet e à televisão e posse de telefone móvel celular para uso 
+pessoal 2022 / IBGE, Coordenação de Pesquisas por Amostra de Domicílios. Disponível em: 
+https://biblioteca.ibge.gov.br/index.php/biblioteca-catalogo?view=detalhes&id=2102040  
+ 
+PRESTES, E. G. A geopolítica digital do 5G: elementos para compreender o desenvolvimento 
+tecnológico chinês da quinta geração de telefonia móvel. Geousp, v. 26, n. 2, e-194823, ago. 
+2022. Disponível em: https://www.revistas.usp.br/geousp/article/view/194823. Acesso em: 
+10 mai. 2023. 
+ 
+RUSSELL, S.; NORVIG, P. Artificial Intelligence: a modern approach. 3. ed. New Jersey: 
+Prentice Hall, 2016. 
+SACOMANO, J. B. et al. Indústria 4.0. São Paulo: Blucher, 2018. 
+  
+24
+ 
+SILVA, Felipe Sampaio Dantas da. Controle de Mobilidade Inteligente Orientado por Cloud-
+Network Slicing em Infraestruturas 5G. Orientador: Dr. Augusto José Venâncio Neto. 2023. 
+Tese (Doutorado em Ciência da Computação) - Centro de Ciências Exatas e da Terra, 
+Universidade Federal do Rio Grande do Norte, Natal, 2023. 99p. Disponível em: 
+https://repositorio.ufrn.br/handle/123456789/57352. Acesso em: 10 mai. 2023. 
+ 
+SPADINGER, R. Implementação da tecnologia 5G no contexto da transformação digital e 
+indústria 4.0. Naciones Unidas Comisión Económica para América Latina y el Caribe 
+(CEPAL), number 47095 edited by Cepal. Disponível em 
+https://ideas.repec.org/b/ecr/col013/47095.html. Acesso em: 10 mai. 2023. 
+ 
+STAKE, R. E. Pesquisa qualitativa: estudo de caso. Porto Alegre: Penso, 2016. 
+ 
+UGUETTO, T. C.; LIMA, F. Conectividade de equipamentos de manufatura à uma rede 5G. X 
+Simpósio de Iniciação Científica, Didática e de Ações Sociais da FEI. Disponível em 
+https://fei.edu.br/sites/sicfei/artigos2022/SICFEI_2022_paper_49.pdf. Acesso em 10 mai. 
+2023. 
+ 
+VILELA, J. M. de. Avaliação sobre os impactos da tecnologia 5G e das iniciativas de Indústria 
+4.0 na relação e na competitividade das empresas. Tese (Doutorado) – Universidade 
+Federal Fluminense, Pós-Graduação em Ciência da Computação, Niterói, 2023, 237 p. 
+Disponível em: 
+https://app.uff.br/riuff/bitstream/handle/1/30602/Tese%20Defesa%20Doutorado%20josem
+arcelo.vilela.pdf?sequence=1&isAllowed=y.  
+ 
+XU, L. D.; HE, W.; LI, S. Internet of Things in Industries: a survey. IEEE Transactions on 
+Industrial Informatics, v. 10, n. 4, p. 2233-2243, 2014. Disponível em: 
+https://www.researchgate.net/publication/270742269_Internet_of_Things_in_Industries_A
+_Survey. Acesso em 10 mai. 2023. 
+ 
+YAMADA, V., MARTINS, L. M. Indústria 4.0: um comparativo da indústria brasileira perante o 
+mundo. Revista Terra & Cultura: Cadernos De Ensino E Pesquisa, v. 34, p. 95-109. 2019. 
+Disponível em:  http://publicacoes.unifil.br/index.php/Revistateste/article/view/1011/947 
+ 
+WANG, J. et al. O lar do futuro na Era 5G: Novas estratégias para uma vida hiperconectada 1 
+ed. UBK Publishing House, 2020. 
+ 
+Agradecimentos 
+ 
+Gostaria de expressar minha profunda gratidão a todas as pessoas que possibilitaram a 
+realização do curso de pós-graduação em Indústria 4.0, oferecido em Ribeirão Preto com o 
+credenciamento da Faculdade SENAI de Tecnologia Mecatrônica, em especial aos professores 
+Reginaldo Dias de Souza, Valdeir Donizete Borges, Valter Sampaio de Sena, Elias Dias Pereira, 
+Daniel Octávio Tambasco Bruno e Jorge Luiz Athayde. Este presente artigo, que trata da 
+Tecnologia 5G e a Indústria 4.0, é fruto do conhecimento adquirido durante o curso e das 
+extensas pesquisas realizadas posteriormente. 
+
+24
+ 
+ 
+Sobre os (as) Autores (as): 
+________________________ 
+ 
+
+i João Victor Delomo Luque 
+ 
+Pós-graduado em Indústria 4.0 (2024) pela Faculdade SENAI de 
+Tecnologia Mecatrônica e MBA em Gestão de Projetos pela 
+Universidade Pitágoras Unopar Anhanguera (2024). Graduado 
+em Engenharia de Controle e Automação pela Faculdade 
+Anhanguera de Ribeirão Preto (2016). Atualmente é Especialista 
+em Tecnologia pelo Instituto Senai de Tecnologia, atuando nos 
+Programas de atendimento a indústria como: Jornada de 
+
+ Transformação Digital, Novo Brasil Mais Produtivo e Rota 2030. 
+Possui experiência nas áreas de Indústria 4.0, Lean Six Sigma, 
+Engenharia da Qualidade e Liderança de Processos de Produção 
+e Logística https://orcid.org/0000-0002-2205-6019 
+ 
+ii Daniel Otávio Tambasco Bruno 
+ 
+Doutorando e Mestre em Engenharia da Informação pela 
+Universidade Federal do ABC. Especialista em Banco de Dados 
+pela Universidade de Ribeirão Preto (2007) e Especialista em 
+Educação à Distância pela Universidade Paulista (2012). Possui 
+graduação em Análise de Sistemas (2003). Atualmente é 
+Professor dos cursos de Engenharia de Controle e Automação, 
+Tecnólogo em Mecatrônica e Tecnólogo em Análise e 
+Desenvolvimento de Sistemas da Faculdade SENAI de Tecnologia 
+
+ Mecatrônica industrial. Possui experiência na área de 
+Processamento de Imagens Médicas, Inteligência Artificial, Redes 
+de Computadores e Computação em Nuvem 
+https://orcid.org/0000-0002-9007-338X 
+
+iii Juliane de Almeida Crispim 
+ 
+Instrutora de Formação Profissional III na área da Saúde e 
+Segurança do Trabalho. Doutora e Mestra em Ciências pelo 
+Programa de Pós-Graduação Enfermagem em Saúde Pública da 
+Escola de Enfermagem de Ribeirão Preto da Universidade de São 
+Paulo. Bacharel e Licenciada em Enfermagem (2010), graduada 
+pela USP. Pesquisadora junto ao Grupo de Estudos 
+Epidemiológico-Operacionais em Tuberculose (GEOTB) 
+
+  https://orcid.org/0000-0003-4642-9075 
+ 
+26
+
+iv José Roberto dos Santos 
+
+Docente do ensino superior, graduação e pós-graduação na 
+Faculdade SENAI de Tecnologia em Mecatrônica na Faculdade 
+SENAI de Tecnologia Mecatrônica. Possui Pós-graduação em 
+Segurança da Informação pela Uninove (2016), graduação em 
+Tecnologia de Informação e bacharel em Sistema da Informação 
+(2009), além de superior em Automação Industrial. Possui 
+experiência nas áreas de Segurança da Informação, 
+
+  Administração de Ambientes de Redes Windows e Linux, 
+Automação Industrial https://orcid.org/0009-0001-0601-8469 
+ 
+v Victor Pereira Bernardes 
+
+Supervisor de Projetos e Tecnologia no Senai São Paulo, pós-
+graduado em Gestão Estratégica de Negócios (Conquer Business 
+School), Engenharia de Petróleo – UniSantos (Universidade 
+Católica dos Santos), Lean Six Sigma Green Belt – MF 
+Treinamentos, Design Thinker – FiberCastell, Marketing Digital – 
+ESPM/ DMI (Digital Marketing Institute). Possui experiência em 
+Mapeamento em Digitalização e Indústria 4.0, Lean 
+
+ Manufacturing, Supervisão e Gestão em Projetos e Gestão de 
+FPSO (Floating Production Storage and Offloading) – Bacia de 
+Santos https://orcid.org/0009-0009-5244-357 

@@ -1,0 +1,535 @@
+Theoretical Computer Science 442 (2012) 13–21
+Contents lists available at SciVerse ScienceDirect
+Theoretical Computer Science
+journal homepage: www.elsevier.com/locate/tcs
+The planar k-means problem is NP-hard✩
+Meena Mahajan a,∗, Prajakta Nimbhorkar a, Kasturi Varadarajan b
+a The Institute of Mathematical Sciences, Chennai 600 113, India
+b The University of Iowa, Iowa City, IA 52242-1419, USA
+a r t i c l e i n f o
+Keywords:
+Clustering
+k-means
+Planar graphs
+NP-hardness
+a b s t r a c t
+In the k-means problem, we are given a finite set S of points in ℜm, and integer k ≥ 1, and
+we want to find k points (centers) so as to minimize the sum of the square of the Euclidean
+distance of each point in S to its nearest center. We show that this well-known problem is
+NP-hard even for instances in the plane, answering an open question posed by Dasgupta
+(2007) [7].
+© 2010 Elsevier B.V. All rights reserved.
+1. Introduction
+In the k-means problem, we are given a finite set S of points in ℜm, and integer k ≥ 1, and we want to find k points
+(centers) so as to minimize the sum of the square of the Euclidean distance of each point in S to its nearest center. This is a
+well-known and popular clustering problem that has also received a lot of attention from the algorithms community.
+Lloyd [17] proposed a very simple and elegant local search algorithm that computes a certain local (and not necessarily
+global) optimum for this problem. Har-Peled and Sadri [11] and Arthur and Vassilvitskii [5,4] examine the question of how
+quickly this algorithm and its variants converge to a local optimum. Lloyd’s algorithm also does not provide any significant
+guarantee about how well the solution that it computes approximates the optimal solution. Ostrovsky et al. [20] and Arthur
+and Vassilvitskii [6] show that randomized variants of Lloyd’s algorithm can provide reasonable approximation guarantees.
+The k-means problem has also been studied directly from the point of view of approximation algorithms. There are
+polynomial time algorithms that compute a constant factor approximation to the optimal solution; see for instance the
+local search algorithm analyzed by Kanungo et al. [13]. If k, the number of centers, is a fixed constant, then the problem
+admits polynomial time approximation schemes [8,14]. If both k and the dimension m of the input are fixed, the problem
+can be solved exactly in polynomial time [12].
+Drineas et al. [9], Aloise et al. [2], and Dasgupta [7] show that the k-means problem is NP-hard when the dimension m
+is part of the input even for k = 2. However, to the best of our knowledge, there is no known NP-hardness result when the
+dimension m is fixed and k, the number of clusters, is part of the input. Dasgupta [7] raises the question of whether k-means
+is hard in the plane.
+In this paper, we establish the NP-hardness of the k-means problem in the plane. Thus the main result of the paper is the
+following:
+Theorem 1. Given a finite set S = {pi, p2, . . . , pn} of points with rational coordinates in ℜ2, an integer k ≥ 1, and a bound
+R ∈ ℜ which is a rational number, it is NP-hard to determine if there exist k centers {c1, . . . , ck} anywhere in ℜ2 such that
+n
+i=1
+
+min
+1≤j≤k
+[d(pi, cj)]2
+
+≤ R.
+✩ Part of the work by the third author was done while visiting The Institute of Mathematical Sciences, Chennai. He was also supported by NSF CAREER
+award CCR 0237431.
+∗ Corresponding author. Tel.: +91 44 2254 3100; fax: +91 44 2254 3307.
+E-mail addresses: meena@imsc.res.in (M. Mahajan), prajakta@imsc.res.in (P. Nimbhorkar), kvaradar@cs.uiowa.edu (K. Varadarajan).
+0304-3975/$ – see front matter © 2010 Elsevier B.V. All rights reserved.
+doi:10.1016/j.tcs.2010.05.034
+14 M. Mahajan et al. / Theoretical Computer Science 442 (2012) 13–21
+Our proof uses a reduction from the planar 3SAT problem [16] and is inspired by a construction used by Megiddo and
+Supowit [19] in the context of showing the NP-hardness of the k-center and the k-median problem. Given an instance I of
+planar 3SAT, we construct a planar graph from I, embed it in an integer grid using the technique of [1], and construct the
+k-means instance from this grid embedding. (See Fig. 4.)
+While clustering problems generally tend to be NP-hard even in the plane, there are surprising exceptions — the problem
+of covering a set of points by k balls so as to minimize the sum of the radii of the balls admits a polynomial time algorithm
+if we use L1 balls, and a (1 + ε)-approximation algorithm that runs in time polynomial in the input size and log 1
+ε for the
+usual Euclidean balls [10].
+The rest of this article is organized as follows. In Section 2, we define the problem formally and state some useful
+properties of the optimal clustering. In Section 3, we describe our reduction from planar 3SAT to the k-means in the plane.
+2. Preliminaries
+The problem of k-means clustering is defined as follows:
+Definition 2. Given a set of n points S = {p1, . . . , pn} in Rm, find a set of k points B = {b1, b2, . . . , bk} ⊂ Rm such that
+n
+i=1
+[d(pi, B)]2
+is minimized. This minimum value is denoted Opt(S, k).
+Here d(pi, B) is the Euclidean distance from pi to the nearest point in B; d(pi, B) = min1≤j≤k d(pi, bj).
+We consider the problem for m = 2, and refer to it as planar k-means.
+Choosing the set B of k centers fixes a clustering C of the points in S, with each point going to its nearest center (breaking
+ties arbitrarily). On the other hand, if a set C ⊆ S is known to form a cluster, then the center of the cluster is uniquely
+determined as the centroid of the points in C . Thus we can talk of the cost of a cluster C = {p1, . . . , pm} and a clustering
+C = {C1, . . . , Ck}:
+Opt(C , 1) = Cost(C ) = min
+b
+m
+i=1
+[d(pi, b)]2
+Cost(C) =
+k
+j=1
+Cost(Cj).
+Thus Opt(S, k) is the minimum, over all clusterings C of S into k clusters, of Cost(C).
+We show the NP-hardness of planar k-means by a reduction from planar 3-SAT [16].
+Definition 3 ([16]). Let F be a 3-CNF formula with variables {v1, . . . , vn} and clauses {c1, . . . , cm}. We call G(F ) = (V , E)
+the graph of F , where
+V = {vi|1 ≤ i ≤ n} ∪ {cj|1 ≤ j ≤ m}
+E = E1 ∪ E2 where
+E1 = {(vi, cj)|vi ∈ cj or ¯vi ∈ cj}
+E2 = {(vj, vj+1)|1 ≤ j < n} ∪ {(vn, v1)}.
+If G(F ) is a planar graph, F is called a planar 3-CNF formula. The planar 3-SAT problem is to determine whether a given planar
+3-CNF formula F is satisfiable.
+We note that our reduction, in fact, requires only the graph (V , E1) to be planar. (Some of the literature in fact refers to
+this sub-graph as the graph of F , but we follow the convention from [16].)
+Henceforth throughout this note, we use the term distance to mean square of Euclidean distance. That is, dist(p, q) =
+[d(p, q)]2. We will be explicit when deviating from this convention.
+We use the following well-known or easily verifiable facts about the k-means problem [12,9].
+Proposition 4. 1. The cost of a cluster of points is half the average sum of distances from a point to the other points in the cluster:
+Cost(S) = 1
+2|S|
+
+p∈S
+
+q∈S;q̸=p
+dist(p, q).
+In other words, if S = {p1, p2, . . . , pn}, then
+Cost(S) = 1
+|S|
+n
+i=1
+n
+j=i+1
+dist(pi, pj).
+In the following, we will use this form as the definition for the cost of a cluster.
+M. Mahajan et al. / Theoretical Computer Science 442 (2012) 13–21 15
+2. If, in an instance of the k-means problem, the given points form a multiset, then we say that a clustering is multiset respecting
+if it puts all points at the same location into the same cluster.
+Every instance of the k-means problem has a multiset-respecting optimal clustering.
+3. Let S be a multiset instance of the k-means problem, and let S′ be the instance obtained by adding a point p to S. Then ∀k,
+Opt(S, k) ≤ Opt(S′, k).
+4. In particular, adding a point to a cluster cannot decrease the cost of that cluster; Cost(S) ≤ Cost(S ∪ {p}).
+5. If clustering C′ refines clustering C (that is, every cluster in C is the union of some clusters in C′), then Cost(C′) ≤ Cost(C).
+3. Reduction from planar 3SAT to k-means
+Let F be the given planar 3SAT instance with n variables and m clauses. We construct an instance I of planar k-means
+corresponding to F . We list the required properties of this instance in Section 3.1. In Section 3.3, we describe a layout which
+indeed satisfies these properties, and also prove the correctness of the reduction. The reduction may introduce irrational
+coordinates in the resulting k-means instance. Rounding these irrational coordinates to sufficiently close rational points is
+described in Section 3.4.
+3.1. Properties of the layout
+The corresponding k-means instance I we construct will satisfy the following:
+1. Corresponding to each variable xi, there is a simple circuit si in the plane, with an even number of vertices marked on it.
+At each vertex on such a circuit, M copies of a point are placed. The circuits for different variables do not intersect.
+For each circuit, its vertices can be partitioned into pairs of adjacent vertices in two ways. We associate one of them
+(chosen arbitrarily) with the assignment xi = 1 and the other with xi = 0. We call the first pairing the ‘true matching’
+and the other pairing the ‘false matching’.
+2. Let u, v be any two distinct vertices taken from any of the circuits (not necessarily the same circuit). If u and v are adjacent
+on some circuit, then the distance between them is β. Otherwise, the distance between them is at least 2β.
+3. There is a point pj corresponding to every clause Cj. If xi ∈ Cj ( ¯xi ∈ Cj) then there is a unique nearest edge (u, v) on the
+true (respectively false) matching of the circuit si such that pj is equidistant from u and v. It is at distance α from the
+midpoint of uv, and hence at a distance α + β
+4 from u and v. All vertices other than the endpoints of these nearest edges
+(two per literal in the clause, so at most six) are at a distance at least α + 5β
+4 from pj.
+Clause points pj and pl, for l̸ = j, are at distance at least θ from each other.
+4. The instance I consists of all the clause points, and M copies of a point at each vertex on each circuit si. The parameters
+satisfy
+M ≥ 6αm
+β θ ≥ 2(M + 1)αm.
+5. The value of k is given by
+k =
+n
+i=1
+|si|
+2 .
+We ensure that the optimal k-means clustering puts the points in each circuit si into |si|
+2 clusters by dividing them into
+either true pairs or false pairs. (Thus these clusters contain 2M points.) Every clause point pj has at most three pairs of
+point locations at distance α from itself. It is clustered with one of these pairs if that pair forms a cluster in the circuit si.
+Otherwise, the optimal clustering puts pj along with some pair of point locations that forms a cluster in the circuit it appears
+in. In particular, if xi is assigned a value 1, then in the corresponding k-means clustering, points of si are clustered according
+to the true matching, otherwise they are clustered according to the false matching. Similarly, if the assignment to a variable
+xi satisfies a clause cj, then the clause point pj is at distance α + β
+4 from the vertices of a cluster in si, otherwise it is at distance
+strictly greater than α + β
+4 from at least one vertex in every cluster in si.
+We need to show that
+1. A layout satisfying the above properties gives a correct reduction from planar 3SAT to planar k-means. This is done in
+Section 3.2.
+2. The layout is indeed possible for some choice of α, β, θ, M, and can be obtained in polynomial time. This is done in two
+stages: a layout with irrational coordinates is described in Section 3.3, and in Section 3.4 we describe how to eliminate
+the irrational coordinates.
+16 M. Mahajan et al. / Theoretical Computer Science 442 (2012) 13–21
+3.2. Correctness of the reduction
+Consider clustering of only circuit points into k non-empty clusters.
+Lemma 1. 1. Clustering the circuit points into consecutive pairs (i.e. into the true or the false matching for each variable) has
+cost kMβ
+2 .
+2. Any other multiset-respecting clustering of circuit points has cost at least kMβ
+2 + Mβ
+3 .
+Proof. Let A be any matching based k-means clustering of the circuit points. Then using Proposition 4(1) we can see that
+Cost(A) = kMβ
+2 .
+Let B be some multiset-respecting clustering that does not correspond to a matching on the circuits. By the size of a
+cluster, we mean the number of distinct vertices (and hence all M points at that vertex) in it.
+If the largest cluster in B has 2 vertices, then every cluster is a pair, and at least one pair is not consecutive on any circuit.
+Hence
+Cost(B) ≥ (k − 1)Mβ
+2 + M2(2β)
+2M = kMβ
+2 + Mβ
+2
+satisfying the claimed bound.
+So now assume that B has some larger clusters too. Let B contain p clusters of sizes l1, . . . , lp more than 3 each, q clusters
+of size 3 each, r clusters of size 2 each, and s clusters of size 1 each. Then we have the following:
+p + q + r + s = k (1)
+p
+i=1
+li + 3q + 2r + s = 2k. (2)
+Subtracting twice the first equation from the second, and using p = p
+i=1 1, we get
+s =
+p
+i=1
+(li − 2) + q. (3)
+For a cluster C of size l ≥ 4, the best possible situation is that l pairs within the cluster are edges on some circuit. Thus
+the cost of such a cluster is at least
+Cost(C ) ≥ 1
+lM
+
+lM2β +
+ l
+2
+
+− l
+
+M22β
+
+= (l − 2)Mβ.
+Similarly, in a cluster of size 3, at most two pairs can be edges on a circuit (the circuits are of even length), so the cost is
+at least 4Mβ/3.
+The cost of the (p, q, r, s) clustering B thus satisfies:
+Cost(B) ≥ Mβ
+ p
+i=1
+(li − 2) + 4q
+3 + r
+2
+
+= Mβ
+2
+
+s + r + q + 2q
+3 +
+p
+i=1
+(li − 2)
+
+from (Eq. (3))
+≥ Mβ
+2
+
+s + r + q + p + 2q
+3 + p
+
+∵ li − 2 ≥ 2
+= Mβ
+2
+
+k + p + 2q
+3
+
+from (Eq. (1))
+≥ kMβ
+2 + (p + q)Mβ
+3
+≥ kMβ
+2 + Mβ
+3 ∵ p + q ≥ 1.
+Thus any multiset-respecting clustering of circuit points that is not a matching based clustering has a cost larger than the
+matching based clusterings, and the difference is at least Mβ
+3 . 
+Lemma 2. The formula is satisfiable if and only if there is a clustering of value at most kMβ
+2 + 2M
+2M+1 αm.
+M. Mahajan et al. / Theoretical Computer Science 442 (2012) 13–21 17
+Proof. (⇒:) Consider one of the satisfying assignments of the formula. A clustering can be constructed from it as follows:
+If xi = 1 (respectively xi = 0), cluster the points of si according to the true (false) matching. As every clause Cj is satisfied,
+fix one of the variables xi that satisfies it. Put the clause point pj with the nearest pair of si. If xi = 1, then points of si are
+clustered into true matching pairs. Further, xi appears in Cj in non-negated form, and so, by our construction, pj is at a distance
+α from the midpoint of one of the true matching pairs. Thus pj can be clustered with this pair. The cost of this cluster is
+Cost(cluster) = 1
+2M + 1
+
+M2β + 2M
+
+α + β
+4
+
+= 2M
+2M + 1 α + Mβ
+2 .
+The case xi = 0 is analogous. Clustering all clause points in this way gives a clustering where m clusters contribute
+Mβ
+2 + 2M
+2M+1 α each, and the remaining contribute Mβ
+2 each, giving an overall value of kMβ
+2 + 2M
+2M+1 αm.
+(⇐:) Suppose there is a clustering of value at most kMβ
+2 + 2M
+2M+1 αm. By Proposition 4(2), we can assume that there is
+a multiset-respecting clustering C with this value. Let C′ denote the restriction of C to circuit points. By Proposition 4(4),
+adding the clause points cannot decrease the cost of the clustering; thus Cost(C′) ≤ Cost(C). Now we prove a series of
+claims:
+1. The restriction of C to circuit points, C′, has exactly k non-empty clusters.
+If C′ has fewer clusters, then there is a cluster with more than 2 points. Refine the clustering by removing one point
+from such a cluster and putting it in a cluster by itself. Repeat until there are exactly k clusters, to get clustering C′′ of
+circuit points. By Proposition 4(5), Cost(C′′) ≤ Cost(C′). C′′ is not matching based (since we created singleton clusters),
+so by Lemma 1, it contributes a value of at least kMβ
+2 + Mβ
+3 . Since
+kMβ
+2 + Mβ
+3 ≤ Cost(C′′) ≤ Cost(C′) ≤ Cost(C),
+we have
+Cost(C) −
+ kMβ
+2 + 2M
+2M + 1 αm
+
+≥ Mβ
+3 − 2M
+2M + 1 αm ≥ Mβ
+6 > 0,
+where the second inequality follows by our choice of M. We have reached a contradiction to our assumption about
+Cost(C).
+2. C′ is a matching based clustering. That is, in C, all circuit points are clustered into a matching based clustering.
+If not, then by the argument used above for C′′, we obtain a contradiction to our assumption about Cost(C).
+3. No cluster in C has more than one clause point.
+If some cluster C has two or more clause points, then let u, v be the vertices of the matching in C , and let p, q be two
+distinct clause points in it. By Proposition 4(4), the cost of the cluster C is at least the cost of the cluster containing just
+u, v, p, q. Thus using Proposition 4(1), we have
+Cost(C ) ≥ 1
+2M + 2
+
+M2β + 4M
+
+α + β
+4
+
++ θ
+
+= Mβ
+2 + 4Mα + θ
+2(M + 1) .
+All other clusters have a cost of at least Mβ/2 each, so the overall cost is at least
+Cost(C) ≥ (k − 1) Mβ
+2 + Mβ
+2 + 4Mα + θ
+2(M + 1)
+≥ kMβ
+2 + 4Mα + 2(M + 1)αm
+2(M + 1) by our choice of θ
+> kMβ
+2 + 2M
+2M + 1 αm a contradiction.
+4. Each clause point is clustered with the nearest pair of circuit points, which should also be a matching pair in the matching
+based clustering.
+Every cluster containing a clause point has cost Mβ
+2 + 2Mα
+2M+1 if the circuit edge in the cluster is nearest the clause point,
+and has cost at least Mβ
+2 + 2M
+2M+1 α + Mβ
+2M+1 otherwise.
+Thus a satisfying assignment can be constructed from this clustering. 
+3.3. The details of the layout
+We now describe the layout obtained from the planar 3SAT formula F that gives us the desired instance I of the k-means
+problem. Let G = (V , E) be the associated planar clause-variable incidence matrix. (From Definition 3, G = (V , E1). Since
+18 M. Mahajan et al. / Theoretical Computer Science 442 (2012) 13–21
+Fig. 1. Creating circuits for variables.
+Fig. 2. Repositioning clause points.
+Fig. 3. Adjusting the parity of circuits relative to clause points.
+G(F ) is planar, so is G.) Note that the vertex set V of G can be partitioned into two sets: X corresponding to variable vertices,
+and Y corresponding to clause vertices, and G is bipartite with E ⊂ X × Y . All vertices in Y have degree at most 3, and all
+vertices in X have degree at most m.
+1. Let E be a planar combinatorial embedding of G; such an embedding can be obtained in polynomial time, and even in
+log space. (See for instance [1].) E corresponds to some plane drawing of G and specifies, for each vertex v, the cyclic
+ordering of the edges incident on v in this drawing.
+2. Construct a related bounded-degree planar graph H and an embedding E ′ as follows: replace each vertex v ∈ X by a cycle
+Cv on m vertices, v1, v2, . . . , vm. Reroute the d(v) edges incident on v in G to the first d(v) of these vertices, in the same
+order as dictated by E . It is straightforward to see that H is planar, and its embedding E ′ can be easily obtained from E .
+The maximum degree of any vertex in H is 3. The vertex set of H is the disjoint union of X ′ and Y , where X ′ = X × [m].
+3. Consider a plane drawing of H where vertices are embedded at points on an integer grid, and edges are embedded as
+rectilinear paths. Such a drawing can be obtained in polynomial time [15,21], and even in logarithmic space [1].
+4. Inflate the grid by a factor of b ≥ 14.
+This ensures, in particular, that every vertex or bend point u is at the center of a big box Bu of size b × b, and a small
+box Su of size 6 × 6. The big boxes for different grid points have disjoint interiors, and thus contain no other vertex or
+bend point even on their boundaries.
+Consider an edge connecting vertex [x, k] ∈ X ′ with vertex y ∈ Y . Replace it by a pair of parallel rectilinear paths
+separated by two grid squares. At the y end, join up these paths along the boundary of Sy. At the [x, k] end, splice them
+along with the edges to [x, k −1] and [x, k +1] to form a continuous path. See Fig. 1. Note that some additional rectilinear
+bends might be required at the [x, k] end, (see, for example, (x, 4) in Fig. 1).
+For each vertex x ∈ X (and hence for each variable in F ), this process distorts the cycle Cx in H into a circuit t. Let ti
+denote the circuit corresponding to variable xi. Since ti is a rectilinear circuit on a grid, it is of even length.
+5. Each clause point yj is now moved to the center of one of the grid squares touching it, the one that is to the North-West.
+Extend the three circuits ‘‘incident’’ to the clause point, if necessary, so that all incident circuits are at a Euclidean distance
+of precisely 5
+2 times the grid length from the moved clause point. See the layout and the modification in Fig. 2.
+6. For each circuit ti, arbitrarily fix one of its perfect matchings as the true matching, and the other as the false matching.
+Let clause Cj contain variable xi positively (negatively, respectively). If in the layout so far, yj is nearest a true (false,
+resp.) edge of ti, then nothing needs to be done. If, however, the edge of ti nearest yj is a false (true, resp.) edge, further
+deform ti in the area within Byj but outside Syj . Replace a sub-path of length two (on each parallel path) by a path of
+length three, with the vertices laid out on a regular semi-hexagon and hence at distance one from their neighbours on
+the circuit. Change the true/false matchings within Byj to be consistent with the labelling outside. This makes the edge
+nearest yj a true edge if it was false earlier, and vice versa. The overall length of the circuit remains even. See Fig. 3.
+M. Mahajan et al. / Theoretical Computer Science 442 (2012) 13–21 19
+Fig. 4. The layout for F = (a ∨ b ∨ c) ∧ (b ∨ c).
+Fig. 5. The distances α, β shown inside Bu for a clause point u.
+Since the grid was inflated sufficiently, these distortions do not affect other vertices/bends.
+After doing this distortion wherever needed, the resulting circuit for a variable is the required circuit si.
+Fig. 4 gives the complete layout for a small planar 3SAT instance.
+Let the squared unit length of the grid be β. Then α = ( 5
+2 )2β = 6.25β. Any two clause points are separated either
+vertically or horizontally by b grid lengths, so the distance between them is at least θ = b2β.
+Fig. 5 shows the box Bu for a clause point u, and within this box the smallest distances are demonstrated. The nearest
+vertices are A3 and A4 (and the corresponding vertices on the other two circuits as well). The distances satisfy the following:
+point pair distance point pair distance
+u, A2 α + 6β + β/4
+Ai, Ai+1 β u, A3 α + β/4
+A1, A3 3β u, A α
+A2, A4 2β u, A4 α + β/4
+A3, A5 4β u, A5 α + 2β + β/4
+It is straightforward to see that with M = 38m, b = 28m, all the required conditions on the parameters are satisfied.
+3.4. Dealing with the irrational coordinates
+In the last step of the layout, where we replace certain sub-paths of length 2 by sub-paths of length 3, the numerators
+of the point coordinates become irrational. Essentially, we introduce multiples of √3 in the numerator. However, there is a
+gap in Lemma 2 between the k-means clustering costs corresponding to satisfiable and unsatisfiable instances. So we may
+‘‘round’’ these irrational points to sufficiently close rational points.
+Lemma 2 shows that the optimal k-means clustering cost is at most μ = kMβ
+2 + 2M
+2M+1 αm in the case where the original
+planar 3-CNF formula is satisfiable; a quick glance at the proof shows that if the original formula is not satisfiable, the
+20 M. Mahajan et al. / Theoretical Computer Science 442 (2012) 13–21
+optimal k-means clustering cost is at least μ + λ, where
+λ = min
+ Mβ
+6 , 2Mα
+M + 1 , Mβ
+2M + 1
+
+.
+Let ε = λ/2
+μ+λ < λ/2
+μ .
+Let dmin denote the smallest Euclidean distance between two different locations in the layout. We consider a simplistic
+rounding: for a location with coordinates (x, y) where, say, x is irrational (only one coordinate is irrational in the construction
+so far), move the location to (x′, y) so that x′ is rational, and |x′ − x| < εdmin
+8 . Observe that it is possible to find such an x′
+in polynomial time ([18], Theorem 1.4.7). Now if p and q denote two points in the original layout, and p′ and q′ denote the
+corresponding points in the rounded layout, then
+d(p′, q′) < d(p, q) + εdmin
+4 ≤ d(p, q)
+
+1 + ε
+4
+
+(recall, d(u, v) is the Euclidean distance between u and v) and so
+dist(p′, q′) < dist(p, q)
+
+1 + ε
+2 + ε2
+8
+
+≤ dist(p, q) [1 + ε] .
+Similarly, we can see that dist(p′, q′) > dist(p, q) [1 − ε]. Thus,
+(1 − ε)dist(p, q) < dist(p′, q′) < (1 + ε)dist(p, q).
+Now, Proposition 4 (1) implies that for any clustering of the points, the ratio of the cost in the rounded layout to the cost
+in the original layout is strictly greater than (1 − ε) and strictly less than (1 + ε).
+Thus, the optimal k-means clustering cost in the rounded layout is strictly less than (1 + ε)μ ≤ μ + λ/2 when the input
+formula is satisfiable, and is strictly greater than (1 − ε)(μ + λ) ≥ μ + λ/2 when the input formula is not satisfiable.
+4. Discussion
+We have shown that the k-means clustering problem remains NP-complete even in two dimensions, when the number
+of centers k is part of the input. The NP-hardness of this problem has been independently observed by Andrea Vattani [22].
+There are still some unsettled issues regarding this hardness. An obvious question is whether there are natural parameters
+associated with planar k-means instances such that when these parameters are restricted in some way, the problem becomes
+tractable.
+• One possible choice of the parameter is k, the number of centers itself. It is known that for planar k-means with constant
+values of k, there is a polynomial time algorithm due to [12]. Our reduction places no bounds on the value of k; it is
+unrestricted (and in particular, can be as large as θ(n)). A natural question to ask is where is the hardness threshold; at
+what values of k does the planar k-means problem become NP-hard. For instance, for k ∈ O(log n), the algorithm by [12]
+runs in quasi-polynomial time, and thus is unlikely to be NP-hard. Our reduction shows hardness for a particular choice
+of ϵ. Is it hard for k = nϵ for every choice of ϵ ∈ (0, 1)? It has been pointed out by Vattani [22] that this is indeed the
+case.
+• Another possible parameter to examine is the ratio of the maximum distance between points to the minimum distance.
+In an instance generated in our reduction, this ratio is infinity, as there are points with distance 0. A small perturbation
+of the points will make this ratio finite, but still unbounded. (On the other hand, it will be polynomial in n.) If the ratio is
+known a priori to be, say, linear in n, does it make the problem easier?
+However, if we consider only different locations, then the ratio even in our reduction is bounded by a polynomial in
+n, as the grid itself is of size polynomial in n. It is not clear if linear ratio is possible preserving hardness.
+Regarding approximability also, the picture concerning planar k-means is far from clear. The algorithm of [6] (a variant of
+Lloyd’s algorithm), while providing approximation guarantees for general k-means, does not provide any better guarantees
+on planar instances. (Although the lower bound example constructed in [6] is for high dimensions, analogous planar
+instances can also be constructed.) However, its behaviour on planar instances is not fully understood. In particular, it
+is entirely possible that for any planar instance of k-means, the algorithm of [6] gives an O(1)-approximation with high
+probability. Even if this is not true, it may still hold for most planar instances. Settling this either way would be of some
+interest.
+The most important open question is to determine whether there is a PTAS for the planar k-means problem. Note that
+for a very similar problem, the planar k-median problem, a PTAS is known to exist [3]. This is despite the fact that unlike the
+1-mean, the 1-median does not have a closed form solution.
+Acknowledgement
+The authors would like to thank Amit Deshpande for useful discussions concerning the behaviour of [6] on planar
+instances.
+M. Mahajan et al. / Theoretical Computer Science 442 (2012) 13–21 21
+References
+[1] E. Allender, S. Datta, S. Roy, The directed planar reachability problem, in: Proc. 25th Foundations of Software Technology and Theoretical Computer
+Science Conference, in: LNCS, vol. 3821, 2005, pp. 238–249.
+[2] D. Aloise, A. Deshpande, P. Hansen, P. Popat, NP-hardness of euclidean sum-of-squares clustering, Machine Learning 75 (2) (2009) 245–248.
+[3] S. Arora, Polynomial time approximation schemes for euclidean tsp and other geometric problems, in: FOCS ’96: Proceedings of the 37th Annual
+Symposium on Foundations of Computer Science, 1996, p. 2.
+[4] D. Arthur, S. Vassilvitskii, How slow is the k-means method? in: Proc. Symp. on Comput. Geom., 2006.
+[5] D. Arthur, S. Vassilvitskii, Worst-case and smoothed analysis of the icp algorithm, with an application to the k-means method, in: Proc. IEEE Symp.
+Foundations of Computer Science, 2006.
+[6] D. Arthur, S. Vassilvitskii, k-means++: the advantages of careful seeding, in: Proc. ACM–SIAM Symp. Discrete Algorithms, 2007.
+[7] S. Dasgupta, The hardness of k-means clustering. Technical Report CS2007-0890, University of California, San Diego, 2007.
+[8] F. de la Vega, M. Karpinski, C. Kenyon, Approximation schemes for clustering problems, in: Proc. ACM Symp. Theory of Computing, 2003, pp. 50–58.
+[9] P. Drineas, A. Frieze, R. Kannan, S. Vempala, V. Vinay, Clustering large graphs via the singular value decomposition, Machine Learning 56 (2004) 9–33.
+[10] M. Gibson, G. Kanade, E. Krohn, I. Pirwani, K. Varadarajan, On clustering to minimize the sum of radii, in: Proc. ACM–SIAM Symp. Discrete Algorithms,
+2008.
+[11] S. Har-Peled, B. Sadri, How fast is the k-means method? in: Proc. ACM–SIAM Symp. Discrete Algorithms, 2005, pp. 877–885.
+[12] M. Inaba, N. Katoh, H. Imai, Applications of weighted voronoi diagrams and randomization to variance-based clustering, in: Proc. Annual Symp. on
+Comput. Geom., 1994, pp. 332–339.
+[13] T. Kanungo, D. Mount, N. Netanyahu, C. Piatko, R. Silverman, A. Wu, A local search approximation algorithm for k-means clustering, Computational
+Geometry 28 (2004) 89–112.
+[14] A. Kumar, Y. Sabharwal, S. Sen, A simple linear time (1 + ϵ) approximation algorithm for k-means clustering in any dimensions, in: Proc. IEEE Symp.
+Foundations of Computer Science, 2004, pp. 454–462.
+[15] C.E. Leiserson, Area-efficient graph layouts (for VLSI), in: Proc. 21st Ann. IEEE Symp. Foundations of Computer Science, 1980, pp. 270–281.
+[16] D. Lichtenstein, Planar formulae and their uses, SIAM Journal on Computing 11 (1982) 329–343.
+[17] S. Lloyd, Least squares quantization in pcm, IEEE Transactions on Information Theory 28 (1982) 129–136.
+[18] L. Lovász, An algorithmic theory of numbers, graphs, and convexity, in: CBMS-NSF Regional Conference Series in Applied Mathematics, SIAM, 1986.
+[19] N. Megiddo, K. Supowit, On the complexity of some common geometric location problems, SIAM Journal on Computing 13 (1984) 182–196.
+[20] R. Ostrovsky, Y. Rabani, L. Schulman, C. Swamy, The effectiveness of lloyd-type methods for the k-means problem, in: Proc. IEEE Symp. Foundations
+of Computer Science, 2006.
+[21] L.G. Valiant, Universality considerations in vlsi circuits, IEEE Transactions on Computers 30 (1981) 135–140.
+[22] Andrea Vattani, The hardness of k-means clustering in the plane, manuscript, 2009.

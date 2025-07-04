@@ -1,0 +1,572 @@
+9
+Planejamento da Avaliação de IHC
+Objetivos do Capítulo
+Objetivos do Capítulo
+Discutir a impor tância de avaliar a qualidade de uso de um sistema interativo.
+ 
+Descrever o planejamento e a execução da avaliação de IHC envolvendo ou não usu-
+ 
+ários.
+C
+arac terizar os objetivos de avaliação e contex tos de projeto que auxiliam na escolha 
+ 
+do método de avaliação a ser utilizado.
+
+286    I nteração Humano - Computador
+A avaliação de IHC é uma at iv idade f undament al em qu alquer pro c ess o de des en-
+volv imento que bus que pro duzir um sistema interativo com alt a qu alidade de us o. 
+
+Ela or ient a o avaliador a fazer um 
+julg amento  de valor
+ s obre a qu alidade de us o da 
+s olução de IHC e a 
+identiﬁ
+ carproblemas
+ na interação e na interface que prejudiquem 
+a exp eriência par t ic ular do usuário durante o us o do sistema.Assim, é p ossível cor-
+rigir os problemas relacionados com a qu alidade de us o antes de ins erir o sistema 
+
+interat ivo  no cot idiano dos usuários, s eja um sistema novo  ou  uma nova vers ão de 
+
+algum sistema existente.
+C om uma vis ão ampl a do pro c ess o de des envolv imento e dos critérios de qu ali-
+dade des ejáveis, este capítu lo come ça dis c ut indo a imp or t ância de avaliar a qu alidade 
+
+de us o de um sistema interativo. Ele des cre ve o que p o de s er avaliado, qu ando e onde 
+
+uma avaliação p o de s er re alizada e qu ais tip os de dados s ão colet ados e pro duzidos. 
+
+Em s e guida, des cre ve os t ip os mais comuns  de méto dos de avaliação e as at ividades 
+
+básicas de uma avaliação de IHC. O capítu lo conclui com uma bre ve apres ent ação 
+
+do 
+framework 
+DECIDE, prop osto para or ient ar o pl anejamento de uma avaliação de 
+IHC (Shar p  
+et  al .
+, 2007).
+ Por que 
+9.1 Avaliar?
+C on he c er critérios de qu alidade e s e guir pro c ess os de fabr icação que bus c am criar 
+pro dutos ade qu ados a ess es cr itér ios nem s empre  resu lt am  em pro dutos de qu a lida-
+
+de. É p ossível que a lgo p ass e desp ercebido durante a pro dução e acab e  prejudicando a 
+
+qu alidade do pro duto ﬁ
+ nal. Po de s er um problema de matéria-prima com defeito ou  
+de má qu a lidade; p o de s er um des c uido na manipu lação de mater iais; p o de aconte cer 
+
+um erro humano durante o pro c ess o de pro dução, e assim p or diante. Em par t ic u-
+
+lar, qu ando est amos trab alhando com sistemas interativos, os problemas costumam 
+
+ocorrer na coleta, interpretação, process amento  e comp ar tilhamento de dados entre 
+
+os interess ados no sistema (
+stakehol d e rs
+), e até na fas e de implement ação (p or  exem-
+plo, um programador p o de cometer o e quívo co de co diﬁ
+ car uma informação errada 
+s obre o domínio). Ent ão, o que é p ossível fazer p ara ent regar ao consumidor (i.e., 
+usuário ﬁ nal) um pro duto de qu alidade?Além de cont inuar s e guindo pro c ess os  de 
+desig n e des envolvimento compromet idos com a qu alidade do pro duto ﬁ
+ na l, t am-
+b ém é pre cis o avaliar s e o pro duto result ante dess e pro c ess o atende aos critérios de 
+
+qu alidade des ejados.A avaliação do pro duto ﬁnal p ossibilit a entregar um pro duto 
+com uma garant ia maior de qu alidade. Para iss o, s e  algum problema for encont rado 
+
+durante a avaliação, ele de ve s er corrig ido antes de o pro duto chegar ao consumidor. 
+É dif íci l garant ir a“qualidade tot a l” de um pro duto, p orque s eria ne cess ár io ava-
+liar o pro duto ﬁ
+ nal em to das as situ açõ es de us o p ossíveis.Além de s er inviável pre ver 
+
+Capítulo 9 |
+ Planejamento da Avaliação de IHC    287
+to das ess as situ açõ es, o c usto de t a l avaliação s eria alto demais, e exigiria muito temp o 
+e esforço para sua re alização.
+C omo qu alquer pro duto, um sistema interativo de ve s er avaliado s ob a p ersp e c-
+tiva de quem o conceb e, de quem o constrói e de quem o utiliza. Na p ersp e c t iva de 
+
+quem constrói, o objetivo pr incipal da avaliação é veriﬁ
+ car s e  o sistema f unciona de 
+acordo com a esp e ciﬁ
+ cação de re quisitos, ou seja, o fo co está em veriﬁ
+ car s e  o sistema 
+re ceb e os dados de ent r ada, pro c ess a e forne c e os dados de s aída confor me esp e ciﬁ
+ -
+cado. Os cr itér ios de qu a lidade ava liados ness a p ersp e c t iva est ão relacionados à cons -
+
+t r ução de sistemas interat ivos, t a l como robuste z e conﬁ
+ abilidade (Avizienis 
+et  al .
+, 
+2004). Ess es critérios de qu alidade normalmente abstraem o que existe e o c or re fora 
+do sistema (através da interface com usuário durante a interação), e s e concentram 
+
+no que existe e o c or re  
+dentro
+ do sistema. E x istem vários méto dos de avaliação para 
+ve r i ﬁ
+ car a qu alidade de um sistema interat ivo  do p onto de vist a de quem o const rói  
+(Pressman, 2002; D elamaro  
+et  al .
+, 2007), como testes de caixa-branca e caixa-pret a, 
+p or exemplo. Ess a avaliação costuma s er re alizada p or uma s érie de testes ao longo do 
+
+pro c ess o de des envolvimento, como, p or exemplo, testes de unidade, de integ ração, 
+
+de sistema e de op eração. Mesmo dep ois de ava liado e conﬁ
+r mado que um sistema 
+interativo  f unciona confor me sua esp e ciﬁ
+ cação, ainda assim ele p o de apres ent ar  pro-
+blemas relacionados ao us o, p ois o que o c or re fora da interface durante a interação 
+ainda não foi avaliado do p onto de vist a do usuário. Em out r as p a lavras, problemas de 
+
+IHC ainda p o dem cont inuar existindo dep ois que os problemas na constr ução (das 
+
+f unciona lidades) do sistema forem ident iﬁ
+ cados e res olvidos.
+Nas p ersp e c t ivas de quem conceb e e de quem utiliza um sistema interativo, a 
+avaliação tem p or objetivo pr incipal veriﬁ
+car s e  o sistema ap oi a ade qu adamente os 
+usuários a at ingirem s eus objetivos em um contexto de us o. Ness a p ersp e c t iva, o que 
+existe 
+dentro
+ do sistema s ó  interess a à me dida que determina o comp or t amento ap a-
+rente deste (i.e., que emerge at ravés da interface) e afet a a exp eriência vivenciada p elo 
+
+usuário durante a interação. O fo co pass a a s er o que existe e o c or re da interface com 
+usuário para 
+fora
+. Os critérios de qu alidade avaliados ness a p ersp e c t iva s ão relaciona-
+dos ao us o, t ais como: us abi lidade, exp er iência do usuár io, acessibi lidade e comunica-
+bi lidade, apres ent ados no C apítu lo 2. Neste capítu lo e no próx imo, nos concentramos 
+
+em méto dos de avaliação da qu alidade de us o prop ostos na área de IHC.
+Um  sistema interat ivo  é resu lt ado de de cis õ es de desig n tomadas com b as e  na 
+inter pret ação do desig ner s obre a situ ação atual, s obre sua ident iﬁ
+ cação e inter pret a-
+ção das ne cessidades e op or tunidades de mel hor ia, no s eu con he c imento s obre s olu -
+
+çõ es para problemas s emelhantes ou relacionados e na sua criatividade para conceb er 
+
+novas s oluçõ es para o problema esp e cíﬁ
+co em quest ão. D ess e mo do, o pro c ess o de 
+
+288    I nteração Humano - Computador
+interação usuário–sistema e o comp or t amento do sistema durante ess e pro c ess o s ão 
+re g idos p ela lóg ica deﬁ
+ nida p elo desig ner. Os usuários p o dem ou  não compre ender 
+e concordar com a lóg ica do desig ner, p o dem ou não ju lgar a s olução de IHC apro-
+
+pr iada e mel hor do que as s oluçõ es existentes e, qu ando t iverem es col ha, p o dem ou  
+
+não incor p orá-la no s e u dia a dia. Por t anto, o desig ner não p o de presumir que, s e  ele 
+
+aprovar uma s olução de interação e interface, o usuário t amb ém irá aprová-la e fazer 
+
+us o dela no s eu cotidiano. É imp or t ante  lembrar que os usuários s ão p ess oas diferen-
+
+tes dos desig ners e des envolve dores. E les mu ito prov avelmente s e ntem, inter pret am, 
+
+p ens am  e vivem em c u lturas e s o cie dades diferentes, com costumes e gostos própr ios, 
+
+e p ossuem objetivos diferentes (e.g., us ar  
+vs
+. c o n c e b e r  
+vs
+. des envolver um pro duto).
+As diferenças entre quem conceb e e quem utiliza uma s olução IHC não p o dem 
+s er desprezadas. É imp or t ante que a s olução de IHC s eja avaliada do p onto de vist a 
+dos usuários, preferencialmente com a p ar t icip ação deles durante a avaliação.Aquele 
+
+que avalia a qu alidade de us o defende o p onto de vist a e os interess es dos usuários, 
+
+atuando como uma esp é cie de advogado deles durante o pro c ess o de des envolvi-
+
+mento (Prates e B arb os a, 2003). S empre que p ossível, a avaliação de IHC de ve s er 
+
+conduzida p or avaliadores que não par t icip aram da concep ção da s olução, p ois eles 
+
+p ossuem melhores condiçõ es de analis ar  a s olução s ob um p onto de vist a mais neu-
+
+t ro, p ara defender os usuários e não o desig n concebido.
+A qu alidade de us o de um sistema interativo s empre s erá avaliada. Iss o não p o de 
+s er ignorado. O usuário ﬁ
+ nal s empre  avalia o sistema durante sua exp eriência de us o, 
+te cendo uma opinião s obre ele. É f undament al que a e quip e  de des envolv imento as-
+
+suma a resp ons abi lidade de ava liar a qu a lidade de us o do sistema antes de ele s er 
+
+ent regue ao usuário. É pre c is o bus c ar  um entendimento de como os usuários p o dem 
+
+vir a utilizar o sistema e s e  vão apre ciá-lo, pr incip a lmente qu ando ele for um sistema 
+
+inovador resu lt ante pr incip a lmente da cr iat ividade do desig ner (Shar p  
+et  al .
+, 2007). 
+Id e n t i ﬁ
+car e corrigir os problemas relacionados com a qu alidade de us o antes de o 
+sistema s er entregue ao usuário demonstra proﬁ
+ ssiona lismo da e quip e  de des envol-
+vimento (Prates e B arb os a, 2003). 
+D ent re  as razõ es p ara avaliarmos a qu alidade de us o de sistemas comput acionais 
+interat ivos, Tog nazzini (2000) dest aca as s e guintes: 
+os problemas de IHC p o dem s er corrigidos antes e não dep ois de o pro duto 
+ 
+s er lançado;
+a e
+quip e  de des envolv imento p o de s e  concent r ar  na s olução de problemas 
+ 
+re ais, em ve z de gast ar temp o debatendo gostos e preferências par t ic ulares 
+de cada mem
+bro da e quip e a resp eito do pro duto;
+
+Capítulo 9 |
+ Planejamento da Avaliação de IHC    289
+os engen heiros s ab em const r uir um sistema interat ivo, mas não s ab em e 
+ 
+não est ão em uma p osição ade qu ada p ara dis c ut ir s obre a qu alidade de us o. 
+Q
+uem s erá o advogado do usuár io p ara defender s eus interess es durante o 
+pro c ess o de des envolvimento?;
+o temp o para colo car o pro duto no mercado diminui, p ois os problemas de 
+ 
+IHC s ão cor r ig idos des de o início do pro c ess o de des envolvimento, assim 
+q
+ue ap are c em, exigindo menos temp o e esforço para s erem corrigidos;
+ident iﬁ
+car e corrigir os problemas de IHC p ermitem entregar um pro duto 
+ 
+mais robusto, ou s eja, a próxima vers ão corretiva não pre cis a já come çar a 
+s
+er des envolv ida no momento do lançamento do pro duto no mercado.
+Avaliar a qu alidade de us o de sistemas interat ivos não repres ent a  ap enas um aumento 
+do c usto de des envolv imento, como alguns gerentes de proj eto costumam p ens ar. 
+
+O c usto de avaliar a qu alidade de us o não costuma s er alto  qu ando comp ar ado ao 
+
+orçamento g lob al de um proj eto de des envolv imento, e pr incip a lmente qu ando con-
+
+sideramos os b enef ícios sig niﬁ
+ cativos e imp or t antes para o sistema (Rubin, 1994; Bi as 
+e May he w, 2005).A c ur to prazo, avaliar a qu alidade de us o e corrigir os problemas 
+ident iﬁ
+cados cont ribuem p ara aument ar a pro dut iv idade dos usuários, diminuir o 
+número e a gravidade dos erros cometidos durante o us o, e aument ar a s atisfação dos 
+
+usuários.A mé dio e longo prazo, ident iﬁ
+car e corrigir os problemas de IHC cont ri-
+buem para diminuir o c usto de treinamento e sup or te, e para pl anejar vers õ es f uturas 
+do sistema, p ois chamam  a atenção da e quip e  para par tes do sistema que p o dem me-
+
+l hor ar, além de indicar out r as que p o dem s er mais exploradas. Um  gerente de proj eto 
+
+não p o de deixar de usuf r uir dos b enef ícios da avaliação da qu alidade de us o p elo 
+
+simples des con he c imento do que é, de qu anto c ust a e de qu ais s ão s eus b enef ícios. É 
+
+p ossível e quilibrar o c usto da avaliação de IHC com os b enef ícios obtidos. 
+Para obter ess es b enef ícios, uma avaliação de IHC não p o de s er re alizada sim-
+plesmente ent regando (um protót ip o de) o sistema p ara a lguns usuár ios ut i lizarem e 
+
+aguard ando o relato esp ont âne o de problemas. Pelo cont rário, avaliar a qu alidade de 
+
+us o re quer um pl anejamento c uidados o da avaliação para que não s ejam desp erdiça-
+
+dos temp o e dinheiro. 
+Ao pl anejar uma avaliação de IHC, o avaliador de ve de cidir o que, qu ando, onde 
+e como avaliar, b em como os dados a s erem colet ados e pro duzidos, além do tip o de 
+
+méto do ut i l izado. Ess as questõ es s ão imp or t antes p ara or ient ar a es col ha do méto do 
+
+de avaliação, sua exe c ução e apres ent ação dos resu lt ados. Nas próx imas subs e çõ es, 
+
+dis c ut imos cada uma delas.
+
+290    I nteração Humano - Computador
+O que Avaliar?
+9.2 
+A quest ão f undament al de uma avaliação de IHC é deﬁ
+ nir qu ais s ão os objetivos da 
+avaliação, a quem eles interess am e p or quê. Os objetivos de uma avaliação determi-
+nam qu ais 
+a spec tos  relacionados  ao  u s o
+ do sistema de ve m s e r invest igados. Ess es ob-
+jetivos s ão motivados p or re quisiçõ es, re cl amaçõ es ou comp or t amentos de qu alquer 
+
+interess ado no sistema (
+stakehol d e rs
+): usuár ios, desig ners, cliente (“dono do sistema”), 
+des envolve dores, dep ar t amento de market ing etc. Por exemplo, os usuários p o dem 
+
+demonst r ar  desinteress e em ut i l izar o sistema ou  fazer re clamaçõ es a resp eito dele; 
+
+o desig ner p o de des ejar comp ar ar  a lter nat ivas de desig n; o cliente p o de querer ve -
+
+riﬁ
+ car s e a alt a qu alidade de us o é um diferencial do s eu pro duto; os des envolve do-
+res p o dem querer examinar s e  a nova te cnolog ia empregada no des envolv imento da 
+interface ag rada os usuários; o dep ar t amento de market ing p o de querer lançar um 
+
+pro duto que atenda a ne cessidades dos usuár i os ai nda não exploradas p elos sistemas 
+
+atuais; e assim p or diante. Por t anto, o avaliador de ve  est ar atento  a situ açõ es como 
+
+ess as para deﬁ
+ nir os objetivos de uma avaliação de IHC de acordo com os interess es 
+dos 
+stakehol d e rs
+.A de cis ão s obre o que avaliar or ient a o avaliador no pl anejamento, 
+na exe c ução e na apres ent ação dos result ados da avaliação de IHC.
+É p ossível avaliar divers os asp e c tos relacionados ao us o de acordo com os inte -
+ress es dos 
+stakehol d e rs
+. Os pr incipais asp e c tos avaliados s ão (Hix e Har ts on, 1993; 
+Rubin, 1994; Mack e Niels en, 1994; Shar p 
+et  al .
+, 2007):
+apropr iação de te cnolog ia p elos usuár ios, incluindo o sistema comput acio-
+ 
+nal a s er avaliado mas não s e  limit ando a ele;
+ideias e a
+lter nat ivas de desig n;
+ 
+confor midade com um p adrão;
+ 
+problemas na interação e na interface.
+ 
+Avaliar a 
+a
+ propriaç ão de te cnologia
+ re quer a p ar t icip ação dos usuários p ara p er-
+mitir uma melhor compre ens ão s obre: o contexto em que o sistema avaliado s e  in-
+s ere, qu ais os obj et ivos e as ne cessidades dos usuár ios, como os usuár ios costumam 
+
+a lcançá-los, em que g r au  as te cnolog ias disp oníveis s at isfazem suas ne cessidades e 
+
+preferências e como elas afet am sua vida p ess oal e proﬁ
+ ssiona l. 
+A avaliação dess e asp e c to p o de s er re alizada em diferentes momentos do pro-
+cess o de desig n. Po de consist ir em um estudo exploratór io p ara ap oi ar  a at ividade de 
+
+anális e. Ness e cas o, costumamos av aliar sistemas interat ivo s existentes ou  out r as for-
+
+mas de ap oio às at ividades dos usuários, bus c ando ju lgar s e  o us o da te cnolog ia atual 
+
+é pro dut ivo e ident iﬁ
+ car ne cessidades e op or tunidades de inter venção. Já  ao longo do 
+desig n, p er mite à e quip e  de proj eto ju lgar s e  existe um cons ens o  ent re a e quip e  de 
+
+Capítulo 9 |
+ Planejamento da Avaliação de IHC    291
+desig n, os usuár ios e demais 
+stakehol d e rs
+ s obre o que foi aprendido durante a elicit a-
+ção e anális e de re quisitos e s obre a qu alidade da s olução s endo proj et ada. Para iss o, 
+é comum utilizarmos como insumo protót ip os do sistema s endo proj et ado, em geral 
+
+repres ent ados at ravés de esb o ç os de tela ou  cenár ios de us o, confor me apres ent ado 
+
+no C apítu lo 7.
+A avaliação da apropr iação de te cnologia t amb ém p ermite compre ender os efei-
+tos da int ro dução de um sistema interat ivo  novo  ou  reproj et ado no cot idiano dos 
+usuár ios. Para iss o, de vemos invest igar como os usuár ios re a lizam suas at ividades 
+
+antes e dep ois da inter venção com o sistema, a ﬁ
+m de ju lgar s e  o (novo) sistema 
+l hes ofere c e ap oio comput aciona l ade qu ado, confor me deﬁ nido p or a lgum fator que 
+p oss a s er obs er vado ou  me dido. Po demos ava liar, p or exemplo, s e  os usuár ios s ão 
+
+capazes de at ingir s eus objetivos em menos temp o, com um número menor de erros 
+
+ou  s e m a ne cessidade de t reinamento pré v io, s e  est ão s at isfeitos, s e  eles s e  s e ntem mo-
+
+t ivados a explorar e aprender novas f unciona lidades do sistema, s e  o us o do sistema é 
+
+ag radável e outras opiniõ es s obre asp e c tos gerais ou  esp e cíﬁ cos do sistema. Ess e tip o  
+
+de invest igação t amb ém nos p er mite ident iﬁ
+ car motivos que le vam os usuários a não 
+incor p orarem um sistema interativo (ou par te dele) no s eu cotidiano.
+A avaliação de 
+i d eias e alternativas d e d esig n
+ bus c a comp ar ar  diferentes alter-
+nativas de s olução de acordo com critérios relacionados com o us o e com a constr u-
+
+ção da interface com usuário. Por exemplo, com relação ao us o p o demos avaliar a 
+
+facilidade de aprendizado, o ap oio à re c up eração de erros ou o tip o de inter venção 
+
+pretendido na vida dos usuários, enquanto com relação à constr ução p o demos avaliar 
+
+o c usto e o temp o ne cess ár ios para o des envolv imento  de cada alternat iva e a inf raes-
+
+tr utura de hardware ne cess ár ia para exe c ut ar cada prop ost a de s olução. Os critérios 
+
+de aná lis e e dimens õ es de comp ar ação de a lter nat ivas de desig n de vem s er deﬁ
+ nidos 
+de acordo com os resu lt ados da aná lis e da situ ação atua l, isto é, o ava liador de ve  con-
+
+siderar o contexto de us o, os obj et ivos, as ne cessidades e as preferências dos usuár ios, 
+
+como eles costumam s atisfazê-los e p or que o fazem assim.A avaliação (comp ar at iva 
+
+ou não) de ideias e alternat ivas de s olução costuma s er re alizada de forma rápida e 
+
+infor mal durante a at ividade de desig n como p ar te do ciclo iterat ivo de concep ção da 
+
+s olução ﬁ
+na l. É comum ut i lizar protót ip os de inter face em vár ios níveis de det a l hes 
+ness e t ip o  de ava liação, mas t amb ém é p ossível comp ar ar  s oluçõ es de desig n de IHC 
+pront as, ou s eja, concretizadas em  outros sistemas interativos existentes. Ess a avalia-
+
+ção p o de s er re alizada com ou s em a par t icipação dos usuários.
+Av a l i a r  
+a conformidade com um p a dr ão
+ é imp or t ante qu ando a s olução de IHC 
+pre cis a ter carac terísticas esp e cíﬁ
+cas determinadas p or p adrõ es est ab ele cidos. Por 
+exemplo, p o de s er ne cess ár io que a s olução de IHC esteja de acordo com os padrõ es 
+
+292    I nteração Humano - Computador
+doW3C para acessibi lidade.Assim, p o demosass egurar que usuários com cer t as li-
+mit açõ es f ísicas não encont rarão barreiras intransp oníveis para acess ar a interface do 
+
+sistema e interagir com ele. Tamb ém p o demos avaliar s e  uma s olução de IHC s e gue 
+
+os p adrõ es do ambiente comput acional em que s erá ins erida, como, p or exemplo, 
+
+padrõ es est ab ele cidos p elos ambientes de trab alho GNOME® e KDE®, ou  p elos siste-
+
+mas op eracionais Micros o
+ Windows® e MacOS®. S e  ess es padrõ es forem s e guidos, os 
+usuários acostumados com ess es ambientes tendem a ter menos diﬁ
+ c u ldades p ara re -
+alizar op eraçõ es básicas, t a l como re dimensionar e fe char uma janela, p or exemplo.
+Além diss o, p o demos veriﬁ
+ car s e a s olução de IHC est á em confor midade com 
+p adrõ es ut i lizados em domínios esp e cíﬁ
+ cos, como correio e comércio eletrônico. Os 
+usuár ios de sistemas dess es domínios já est ão  acostumados a cer tos termos e a cer t as 
+
+formas de re alizar determinadas op eraçõ es. D ess e mo do, s e a s olução de IHC estiver 
+
+próx ima das convençõ es adot adas no domínio do sistema, os usuár ios tendem a ter 
+
+menos diﬁ
+ c u ldades p ara ut i lizá-lo p orque já est ão fami liarizados com ess as conven-
+çõ es. Uma organização t amb ém p o de deﬁ
+nir padrõ es (no s ent ido de normas) para 
+s eus sistemas, e exig ir que as s oluçõ es de IHC prop ost as estejam de acordo com ess es 
+
+padrõ es. D e maneira geral, veriﬁ
+car a confor midade com padrõ es cont ribui para a 
+consistência e co erência entre as s oluçõ es de IHC que s e guem ess es padrõ es.A ava-
+
+liação dess e asp e c to não exige a p ar t icip ação dos usuários.
+Problemas na inter a ç ã o e na interface
+ s ão os asp e c tos mais avaliados na áre a  de 
+IHC. Na avaliação dess es asp e c tos, o avaliador p o de cont ar ou não com a par t icip a-
+
+ção dos usuários para colet ar dados relacionados ao us o de sistemas interativos. Ele 
+
+ana lis a os dados colet ados com obj et ivo  de ident iﬁ
+car problemas na interação e na 
+inter face que prejudiquem a qu a lidade de us o do sistema. Os problemas ident iﬁ
+ cados 
+costumam s e r classiﬁ
+ cados de acordo com sua gravidade (grau de impac to no civo), 
+com a f re quência em que tendem a o c or rer e com os fatores que comp õ em os crité-
+
+r ios de qu a lidade de us o prejudicados — us abi lidade, exp er iência do usuár io, aces-
+
+sibi lidade ou  comunicabi lidade. Por exemplo, um avaliador p o de relat ar e just iﬁ
+ car 
+um problema que prejudica a faci lidade de re cord ação (fator de us abi lidade) e out ro 
+que diﬁ
+ c u lt a a lo calização na interface de onde o usuário p o de express ar determinada 
+intenção de comunicação durante o us o (et iquet a“C adê?” no méto do de avaliação de 
+comunicabilidade, apres ent ado na S e ção 10.2.2).
+Os objetivos de uma avaliação de IHC pre cis am s er det alhados em p ergunt as 
+mais esp e cíﬁ
+ cas para torná-los op eracionais (Shar p 
+et  al .
+, 2007).A elab oração dess as 
+p ergunt as de ve  considerar os usuár ios-a lvo, suas at ividades e os ar tefatos ut i lizados, 
+que normalmente incluem uma repres ent ação ou protót ip o da s olução de IHC a s er 
+
+Capítulo 9 |
+ Planejamento da Avaliação de IHC    293
+avaliada.A Tab ela 9.1 apres ent a exemplos de p ergunt as ass o ciadas aos objetivos de 
+avaliação de IHC des critos anteriormente.
+Exemplos de perguntas que uma avaliação de IHC pode responder.
+Tabela 9.1   
+objetivos exemplos de perguntas a serem respondidas
+analisar a 
+apropriação da 
+tecnologia
+De que maneira os usuários utilizam o sistema? Em que difere do planejado?
+Como o sistema interativo afeta o modo de as pessoas se comunicarem e 
+relacionarem? 
+Que variação houve no número de erros cometidos pelos usuários ao 
+utilizarem o novo sistema? E no tempo que levam para atingir seus objeti-
+
+vos? E na sua satisfação com o sistema?
+O quanto os usuários consideram o apoio computacional adequado para 
+auxiliá-los na realização de suas atividades?
+O quanto eles são motivados a explorar novas funcionalidades?
+Quais são os pontos for tes e fracos do sistema, na opinião dos usuários?
+Quais objetivos dos usuários podem ser alcançados através do sistema? E 
+quais não podem? Quais necessidades e desejos foram ou não atendidos?
+A tecnologia disponível pode oferecer maneiras mais interessantes ou 
+eﬁ
+ cientes de os usuários atingirem seus objetivos?
+O que é possível modiﬁ
+ car no sistema interativo para adequá-lo melhor ao 
+ambiente de trabalho?
+Por que os usuários não incorporaram o sistema no seu cotidiano?
+comparar ideias 
+
+e alternativas de 
+design
+Qual das alternativas é a mais eﬁ ciente? M ais fácil de aprender?
+Qual delas pode ser construída em menos tempo?
+De qual delas se espera que tenha um impac to negativo menor ao ser 
+adotada?
+Qual delas torna mais evidente os diferenciais da solução projetada?
+
+Qual delas os usuários preferem? Por quê?
+ve r i ﬁ
+ cara 
+conformidade 
+com um padrão
+O sistema está de acordo com os padrões de acessibilidade doW3C?
+A inter face segue o padrão do sistema operacional? E da empresa?
+Os termos na inter face seguem convenções estabelecidas no domínio?
+identiﬁ
+ car 
+problemas na 
+interação e 
+inter face
+Considerando cada per ﬁ l de usuário esperado:
+O usuário consegue operar o sistema?
+Ele atinge seu objetivo? Com quanta eﬁ
+ ciência? Em quanto tempo? Após 
+cometer quantos erros?
+Que par te da inter face e da interação o deixa insatisfeito?
+Que par te da inter face o desmotiva a explorar novas funcionalidades?
+Ele entende o que signiﬁ
+ ca e para que ser ve cada elemento de inter face?
+Ele vai entender o que deve fazer em seguida?
+Que problemas de IHC diﬁ
+ cultam ou impedem o usuário de alcançar seus 
+objetivos? 
+Onde esses problemas se manifestam? Com que frequência tendem a 
+ocorrer? Qual é a gravidade desses problemas? 
+Quais barreiras o usuário encontra para atingir seus objetivos?
+
+Ele tem acesso a todas as informações oferecidas pelo sistema?
+

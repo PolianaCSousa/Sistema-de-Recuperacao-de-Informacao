@@ -1,0 +1,807 @@
+                                            Entendendo o Pensamento Computacional
+                                                                        (Versão Preliminar)
+
+
+                                                       Leila Ribeiro                       Luciana Foss
+arXiv:1707.00338v1 [cs.CY] 2 Jul 2017
+
+
+
+
+                                                     leila@inf.ufrgs.br               lfoss@inf.ufpel.edu.br
+                                                           Simone André da Costa Cavalheiro
+                                                             simone.costa@inf.ufpel.edu.br
+
+
+                                                                              Resumo
+                                                O objetivo deste artigo é esclarecer o significado de Pensamento Com-
+                                             putacional. Diferencia-se o raciocínio lógico do computacional e discute-se
+                                             a importância do Pensamento Computacional na resolução de problemas.
+                                             Os três pilares do Pensamento Computacional - Abstração, Automação
+                                             e Análise - são delineados, destacando-se o papel de cada um deles no
+                                             desenvolvimento das habilidades necessárias para o processo de solução
+                                             de problemas.
+
+
+
+                                                                             Abstract
+                                                 The goal of this article is to clarify the meaning of Computational
+                                             Thinking. We differentiate logical from computational reasoning and dis-
+                                             cuss the importance of Computational Thinking in solving problems. The
+                                             three pillars of Computational Thinking - Abstraction, Automation and
+                                             Analysis - are outlined, highlighting the role of each one in developing the
+                                             skills needed for the problem-solving process.
+
+
+
+                                        1    Introdução
+                                        Para entender o que é o pensamento computacional, precisamos entender o que é
+                                        computação. E para entender o que é computação, a melhor maneira é um olhar
+                                        histórico, pois entendendo a origem dos conceitos podemos compreendê-los em
+                                        maior plenitude. O grande objetivo da Computação é "raciocinar sobre o racio-
+                                        cínio". Porém, diferente da Filosofia, aqui não estamos pensando de forma mais
+                                        ampla sobre o raciocínio, mas sim interessados no processo de racionalização do
+                                        raciocínio, ou seja, formalização do mesmo, o que permite a sua automação e
+                                        análise (matemática).
+                                            A questão de formalização do raciocínio está intimamente relacionada à re-
+                                        solução de problemas. Para entender isto, tomemos como exemplo o raciocínio
+
+
+                                                                                  1
+lógico. O objetivo do raciocínio lógico é basicamente encontrarmos (ou dedu-
+zirmos) verdades. O processo utilizado é, partido-se de premissas, que são fatos
+aceitos como verdades, utiliza-se regras bem definidas (do sistema lógico que
+se está usando) para encontrar novas verdades (conclusões). A dedução em
+si, que é a sequência de regras utilizadas é comumente chamada de prova (de
+que a conclusão é verdadeira). O problema que está sendo resolvido é se uma
+sentença é ou não verdadeira: se encontrarmos uma prova a partir de senten-
+ças que já sabemos que são verdadeiras confirmando a veracidade de uma nova
+sentença, ela será aceita como verdadeira. Podemos enxergar o raciocínio ou
+pensamento computacional como uma generalização do raciocínio lógico: um
+processo de transformação de entradas em saída, onde as entradas e a saída
+não são necessariamente sentenças verdadeiras, mas qualquer coisa (elementos
+de um conjunto qualquer), sendo que as entradas e a saída nem precisam ser do
+mesmo tipo, e as regras que podemos utilizar não são necessariamente as regras
+da lógica, mas um conjunto qualquer de regras ou instruções bem definidas.
+Da mesma forma que o produto do raciocínio lógico é a prova, o produto do
+raciocínio computacional é a sequência de regras que define a transformação,
+que comumente chamamos de algoritmo. O problema que está sendo resolvido
+aqui é como transformar a entrada na saída. Exemplos concretos seriam: dado
+um número, como encontrar seus fatores primos? Dada uma pilha de provas de
+alunos, como ordenar essas provas? Dado um mapa rodoviário, como encontrar
+uma rota? Dados os ingredientes, como fazer um bolo?
+
+
+
+
+    Como o resultado do processo de raciocínio computacional deve ser uma
+descrição clara e não-ambígua de um processo, a Computação está fortemente
+baseada na Matemática, que provê uma linguagem precisa para descrição de
+modelos. Mas, diferente da Matemática, o objeto da Computação são os pro-
+cessos, ou seja, em Computação se contrói modelos de processos. Esses modelos,
+comumente chamados de algoritmos, podem ser bastante abstratos, descritos em
+linguagem natural ou linguagens de especificação, ou programas em uma lingua-
+gem de programação.
+    Pode-se argumentar que na Matemática também usa-se diversas abstrações
+para nos ajudar a resolver problemas. Então por que precisamos de Computa-
+ção? Somente para automatizar a solução do problema? Não, muito mais que
+isso. Vamos discutir este ponto em um exemplo.
+
+
+                                       2
+    Um professor quer ensinar os alunos fatorar um número em seus fatores pri-
+mos. Ele tipicamente explica os passos que os alunos devem seguir e demonstra
+em alguns exemplos, ou seja, o professor apresenta um algoritmo para os alu-
+nos. Por vezes, este algoritmo é, além de apresentado de forma oral, descrito em
+português em um livro. Os alunos, então, seguem o processo várias vezes para
+aprender este procedimento. Mas e se o problema fosse, ao invés da fatoração,
+ordenar uma pilha de provas de alunos. Como o professor explicaria aos alunos
+como a tarefa deve ser realizada? E se quiséssemos que, ao invés de ordenar uma
+pilha dada, os alunos mesmos descrevessem como fariam a ordenação? Quais
+técnicas o professor utilizaria para ajudar os alunos a solucionar este problema?
+Note que o problema é "descreva o processo de ordenação de uma pilha de pro-
+vas". Não é uma tarefa trivial. A Matemática não nos ajuda a resolver este
+tipo de problema, pois não provê as abstrações necessárias para descrever a so-
+lução. Além disso, não é objeto da Matemática investigar Como construímos
+uma prova?, ou mais genericamente, Como construímos um algoritmo?. A ên-
+fase do raciocínio ou pensamento computacional não são apenas os produtos em
+si (provas ou algoritmos), e sim o processo de construção desses produtos, ou
+seja, além das abstrações necessárias para descrever algoritmos, o pensamento
+computacional engloba também técnicas para a construção de algoritmos que,
+podem ser vistas como técnicas de solução de problemas.
+    A evolução da Computação, em especial das áreas de Teoria da Compu-
+tação e Engenharia de Software, descrevem a trajetória da nossa aquisição de
+conhecimento com relação a como sistematizar (e se possível, automatizar) o
+processo de resolução de problemas. Essa habilidade, de sistematizar, represen-
+tar e analisar a atividade de resolução de problemas é chamada de raciocínio
+ou pensamento computacional 1 . A Figura 1 ilustra os pilares do Pensamento
+Computacional, que serão detalhados nas próximas seções.
+
+
+2     Solução de Problemas e Pensamento Compu-
+      tacional
+Vamos analisar agora em mais detalhes alguns problemas e como encontrar suas
+soluções.
+    Problema 1
+    Ordene uma pilha com 10 figurinhas em ordem crescente. Considere que
+    não há números repetidos e os números podem variar de 1 a 10.000.
+
+   Este problema pode ser solucionado facilmente por alunos que tenham apren-
+dido a noção de ordem entre números. Como são apenas 10 figurinhas, normal-
+mente eles apenas colocam todas na sua frente e vão buscando o próximo número
+   1 O termo pensamento computacional é uma tradução do termo original em inglês com-
+
+putational thinking. Embora do ponto de vista filosófico existam diferenças entre os termos
+raciocínio e pensamento, neste artigo usaremos os dois termos como sinônimos.
+
+
+
+                                            3
+                                     Processos
+
+
+
+                                                  Técnicas
+                                                  de cons-
+                           Dados
+                                                 trução de
+                                                 algoritmos
+
+
+
+                                     Abstração
+
+           Modelagem
+            compu-                                                  Viabilidade
+            tacional
+
+
+
+
+                                   Pensamento
+Máquinas           Automação        Compu-                Análise              Eficiência
+
+                                     tacional
+
+
+           Linguagensl                                              Correção
+
+
+
+
+                    Figura 1: Pilares do Pensamento Computacional.
+
+
+para montar a pilha ordenada, fazendo as comparações necessárias mentalmente.
+   Problema 2
+   Ordene uma pilha com 1.000 figurinhas em ordem crescente.
+
+    Neste caso, apesar do problema ser essencialmente o mesmo (ou seja, é ape-
+nas uma nova instância do problema anterior), a solução ad hoc descrita acima
+é de difícil implementação porque quando colocamos 1.000 figurinhas na mesa
+fica difícil visualizar qual o próximo número. A estratégia mais usada neste caso
+é, antes de ordenar, dividir a pilha de acordo com a centena, e depois cada pilha
+de acordo com a dezena. Ou seja, dividir o problema em problemas menores até
+que a solução seja quase trivial. Depois das pilhas menores estarem ordenadas,
+precisa-se juntá-las de forma adequada para encontrar a solução do problema.
+Mas esta não é a única forma de resolver este problema, existem muitas outras,
+algumas mais e outras menos eficientes.
+   Problema 3
+   Descreva como ordenar uma pilha com figurinhas em ordem crescente.
+
+    Agora o problema é como descrever o método de ordenação, ou seja, o algo-
+ritmo utilizado para ordenar, para que o processo possa ser replicado, seguido
+por outras pessoas. Esta tarefa é bem mais difícil do que as anteriores, princi-
+
+
+                                            4
+palmente porque para descrever o processo de ordenação, precisamos falar sobre
+estruturas de dados (neste caso, uma pilha) e usar operações para definir o que
+deve ser feito em cada passo. Mas sem ter formalizados os conceitos de estrutu-
+ras de dados e operações para definir processos (um algoritmo é uma descrição
+de um processo) é difícil solucionar este problema. Saber dar instruções de
+forma clara e precisa é uma habilidade muito necessária para todas as pessoas,
+e esta habilidade requer treinamento adequado. Além dos conhecimentos sobre
+os dados e como construir processos, precisa-se ter domínio da linguagem na
+qual os processos serão descritos. E a linguagem a ser usada depende de quem
+executará o processo: se for uma pessoas, pode-se usar linguagem natural, se
+for um computador, deve-se usar uma linguagem de programação. A grande
+diferença normalmente está no nível de abstração, pois linguagens naturais ten-
+dem a ser mais abstratas. Em breve discutiremos em mais detalhes a questão
+das linguagens.
+   Problema 4
+   O processo de ordenação descrito pode ser executado mais rápido se hou-
+   verem mais pessoas para ajudar? Qual o número de pessoas seria o ideal?
+   Existe alguma forma mais eficiente de ordenar as figurinhas? Dadas
+   duas estratégias de ordenação, qual a melhor? O algoritmo descrito está
+   correto, ou seja, no final da execução, a pilha está ordenada?
+
+    Solucionar este problema envolve analisar o algoritmo, ou método de orde-
+nação, descrito na solução do Problema 3. Mas, mesmo que este método esteja
+descrito de forma precisa, a análise da correção e eficiência do método não é
+uma tarefa trivial, apesar de ser de extrema importância porque um algoritmo
+que não gera o resultado desejado é inútil, bem como um que gera o resultado
+esperado, mas que demoraria demais para gerar este resultado (dependendo do
+problema e instância considerada, uma solução pode demorar vários anos para
+ser encontrada e esperar pode não ser viável do ponto de vista prático).
+   Problema 5
+   Dado o mapa de cidades da Figura 2, encontrar o menor caminho entre
+   Denver e Toronto.
+
+    Este parece um problema simples, mas para dar uma ideia do tamanho do
+problema, somente considerando as cidades de dentro do quadrado azul, e sem
+repetir nenhuma cidade no caminho, existem 1.360 caminhos diferentes entre
+Denver e Toronto!
+    Como estes problemas, existem inúmeros outros que são do nosso cotidiano,
+e que às vezes precisamos resolver, sem termos tido na nossa formação um
+ferramental que nos auxilie nesta tarefa (por exemplo os problemas 6, 7 e 8 a
+seguir).
+
+
+
+
+                                      5
+                               Figura 2: Mapa
+
+
+   Problema 6
+   Descreva como encontrar o menor caminho entre duas cidades de um
+   mapa.
+
+   Problema 7
+   Dados um conjunto de professores, com as disciplinas que cada um pode
+   ministrar; um conjunto de turmas de cada disciplina a serem ministra-
+   das; o conjunto de salas disponíveis; e restrições de horários de profes-
+   sores, turmas e salas, elabore uma alocação de professores a turmas e
+   turmas a salas.
+
+   Problema 8
+   Dada uma mala com um volume máximo e um conjunto de ítens a serem
+   colocados na mala, cada um com um valor representando a importância
+   dele ser levado na mala e um volume, como escolher quais devem ser
+   colocados na mala de forma a maximizar o valor da mala, sem exceder
+   seu volume?
+
+
+   Os pilares do Pensamento Computacional [7], mostrados na Figura 3, provêm
+as habilidades necessárias para resolver os problemas citados anteriormente.
+
+
+                                      6
+  Abstração                   Análise                    Automação
+  Compreende as abstra-       Consiste de técnicas de    Envolve a mecaniza-
+  ções necessárias para       análise de algoritmos      ção das soluções (ou
+  dados e processos, e        quanto a sua correção e    de suas partes), permi-
+  as técnicas de constru-     eficiência, sob diferen-   tindo que máquinas nos
+  ção de soluções (algo-      tes aspectos.              ajudem a solucionar os
+  ritmos).                                               problemas.
+
+
+                 Figura 3: Pilares do Pensamento Computacional
+
+
+     A seguir, vamos dar 3 exemplos de soluções para o problema de ordenar uma
+lista de números em ordem crescente (uma abstração do problema de ordenar
+figurinhas) usando 3 linguagens diferentes: uma visual, linguagem natural e lin-
+guagem de programação. O algoritmo apresentado é um algoritmo tradicional
+de ordenação chamado quicksort [2]. A Figura 4(a) mostra o algoritmo através
+de um diagrama. As setas representam o fluxo dos dados, as caixas vermelhas
+representam ações e a parte amarela pontos de decisão. A ideia é que a lista
+(a lista de números) entra na caixa       ordena , e então é testado se a lista
+está vazia ou não. Em caso positivo, o algoritmo termina retornando a própria
+lista vazia (que está ordenada pois não contém nenhum elemento). Em caso
+negativo, é identificado o primeiro elemento da lista (ação    primeiro ), e a
+lista é dividida em 2 partes, uma contendo os elementos menores que o primeiro
+(ação       seleciona-menores ) e outra contendo os elementos maiores que o
+primeiro (ação      seleciona-maiores ). Cada uma destas sublistas resultantes
+são ordenadas (repetindo o processo          ordena para cada uma) e no final o
+resultado é construído juntando-se essas sublistas ordenadas (ação        monta
+). A linguagem visual é interessante porque deixa evidente o fluxo e as ações en-
+volvidas. Este mesmo processo pode ser descrito em língua portuguesa (Figura
+4 (b)). Note que a descrição do algoritmo em português é apenas uma frase,
+que foi quebrada em linhas diferentes na figura para maior clareza. É uma frase
+simples, mas descreve de forma sucinta e precisa o processo que deve ser se-
+guido para ordenar a lista. Quando temos uma descrição precisa da solução, a
+implementação em uma linguagem de programação pode ser imediata: a Figura
+4 (c) mostra como ficaria o programa correspondente descrito em uma lingua-
+gem funcional (Racket [1]). Basicamente, o programa tem os mesmos elementos
+principais que a descrição textual, mas com uma sintaxe mais enxuta e rígida.
+Isso exemplifica um dos pontos que queremos enfatizar neste texto: programar é
+fácil, o difícil é saber construir a solução dos problemas. Se soubermos construir
+uma frase (ou texto) preciso em português que descreve um processo, a progra-
+mação é um simples trabalho de tradução. Claro, dependendo da linguagem de
+programação utilizada a tradução pode ser mais fácil ou difícil, pois linguagens
+de programação diferentes oferecem abstrações diferentes, mas ainda assim é
+uma tradução, a questão que realmente exige maior esforço e conhecimento é a
+
+
+                                         7
+construção da solução em si. E é este o foco do Pensamento Computacional.
+    Em 2006, Wing [6] utiliza o termo Pensamento Computacional para apre-
+sentar a visão de que todas as pessoas podem se beneficiar do ato de pensar
+como um cientista da Computação. Informalmente, o pensamento computacio-
+nal [8] descreve a atividade mental envolvida na formulação de problemas para
+admitir soluções computacionais e na proposta de soluções. As soluções (algo-
+ritmos) podem ser executadas por seres humanos ou máquinas, ou de maneira
+mais geral, por combinações de seres humanos e máquinas.
+    Já, em 1962, Alan Perlis [5] argumentava que todos deveriam aprender a
+programar computadores no nível universitário. Ele identificou que a execu-
+ção automatizada dos processos, explorada pela programação, mudaria a forma
+como os profissionais de todas as áreas pensariam sobre seu trabalho. No con-
+texto da educação básica, na década de 1980, Papert [4] introduziu e populari-
+zou a ideia de que computadores e o pensamento procedural poderiam afetar o
+modo como as crianças pensam e aprendem. Ao desenvolver o construcionismo
+(uma abordagem do construtivismo), defendia que o uso do computador (ou de
+ferramentas similares) na educação permitiria ao estudante desenvolver o seu
+raciocínio na solução de problemas e construir o seu próprio conhecimento.
+    O desenvolvimento do Pensamento Computacional não tem como objetivo
+direcionar as pessoas a pensarem como computadores. Ao contrário, sugere
+que utilize-mos a nossa inteligência, os fundamentos e os recursos da compu-
+tação para abordar os problemas. Importante também observar que raciocinar
+computacionalmente é mais do que programar um computador. A Sociedade
+Internacional de Tecnologia em Educação (ISTE) e a Associação de Professores
+de Ciência da Computação (CSTA) [3] operacionalizaram o termo Pensamento
+Computacional como um processo de resolução de problemas que inclui: formu-
+lar problemas de uma maneira que seja possível usar um computador e outras
+ferramentas para ajudar a resolvê-los; organizar e analisar dados de maneira
+lógica; representar dados através de abstrações; descrever soluções através do
+pensamento algorítmico (uma série de passos ordenados); identificar, analisar e
+implementar possíveis soluções com o objetivo de alcançar a combinação mais
+eficiente e eficaz de etapas e recursos; generalizar e transferir este processo de
+resolução de problemas para uma grande variedade de problemas.
+    Segundo Wing [6], o Pensamento Computacional pode ser colocado como
+uma das habilidades intelectuais básicas de um ser humano, comparada à ler,
+escrever, falar e fazer operações aritméticas. Habilidades estas que servem para
+descrever e explicar situações complexas. Nesta linha de raciocínio, o Pensa-
+mento Computacional é mais uma linguagem (junto com as linguagens escrita
+e falada, e a matemática) que podemos usar para falar sobre o universo e seus
+processos complexos.
+
+
+3    Abstração
+A abstração é um mecanismo importante no processo de solução de problemas,
+o qual permite simplificar a realidade e representar os aspectos mais relevantes
+
+
+                                        8
+(a) Linguagem Visual
+
+
+
+
+(b) Linguagem Natural
+
+
+   Se a lista for vazia
+      então devolver a própria lista
+      senão montar uma lista contendo:
+             a lista dos números menores que o primeiro, ordenada;
+             o primeiro elemento; e
+             a lista dos números maiores que o primeiro, ordenada.
+
+
+
+(c) Linguagem de Programação
+
+
+   (define (ordena lista)
+   (cond
+          [(vazia? lista) lista]
+          [else (monta
+                        (ordena (seleciona-menores lista));
+                        (primeiro lista); e
+                        (ordena (seleciona-maiores lista)))]))
+
+
+
+               Figura 4: Descrição do algoritmo Ordena
+
+
+                                     9
+de um problema e sua solução. Ela compreende os seguintes aspectos:
+
+   Dados    : Abstrações que permitem descrever as informações envolvidas
+    na solução de um problema (dados de entrada e saída);
+
+   Processos    : Abstrações que permitem definir os algoritmos que descre-
+     vem a solução de um problema, as quais devem estar de acordo com a
+     capacidade de compreensão do leitor;
+
+   Técnicas de Construção de Algoritmos          : Técnicas que permitem ob-
+     ter a solução de problemas complexos de forma mais simples.
+
+3.1    Abstrações para representar Informações
+Em Matemática, um dos conceitos mais fundamentais é Número, que é uma
+abstração para quantidades. Várias áreas da Matemática usam esta noção,
+como a Álgebra, a Geometria e a Probabilidade. Já a Lógica se baseia em outro
+tipo de noção: a noção de Conjunto.
+    Para descrever algoritmos, que tipo de noções são necessárias? Claro, vai
+depender do que os algoritmos fazem, mas se um algoritmo representa uma
+transformação de recursos (dados de entrada) em resultados (dados de saída),
+precisamos ser capazes de representar esses recursos e resultados de alguma
+forma. Como os algoritmos devem ser genéricos (ou seja, funcionar para várias
+entradas diferentes), a entrada e a saída devem ser representadas por conjuntos
+de elementos. Dependendo da finalidade do algoritmo, os elementos podem ser
+muito simples (um número, por exemplo), ou complexos (uma pilha de provas
+de alunos, um mapa, uma ficha de paciente de hospital, etc). Para podermos
+descrever algoritmos necessitamos poder falar sobre esses dados, sejam eles sim-
+ples ou complexos. E para isso precisamos das abstrações adequadas. Quando
+a entrada é um número ou uma palavra, podemos usar os conhecimentos já
+adquiridos durante anos em Matemática ou Português. Mas quando queremos
+processar uma pilha de provas para, por exemplo, ordenar de alguma forma,
+precisamos usar uma abstração para esta pilha. Quando queremos descrever
+como se encontra uma rota em um mapa rodoviário, precisamos falar do mapa
+e como ele é organizado para poder explicar para alguém como se procura um
+caminho. A diferença entre um número e uma pilha de provas é que o número re-
+presenta um conceito indivisível, uma quantidade, enquanto a pilha é composta
+por unidades menores, que são as provas. E cada prova, por sua vez, pode ser
+composta de uma coleção de informações (nome do aluno, questões, respostas,
+nota). E para explicar como ordenar esta pilha de provas, precisamos acessar
+cada elemento da pilha, bem como as informações contidas em cada prova. Para
+descrever como encontrar uma rota em um mapa precisamos enxergar o mapa
+não como uma unidade, mas como um conjunto de cidades ligadas por estra-
+das. Ou seja, para descrever algoritmos nós precisamos enxergar dados como
+composições de dados mais simples. Assim, temos vários níveis de abstração
+que podem ser usados para resolver um problema: no caso das provas, podemos
+
+
+                                      10
+enxergar a pilha como um todo, ou selecionar uma das provas, ou pegar uma
+informação de uma das provas. O nível de abstração escolhido dependerá do
+que se quer realizar em cada passo do algoritmo. Mas precisamos entender e
+poder falar sobre todos.
+    As abstrações de dados mais importantes em Computação são :
+
+   • Registros: um registro representa uma coleção de informações de um ob-
+     jeto. Por exemplo, um registro de prova pode conter nome do aluno,
+     questões, respostas, nota, etc, registros podem ser usados também para
+     descrever dados de carteiras de identidade, formulários, cartão de respos-
+     tas do vestibular, etc;
+   • Listas: uma lista é uma sequência de dados. Listas podem ser usadas
+     como abstração para pilha de provas, baralho de cartas, cadeias de DNA,
+     lista de compras, fila de banco, partituras (listas de notas musicais), etc;
+
+   • Grafos: um grafo é uma estrutura que contém entidades (chamadas vérti-
+     ces) e relacionamentos (chamados arcos). Grafos podem ser usados para
+     representar uma infinidade de estruturas, como redes sociais, mapas, ár-
+     vores genealógicas, etc.
+
+   Essas abstrações precisam ser trabalhadas de forma concreta e depois for-
+malizadas, da mesma forma que o conceito de número na Matemática, para
+permitir que os alunos tenham capacidade de trabalhar sobre elas depois.
+
+3.2    Abstrações para descrever Algoritmos
+Além de abstrações para dados, precisamos de técnicas para descrever as so-
+luções em forma de algoritmos. Um algoritmo é composto por instruções que
+devem ser executadas de uma forma e na ordem definida para se atingir a solu-
+ção desejada. Portanto, para se definir um algoritmo é necessário saber quais as
+instruções básicas que se pode usar, e quais operações podem ser usadas para
+se montar descrições dos procedimentos a partir dessas instruções básicas.
+    As instruções básicas dependem de quem vai ler o algoritmo. Se o leitor já
+sabe como ordenar uma lista, a instrução “Ordene a lista” é adequada. Caso con-
+trário, precisa-se definir melhor como realizar esta instrução, através de instru-
+ções mais básicas que o leitor consiga entender. Em linguagens de programação,
+as instruções básicas são os comandos pré-definidos da linguagem, e existem bi-
+bliotecas de instruções que podem ser utilizadas. Para construir as soluções dos
+problemas para os quais não existem instruções básicas que os resolvam, usam-
+se operações que combinam instruções básicas de maneira a definir processos
+mais elaborados. Essas operações são basicamente de 3 tipos:
+
+   • Composição: permite juntar vários passos na descrição de um algoritmo.
+     Esses passos podem ser conectados de várias formas diferentes (sequencial,
+     paralela, por dependências, etc);
+
+
+
+                                       11
+    • Escolha: permite definir pontos de escolha em um algoritmo, que são
+      momentos de decisão nos quais o próximo passo a ser executado depende
+      da situação atual do processo;
+    • Repetição: permite que ações sejam repetidas em um algoritmo, de forma
+      controlada. Existem várias formas de se definir como as repetições devem
+      ser executadas (por exemplo, laços ou recursão).
+
+   Essas operações são implementadas de diversas formas em diferentes lingua-
+gens de programação. Um algoritmo é, portanto, uma combinação de instruções
+usando operadores de composição, escolha e repetição.
+
+3.3    Técnicas para Construir Algoritmos
+Para se construir um algoritmo, não basta conhecer as abstrações de dados e
+processos. São necessárias técnicas que nos permitem chegar com mais facilidade
+do enunciado de um problema a uma solução. Entre estas técnicas, destacam-se:
+Decomposição : É a técnica mais importante para se solucionar um problema,
+    e consiste em decompor o problema em problemas menores, solucioná-los
+    e combinar as soluções para obter a solução do problema original;
+Generalização : É uma técnica que consiste em construir uma solução (algo-
+    ritmo) mais genérico a partir de outro, permitindo que este novo algoritmo
+    seja utilizado em outros contextos. Reutilizar e adaptar algoritmos é fun-
+    damental, e exige um grande poder de abstração. Muitas vezes problemas
+    que, a primeira vista parecem totalmente diferentes podem ser solucio-
+    nados pelo mesmo algoritmo fazendo-se apenas pequenas modificações.
+    Programas ou algoritmos são descrições de procedimentos, portanto, po-
+    dem ser usados como dados para outros programas ou algoritmos. Essa
+    noção de que programas são dados, chamada de meta-programação, é fun-
+    damental e permite que se construam soluções extremamente elegantes,
+    genéricas e simples para problemas complexos.;
+Transformação : A técnica de transformação consiste em utilizar a solução
+    de um problema para solucionar outro, através de transformação. Essas
+    transformações podem ser feitas em diferentes contextos: para utilizar
+    um algoritmo já existente para resolver o problema (reuso); para realizar
+    melhorias em uma solução existente (refinamento); para adaptar soluções
+    existentes a outras realidades (evolução); para compreender as relações
+    entre problemas (redução); etc.
+
+
+4     Automação
+A abstração nos permite encontrar e descrever um modelo de solução para um
+problema, e a automação é a mecanização de todas ou parte das tarefas da
+solução para resolver o problema usando computadores.
+
+
+                                      12
+    Para podermos automatizar a solução de um problema, primeiro é necessá-
+rio saber se essa automatização é possível. Nem todos os problemas podem ser
+resolvidos com o uso de computadores, existem vários problemas que não são
+passíveis de mecanização, chamados não-computáveis. Em alguns casos, apenas
+parte da solução pode ser executada por um computador. Por exemplo, não
+existe algoritmo que pode determinar se duas funções são equivalentes, mas é
+possível, dada uma entrada, verificar se duas funções produzem a mesma saída.
+Outros problemas não-computáveis são: determinar se um conjunto de dominós
+pode cobrir um tabuleiro; determinar se um algoritmo sempre termina; deter-
+minar se uma equação (polinomial) sempre tem uma solução (inteira); verificar
+se um programa tem vulnerabilidades de segurança, etc.
+    A automação envolve diferentes aspectos que devem ser levados em conta:
+   Máquina     : Escolha da máquina (computador) a ser utilizada para auto-
+    matizar a solução de problema;
+
+   Linguagem       : Escolha da linguagem de programação a ser utilizada para
+     descrever a solução;
+
+   Modelagem Computacional       : Utilização de modelos que simulam o
+    comportamento de sistemas reais e permitem validar a solução de um
+    problema.
+    Para que a mecanização seja possível, o computador deve ser capaz de in-
+terpretar as abstrações do modelo. Nesse contexto, um computador poderia ser
+um dispositivo mecânico, elétrico ou biológico (como por exemplo o DNA ou
+computadores moleculares) com capacidade de processamento, armazenamento
+e comunicação. Ou também poderia ser um humano, que segue fielmente os
+passos de um algoritmo, realizando o processamento de informações de forma
+mecânica. É importante saber escolher qual o tipo de computador (ou combi-
+nação de computadores) é o mais adequado para realizar uma tarefa desejada.
+Por exemplo, para preencher uma nota fiscal de venda, é melhor o vendedor pre-
+encher manualmente e fazer os cálculos no papel? Ou preencher manualmente
+e fazer os cálculos usando uma calculadora? Ou ainda, preencher usando um
+aplicativo de computador que fará os cálculos de forma automática? Para fazer
+a escolha adequada, é importante que se conheçam as características de cada
+máquina: para que elas servem, qual a dificuldade de utilizá-las, que tipos de
+problemas elas podem apresentar, como resolver esses problemas, etc.
+    Escolhido o computador adequado, deve-se traduzir a solução do problema
+(algoritmo) para uma linguagem compreendida pelo computador. Cada tipo de
+computador reconhece uma (ou várias) linguagem(ns) diferente(s). Por exem-
+plo, um computador tradicional compreende dados e instruções representadas
+por sequências de zeros e uns; o DNA compreende informações compotas por
+sequências de bases A (adenina), C (citosina), T (tinina) e G (guanina); já
+um humano compreende sentenças descritas em diferentes linguagens naturais
+(português, inglês, espanhol, etc) e também linguagens formais como a matemá-
+tica. Apesar de serem mais facilmente compreendidas, as linguagens naturais
+
+
+                                     13
+nem sempre são a melhor opção quando se quer descrever de forma precisa
+nossas abstrações. Uma linguagem natural é essencialmente ambígua e subje-
+tiva, o que permite diferentes interpretações para uma mesma instrução. Já as
+linguagens compreendidas pelos computadores tradicionais, como PCs, notebo-
+oks, tabletes, celulares, entre outros, não sofrem desse tipo de problema. Essas
+linguagens (linguagens de máquina) usam uma representação binária bastante
+precisa. Deste modo, qualquer informação ou instrução deve ser codificada por
+sequências de zeros e uns, que são reconhecidas pelo computador e determinam
+as ações que ele deve realizar. Além disso, dependendo do tipo de arquitetura
+do computador, as instruções compreendidas por ele também podem variar. As-
+sim, para um indivíduo conseguir descrever a solução de seu problema para que
+um computador a compreenda e a execute, ele deveria conhecer a linguagem de
+máquina do computador escolhido.
+    A tarefa de descrever procedimentos usando linguagem de máquina é bas-
+tante árdua, visto que essa codificação é bastante distante da linguagem natural
+e dependente da máquina escolhida. O ideal, portanto, seria podermos descrever
+nossos procedimentos em uma linguagem mais próxima à natural e que o com-
+putador pudesse compreendê-la. Esse é exatamente o papel das linguagens de
+programação de mais alto nível. Essas linguagens geralmente são mais próximas
+às linguagens naturais e independentes da arquitetura dos computadores. As
+instruções destas linguagens possuem um nível de abstração maior, isto é, elas
+geralmente correspondem a uma sequência de instruções de uma linguagem de
+máquina. Contudo, uma linguagem de programação não pode ser interpretada
+diretamente pelos computadores e, portanto, existem traduções dessas para as
+linguagens de máquina. Assim, dizemos que as linguagens de programação pos-
+suem um nível de abstração maior do que as linguagens de máquina. Mesmo
+entre as linguagens de programação, existem diferentes níveis de abstração. Por
+exemplo, a linguagem Java possui um nível de abstração maior do que a lin-
+guagem C, assim como as linguagens funcionais têm maior nível de abstração
+do que as linguagens procedurais. A escolha da linguagem a ser utilizada, deve
+levar em conta essa característica. Quanto maior o nível de abstração, maior é
+a facilidade de descrever o algoritmo (solução do problema) nesta linguagem.
+    A utilização de modelos pode auxiliar no entendimento de um problema,
+permitindo a simulação do comportamento dos sistemas envolvidos, bem como
+de soluções propostas. Os modelos podem ser físicos ou matemáticos. Por
+exemplo, pode-se construir modelos físicos de pontes que permitem medir de-
+formações sofridas por tais estruturas ao receberem uma determinada carga; ou
+ainda, pode-se construir modelos matemáticos que podem ser simulados com o
+uso de um computador. A modelagem computacional fornece recursos para tra-
+tar problemas complexos e que envolvem um elevado número de variáveis. Para
+isso, é proposto o uso de métodos numéricos para tratamento do problema,
+associados a ferramentas computacionais e técnicas avançadas de programação.
+Exemplos de simulação computacional podem ser encontrados nas mais diversas
+áreas como, no estudo de sistemas biológicos, no desenvolvimento de projetos e
+jogos, na previsão metereológica, etc.
+    O mercado está repleto de ambientes para simulação computacional que
+
+
+                                      14
+disponibilizam diversos recursos para construção de modelos de sistemas reais
+e a decisão de qual e como utilizar precisa ser tomada. Para isso, algumas
+considerações devem ser feitas: Como validar um modelo? Como tratar os
+resultados obtidos de uma simulação? Como saber se os resultados são válidos
+para o sistema real?
+
+
+5     Análise
+A Ciência da Computação provê fundamentos teóricos sólidos e uma rica teoria
+para análise e classificação de problemas, permitindo descobrir se um problema
+tem ou não solução computacional, e também se pode ter algoritmo eficiente que
+o resolva, antes mesmo de tentar construir o algoritmo. A análise é de extrema
+importância pois fundamenta argumentação crítica sobre os problemas e suas
+soluções (algoritmos). De forma geral, a análise pode ser de 3 tipos:
+
+    Viabilidade     : Análise da viabilidade de se encontrar uma solução com-
+      putacional para o problema;
+
+    Correção    : Verificação se o algoritmo construído é mesmo a solução de-
+     sejada para o problema em questão;
+
+    Eficiência   : Avaliação da eficiência do algoritmo, sob vários aspectos.
+
+    A viabilidade já foi discutida na seção anterior, quando discutiu-se que nem
+todos problemas tem solução computacional. Um exemplo clássico de problema
+não-computável é o problema de escrever um programa que determina se outros
+programas param ou entram num laço (processam indefinidamente). Quer-se um
+programa que possa ler o código de qualquer outro programa e seus respectivos
+dados e que possa retornar se o processo pára ou se executa indefinidamente
+um conjunto de instruções. Pode até parecer que este programa é viável (e até
+mesmo fácil) de ser construído, mas na verdade ele não pode existir. A razão
+pela qual ele é inviável é que este programa poderia ser fornecido como entrada
+dele mesmo (já que ele é um programa e a entrada dele é qualquer programa).
+A partir deste ponto, é bastante fácil construir um paradoxo afirmando que, se
+o programa pára, então ele deve entrar num laço e se ele entra num laço, então
+ele deve parar.
+    Retornando aos problemas que possuem soluções computacionais, como sa-
+ber se um algoritmo proposto resolve o problema em questão? Uma solução
+está “correta” quando funciona exatamente como se espera em todas as situa-
+ções. Se a solução foi dada por um programa de computador, afirma-se que o
+programa está “correto” quando ele fornece a saída esperada para todo valor
+possível de entrada. A questão é que o conjunto de todas as entradas possíveis
+para um programa, exceto para casos triviais, é extremamente grande. Ademais,
+os problemas que hoje em dia se apresentam nas mais diversas áreas do conhe-
+cimento possuem, em geral, soluções complexas. Concomitantemente, muitas
+ferramentas e metodologias surgiram para auxiliar neste processo.
+
+
+                                      15
+    Simulações e testes são algumas das técnicas utilizadas para encontrar erros
+e avaliar se os programas possuem características desejadas. Elas envolvem a
+execução de partes do programa ou de todo o sistema para avaliar proprieda-
+des de interesse, como por exemplo, se o programa responde corretamente a
+determinadas entradas, se executa as principais funções dentro de um tempo
+aceitável, se atinge o resultado geral esperado, entre outros. Um conjunto de
+testes pode ser bom para avaliar uma determinada propriedade (por exemplo,
+funcionalidade), mas ineficaz para avaliar outras características (por exemplo,
+eficiência). Algumas métricas são definidas para um bom conjunto de testes,
+tais como: ele deve incluir as condições iniciais e as sequências de entrada para
+as simulações; deve especificar as saídas esperadas; deve incluir uma descrição
+de sua finalidade ou do requisito que está em análise (ou ambos); entre outros.
+No entanto, em geral, nenhum conjunto de testes será bom e eficaz para todo o
+tipo de análise.
+    Outra técnica de análise consiste na definição e utilização de modelos mate-
+máticos para simular e verificar sistemas reais. A partir de uma especificação
+precisa (modelo matemático) é possível construir uma prova formal (utilizando
+de argumentação lógica e técnicas de demonstração) que garante que o modelo
+satisfaz determinadas propriedades. Diversas metodologias também já foram
+propostas para demonstrar que o projeto de um sistema está correto com res-
+peito à sua especificação. Refinamentos (transformações precisas) podem ser
+especificados para transformar um modelo matemático num projeto e um pro-
+jeto numa implementação, a qual, ao final do processo, é correta por construção.
+    Além da correção, outro ponto a ser analisado em um algoritmo é sua efi-
+ciência, permitindo avaliar e comparar diferentes algoritmos quanto ao uso de
+recursos como tempo, memória, processador, energia, comunicação, etc.
+    Vamos supor que se precise avisar um colega que a reunião da tarde foi can-
+celada. Poderia-se enviar uma mensagem pelo celular para o colega. Alternati-
+vamente, poderia-se telefonar para ele. Também se poderia enviar um e-mail ou
+mesmo, ir pessoalmente a sua casa. Enfim, há diversas alternativas para avisá-lo
+do cancelamento da reunião. Qual deve ser utilizada? Para escolher, pode-se
+levar em consideração os recursos disponíveis (por exemplo, celular, telefone), o
+tempo que será necessário para avisar usando cada alternativa, o custo de cada
+alternativa, etc. Da mesma forma, existem diversos algoritmos que resolvem
+um mesmo problema. Para escolher qual utilizar em cada situação, precisamos
+poder analisar quantitativamente os algoritmos para dar subsídio ao processo
+de escolha da melhor alternativa.
+    Retomando o problema da ordenação. Supõe-se que queremos colocar uma
+lista de números em ordem crescente, como na seção 2. Existe uma grande
+variedade de soluções possíveis (algoritmos) para este problema. A ordenação
+por inserção é um processo que funciona da maneira como muitas pessoas or-
+denam as cartas em um jogo de baralho. Ao receber as cartas viradas na mesa,
+pegam-se as cartas, uma a uma, inserindo-as na posição correta. Para encontrar
+a posição correta, o que se faz é comparar a carta pega da mesa com cada uma
+das cartas que já estão na mão, da direita para a esquerda. Outro método de
+ordenação bastante rápido e eficiente é a ordenação que foi descrita na seção 2,
+
+
+                                       16
+Figura 4. Se considerarmos que recebemos os elementos em uma ordem aleató-
+ria e que temos as mesmas ferramentas para resolver o problema, a ordenação
+por inserção é considerada uma solução eficiente para um pequeno número de
+elementos. Já se considerarmos quantidades maiores de elementos, a ordenação
+da Figura 4 passa a ser mais rápida. Ou seja, existem soluções mais eficientes
+do que outras para resolver um mesmo problema. Essas diferenças em eficiência
+ficam mais evidentes quando são consideradas instâncias grandes dos problemas
+(neste caso, listas com muitos elementos).
+    Existem problemas para os quais não se encontrou até o momento soluções
+computacionais eficientes. Para estes problemas, chamados intratáveis, existem
+soluções (isto é, existem algoritmos que o resolvem), mas na prática levariam
+tanto tempo para chegar a um resultado (por vezes anos ou séculos, dependendo
+do tamanho da instância do problema) que se tornam inúteis. Já foi mostrado
+que muitos problemas de grande interesse prático se enquadram nesta catego-
+ria. Um exemplo é o problema de encontrar o caminho mais curto entre duas
+cidades em um mapa. Este problema pode ser resolvido calculando todas as
+rotas possíveis e comparando-as para identificar a melhor rota. Porém, isso se
+torna completamente inviável pois, em geral, mesmo em instâncias com poucas
+cidades, há um número enorme de rotas a considerar e o algoritmo poderia levar
+milhões de anos para ser dar uma resposta. É por este motivo que os programas
+que existem hoje para determinar rotas em mapas não necessariamente deter-
+minam a melhor rota para um motorista, e sim uma lista de rotas que podem
+ser encontradas de forma rápida. É importante saber como identificar se um
+problema é intratável, para que não se tente encontrar solução eficiente para
+um problema que já foi classificado como intratável. Muitas vezes, pequenas
+modificações no enunciado do problema podem torná-lo tratável computacio-
+nalmente.
+    Importante destacar que para a maioria absoluta dos programas (problemas)
+reais não existe uma única técnica de análise que permita afirmar que o sistema
+(ou a solução) está livre de qualquer erro, que satisfaz todos os requisitos e pro-
+priedades desejados e que vai operar sempre conforme o esperado. Para garantir
+a qualidade do sistema, uma combinação de técnicas e ferramentas deve ser uti-
+lizada, o que requer treinamento e capacitação dos desenvolvedores. De maneira
+similar, mesmo que não se queira construir programas, uma boa análise das so-
+luções dadas para muitos problemas do dia-a-dia depende da sistematização dos
+procedimentos e de treinamento da argumentação lógica. E uma fundamenta-
+ção consistente para atingir este objetivo pode ser encontrada na Ciência da
+Computação.
+
+
+Referências
+[1] Racket documentation. https://docs.racket-lang.org/. Acessado em:
+    30-06-2017.
+
+
+
+
+                                        17
+[2] Thomas H. Cormen, Clifford Stein, Ronald L. Rivest, and Charles E. Lei-
+    serson. Introduction to Algorithms. McGraw-Hill Higher Education, 3nd
+    edition, 2001.
+[3] ISTE and CSTA. Computational thinking leadership toolkit, 2011. Dispo-
+    nível em www.iste.org/docs/ct-documents/ct-leadershipt-toolkit.
+    pdf.
+[4] Seymour Papert. Mindstorms: Children, Computers, and Powerful Ideas.
+    Basic Books, Inc., New York, NY, USA, 1980.
+[5] A. J. Perlis. Computers and the World of the Future, chapter The computer
+    in the university. The MIT Press, 1962.
+[6] Jeannette M. Wing. Computational thinking. Communications of the ACM,
+    49(3):33–35, March 2006.
+[7] Jeannette M Wing. Computational thinking and thinking about computing.
+    Philosophical Transactions of the Royal Society of London A: Mathematical,
+    Physical and Engineering Sciences, 366(1881):3717–3725, 2008.
+[8] Jeannette M. Wing. Computational thinking–what and why? The magazine
+    of Carnegie Mellon University’s School of Computer Science, March 2011.
+
+
+
+
+                                     18
+

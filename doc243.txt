@@ -1,0 +1,960 @@
+IX Congresso Brasileiro de Informática na Educação (CBIE 2020)
+Anais do XXXI Simpósio Brasileiro de Informática na Educação (SBIE 2020)
+
+Ensino da Inteligência Artificial na Educação Básica: um novo
+horizonte para as pesquisas brasileiras
+Marcos Yuzuru de Oliveira Camada e Gilvan Martins Durães
+Grupo de Pesquisa em Sistemas e Computação (GPESC) – Campus Catu – Instituto Federal
+de Educação, Ciência e Tecnologia Baiano – (IF BAIANO)
+Caixa Postal 15.064 – 91.501-970 – Catu – BA – Brazil
+{marcos.camada, gilvan.duraes}@ifbaiano.edu.br
+
+Abstract. Some works have been proposed over the last few years to presents the
+teaching of Artificial Intelligence (AI) in basic education. This paper discusses the
+results of a systematic research that uses Brazilian and international databases in order
+to shown the state of the art in the field and verify the relevance of that approach for the
+Brazilian Basic Education by assumptions of the National Curricular Common Base.
+The results point to possibilities of works and application of teaching AI in Brazilian
+Basic Education.
+Resumo. Nos últimos anos alguns trabalhos propuseram o ensino de fundamentos da
+Inteligência Artificial (IA) na Educação Básica. Este artigo apresenta e discute os
+resultados de uma pesquisa sistemática utilizando bases de dados científicas nacionais
+e internacionais com o objetivo de apresentar o estado da arte na área e verificar a
+relevância da abordagem para a Educação Básica no Brasil a partir dos pressupostos
+da Base Nacional Comum Curricular (BNCC). Os resultados apontam para as
+possibilidades de pesquisa e aplicação do ensino da IA na Educação Básica Brasileira.
+
+1. Introdução
+Nos últimos anos o ensino da matemática básica no Brasil tem passado por uma transformação
+através da melhor compreensão e maior uso das tecnologias digitais da informação e
+comunicação na educação, favorecendo o interesse e o desenvolvimento das chamadas
+competências do Século XXI, tais como utilização de informação, criatividade, pensamento
+sistêmico, investigação e pesquisa [Inep 2019, OCDE 2020]. Dentre as transformações
+curriculares encontra-se o desenvolvimento do Pensamento Computacional previsto no
+currículo da Base Nacional Comum Curricular (BNCC) [Brasil 2018].
+O termo Pensamento Computacional (PC) vem do Inglês Computational Thinking, o
+qual se popularizou com a publicação, em 2006, do artigo “Computational Thinking” da
+pesquisadora Jeanette M. Wing. A autora defende a ideia de que o PC é uma habilidade
+essencial para todos, assim como ler, escrever e calcular [Wing, 2006]. Em 2011, a
+International Society for Technology in Education (ISTE) juntamente com a Computer Science
+Teachers Association (CSTA) trabalharam com professores de Ciência da Computação e das
+áreas de Humanas para definir um conceito para o PC com a finalidade de nortear as atividades
+realizadas na Educação Básica [Valente 2016].
+O grupo ISTE/CSTA [ISTE, 2020] definiu então que o Pensamento Computacional é
+um processo de resolução de problemas que inclui (mas não está limitado a) as seguintes
+características: formulação de problemas de forma que nos permita usar um computador e
+outras ferramentas para nos ajudar a resolvê-los; organização e análise lógica dos dados;
+representação de dados através de abstrações, como modelos e simulações; automatização de
+soluções através do pensamento algorítmico; identificação, análise e implementação de
+
+DOI: 10.5753/cbie.sbie.2020.1553
+
+1553
+
+IX Congresso Brasileiro de Informática na Educação (CBIE 2020)
+Anais do XXXI Simpósio Brasileiro de Informática na Educação (SBIE 2020)
+
+possíveis soluções com o objetivo de alcançar a combinação mais eficiente e efetiva de etapas
+e recursos; generalização e transferência deste processo de resolução de problemas para uma
+grande variedade de problemas. A partir desta definição geral do PC, é possível expandi-la
+para as características básicas da Inteligência Artificial (IA) como sendo: autonomia e
+adaptabilidade [Russel e Norvig 2020].
+A motivação deste trabalho parte da mobilização internacional e, em menor proporção,
+nacional, para a inclusão, não apenas do PC, mas também dos fundamentos da IA na Educação
+Básica [SBC 2019]. Neste sentido, aliado ao crescimento da importância da IA na economia
+global e nas oportunidades do mundo do trabalho, a Organização para a Cooperação e
+Desenvolvimento Econômico (OCDE) tem incluído o PC juntamente com o pensamento
+criativo como competência requerida para a Educação Básica em seus componentes de estudos
+e proposta para o PISA 2021 [OCDE 2020].
+No contexto do PC e do pensamento criativo, a IA pode ser compreendida como uma
+área de estudo e aplicação computacional do raciocínio lógico para a resolução de problemas
+e/ou predição em meio à incerteza [Russel e Norvig 2020]. Por ser uma área cada vez mais
+abrangente no dia a dia da sociedade, seja na automação de atividades em casa, num e-mail
+classificado como spam, num atendimento virtual via chatbot, numa recomendação recebida
+ao navegar pela internet, e até mesmo na organização da educação, a compreensão dos
+fundamentos da IA desde a Educação Básica tende a ter um amplo interesse [Gomes e Balmant
+2019, Mcelwee 2019, Cimm 2020].
+No Brasil, as principais entidades mobilizadoras do ensino e utilização do Pensamento
+Computacional são a Sociedade Brasileira de Computação (SBC) e o Centro de Inovação para
+a Educação Brasileira (CIEB). Estas entidades estão se mobilizando para inclusão efetiva de
+competências do Pensamento Computacional na BNCC [SBC 2019ab, CIEB 2020]. Por outro
+lado, as pesquisas relacionadas ao ensino dos fundamentos da Inteligência Artificial na
+Educação Básica brasileira ainda são preliminares.
+Este artigo apresenta uma visão geral da potencialidade do ensino da IA na Educação
+Básica brasileira a partir de pressupostos da BNCC, através do estímulo ao Pensamento
+Computacional. Além disso, este artigo apresenta e discute os resultados de uma revisão
+sistemática, com o objetivo de fomentar as pesquisas e as aplicações do ensino de fundamentos
+da IA na Educação Básica brasileira.
+Este artigo está organizado da seguinte forma. Na Seção 2, são apresentados os
+trabalhos relacionados; na Seção 3, são apresentados os fundamentos e motivações do ensino
+da IA na Educação Básica brasileira; a Seção 4, apresenta e discute os resultados da Revisão
+Sistemática realizada; por fim, a Seção 5 apresenta as considerações finais da área.
+
+2. Trabalhos relacionados
+Os seguintes trabalhos relacionados foram elencados [Queiroz, Sampaio e Lima, 2017;
+Touretzky et al., 2019; Loftus e Madden, 2020].
+Loftus e Madden (2020) apresentam uma abordagem construtivista hands-on para o
+ensino de fundamentos da Aprendizagem de Máquina e da Inteligência Artificial, utilizando
+uma aplicação das Redes Bayesianas onde os estudantes são envolvidos no processo de
+construção e discussão dos dados. O projeto de ensino foi aplicado em uma turma de estudantes
+do primeiro ano do módulo IoT de um bacharelado em computação. Apesar deste trabalho ter
+o foco no ensino superior, a abordagem dos autores pode ser estendidas e adaptada para a
+Educação Básica, pois provê, a partir de um conceito fundamental da IA [Darwiche 2010], a
+
+1554
+
+IX Congresso Brasileiro de Informática na Educação (CBIE 2020)
+Anais do XXXI Simpósio Brasileiro de Informática na Educação (SBIE 2020)
+
+“leitura de mundo” [Freire 1970], a qual também é essencial na Educação Básica e está
+implicitamente prevista na BNCC.
+Queiroz et al. (2019) realizam uma investigação sobre estratégias a serem adotadas
+para o aprendizado de Inteligência Artificial no Ensino Fundamental por meio da robótica
+educacional. A pesquisa de revisão bibliográfica apresentada em [Queiroz et al., 2017]
+identificou apenas um trabalho diretamente associado ao ensino da IA na Educação Básica, o
+qual defende a “alfabetização em IA”, a partir dos primeiros anos escolares e propõe uma base
+curricular em IA para cada fase escolar (Infantil, Fundamental I e II, e Ensino Médio).
+Em [Touretzky et al. 2019], são apresentados os avanços no último ano no interesse e
+na produção acadêmica na área de Ensino da IA na Educação Básica (EB) e apresenta o Projeto
+AI4K12 que tem como objetivo definir diretrizes nacionais para o Ensino da IA na EB dos
+EUA e reunir uma comunidade aberta de desenvolvedores de recursos e ferramentas para a IA
+na EB. O AI4K12 é um projeto da Association for the Advancement of Artificial Intelligence
+(AAAI) e financiado pela National Science Foundation (AI4K12.org).
+
+3. Ensino do PC na Educação Básica Brasileira e Pontes para o Ensino da IA
+Segundo a BBC (2018), o PC está organizado em quatro pilares interdependente. Cada pilar é
+essencial para o outro, assim como as “pernas” de uma mesa, para dar sustentabilidade durante
+todo o processo de resolução do problema. A literatura distingue os 4 (quatro) pilares do PC
+[Wing 2006]: Decomposição, Reconhecimento de Padrões, Abstração e Algoritmos.
+O ensino do PC na Educação Básica (EB) vem se popularizando no Brasil
+principalmente a partir de portais públicos de educação [CIEB 2020, SBC, 2019, Brackmann
+2020]. Recentemente a SBC investiu esforços em produzir documentos norteadores para o
+ensino da computação no Brasil. Tais documentos estão alinhados com a BNCC e tem como
+principal objetivo delinear o currículo de formação em computação mobilizando competências
+em diversas áreas [SBC 2019b]. Destaca-se que estão distribuídos neste currículo proposto
+pela SBC todos os quatro pilares radicais do PC.
+A BNCC prevê em seu documento, na seção de competências específicas e habilidades
+da matemática e suas tecnologias, as seguintes habilidades:
+(EM13MAT405) Utilizar conceitos iniciais de uma linguagem de
+programação na implementação de algoritmos escritos em linguagem
+corrente e/ou matemática [Brasil 2018, p. 544].
+(EM13MAT315) Investigar e registrar, por meio de um fluxograma, quando
+possível, um algoritmo que resolve um problema [Brasil 2018, p. 544].
+
+Desta forma, o PC aqui representado pelos algoritmos em geral, está previsto como
+habilidade a ser desenvolvida no currículo da matemática e suas tecnologias. Ademais, dentre
+as dez competências gerais que orientam a BNCC [Brasil 2018], podemos destacar duas
+competências que estão relacionadas diretamente ao tema em questão:
+2. Exercitar a curiosidade intelectual e recorrer à abordagem própria das
+ciências, incluindo a investigação, a reflexão, a análise crítica, a imaginação
+e a criatividade, para investigar causas, elaborar e testar hipóteses, formular e
+resolver problemas e criar soluções (inclusive tecnológicas) com base nos
+conhecimentos das diferentes áreas [Brasil 2018, p.9].
+6. Valorizar a diversidade de saberes e vivências culturais e apropriar-se de
+conhecimentos e experiências que lhe possibilitem entender as relações
+próprias do mundo do trabalho e fazer escolhas alinhadas ao exercício da
+cidadania e ao seu projeto de vida, com liberdade, autonomia, consciência
+crítica e responsabilidade [Brasil 2018, p.9].
+
+1555
+
+IX Congresso Brasileiro de Informática na Educação (CBIE 2020)
+Anais do XXXI Simpósio Brasileiro de Informática na Educação (SBIE 2020)
+
+Observa-se nessas competências a viabilidade do uso do PC como meio para que os
+estudantes da Educação Básica consigam desenvolver suas habilidades e terem uma formação
+de atitudes e valores, de acordo a Lei de Diretrizes e Bases da Educação Nacional [Brasil
+1996]. Assim, o PC vai além da área da Computação ao permitir desenvolver a criatividade e
+a autonomia dos discentes na solução de problemas em geral e na melhor compreensão do
+mundo ao seu redor. Muitos trabalhos de pesquisa estudam e propõem recursos educacionais
+para o ensino e aprendizagem do PC na Educação Básica [Brackmann 2017 e 2020, Meira
+2017, CIEB 2020]. Ainda na seção supracitada da BNCC, consta como habilidades
+(EM13CNT205) Interpretar resultados e realizar previsões sobre atividades
+experimentais, fenômenos naturais e processos tecnológicos, com base nas
+noções de probabilidade e incerteza, reconhecendo os limites explicativos das
+ciências [Brasil 2018, p. 557].
+
+Tal habilidade de realizar previsões baseadas em noções de probabilidade e incerteza
+está diretamente relacionada aos fundamentos da IA que conceitua os sistemas classificadores,
+sistemas de reconhecimento de padrões e sistemas preditivos, baseados em análise de dados
+do passado para fazer inferências normalmente do futuro [Olivo, Santin, e Oliveira 2015,
+Gomes e Balmant 2019, Mcelwee 2019, Russel e Norvig 2020]. Além disso, segundo a BNCC
+as finalidades do ensino médio incluem
+prever o suporte aos jovens para que reconheçam suas potencialidades e
+vocações, identifiquem perspectivas e possibilidades, construam aspirações e
+metas de formação e inserção profissional presentes e/ou futuras, e
+desenvolvam uma postura empreendedora, ética e responsável para transitar
+no mundo do trabalho e na sociedade em geral [Brasil 2018, p. 466].
+
+Assim, é fortemente desejável que os jovens da contemporaneidade compreendam o
+mundo digital e suas tecnologias (especificamente o Pensamento Computacional e os
+fundamentos da Inteligência Artificial) os quais os envolve e permeia o mundo do trabalho e
+a sociedade em geral. Desta forma, os esforços a serem realizados para o ensino da IA
+contribuirão com a educação integral do ser humano ao propor a superação da fragmentação
+dos processos pedagógicos na qual disciplinas não interagem entre si e nem relacionam o
+conteúdo delas com o cotidiano do estudante. Neste sentido,
+Temas Contemporâneos Transversais têm a condição de explicitar a ligação
+entre os diferentes componentes curriculares de forma integrada, bem como
+de fazer sua conexão com situações vivenciadas pelos estudantes em suas
+realidades, contribuindo para trazer contexto e contemporaneidade aos
+objetos do conhecimento descritos na BNCC [Brasil 2019, p. 5].
+
+Vale ressaltar que o tema Inteligência Artificial (IA) se enquadra na macroárea de
+temas contemporâneos transversais Ciência e Tecnologia, de acordo com as definições da
+Secretaria de Educação Básica do Ministério da Educação [Brasil 2018 e 2019].
+IA é uma subárea da Computação com muitas definições e subjetividades ao longo da
+sua história de quase um século. O chamado Teste de Turing proposto em 1950 já apontava
+para a subjetividade do “o que é pensar?”. Turing propôs um jogo no qual uma pessoa faria
+perguntas por escrito a um sistema computacional e tentaria descobrir se quem estaria
+respondendo seria um ser humano ou a máquina [Russel e Norvig 2020]. Aplicações modernas
+apontam para um conceito de IA voltado para duas principais características: autonomia e
+adaptabilidade. Autonomia é a habilidade de executar tarefas em contextos complexos sem
+constante intervenção do ser humano e adaptabilidade é a habilidade de melhorar seu
+desempenho aprendendo com a experiência. [Russel e Norvig 2020].
+Dentre as aplicações, serviços e algoritmos que se enquadram nestas características da
+Inteligência Artificial, é possível citar alguns exemplos: sistema que joga xadrez, algoritmo de
+1556
+
+IX Congresso Brasileiro de Informática na Educação (CBIE 2020)
+Anais do XXXI Simpósio Brasileiro de Informática na Educação (SBIE 2020)
+
+logística, reconhecimento de voz, texto manuscrito, faces e imagens, veículo autônomo, robô
+que faz atendimento via chat (chatbot); sistemas de recomendações pessoais e de negócio,
+detecção de spam de e-mail, predições médicas, tais como, predição de complicações
+cirúrgicas, detecção de sinais de diabetes a partir de coleta de dados pessoais, aperfeiçoamento
+de modelos matemáticos para pré-diagnóstico do coronavírus [Olivo, Santin e Oliveira 2015,
+Velazco 2018, Gomes e Balmant 2019, Mcelwee 2019, Canto e Scartezini 2020, Russel e
+Norvig 2020]. Nota-se a diversidade de áreas e que muitas vezes as pessoas não percebem que
+estão lidando com máquinas que utilizam IA. Daí a necessidade de se tratar deste assunto cada
+vez mais cedo na Educação Básica [Pimentel et al. 2018].
+Apesar da IA ser uma área de interesse global inclusive para uso nos ambientes
+educacionais [Moreira, Mesquita e Peres 2019, Gomes e Balmant 2019], esta pesquisa mostra
+que há poucos trabalhos científicos brasileiros diretamente relacionados ao ensino da IA na
+EB. Dentro da concepção do PC como estratégia interdisciplinar para alcançar diferentes
+competências previstas na BNCC e, assim, colaborar com a educação integral, esta pesquisa
+corrobora para a integração do tema Fundamentos em Inteligência Artificial à Educação Básica
+brasileira. Esta abordagem é inovadora ao passo que foram encontrados poucos trabalhos
+científicos fortemente correlacionados a ele conforme apresentam as Seções 2 e 4.
+Fundamenta-se tal abordagem, por exemplo, a partir da intradisciplinaridade e
+interdisciplinaridade de conteúdo sugeridos da matemática e da informática do ensino médio,
+a qual vai apontar para as bases do conhecimento aplicado à inteligência artificial. Assim,
+observa-se nos Projetos Pedagógicos de Cursos (PPC) dos cursos técnicos integrados ao ensino
+médio, o seguinte recorte do conteúdo programático do componente curricular Matemática,
+distribuído ao longo de três séries (anos): razão, proporção e porcentagem; estatística básica;
+probabilidade. Ademais, o componente curricular Informática relacionada nos mesmos PPCs
+inclui o seguinte conteúdo: planilha eletrônica; Internet e e-mail. Este recorte específico do
+conteúdo dos dois componentes curriculares pode ser trabalhado em um projeto de ensino e
+aprendizagem com o objetivo de melhor compreender o funcionamento de um algoritmo de
+inteligência artificial para classificação de e-mails do tipo SPAM [Santin e Oliveira 2015].
+Alguns destes algoritmos são baseados no Teorema de Bayes (que por sua vez pode ser
+abordado na perspectiva da resolução de problemas [Jezuz, Oliveira e Tortola 2016].
+Desta forma, os autores deste artigo propõem um portal web para o suporte ao Ensino,
+à Pesquisa e à Popularização da IA na EB, afinal há muito o que se aprender com a inteligência
+humana e o futuro indeterminado da IA, especialmente no Brasil1 deve ser enfrentado de olhos
+abertos sem esquecer da tecnodemocracia [Lévy 1993]. O portal em desenvolvimento está
+disponível em: <https://sites.google.com/view/eduia/>.
+
+4. Revisão Sistemática
+Esta seção apresenta a revisão sistemática realizada com o objetivo de identificar as principais
+características das pesquisas na área do ensino da IA voltada para a educação básica. Para isto,
+o estudo foi organizado em três etapas, seguindo preceitos consolidados da Revisão
+Sistemática [Gough e Thomas 2017]. Inicialmente, foram definidos os termos de busca e os
+parâmetros de inclusão e exclusão de trabalhos e, desta forma, efetuada a coleta de trabalhos.
+Na segunda etapa, os trabalhos filtrados foram analisados um a um. Por fim, a partir dos dados
+compilados e quantificados, os resultados são apresentados e discutidos.
+
+1
+
+Ver mais em <https://itsrio.org/wp-content/uploads/2020/03/RelatorioAI.pdf>
+
+1557
+
+IX Congresso Brasileiro de Informática na Educação (CBIE 2020)
+Anais do XXXI Simpósio Brasileiro de Informática na Educação (SBIE 2020)
+
+4.1 Coleta de publicações
+Nesta pesquisa sistemática foi utilizada o Portal de Publicações da Comissão Especial de
+Informática na Educação da Sociedade Brasileira de Computação (SBC/CEIE) [SBC 2020], o
+Portal de Periódicos CAPES [Brasil 2020b], o Portal do Congresso Internacional Informática
+Educativa (TISE) e o Portal IEEE exclusivamente para pesquisas de trabalhos do IEEE
+International Symposium on Computers in Education (SIIE). O SBC/CEIE foi escolhido por
+incluir publicações da Revista Brasileira de Informática na Educação e dos anais dos seis
+eventos da área promovidos pela SBC. O Portal de Periódicos CAPES foi escolhido por
+abarcar os principais veículos de publicação científica no Brasil, incluindo atualmente 462
+bases de dados internacionais [Brasil 2020b]. O Portal TISE por abarcar trabalhos de um
+importante evento internacional na área com possibilidades de receber trabalhos em português
+e, por fim, o SIIE é um evento da AAAI e foi escolhido por ser um evento de renome
+internacional na área e não indexado ao Portal CAPES.
+Os parâmetros de busca foram os seguintes. O período foi de 01/01/2015 a 30/06/2020.
+Os termos e formato de busca foram: (“inteligência artificial” or “IA”) and (“educação básica”
+or “educação” or “ensino” or “interdisciplinaridade) e os respectivos termos em inglês:
+(“artificial intelligence” or “AI”) and (“k-12” or “education” or “teaching” or “teach” or
+“interdisciplinary”). A busca pelos termos “IA” ou “AI” foi restringida aos títulos dos
+trabalhos. Foram considerados apenas trabalhos do tipo Artigo e que já não tivessem sido
+coletados (exclusão de duplicados). Desta forma, 248 publicações foram inicialmente
+coletadas. Na leitura dos títulos e resumos de todos trabalhos da coleta de dados inicial, os
+critérios de inclusão para análise do trabalho foram: discute a importância geral do ensino da
+IA; aborda o ensino da IA na Educação Básica; aborda ensino da IA de forma interdisciplinar;
+aborda estratégia de ensino da IA que pode ser utilizada ou adaptada para a Educação Básica.
+Durante a leitura de todo o texto de cada artigo, os critérios de exclusão foram: aborda
+exclusivamente a utilização ou aplicação da IA no ambiente educacional; aborda o ensino de
+tópicos avançados da IA sem nenhuma perspectiva de adaptação para a Educação Básica. A
+Figura 1 resume os dados quantitativos da pesquisa bem como ilustra o acúmulo do número
+de trabalhos analisados por ano de publicação.
+b) Acúmulo de trabalhos analisados
+por ano de publicação (2015 a 2020)
+
+Total
+
+248
+
+17
+1
+
+TISE
+
+2
+2
+
+CAPES
+
+13
+
+CEIE
+
+1
+0
+
+#Trabalhos Coletados
+
+10
+
+SIIE
+
+#Trabalhos Analisados
+203
+33
+50
+100
+150
+200
+Quantidade de Publicações
+
+250
+
+Pblicações analisadas
+
+a) Quantidade de publicações
+encontradas por Portal
+10
+8
+
+Publicações em Português
+
+Publicações em Inglês
+
+6
+4
+2
+0
+2015
+
+2016
+
+2017
+
+2018
+
+2019
+
+2020
+
+Figura 1. Número de publicações encontradas. Fonte: Próprios Autores.
+
+É possível notar na Figura 1.a que dos 248 trabalhos coletados inicialmente apenas 17
+trabalhos (menos de 10%) foram incluídos na análise da revisão. Vale ressaltar que a maioria
+dos trabalhos que não foram incluídos para análise trata-se de pesquisas relacionadas ao uso
+ou aplicação da IA no sistema educacional, a exemplo de propostas de sistemas de tutoria
+inteligente. Observa-se na Figura 1.b, que dos trabalhos coletados e analisados tinha apenas
+um publicado até 2016 e que, a partir de 2017, esse número cresceu constantemente.
+1558
+
+IX Congresso Brasileiro de Informática na Educação (CBIE 2020)
+Anais do XXXI Simpósio Brasileiro de Informática na Educação (SBIE 2020)
+
+4.2 Análise das publicações coletadas
+A Tabela 1 apresenta os 17 trabalhos que restaram após aplicação dos critérios de exclusão.
+Tabela 1. Lista das publicações analisadas.
+
+Ano
+#1
+#2
+#3
+#4
+
+#5
+#6
+#7
+#8
+#9
+#10
+#11
+#12
+#13
+#14
+#15
+#16
+
+Título
+
+Autor(es)
+
+2017
+2019
+
+Inteligência artificial, robôs e ciência aberta
+Pretto, Nelson de Luca.
+Resenha crítica do Livro “Trabalho, educação e
+Júnior, S. et al.
+inteligência artificial” do Rui Fava
+2015 Pesquisa e mapeamento de Shells, Frameworks e jogos Lemos, H. de e Fernandes,
+para auxiliar no ensino de Inteligência Artificial
+A. M. R.
+2017
+The Future of Work Is Uncertain, Schools Should
+Herold, Benjamin
+Worry Now; Automation and artificial intelligence are
+disrupting the labor market. What do K-12 educators
+and policymakers need to know?
+2017
+Artificial intelligence, computational thinking, and
+Gadanidis, G
+mathematics education
+2018 Blue sky ideas in artificial intelligence education from
+Eaton, E. et al.
+the EAAI 2017 new and future AI educator program
+2019 The solution lies in education: artificial intelligence &
+Chrisinger, D.
+the skills gap
+2020 The Innovation of Education in the Era of Artificial
+Shen, J.
+Intelligence
+2019
+Accelerated Move for AI Education in China
+Yang, Xiaozhe
+2017 Keeping it Real: Using Real-World Problems to Teach
+Sintov, N. et al
+AI to Diverse Audiences
+2019
+BUILT TO TEACH: How URI's AI Lab Blends
+Kim, B.
+Innovation With Learning
+2018
+Teaching artificial intelligence and humanity
+Keating, J., Nourbakhsh, I.
+2019 Using Scratch to Teach Undergraduate Students’ Skills
+Estevez, J., Garate, G.,
+on Artificial Intelligence
+Guede, J. L., e Graña, M.
+2018 Aplicações da Ferramenta de Prototipagem Arduino no Dal Forno, Mateus; Braga,
+ensino de Inteligência Artificial
+Paola
+2019 Developing Computational Thinking at School with
+Rodríguez-García, J. D.;
+Machine Learning: An exploration
+Moreno-León, J.; RománGonzález, M.; Robles, G.
+2018
+Projeto Frankie: uma proposta para o ensino de
+Pimentel, C. S. et al.
+Inteligência Artificial na Educação Básica
+
+#17 2018 Ferramentas Computacionais de Ensino de Inteligência
+Artificial como Forma de Mitigar Lacunas entre Perfil
+de Estudante e de Profissional de TI
+
+Espírito Santo, L. C. E.;
+Brancher, J. D.
+
+Com o objetivo de mapear os trabalhos analisados, atribuiu-se um valor binário (1observado, 0-não observado) para cada uma das seguintes características no artigo: a) Artigo
+de posicionamento (ensaio); b) Artigo de revisão; c) Artigo de pesquisa aplicada; d) Apresenta
+portal para difusão científica; e) Propõe repositório de recursos educacionais da IA; f)
+Apresenta foco explícito na EB; g) Está escrito em português; h) Veículo de publicação
+apresenta revisão por pares. A Tabela 2 apresenta uma síntese das principais características
+dos trabalhos com base nesta valoração, na qual a primeira coluna identifica as características
+listadas anteriormente e a primeira linha identifica o número do trabalho analisado (conforme
+a Tabela 1). O trabalho de número 18 corresponde a este artigo. Ainda na Tabela 2, a última
+linha corresponde à quantidade de características observadas em cada artigo, sendo os
+
+1559
+
+IX Congresso Brasileiro de Informática na Educação (CBIE 2020)
+Anais do XXXI Simpósio Brasileiro de Informática na Educação (SBIE 2020)
+
+trabalhos de números 15 e 18 os trabalhos que apresentaram maior quantidade de
+características observadas (6 características presentes).
+Destaca-se na Tabela 2 que, dos trabalhos coletados e analisados, apenas 4 trabalhos
+(10, 13, 15 e 16) apresentam, simultaneamente, as características de ser um artigo de pesquisa
+primária (pesquisa aplicada) e com foco claro na Educação Básica (características c e f).
+Destes, apenas o trabalho número 16 é um trabalho de autores brasileiros.
+Tabela 2. Mapeamento das publicações analisadas.
+
+# 1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+a)
+b)
+
+1
+0
+
+1
+0
+
+0
+0
+
+1
+0
+
+1
+0
+
+1
+0
+
+1
+0
+
+1
+0
+
+1
+1
+
+0
+0
+
+1
+0
+
+1
+0
+
+0
+0
+
+0
+0
+
+0
+1
+
+0
+0
+
+1
+1
+
+1
+1
+
+c)
+d)
+
+0
+0
+
+0
+0
+
+1
+1
+
+0
+0
+
+0
+0
+
+0
+0
+
+0
+0
+
+0
+0
+
+0
+0
+
+1
+0
+
+0
+0
+
+1
+0
+
+1
+0
+
+1
+0
+
+1
+1
+
+1
+0
+
+0
+0
+
+0
+1
+
+e)
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+1
+
+0
+
+0
+
+0
+
+1
+
+0
+
+0
+
+0
+
+f)
+g)
+
+0
+1
+1
+
+1
+1
+1
+
+0
+1
+1
+
+1
+0
+0
+
+1
+0
+1
+
+1
+0
+1
+
+0
+0
+1
+
+1
+0
+1
+
+1
+0
+1
+
+1
+0
+
+0
+0
+1
+
+1
+0
+
+1
+1
+
+1
+
+1
+
+0
+1
+1
+
+1
+1
+
+1
+
+0
+1
+1
+
+1
+0
+
+1
+
+0
+0
+0
+
+3
+
+4
+
+4
+
+2
+
+3
+
+3
+
+2
+
+3
+
+4
+
+3
+
+2
+
+3
+
+3
+
+3
+
+6
+
+4
+
+4
+
+6
+
+h)
+Total
+
+1
+
+4.3 Discussão dos resultados
+Os resultados encontrados na coleta e análise de publicações da revisão sistemática evidenciam
+o crescente interesse na área de ensino da Inteligência Artificial na Educação Básica,
+especialmente nos últimos 3 anos. Por outro lado, cerca de 70% dos artigos científicos
+publicados na área são artigos exclusivamente de posicionamento (característica a) os quais
+levantam as discussões na área e argumentam a favor do ensino e popularização de
+conhecimentos da IA como extremamente relevantes no contexto de desenvolvimento
+tecnológico que a sociedade está inserida atualmente e, consequentemente, para o
+desenvolvimento integral dos estudantes da Educação Básica. A maioria destes trabalhos
+ressaltam a necessidade de se considerar e ensinar questões éticas e humanas envolvidas com
+o avanço da tecnologia [Pimentel et al. 2018].
+Ademais, as propostas de pesquisa primária com apresentação de resultados de
+aplicação de recurso educacional e/ou proposta metodológica para o ensino da IA na educação
+básica ainda são raros. Contudo, os poucos trabalhos que se enquadram nestas características
+apresentam resultados bastante promissores. Neste sentido, destaca-se o trabalho de número
+15 [Rodríguez-Garcia et al. 2019]. Nesse trabalho é apresentada uma revisão bibliográfica do
+ensino do Aprendizado de Máquina (AM), evidenciando a conexão entre a IA e o PC. Os
+autores apresentam uma plataforma web (ML4K) desenvolvida por eles para
+compartilhamento de recursos do ensino do AM na Educação Básica e, especialmente para
+crianças. Os recursos podem ser exportados para Scratch, App Inventor, ou código Python. Por
+fim, naquele trabalho são discutidos os resultados da aplicação de recursos educacionais para
+reconhecimento de voz e desenvolvimento de assistente virtual, em diferentes níveis de
+escolaridade. Os resultados foram promissores, porém os autores ressaltam que o ensino do
+Aprendizado de Máquina na educação básica ainda é uma área de estudo muito incipiente.
+
+5. Considerações finais (iniciais)
+Este artigo apresentou uma discussão inicial e os resultados de uma pesquisa sistemática com
+o objetivo geral de quantificar e caracterizar os trabalhos científicos na área do ensino da IA
+na Educação Básica (EB). A discussão inicial apresentou argumentações favoráveis ao ensino
+1560
+
+IX Congresso Brasileiro de Informática na Educação (CBIE 2020)
+Anais do XXXI Simpósio Brasileiro de Informática na Educação (SBIE 2020)
+
+e popularização da IA na EB brasileira fundamentadas nas competências e habilidades da
+BNCC. Já os resultados da revisão sistemática apontam para a potencialidade de pesquisas
+aplicadas ao ensino da IA na EB, especialmente no Brasil.
+
+Referências
+BBC,
+B.
+(2018)
+“Computational
+Thinking”.
+<https://www.bbc.com/bitesize/topics/z7tp34j>. Acesso em 21/06/2020.
+
+Disponível
+
+em:
+
+Brackmann, C. P. 2017, “Desenvolvimento do pensamento computacional através de atividades
+desplugadas na educação básica”. 2017. 224f. Tese (Doutorado em Informática na Educação) –
+Universidade Federal do Rio Grande do Sul, Porto Alegre.
+Brasil, MEC. (2018) “BNCC - Base Nacional Comum Curricular”.
+<http://basenacionalcomum.mec.gov.br>. Acesso em: 02/05/2020.
+
+Disponível
+
+em:
+
+Brasil, MEC. (2019) “Temas Contemporâneos Transversais na BNCC”. Brasília/DF. Disponível em:
+<http://basenacionalcomum.mec.gov.br/images/implementacao/contextualizacao_temas_contemp
+oraneos.pdf>. Acesso em 02/05/2020.
+Brasil, MEC. (2020a) “Secretaria de Educação Básica”. MEC, Brasília/DF, 2020. Disponível em:
+<https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/secretarias/secretaria-deeducacao-basica> , acesso em 02/05/2020.
+Brasil, CAPES. (2020b) “Portal de Periódicos CAPES/MEC”.
+<https://www.periodicos.capes.gov.br/>, acesso em 01/07/2020.
+
+Disponível
+
+em:
+
+Canto, K. e Scartezini, T. 2020 “Modelos matemáticos e inteligência artificial são aliados no combate
+ao coronavírus”, Com Ciência, Maio 2020. Disponível em <http://www.comciencia.br/modelosmatematicos-e-inteligencia-artificial-sao-aliados-no-combate-ao-coronavirus-mas-tambempreocupam-em-relacao-as-questoes-de-privacidade/>, acesso em 15/06/2020.
+CIMM. 2020 “Inteligência Artificial chega à grade do Ensino Técnico do Brasil”, Portal Indústria 4.0,
+2020. Disponível em: <https://www.industria40.ind.br/noticias/19327-inteligencia-artificial-chegaa-grade-do-ensino-tecnico-do-brasil>, acesso em 02/05/2020.
+CIEB. (2020) “Portal CIEB” Disponível em: <http://cieb.net.br>, acesso em: 02/05/2020.
+Darwiche, A. (2010) “Bayesian networks.” Communications of the ACM 53 (12): 80–90. 10.
+1145/1859204.1859227.
+Freire, P. (1970) “Pedagogy of the Oppressed”. New York: Continuum. 125.
+Gomes, A. e Balmant, O. (2019) “Inteligência artificial nos colégios. Portal Terra, 2019. Disponível
+em:
+<https://www.terra.com.br/noticias/educacao/inteligencia-artificial-noscolegios,23a7218c38451cd3ccbe2a0e25c490094d9v9aar.html>, acesso em: 02/05/2020.
+Gough, D., Oliver, S., e Thomas, J. (2017) “An introduction to systematic reviews”, 2ª ed., Los Angeles:
+SAGE.
+INEP. (2019) “Programa Internacional de Avaliação de Estudantes (Pisa)”, 2019. Disponível em:
+http://portal.inep.gov.br/pisa, acesso em 02/05/2020.
+ISTE. (2020) “Operational Definition of Computational Thinking for K–12 Education”. Disponível
+em:
+<https://id.iste.org/docs/ct-documents/computational-thinking-operational-definitionflyer.pdf>. Acesso em: 02/05/2020.
+Jezuz, D. A. F.; Oliveira, J. C. R. e Tortola, E. (2016) “Uma proposta para o ensino do Teorema de
+Bayes na perspectiva da resolução de problemas”. In: Anais do XII Encontro Nacional de Educação
+Matemática,
+São
+Paulo,
+Julho,
+2016.
+Disponível
+em:
+<http://www.sbem.com.br/enem2016/anais/pdf/7478_3221_ID.pdf>, acesso em 15/06/2020.
+
+1561
+
+IX Congresso Brasileiro de Informática na Educação (CBIE 2020)
+Anais do XXXI Simpósio Brasileiro de Informática na Educação (SBIE 2020)
+Levy, P. (1993) “Tecnologias da Inteligência: O futuro do pensamento na era da informática”
+[Technologies of Intelligence: the future of thinking in the informatics era]. Rio de Janeiro, Ed. 34.
+Loftus, M. e Madden, M. (2020) “A pedagogy of data and Artificial Intelligence for student
+subjectification”. Teaching in Higher Education. 25. 456-475. 10.1080/13562517.2020.1748593.
+Mcelwee, K. (2019) “From math to meaning: Artificial intelligence blends algorithms and
+applications”. Princeton, University, 2019.
+Meira, R. (2017) “Pensamento computacional na educação básica: uma proposta metodológica com
+jogos e atividades lúdicas”.2017. 119f. Dissertação (Mestrado Profissional em Tecnologias
+Educacionais em Rede) – Universidade Federal de Santa Maria, Santa Maria/RS.
+Moreira, F.; Mesquita A. e Peres, P. (2019) "Educação 4.0 e a transformação dos ambientes de
+aprendizagem: O Modelo Personalizado de Ambiente de Aprendizagem 4.0". In: 14th Iberian
+Conference on Information Systems and Technologies (CISTI), Coimbra, Portugal, 2019, pp. 1-6.
+Doi: 10.23919/CISTI.2019.8760900.
+Olivo, C.; Santin, A. e Oliveira, L. (2015). “Abordagens para Detecção de Spam de E-mail”. LivroTexto dos minicursos do XV Simpósio Brasileiro em Segurança da Informação e de Sistemas
+Computacionais — SBSeg 2015. Florianópolis/SC, Novembro de 2015. Disponível em:
+<https://secplab.ppgia.pucpr.br/files/papers/2015-7.pdf>, acesso em: 15/06/2020.
+OCDE. (2020) “PISA 2021 Assessment and Analytical Framework. Disponível em:
+<http://www.oecd.org/pisa/publications/pisa-2021-assessment-and-analytical-framework.htm>,
+acesso em: 01/07/2020.
+Pimentel, C. S.; Queiroz, R. L. ; Lima, P. M. V. ; Sampaio, F. F. (2018) “Projeto Frankie: uma proposta
+para o ensino de Inteligência Artificial na Educação Básica”. In: XIII Congresso Internacional
+Informática Educativa (TISE), Nuevas Ideas en Informatica Educativa, Brasília, 2018.
+Rodríguez-García, J. D., Moreno-León, J., Román-González, M., e Robles, G. (2019) “Developing
+Computational Thinking at School with Machine Learning: An exploration”. In 2019 International
+Symposium on Computers in Education (SIIE) (pp. 1-6). IEEE.
+Russell, S; Norvig, P. (2020) “Artificial Intelligence: A Modern Approach”. Pearson, 2020. 1136 p.
+Soares, C. G.; Souza, D. C.; Castro, J. B. (2018) “Recursos Educacionais Digitais e o ensino de adição
+e subtração: a concepção de um jogo na perspectiva da Teoria dos Campos Conceituais.” VII
+Congresso Brasileiro de Informática na Educação (CBIE 2018), Anais do VII Congresso Brasileiro
+de Informática na Educação.
+SBC, Sociedade Brasileira da Computação (2019a) “Ensino de Computação na Educação Básica”.
+Disponível em: <http://www.sbc.org.br/documentos-da-sbc/send/203-educacao-basica/1220-bnccem-itinerario-informativo-computacao-2, acesso em: 02/05/2020.
+SBC, Sociedade Brasileira da Computação. (2019b) “Itinerário formativo da Computação”. Disponível
+em:
+<http://www.sbc.org.br/documentos-da-sbc/send/203-educacao-basica/1216-itinerarioformativo-da-computacao>, acesso em: 02/05/2020.
+CEIE, Comissão Especial de Informática na Educação da SBC (2020) “Portal de Publicações da CEIE”.
+Disponível em <https://www.br-ie.org/pub/>, acesso em 01/07/2020.
+Valente, J. A. (2016) “Integração do Pensamento Computacional no Currículo da Educação Básica:
+Diferentes Estratégias Usadas e Questões de Formação de Professores e Avaliação do Aluno”.
+Revista eCurriculum, v.14, n.3, p.5562, 2016.
+Velazco, C. (2018) “Data from wearables helped teach an AI to spot signs of diabetes”. Engadget, 2018.
+Disponível em: <https://www.engadget.com/2018-02-07-deepheart-diabetes-cardiogram-ai.html>,
+acesso em 15/06/2020.
+Wing, J. M. (2006) “Computational Thinking”. Communications of the ACM, v.49, 3, p. 33-35, 2006.
+
+1562
+
+

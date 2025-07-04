@@ -1,0 +1,366 @@
+252    I nteração Humano - Computador
+Acessos ubíquos mapeados para uma barra de navegação, considerando 
+Figura 7.26   
+duas alternativas: (a) horizontal e (b) ver tical.
+A interface é comp ost a de diferentes 
+unidades de apres entaç ão
+. Em uma interface 
+gráﬁ
+ca, uma unidade de apres ent ação é uma tela ou  janela. Já  em interfacesWeb, é 
+uma página. Emb ora não haja ne cess ar iamente um map e amento direto entre cena e 
+unidade de apres ent ação, ess a estratégia é bast ante comum (Figura 7.27).
+M apeamento de uma cena para uma unidade de apresentação.
+Figura 7.27   
+A Figura 7.28 apres ent a uma alternat iva de desig n de interface que de comp õ e a mes-
+
+ma cena em du as unidades de apres ent ação. Ess e t ip o  de situ ação aconte ce com f re-
+
+quência no cas o de diálogos que manipu lam arquivos, como lo calizar um arquivo 
+
+Capítulo 7 |
+ Design de IHC    253
+para abri-lo ou lo calizar um diretór io e deﬁ
+nir um nome para s a lvar um arquivo. 
+Tamb ém é comum em alguns disp osit ivos móveis com telas de t aman ho re duzido.
+M apeamento de uma cena para duas unidades de apresentação.
+Figura 7.28   
+Gr up os de diálogos costumam s er reﬂ
+etidos na interface com usuário em qu adros 
+ou  contêineres de out ros elementos de interface, marc ados visivelmente ou  deﬁ
+ nidos 
+ap enas p or um 
+grid
+. C ada signo, p or sua ve z, costuma s er repres ent ado como um 
+elemento de interface (
+widget
+). E, cas o haja alguma pre venção p assiva pre v ist a ass o-
+ciada a um signo, ela geralmente é concretizada em uma instr ução ou dica, textual ou 
+pi c t ór i c a , apre s e nt a d a  próx i m a  a o  el e m e n
+to  c or resp ondente, c omo  o  aster i s c o  p ar a  
+indicar camp os obrigatórios.
+Uma fala de t r ansição de usuário geralmente s e  dest ina a uma mudança de tó-
+pico na convers a , de pross eguimento da convers a  p ara o aprof undamento do tópico 
+em dire ç ão ao s eu objetivo, ou de conclus ão da convers a para veriﬁ
+ car o alcance do 
+objetivo. S endo assim, uma fala de transição do usuário geralmente é map e ada em 
+
+um lin k,
+ 
+b ot ão ou item de menu. C as o haja uma pre c ondição ass o ciada à fala, p o de 
+haver uma mudança no est ado (ativo ou inat ivo) ou na visibi lidade (visível ou o c ulto) 
+
+do elemento corresp ondente. 
+A Figura 7.29 ilustra um f rag mento de diag rama de interação e divers os map e-
+amentos :
+cena 
+ 
+Consultar material
+ map e ada p ara unidade de apres ent ação 
+M ateriais di-
+dáticos
+ (indicação n
+o
+ 1 na ﬁ
+ gura)
+diálogo 
+ 
+ver materiais
+ map e ado para a t ab ela de materiais didáticos (n
+o
+ 2)
+
+254    I nteração Humano - Computador
+fala de usuário 
+ 
+u: cadastrar novo material 
+map e ada para link 
+Cadastrar novo 
+material didático
+ (n
+o
+ 3)
+fala de usuário 
+ 
+u: editar material X
+ map e ada para os links na t ab ela (n
+o
+ 4)
+cena 
+ 
+Editar material
+ map e ada p ara du as unidades de apres ent ação s emel han-
+tes, confor me a fala de transição de usuário que le va até ela:
+Cadastrando novo material didático
+ 
+– , destino da fala 
+u: cadastrar novo ma-
+terial didático
+ (n
+o
+ 5)
+Editando material didático
+ 
+– , destino da fala 
+u: editar material X
+ (n
+o
+ 6)
+Diálogos e signos mapeados em elementos de inter face.
+Figura 7.29   
+Po demos obs er var ainda que o b ot ão 
+Gravar
+ ap are c e des at ivado na unidade de apre -
+s ent ação 
+Cadastrando novo material didático
+ (n
+o
+ 7), p ois os camp os obrigatórios ainda 
+não foram pre enchidos.Além diss o, a fala de t r ansição do usuário p ara re c up eração 
+
+Capítulo 7 |
+ Design de IHC    255
+de r uptura 
+u: cancelar
+ foi map e ada para o link 
+Cancelar
+ (n
+o
+ 8), que le va o usuário de 
+volt a para a página 
+M ateriais didáticos
+. No  exemplo, as falas 
+u: cadastrar novo material
+ 
+e 
+u: editar material X
+ le vam o usuário para uma nova página. Mas p o deriam ter ab er to 
+uma janela ou painel s obre a tela Materiais didáticos, p or exemplo. Ness e cas o, a fala 
+u: cancelar
+ teria como comp or t amento fe char ess a janela.
+As  fa las do prep osto do desig ner s e  dest inam a for ne c er ao usuár io 
+feedback  
+s obre o andamento ou  a conclus ão de um pro c ess amento do sistema, em resp ost a 
+a uma s olicit ação do usuário. Elas comumente s ão concretizadas na interface como 
+
+mens agens de erro (em par t ic ular no cas o de falas de re c up eração de uma r uptura 
+
+comunicat iva) e de 
+statu s
+. Ess as mens agens p o dem s er apres ent adas de p elo menos 
+du as formas dist int as: embut idas na unidade de apres ent ação corresp ondente à cena 
+de dest ino (n
+o
+ 1) ou  em unidades de apres ent ação indep endentes (n
+o
+ 2), como p o de 
+s er visto na Figura 7.30, para as falas 
+d: material gravado
+ e 
+d: problema na gravação
+, 
+resp ectivamente.
+Falas de transição do preposto do designer mapeadas para elementos de 
+Figura 7.30   
+inter face.
+
+256    I nteração Humano - Computador
+Esquema Conceitual de Signos: 
+7.4.4 Expressão (Par te II)
+Em p ara lelo à elab oração da inter face, p o demos deﬁ
+ nir as express õ es de cada sig no, 
+concluindo assim a deﬁ
+ nição do es quema de sig nos.A express ão de um sig no deﬁ
+ ne 
+qu al elemento de interface ( 
+widget
+) de verá s er utilizado para apres ent ar ao usuário 
+ou  p ermit ir que ele manipu le o conteúdo do signo.
+C ada signo p o de apres ent ar  uma express ão diferente, confor me o s eu interlo c u-
+tor e o contexto de interação em que o signo o c or re (Tab ela 7.6). Quando o interlo-
+c utor é o prep osto do desig ner (
+emissor = d
+), o signo é apres ent ado ao usuário at ravés 
+de elementos de inter face p ara s aída de dados (
+out put
+); ao pass o que qu ando amb os, 
+usuário e prep osto, 
+falam
+ s obre o signo (
+emissor = d+u
+), suas express õ es s ão elemen-
+tos de interface para entrada de dados (
+input
+).
+D est acamos na t ab ela a p ossibi lidade de  haver mais de uma express ão para um 
+mesmo signo. Obs er vamos que o signo 
+data de entrega
+ p ossui du as for mas de expres-
+s ão ao s er emit ido p elo prep osto do desig ner : p or defau lt, ele é apres ent ado p ela dat a  
+
+format ada como 
+dd/mm/aaaa
+; mas na cena de av is os, ele é apres ent ado p or uma re -
+pres ent ação em calendário (
+cena Consultar avisos: dd/mm/aaaa + calendário
+). A Figura 
+7.31 apres ent a du as páginas que ilustram ess es diferentes contextos de interação.
+ Deﬁ
+ nição das expressões dos signos
+Tabela 7.6   
+Enunciado de trabalho (E) – enunciado de trabalho de disciplina de graduação
+signo emissor tipo de expressão expressão default e em contex to
+
++ título d+u tex to editável simples caixa de tex to
+d tex to simples
+rótulo
+descrição d+u tex to formatado 
+editável
+caixa de tex to com ferramentas de 
+formatação
+d tex to simples 
+(aprox. 150 palavras)
+rótulo com múltiplas linhas
+data de entrega d+u calendário
+controle de calendário
+ddata
+default: 
+
+rótulo (
+dd/mm/aaaa)
+;
+
+cena Consultar avisos: 
+dd/mm/aaaa + calendário
+formato de en-
+trega
+d+u lista de seleção simples
+default: combo
+d+u tex to editável simples
+cena Cadastrar formato de 
+
+entrega: caixa de tex to
+d tex to simples
+rótulo
+número máximo 
+de alunos
+d+u tex to editável simples 
+para números inteiros
+caixa de tex to com botões de 
+
+incremento e decremento
+d tex to simples
+rótulo
+
+Capítulo 7 |
+ Design de IHC    257
+peso
+d+u tex to editável simples caixa de tex to
+d tex to simples
+rótulo
+lembrete do prazo 
+de entrega
+d+u grupo de opções
+radio 
+(sim,não)
+d tex to simples
+rótulo(sim/não)
+Esboços de tela de visualização de lista de projetos e dos detalhes de um 
+Figura 7.31   
+projeto ﬁ
+ nal
+.
+A t ab ela de express õ es dos sig nos é ut i lizada pr incip a lmente p ara ass egurar a consis-
+tência de apres ent ação e manipu lação dos sig nos. Po de haver mais do que uma ex-
+
+press ão ass o ciada a um sig no, mas ess a de cis ão de ve  s er tomada de for ma c uidados a 
+
+e cons ciente p elos desig ners do pro duto.
+Além diss o, ess a esp e ciﬁ
+cação auxi lia a implement ação da interface, forne cen-
+do ao prog ramador or ient açõ es det al hadas s obre ela. S em iss o, os prog ramadores 
+
+p o dem ter de tomar a lgumas de cis õ es relacionadas ao desig n de inter face, s em que 
+
+ten ham p ar t icip ado at ivamente do pro c ess o de aná l is e e desig n e, cons e quentemente, 
+
+s em est ar ade qu adamente preparados para iss o.
+Projeto do Sistema de 
+7.5  
+Ajuda
+6
+S e gundo de S ouza (2005a), o p o der explicat ivo do dis c urs o do prep osto do desig ner 
+e, p or t anto, sua capacidade em nego ciar signiﬁ
+ cados, s ão limit ados p or propr ie dades 
+formais de linguagens comput acionais. Uma das formas de maximizar a comunica-
+bi lidade do dis c urs o do prep osto do desig ner é enr ique cer a for ma e o conteúdo do 
+
+sistema de ajuda.
+O sistema de ajuda é na engen haria s emiót ica uma forma de comunicação pr i-
+vi leg iada ent re desig ner e usuários, uma ve z que é uma comunicação diret a (Si lveira 
+et  al .
+, 2004; Si lveira, 2002). Por t anto, é f undament al que façamos o proj eto do sistema 
+6 Est a s e ção foi adapt ada de Prates e B arb os a (2007), com p ermiss ão das autoras.
+
+258    I nteração Humano - Computador
+de ajuda p ara que o usuário p oss a entender mel hor a s olução do desig ner e fazer me-
+lhor us o do sistema, s e  re c up erando facilmente  de r upturas que p or ventura venham 
+
+a o c or rer. 
+C om relação ao 
+conteúdo
+ do sistema de ajuda, p o demos nos b as e ar  em compi-
+laçõ es das dúvidas f re quentes dos usuários ao utilizarem sistemas interativos, cl as-
+
+siﬁ
+ cadas de acordo com o t ip o de dúvida (B ae cker 
+et  al .
+, 1995; S ellen e Nicol, 1990) 
+(Tab ela 7.7).
+Algumas dess as p ergunt as p o dem (e de vem!) s er resp ondidas durante as et ap as 
+iniciais de anális e e mo delagem de usuários e t arefas.Além diss o, resp ost as a algumas 
+dess as p ergunt as p o dem s er extraídas diret amente  dos mo delos já constr uídos, mas 
+
+outras de vem s er explicit amente elab oradas p elos proj etist as. Nest a s e ção, analis amos 
+
+as p ergunt as de acordo com os mo delos que esp e ciﬁ
+ cam a resp ost a, com os elemen-
+tos do sistema aos qu ais est ão relacionadas ou  com a et ap a de des envolv imento em 
+que s e  p o de resp ondê-las.
+Tipos de dúvidas frequentes dos usuários
+Tabela 7.7   
+tipo de dúvida exemplo de pergunta
+I nformativas O que posso fazer com este programa?
+
+Descritivas O que é isto? O que isto faz?
+Procedimentais Como eu faço isto?
+De escolha O que posso fazer agora?
+Sugestivas O que devo fazer agora?
+
+I nvestigativas O que mais devo fazer? Esqueci algo?
+
+I nterpretativas O que está acontecendo agora? Por que isto aconteceu?
+Navegacionais Onde estou? De onde vim?
+H istóricas O que eu já ﬁ
+ z?
+De motivação Por que devo usar este programa? Como ele irá me beneﬁ
+ ciar?
+A p ergunt a  
+infor m at iv a
+ 
+O qu e p oss o faz er com este prog r ama?
+ p o de s er resp ondida 
+com os objetivos dos usuários que foram ident iﬁ
+ cados nas p ers onas, elab orados nos 
+cenários e organizados no mapa de objetivos.
+Q uestõ es 
+des cr itivas
+, d o  t i p o  
+O qu e é isto?
+, 
+O qu e isto faz?
+ e 
+O qu e s e faz com 
+isto?
+ p o dem s er resp ondidas em dois níveis: um nível conceitu a l, relacionado ao 
+domínio, e um nível op eraciona l, relacionado à inter face. O nível conceitu a l  p o de s e r 
+

@@ -1,0 +1,392 @@
+        VISÃO COMPUTACIONAL APLICADA A SISTEMAS
+       PRODUTIVOS: FUNDAMENTOS E ESTUDO DE CASO
+
+         Marcelo Rudek, Leandro dos Santos Coelho, Osiris Canciglieri Junior
+  Pontifícia Universidade Católica do Paraná, PUCPR/LAS/CCET, Laboratório de Automação e Sistemas
+R. Imaculada Conceição 1155, Prado-Velho, Curitiba - Pr - e-mail: {rudek, lscoelho, osiris@rla01.pucpr.br}
+
+
+
+
+Abstract: The development of computational tools to solve problems to production
+managing, manufacturing automation and processes control are becoming a real necessity
+in industries environments. In this context, the computer imaging systems have done a
+large contribution in many steps of the productive cycle of a product, such as the
+orientation of robot movement, automation of the specifics tasks in manufacturing cells
+and quality control. This paper presents an overview of utilization of the computer vision
+in the productive systems. Several relevant aspects, such as automatic recognition of
+images, classification of digital images, filtering, pattern recognition are presented and
+discussed. A case study of application of computer vision for classification and indexing of
+digital images is also presented.
+
+Keywords: productive systems, computer vision, manufacture.
+
+
+1. Introdução
+
+        As novas tecnologias de visão computacional e processamento de imagens têm sido
+utilizadas com sucesso em muitas aplicações relevantes, principalmente nas áreas da
+astronomia, medicina, análise de impressões digitais, sensoriamento remoto, multimídia,
+entretenimento, reconhecimento de assinaturas, manufatura, robótica de manipuladores,
+robótica móvel, sistemas produtivos, entre outras.
+        Devido a crescente automatização dos processos produtivos, busca-se tornar os
+sistemas computacionais e de robótica capazes de tornar automática a execução de tarefas
+complexas. No atual estágio de desenvolvimento da indústria brasileira, muitas destas
+tarefas complexas (que muitas vezes são repetitivas) são realizadas por operadores
+humanos (ORTH, 1998).
+        Atualmente o desenvolvimento de sistemas de informação multimídia, tais como
+bibliotecas virtuais e catálogos eletrônicos, trouxeram a necessidade de gerenciamento de
+grandes bancos de dados de imagens. Para que este gerenciamento seja eficaz é necessário
+o desenvolvimento de metodologias que incorporem técnicas eficientes de acesso para o
+arquivamento e recuperação da informação. Além disso, a necessidade da utilização de
+métodos baseados em descrição textual tem introduzido o desenvolvimento de mecanismos
+para consulta de bases de dados através de imagens-exemplo ou pela especificação da
+imagem desejada, em termos de cores dominantes, textura e formato dos objetos.
+        Do ponto de vista da manufatura, para que os sistemas de visão possam ser
+utilizados eficientemente em um ambiente de projeto orientado para manufatura (DFM -
+Design for Manufacture), os atributos da imagem, tais como os tipos de ferramentas usadas
+e a geometria do produto, devem ser tratados. Em síntese, dependendo do estágio que se
+encontra a produção (soldagem, pintura, montagem, empacotamento, expedição),
+requisitos visuais específicos devem ser considerados, pois são atributos que apresentam
+informações significativas para maior eficiência do sistema produtivo.
+        Neste contexto, os sistemas de visão computacional, têm contribuído
+significativamente em diversas fases do ciclo produtivo de um produto, tais como
+orientação de deslocamento de um robô, automatização de tarefas em células de
+manufatura, planejamento da produção e controle de qualidade.
+        Este artigo apresenta um estudo de caso, da utilização de uma ferramenta de
+processamento de imagens para classificação de parafusos. Desta forma pretende-se munir
+o usuário de sistemas produtivos, das potencialidades nos recursos oferecidos pela visão
+por computador, no projeto e implementação de ambientes de manufatura. Desta forma são
+fornecidos os elementos necessários para a avaliação dos requisitos computacionais
+necessários para o tratamento dos problemas intrínsecos ao processamento de imagens.
+        Este artigo propõe também uma metodologia para o arquivamento, recuperação e
+indexação automática, em bancos de dados que manipulam imagens. Esta proposta é
+fundamentada na hipótese de que pode-se agrupar imagens semelhantes através de sua
+variação de cores, e utilizar estes atributos para indexá-las em um banco de imagens. A
+partir da imagem pode ser extraída uma seqüência de atributos de cor, que organizada na
+forma de um vetor, descreve o posicionamento da distribuição das cores mais significativas
+presentes na imagem. Desta forma obtém-se um “vetor de comportamento”, que expressa o
+conteúdo da imagem.
+        O artigo é organizado da seguinte forma: Na seção 2 são apresentadas
+características relevantes de sistemas de visão. Na seção 3, um estudo de caso com
+aplicação de uma técnica de processamento de imagem e na seção 4, considerações e
+perspectivas do uso destas ferramentas em um ambiente de produção.
+
+2. Características dos Sistemas de Visão
+
+        Diversas técnicas de reconhecimento de imagens, tem sido apresentadas na
+literatura e geralmente são validadas através de protótipo de aplicações, pois em um
+ambiente industrial, raramente obtém-se as condições ideais de iluminação, contraste,
+posicionamento correto da peça, e do ângulo de obtenção da imagem, além de outros
+fatores externos que dificultam a interpretação de uma cena (WEEKS, 1996; RUSS, 1995;
+YANG &YAN, 2000; CHENG, 2000). Uma imagem digital pode conter várias
+informações, que deverão ser tratadas em diferentes etapas da produção. Alguns exemplos
+são:
+
+       i) Em uma operação de soldagem, os atributos a serem extraídos da imagem,
+           dizem respeito à forma do objeto;
+       ii) Em um ambiente de pintura, a textura da superfície do objeto pode ser um
+           aspecto relevante;
+       iii)O reconhecimento de objetos (partes do produto) pode influenciar as ações de
+           um robô de montagem.
+
+        Estas informações impossibilitam que imagens diferentes possam ser tratadas de
+uma forma única, isto é, imagens diferentes possuem requisitos de programação diferentes.
+        Uma imagem digital não é interpretada da mesma forma que um ser humano
+identifica uma cena, mas a partir de atributos que devem ser extraídos da imagem, e que
+estão relacionados entre si. Portanto num sistema de tratamento de imagens, busca-se
+capturar alguns atributos da imagem e usar estes elementos para minimizar o espaço de
+pesquisa (YHONG, 1994). De acordo com o que afirmam LEUNG & ZHENG (1995), é
+necessário criar um modelo de dados para a representação sistemática do conteúdo de uma
+imagem. A construção deste modelo consiste em fatos (objetos ou detalhes da imagem),
+que expressam o seu conteúdo de forma adequada.
+       De acordo com o apresentado em WEEKS (1996), uma seqüência de ações para
+aquisição e processamento de uma imagem pode ser expressa conforme a representação
+genérica da figura 1, onde são representadas as principais operações realizadas no
+tratamento de uma imagem.
+
+   Aquisição da           Pré-                                 Identificação do       Reconhecimento
+     Imagem          processamento         Segmentação             Objeto               de padrões
+
+                  Figura 1: Seqüência de Ações para Aquisição e Processamento de uma imagem.
+
+       A seguir apresenta-se uma descrição destes conceitos, com enfoque direcionado a
+sistemas produtivos:
+
+i) Aquisição da Imagem: No procedimento de aquisição da imagem, existem dois
+elementos relevantes que fazem parte de um sistema de visão computacional. O primeiro
+se refere aos equipamentos que compõem o ambiente (hardware), tais como câmeras,
+computadores e sistemas de iluminação. E o segundo elemento é o programa (software)
+que processa as imagens e gerencia as ações a serem realizadas. Um sistema de aquisição
+de imagem consiste usualmente de uma câmera CCD (Charge Coupled Device) (WEEKS,
+1996; RUSS, 1995), um monitor de vídeo e a placa digitalizadora de vídeo (ORTH, 1998).
+A câmera coleta a imagem e a envia para a placa digitalizadora. Um software específico
+acessa os dados digitalizados da placa, e extrai as informações relevantes naquele instante
+para serem processadas. Numa célula de manufatura, pode-se controlar uma operação,
+através da realimentação dada pela execução de suas ações, em relação às novas imagens
+que estão sendo obtidas dinamicamente.
+
+ii) Pré-Processamento: Depois de digitalizar e armazenar a imagem em um computador,
+de acordo com a figura 1, as técnicas de pré-processamento são usadas para aprimorar a
+qualidade de uma imagem, corrigindo iluminação, contraste, distorções e nitidez (RUSS,
+1995).
+
+iii)Segmentação: Uma imagem exige muito em termos de requisitos do sistema,
+principalmente a quantidade de memória, velocidade de processamento e capacidade de
+armazenamento. O que habitualmente se utiliza para reduzir o esforço computacional, é a
+transformação da imagem em uma escala reduzida de informações, através da
+segmentação. A idéia utilizada na segmentação (thresholding) é dividir a imagem em
+regiões que correspondem a unidades estruturais da cena (RUSS, 1995; RUDEK, 1999;
+LIU, 2000), ou que distinguem os objetos de interesse (RUSS, 1995), separando os objetos
+da imagem (foreground) das informações de fundo da imagem (background). Com esta
+abordagem, minimiza-se o tamanho do espaço de onde as informações são retiradas, e
+opera-se sobre este espaço reduzido, diminuindo-se o esforço computacional necessário
+para tratar a imagem. Este trabalho utiliza uma técnica denominada de vetor de
+comportamento para minimizar a informação, e operar com um banco de dados.
+
+iv) Identificação de Objetos: A identificação e extração de objetos de imagens são
+necessárias em muitos casos. Por exemplo, um ambiente de montagem requer que peças
+diferentes possam ser identificadas, para que uma dada ação subseqüente possa ser
+realizada. Por exemplo, a junção de partes para formar o produto final. Devido a uma
+variedade de razões, os dados de imagens usados na entrada de um sistema de visão, nem
+sempre são perfeitos. Os problemas que freqüentemente ocorrem estão relacionados com a
+oclusão, onde um objeto pode estar parcialmente escondido atrás de outro objeto, ou dois
+objetos compondo a mesma imagem (ver figura 2b). De forma análoga, a perda de
+informações ou deformações, podem ser ocasionadas por ruídos na imagem devido a
+condições anormais de iluminação, defeitos de digitalização, e de resultados ineficientes de
+algoritmos de segmentação (BEIS, 1999).
+
+v) Reconhecimento de Padrões: O processamento da imagem é realizado por ambientes
+computacionais que conseguem operar com as informações obtidas das imagens. A
+extração de atributos, a exemplo da detecção de borda (LIU, 2000; WONG, 2000),
+constitui-se numa operação que permite definir quais elementos dos objetos nas imagens e
+podem ser separados de outros objetos presentes na mesma imagem. As técnicas de
+reconhecimento de padrões, tratam da identificação de partes da imagem que possuem
+semelhanças. Uma grande quantidade de ferramentas matemáticas e computacionais, tem
+sido desenvolvidas para permitir que objetos possam ser extraídos e agrupados em classes
+específicas de informações. Uma boa representação da forma do objeto, gera facilidades
+para que ele seja armazenado, transmitido, comparado, reconhecido ou mesmo entendido.
+A representação deve ser gerada de acordo com regras simples e precisas. Geralmente uma
+forma é descrita em termos de número de componentes, primitivas, e relacionamentos
+entre estes componentes.
+
+         Diversas ferramentas computacionais têm sido exploradas para o pré-
+processamento, segmentação de imagens e identificação de objetos. Entre estas
+metodologias destacam-se os wavelets (QUAK & WEYRICH, 1994), transformada rápida
+de Fourier (OPPENHEIM & SHAFER, 1989), descritores de Fourier (PEARSOON & KU,
+1997), extração de features (GORDON & RANGAYYAN, 1984), morfologia matemática
+(HASAN & KARAM, 2000), técnicas para o processamento de informação geométrica e
+estatística (SHEN & DAVATZIKOS, 2000), análise de componentes principais (ZHANG
+et al., 2001), B-splines (GU & TJAHJADI, 2000), algoritmos de processamento de
+imagens implementados em hardware (SPITZ & RECHICHA, 2000; GASTERATOS &
+ANDREADIS, 2000), algoritmos de clustering (BEIS & LOWE, 1999) e paradigmas da
+inteligência computacional, tais como redes neurais (AUGUSTEIJN & CLEMENS, 1996),
+algoritmos genéticos (WANG et al., 2001), e sistemas nebulosos (CHENG & XU, 2000).
+
+3. Ambiente de Automação
+
+        O conhecimento sobre o ambiente de trabalho é fundamental para o planejamento e
+a programação de tarefas de robôs, e outras máquinas controladas por computador. Neste
+caso, utilizam-se modelos para representar as estruturas geométricas de objetos reais e para
+treinar os sistemas de processamento de imagem (SHEN, 2000; LOSCOS, 2000; PIZLO &
+LOUBIER, 2000). Por exemplo, a navegação de robôs móveis, é um fator gerador de
+problemas, em termos de localização de referências em um cenário (LIM & LEONARD,
+2000). Nestes termos, é uma tarefa complexa extrair as informações importantes
+(KUNDUR & RAVIV, 2000) do cenário, pois o movimento acontece em tempo real, e o
+cenário é alterado constantemente. Por outro lado, a obtenção de algumas informações
+importantes da imagem através da extração de atributos pode ser obtida, onde o cenário
+tem um comportamento menos dinâmico, por exemplo, na classificação de objetos,
+contagem de peças, inspeção de qualidade, onde a imagem pode ser obtida a partir da
+mesma orientação (posição de câmera e dos objetos) e de mesmas condições ambientais
+(iluminação, sombra, oclusão). Neste contexto é que técnicas eficientes de manipulação de
+imagens, que operam em conjunto com bancos de dados e imagens, são desenvolvidas com
+sucesso. Para ilustrar as possibilidades da utilização do processamento de imagens, este
+artigo propõe a utilização de uma ferramenta de reconhecimento e classificação de
+imagens, baseada no comportamento dos objetos da cena, para reconhecimento de
+parafusos e posterior classificação destes em um banco de dados de imagem. Dada a
+imagem do objeto parafuso, apresentada na figura 2, pode ser importante reconhecer e
+classificar este objeto de acordo com um padrão. O padrão diz respeito aos requisitos
+construtivos do parafuso, principalmente em relação a sua forma geométrica.
+
+
+                          A                B                                  A          B        C
+
+
+
+
+                                 (2.a) parafuso                               (2.b) parafuso e porca
+
+          Figura 2: Imagens de parafusos, com identificação de suas regiões importantes (A, B e C).
+
+   Das regiões importantes (A, B e C) da imagem da figura 2, podem ser extraídas as
+seguintes informações:
+
+   A) a cabeça do parafuso pode fornecer informações do seu tipo de classificação, em
+      relação a forma, posição e dimensões;
+   B) o corpo do parafuso, também pode fornecer informações do seu tipo de
+      classificação, tais como posição e dimensões, de onde pode-se obter, por exemplo a
+      quantidade e/ou falta de roscas; e
+   C) outros objetos podem fazer parte da imagem, e servir de elemento classificador de
+      tipos, dependendo do que se deseja reconhecer.
+
+    Em termos de velocidade de processamento é essencial extrair as informações
+relevantes de uma imagem, e trabalhar com um conjunto reduzido de informações. As
+regiões importantes podem ser obtidas pelo método de reconhecimento e indexação
+proposto por RUDEK (1999), dividindo-se a imagem em subáreas de igual tamanho, onde
+cada uma deve conter informações que podem (ou não) ser relevantes para a identificação
+de todo o objeto. Na figura 3, é apresentada a divisão da imagem em subáreas de onde são
+importantes apenas regiões que contém informações.
+
+
+
+
+                              Figura 3: Divisão da imagem em subáreas .
+
+        Após a divisão das subáreas, cada região é codificada através de sua distribuição de
+cores. Um histograma (RUDEK, 1999; WEEKS, 1996; RUSS, 1995) descreve esta
+distribuição baseada na concentração de pixels de uma determinada faixa de cor. A cor
+predominante de cada região corresponde ao conteúdo de cada subárea, reduzindo a
+imagem à uma seqüência de cores. A relação existente entre as cores de cada subárea,
+descreve o comportamento da imagem. Na figura 4 é apresentada uma seqüência de 28
+subáreas que formam o vetor de comportamento (RUDEK, 1999). A figura 5 apresenta
+este vetor que expressa de forma reduzida o conteúdo da imagem. Cada elemento no vetor
+de comportamento corresponde a um valor na base hexadecimal, da maior concentração de
+pixels de cores semelhantes1de cada subárea.
+
+
+
+
+                                                                                      28
+                                   Figura 4: Sentido de agrupamento das regiões.
+
+    1                                                 ...                                                         28
+
+        0 0 0 0 0 0 0 0 8 C C C C C 0 8 C C C C C 0 8 0 0 0 0 0
+                       Figura 5: Vetor de comportamento a partir da imagem da figura 4.
+
+       O vetor de comportamento passa a representar a imagem original, e pode ser usado
+como elemento indexador ou chave de busca de uma imagem em um banco de imagens.
+Um banco de dados que possua informações sobre parafusos, pode conter a imagem, a
+representação gráfica e descrição textual de seus atributos, que podem ser acessados
+através do vetor de comportamento. A figura 6 apresenta três tipos diferentes de parafusos
+que podem fazer parte de um banco de dados, e podem estar associadas a um tipo
+específico de imagem. A base de dados pode conter ainda as especificações técnicas de
+cada parafuso, conforme mostrado na tabela 1, obtida de MARTIGNONI (1984).
+
+
+
+
+                        A1                                  A2                             A3
+
+                   Figura 6: Exemplos de descrições geométricas para 3 tipos de parafusos
+
+        Uma aplicação possível para este sistema é que se um parafuso puder ser
+identificado corretamente em uma célula de manufatura. A célula poderá obter todas as
+informações relativas a este objeto, a partir do banco de dados e permitir que as operações
+que utilizam parafusos sejam realizadas de forma eficiente. Entretanto, se a peça não puder
+ser encontrada, ela pode vir a ser classificada no banco, com outros atributos. Por
+conseguinte, o sistema também pode operar na classificação de objetos e controle de
+qualidade.
+
+                Tabela 1: Informações descritivas dos parafusos da figura 6.
+ Mm      Pol.    A1    A2    A3    C     R1   R2    W            Mm      Pol.    A1   A2    A3   C     R1   R2         W
+ M1      -       -     2,6   2,6   0,1   6    2     0,2          M10     -       -    -     16   0,5   -    8          -
+ M1,4    -       -     2,6   2,6   0,2   4    1,3   0,2          M12     -       -    -     18   0,5   -    9          -
+ M2      -       3,5   4     4     0,2   6    2     0,35         M14     -       -          22   0,5   -    11         -
+ M2,6    -       4,5   5     5     0,2   7    2,5   0,35         M16     -       -    -     24   0,5   -    12         -
+ M3      -       5     6     5,5   0,2   9    2,5   0,5          6,35    ¼”      -    13    11   0,3   -    5,5        1,1
+ M4      -       6,5   8     7     0,3   12   3,5   0,7          7,94    5/16”   -    16    13   0,4   -    6,5        1,5
+ M5      -       -     10    9     0,3   15   4,5   0,9          9,53    3/8”    -    19    16   0,5   -    8          1,7
+ M6      -       -     -     10    0,3   -    5     -            12,7    ½”      -    24    19   0,5   -    9,5        2,1
+ M8      -       -     -     13    0,4   -    6,5   -            15,88   5/8”    -    30    24   0,6   -    12         2,26
+4. Conclusões e Perspectivas
+
+        Neste artigo foi apresentado um estudo de caso para sistemas produtivos, onde são
+apresentadas as técnicas atuais no uso de visão computacional, e os vários requisitos
+necessários à sua utilização em recuperação e indexação automática de imagens. Esta
+proposta fundamenta-se na hipótese de que pode-se agrupar imagens semelhantes através
+de sua variação de cores, e utilizar estes atributos para indexá-las em um banco de
+imagens. A partir da imagem, é possível extrair uma seqüência de atributos de cor, que
+organizada na forma de um vetor, descreve o posicionamento da distribuição das cores
+mais significativas presentes na imagem. Desta forma obtém-se um “vetor de
+comportamento”, que expressa o seu conteúdo. Na perspectiva de suprir necessidades da
+indústria, não apenas questões técnicas devem ser consideradas, mas também questões de
+ergonomia sobre o grau de conforto dos postos de trabalho. Existe uma evolução natural
+intrínseca a automação, que é o crescente desenvolvimento tecnológico, seguido da
+mudança de postura na utilização do trabalho humano, que deixa aos poucos de ser manual
+e repetitivo e passa a ser mais especializado. O objetivo do uso da visão computacional,
+não é eliminar o operador humano de suas funções, mas dar-lhe ferramentas adequadas e
+eficientes para que trabalhos repetitivos possam ser executados com rapidez e precisão,
+visando basicamente a redução de custos e melhor aproveitamento de tempo. Neste
+contexto, é que os recursos de visão por computador estão podendo auxiliar no
+aprimoramento dos meios produtivos presentes na indústria.
+
+
+5. Referências Bibliográficas
+
+AUGUSTEIJN, M. F.; CLEMENS, L. E. A neural-network approach to the detection of
+  texture boundaries, Engineering Applications of Artificial Intelligence, vol. 9, no. 1,
+  1996, pp. 75-81.
+BEIS, J. S.; LOWE, D. G. Indexing without invariants in 3D object recognition, IEEE Trans.
+  on Pattern Analysis and Machine Intelligence, vol. 21, no. 10, 1999, pp. 1000-1014.
+CHEN, H. D.; XU, H. A novel fuzzy logic approach to contrast enhancement, Pattern
+  Recognition, vol. 33, 2001, pp. 809-819.
+CHENG, H. D.; XU, H. X.; A novel fuzzy logic approach to contrast enhancement, Pattern
+  Recognittion, vol.33, 2000, pp. 809-819.
+GASTERATOS, A.; ANDREDIS, I. Non-linear image processing in hardware, Pattern
+  Recognition, vol. 33, 2001, pp. 1013-1021.
+GORDON, R.; RANGANYYAN, R. M. Feature enhancement of film mamograms using
+  fixed and adaptive neighborhoods, Appl. Optics, vol. 23, no. 4, 1984, pp. 560-564.
+GU, Y.-H.; TJAHJADI, T. Coarse-to-fine planar object identification using invariant curve
+  features and B-spline modeling, Pattern Recognition, vol. 33, 2000, pp. 1411-1422.
+HASAN, Y. M. Y.; KARM, L. J. Morphological reversible contour representation, IEEE
+  Trans. on Pattern Analysis and Machine Intelligence, vol. 22, no. 3, 2000, pp. 227-240.
+KUNDUR, S.; RAVIV, D.; Active vision-based control schemes for autonomous navigation
+  tasks, Pattern Recognition, V.33, 2000, p.295-308.
+LIM, J. H.; LEONARD, J. J.; Mobile Robot Relocation from Acholocation Constraints, IEEE
+  Trans. on Pattern Analysis and Machine Intelligence, V.22, N.9, 2000, p.1035.
+LIU, X.; WANG, D, RAMIREZ, J. R.; Boundary detection by contextual non-linear
+  smoothing. Pattern Recognittion; vol. 33, 2000, p.263-280.
+LOSCOS, C.; DRETTAKIS, G.; ROBET, L.; Interactive Virtual Relighting of Real Scenes;
+  IEEE Trans. on Visualization and Computer Graphics, V. 6, N.4, 2000, p.289-305.
+MARTIGNONI, A. Construção eletromecânica, Editora Globo, 4a. edição, RJ, 1984.
+OPPENHEIM, A. V.; SHAFER, R. W. Discrete-time signal processing, Englewood Cliffs,
+   NJ: Prentice Hall, 1989.
+ORTH, A.; Desenvolvimento e Implementação de um Sistema de Reconhecimento
+   Automático de Peças Mecânicas em uma Célula Flexível de Manufatura. Projeto RAP.
+   Laboratório de Automação Industrial, UFSC. Congresso da Sociedade Brasileira de
+   Computação, SBC 98. http://www.lcmi.ufsc/~orth/rap/rap.html
+PERSOON, E.; FU, K. S. Shape discrimination using Fourier descriptors, IEEE Trans. on
+   Systems, Man and Cybernetics, vol. 7, 1997, pp. 170-179.
+PIZLO, Z.; LOUBIER, K.; Recognition of a solid shape form its single perspective image
+   obtained by a calibrated camera, Pattern Recognittion, vol. 33, 2000, pp. 1675-1681.
+QUAK, E.; WEYRICH, N. Decompostion and reconstruction algorithms for spline wavelets
+   on a bounded interval, Applied and Computational Harmonic Analysis, vol. 1, no. 3,
+   1994, pp. 217-231.
+RUDEK, M. Uma Proposta Para Indexação e Recuperação Automática de Imagens e
+   Reconhecimento de Cheques Bancários Baseadas no Vetor de Comportamento.
+   Dissertação de Mestrado, CEFET PR, Curitiba, PR, 1999.
+RUSS, J. C. The Image Processing Handbook; 2nd Edition, CRC, 1995.
+SHEN, D.; DAVATZIKOS, C. An adaptive-focus deformable model using statistical and
+   geometric information, IEEE Trans. on Pattern Analysis and Machine Intelligence, vol.
+   22, no. 8, 2000, pp. 906-912.
+SHEN, D.; DAVATZIKOS, C.; An adaptive-focus deformable model using statistical and
+   geometric information, IEEE Trans. on Pattern Analysis and Machine Intelligence, vol.
+   22, no. 8, 2000, pp. 906-912.
+SPITZ, S. N.; RECHICHA, A. A. G. Accessibility analysis using computer graphics hardware,
+   IEEE Trans. on Visualization and Computer Graphics, vol. 6, no. 3, 2000, pp. 208-219.
+WANG, R.-Z.; LIN, C.-F.; LIN, J.-C. Image hiding by optimal LSB substitution and genetic
+   algorithm, Pattern Recognition, vol. 34, 2001, pp. 671-683.
+WEEKS, ARTHUR R. JR.; Fundamentals of Electronic Image Processing, SPIE/IEEE
+   Series on Imaging Science & Engineering, IEEE PRESS, 1996.
+WONG, H.; CAELLI, T.; GUAN, L.; A model based neural network for edge
+   characterization; Pattern Recognition; vol. 33, 2000, pp. 427-444.
+YANG, Y.; YAN, H. An adaptive logical method for binarization of degraded document
+   images, Pattern Recognition, vol. 33, 2000, pp. 787-807.
+YHONG, G.; HONGJIANG, Z.; Image Database System With Fast Image Indexing
+   Capability Based on Color Histograms, Proceedings of 1994 IEEE region 10`s 9th Annual
+   International Conference, 1994.
+ZHANG, B.; FU, M.; YAN, H. A nonlinear neural network model of mixture of local principal
+   component analysis: application to handwritten digits recognition, Pattern Recognition,
+   vol. 34, 2001, pp. 203-214.
+

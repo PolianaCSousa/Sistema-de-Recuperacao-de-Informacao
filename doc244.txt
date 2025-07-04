@@ -1,0 +1,323 @@
+A INTELIGÊNCIA ARTIFICIAL APLICADA NA EDUCAÇÃO
+
+Guilherme Vota Pereira
+guivotap@hotmail.com
+Prof. Adilson Vahldick, Inteligência Artificial
+
+RESUMO: Este artigo irá efetuar um levantamento de publicações existentes sobre a
+aplicação da inteligência artificial na educação. Serão apresentadas quais são as ferramentas
+existentes, destacando como as técnicas de inteligência artificial auxiliam na utilização destas
+aplicações. Este trabalho remete-se a disciplina de Inteligência Artificial do curso de
+Bacharelado em Sistemas de Informação do Centro de Educação Superior do Alto Vale do
+Itajaí – CEAVI, Universidade do Estado de Santa Catarina – UDESC.
+Palavras-chave: Educação. Redes neurais. Sistemas Especialistas. Sistemas Fuzzy.
+1 INTRODUÇÃO
+Nos dias atuais, com o avanço da capacidade de processamento dos computadores,
+pode-se perceber como se tornou eficaz a busca de informações através dos sistemas
+computacionais. Juntamente com este forte avanço surge a motivação para elaboração de
+pesquisas e estudos em aplicações que utilizam inteligência artificial (IA) para facilitar o
+processo de ensino e aprendizagem.
+Mesmo que este avanço tenha acontecido recentemente e de uma maneira muito
+rápida, existem muitos estudos e pesquisas de ferramentas que aplicam técnicas da
+inteligência artificial para facilitar o processo de educação.
+O surgimento destas ferramentas é resultado do interesse dos pesquisadores em
+automatizar todo o processo de ensino e aprendizagem, tendo como objetivo facilitar o acesso
+ao conhecimento para todos, bem como fazer com que a aplicação se adapte ao perfil do aluno
+para o qual deverá ser efetuado o ensinamento (AGUIAR E HERMOSILLA, 2007).
+Existem ferramentas que tornam possível ao estudante a obtenção de conhecimento
+sem que o mesmo dependa sempre de um professor para ministrar as aulas, em determinado
+local e horário. Um exemplo de ferramentas como esta é o ensino a distância (EAD), onde, o
+estudante dependerá somente da sua vontade em acessar a aplicação em qualquer horário e
+local para obter o conhecimento através da iteração com a ferramenta.
+Estas ferramentas são muitas vezes baseadas em três técnicas da IA: sistemas
+especialistas, redes neurais artificiais e sistemas fuzzy. Este artigo tem como objetivo
+
+identificar como as técnicas de IA são aplicadas na educação, de acordo com publicações já
+existentes.
+
+2 APLICAÇÕES DE IA ATRAVÉS DE REDES NEURAIS
+Neste tópico serão relatadas algumas aplicações que facilitam o processo de ensino e
+aprendizagem através da utilização da técnica de redes neurais.
+Segundo Ferreira et al (2008) as redes neurais artificiais são compostas por nós
+simples no sentido que seu estado pode ser demonstrado em números ou valores de ativação.
+Cada um de seus nós gera uma saída baseada em sua ativação. A interligação destes nós é
+feita através das arestas rotuladas com pesos, e o valor de saída de um nó é transmitido a
+todos os nós com os quais este se conecta.
+Uma publicação que aborda sobre a aplicação de redes neurais artificiais na educação
+foi criada por Paim et al (2006). Os autores abordam sobre a criação de um site com
+conteúdos sobre câncer de mama que é utilizado para aprimorar os conhecimentos que os
+alunos da área da saúde recebem em sala de aula. No desenvolvimento deste site foi definido
+que a adaptação irá ocorrer somente na interface apresentada ao usuário com a utilização de
+mídias distintas na apresentação de conteúdos, de acordo com as características individuais de
+cada usuário. Para desenvolver estes mecanismos de adaptação foram utilizados dois tipos de
+redes neurais artificiais: MLP (Multilayer Perceptron) e IAC (Interaction Activation and
+Competition). Da mesma forma que a publicação feita por Barbosa e Azevedo (2007), a
+estrutura deste site foi dividida em três módulos: interface, gerador de adaptação e usuário.
+Outra publicação das encontradas que relatam sobre a aplicação de redes neurais na
+educação é de Barbosa e Azevedo (2007), que relata sobre a hipermídia educacional que é
+adaptativa através do uso destas redes neurais. Para desenvolver esta metodologia foi definido
+que a adaptação seria centrada na apresentação através da utilização de diferentes mídias e a
+característica do usuário deveria ser baseada a Teoria das Inteligências Múltiplas. O
+mecanismo de adaptação proposto para a hipermídia educacional é estruturado em três
+módulos que podem ser visualizados na Figura 1: módulo de interface (responsável pela
+apresentação e iteração do sistema para com o usuário), módulo do usuário (responsável pela
+determinação das características do usuário) e módulo gerador de adaptação (responsável pelo
+mecanismo de adaptação do sistema).
+
+Figura 1 - Relação entre os módulos no sistema hipermídia adaptativo
+
+Fonte: Barbosa e Azevedo (2007, p. 116)
+Ferreira et al (2008) relatam sobre a utilização de redes de Kohonen na recuperação
+personalizada de objetos de aprendizagem montando um estudo de caso no ensino de ritmos
+musicais brasileiros. Os autores relatam da construção de uma arquitetura que resgata de
+forma dinâmica objetos de aprendizagem. Para tornar isto possível, utilizaram técnicas
+baseadas nas redes de Kohonen que possibilitaram a seleção dos objetos para a construção de
+recursos de aprendizagem adequados e adaptáveis para o contexto, como conhecimentos
+prévios, estilos de aprendizagem ou aspectos culturais.
+A técnica de redes de Kohonen foi utilizada principalmente pelo fato de não necessitar
+de conhecimento prévio e também por apresentar resultados relevantes com problemas de
+agrupamento. O sistema criado utilizou esta técnica por possuir como principal objetivo a
+criação de um sistema educacional na forma que este possibilite que o conteúdo educacional
+seja agrupado em um mapa juntamente ao perfil do aluno, tornando assim o conteúdo
+educacional que tiver uma maior similaridade, mais próximo do aluno (FERREIRA et al,
+2008). Quando o aluno acessa ao sistema e entra em um curso, é apresentado um questionário
+para mensurar o que o aluno sabe sobre o conteúdo pertinente ao curso. Segundo Ferreira et al
+(2008), após responder o questionário, o sistema armazena as características do aluno
+vinculadas a cada resposta escolhida e treina a rede neural. Ao terminar o treinamento,
+apresenta uma lista de objetos de aprendizagem ordenados pelo treinamento da rede neural.
+
+3 APLICAÇÕES DE IA ATRAVÉS DE SISTEMAS ESPECIALISTAS
+Neste tópico serão apresentadas algumas aplicações existentes que auxiliam no
+processo de ensino e aprendizagem utilizando a técnica de inteligência artificial dos sistemas
+especialistas.
+“Sistemas especialistas são programas que utilizam conhecimento e procedimentos
+inferenciais para resolver problemas que normalmente requerem muita perícia humana”
+(WEBBER et al, 2009).
+Aguiar e Hermosilla (2007) relatam sobre uma ferramenta denominada SETMUS. A
+ferramenta SETMUS (sistema especialista para a teoria musical) desenvolvida por Fritsch e
+Viccari, segundo Aguiar e Hermosilla (2007) pode não ser considerada uma ferramenta
+tradicional de ensino da teoria musical. Esta ferramenta substitui o conhecimento do
+especialista (professor) durante a prática musical e acumula as funções tanto do livro do
+estudante quanto do instrumento musical para o treinamento do ouvido das notas lidas pelo
+estudante. Esta ferramenta combina a partitura, o som e a didática (através da sua base de
+conhecimento) e auxilia o desempenho de tarefas. A figura 3 representa a janela principal da
+ferramenta.
+Figura 2 - Janela principal SETMUS
+
+Fonte: Aguiar e Hermosilla (2007, p. 7)
+
+Outra publicação que relata sobre a aplicabilidade de sistemas especialistas na
+educação é de Assunção et al (2008), onde foi apresentado um sistema tutor inteligente
+integrado a monitoria estudantil para a elaboração de um assistente virtual de ensino
+inteligente. Este projeto será responsável em acompanhar as atividades extraclasse realizadas
+
+pelos alunos, com o apoio da monitoria estudantil, propiciando aos professores e monitores
+uma visão mais completa do nível de conhecimento de seus aprendizes através de um sistema
+disponível na Internet.
+O principal objetivo deste projeto, segundo Assunção et al (2008), é demonstrar ser
+possível a integração dos recursos presentes na arquitetura do sistema tutor inteligente que
+será criado com as necessidades do acompanhamento cognitivo de cada aprendiz,
+promovendo assim uma educação personalizada e com qualidade. Assim, elimina-se a
+possibilidade da perda de informações do contato entre monitor e aprendiz; professor e
+aprendiz, possibilitando ao professor direcionar da melhor maneira possível suas atividades na
+orientação dos esforços necessários para uma aprendizagem mais eficiente diante as
+dificuldades específicas de cada aprendiz. A figura 1 demonstra como é a arquitetura deste
+projeto.
+A arquitetura deste sistema é modular e sua extensão incorpora o docente como novo
+usuário, onde é possível a interação entre o professor com sua unidade de controle, a qual
+oferece informações de acompanhamento individual dos alunos, orientando aos alunos sobre
+possíveis ações baseadas na situação cognitiva detectada até o momento pelo sistema.
+Conforme o aprendiz demonstra conhecimento sobre o conteúdo disponível em seu módulo, o
+sistema passa a utilizar uma base de regras do módulo pedagógico para promovê-lo de nível,
+desafiando o aprendiz através de formas compatíveis com o estado de maturidade do
+conhecimento adquirido até o momento, sendo todas estas informações armazenadas no
+módulo do aprendiz. Esta base de regras expressa a concepção pedagógica da metodologia
+educacional adotada pelo docente e compatível com as informações implementadas através
+dos sistemas especialistas, pois, com a incorporação da monitoria, o software começa a
+receber mais informações referentes ao acompanhamento dos estudantes, aprende estas
+informações e aplica nas análises e diagnósticos de situações cognitivas dos aprendizes que
+interagem através da Internet com este agente virtual inteligente (ASSUNÇÃO et al, 2008).
+
+Figura 3 - Arquitetura do sistema tutor inteligente
+
+Fonte: Assunção et al (2008, p. 281)
+Cardoso et al (2008) são os autores da terceira publicação encontrada sobre a
+aplicação de sistemas especialistas na educação. Os autores relatam sobre a existência de um
+shell de inteligência artificial utilizado como instrumento de suporte ao processo educativo,
+com vistas ao desenvolvimento de sistemas especialistas nos cursos de graduação voltados
+para a área da saúde. Este shell possui como função segundo Cardoso et al (2008) simplificar
+ao máximo o trabalho de implementação de um sistema especialista, permitindo assim que
+qualquer pessoa com conhecimento básico de informática possa fazer uso da ferramenta. A
+utilização deste shell proporciona ao aprendiz um ambiente interessante para identificação de
+como é formado o raciocínio lógico do profissional da saúde no processo de avaliação
+diagnóstica e intervenção em saúde. Este raciocínio lógico é resultado da execução de uma
+ordem cronológica de eventos (história clínica, história pregressa, exame físico e exames
+complementares) para compreensão completa e clara dos problemas de um usuário. Porém,
+para que isto ocorra é necessário que o avaliador possua conhecimentos específicos para
+conseguir confirmar ou rejeitar a suspeita de diagnóstico de um determinado caso. A partir
+destes pressupostos, o avaliador pode traçar as metas e o processo de reavaliação do usuário,
+verificando a eficácia de desenvolvimento das atividades propostas como solução de tal
+problemática.
+Conforme Cardoso et al (2008) ao desenvolver esta base de conhecimento através do
+shell, o estudante pode construir significados a partir da manipulação dos dados que são
+relacionados à temática escolhida. Isto contribui de forma significativa para a construção do
+conhecimento por possibilitar a realização de simulações representativas de situações
+
+concretas.Webber et al (2009), relatam sobre uma ferramenta com o objetivo de avaliar
+softwares educacionais e permitir que o conhecimento adquirido a cada avaliação seja
+registrado e evolua à medida que os especialistas contribuem com sua base de conhecimento.
+A avaliação de software educacional diferencia-se da avaliação de softwares em geral no
+sentido em que neste tipo de avaliação devem-se considerar principalmente as teorias
+pedagógicas que embasam o desenvolvimento do software e a adequação pedagógica e
+contextual (WEBBER et al, 2009).
+
+4 APLICAÇÕES DE IA ATRAVÉS DE SISTEMAS FUZZY
+Neste tópico serão abordadas algumas publicações existentes que relatam sobre a
+aplicabilidade da técnica de inteligência artificial através dos sistemas fuzzy na educação.
+Barone et al (2007) demonstram uma proposta de aplicação de lógica fuzzy para
+modelagem do processo de raciocínio de um assistente virtual. Esta modelagem se
+fundamenta na teoria da aprendizagem significativa de Ausubel e no uso de mapas conceituais
+como elementos para organizar o conteúdo do domínio da aplicação. A lógica fuzzy é aplicada
+na modelagem do aluno, pois, permite representar informações do aluno ligadas aos aspectos
+mais qualitativos e incertos (BARONE et al, 2007).
+Conforme Barone et al (2007) a aplicação da lógica fuzzy busca identificar os
+comportamentos observáveis do estudante sobre o conteúdo e suas atividades de
+aprendizagem. Algumas variáveis relacionadas a estes comportamentos são capturadas
+durante as interações com o ambiente. Baseado nos resultados gerados pela função fuzzy, o
+sistema promove recursos e orientações coerentes ao caminho de aprendizagem mais eficiente
+para cada aluno no decorrer de seu curso, onde o docente e o assistente são os responsáveis
+pelo direcionamento adequado desta aprendizagem. Esta aplicação se torna distinta da criada
+por Assunção et al (2008), por levar em consideração também a interação do docente no
+processo de aprendizagem.
+Vahldick et al (2008) relatam sobre a utilização de técnicas fuzzy em ambientes
+inteligentes de aprendizagem. Os documentos citados pelos autores são separados nos
+seguintes componentes de um ambiente inteligente de aprendizagem: modelo do aluno,
+avaliação de aprendizagem e projeto instrucional. Entre estes três componentes destaca-se o
+projeto instrucional, onde, segundo Vahldick et al (2008), o projeto instrucional é uma das
+mais importantes aplicações que utilizam lógicas fuzzy na educação. Este projeto é voltado na
+seleção da busca de material instrucional, onde, esta seleção é o processo de procurar
+
+materiais seguindo restrições estabelecidas pelo usuário ou pelo sistema. Conforme Vahldick
+et al (2008, p. 3) “O sucesso desse processo depende do balanceamento entre a quantidade de
+conjuntos e a pertinência dos materiais dentro desses conjuntos: quanto mais conjuntos um
+material pertencer, maior a chance de ele aparecer repetidas vezes ao aluno”. Porém, relatam
+Vahldick et al (2008) que estes materiais podem não estar devidamente relacionados ao
+assunto relevante ao aluno. O processo de geração automática depende do modelo do aluno,
+seja para inferir o caminho em que ele está seguindo ou para caminhos já seguidos por
+colegas de turma ou de turmas anteriores (VAHLDICK et al , 2008).
+Rissoli e Santos (2010 abordam sobre uma ferramenta que é capaz de se tornar um
+agente inteligente fuzzy no acompanhamento da aprendizagem significativa, onde este agente
+se torna um recurso de acompanhamento desta metodologia educacional utilizando mapas
+conceituais como elementos organizadores do conteúdo do domínio da aplicação.
+Conforme Rissoli e Santos (2010) o software em questão é baseado em conhecimento
+com a capacidade de aprender e ensinar de maneira contínua, através da interação dos seus
+diferentes perfis de usuários. A utilização da teoria fuzzy neste software possibilita a
+identificação de pontos importantes para serem acompanhados durante o processo de
+aprendizagem de cada estudante. O objetivo através desta teoria é expressar,
+matematicamente, valores imprecisos e incertos que são significativos e bastante utilizados na
+linguagem natural dos seres humanos. Dessa forma, se pretende avaliar o conteúdo assimilado
+por cada estudante durante seu processo educacional, além de fornecer uma assistência a uma
+possível mudança na postura do aprendiz ou do professor, conforme sejam as necessidades
+momentâneas ao sucesso de cada perfil na efetivação coerente deste processo.
+Santos e Rissoli (2010) relatam sobre a dificuldade de sistemas tutores inteligente na
+obtenção de uma modelagem completa de seus aprendizes. Com o intuito de diminuir esta
+dificuldade os autores propõem a integração da monitoria estudantil a estes sistemas. Esta
+inovação envolve novos agentes humanos na coleta de dados relevantes à análise da situação
+cognitiva de cada aprendiz. A figura 4 representa a arquitetura pedagógica deste sistema.
+
+Figura 4 - Arquitetura pedagógica
+
+Fonte: Santos e Rissoli (2010, p. 5)
+A lógica fuzzy é aplicada neste sistema para tratar as informações fornecidas pelo
+assistente virtual de ensino inteligente para apuração dos termos lingüísticos mais
+representativos a realidade inferida pelo assistente virtual. O uso desta lógica torna possível
+ao assistente virtual acompanhar o comportamento de cada aprendiz no acesso ao conteúdo de
+estudo e na realização de suas atividades.
+Com a utilização desta mesma técnica de inteligência artificial que os autores Santos e
+Rissoli (2011) criaram mais uma aplicação para auxiliar no processo de ensino e
+aprendizagem. Este assistente é voltado ao apoio no ensino da disciplina de programação de
+computadores que acompanha a situação cognitiva dos estudantes, no mesmo sentido em que
+a publicação de Santos e Rissoli (2010), citada anteriormente. Santos e Rissoli (2011) relatam
+que a lógica fuzzy é utilizada juntamente com a teoria da aprendizagem significativa (citada na
+publicação de Rissolli e Santos (2010) para determinação de duas variáveis: esforço e
+desempenho. A primeira, procura buscar o empenho do estudante em buscar recursos e
+realizar atividades que possibilitem a assimilação aos conhecimentos já estabelecidos na
+estrutura mental dos aprendizes. A segunda envolve o resultado obtido na solução das
+atividades através da variável esforço.
+Conforme Santos e Rissoli (2011), essa proposta metodológica preocupa-se com a
+situação individual de cada aprendiz e integra posturas educacionais que são provenientes de
+recursos de inteligência artificial. Esta integração promove assistência ao processo de ensino e
+aprendizagem, procurando melhorar sua eficiência com o acompanhamento de cada aprendiz
+durante o período letivo, e não somente nos momentos em que o aprendiz efetua alguma
+atividade avaliativa. Através deste acompanhamento, é possível propiciar uma interação mais
+adequada no momento em que seja necessária alguma orientação ao aprendiz e não somente
+no término do período letivo.
+
+5 CONCLUSÃO
+Após a busca e análise de publicações existentes sobre a aplicação da inteligência
+artificial na educação através das técnicas de sistemas especialistas, sistemas fuzzy e redes
+neurais, pode-se concluir que existem diversos projetos que buscam cada vez mais aperfeiçoar
+as técnicas de inteligência artificial no desenvolvimento de aplicações voltadas à educação,
+com o intuito de facilitar o processo de ensino aprendizagem e também tornar esta
+aprendizagem uma aprendizagem mais eficaz.
+Na busca das publicações em questão, foram encontrados diversos projetos e
+publicações que relatavam sobre a utilização dos sistemas especialistas para auxílio ao
+processo de ensino aprendizagem. Isto por este sistema necessitar de uma alimentação inicial
+de sua base de conhecimento, onde, o profissional de qualquer área pode definir as regras em
+que o sistema irá seguir para poder se chegar a um resultado válido.
+Quando se pensa em trabalhos futuros na aplicação da IA na educação, pode-se levar
+em consideração um projeto no qual exista a junção de todas as técnicas, seja cada uma
+específica para determinadas partes de um ambiente virtual de aprendizagem, podendo
+auxiliar o processo de ensino aprendizagem de uma maneira que se for comparado ao
+processo atual, terá resultados mais eficazes seja com uma melhor qualidade no ensino e
+também uma melhor maneira de avaliar o conhecimento adquirido pelos alunos.
+
+6 REFERÊNCIAS
+AGUIAR, Juliana. HERMOSILLA, Lígia. Aplicações da Inteligência artificial na
+educação. Labienópolis, 2007. Disponível em:
+<www.revista.inf.br/sistemas06/artigos/edic6anoIVfev2007-artigo04.pdf> Acesso em: 22 abr
+2012.
+ASSUNÇÃO, Breno S. B. ET AL. Sistema tutor inteligente integrado a monitoria
+estudantil para elaboração de um assistente virtual de ensino inteligente. Taguatinga,
+2008. Disponível em: <http://www.br-ie.org/pub/index.php/wie/article/download/986/972>
+Acesso em: 24 jun 2012.
+BARBOSA, Andréa T. R. AZEVEDO, Fernando M. de. Uma hipermídia educacional:
+adaptativa através do uso de redes neurais artificiais. XVII Simpósio Brasileiro de
+Informática na Educação – SBIE. São Paulo, 2007. Disponível em: <http://www.brie.org/pub/index.php/sbie/article/viewFile/561/547> Acesso em: 24 jun 2012.
+BARONE, Dante A C. ET AL. Uma proposta de aplicação de lógica Fuzzy para
+modelagem do processo de raciocínio de um assistente virtual. Taguatinga, 2007.
+
+Disponível em: < http://br-ie.org/pub/index.php/sbie/article/download/584/570> Acesso em:
+24 jun 2012.
+CARDOSO, Jeferson Paixão. ET AL. Construção de uma práxis educativa em informática
+na saúde para ensino de graduação. Jequié, 2008. Disponível em:
+<http://www.scielosp.org/pdf/csc/v13n1/30.pdf> Acesso em: 24 jun 2012.
+FERREIRA, Fabiano Rodrigues. ET AL. Uso de redes de Kohonen na recuperação
+personalizada de Objetos de Aprendizagem: Um estudo de caso no eniso de ritmos
+musicais brasileiros. São Paulo, 2008. Disponível em: <http://ceiesbc.tempsite.ws/pub/index.php/wie/article/viewFile/995/981> Acesso em: 24 jun 2012.
+PAIM, Rosele Luchesi. ET AL. Sistema hipermídia com interface adaptativa em câncer
+de mama usando redes neurais artificiais MLP e IAC. Florianópolis, 2006. Disponível em:
+<www.sbis.org.br/cbis/arquivos/1020.pdf> Acesso em: 24 jun 2012.
+RISSOLI, Vandor Roberto Vilardi. SANTOS, Giovanni Almeida. Um assistente inteligente
+Fuzzy no acompanhamento da aprendizagem significativa. Taguatinga, 2010. Disponível
+em:
+<http://www.dimap.ufrn.br/csbc2011/anais/eventos/contents/ENIA/ENIA_Sessao_Poster_Art
+igo_10_Rissoli.pdf> Acesso em: 24 jun 2012.
+SANTOS, Giovanni Almeida. RISSOLI, Vandor Roberto Vilardi. A monitoria estudantil
+aliada a um assistente virtual inteligente no suporte à aprendizagem via internet.
+Taguatinga, 2010. Disponível em:
+<http://www.ccae.ufpb.br/sbie2010/anais/WAPSEDI_files/79033_1.pdf > Acesso em: 24 jun
+2012.
+SANTOS, Giovanni Almeida. RISSOLI, Vandor Roberto Vilardi. Benefícios no uso de uma
+assistente inteligente no ensino-aprendizagem de programação computacional. Aracaju,
+2011. Disponível em: <http://www.br-ie.org/sbie-wie2011/workshops/wavalia/94982_1.pdf>
+Acesso em: 24 jun 2012.
+VAHLDICK, Adilson. ET AL.O uso de técnicas Fuzzy em ambientes inteligentes de
+aprendizagem. São José, 2008. Disponível em:
+<http://200.169.53.89/download/CD%20congressos/2008/SBIE/sbie_posters/O%20Uso%20d
+e%20T%C3%A9cnicas%20Fuzzy%20em%20Ambientes%20Inteligentes.pdf> Acesso em: 24
+jun 2012.
+WEBBER, Carine. ET AL. Ferramenta especialista para avaliação de software
+educacional. Caxias do Sul, 2009. Disponível em: <http://ceiesbc.educacao.ws/pub/index.php/sbie/article/download/1115/1018> Acesso em: 24 jun 2012.
+
+

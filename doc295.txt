@@ -1,0 +1,183 @@
+SFAIR, Caroline Dantas Brasil [1], JESUS, Maria Clara Rocha de [2], SILVA FILHO, Manoel da [3]
+
+SFAIR, Caroline Dantas Brasil. JESUS, Maria Clara Rocha de. SILVA FILHO, Manoel da. Suporte ativo controlado por joystick para hipotonia cervical infantil. Revista Científica Multidisciplinar Núcleo do Conhecimento. Ano. 09, Ed. 12, Vol. 01, pp. 92-110. Dezembro de 2024. ISSN: 2448-0959, Link de acesso: https://www.nucleodoconhecimento.com.br/tecnologia/suporte-ativo-controlado, DOI: 10.32749/nucleodoconhecimento.com.br/tecnologia/suporte-ativo-controlado
+
+RESUMO
+A hipotonia é uma condição caracterizada por tônus muscular reduzido, causando hipocinesia, especialmente nos músculos do tronco e pescoço, dificultando a sustentação da cabeça. As causas são variadas, incluindo neuropatologias congênitas centrais e periféricas (degenerativas, musculares, genéticas e lesões medulares). Atualmente, tecnologias assistivas para hipotônicos são limitadas a suportes cervicais simples, sem oferecer mobilidade, ou quando oferecem, não possuem adaptações para cadeira de rodas. O projeto desenvolveu um protótipo de um dispositivo de sustentação cervical de baixo custo que oferece mobilidade ao usuário. Esse sustentador de cabeça robótico pode ser acoplado à cadeira de rodas e controlado por um responsável que poderá manusear e elaborar comandos pré-programados com a supervisão de um terapeuta via smartphone. O protótipo, além de beneficiar o usuário com a correção postural e consequentemente a respiração, deglutição e interação social, também permite a movimentação da cabeça e treinamento para fortalecimento cervical em ambientes variados, evitando assim a atrofia da musculatura do pescoço.
+
+Palavras-chave: Hipocinesia, Tecnologia assistiva, Sustentação cervical, Robótica, Controle remoto.
+
+1. INTRODUÇÃO
+Crianças que apresentam fraqueza, baixo tônus muscular, reflexos anormais, problemas sensoriais e motores, além de possuírem atrasos no desenvolvimento são consideradas hipotônicas (Shin; Song; Ko, 2017). A hipotonia é uma condição patológica em que há hipocinesia, uma redução na atividade motora, além da diminuição drástica do tônus muscular, dificuldades em sustentar o controle postural, músculos enfraquecidos e sua resistência ao alongamento passivo é reduzida. (Kaler et al., 2020).
+
+Existem várias causas subjacentes de hipotonia, como neuropatias centrais ou periféricas, como doenças neurodegenerativas ou neuromusculares, desordens cromossômicas e metabólicas, sendo as desordens que afetam o Sistema Nervoso Central (SNC) as de maior prevalência. (Hidalgo Robles; Paleg; Livingstone, 2024).
+
+Um dos tipos de hipocinético hipotônico é a Síndrome da Cabeça Caída (DHS). O que implica à deformidade em que o queixo fica no peito na região cervicotorácica devido à fraqueza grave dos músculos paravertebrais cervicais (extensores), essa condição é geralmente encontrada, de forma mais severa, nos músculos do tronco e pescoço (Lee et al., 2020).
+
+A postura resultante é definida como a postura anterior da cabeça, reduzindo a capacidade de equilíbrio, além de limitar ações diárias simples, como deglutição e respiração, tal distúrbio restringe a qualidade de vida diária limitando também as interações com o ambiente (Sung, 2020). O desalinhamento do corpo é extremamente prejudicial, seu efeito em fatores como postura anormal, disfunção muscular cervical e perda de controle de tronco, estão intimamente relacionados com a experiência de dor no pescoço, incapacidade e até restrição na utilização de cadeiras de rodas. Tal situação quando adotada rotineiramente na execução de atividades diárias, podem desencadear outros casos clínicos, além de estar associada a distúrbios musculoesqueléticos crônicos e funcionais na região craniofacial, pescoço e ombros, bem como deformações ósseas (Ha; Sung, 2021).
+
+Portanto, é crucial proporcionar alternativas para o alinhamento postural de crianças hipotônicas. Que, ao contrário de outras deformidades cervicais fixas, pode ser corrigida com extensão passiva do pescoço (Lee et al., 2020). A Organização Mundial da Saúde e o Fundo das Nações Unidas para a Infância (2012) defendem uma abordagem abrangente para o cuidado pediátrico adequado e apoio, incluindo identificação precoce; avaliação e planejamento de intervenção precoce; provisão de serviços; e monitoramento e avaliação da hipotonia infantil (Govender; Joubert, 2018).
+
+Inicialmente, o uso de um suporte cervical seria de grande ajuda para aliviar esses problemas. No entanto, devido à individualidade requerida por cada patologia, a confecção de tais suportes torna-se um dos grandes desafios da ergonomia moderna. Hipocinesia e hipotonia exigem equipamentos robustos para proporcionar suporte adequado aos músculos agonistas que estão inativos (Lee et al., 2020). Essas especificidades fazem com que os modelos não satisfaçam muitos indivíduos (Maschmann et al., 2019).
+
+Em vista disso, suportes cervicais para pacientes hipotônicos, considerando as individualidades desse distúrbio, são extremamente importantes, pois podem melhorar significativamente as habilidades funcionais do indivíduo, permitindo que se concentrem na participação de tarefas e não na manutenção de uma posição anatomicamente estável (Howard et al., 2020).
+
+Figura 1. Vistas do primeiro modelo de ensaio; (A) Desenho renderizado em perspectiva isométrica do modelo para mostrar os eixos de rotação e sentidos de deslocamento dos atuadores lineares (seta). (B) Vista lateral do modelo, com partes em impressão 3D, onde podem ser vistos os atuadores lineares (Setas). (C) Vista frontal em ângulo de 45 graus
+
+
+Fonte: Elaborada pelo autor, 2024.
+Neste trabalho estamos desenvolvendo uma nova proposta, de baixo custo, robusto, capaz de proporcionar suporte e movimentos suaves da cabeça de crianças, aumentando o fluxo repiratório, reintroduzindo o indivíduo ao convívio social e consequentemente melhor qualidade de vida pelo restabelecimento postural da coluna cervical.
+
+2. MÉTODOS
+2.1 MODELOS DE ENSAIOS
+Dois modelos foram construídos para avaliar o desempenho cinemático dos mecanismos, considerando a estabilidade, portabilidade, viabilidade, desenho e relação custo/benefício. Na Figura 1, pode ser visto o primeiro modelo, em que os movimentos da cabeça eram produzidos por  dois atuadores lineares.
+
+No segundo modelo de testes, visto na Figura 2, os movimentos de extensão/flexão e rotação foram produzidos por juntas de revolução ativas, compostas por mancais com dois rolamentos de apoio para os eixos dos servomotores (dispositivo eletromecânico utilizado para movimentar, com precisão, um objeto, permitindo-o girar em ângulos ou distâncias específicas, com garantia do posicionamento e garantia da velocidade) de alto torque e grande parte das peças foram construídas em plástico ABS (Acrilonitrila Butadieno Estireno) com baixa deformação.
+
+Figura 2. Vistas do segundo modelo de ensaio; (A) Desenho renderizado em perspectiva isométrica para mostrar os eixos de rotação. (B) Vista em ângulo de 45 graus em que pode ser vista a junta ativa de revolução (Seta). (C) Detalhe da junta de revolução ativa para extensão/flexão (Seta)
+
+
+Fonte: Elaborada pelo autor, 2024.
+2.2 PROTÓTIPO
+Nosso objetivo foi projetar um sistema mecânico para imitar os movimentos básicos da cabeça, que são predominantemente rotações em relação aos ombros, que fosse robusto e de construção acessível. Os dados de movimento da cabeça foram coletados de um dispositivo desenhado para gerar movimentos nos planos XY, usando uma Unidade de Medição Inercial (IMU) (BNO085, Adafruit, CO., USA) para aferição dos ângulos de inclinação de cada plano. Com esses dados, foi possível propor um mecanismo com dois graus de liberdade (2-GDL), conforme mostrado na Figura 4. Atuação e controle foram adicionados para fornecer assistência adequada à cabeça, para isso introduzimos um paradigma de controle de posição, conforme mostrado na Figura 3, para a orientação por meio de um joystick aos usuários com hipotonia cervical.
+
+A estrutura e processo de desenho do protótipo foi idealizada para crianças entre 4 e 6 anos de idade. Os testes iniciais serão com crianças saudáveis, após a adequação do novo cronograma aprovado pelo Comitê de Ética (CAAE: 80071917.4.0000.0018). Logo depois, o protótipo será testado em uma criança com hipotonia cervical ou sindrome da cabeça caída, confirmada por laudo médico.
+
+2.2.1 DIMENSIONAMENTO TEÓRICO
+Figura 3. Dispositivo para gerar coordenadas XY; Uma IMU está posicionada exatamente na interseção (0, 0) dos planos XY (Seta)
+
+
+Fonte: Elaborada pelo autor, 2024.
+O mecanismo do protótipo de suporte de cabeça atuará no plano entre a sexta (C6) e a sétima vértebra cervical (C7), considerada uma articulação universal passiva, desconsiderando o movimento de inclinação lateral da cabeça, sob as seguintes restrições:
+
+C6/C7 não pode ter sua posição alterada em relação à coluna cervical;
+Os eixos de extensão/flexão e rotação utilizados no mecanismo da cabeça devem ser perpendiculares;
+O ponto de intersecção dos eixos de extensão/flexão e rotação empregados pelo mecanismo deve estar localizado no plano de rotação da juntura C6/C7.
+Para atender as restrições, o mecanismo foi baseado em um giroscópio com dois graus de liberdade, seguindo a orientação dos ângulos de Euler, conforme pode ser visto na Figura 4. As rotações unitárias que compõem o desenho, movimentam a cabeça em relação aos eixos y e z respectivamente, conforme a matriz de rotação a seguir:
+
+
+
+onde
+
+
+
+Figura 4. Mecanismo do protótipo; A esquerda o modelo gráfico para demonstração da cinemática do mecanismo usado no sustentador: Servomotor 1 e 2 para a movimentação de flexão e extensão, servo 3 e 4 para a movimentação de rotação lateral direita e esquerda centralizados no eixo da vértebra cervical. A direita o desenho em CAD do modelo do sustentador
+
+
+Fonte: Elaborada pelo autor, 2024.
+Figura 5. Esquema de controle do sistema; Servomotores são controlados no modo de posição por uma IMU. O mapa entre a saída do joystick e os ângulos do suporte em diferentes direções
+
+
+Fonte: Elaborada pelo autor, 2024.
+2.2.2 ESTRUTURA
+A estrutura do protótipo será construída em plástico (Ácido Polilático) PLA com grafeno, em impressão 3D, para garantir acabamento, precisão e resistência mecânica das peças. Às juntas de rotação e extensão/flexão serão incorporados rolamentos radiais para adicionar levesa nos movimentos e  longevidade ao suporte. Os pontos de fixação das peças serão feitos por meio de parafusos em aço inoxidável do tipo Allen. O conjunto será fixado a uma cadeira por meio de um braço articulado, cujas extremidas foram desenhadas para funcionar como juntas esféricas permitindo um ajuste mais fino da posição do suporte. Para que os movimentos alcancem a amplitude de extensão/flexão e rotação, será adicionada uma peça de extensão nos braços originais dos servos. Juntas universais esféricas farão a ligação mecânica entre os braços dos servos e os pontos finais de atuação, como observado na Figura 7.
+
+2.2.3 CONTROLE
+A força externa necessária para superar o efeito da gravidade na cabeça é difícil de determinar porque requer uma avaliação da biomecânica de cada indivíduo, como por exemplo, a massa, centro de gravidade e os momentos fornecidos pelos músculos de sustentação da cabeça. Os erros nos ângulos das juntas ativas e passivas, medidos pela IMU, modulam de certa forma a força e o momento aplicados à cabeça humana pelo suporte. Portanto, o torque máximo dos motores é importante para proporcionar o movimento desejado da cabeça.
+
+Sendo assim, selecionamos os servomotores que podem produzir a quantidade necessária de torque. Quatro servomotores idênticos sem qualquer modificação (SW2290SG-BE, Savox, USA) foram escolhidos e montados em uma configuração back to back ao longo dos eixos das juntas ativas de revolução, para que os braços dos servomotores ficassem lateralmente posicionados, facilitando a ação das hastes de ligação, conforme ilustrado na Figura 7. Cada servomotor será alimentado por uma fonte externa de corrente contínua de 6 volts. O torque de parada e a corrente para cada motor são 3,6 Nm em 7.500 mA, respectivamente. Os servomotores serão ativados por quatro saídas de um controlador de servomotores (Micro Maestro 6, Pololu Robotics & Electronics Corporation, USA) proporcionando uma amplitude de movimento de 130 graus e um circuito para fornecer o controle de posição interna para o servomotor. Para diminuir o efeito da saída do estado de inércia nos servomotores e a movimentação brusca consequente, introduziremos no código de controle um amortecimento nos movimentos gerados a partir da média móvel exponencialmente ponderada (EWMA) dos valores de subida e descida do sinal de controle aplicados aos servomotores, como ilustrado na Figura 6.
+
+Um joystick (Extreme 3D Pro Joystick, Logitech, Switzerland) será usado para fornecer ao usuário controle sobre o suporte. O usuário poderá mover a cabeça para um ângulo desejado ou manter a cabeça em uma configuração estável por meio da assistência do suporte. O mapeamento entre o ângulo do joystick e o efetor final é mostrado na tabela da Figura 5. O mapa é assimétrico em flexão/extensão devido à menor amplitude de movimento em extensão com o suporte.
+
+Figura 6. Forma de onda a ser aplicada pelo circuito de controle aos servomotores (azul) com uma frequência de 80 Hz
+
+
+Fonte: Elaborada pelo autor, 2024.
+O controle será conectado a um computer on board (Raspberry Pi 5, Raspberry Pi Foundation, Inc., USA) por meio de um cabo USB. O Raspberry Pi 5, também será o computador central para executar o programa de controle, escrito em Python. O programa receberá a orientação desejada do joystick e envia dados da cinemática de angulação para o controlador de servosmotores, que por sua vez comanda os servomotores correspondentemente no suporte para controlar a orientação do efetor final, conforme ilustrado na Figura 5.
+
+Figura 7. Vistas do suporte final; Da esquerda para direita, vistas do suporte. Vista em perspectiva isométrica. Visão lateral, onde podem ser observadas a localização das juntas de revolução ativas (Círculos vermelhos), as passivas (Círculos verdes) e as esféricas (Círculos verdes tracejados). Vista posterior para mostrar a posição do grupo de servomotores (Retângulos vermelhos tracejados). Vista superior para mostrar a posição da junta de revolução passiva de rotação da cabeça (Círculo verde)
+
+
+Fonte: Elaborada pelo autor, 2024.
+3. RESULTADOS
+Os dois modelos de ensaios executaram os movimentos das amplitudes das angulações pré-estabelecidas, como observados nas Figuras 1 e 2. No entanto, o primeiro modelo, não foi capaz de manter a estabilidade mecânica, em angulações maiores que 10 graus, devido ao aumento do comprimento do atuador linear para imprimir angulações maiores da cabeça. Também apresentaram estabilidade na comunicação com o microcontrolador e foram capazes de controlar com precisão a posição dos servomotores. O segundo modelo, apesar de apresentar estabilidade para a manutenção da posição da cabeça, foi descartado pela dificuldade de fixação das juntas ativas responsáveis pelos movimentos de flexão/extensão a uma peça vestível para a criança.
+
+O protótipo apresenta um desenho de fácil concepção. Nesse modelo será possível posicionar a cabeça com estabilidade e precisão, pois terá acoplado ao quadro de movimentação da cabeça um módulo contendo uma IMU que incorpora em seu algoritmo o programa para a fusão dos dados provenientes do acelerômetro, giroscópio e magnetômetro e consequentemente mais robustez ao programa de controle.
+
+Figura 8. Desvio padrão dos dez testes de medição usando o filtro de média móvel e subtração do offset no eixo, tanto para o plano X (esquerda) quanto para o plano Y (direita)
+
+
+Fonte: Elaborada pelo autor, 2024.
+A calibração da IMU, a partir dos dados colhidos no dispositivo para a geração de coordenadas XY, foi feita de acordo com os tamanhos de janelas definidos tanto para o filtro de média móvel quanto para o número de amostras para o cálculo do offset. Assim, foram realizados dez testes de medição onde cada teste mensurou 105 amostras com a plataforma parada. Então foi calculado o desvio padrão dos testes e, em ambos os eixos, apresentaram valores satisfatórios visto que os valores se mantiveram abaixo de 0,1 graus, vistos nas Figuras 8 e 9.
+
+De acordo com os testes de movimento realizados foram gerados os Gráficos vistos na Figura 9 onde são mostrados os valores colhidos pelo acelerômetro seguindo o protocolo de movimento onde partiu do ponto 0° até a inclinação de 10° e retornando ao ponto de origem.
+
+Figura 9. Gráficos dos testes de movimento; Variação de movimento no plano X, sem filtro (esquerda superior). Variação de movimento no plano Y, sem filtro (direita superior). Variação de movimento no plano X, com filtro (esquerda inferior). Variação de movimento no plano Y, com filtro (direita inferior)
+
+
+Fonte: Elaborada pelo autor, 2024.
+A partir da leitura precisa dos ângulos de inclinação dos planos, foi possível desenhar um novo modelo que fosse mais ergonômico, com redução da interface homem-máquina, de fácil adaptação aos modelos de cadeiras de rodas, de maior portabilidade e de menor custo relativo. A construção das peças em impressora 3D em plástico PVA (Poliacetato de Vinila) com grafeno de baixo warping dará ao suporte ativo para movimentação da cabeça, grande robustez, durabilidade e baixa manutenção corretiva. Nesse novo desenho, as cargas foram distribuídas aos pontos de movimentos de extensão e flexão da cabeça, sem a necessidade de juntas ativas. Como os servomotores atuarão em movimentos conjugados, o valor do torque dobrará garantindo ainda mais a eficiência da estabilidade mecânica.
+
+A estrutura do suporte foi projetada para otimizar fixação na cabeça por cintas ajustáveis de nylon, acolchoadas e posicionadas para reduzir o aquecimento e o atrito na região do pescoço. As cintas serão ajustadas nos seguintes sentidos: parietais para frontal, parietais para mandíbula (protuberância mental) e occipital para frontal, conforme ilustrado da Figura 10.
+
+4. DISCUSSÃO
+Suportes posturais para a cabeça são frequentemente necessários para os usuários de cadeiras de rodas, especialmente hipotônicos. A provisão de acessórios para cadeiras de rodas, como suportes para a cabeça, muitas vezes é limitada ao uso de produtos comerciais (Howard et al., 2020). Estes se apresentam de duas formas: suportes passivos com diferentes níveis de sustentação e os suportes ativos que fornecem algum tipo de movimentação para o usuário.
+
+Figura 10. Vistas do suporte em desenho CAD; Vistas do suporte em desenho CAD renderizado simulando o posicionamento na cabeça e em cadeira de rodas. Suporte preso a uma touca na cabeça de uma criança com quatro anos de idade, nas vistas frontal, lateral e posterior. Suporte fixado a uma cadeira de rodas
+
+
+Fonte: Elaborada pelo autor, 2024.
+Colares cervicais rígidos, semirrígidos ou macios falham em satisfazer a necessidade de restaurar a mobilidade da cabeça ou responder aos movimentos intencionais desses pacientes. Esses dispositivos imobilizam a cabeça em uma única posição, frequentemente são desconfortáveis para uso prolongado, causam feridas na pele e apresentam desafios na respiração, deglutição e fala. Além disso, o complexo muscular nas regiões do ombro e pescoço se enfraquece progressivamente devido à falta de uso, já que esses colares mantêm a cabeça em uma postura fixa (Zhang; Agrawal, 2017).
+
+Kerst et al. (2020) e Brown, Thompson e Brizzolara (2018) investigaram os efeitos do uso de um suporte de cabeça passivo, o Siesta Systems Headpod, adaptado para cadeiras de rodas em crianças com hipotonia. Os estudos apontaram melhorias significativas na manutenção da postura e no controle cervical, permitindo maior amplitude de movimento voluntário da cabeça. Essas melhorias contribuíram para a ampliação do campo de visão das crianças, favorecendo sua participação em atividades educacionais e sociais. No entanto, os autores ressaltaram que, embora o dispositivo proporcione benefícios para o ajuste postural, sua funcionalidade está limitada à sustentação da cabeça.
+
+Os suportes de cabeça ativos robóticos atuais não se limitam apenas a ajustar o posicionamento postural; eles também proporcionam mobilidade para usuários hipotônicos que não têm controle motor adequado para realizar esses movimentos (Chang et al. 2021b.). Embora muitos produtos comerciais possuam uma razoável capacidade de ajuste na modelagem dos suportes de cabeça, adicionando um mecanismo móvel ao produto introduz-se uma fraqueza mecânica inerente ao design. Além disso, esses suportes nem sempre conseguem atender plenamente aos requisitos de forma e resistência para os usuários de cadeiras de rodas. Por outro lado, exoesqueletos robóticos acoplados em cadeiras de rodas Wu; Wang; Li (2016) têm demonstrado ser volumosos, pesados e esteticamente desfavoráveis para o usuário (Zhang; Agrawal, 2017).
+
+Existe uma necessidade de projetar colares cervicais dinâmicos que possam auxiliar um usuário com fraqueza muscular a mover a cabeça e responder a estímulos sensoriais com encosto de cabeça motorizado montado em cadeira de rodas, a exemplo disso Chang et al., 2021a. desenvolveu um braço robótico que permite movimentação de cabeça e pescoço utilizando eletromiografia em pacientes com esclerose lateral amiotrófica, contudo, como critério de inclusão os pacientes testados precisavam demonstram algum controle de tronco e manutenção da cabeça ereta, o que não é visto em pacientes com hipotonia moderada a severa. Portanto, alguns usuários de cadeiras de rodas se beneficiariam com o desenvolvimento do protótipo proposto neste trabalho.
+
+A manutenção do tronco e cervical em uma posição equilibrada nos planos coronal e sagital, ajuste de posição da cabeça sobre a pelve, melhora na deglutição, respiração e possível prevenção a deterioração neurológica são benefícios comprovados dos ajustes posturais proporcionado por dispositivos passivos ou em casos cirúrgicos quando há indicação (Lee et al., 2020).
+
+Shin; Song; Ko (2017) e Dandale; Telang; Kasatwar (2023) demonstraram em seus estudos uma melhora significativa no controle de tronco e da cervical na posição sentada em crianças e adultos hipotônicos após serem submetidos passivamente à exercícios simples de mobilidade do pescoço (flexão, extensão e rotação axial) tal qual a movimentação que o dispositivo apresentado neste trabalho pretende oferecer.
+
+Confirma-se então, a importância de proporcionar melhora da qualidade de vida dos indivíduos assistidos, promovendo não apenas ajuste postural em cadeiras de rodas, mas também mobilidade e possibilidade de treinamento muscular cervical sem a necessidade de locomoção para centros clínicos de recuperação de forma constante. Em vista disso, o presente trabalho alcança seu objetivo desenvolvimento de um protótipo robótico de sustentação cervical controlado remotamente.
+
+5. CONSIDERAÇÔES FINAIS
+O projeto permite provisões futuras de trabalhos relacionados, como a adaptação do suporte para adultos, fazendo um simples ajuste de dimensões. Como também, nosso grupo de pesquisa pretende adicionar a tecnologia eye tracker para que o próprio usuário possa controlar pelo rastreamento dos olhos a movimentação da cabeça, proporcionando maior independência.
+
+AGRADECIMENTOS
+Os autores agradecem ao Prof. Manoel da Silva Filho pela valiosa contribuição na configuração do Laboratório de Prototipagem Assistida da UFPA, essencial para a realização deste estudo. Agradecemos também à estudante Maria Clara Rocha de Jesus pela programação e implementação do sistema de controle, e ao Eng. Amir Samer Zahlan pela gentil cessão da imagem de testes dos motores lineares. Esta pesquisa foi financiada pelo Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq) através do edital CNPq/MCTIC/SECIS N° 20/2016 – TECNOLOGIA ASSISTIVA.
+
+REFERÊNCIAS
+BROWN, J. E.; THOMPSON, M.; BRIZZOLARA, K. Head control changes after Headpod use in children with poor head control: a feasibility study. Pediatric Physical Therapy, [s.l.], v. 30, n. 2, p. 142–150, 2018.
+
+CHANG, B.-C.; ZHANG, H.; LONG, S.; OBAYEMI, A.; TROOB, S. H.; AGRAWAL, S. K. A novel multi-view active learning framework for image classification under limited labeling. Wireless Communications and Mobile Computing, [s.l.], v. 21, n. 12, p. 1–10, 2021. Disponível em: https://doi.org/10.1017/wtc.2021.8.
+
+CHANG, B.-C.; ZHANG, H.; LONG, S.; OBAYEMI, A.; TROOB, S. H.; AGRAWAL, S. K. A novel neck brace to characterize neck mobility impairments following neck dissection in head and neck cancer patients. Wearable Technologies, [s.l.], v. 2, p. e8, 2021. Disponível em: https://doi.org/10.1017/wtc.2021.8. Acesso em: 24 nov. 2024.
+
+DANDALE, C.; TELANG, P. A.; KASATWAR, P. The effectiveness of ergonomic training and therapeutic exercise in chronic neck pain in accountants in the healthcare system: a review. Cureus, [s.l.], v. 15, n. 3, p. e35762, 4 mar. 2023. Disponível em: https://doi.org/10.7759/cureus.35762. Acesso em: 24 nov. 2024.
+
+GOVENDER, P.; JOUBERT, R. W. E. Evidence-based clinical algorithm for hypotonia assessment: to pardon the errs. Occupational Therapy International, [s.l.], v. 2018, p. 8967572, 24 abr. 2018. Disponível em: https://doi.org/10.1155/2018/8967572. Acesso em: 24 nov. 2024.
+
+HA, S. Y.; SUNG, Y. H. Vojta approach affects neck stability and static balance in sitting position of children with hypotonia. International Neurourology Journal, [s.l.], v. 25, supl. 2, p. S90–S95, nov. 2021. Disponível em: https://doi.org/10.5213/inj.2142344.172. Acesso em: 24 nov. 2024.
+
+HIDALGO ROBLES, Á.; PALEG, G. S.; LIVINGSTONE, R. W. Identifying and evaluating young children with developmental central hypotonia: an overview of systematic reviews and tools. Healthcare (Basel), [s.l.], v. 12, n. 4, p. 493, 18 fev. 2024. Disponível em: https://doi.org/10.3390/healthcare12040493. Acesso em: 24 nov. 2024.
+
+HOWARD, J. D. et al. Evaluating additive manufacturing for the production of custom head supports: a comparison against a commercial head support under static loading conditions. Proceedings of the Institution of Mechanical Engineers, Part H: Journal of Engineering in Medicine, [s.l.], v. 234, n. 5, p. 458–467, 2020. Disponível em: https://doi.org/10.1177/0954411919899844. Acesso em: 24 nov. 2024.
+
+KALER, J.; HUSSAIN, A.; PATEL, S.; MAJHI, S. Neuromuscular junction disorders and floppy infant syndrome: a comprehensive review. Cureus, [s.l.], v. 12, n. 2, p. e6922, 8 fev. 2020. Disponível em: https://doi.org/10.7759/cureus.6922. Acesso em: 24 nov. 2024.
+
+KERST, B.; CROUCH, L.; FOX, J.; WILSON, J.; SCHULTZ, J. Effects of a head support on children with hypotonia in the cervical spine. In: international conference on robotics and automation (ICRA), 2020, [s.l.]. [s.l.]: Institute of Electrical and Electronics Engineers (IEEE), 2020. p. 1234–1239. ISBN 978-1-7281-1990-8.
+
+LEE, J. J. et al. Surgical strategies for cervical deformities associated with neuromuscular disorders. Neurospine, [s.l.], v. 17, n. 3, p. 513–524, set. 2020. Disponível em: https://doi.org/10.14245/ns.2040464.232. Acesso em: 24 nov. 2024.
+
+MASCHMANN, C.; JEPPESEN, E.; RUBIN, M. A.; BARFOD, C. New clinical guidelines on the spinal stabilisation of adult trauma patients – consensus and evidence based. Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine, [s.l.], v. 27, n. 1, p. 77, 19 ago. 2019. Disponível em: https://doi.org/10.1186/s13049-019-0655-x. Acesso em: 24 nov. 2024.
+
+SHIN, J. W.; SONG, G. B.; KO, J. The effects of neck and trunk stabilization exercises on cerebral palsy children’s static and dynamic trunk balance: case series. Journal of Physical Therapy Science, [s.l.], v. 29, p. 771–774, 2017.
+
+SUNG, Y. H. Upper cervical spine dysfunction and dizziness. Journal of Exercise Rehabilitation, [s.l.], v. 16, p. 385, 2020.
+
+WU, D.; WANG, L.; LI, P. A 6-DOF exoskeleton for head and neck motion assist with parallel manipulator and sEMG based control. In: control, decision and information technology, 2016. Proceedings of the International Conference. [s.l.]: [s.n.], 2016. p. 341–344.
+
+ZHANG, H.; AGRAWAL, S. K. Kinematic design of a dynamic brace for measurement of head/neck motion. IEEE Robotics and Automation Letters, [s.l.], v. 2, n. 3, p. 1428–1435, jul. 2017. Disponível em: https://doi.org/10.1109/LRA.2017.2671409. Acesso em: 24 nov. 2024.
+
+[1] Doutoranda no programa de pós-graduação em Neurociências e Biologia Celular pela Universidade Federal do Pará, UFPA, Brasil (stricto-censo); Mestrado no Programa de Pós-graduação em Neurociências e Biologia Celular pela Universidade Federal do Pará, UFPA, Brasil (stricto-sensu); Graduação em Biologia/Bacharelado (UFPA). ORCID: 0000-0003-3301-3644. Currículo Lattes: http://lattes.cnpq.br/4361927379720468.
+
+[2] Graduação em andamento em Engenharia Biomédica pela Universidade Federal do Pará, UFPA, Brasil; Ensino Médio (segundo grau). ORCID: https://orcid.org/0009-0007-1716-4596. Currículo Lattes: http://lattes.cnpq.br/7792214214044900.
+
+[3]   Doutorado em Ciências Biológicas pela Universidade Federal do Pará, UFPA, Brasil, com período sanduíche em University of Alabama at Birmingham (stricto sensu); Mestrado em Ciências Biológicas pela Universidade Federal do Pará, UFPA (stricto sensu); Graduação em Ciências Médicas Universidade Federal do Pará, UFPA. ORCID: 0000-0001-9589-8527. Currículo Lattes: https://lattes.cnpq.br/2032152778116209.
+
+Material recebido: 16 de agosto de 2024.
+
+Material aprovado pelos pares: 12 de novembro de 2024.
+
+Material editado aprovado pelos autores: 05 de dezembro de 2024.

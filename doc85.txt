@@ -1,0 +1,284 @@
+﻿Práticas de Customização de Software Aplicadas em SaaS 
+Multi-Tenant 
+
+Rodolfo Santana¹, Andreia Malucelli¹, Sheila Reinehr¹ 
+1Programa de Pós-Graduação em Informática – Pontifícia Universidade Católica do 
+
+Paraná (PUCPR) 
+Rua Imaculada Conceição, 1155 – Prado Velho – Curitiba – PR – Brasil 
+
+santana.rodolfo@pucpr.edu.br, malu@ppgia.pucpr.br, sheila.reinehr@pucpr.br
+
+Resumo. Software-as-a-Service (SaaS) pode ser analisado como um modelo de 
+negócio, pois aproveita o compartilhamento de recursos para prover o maior 
+número possível de clientes/inquilinos. Já na área de Engenharia de Software 
+pode ser estudado como um modelo de software, pois permite que os usuários 
+tenham experiências únicas em relação ao atendimento de suas necessidades. 
+Porém, construir uma estratégia de customização é essencial para que 
+empresas que fornecem esse serviço obtenham sucesso em ambos os modelos. 
+Para abordar esta questão, este trabalho se propõe a investigar, por meio de 
+múltiplos estudos de caso, como a customização é praticada em empresas 
+mantenedoras de SaaS multi-tenant. 
+
+Abstract. Software-as-a-Service (SaaS) can be analyzed as a business model 
+because it leverages resource sharing to provide as many customers/tenants as 
+possible. In the area of Software Engineering can be studied as a software 
+model, because it allows users to have unique experiences in relation to the 
+solution of their problems and needs. However, building a customization 
+strategy is essential for companies that provide this service to succeed in both 
+models. To discuss this issue, this paper aims to investigate, through multiple 
+case studies, how customization is practiced in multi-tenant SaaS suppliers. 
+
+1. Introdução 
+A computação em nuvem emergiu como um novo paradigma para a construção e entrega 
+de serviços de Tecnologia da Informação T.I.  Nesse cenário, Software as a Service (SaaS) 
+surge como uma forma de computação em nuvem, que envolve a oferta de serviços de 
+software de maneira on-line, sob demanda e tendo a Internet como mecanismo principal 
+de entrega [Tsai and Sun 2013]. SaaS multi-tenant é um dos modelos de entrega de 
+software mais populares dentre os modelos de serviços existentes na computação em 
+nuvem [Ali et al. 2019].  Neste modelo, os usuários compartilham recursos comuns, por 
+meio da compra de acesso a softwares ou a serviços de dados. Isso permite que uma única 
+instância do software possa ser compartilhada por vários clientes simultaneamente, sem 
+que esse usuário conheça qualquer elemento da infraestrutura utilizada para disponibilizar 
+tal serviço [Wood and Anderson 2011], [Kabbedijk et al. 2015].  
+ SaaS Multi-Tenant pode ser compreendido como um modelo de negócio, assim 
+como um modelo de entrega de software. O modelo de negócio visa “economia de 
+escala”, servindo tantos clientes (inquilinos) quanto possível, utilizando recursos 
+
+
+
+  
+
+computacionais sempre que possível de forma compartilhada. Já o modelo de software 
+permite que uma única instância da aplicação seja entregue para vários inquilinos com 
+necessidades distintas [Makki et al. 2018].  Para tanto, o SaaS deve ser desenvolvido com 
+funcionalidades altamente padronizadas para poder se ajustar ao maior número de clientes 
+possível, porém, os clientes podem necessitar de variantes de acordo com suas 
+especificidades de negócio.  Para tratar essas condições, os fornecedores de SaaS 
+precisam estabelecer estratégias que permitam que seus clientes customizem suas 
+instâncias do serviço sem alterar o código fonte da aplicação (adicionando ou removendo 
+campos de telas, criando ou alterando regras de validação de dados ou regras de negócio 
+ou simplesmente mudando elementos visuais das interfaces do sistema), e devem garantir 
+que a integridade da aplicação seja mantida para todos os clientes que utilizam os serviços 
+[Sun et al. 2008], [Moens et al. 2012].  
+ Contudo, esse modelo de software apresenta efeitos adversos quanto a limitação 
+da customização, pois muitas alterações exigem modificações no código do aplicativo, o 
+que significa que essas alterações poderiam resultar na criação de versões independentes 
+do aplicativo. Isso levaria à criação de várias instâncias do aplicativo separadas para 
+diferentes usuários, impedindo assim, o compartilhamento efetivo de recursos e a 
+viabilidade do modelo de negócio [Moens et al. 2012], [Makki et al. 2016].  Por outro 
+lado, a customização pode ser compreendida como um fator crítico de sucesso para Saas, 
+pois a relação entre customização e SaaS deve ser uma presença essencial em cenários 
+multi-tenant [Aleem et al. 2019], principalmente pela crescente exigência das empresas 
+usuárias em obter diferencias perante seus concorrentes, os quais em alguns casos, podem 
+estar sob a mesma plataforma de serviços [Song et al. 2018], [Chauvel and Solberg 2018], 
+[Ali et al. 2019], [Aleem et al. 2019].  
+  Diante desses desafios essa pesquisa busca explorar questões e desafios 
+enfrentados pelos fornecedores de SaaS na tentativa de manter o perfeito funcionamento 
+do modelo de negócio e o modelo de software existente nos cenários multi-tenant. Para 
+tanto, esse trabalho será baseado no diagnóstico do estado atual da prática de fornecedores 
+na indústria de software, onde o objetivo será “Investigar como a customização é 
+praticada em empresas mantenedoras SaaS Multi-Tenant”. A intenção é confrontar 
+os resultados encontrados no estado da arte com as reais necessidades do mercado, 
+permitindo assim identificar se as práticas utilizadas e os resultados previstos na academia 
+estão sendo aplicados e alcançados na indústria. Espera-se assim, fornecer uma orientação 
+de alto nível para apoiar fornecedores/pesquisadores da área de SaaS na tomada de 
+decisão sobre questões referentes à customização e seus impactos na manutenção e no 
+desenvolvimento dos seus serviços.  Nas próximas seções serão apresentadas: a revisão 
+realizada para os principais pontos abordados no estudo; a estratégia para a elaboração da 
+pesquisa; os resultados esperados; e as considerações finais, apresentando o estado atual 
+desse trabalho. 
+
+2. Referencial Teórico 
+2.1. Cloud Computing e Software as a Service  
+O termo computação na nuvem (Cloud Computing) é relativamente recente e foi 
+construído em décadas de pesquisas em vários campos dentro de Ciência da Computação. 
+Para o Instituto Nacional de Padrões e Tecnologia (NIST), a computação em nuvem pode 
+ser compreendida como um modelo para permitir acesso ubíquo e sob demanda para um 
+
+
+
+  
+
+pool compartilhado de recursos de computação configuráveis, que podem ser 
+rapidamente fornecidos e liberados com o esforço mínimo de interação e de 
+gerenciamento por parte do provedor [Sharma and Maurer 2013]. Ainda, segundo o NIST, 
+a computação em nuvem está dividida em três modelos de serviços, os quais são 
+frequentemente agrupados em subcategorias: SaaS (Software como Serviço), IaaS 
+(Infraestrutura como Serviço) e PaaS (Plataforma como Serviço) [Aleem et al. 2019]. 
+ Também conhecido como software por assinatura, o SaaS oferece software como 
+um serviço de utilidade onde os custos são baseados pelo uso [Baliyan and Kumar 2014], 
+[Sharma and Maurer 2013]. SaaS também pode ser compreendido como um modelo de 
+entrega de software em que os prestadores fornecem software como um serviço por meio 
+da Internet, não como um produto que pode ser adquirido [Aleem et al. 2019]. 
+Atualmente, SaaS se tornou um modelo de negócios convencional, não só para os usuários 
+finais, mas também para as empresas provedoras desse serviço. A principal característica 
+do SaaS é a capacidade de compartilhar recursos de computação e oferecer um serviço de 
+software para diferentes clientes. Porém, para se beneficiar desta possibilidade, a 
+arquitetura SaaS deve ser capaz de partilhar diversas instâncias do software e bancos de 
+dados com o maior número possível de clientes [Baliyan and Kumar 2014], [Mohamed 
+et al. 2015], [Aleem et al. 2019]. 
+
+2.2. Customização em SaaS Multi-Tenant 
+Uma maneira eficiente para que os custos de SaaS sejam reduzidos está relacionado ao 
+conceito do multi-tenant. Nesse modelo, uma única instância pode ser usada por vários 
+clientes, onde cada instância do aplicativo é referido como um inquilino e é considerado 
+uma “organização” com seus próprios usuários finais [Mohamed et al. 2015]. A principal 
+vantagem dessa abordagem é que a mesma versão da aplicação pode ser utilizada diversas 
+vezes por clientes diferentes, reduzindo assim, o custo na oferta do serviço. Além disso, 
+esta abordagem torna mais fácil a escala dos serviços, pois aumentos repentinos no 
+número de usuários não impactam na manutenção e no número de distribuições 
+necessárias [Mohamed et al. 2015], [Moens et al. 2015], [Kabbedijk et al. 2015].   
+ Contudo, para atender às necessidades de diferentes clientes usando apenas uma 
+versão do software, as empresas mantenedoras de SaaS multi-tenant precisam superar 
+diversos desafios relacionados à customização desse software [Aleem et al. 2019], pois a 
+customização de um SaaS multi-tenant difere-se de um aplicativo clássico (ou seja, único 
+cliente), visto que este leva à implantação de uma nova instância do aplicativo, enquanto 
+o SaaS multi-tenant mantém a personalização de todos os clientes isolados em uma única 
+instância do aplicativo, sem redistribuí-lo. Além disso, muitos aplicativos SaaS são 
+baseados em fluxo de trabalho ou representam processos de negócios, o que aumenta a 
+sua complexidade da customização (exemplo ERPs, CRMs e etc) [Song et al. 2020], [Gey 
+et al. 2015], [Ali et al. 2019].  
+ Já a eficácia do SaaS multi-tenant é altamente dependente da sua capacidade de 
+configuração e customização, pois como o objetivo é fornecer aos clientes/inquilinos 
+experiências únicas, a aplicação deve ser capaz de fornecer esses atributos utilizando 
+apenas uma única base de dados e uma única versão  do código [Nitu 2009], [Ali et al. 
+2019], [Makki et al. 2016], [Song et al. 2018], [Chauvel and Solberg 2018]. 
+
+
+
+  
+
+3. Estratégia de Pesquisa 
+Como o objetivo deste trabalho é estudar como as práticas de customização estão sendo 
+aplicadas em empresas mantenedoras de SaaS multi-tenant, a questão principal deste 
+estudo visa responder a seguinte questão: “Q1- Como as empresas mantenedoras de SaaS 
+Multi-Tenant estão tratando as questões envolvendo a customização?”. Para apoiar o 
+processo de reflexão e auxiliar o pesquisador na busca de evidências durante a execução 
+do estudo, foram definidas as seguintes proposições:  
+
+• “P1: Empresas mantenedoras SaaS Multi-Tenant utilizam práticas, mesmo sem 
+conhecer ou buscar referências na literatura”;  
+
+• “P2: As práticas de customização, mesmo que não identificadas na literatura, 
+contribuem positivamente no processo de desenvolvimento e manutenção dos 
+SaaS Multi-Tenant”. 
+
+ Para realizar a coleta de dados serão utilizadas entrevistas semiestruturadas 
+baseadas em questões semiabertas, pois entrevistas semiestruturadas têm como objetivo 
+principal compreender os significados que os entrevistados atribuem às questões e 
+situações relativas aos temas de interesse [Yin 2005]. As entrevistas serão realizadas com 
+os principais atores do setor de tecnologia da informação da empresa.  A análise dos 
+dados será realizada por meio da identificação do contexto e da identificação das possíveis 
+práticas que estejam sendo aplicadas. Todas as entrevistas serão realizadas de forma 
+presencial ou on-line e, posteriormente, serão transcritas na íntegra para serem utilizadas 
+na análise. Todas as entrevistas serão gravadas, conforme prévia autorização. 
+
+4. Resultados Esperados 
+Para identificar o estado da prática em customizações utilizadas ao longo do ciclo de vida 
+de SaaS multi-tenant, este trabalho se concentrará nos desafios de customização que os 
+fornecedores de SaaS enfrentam para desenvolver e manter seus softwares. Para tanto, os 
+seguintes cenários serão avaliados:  
+
+• Cenário #1: Desenvolvimento inicial do SaaS multi-tenant. Neste cenário espera-
+se como resultado a identificação das práticas que são utilizadas para suportar a 
+customização na construção do SaaS multi-tenant;  
+
+• Cenário #2: Provisão para novos clientes. Neste cenário espera-se como resultado 
+identificar quais práticas são aplicadas no atendimento de novos requisitos que 
+surgem na conquista de novos clientes;  
+
+• Cenário #3: Atualização e manutenção do SaaS multi-tenant. Neste cenário 
+espera-se como resultado a identificação e descrição das práticas utilizadas pela 
+equipe técnica para garantir que o serviço continue funcionando e para que os 
+clientes não tenham impactos em suas instâncias personalizadas, principalmente 
+quando atualizações forem implementadas no software;  
+
+• Cenário #4: Suporte para novas exigências. Neste cenário espera-se como 
+resultado a identificação e a descrição das práticas utilizadas pela equipe técnica 
+para adicionar suporte à novos requisitos e na própria evolução do software. 
+
+5. Conclusão 
+O modelo de negócio de SaaS multi-tenant tem recebido atenção significativa por parte 
+de provedores e usuários de software como um modelo de entrega de software. A maioria 
+
+
+
+  
+
+das empresas existentes estão transferindo seus negócios para esse modelo. Porém, este 
+ambiente é intensamente competitivo e impõe muitos desafios para desenvolvedores e 
+fornecedores de SaaS, pois seu processo de construção acaba sendo complexo e seu 
+sucesso acaba dependente de diversas variáveis inter-relacionadas, as quais vão da 
+concepção do projeto, até a modelagem e a implementação de sua arquitetura [Walraven 
+et al. 2014].  
+ Para tentar cobrir essa lacuna, este estudo visa fornecer uma investigação empírica 
+das principais práticas aplicadas na construção e entrega desse modelo de software. A 
+etapa de revisão das principais práticas de customização encontradas na literatura já foi 
+realizada, mas os resultados ainda estão sendo compilados, juntamente com a 
+identificação dos trabalhos relacionados. 
+
+Referências 
+Aleem, S., Ahmed, F., Batool, R. e Khattak, A. (2019). Empirical Investigation of Key 
+Factors for SaaS Architecture Dimension. IEEE Transactions on Cloud Computing, p. 1–
+14.  
+Ali, A. Q., Sultan, A. B. M., Ghani, A. A. A. e Zulzalil, H. (2019). A Systematic Mapping 
+Study on the Customization Solutions of Software as a Service Applications. IEEE 
+Access, v. 7, p. 88196–88217.  
+Baliyan, N. e Kumar, S. (2014). Towards software engineering paradigm for software as 
+a service. In 2014 7th International Conference on Contemporary Computing, IC3.  
+Chauvel, F. e Solberg, A. (2018). Using intrusive microservices to enable deep 
+customization of multi-tenant SaaS. In Proceedings - 2018 International Conference on 
+the Quality of Information and Communications Technology, QUATIC.  
+Gey, F., Landuyt, D. Van, Joosen, W. e Jonckers, V. (2015). Continuous evolution of 
+multi-tenant SaaS applications: A customizable dynamic adaptation approach. In 2015 
+Int’l Workshop on Principles of Engineering Service Oriented Systems, ICSE.  
+Kabbedijk, J., Bezemer, C. P., Jansen, S. e Zaidman, A. (2015). Defining multi-tenancy: 
+A systematic mapping study on the academic and the industrial perspective. Journal of 
+Systems and Software, v. 100, p. 139–148.  
+Makki, M., Van Landuyt, D., Joosen, W. e Walraven, S. (2016). Scalable and manageable 
+customization of workflows in multi-tenant SaaS offerings. In Proceedings of the ACM 
+Symposium on Applied Computing.  
+Makki, M., Van Landuyt, D., Lagaisse, B. e Joosen, W. (2018). A comparative study of 
+workflow customization strategies: Quality implications for multi-tenant SaaS. Journal 
+of Systems and Software, v. 144, p. 423–438.  
+Moens, H., Dhoedt, B. e De Turck, F. (2015). Allocating resources for customizable 
+multi-tenant applications in clouds using dynamic feature placement. Future Generation 
+Computer Systems, v. 53, p. 63–76.  
+Moens, H., Truyen, E., Walraven, S., et al. (2012). Developing and managing 
+customizable Software as a Service using feature model conversion. In Proceedings of 
+the 2012 IEEE Network Operations and Management Symposium, NOMS.  
+Mohamed, F., Abu-Matar, M., Mizouni, R., Al-Qutayri, M. e Mahmoud, Z. Al (2015). 
+
+
+
+  
+
+SaaS dynamic evolution based on model-driven software product lines. In Proceedings 
+of the International Conference on Cloud Computing Technology and Science, 
+CloudCom.  
+Nitu (2009). Configurability in SaaS (software as a service) applications. In Proceedings 
+of the 2nd India Software Engineering Conference, ISEC.  
+Sharma, A. e Maurer, F. (2013). A roadmap for software engineering for the cloud: 
+Results of a systematic review. Software Design and Development: Concepts, 
+Methodologies, Tools, and Applications. v. 1–4p. 1–16.  
+Song, H., Chauvel, F. e Solberg, A. (2018). Deep customization of multi-tenant SaaS 
+using intrusive microservices. In Proceedings - International Conference on Software 
+Engineering, IEEE Computer Society.  
+Song, H., Nguyen, P. H. e Chauvel, F. (2020). Using microservices to customize multi-
+tenant Saas: From intrusive to non-intrusive. OpenAccess Series in Informatics, v. 78, n. 
+1, p. 1–18.  
+Sun, W., Zhang, X., Guo, C. J., Sun, P. e Su, H. (2008). Software as a service: 
+Configuration and customization perspectives. In Proceedings - 2008 IEEE Congress on 
+Services, SERVICES.  
+Tsai, W. T. e Sun, X. (2013). SaaS multi-tenant application customization. In Proceedings 
+- 2013 IEEE 7th International Symposium on Service-Oriented System Engineering, 
+SOSE.  
+Walraven, S., Van Landuyt, D., Truyen, E., Handekyn, K. e Joosen, W. (2014). Efficient 
+customization of multi-tenant Software-as-a-Service applications with service lines. 
+Journal of Systems and Software, v. 91, n. 1, p. 48–62.  
+Wood, K. e Anderson, M. (2011). Understanding the complexity surrounding 
+multitenancy in cloud computing. In Proceedings - 2011 8th IEEE International 
+Conference on e-Business Engineering, ICEBE.  
+Yin, R. K. (2005). Estudos de casos: planejamento e métodos. 3. ed. Porto alegre: 
+Bookman.

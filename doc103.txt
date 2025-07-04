@@ -1,0 +1,1152 @@
+Revista Brasileira de Informática na Educação – RBIE
+Brazilian Journal of Computers in Education
+(ISSN online: 2317-6121; print: 1414-5685)
+http://br-ie.org/pub/index.php/rbie
+Submission: 10/01/2018;
+Camera ready: 05/Feb/2019;
+1st round notif.: 06/Nov/2018;
+Edition review: 29Mar/2019;
+New version: 26/Nov/2018;
+Available online: 01/May/2019;
+2nd round notif.: 05/Jan/2019
+Published: 31/May/2019
+Recomendações para o Desenvolvimento de Softwares Voltados
+para Crianças com Transtorno do Espectro Autista
+Software Development Recommendation for Children with Autism Spectrum Disorder
+Heloise Cristini Magaton
+Universidade Tecnológica Federal do Paraná
+helomagaton@gmail.com
+Silvia Amélia Bim
+Universidade Tecnológica Federal do Paraná
+sabim@utfpr.edu.br
+Resumo
+O Transtorno do Espectro Autista (TEA) é um distúrbio do desenvolvimento que se caracteriza por alterações
+presentes desde idade muito precoce, com impactos múltiplos e variáveis em áreas relevantes do desenvolvimento
+humano, como comunicação, interação social, aprendizado e capacidade de adaptação. Estudos comprovam que
+crianças diagnosticadas com TEA gostam de tecnologia, como qualquer outra criança, sendo usada como uma
+ferramenta no auxílio ao tratamento deste transtorno. Essa pesquisa apresenta uma revisão de recomendações para
+o desenvolvimento de softwares para o público com TEA a partir de uma pesquisa bibliográfica e de um estudo de
+campo. Tal estudo consistiu na observação da interação de crianças TEA com a tecnologia em uma clínica
+especializada no tratamento deste transtorno e aplicação de questionários com profissionais especializados em TEA
+e responsáveis das crianças com TEA participantes das observações. A análise dos resultados confirma 12
+recomendações encontradas na pesquisa bibliográfica e propõe 6 novas recomendações, as quais poderão ser usadas
+no desenvolvimento de softwares voltados para o público com TEA.
+Palavras-Chave: <Transtorno do Espectro Autista, Softwares, Aplicações, Recomendações, Design,
+Desenvolvimento, Autismo >
+Abstract
+The Autism Spectrum Disorder (ASD) is a development disturb which is characterized by alterations that are present
+since early ages, with multiples and variables impacts in relevant areas from human development, as communication,
+social interaction, learning and adaptation capacity. Studies show that children diagnosed with ASD like technology
+as any other children, and it is used as a helping tool in the treatment of this disorder. This research brings up a
+recommendation review for ASD children software development from bibliographical research and from a field
+research. The field research consisted in ASD children observations interacting with technology at a specialized
+clinic in ASD treatment and questionnaires application to specialized professionals and ASD children responsible.
+The result analyzes confirms 12 recommendations found in bibliographical research and proposes 6 new
+recommendation, which can be used in software development for ASD children.
+Keywords: <Autism Spectrum Disorder, Software, Applications, Recommendation, Design, Development, Autism.>
+Cite as: Magaton, H.C. & Bim, S.A.(2019). Software Development Recommendation for Children with Autism
+Spectrum Disorder (Recomendações para o Desenvolvimento de Softwares Voltados para Crianças com
+Transtorno do Espectro Autista). Brazilian Journal of Computers in Education (Revista Brasileira de
+Informática na Educação - RBIE), 27(2), 112-139. DOI: 10.5753/RBIE.2019.27.02.112Magaton, H.C., Sabim, S.A.
+1
+RBIE V.27, N.2 – 2019
+Introdução
+De acordo com a Convenção sobre os Direitos das Pessoas com Deficiência (ONU/2007) e a Lei
+5.296 de Dezembro/2004 1 a acessibilidade deve ser oferecida a todos ou ao maior número
+possível de usuários em situações limitantes. A tecnologia tem auxiliado em parte deste processo
+de inclusão através, por exemplo, de aplicativos mobile e sistemas computacionais interativos. O
+uso destes aplicativos mobile pode proporcionar a este grupo de pessoas a realização de forma
+mais autônoma de algumas atividades de educação, entretenimento, interação, comunicação, entre
+outras. Consequentemente, possibilitando uma maior integração destas pessoas à sociedade
+(Baranauskas, Souza & Pereira, 2014).
+Nas últimas décadas tem se observado um grande crescimento no desenvolvimento de
+softwares focados em ajudar e educar crianças com Transtorno do Espectro Autista (TEA), sendo
+estes desenhados para diferentes plataformas, como tablets, smartphones, computadores e outros,
+os quais visam auxiliar na alfabetização (Farias, Silva & Cunha, 2014; Pantoja, Sousa, & de
+Araújo Júnior, 2018), na aquisição de vocabulário (Cunha, 2011), e na comunicação, organização,
+e interação de indivíduos com TEA (Piconi & Tanaka, 2003; Ribeiro, Braz, Silva & Raposo, 2013;
+Neto, Rufino, Nakamoto, Palis, & Beira, 2017). De acordo com algumas pesquisas, a tecnologia
+mostra efeitos positivos e benéficos em crianças diagnosticadas com TEA (Putnam & Chong,
+2008; Goldsmith & LeBlanc, 2004). Embora existam poucos guias disponíveis na literatura para
+conduzir o desenvolvimento de tecnologias para este grupo, envolver usuários TEA durante todo
+o processo de design do software ainda pode ser desafiador, pois todo o processo será afetado por
+suas particularidades (Millen, Edlin-White & Cobb, 2010).
+Estudos de Millen et al. (2010) identificam algumas dificuldades encontradas em envolver
+crianças do grupo TEA no processo de design de um software. Algumas das dificuldades descritas
+na pesquisa são: a linguagem limitada, a qual pode gerar dificuldades na comunicação do usuário
+em reportar ideias e formular suas opiniões, e pouca habilidade para a imaginação, a qual poderia
+causar potenciais dificuldades quando protótipos de baixa fidelidade são usados, pois requer que
+o usuário use sua imaginação para visualizar o produto final. Portanto, por ser difícil e tomar
+muito tempo para o levantamento de requisitos durante um processo de design focado nos
+usuários, os autores Millen et al. (2010) afirmam a importância em estabelecer recomendações
+para o desenvolvimento de software voltado para o público TEA.
+Também se considera relevante que para desenvolver tecnologias condizentes com as
+necessidades de indivíduos com limitações cognitivas é necessário conhecer como esse público
+as utiliza e de que modo eles são afetados por elas. Diante desse cenário, este artigo revisa
+trabalhos existentes na literatura que sugerem recomendações para o desenvolvimento de
+softwares voltados para o público TEA. E através de um experimento realizado com crianças
+TEA, seus(suas) responsáveis e profissionais especializados no transtorno, procura confirmar as
+recomendações já existentes e sugerir novas recomendações.
+Este artigo está dividido em seis seções, sendo a primeira destinada a introdução, e a segunda
+a definição de conceitos como o TEA. A terceira seção define a metodologia utilizada para essa
+pesquisa, contendo um breve panorama sobre a pesquisa bibliográfica e um relato mais detalhado
+sobre a pesquisa de campo. Na quarta seção são analisados os resultados encontrados durante a
+pesquisa de campo, e consequentemente na quinta seção é apresentado os resultados obtidos
+através das análises da pesquisa bibliográfica e pesquisa de campo. E por fim, as considerações
+são relatadas na sexta e última seção.
+1
+http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d5296.htm
+113Magaton, H.C., Sabim, S.A.
+2
+RBIE V.27, N.2 – 2019
+Conceitos Básicos: TEA
+O TEA é um distúrbio do desenvolvimento que se caracteriza por alterações presentes desde idade
+muito precoce, tipicamente antes dos três anos de idade, com impacto múltiplo e variável em áreas
+relevantes do desenvolvimento humano como as áreas de comunicação, interação social,
+aprendizado e capacidade de adaptação (Mello, 2001).
+Por muitos anos o TEA foi considerado como uma psicose, sendo comum ouvir
+profissionais se referindo a pessoas diagnosticadas com TEA como esquizofrênicas ou psicóticas,
+e tendo várias denominações durante os anos. No Manual Diagnóstico e Estatístico de Transtornos
+Mentais Cinco (DSM-V) (American Psychiatric Association & Others, 2014) é realizada a fusão
+dos termos Transtorno Autista, Transtorno de Asperger e Transtorno Global do Desenvolvimento
+no termo Transtorno do Espectro Autista. Segundo o manual, os sintomas desses transtornos são
+similares podendo ser classificados em intensidades que variam de leve a grave nos domínios de
+comunicação social e de comportamentos restritivos e repetitivos. No manual, a intensidade leve
+é representada pelo nível 1, a moderada pelo nível 2 e a grave pelo nível 3.
+Segundo o manual, a incidência do TEA é quatro vezes mais frequente no sexo masculino, e
+quando diagnosticado em meninas é mais propenso a apresentar deficiência intelectual
+concomitante. Ainda de acordo com o manual, as frequências relatadas de TEA nos EUA e em
+outros países, alcançaram 1% da população. O transtorno se manifesta desde os primeiros dias de
+vida e os sintomas são reconhecidos no segundo ano de vida (American Psychiatric Association
+& Others, 2014).
+3
+Métodos
+De modo semelhante às demais pesquisas realizadas para elaboração de recomendações para o
+desenvolvimento de softwares/hardwares para crianças com TEA, a pesquisa relatada neste artigo
+é classificada quanto a sua abordagem como qualitativa com amostras pequenas, de natureza
+aplicada e de cunho exploratório. Os procedimentos utilizados para a realização desta pesquisa
+foram: pesquisa bibliográfica e pesquisa de campo.
+3.1
+Pesquisa Bibliográfica
+A pesquisa bibliográfica primeiramente foi composta por um breve estudo sobre a definição do
+Transtorno do Espectro Autista e das características dos indivíduos desse grupo. Para a revisão
+bibliográfica foram realizados estudos de trabalhos já publicados sobre o desenvolvimento de
+softwares voltados para o público com TEA, em portais como o da ACM, CAPES, Google Scholar
+e IEEE buscando por palavras chave utilizando os idiomas inglês e português: Autismo,
+Transtorno do Espectro Autista, Desenvolvimento, Softwares, Recomendações, Design,
+Aplicativos.
+Nesses estudos objetivou-se identificar recomendações de design seguidas para o
+desenvolvimento de um determinado artefato ou software direcionado para crianças com
+Transtorno do Espectro Autista. A seguir será relatada algumas pesquisas encontradas na
+literatura.
+Um guia com oito recomendações foi elaborado por Van Rijn e Stappers (2008) baseado
+em estudos e pesquisas contextuais, como pesquisas com especialistas, e testes com usuários TEA
+utilizando protótipos. As oito recomendações de design foram elaboradas a partir da construção
+de um brinquedo, construído por eles mesmos, chamado LINKX, o qual auxilia as crianças a
+aprenderem suas primeiras 100 palavras, e da avaliação desse brinquedo com um grupo de 3
+crianças, de 3 a 5 anos diagnosticadas com TEA. Apesar de Van Rijn e Stappers (2008) terem
+114Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+desenvolvido recomendações a partir do desenvolvimento de aplicações que envolvam a
+construção de algo físico, essas recomendações também podem ser incorporadas ao design de
+softwares, como Dautenhahn (2000) sugere a seguir.
+Para o desenvolvimento do projeto Aurora, Dautenhahn (2000) se baseou em uma série de
+recomendações de design. O projeto consistiu em investigar como um robô autônomo poderia
+auxiliar e incentivar as interações sociais dos indivíduos TEA, e a ajudá-los a reconhecer e
+reproduzir elementos importantes do comportamento social humano, como contato visual,
+consenso, abordagem, reconhecimento de expressões e emoções etc. A autora em seu texto sugere
+que algumas recomendações de design que foram utilizadas para a construção do robô também
+sejam usadas para ambientes virtuais interativos com fins educacionais.
+A partir de estudos e pesquisas em escolas irlandesas, com profissionais e responsáveis,
+Barry, Kehoe e Pitt (2008) trazem uma análise da usabilidade em jogos educacionais voltados
+para o público TEA. Os autores abordam em sua pesquisa aspectos de softwares educacionais que
+podem ser problemáticos para os indivíduos TEA. Por exemplo, alguns jogos têm interface não
+limitada, na qual o usuário pode explorar o mundo do jogo, porém, essa abordagem pode ser
+problemática para os usuários TEA pois uma das suas principais características é gostar de rotinas
+e ambientes previsíveis. Outro problema citado pelos autores são as cenas de vídeos, as quais
+podem lhe causar confusão pois preferem imagens simples. E por último, o som como uma
+recompensa do jogo pode não soar como uma recompensa se este estiver muito alto e perturbador,
+indivíduos do grupo TEA na sua maioria são visuais, podendo não reagir bem a certos níveis de
+sons.
+Assim como outros estudos relatados aqui, Millen (2007) apud Millen, EdlinWhite e Cobb
+(2010) e Edlin-White (2009) apud Millen, Edlin-White e Cobb (2010) identificaram algumas
+recomendações baseadas em observações e entrevistas em duas escolas especialistas em crianças
+com Transtorno do Espectro Autista, entrevistas com responsáveis e professores(as) assim como
+estudos na literatura.
+A pesquisa de Millen (2007) apud Millen et al. (2010) contemplou um documento com
+recomendações de usabilidade, o qual aborda o uso do som, da linguagem, conteúdo e gráfico. A
+pesquisa de Edlin-White (2009) apud Millen et al. (2010) por sua vez se baseou nas
+recomendações anteriores e produziu um documento com cinquenta requisitos. A grande
+quantidade de requisitos levantados se deu devido à grande diversidade de crianças com diferentes
+graus de TEA e suas características particulares que participaram do estudo.
+Britto e Pizzolato (2018) propõe em seu trabalho o projeto GAIA: Guia de Acessibilidade
+de Interfaces Web com foco em aspectos do Autismo, o qual tem como objetivo prover um
+conjunto de diretrizes e recomendações de design para a acessibilidade com o intuito de apoiar
+desenvolvedores de softwares e educadores digitais a entender melhor como desenvolver websites
+mais adequados às necessidades de crianças com TEA, tendo como foco aplicações baseadas em
+plataforma Web e/ou dispositivos multitoque. As recomendações foram extraídas através de um
+processo de revisão de trabalhos publicados, incluindo recomendações internacionais, softwares
+comerciais ou acadêmicos, gerando um conjunto de 28 recomendações disponibilizadas em um
+website 2. Também para garantir a utilidade das recomendações, foi realizada uma avaliação piloto
+remota com profissionais de tecnologia onde eles foram solicitados a realizar uma avaliação de
+acessibilidade de uma aplicação web utilizando o GAIA, obtendo resultados positivos. As
+recomendações apresentadas pela pesquisa citada não foram possíveis serem observadas, pois as
+observações com o público TEA ocorreram anteriormente a essa referência. Porém, algumas
+2
+http://talitapagani.com/gaia/
+115Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+recomendações compiladas por Britto e Pizzolato (2018) complementam algumas recomendações
+dessa pesquisa como pode ser observada na seção 6.
+3.2
+Pesquisa de Campo: Observações
+O estudo de caso realizado nesta pesquisa consistiu na observação de seis crianças com TEA
+interagindo com oito aplicativos educativos distintos em quatro dias. As observações foram
+realizadas em uma única instituição com o acompanhamento de oito profissionais e/ou
+estagiários(as) da área de psicologia. A técnica de observação foi escolhida devido às limitações
+de comunicação dos indivíduos TEA.
+Para análise das observações realizadas foram considerados outros trabalhos sobre
+avaliações de softwares com a participação do público com TEA (Farias et al., 2014; Piconi &
+Tanaka, 2003; Ribeiro et al., 2013), os quais além de observações com crianças com TEA também
+contaram com a participação de responsáveis e profissionais especializados.
+Deste modo, para esta pesquisa também foram aplicados questionários com perguntas
+abertas, enviados por e-mail, para os(as) profissionais e pais/mães/responsáveis das crianças
+observadas. O objetivo das perguntas para os(as) profissionais era compreender a dinâmica da
+clínica e a opinião destes(as) profissionais sobre o uso da tecnologia no processo educacional de
+crianças com TEA. As perguntas para os(as) responsáveis tinham o objetivo de investigar a
+relação das crianças com TEA com a tecnologia em outros contextos. As respostas fornecidas nos
+questionários, dos(as) seis profissionais e dois(duas) responsáveis, também foram consideradas
+neste trabalho para enriquecer a análise das observações.
+As observações 3 ocorreram em uma clínica brasileira especializada no tratamento do TEA.
+A clínica atua na área de saúde e educação desde 1992, possuindo um departamento especializado
+em TEA, atuando na avaliação diagnóstica, atendimento a crianças e adolescentes portadores(as)
+deste transtorno 4. Os(as) pacientes TEA frequentam a clínica no período quando não estão na
+escola regular.
+As observações foram realizadas no mês de setembro de 2016, em quatro dias distintos,
+com intervalo de uma semana entre eles, conforme autorização da coordenadora da clínica. Os
+testes pilotos das observações, um para cada participante, foi realizado no mês anterior, durante
+um único dia.
+Foram observadas individualmente seis crianças do sexo masculino 5 com graus de TEA
+variando do nível 1 a 3 e idades entre 5 e 8 anos, como pode ser observado na Tabela1.
+Tabela 1: Tabela que lista os participantes TEA da pesquisa com a sua idade e nível de TEA.
+Criança
+Criança A
+Criança B
+Criança C
+Criança D
+Criança E
+Criança F
+Idade
+8
+6
+6
+8
+6
+5
+Nível de TEA
+Nível 2
+Nível 2
+Nível 1
+Nível 3
+Nível 1
+Nível 2
+Durante as observações procurou-se interferir o mínimo possível na rotina das crianças.
+Desse modo, as sessões ocorreram em espaços que os participantes já frequentavam durante o
+3Para mais informações sobre esta pesquisa e observações acessar: http://bit.ly/TCCAutismo.
+4Informações coletadas no site da clínica: www.selfcenter.com.br.
+5
+Infelizmente não foi possível realizar observações com crianças do sexo feminino, frequentadoras da clínica, devido
+ao alto grau de comprometimento e comorbidades associadas.
+116Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+período que passam na clínica, acompanhados de uma pessoa familiar a eles, como os(as)
+psicólogos(as) e estagiários(as) de psicologia da clínica, e utilizando o tablet que frequentemente
+é usado nos atendimentos.
+As observações contaram com sete profissionais (dois homens e cinco mulheres), os quais
+acompanhavam e mediavam a interação das crianças com um dispositivo tablet. Quatro dos(as)
+oito profissionais ainda estão em formação, com a graduação em psicologia em andamento.
+Na Tabela 2 pode-se observar a relação dos participantes TEA por dia de observação, e
+também os(as) profissionais que acompanharam cada participante nas sessões de observação.
+Verifica-se que em alguns dias não foi possível observar as seis crianças. Isto ocorreu devido à
+ausência dos participantes naqueles dias.
+Tabela 2: Relação de participantes TEA e respectivos profissionais em cada dia de observação.
+Dias
+Teste PilotoParticipantes
+A,B,C,D,E,FProfissional 6
+2,3,1,2,4,4
+Dia 1A,B,E,F2,3,4,4
+Dia 2A,B,C2,3,1
+Dia 3A,B,C,D,E,F2,3,1,2,6,7
+Dia 4A,B,C,D,E5,2,1,2,6
+Cada observação de cada criança durou trinta minutos, sendo realizada como uma
+atividade dentro do programa diário elaborado para cada criança. Um termo de consentimento
+livre e esclarecido foi enviado para os(as) pais/mães/responsáveis solicitando autorização para a
+realização das sessões de observações.
+Os testes pilotos foram realizados para que houvesse a familiarização da observadora com
+as crianças e o ambiente da clínica e para identificar eventuais ajustes nas sessões. Para os testes
+pilotos foi requisitado previamente para que o(a) profissional de psicologia que estivesse
+acompanhando o participante TEA preparasse uma atividade utilizando o tablet e um ou mais
+aplicativos disponíveis no dispositivo.
+No decorrer das sessões dos testes pilotos cada profissional de psicologia conduziu o uso
+de maneira diferenciada. Alguns(mas) deixaram o uso livre, permitindo que a criança TEA
+escolhesse seus aplicativos. E outros(as) realizaram o uso guiado em que os(as) profissionais
+escolhiam os aplicativos. Muitos(as) utilizaram o recurso de troca: se a criança TEA realizasse a
+atividade proposta, ela posteriormente poderia escolher um aplicativo de sua preferência.
+A partir da experiência dos testes pilotos foram feitos alguns ajustes no protocolo de
+observação. Notou-se uma grande variedade de aplicativos utilizados pelos(as) profissionais da
+clínica. Tal variedade exigiria maior tempo de análise comparativa das interações e o recurso de
+tempo da pesquisa era limitado. Desta forma, com o consentimento da coordenação da clínica
+definiu-se que a observadora sugeriria dois aplicativos para cada dia de observação e que cada um
+deles seria utilizado pelos seis participantes TEA.
+Para que a escolha dos softwares fosse adequada, e respeitasse as características
+individuais de cada um dos participantes, a observadora coletou previamente informações sobre
+as habilidades e dificuldades de cada criança TEA. Por exemplo, investigou-se se a criança
+possuía conhecimento sobre o alfabeto e números e se saberia reconhecer formas geométricas e
+cores. Ficou a critério dos(as) oito profissionais que aplicariam as atividades se utilizariam ou não
+o recurso de troca.
+6
+Os(as) profissionais que acompanharam cada criança estão na ordem em que os participantes foram dispostos na
+coluna Participantes.
+117Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Os aplicativos escolhidos para as observações foram de cunho educacional, desenvolvidos
+ou não para o público TEA. Os aplicativos não desenvolvidos especificamente para o público
+TEA foram escolhidos a partir da lista de softwares disponibilizada pela clínica e das sugestões
+dos(as) profissionais de psicologia do local. Os aplicativos desenvolvidos especificamente para o
+público TEA foram escolhidos a partir de pesquisas nas lojas de aplicativos e trabalhos já
+publicados. A escolha destas duas categorias de aplicativos, desenvolvidos e não desenvolvidos
+para o público TEA, ocorreu pois, de acordo com os(as) profissionais, na maioria das vezes
+aplicativos não desenvolvidos para o público TEA são utilizados com as crianças durante as
+atividades na clínica.
+Tabela 3: Tabela que relaciona por dia os aplicativos utilizados durante as observações.
+Dia
+Dia 1Aplicativo
+Color Monster, Galinha Pintadinha, Seasons,
+ABC Palavras, Doodlecast, Pepi Bath
+TP-Shape, ABC Palavras
+Dia 2Seasons, Doodlecast
+Dia 3Aiello, 123 Color
+Dia 4Number Sequence, Color Monsters
+Teste Piloto
+Na Tabela 3 pode-se observar como os aplicativos foram divididos durante os quatro dias
+de observações. Como cada sessão de observação durou 30 minutos, foram reservados quinze
+minutos de interação para cada aplicativo. Alguns dos aplicativos utilizados no teste piloto
+também foram utilizados nas sessões de observações, como observado na Tabela 3, porém outros
+não foram utilizados pois deram espaço para os aplicativos desenvolvidos para público TEA. Uma
+breve descrição dos aplicativos utilizados em cada um dos quatro dias pode ser vista a seguir.
+3.3
+Descrição dos Aplicativos
+Nesta seção será apresentada uma breve descrição dos oito aplicativos 7 utilizados durante as
+observações realizadas com as crianças TEA. Os seis primeiros aplicativos descritos
+correspondem aos não desenvolvidos especificamente para o público alvo deste artigo.
+7
+Os aplicativos utilizados exclusivamente no teste piloto não serão descritos pois a interação dos aplicativos com os
+participantes TEA não foi analisada.
+118Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+1.Color Monster 8: aplicativo de pareamento de cores. Ao iniciar o aplicativo um avatar
+interage com a criança pedindo alguma cor para que possa “comer”.
+Assim o usuário deve arrastar algo até sua boca para que haja interação do avatar, o qual emite
+sons de incentivo quando o usuário realiza um movimento correto e emite som de reprovação
+quando usuário erra a cor solicitada pelo avatar. Uma imagem ilustrativa do aplicativo pode ser
+observada Figura 1.
+2.TP-Shapes 9: aplicativo de pareamento de formas geométricas. O aplicativo é iniciado
+com a tela contendo algumas formas geométricas coloridas, a forma da peça a ser pareada naquela
+interação sem cor com um ponto de interrogação sobre a peça. O aplicativo emite uma frase com
+voz feminina como: ‘Encontre o Triângulo’.
+O aplicativo também emite som para parabenizar quando o usuário acerta a ação e um
+outro som para quando o usuário comete um erro. Após algumas interações em que o usuário
+Figura 1: Aplicativo Color
+Monster.
+realiza movimentos corretos, o aplicativo oferece uma recompensa que consiste em o usuário
+poder escolher um adesivo ou completar um quebra-cabeça. Para as observações a opção default
+do aplicativo foi utilizada: escolha de um adesivo. Após a escolha dos adesivos o aplicativo repete
+a mesma sequência de formas geométricas já exibidas. Há também uma música de fundo que pode
+ser desabilitada nas configurações. Entretanto, para as observações foi utilizada a configuração
+padrão com a música habilitada. O idioma também pode ser configurável. Uma imagem ilustrativa
+do aplicativo pode ser observada na Figura 2.
+8http://wombiapps.com/apps/color-monster-learn-the-colors/
+9http://www.technolio.com.br/app/
+119Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Figura 2: Aplicativo TP-Shape.
+10
+3. ABC Palavras : aplicativo de pareamento de letras. Inicia-se com as letras
+embaralhadas no topo da tela e o desenho da palavra a parear. Logo abaixo, se encontra a palavra
+relacionada a imagem com a ordem das letras corretas, porém as letras estão sem cor. A cada letra
+colocada no lugar incorreto o aplicativo emite um som de erro, e a cada letra colocada no lugar
+correto o aplicativo emite um som para indicar acerto. Ao terminar de colocar todas as letras no
+lugar correto o aplicativo emite o som da palavra finalizada. Uma imagem ilustrativa do aplicativo
+pode ser observada na Figura 3.
+10
+http://www.technolio.com.br/app/, mesmo link utilizado para acessar o aplicativo TP-Shape.
+120Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Figura 3: Aplicativo ABC Palavras.
+O aplicativo também emite o som de cada letra ao ser clicada. Há uma música de fundo, a
+qual pode ser desabilitada e o idioma também é configurável. Para as observações desta pesquisa
+a música de fundo não foi desabilitada, com objetivo de observar como as crianças reagiriam a
+este recurso.
+4. Doodlecast: aplicativo para estimular a criatividade e criação através da atividade de
+completar desenho ou fazer um desenho livre. Não possui sons durante a atividade. Uma imagem
+ilustrativa do aplicativo pode ser observada na Figura 4.
+Figura 4: Aplicativo Doodlecast.
+121Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+5. Seasons 11 : aplicativo de pareamento de formas e raciocínio lógico. Logo no início
+apresenta um menu com quatro atividades a serem feitas com o tema verão. As atividades são:
+montar um quebra cabeça, pareamento de formas geométricas, vestir um personagem, e uma
+atividade de contagem numérica. Após finalizar as quatro atividades outras quatro atividades são
+exibidas com o tema de outra estação do ano. Existe som para indicar erro e outro para indicar
+acerto. Também possui a funcionalidade para desabilitar a música de fundo. Entretanto, para fins
+de observação a música não foi desabilitada. Uma imagem ilustrativa do aplicativo pode ser
+observada na Figura 5.
+Figura 5: Aplicativo Seasons.
+6. 123 Color 12: aplicativo de pareamento de letras. O aplicativo apresenta o contorno de
+um desenho para colorir e nos espaços em branco há números ou letras. Logo abaixo do desenho
+há uma sequência numérica com cada número relacionado a uma cor, ou o alfabeto. O usuário
+deve procurar um número/letra do alfabeto que corresponde com um número/letra no desenho,
+clicar sobre ela, e depois clicar no número/letra sobre o desenho. No aplicativo também há som
+para indicar acerto e erro, e uma música de fundo. Uma imagem ilustrativa do aplicativo pode ser
+observada na Figura 6.
+11http://www.cleverkiddoapps.com/seasons
+12https://kidcalc.wordpress.com/
+122Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Figura 6: Aplicativo 123 Color.
+As descrições a seguir referem-se ao dois aplicativos desenvolvidos especificamente para o
+público TEA.
+7. Aiello 13: aplicativo de pareamento para ensinar vocabulário a crianças. O aplicativo é
+configurável em relação às categorias de palavras que podem ser pareadas. Outras funcionalidades
+do aplicativo podem ser customizadas, por exemplo, como realizar o pareamento. Para as
+observações foi utilizada a sombra da imagem e a figura-figura e palavra, utilizando as
+configurações padrões do aplicativo como observado na Figura 7. Outros itens que podem ser
+customizados: número de opções de palavras disponíveis para o usuário escolher, seleção visual,
+tipo de fonte e reforços automático. Ao entrar no aplicativo existe um avatar de um esquilo que
+interage com o usuário e também é apresentado um painel com a forma de algo a ser pareado pelo
+usuário, como exemplificado na Figura 7.
+13
+http://www.jogoseducacionais.com/
+123Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Figura 7: Aplicativo Aiello.
+Ao escolher a forma correta o avatar emite o nome daquela forma e uma palavra de
+recompensa para incentivar o usuário. O avatar e os sons que este emite são configuráveis, assim
+como a indicação de erro expressa pelo avatar, a qual pode ser ocultada. Para as observações o
+avatar também foi utilizado com sua expressão de erro e sons, e também foi utilizada a opção de
+arrastar as imagens a serem pareadas, com a sombra da imagem.
+8. Number Sequence 14: aplicativo desenvolvido para crianças com TEA que estimula o
+ensino de sequência numérica. O aplicativo inicia com uma introdução e com um pequeno tutorial
+ensinando como é o mecanismo do aplicativo. Ao iniciar o aplicativo uma sequência inicial é
+apresentada como: 1,2,3 e logo abaixo algumas opções de números. O usuário precisa escolher a
+opção da sequência mostrada. Há som para indicar acerto e recompensas visuais, mas nenhum
+som para indicar erro. O aplicativo também possui uma música de fundo. A sequência do
+aplicativo termina no número 7. Uma imagem ilustrativa do aplicativo pode ser observada na
+Figura 8.
+14
+https://itunes.apple.com/br/app/number-sequence-autism-series/id555257138?mt=8
+124Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Figura 8: Aplicativo Nunber Sequence.
+3.4
+Pesquisa de Campo: Questionários
+O segundo procedimento de coleta de dados para a pesquisa de campo foram os questionários.
+Compostos exclusivamente com perguntas abertas, os questionários foram distribuídos para os(as)
+profissionais de psicologia da clínica que acompanharam as crianças TEA durante as observações,
+e enviados por e-mail para os(as) responsáveis dos participantes. Para os dois públicos além dos
+questionários também foi enviado um termo de consentimento livre e esclarecido. Nestes
+questionários buscou-se conhecer a visão desses dois públicos sobre a interação dos indivíduos
+TEA com a tecnologia. Dos(as) profissionais procurou-se identificar como é a interação dos
+usuários TEA com os aplicativos como parte dos programas de tratamento. E dos(as) responsáveis
+buscou-se um maior conhecimento da interação das crianças TEA com a tecnologia no dia-dia,
+quando não estão usando para fins educacionais.
+Dentre os(as) oito profissionais que participaram das sessões de observação, apenas cinco
+responderam os questionários. Para conhecer a visão desses profissionais sobre a interação dos
+indivíduos TEA com a tecnologia, os seguintes tópicos foram abordados no questionário:
+• As considerações do(as) profissionais da clínica quanto a interação do público com TEA
+com a tecnologia;
+• Situações vivenciadas pelos(as) profissionais durante o uso de softwares com as crianças
+TEA;
+• Opinião dos(as) profissionais sobre a preferência de softwares do público TEA;
+• As considerações dos(as) profissionais sobre softwares desenvolvidos especificamente
+para as pessoas TEA, e na opinião deles(as) qual a preferência das crianças com TEA: softwares
+específicos ou não específicos;
+• Funcionalidades que os(as) profissionais gostariam de encontrar em um software
+desenvolvido para o público TEA;
+125Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Para os(as) responsáveis das crianças TEA observadas buscou-se informações sobre a
+interação das crianças TEA com as tecnologias no dia-dia. Dentre os seis participantes TEA das
+observações apenas os responsáveis de duas crianças retornaram o e-mail enviado. Os tópicos
+abordados no questionário enviado aos responsáveis podem ser vistos a seguir:
+• Quais tecnologias as crianças TEA usam quando estão em casa;
+• Consideração dos(as) responsáveis quanto a interação dos seus filhos com a tecnologia;
+• A frequência do uso de tecnologia no dia-dia da criança;
+• Quais aplicativos que seus filhos mais se interessam, e na opinião dos(as) responsáveis
+qual a razão desta escolha;
+• Quais situações os(as) responsáveis já presenciaram durante a interação de seus filhos
+com a tecnologia;
+Tabela 4: Relação criança x responsáveis x profissionais que participaram da pesquisa.
+Crianças
+Criança A
+Criança B
+Criança C
+Criança D
+Criança E
+Criança F
+4
+Responsável
+Responsável 1
+-
+-
+-
+Responsável 2
+-
+Profissional
+Profissional 2
+Profissional 3,2
+Profissional 1
+Profissional 2
+Profissional 4,6
+Profissional 4
+Discussão
+Nesta seção será realizada a análise dos resultados coletados na pesquisa de campo. Na primeira
+seção serão analisadas as observações das crianças com TEA interagindo com os aplicativos
+selecionados, e na segunda seção serão relatados e analisados os resultados obtidos pelos
+questionários enviados aos profissionais da clínica e aos responsáveis das crianças com TEA.
+4.1
+Análise Observações
+Durante as observações pode-se notar que a maioria dos participantes TEA já havia tido contato
+prévio com algum tipo de dispositivo com tela sensível ao toque, como os smartphones e tablets,
+dada a desenvoltura dos mesmos durante as interações. Apenas a criança F não sabia como
+interagir com o dispositivo utilizado nas observações, um tablet. Profissionais que a
+acompanharam necessitaram ajudá-la. Também pode-se observar nas crianças que já possuíam
+contato com tecnologias o quanto os aplicativos e o dispositivo tablet são atrativos para elas,
+ressaltando as considerações de Barry e Pitt (2006).
+A seguir são relatados os resultados obtidos com as observações de cada aplicativo. A análise
+das interações está na ordem na qual os aplicativos foram utilizados (conforme Tabela 3). É
+importante ressaltar que todos os aplicativos foram usados com as mesmas configurações para
+todas as crianças. Isto deve-se ao fato de que os intervalos entre as observações eram pequenos e
+não havia tempo para customizá-los no recinto da observação, pois ao observar o tablet as crianças
+já apresentavam ansiedade por interagir com o dispositivo.
+TP-Shape (Dia 1)
+Durante a observação do jogo TP-Shape notou-se que todos os participantes presentes no
+dia 1 não encontraram dificuldades em aprender o mecanismo do aplicativo. Entretanto, três dos
+participantes não compreenderam o mecanismo de recompensa, no qual deveriam escolher um
+dos “adesivos” de sua preferência. Foi necessária a ajuda dos(as) profissionais acompanhantes. A
+126Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+imagem do recurso de recompensa apresentado pelo aplicativo pode ser observada na Figura 9.
+No aplicativo TP-Shape, quando o usuário realiza um movimento incorreto um som de erro é
+emitido, o qual soou agradável aos ouvidos das crianças B e F, níveis 2 de TEA. Apesar de não
+compreenderem de imediato o recurso de recompensa todas as crianças mantiveram o interesse
+pelo aplicativo ao menos uma vez após a recompensa de escolher um "adesivo" (figuras na parte
+inferior da Figura 9). Tal recompensa também foi usada pelos(as) profissionais que
+acompanhavam a observação como um recurso motivacional.
+Figura 9: Como recurso de recompensa os usuários podem selecionar “adesivos” de sua preferência.
+O aplicativo também possui repetição reforçadora, ou seja, as sequências do aplicativo se
+repetem sem mudar o nível de dificuldade. Segundo os(as) profissionais da clínica, a repetição é
+muito importante para as crianças TEA no processo de aprendizagem, pois eles se distraem
+facilmente. Porém, o que se observou é que para as crianças B e E o aplicativo se tornou monótono
+depois de algumas repetições. Sem um desafio, as crianças perderam o interesse pelo aplicativo
+rapidamente e só continuaram devido ao incentivo dos(as) profissionais de psicologia que os
+acompanhavam ou/e pelo recurso de recompensa. De acordo com o profissional 6 que
+acompanhava a criança E, os softwares poderiam apresentar níveis de dificuldade gradativos.
+ABC Palavras (Dia 1)
+As crianças observadas durante a interação com o aplicativo ABC-Palavras também não
+apresentaram dificuldades com o mecanismo do aplicativo. Alguns já eram familiarizados com o
+aplicativo pois, já o utilizava na clínica. O aplicativo ABC-Palavras emite os sons das letras ao
+clicá-las para pareá-las. Observou-se que as crianças B, E e F repetiam os sons emitidos pelo
+aplicativo, confirmando uma das possíveis características dos indivíduos TEA que é a ecolalia. A
+profissional que acompanhava a criança B notou que alguns dos sons das letras ao serem
+selecionadas estavam erradas. No caso da palavra xícara, ao clicar sobre a letra X o som emitido
+era /xi/ e não o som da letra /xis/. Como no aplicativo anterior, as crianças B e E também
+apresentaram uma certa irritação com a monotonia do aplicativo que não aumentava o nível de
+dificuldade.
+127Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Seasons (Dia 2)
+As crianças compreenderam bem o mecanismo do aplicativo Seasons. Durante a
+observação pode-se notar uma certa dificuldade de algumas crianças TEA na percepção holística.
+As crianças A e C, ao selecionarem as peças do quebra-cabeça se atentavam mais à marca d'água
+do quebra-cabeça do que para as formas das peças, como visto na Figura 5. Por se atentarem mais
+ao desenho da marca d'água as crianças muitas vezes erravam e acabavam se frustrando e
+desistindo do aplicativo. Algumas crianças, como a A e, C encontraram uma leve dificuldade em
+arrastar elementos de um lado a outro do tablet, no quebra-cabeça presente no aplicativo,
+insistindo nos movimentos até conseguir realizá-los sem ajuda, ou quando não conseguiam
+realizá-los demonstravam frustração e os(as) profissionais os auxiliavam. Segundo os(as)
+profissionais que acompanhavam os indivíduos TEA, estes podem apresentar prejuízos na
+motricidade fina, como o caso da criança C, assim arrastar os elementos no tablet pode auxiliá-
+los a desenvolver os movimentos que exigem maior precisão.
+Doodlecast (Dia 2)
+Durante a observação do aplicativo Doodlecast todas as crianças que estavam presentes
+no dia dois (A – 8 anos e nível 2 de TEA; B – 6 anos e nível 2 de TEA; C – 6 anos e nível 1 de
+TEA) apresentaram grande dificuldade em criar algo espontaneamente. Durante a observação
+deste aplicativo, os(as) profissionais pediam as crianças que desenhassem algo como uma casa,
+flores e árvores, mas elas apenas arrastavam o dedo sobre a tela criando rabiscos.
+Durante as observações os(as) profissionais comentaram que os indivíduos TEA têm muita
+dificuldade em criar algo espontâneo e que preferem algo concreto e estruturado. Entretanto, o
+aplicativo é utilizado na clínica como um meio para auxiliar o desenvolvimento da motricidade
+fina pois o mesmo possui telas como o da Figura 4 em que as crianças podem contornar os
+desenhos.
+Aiello (Dia 3)
+O aplicativo Aiello era novo para todos os participantes na clínica, foi uma sugestão da
+observadora aos profissionais. Durante a observação as crianças não encontraram dificuldade em
+aprender o mecanismo do aplicativo. Aiello possui um avatar para interagir com os usuários e ao
+observar a interação das crianças com o aplicativo notou-se que algumas crianças como os
+participantes A e F gostaram do avatar do aplicativo, e também das recompensas sonoras e visuais
+apresentadas pelo aplicativo. Porém os outros participantes do dia três das observações, B, C, D
+e E, mostraram um certo desconforto com os elementos visuais que reportam o feedback de acerto,
+como o texto colorido piscando e os “fogos de artifício” na tela. A tela do aplicativo com a imagem
+do feedback de acerto pode ser observada na Figura 10. Também se notou a repetição dos sons de
+acerto por parte da criança F.
+128Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Figura 10: Aiello-Recurso de Recompensa.
+Este aplicativo foi desenvolvido por Cunha (2011), o qual destaca o uso de poucas ações
+para manter o foco na tarefa a ser realizada em seu trabalho. Para a realização das tarefas propostas
+por esse aplicativo são realizadas poucas ações e as crianças com TEA observadas nesta pesquisa
+não encontraram dificuldades em lembrar das ações deste aplicativo após alguma distração com
+objetos disponíveis na sala, ou com barulhos externos a sala de observação. O aplicativo Aiello
+também apresentou uma pequena lentidão ao reportar os feedbacks de acerto, devido ao sistema
+operacional antigo do tablet. Isso causou um certo estranhamento nos participantes TEA,
+provocando reações como a da criança B, que ao perceber a demora no retorno do acerto
+exclamou: "Não faz barulho!" e pedindo em seguida para trocar de aplicativo.
+123 Color (Dia 3)
+Com o aplicativo 123 Color os participantes A, C, D e F apresentaram dificuldade em
+compreender o mecanismo do jogo, como as idades e níveis de TEA são distintos não foi possível
+mapear a razão da dificuldade encontrada. Os(as) profissionais que os acompanharam
+necessitaram interferir e lhes mostrar mais de uma vez o funcionamento do aplicativo. Outra
+dificuldade notada na observação das crianças com o aplicativo 123 Color, foi a dificuldade das
+crianças A C, D e F em recordar a sequência de passos para realizar um movimento correto no
+aplicativo, não sendo possível identificar a razão da dificuldade encontrada devido a variedade de
+idade e níveis de TEA das crianças. A cada distração com objetos disponíveis na sala, ou barulhos
+externos as crianças se desconcentravam e os profissionais precisavam recordá-las da sequência.
+Também durante a observação do 123 Color observou-se que um elemento na tela tirava o foco
+de algumas crianças da tarefa a ser realizada. Na Figura 11 pode-se observar um pequeno elemento
+na interface do aplicativo 123 Color, indicado por uma flecha no canto inferior esquerdo na
+imagem, que ao ser clicado gira. As crianças A e F, níveis 2 de TEA e D, nível 3 de TEA, ao notar
+esse elemento durante as observações perdiam o foco da atividade e clicavam sobre ele
+repetidamente para observar o elemento girar. Os(as) profissionais que os acompanhavam
+interferiam e chamavam a atenção para continuar o aplicativo. Uma das características que
+pessoas com TEA podem apresentar é o fascínio com o movimento de peças, como descrito pelo
+Manual Diagnóstico e Estatístico de Transtornos Mentais (American Psychiatric Association &
+Others, 2014).
+129Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Figura 11: Elementos da Tela.
+Number Sequence (Dia 4)
+Durante a observação do Number Sequence as crianças encontraram dificuldade em
+entender o mecanismo do aplicativo. A maioria das crianças TEA observadas ao receberem o
+tablet logo arrastavam seu dedo sobre a tela procurando alguma resposta visual ou sonora do
+aplicativo. No aplicativo Number Sequence antes de iniciar o aplicativo há um breve vídeo com
+um tutorial. Ao receber o tablet, com este tutorial sendo exibido, as crianças percorriam a tela
+com o dedo buscando uma resposta visual ou sonora do aplicativo que não acontecia,
+demonstrando impaciência para assistir ao vídeo. As crianças A B, C e E apresentaram uma certa
+irritação pelo aplicativo não iniciar de imediato e solicitavam para trocar ou apenas fechavam o
+aplicativo. A criança A e B buscavam pareamentos e quando não encontravam clicavam em
+qualquer número da tela, apenas com a ajuda dos(as) profissionais conseguiram interagir com o
+aplicativo. A recompensa sonora também influenciou a motivação, quando não a encontravam
+solicitavam para trocar o aplicativo.
+Color Monster (Dia 4)
+O aplicativo Color Monster foi o predileto das crianças do último dia de observação.
+Acredita-se que isto se deve ao fato de serem familiarizados com o aplicativo. Consequentemente,
+as crianças não encontraram dificuldades com o funcionamento do aplicativo. Como no aplicativo
+TP-Shape, os sons e as falas emitidas pelo avatar que indicam erro também soaram mais divertidos
+para alguns dos participantes, como as crianças A B e D. Este comportamento também foi
+mencionado pelos(as) profissionais, e segundo eles(as), analisar os tipos de sons de um aplicativo
+é uma das suas preocupações ao selecioná-los para fins educacionais a seus(suas) pacientes TEA.
+No aplicativo há um avatar que interage com o usuário emitindo sons para quando o usuário erra
+ou acerta, a imagem do avatar do aplicativo Color Monster pode ser observada na Figura 1.
+O incentivo por meio de sons e imagens após finalizar uma atividade no aplicativo ou também
+avatares interagindo com as crianças foi percebido como algo reforçador para os participantes
+TEA, incentivando-os a continuar as atividades propostas. Também se notou a repetição por parte
+das crianças dos sons emitidos pelo aplicativo.
+4.2
+Análise Questionários
+Nesta seção será analisado os resultados obtidos nos questionários enviados aos profissionais que
+acompanharam as crianças TEA durante as observações e também aos responsáveis das crianças
+TEA.
+Nos questionários enviados aos profissionais foi perguntado sobre situações vivenciadas por
+eles(as) durante o uso de softwares com crianças TEA, deste modo as profissionais 3 e 4 relatam
+a preferência de seus(suas) pacientes TEA a sons que indicam erro sobre os sons que indicam
+acerto, sendo uma preocupação delas ao selecionar um software para realizar uma atividade.
+130Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Situação esta também notada durante as observações realizadas na pesquisa de campo, com o
+aplicativo TP-Shape e Color Monster.
+Quanto a preferência de softwares por indivíduos TEA o profissional 6 e a profissional 2
+contam que os indivíduos TEA preferem softwares que possuam música, estímulos visuais e
+sonoros. A profissional 4 e o profissional 1 dizem que os indivíduos TEA preferem softwares que
+seguem algum padrão gráfico, com cores e forma geométricas bem definidas, e que o excesso de
+informação não torna o software viável para se trabalhar com o indivíduo TEA. Por último a
+profissional 3 adiciona que softwares com personagens como avatares, também são atrativos,
+assim como muitas cores na tela e sons “engraçados”.
+Durante as observações pode-se notar que os comentários feitos pelos(as) profissionais nos
+questionários são realmente válidos, pois o incentivo por meio de sons e imagens após finalizar
+uma atividade no jogo ou também avatares interagindo com as crianças foi percebido como algo
+reforçador para os participantes TEA. Notou se que este recurso os incentivou a continuar as
+atividades propostas, como observado nas interações dos participantes com os aplicativos Color
+Monster, Aiello e TP-Shape.
+Apenas a profissional 4 reportou já ter trabalhado antes com softwares específicos para o
+público TEA. Na sua opinião, a grande maioria dos softwares desenvolvidos especificamente para
+o grupo TEA estão em inglês e/ou são pagos. Como apenas a profissional 4 já havia trabalhado
+com softwares específicos e não específicos para o público TEA, apenas esta profissional
+argumentou sobre o tópico quatro dos questionários, relatando que softwares desenvolvidos para
+o público em geral são mais atraentes por serem mais coloridos e cheios de sons.
+Todos(as) os(as) profissionais reportaram que gostariam de encontrar funcionalidades nos
+softwares desenvolvidos para o público TEA. O profissional 1 e a profissional 2 comentam que
+gostariam de encontrar softwares que exigissem respostas verbais dos indivíduos, pois uma das
+características que crianças diagnosticadas com esse transtorno podem apresentar são dificuldades
+na comunicação. Softwares que exijam respostas verbais das crianças podem auxiliar no
+desenvolvimento da fala e compreensão, além da aquisição de vocabulário. Já a profissional 3,
+gostaria de ter a possibilidade para configurar eventuais sons emitidos pelos softwares, além da
+adaptação do idioma e meios para que a criança não saia por conta própria da atividade proposta
+no software.
+Durante as observações as crianças TEA que participaram dessa pesquisa, no geral,
+apresentaram uma certa resistência em solicitar ou aceitar ajuda quando encontravam dificuldades
+durante as atividades nos aplicativos. E quando encontravam resistência em realizar a atividade
+proposta no aplicativo, logo procuravam os botões de saída do software ou o do próprio tablet.
+Deste modo validando a preocupação da profissional 3 sobre os bloqueios para que os usuários
+não saiam por conta própria da atividade.
+A profissional 4 e o profissional 6 comentam sobre os reforços positivos e negativos sendo
+alocados estrategicamente no software para o estabelecimento de comportamentos adequados.
+Isto deve ser feito para evitar comportamentos observados como o do jogo Color Monster e TP-
+Shape, no qual algumas crianças repetiam as ações incorretas para ouvir o som que lhes era
+agradável.
+De acordo com o profissional 6, este gostaria de encontrar em softwares desenvolvidos para
+o público TEA graus de dificuldades sendo apresentados gradativamente. Dois dos aplicativos
+utilizados, como o TP-Shape e Number Sequence possuem repetição reforçadora, ou seja, as
+sequências do jogo se repetem sem mudar o nível de dificuldade. O ABC-Palavras não apresenta
+repetições de uma mesma sequência, mas o nível de dificuldade também não aumenta ao decorrer
+do jogo. Segundo os(as) profissionais da clínica, a repetição é muito importante para as crianças
+TEA no processo de aprendizagem, pois eles se distraem facilmente. Para a maioria das crianças
+131Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+os jogos se tornaram monótonos depois das primeiras repetições, sem um desafio as crianças
+perderam o interesse pelo jogo rapidamente e muitos só continuaram devido ao incentivo dos(as)
+profissionais de psicologia que os acompanhavam.
+As responsáveis dos participantes TEA, responsável 1 e 2, em seus questionários relataram
+que as crianças utilizam dispositivos, como os smartphones e tablets em casa, sendo a maior parte
+do tempo dedicada para o lazer, com o uso livre, e ainda consideram a interação com a tecnologia
+saudável. Em razão das crianças com TEA terem acesso a esses dispositivos em casa, os(as)
+profissionais de psicologia comentaram durante as sessões que é necessário diferenciar o uso do
+tablet na clínica como uma atividade educacional. Quando as crianças percebem esse dispositivo
+como lazer, é difícil realizar as atividades propostas, podendo desencadear nas crianças TEA
+comportamentos não esperados como os observados durante as sessões na clínica. Por exemplo,
+as crianças A e D, segundo os(as) profissionais, utilizam o tablet em casa, e quando foram
+sugeridos os aplicativos do dia da observação as crianças se recusaram a realizar a atividade
+proposta e procuraram o aplicativo que lhes interessava. Os(as) profissionais que os
+acompanhavam tentaram algumas vezes voltar para a atividade, porém as crianças demonstraram
+um certo nervosismo.
+A responsável da criança A reportou que ele gosta muito de assistir vídeos, principalmente
+de outras crianças, além de gravar e tirar fotos. A responsável ainda completou contando que a
+criança A ainda não sabe ler ou escrever, mas consegue encontrar o que quer nos dispositivos. Já
+a responsável da criança E reportou que considera a interação do seu filho com a tecnologia
+natural, e informou que a criança A utiliza as tecnologias reportadas todos os dias de duas a três
+horas, tendo como objetivo lazer e as vezes educacional. Já a responsável 2 relata que seu filho
+utiliza as tecnologias reportadas três vezes ao dia de 30 a 40 minutos, para o lazer.
+A responsável 1 também relatou que seu filho usa aplicativos, e que ela acredita que o maior
+interesse dele em usar esses aplicativos é para passar o tempo. A responsável 2 relatou que seu
+filho não usa aplicativos.
+As duas responsáveis relataram situações onde seus filhos ficaram nervosos e irritados
+durante o uso de alguma tecnologia. A responsável 1 conta que seu filho fica irritado quando
+algum jogo na celular trava, relatando que é sempre um transtorno quando acontece. A
+responsável 2 apenas relata a reação do seu filho não explicando o motivo que desencadeou tal
+reação.
+5
+Resultados
+Com a pesquisa bibliográfica pode-se reunir uma lista com 17 recomendações, para o
+desenvolvimento de artefatos tecnológicos para crianças com TEA. Dentre todas as
+recomendações encontradas esta pesquisa confirma, ou seja, foram possíveis de observar durante
+a pesquisa de campo, 12 recomendações 15.
+Na Tabela 5 poderá ser observada uma listagem das recomendações confirmadas por esta
+pesquisa, e uma breve descrição sobre elas em seguida.
+15
+As recomendações compiladas por Britto e Pizzolato (2018) não foram possíveis serem analisadas pois as
+observações com as crianças TEA ocorreram anteriormente a esta referência, porém essas recomendações
+complementam outras recomendações analisadas nesta pesquisa.
+132Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Tabela 5: Recomendações confirmadas pela pesquisa.
+Recomendação
+Fazer com que o indivíduo se sinta no controle.
+Criar uma situação estruturada.
+Deixar o indivíduo TEA criar uma situação estruturada
+Recompensá-los com experiências sensoriais
+Facilitar o olhar dos indivíduos TEA para o detalhe
+Deixá-los usar todo o corpo
+Ambientes controlados e seguros
+Ambientes customizados
+Um software não pode confiar inteiramente em texto e
+linguagem para instrução e comandos
+Recurso de repetição usado com variação
+Evitar sobrecarga cognitiva
+Interface clara
+Feita por/em
+Van Rijn e Stappers (2008)
+Van Rijn e Stappers (2008), Millen (2007) apud Millen
+et al. (2010), Dautenhahn (2000)
+Van Rijn e Stappers (2008)
+Van Rijn e Stappers (2008), Dautenhahn (2000)
+Van Rijn e Stappers (2008), Dautenhahn (2000)
+Van Rijn e Stappers (2008), Dautenhahn (2000)
+Dautenhahn (2000), Barry et al. (2008)
+Edlin-White (2009), Millen (2007) apud Millen et al.
+(2010)
+Millen 2007 apud Millen et al. (2010)
+Edlin-White (2009) apud Millen et al. (2010)
+Barry et al. (2008)
+Barry et al. (2008)
+Fazer com que o indivíduo se sinta no controle: A maneira com que crianças TEA
+processam informações as fazem sentir como se elas possuíssem pouco ou nenhum controle sobre
+situações, de acordo com Van Rijn e Stappers (2008). Por esta razão, as crianças gostam de
+interações que as fazem pensar que estão no controle da situação. Os autores citam o feedback
+imediato como um meio para prover essa segurança, assim durante as observações notou-se que
+as crianças repetiam algumas ações ao interagir com os aplicativos pois já conheciam
+determinados sons que lhes agradavam, assim realizando o mesmo movimento repetidamente,
+como notada na interação do aplicativo Color Monster.
+Criar uma situação estruturada: Crianças TEA podem apresentar grande dificuldade em
+desenvolver a imaginação por isso uma situação estruturada pode lhe ser mais adequada, criando
+ambientes onde o usuário saiba o que é esperado dele, como os jogos de pareamento de formas
+geométricas, palavras e quebra-cabeças. Durante as observações pode-se confirmar a
+recomendação de Millen, (2007) apud Millen et al. (2010) e Van Rijn e Stappers (2008), pois foi
+notada a preferência das crianças pelos aplicativos de pareamento, como o TP-Shape, ABC-
+Palavras, Aiello, sobre o aplicativo Doodlecast, o qual não apresenta pareamento.
+Deixar o indivíduo TEA criar uma situação estruturada: Não só as crianças com TEA
+gostam de uma situação estruturada como gostam de criar situações estruturadas. Segundo Van
+Rijn e Stappers (2008), as crianças com TEA criam estruturas quando tornam explícitas as
+diferenças. Situação também observada em alguns participantes desta pesquisa, que apresentaram
+interesse e facilidade pelos aplicativos de pareamento onde podem classificar coisas além de
+trabalhar com similaridades.
+Recompensá-los com experiências sensoriais: Crianças com TEA frequentemente
+gostam de sensações específicas, como relata Van Rijn e Stappers (2008) em seu trabalho. Embora
+essas crianças possam ser muito sensíveis aos estímulos, eles realmente gostam de recompensas
+sensorias, como música, sons, etc. Durante as observações alguns participantes também
+mostraram preferência por sons que os aplicativos utilizados emitiam, como por exemplo os sons,
+os avatares interagindo com elas, além dos recursos de recompensa, os quais mantiveram a
+atenção das crianças observadas nesta pesquisa. Os(as) profissionais em seus questionários
+também reforçam esta recomendação, pois relatam a preferência de crianças por softwares com
+músicas, e estímulos sonoros e visuais, além do uso dos avatares, porém destacam o uso destes
+recursos com moderação.
+133Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Facilitar o olhar dos indivíduos TEA para o detalhe: Crianças TEA possuem dificuldade
+com a percepção holística, por isso o foco no detalhe, como cor ou forma, etc., torna mais simples
+a compreensão, como Van Rijn e Stappers (2008) e Dautenhahn (2000) relatam em suas
+recomendações. Pode-se confirmar através das observações que as crianças TEA possuem mais
+facilidade quando focam nos detalhes. Chamou a atenção também durante as observações do jogo
+Seasons, que as crianças se atentavam mais a marca d’agua do quebra cabeça e aos desenhos e
+cores do que para o formato das peças. Assim, focar em apenas um detalhe torna mais simples a
+compreensão do que é esperado dos usuários TEA.
+Deixá-los usar todo o corpo: Van Rijn e Stappers (2008) e Dautenhahn (2000) comentam
+em suas recomendações que possibilitar as crianças com TEA a usar todo o seu corpo quando
+estão interagindo com algum artefato, possibilita a interação com outros indivíduos e a
+experimentar sensações multissensoriais. Durante uma das interações com o tablet, um dos
+participantes TEA se levantava e andava pela sala. A profissional que o acompanhava relatou que
+este é um comportamento típico deste participante, quando está empolgado, confirmando a
+recomendação dos autores(as).
+Ambientes controlados e seguros: Fornecer meios para que a criança com TEA não
+possam sair dos jogos sem o consentimento do(a) profissional ou responsável que está aplicando
+alguma atividade, é o que sugere a recomendação de Dautenhahn (2000) e Barry et al. (2008).
+Situação também observada nas seções com as crianças TEA desta pesquisa, pois muitas vezes as
+crianças saiam da atividade proposta com os aplicativos sem o consentimento do(a) profissional
+que os estavam acompanhando.
+Ambientes customizados: De acordo com Edlin-White (2009) apud Millen et al. (2010)
+soluções deveriam ser, na medida do possível, fáceis e rápidas de serem customizadas. Durante a
+pesquisa de campo se notou que o som de erro muitas vezes soou para a criança TEA mais
+chamativo do que o som para indicar acerto. Possibilitar a customização, ou ocultar esses sons,
+permite aos profissionais e responsáveis que eles possam adaptar esses recursos a cada criança,
+recomendação também observada por Millen (2007) apud Millen et al. (2010), que sugere a
+customização do volume dos sons. Além da possibilidade de customizar outros recursos dos
+softwares, como volume de músicas e sons, níveis de dificuldade, recursos de incentivos, e etc.
+Um software não pode confiar inteiramente em texto e linguagem para instrução e
+comandos: Crianças com TEA são visuais, e possuem dificuldade em abstração, assim as imagens
+as auxiliam no entendimento de alguma instrução ou comando. As observações confirmam a
+recomendação de Millen (2007) apud Millen et al. (2010) e também a de Van Rijn e Stappers
+(2008), os quais apontam a importância de informar as crianças TEA visualmente sobre o que é
+esperado delas.
+Recurso de repetição usado com variação: A repetição é muito importante para crianças
+com TEA para reforçar aquilo que foi aprendido, mas deveria ser utilizada com variação para
+manter o interesse da criança no jogo, como mencionado pelos(as) profissionais nos questionários,
+confirmando a recomendação de Edlin-White (2009) apud Millen et al. (2010).
+Evitar sobrecarga cognitiva: De acordo com Barry et al. (2008) muitos estímulos visuais
+podem deixar crianças com TEA desconfortáveis. Por exemplo, durante as observações também
+pode-se notar que algumas crianças apresentavam um certo desconforto quando expostas a
+estímulos visuais do aplicativo Aiello utilizados durante a pesquisa de campo.
+Interface Clara: Nesta recomendação é indicado que as interfaces sejam simples e claras,
+com poucos elementos na tela, evitando peças com movimentos, de acordo com Barry et al. (2008)
+crianças TEA podem se concentrar em detalhes aparentemente irrelevantes. Durante as
+observações foi possível notar a distração com elementos da interface do aplicativo 123 Color que
+para outros usuários poderiam ser irrelevantes. Deste modo, verifica-se também que o uso de
+134Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+animações deve ser evitado em jogos educativos para crianças com TEA, se a animação não tiver
+um objetivo relacionada com o processo de aprendizagem da criança.
+Na Tabela 6 podem ser observadas as recomendações encontradas na pesquisa
+bibliográfica que não foram possíveis de observar durante a pesquisa de campo.
+Tabela 6: Recomendações não observadas na pesquisa.
+Recomendação
+Usar os interesses especiais de cada indivíduo
+Generalização
+Elementos competitivos deveriam ser omitidos
+Equipamentos apropriados as limitações das crianças
+Facilitar a excelente capacidade de memorização de
+cada indivíduo
+Feita por/em
+Van Rijn e Stappers (2008)
+Dautenhahn (2000)
+Edlin-White (2009) apud Millen et al. (2010)
+Edlin-White (2009) apud Millen et al. (2010)
+Van Rijn e Stappers (2008)
+Durante as observações não foi possível observar 5 recomendações encontradas na
+pesquisa bibliográfica. A primeira se refere ao “Uso dos interesses especiais de cada indivíduo”,
+a qual não foi possível observar pois foram utilizados durante as observações aplicativos que
+pudessem ser usados com todos os participantes TEA atendendo suas habilidades e não interesses
+especiais. A recomendação de Dautenhahn (2000), “Generalização”, também não foi possível
+confirmar pois não houve como identificar se o que foi aprendido pelas crianças com TEA nas
+observações através dos aplicativos, foi replicado para fora do ambiente da observação. A de
+Edlin-White (2009) apud Millen et al. (2010), “Elementos competitivos deveriam ser omitidos”,
+não foi confirmada pois sua definição não é especificada no texto, gerando significado ambíguo
+sobre sua recomendação. Outra recomendação dos mesmos autores, “Equipamentos apropriados
+as limitações das crianças”, também não foi possível observar pois foi utilizado apenas um tablet
+durante as observações com as crianças TEA e nenhum dos participantes possuía limitações
+motoras. A recomendação de Van Rijn e Stappers (2008), “Facilitar a excelente capacidade de
+memorização de cada indivíduo” não foi possível identificar pois não foi utilizada nenhuma
+atividade que as crianças necessitassem utilizar a memorização, assim não possibilitando a
+confirmação desta recomendação.
+A Tabela 7 apresenta as recomendações propostas por esta pesquisa e a seguir são
+colocadas breves descrições.
+Tabela 7: Recomendações elaboradas por esta pesquisa.
+Recomendação
+Apresentar níveis de dificuldade
+Sons e imagens condizentes com a realidade
+Uso de recursos visuais/sonoros para incentivos
+Atenção com recursos sonoros
+Sequências de passos simples
+Incentivar o uso da fala
+Observações
+X
+X
+X
+X
+X
+Profissionais
+X
+X
+X
+X
+X
+X
+Apresentar níveis de dificuldade: Um software desenvolvido para crianças diagnosticadas
+com TEA, poderia apresentar níveis de dificuldade. Esses níveis poderiam ser configuráveis por
+profissionais ou responsáveis das crianças TEA, assim respeitando o tempo de aprendizagem de
+cada indivíduo TEA. Recomendação sugerida pelos profissionais da clínica como observado nos
+resultados dos questionários, e também durante as observações. Pode se notar durante a interação
+com alguns aplicativos que algumas crianças se sentiam entediadas com a monotonia de alguns
+deles, como relatado na observação do aplicativo TP-Shape.
+Sons e imagens condizentes com a realidade: Imagens condizentes com a realidade, de
+maneira que as crianças TEA consigam reconhecê-las e associá-las ao seu dia-dia. Deve-se
+135Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+também tomar cuidado com os sons, para que não haja repetições errôneas por parte das crianças,
+como observado durante a interação com o aplicativo ABC-Palavras.
+Uso de recursos visuais/sonoros para incentivos: Durante a interação dos participantes
+TEA desta pesquisa com os aplicativos escolhidos para a pesquisa de campo, notou-se que ao
+interagir com aplicativos que possuíam algum tipo de incentivo ao realizar uma ação correta foi
+reforçador, levando os participantes a continuarem a atividade. Porém, o que também foi
+observado é que a inclusão de recursos de recompensas e incentivos deve ser feita com
+parcimônia. Nas observações realizadas, para algumas crianças estes recursos se mostraram
+efetivos no seu papel de manter o interesse das crianças no jogo, como o apresentado no aplicativo
+TP-Shape. Por exemplo, os avatares interagindo com o usuário, como o apresentado no Color
+Monster também chamaram a atenção das crianças e colaboraram para que elas realizassem as
+atividades propostas. Porém, também foi observado que muitos estímulos, como os apresentados
+no jogo Aiello, podem causar um certo desconforto em algumas crianças.
+Atenção com recursos sonoros: Nas observações pode-se verificar que a emissão dos sons
+dos jogos causou reações inesperadas (e acredita-se, não intencionadas pelos(as) designers do
+jogo). Por exemplo, a preferência por parte de algumas crianças observadas pelo som de indicação
+de erro sobre o do acerto. As crianças acabavam errando propositalmente, nos jogos TP-Shape e
+Color Monster, para poder escutar o som agradável aos seus ouvidos. Preocupação também
+externada nos questionários respondidos pelos(as) profissionais da clínica, como visto na seção
+4.1. Este resultado sugere a necessidade de mais pesquisas sobre a relação de crianças com TEA
+e tipos de sons. Acredita-se que uma pesquisa multidisciplinar com músicos, terapeutas e
+profissionais da área de Computação poderia trazer muitos benefícios para a interação de crianças
+TEA com recursos sonoros.
+Sequências de passos simples: Muitos passos para realizar um movimento dentro de um
+jogo podem gerar confusão para as crianças TEA. Elas facilmente se desconcentram, por isso
+muitos passos na atividade podem fazer com que desistam dela, como observado na interação com
+aplicativo 123 Color. Ainda de acordo com a observação do aplicativo 123 Color se notou que a
+cada distração das crianças o(a) profissional tinha que explicar novamente os passos para realizar
+a atividade, pois o jogo continha uma maior sequência de passos do que os outros.
+Incentivar o uso da fala: Uma das áreas de prejuízos que pode ser afetada em uma criança
+com TEA é a comunicação, podendo variar da ausência ao atraso na fala. Softwares que exijam
+respostas verbais podem servir com uma ferramenta auxiliar no desenvolvimento da
+comunicação, como sugerido pelos(as) profissionais que responderam os questionários desta
+pesquisa.
+6
+Conclusão
+Este artigo procurou investigar como crianças diagnosticadas com TEA interagem com
+tecnologias, buscando revisar e sugerir recomendações que desenvolvedores de software possam
+utilizar.
+Primeiramente um breve estudo sobre o TEA foi realizado para o conhecimento do
+transtorno e das características apresentadas por pessoas diagnosticadas. Após o estudo e
+compreensão sobre o TEA, uma revisão bibliográfica foi realizada para entender e investigar a
+relação dos indivíduos TEA com a tecnologia. Também trabalhos que sugerem recomendações
+para o desenvolvimento de softwares para indivíduos diagnosticados com TEA foram revisados.
+Nesse estudo pode-se observar que crianças com TEA gostam de tecnologia como qualquer outra
+criança, e que o uso de computadores e tecnologias realmente demonstram efeitos benéficos e
+positivos sobre elas. Conheceu-se plataformas, jogos e dispositivos desenvolvidos para o uso com
+136Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+o público TEA e a partir da análise dessas ferramentas os(as) autores(as) sugeriram
+recomendações para o desenvolvimento de softwares ou hardwares para indivíduos do público
+em questão.
+O que foi notado no decorrer desta pesquisa é que embora, de modo geral, a tecnologia
+tenha sido atrativa para as crianças com TEA, isto não impede a ocorrência de distrações durante
+a interação. Além disto, embora atraente, o uso de recursos computacionais durante atividades
+educacionais para crianças TEA requer não apenas um cuidadoso processo de desenvolvimento
+de tais recursos, mas também requer especial atenção nos processos de escolha e configuração
+dos aplicativos e jogos.
+Durante a pesquisa de campo foi possível observar 12 recomendações encontradas na
+pesquisa bibliográfica para o desenvolvimento de artefatos tecnológicos para crianças com TEA,
+e com a análise da pesquisa de campo foi possível contribuir com 6 novas recomendações. Apenas
+5 recomendações encontradas na literatura não foram possíveis de observar. Embora, algumas
+recomendações encontradas na literatura tenham sido propostas a partir de brinquedos
+desenvolvidos para crianças TEA (Van Rijn & Stappers, 2008; Dautenhahn, 2000), estas puderam
+ser observadas na interação com outros artefatos tecnológicos como os aplicativos educacionais
+usados nesta pesquisa.
+As recomendações divulgadas por Britto e Pizzolato (2018) em seu website 16 não foram
+possíveis serem observadas e analisadas durante a interação com indivíduos TEA, pois as
+observações aconteceram anteriormente a essa publicação. Porém, pode-se notar que as
+recomendações compiladas pelos(as) autores(as) complementam as recomendações desta
+pesquisa, como por exemplo, permitir a customização de cores, tamanhos de texto e fontes, além
+da personalização de funcionalidades. A linguagem visual e textual simples fornecendo instruções
+e orientações claras sobre as tarefas, assim como imagens, ícones e menus compatíveis com o
+mundo real, e etc.
+Mesmo que existam recomendações para o desenvolvimento de softwares para crianças
+com TEA, as interações observadas nesta pesquisa indicam que tanto os jogos desenvolvidos
+quanto os não desenvolvidos para o público TEA podem atender as necessidades dos(as)
+profissionais que trabalham nesta área, sendo assim as recomendações revisadas da literatura e
+sugeridas através da pesquisa de campo também poderiam ser aplicadas durante o
+desenvolvimento de softwares dirigidos ao público em geral.
+Algumas dificuldades foram encontradas durante a realização da pesquisa. Por exemplo,
+o tablet utilizado pela clínica tem um sistema operacional antigo, e muitos aplicativos
+desenvolvidos especificamente para o público com TEA solicitavam uma versão mais recente do
+sistema. Desta forma, não puderam ser instalados no dispositivo limitando as possibilidades de
+escolha dos jogos que poderiam ser utilizados nas observações. Como consequência, um maior
+número de jogos não desenvolvidos especificamente para o público TEA foi utilizado.
+A participação voluntária dos participantes não garantia a participação das crianças em
+todos os dias das observações. Em apenas um dos quatro dias de observação todas as crianças
+estavam presentes, assim como no dia dos testes pilotos. Somente as crianças A (8 anos, nível 2
+de TEA) e B (6 anos, nível 2 de TEA) participaram de todas as observações. A ausência das
+crianças impede que outras análises comparativas possam ser feitas sobre a interação com os
+jogos.
+O acompanhamento de profissionais mediando a interação das crianças com a ferramenta
+utilizada foi/é imprescindível para o sucesso das observações. Os(as) profissionais auxiliaram as
+16
+http://talitapagani.com/gaia/
+137Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+crianças a manter o foco e a incentivá-los a continuar as atividades. Além disto, a presença de
+profissionais capacitados(as) e especializados(as) em TEA proporcionam um canal de
+comunicação com a criança que possivelmente não aconteceria espontaneamente entre a
+observadora e o(a) participante do estudo de caso, reforçando as considerações de Ribeiro et al.
+(2013).
+A singularidade de cada interação indica a riqueza de resultados que podem ser
+descobertos em cada observação. Consequentemente, sugere a necessidade de um maior número
+de observações para que se possa compreender melhor a relação de pessoas com TEA e suas
+interações com a tecnologia.
+Com este trabalho espera-se contribuir com os grandes desafios de pesquisa em Interação
+Humano-Computador do GranDIHC, (Baranauskas et al., 2014), produzindo mais conhecimento
+sobre acessibilidade para crianças diagnosticadas com TEA no Brasil. Também se espera que as
+recomendações possam auxiliar desenvolvedores a construir softwares condizentes com as
+características desse grupo quando sessões de design participativo não forem possíveis de serem
+realizadas, lembrando que estudos nesta área ainda precisam ser realizados para que se possa
+envolver a maior quantidade de indivíduos com TEA nestas sessões.
+Como trabalhos futuros sugere-se a aplicação das recomendações sugeridas neste trabalho
+no desenvolvimento de aplicativos educacionais para crianças com TEA. E também a confirmação
+ou não delas em outros artefatos tecnológicos. Embora as recomendações sejam úteis para o
+desenvolvimento de artefatos tecnológicos para crianças com TEA, também se sugere a
+elaboração de mais pesquisas sobre como envolver pessoas diagnosticadas com TEA de diferentes
+idades, níveis de TEA, e características em sessões de design participativo. E por último uma
+retificação das recomendações elaboradas nesta pesquisa com pessoas TEA de outras idades,
+níveis e características.
+Referências
+American Psychiatric Association & Others. (2014). Manual diagnóstico e Estatístico de
+Transtornos Mentais (5th ed., text rev.). Artmed Editora. [GS SEARCH]
+Baranauskas, M. C., Souza, C. S., & Pereira, R. (2014). I GranDIHC-Br - Grandes Desafios de
+Pesquisa em Interação Humano-Computador no Brasil. Relatório Técnico. Comissão
+Especial de Interação Humano-Computador (CEIHC) da Sociedade Brasileira de Computação
+(SBC) (2014). doi: http://doi.org/10.13140/2.1.3651.9201
+Barry, M., Kehoe, A., & Pitt, I. (2008). Usability evaluation of educational game software for
+children with autism. World Conference on Educational Media and Technology. 1366–1370.
+Retrieved from: https://www.learntechlib.org/noaccess/28561/ [GS SEARCH]
+Barry, M., & Pitt, I. (2006). Interaction design: a multidimensional approach for learners with
+autism. Conference on Interaction design and children. ACM, 33–36. doi:
+http://doi.org/10.1145/1139073.1139086 [GS SEARCH]
+Britto, T. C. P. & Pizzolato, E. B. (2018). GAIA: a proposal guide of recommendations of Web
+interfaces accessibility with focus on Autism aspects (GAIA: uma proposta de um guia de
+recomendações de acessibilidade de interfaces Web com foco em aspectos do Autismo).
+Brazilian Journal of Computers in Education (Revista Brasileira de Informática na Educação
+- RBIE), 26(2), 102-123. doi: http://dx.doi.org/10.5753/rbie.2018.26.02.102 [GS SEARCH]
+Cunha, R. M. (2011). Desenvolvimento e avaliação de um jogo de computador para ensino de
+vocabulário
+para
+crianças
+com
+autismo.
+PUC-Rio.
+Retrieved
+from:
+https://www.maxwell.vrac.puc-rio.br/Busca_etds.php?strSecao=resultado&nrSeq=19646@1
+[GS SEARCH]
+138Magaton, H.C., Sabim, S.A.
+RBIE V.27, N.2 – 2019
+Dautenhahn, K. (2000). Design issues on interactive environments for children with autism. 3rd
+International Conference on Disability, Virtual Reality and Associated Technologies
+University of Reading. Retrieved from: https://uhra.herts.ac.uk/handle/2299/1944 [GS
+SEARCH]
+Farias, E. B., Silva, L.W.C., & Cunha, M.X.C. (2014). ABC AUTISMO: Um aplicativo móvel
+para auxiliar na alfabetização de crianças com autismo baseado no Programa TEACCH. X
+Simpósio Brasileiro de Sistemas de Informação (2014), 458–469. Retrieved from:
+http://www.lbd.dcc.ufmg.br/colecoes/sbsi/2014/0039.pdf [GS SEARCH]
+Goldsmith, T. R. & LeBlanc, L. A. (2004). Use of technology in interventions for children with
+autism. Journal of Early and Intensive Behavior Intervention, 1(2):166-178. doi:
+http://dx.doi.org/10.1037/h0100287 [GS SEARCH]
+Mello, A., M., S. (2001). Autismo: guia prático. Brasília: Corde. Retrieved from:
+http://www.autismo.org.br/site/images/Downloads/7guia%20pratico.pdf [GS SEARCH]
+Millen, L., Edlin-White, R., & Cobb, S. (2010). The development of educational collaborative
+virtual environments for children with autism. 5th Cambridge Workshop on Universal Access
+and
+Assistive
+Technology.
+Cambridge.
+V1,
+7.
+Retrieved
+from:
+https://www.researchgate.net/publication/266874791_The_Development_of_Educational_C
+ollaborative_Virtual_Environments_for_Children_with_Autism [GS SEARCH]
+Neto, A., Rufino, H., Nakamoto, P., Palis, R., & Beira, D. (2017). Cotidiano: um software para
+auxiliar crianças autistas em suas atividades diárias. Simpósio Brasileiro de Informática na
+Educação-SBIE, Vol. 28. 404. doi: http://dx.doi.org/10.5753/cbie.sbie.2017.404 [GS
+SEARCH]
+Pantoja, J., Sousa, A., & de Araújo Júnior, R. M. (2018). Alfa autista: uma aplicação mobile para
+o auxílio na alfabetização do autista através de método fônico. Um estudo de caso na APAE-
+Marabá. Simpósio Brasileiro de Informática na Educação-SBIE, Vol. 29. 1873. Retrieved
+from: http://br-ie.org/pub/index.php/sbie/article/view/8177 [GS SEARCH]
+Piconi, A. C., & Tanaka, E. H. (2003). A construção de histórias em quadrinhos eletrônicas por
+alunos autistas. Simpósio Brasileiro de Informática na Educação-SBIE, Vol. 1. 385–394. doi:
+http://dx.doi.org/10.5753/cbie.sbie.2018.1873 [GS SEARCH]
+Putnam, C. & Chong, L. (2008). Software and technologies designed for people with autism: what
+do users want?. 10th international ACM SIGACCESS conference on Computers and
+accessibility. 3–10. doi: http://doi.org/10.1145/1414471.1414475 [GS SEARCH]
+Ribeiro, P. C., Braz P., Silva G. F. M., & Raposo A. (2013). ComFiM: Um Jogo Colaborativo
+para Estimular a Comunicação de Crianças com Autismo. X Brazilian Symposium in
+Collaborative Systems. Sociedade Brasileira de Computação, 72. Retrieved from:
+https://dl.acm.org/citation.cfm?id=2542522&dl=ACM&coll=DL&CFID=841796750&CFT
+OKEN=40231395 [GS SEARCH]
+Van Rijn, H., & Stappers, P. J. (2008). The puzzling life of autistic toddlers: design guidelines
+from the LINKX project. Advances in Human-Computer Interaction. doi:
+http://dx.doi.org/10.1155/2008/639435 [GS SEARCH]
+139

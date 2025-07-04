@@ -1,0 +1,573 @@
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+O USO DA INTELIGÊNCIA ARTIFICIAL NA EDUCAÇÃO À DISTÂNCIA
+
+Márcia Rejane Semensato
+Luciane de Aguiar Francelino
+Luciano Santos Malta
+RESUMO
+Esse artigo trata do uso de tecnologias advindas da Inteligência
+Artificial na Educação à distância. A Educação à Distância,
+EAD, é uma modalidade de educação efetivada através do uso
+de tecnologias de informação e comunicação, na qual
+professores e alunos estão separados fisicamente, seja no
+espaço e/ou no tempo. Para sua efetivação, a EAD conta com
+recursos advindos da chamada Inteligência Artificial -. ciência
+que estuda o fenômeno da inteligência e o ramo da engenharia
+que constrói instrumentos para apoiar a inteligência humana,
+seja por meio de mecanismos ou de softwares. O uso de
+tecnologia decorrente das pesquisas em Inteligência Artificial é
+uma realidade em diversas aplicações atualmente, incluindo as
+novas tecnologias digitais interativas. Elas são ferramentas
+importantes na organização da EaD: no desenho das
+interações, do ambiente de aprendizagem, da aula, do curso e
+do material didático. Tudo isso passa atualmente pela geração
+online da EaD. Na EaD online é possível agregar vários
+ambientes de aprendizagem; redefinir ambientes presenciais;
+reorganizar a modelagem das aulas; definir outros papéis ao
+docente; e produzir material pedagógico vasto e diversificado.
+De fato, considera-se que a Educação a distância (EAD) foi um
+dos fatores que mais influenciaram no desenvolvimento das
+tecnologias da informação e da comunicação.
+Palavras-chave: EAD. Inteligência artificial. Educação online.
+ABSTRACT:
+This article deals with the use of technologies arising from the
+Artificial Intelligence in Distance Education. Distance education,
+is a type of education that occurs through the use of information
+and communication technologies, in which teachers and
+students are physically separated, either in space and / or time.
+For its realization, the Distance Education uses resources from
+called Artificial Intelligence – a science that studies the
+phenomenon of intelligence and the branch of engineering that
+builds tools to support human intelligence, whether through
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+29
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+mechanisms or software. The use of technology resulting from
+research in Artificial Intelligence is a reality in many applications
+today, including the new interactive digital technologies. They
+are important tools in the organization of Distance Education: in
+the design of interactions, of the learning environment, of the
+class, course and of the educational materials. All this is
+currently undergoing the online generation of Distance
+Education. In online Distance Education you can aggregate
+multiple
+learning
+environments;
+redefine
+classroom
+environments; reorganize the modeling of classes; define other
+roles in teaching; and produce vast and diverse educational
+material. In fact, it is considered that the Distance Education
+was one of the factors that most influenced the development of
+information and communication technologies.
+Keywords: Distance Education. Artificial Intelligence. online
+Education.
+
+1 INTRODUÇÃO
+
+1.1
+
+EDUCAÇÃO À DISTÂNCIA: DEFINIÇÕES
+
+A Educação à Distância, EAD, é uma modalidade de educação efetivada
+através do uso de tecnologias de informação e comunicação, na qual professores e
+alunos estão separados fisicamente, seja no espaço e/ou no tempo (Alves, 2011). O
+conceito, no entanto, é bastante variado. Um levantamento sobre a conceitualização
+de EAD realizado por Alves (2011) revelou que diferentes autores enfatizam
+características distintas na sua concepção do que seja a EAD. As ênfases são, por
+exemplo, definição de EAD como forma de estudo na Educação a Distância, como a
+metodologia da Educação a Distância, como as ações do professor e a comunicação
+deste com os alunos, ou também com ênfase na separação física e no uso de
+tecnologias de telecomunicação.
+Ate a ideia de que a EAD seja uma concepção ou modalidade educacional, é
+discutível para Lemgruber (s/d). De acordo com este autor, seria mais esclarecedor
+o uso da ideia de “forma educacional”, seja forma presencial ou á distância, pois o
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+30
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+termo modalidade pode confundir com especificidade educacionais tais como
+Educação de Jovens e Adultos, Educação Especial, Educação Profissional,
+Educação Indígena, estas sim modalidades educacionais. A imprecisão, de acordo
+com o autor, é tamanha que há normas legais que chegam a dizer que EaD é uma
+modalidade educacional que poderá ser aplicada a diversos níveis e modalidades de
+ensino” (LEMGRUBER, s/d).
+
+1.2
+
+INTELIGÊNCIA ARTIFICIAL: RUMOS ATÉ A EAD
+
+Para sua efetivação, a EAD conta com recursos advindos do que podemos
+chamar de Inteligência Artificial (IA). A IA se fundamenta em diversas áreas do
+conhecimento, tais como Neurociências, Filosofia, Engenharia da Computação,
+Teoria do controle e cibernética. (RUSSEL; NORVIG, 1995). Historicamente,
+o primeiro trabalho de IA, foi feito por Warren McCulloch e Walter Pitts, em 1943.
+Para tal eles usaram conhecimento advindos da filosofia e função dos neurônios no
+cérebro; uma análise formal da lógica proposicional de Russel e Whitehead; e a
+teoria da computação de Turing. A partir daí foi proposto um modelo de neurônios
+artificiais no qual mostraram, por exemplo, que qualquer função computável poderia
+ser computada pela mesma rede de neurônios conectados, e que os conectivos
+lógicos (and, or, not, etc) poderiam ser implementados por simples estruturas de
+rede. A hipótese era que essas redes, quando definidas adequadamente, também
+poderiam aprender (RUSSEL; NORVIG, 1995).
+Posteriormente, em Princeton, Marvin Minsky e Dean Edmonds, construíram
+a primeira rede neural de computador em 1951, o SNARC (RUSSEL; NORVIG,
+1995). No entanto, foi Alan Turing quem primeiro articulou uma visão completa de
+IA em “Computação de Máquina e Inteligência” escrito em 1950. Ele introduziu o
+Teste de Turing, aprendizado de máquina, algoritmos genéticos e reforço da
+aprendizagem. A formulação desse teste serviu como impulso no início das
+pesquisas em Inteligência Artificial. Em termos gerais, o Teste de Turing averigua a
+capacidade de uma máquina se passar por humano: a questão consistia em saber
+se essa imitação poderia ser tão perfeita de tal forma que um juiz humano pudesse
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+31
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+ser confundido ao ter que decidir se algumas tarefas foram executadas por um
+homem ou por uma máquina, com base nos resultados (TEIXEIRA; QUILICI
+GONZALES, 1983). Isso levou Alan Touring a ser considerado um dos pais
+da Ciência da Computação: o seu conceito de uma Máquina Lógica de Computação
+depois ficou conhecido como a Máquina de Turing.
+Posteriormente, outros programas foram também muito importantes no
+desenvolvimento
+
+da
+
+IA,
+
+tais
+
+como
+
+o
+
+General
+
+Problem
+
+Solver
+
+(GPS).
+
+Este programa foi projetado inicialmente para imitar os protocolos humanos de
+resolução de problemas, mas revelou além disto: a ordem na qual o programa
+considerava os objetivos e as ações era semelhante às humanas em relação aos
+mesmos problemas. Assim, o programa GPS pode ser considerado o primeiro a
+incorporar a proposta do “pensar humanamente”. A partir dos sucessos de
+programas como esses Newell e Simon (1976) a formular outra hipótese que os
+sistemas
+
+inteligentes,
+
+sejam
+
+humanos
+
+ou
+
+máquinas, devem
+
+operar
+
+pela
+
+manipulação de estruturas de dados compostas de símbolos. Posteriormente, em
+1958, no MIT, John McCarthy definiu a linguagem Lisp, que se tornou a
+linguagem dominante para programação de IA e criou o Advice Taker (Tomador de
+Conselhos), um programa hipotético que pode ser considerado como o primeiro
+sistema de IA completo (RUSSEL; NORVIG, 1995).
+O desenvolvimento tecnológico vem sendo amplo nessa área. De acordo com
+Gomes (2013) as tecnologias atuais inclusive superam as acomodações previstas
+atualmente pela legislação. Elas não foram criadas nem se limitam a permitir
+adequações e transposições das formas tradicionais de educação; de fato, elas
+trazem propostas para uma educação diferenciada, com participantes mais ativos:
+pautada menos no controle e mais na liberdade e na horizontalidade dos
+relacionamentos; pautada menos no professor como detentor de todo saber e
+poder para uma em que os participantes negociam os saberes e o poder (GOMES,
+2013). Além disso, na opinião de Simões Gala; Ithourald; Bento; Mattar; Czeszak
+(2013) o futuro das tecnologias digitais promete uma influência ainda maior do que a
+atual. Os objetos passarão a ser mais inteligentes e proporcionarão ainda mais
+interação com o humano. A ampliação da situação de armazenagem, recuperação e
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+32
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+compartilhamento de informações implica também numa mudança nos modos das
+pessoas acessarem conhecimento e de educarem-se (SIMÕES GALA; ITHOURALD;
+BENTO MATTAR; CZWSZAK, 2013).
+A partir de tais desenvolvimentos o cenário real da educação sofreu
+transformação: os humanos não são mais os únicos atores da educação e a
+inteligência computacional está inserida ativamente no mundo. Consequentemente o
+real também sofreu misturas e reformas, passando cada dia mais a ter
+configurações em suas qualidades que permitem sua identificação pelos
+dispositivos, pelos seus pares. Os objetos computacionais conseguem identificar
+padrões, testar e generalizar entendimentos, pois o mundo desses objetos dialoga
+com o mundo sensível do humano:
+Nesse contexto, a educação à distância e os objetos de aprendizagem para
+este tipo de ambiente acabam por adquirir uma grande relevância para a
+educação dessa geração, com a tendência de, em breve, tornarem-se os
+recursos mais relevantes (SIMÕES GALA; ITHOURALD; BENTO MATTAR;
+CZWSZAK, 2013, p.79).
+
+O planejamento da EAD necessita ‘dialogar’ com a inteligência artificial e viceversa a fim de que possamos usar as tecnologias digitais como aliadas. Silva (2012)
+afirma que as novas tecnologias digitais interativas podem, naturalmente, auxiliar na
+organização da EaD. O desenho das interações, do ambiente de aprendizagem, da
+aula, do curso e do material didático passa por esta terceira geração EaD, a geração
+online, mediada pela Internet, que possibilita a utilização de diversas ferramentas:
+Assim, por meio da EaD online é possível agregar vários ambientes de
+aprendizagem; redefinir ambientes presenciais; reorganizar a modelagem
+das aulas; definir outros papéis ao docente; e produzir material pedagógico
+vasto e diversificado (SIMÕES GALA; ITHOURALD; BENTO MATTAR;
+CZWSZAK, 2013, p. 79).
+
+Por outro lado, como enfatiza Terçariol (2014), o papel dos formadores na
+mediação de práticas pedagógicas on-line é fundamental para o sucesso do
+processo de ensino e aprendizagem em contextos não presenciais e o uso favorável
+da tecnologia nesse contexto. Devido à formação da maioria dos formadores que
+desencadeiam essas ações, no entanto, observa-se que muitos não estão
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+33
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+preparados para trabalhar com essa modalidade de ensino e com suas
+especificidades, principalmente, na utilização da tecnologia. Também, é necessário
+tempo para a análise de ferramenta, para a familiarização com ela, suas carências e
+potenciais.
+
+Isso pode ser uma das dificuldades em cursos EAD: nem todos os
+
+participantes de um curso on-line conhecem a priori as tecnologias que serão
+utilizadas durante o seu desenvolvimento. Essa ambientação precisa ser inserida no
+curso: aspectos práticos e teóricos sobre funcionalidades do ambiente virtual de
+aprendizagem e outro recursos tecnológicos usados (TERÇARIOL, 2014).
+A presença da tecnologia e dos seus recursos para interação e
+compartilhamento, devem propiciar meios para a experimentação e a efetivação
+de novos paradigmas, novas propostas, novos papeis extensivos a todos os
+envolvidos. A tecnologia não deve ser usada para controlar, regular, normatizar
+comportamentos, ideias, práticas e relações e sim para favorecer uma nova
+educação mais participativa (GOMES, 2013).
+
+1.3
+
+APLIACAÇÕES DA INTELIGÊNCIA ARTIFICIAL NA EAD.
+
+Considera-se que a Educação à distância foi um dos fatores que mais
+influenciaram no desenvolvimento das tecnologias da informação e da comunicação
+(SANTOS; MAGALHÃES; D’EMERY, 2010). Ali o professor deixou de ser o centro
+de fluência da informação e tornou-se um mediador/facilitador no acesso às
+informações. De forma semelhante, afeta o papel do aluno, que precisa tornar-se um
+aprendiz ativo, assumindo o papel de ser o principal responsável pela construção do
+seu conhecimento. Para Campana et al. (2008), isso está levando as instituições de
+ensino a repensarem seus modelos pedagógicos sendo que a EAD via Internet
+começa a ser vista como uma alternativa para reduzir custos ou permitir a rápida
+atualização de conteúdos.
+Estas arquiteturas pedagógicas são estruturas de aprendizagem realizadas a
+partir da confluência de diferentes componentes, dentre eles a inteligência artificial
+(IA). A IA é uma ciência que estuda o fenômeno da inteligência e o ramo da
+engenharia que constrói instrumentos para apoiar a inteligência humana, seja por
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+34
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+meio de mecanismos ou de softwares (KERCKHOVE, 2003). As inúmeras
+possibilidades proporcionadas pelas Tecnologias de Informação e Comunicação
+(TIC)
+
+aplicadas
+
+à
+
+Educação
+
+estendem-se
+
+para
+
+as
+
+ações
+
+pedagógicas
+
+desencadeadas na modalidade a distância, articulando diferentes recursos
+tecnológicos (material impresso, rádio, sistema televisivo, computador, internet, etc.)
+para a viabilização de processos educacionais. Com os avanços no uso da
+tecnologia, especialmente da Internet e suas ferramentas (ex. imagem, som,
+movimento) em ações não presenciais, viabilizam-se ambientes de aprendizagem
+com facilidade para o acesso a informações atualizadas e maior flexibilidade no
+estudo (TERÇARIOL, 2014). Nesse sentido, para esse autor, o surgimento das
+ferramentas de comunicação assíncronas (e-mail, fóruns, entre outras) e síncronas
+(chat, videoconferências, etc.), favoreceram aos estudantes os processos de
+comunicação, independentes de barreiras de tempo e de espaço.
+Através da IA, os ambientes virtuais de aprendizagem EAD evoluíram em
+importantes aspectos para a aprendizagem: a facilidade do uso, interação com
+usuário, disponibilidade de feedback para tutor e diminuição da necessidade de
+encontros presenciais (KERCKHOVE, 2003). Giraffa (1998) aponta para o uso de
+técnicas de IA, a fim de prover sistemas computacionais de ensino, com capacidade
+de adaptação ao contexto e personalização do ambiente de acordo com as
+características dos aprendizes, além de permitir um alto grau de interatividade entre
+o ambiente e os usuários e um controle maior das sessões de aprendizagem em
+ambientes multiusuários. Para Santos, Magalhães e D’Emery (2010), houve
+mudança no conteúdo dos ambientes educativos em EAD com inserção dos
+conceitos de (IA). Os Sistemas Tutores inteligentes, por exemplo, tornam-se muito
+populares. A característica principal desses aplicativos é sua capacidade de interagir
+com pessoas, percebendo as ações do aluno e a partir disso, atualizando sua base
+de conhecimentos. Esse sistema possui o Módulo do aluno, o Módulo Tutorial, o
+Módulo de domínio e a Interface, a qual é responsável pela interação tutor/aluno.
+Outro exemplo são os Agentes Inteligentes, que simulam o comportamento humano
+para resolver problemas. Há diversas aplicações da IA com EAD, principalmente
+design de ferramentas para leituras online e desenvolvimento de soluções
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+35
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+inteligentes (KOSE, 2015). O caráter destas arquiteturas pedagógicas é pensar a
+aprendizagem como um trabalho artesanal, construído na vivência de experiências e
+na demanda de ação, interação e meta-reflexão do sujeito sobre os fatos, os objetos
+e o meio ambiente sócio-ecológico. A arquitetura de ação simulada visa realizar uma
+atividade, ou seja, aprender a fazer fazendo. Esta arquitetura é mais adequada
+quando o foco da aprendizagem é o domínio da experiência, ou seja, simulam-se
+situações da vida real. Tais situações ‘virtuais’ têm o objetivo de preparar o
+estudante a lidar com aspectos complexos que não podem ser vivenciados
+diretamente ou naqueles em que há dificuldade ou impossibilidade para estar
+presente diante do fenômeno. Criam-se simulações que podem implicar interações
+entre pessoas, instituições, questões urbanas, geográficas, culturais, fenômenos
+físicos ou químicos, etc. Segundo Carvalho, Nevado, Menezes (2005) se pode
+trabalhar com cidades virtuais, nas quais predomina a resolução de problemas,
+transformando cada possível especialidade em uma situação de aprendizagem pela
+ação. Através da troca de idéias entre os integrantes de um grupo, estimulados pelo
+ambiente virtual, é possível a produção de soluções diferentes para um mesmo
+problema (SILVEIRA; BARONE, 2006). A (IA) possibilita técnicas que permitem aos
+computadores habilidades associadas aos seres humanos, como compreensão de
+linguagem natural, resolução de problemas e capacidade de aprender por si; Isso
+possibilita a melhoria dos ambientes virtuais de aprendizagem em EAD. Atualmente
+estudos também buscam a aplicação de características afetivas aos sistemas, a
+computação afetiva (SANTOS; MAGALHÃES; D’EMERY, 2010). No entanto,
+conforme Casa, Ribeiro e Silva (2010), a introdução de novas tecnologias pode ter
+alto custo para as instituições e há dificuldades de mudar práticas pedagógicas
+existentes. Para esses autores o projeto de um sistema computacional de
+ensino/aprendizagem tem que levar em conta toda a complexidade do processo de
+construção do conhecimento e da interação entre os atores desse processo.
+Para alguns educandos, o uso de tecnologias e a disciplina para estudar
+sozinho são apontados como dificuldades para esta modalidade de ensino. Por outro
+lado, as vantagens da modalidade de educação à distância são a colaboração na
+democratização do ensino e na aquisição dos mais variados conhecimentos; a
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+36
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+agilidade no acesso à informação, o custo e o tempo poupados (ALVES, 2011;
+PALLA; MARQUES; TATAGIBA PEREIRA; DORNELAS, 2014). Isto porque é um
+instrumento capaz de atender um grande número de pessoas simultaneamente,
+chegar a indivíduos que estão distantes dos locais onde são ministrados os
+ensinamentos e/ou que não podem estudar em horários pré-estabelecidos (ALVES,
+2011). Além disso, como ressalta Lemgruber (s/d), tanto cursos à distância podem
+recorrer a atividades presenciais, como a utilização das tecnologias de informação e
+comunicação nos cursos presenciais será cada vez maior. De fato, atualmente há
+possibilidade de um uso amplo dos momentos presenciais e dos momentos não
+presenciais nos cursos, de tal forma que não se faça mais distinção de uma forma
+ou modalidade de educação, mas sim de meios (GOMES, 2013).
+Assim, os mais otimistas apostam que a EaD, através do auxílio da
+tecnologia, torna-se um estudo mais colaborativo e prestativo na construção do
+saber, pois facilita o contato individualizado com o professor tutor, do mesmo modo
+que conecta os alunos entre si nas discussões dos fóruns, onde há interação,
+participação e troca de experiência. O ponto negativo deste modo de estudo está na
+familiaridade que muitos não têm com a tecnologia, mas este acaba se tornando
+futuramente um ponto positivo, pois favorece mais um aprendizado, já que mediante
+a prática o educando acaba desenvolvendo maior afinidade com o computador e a
+internet, facilitando, assim sua interação e a prática tecnológica, essenciais para o
+mercado de trabalho. O ensino a distância cumpre com as mesmas exigências de
+uma faculdade com aulas presenciais, mas, particularmente, ela vai além, pois
+estimula à aprendizagem e à participação do processo tecnológico, incentivando ao
+uso do computador, fator essencial nos dias atuais (PALLA; MARQUES; TATAGIBA
+PEREIRA; DORNELAS, 2014).
+Na opinião de Lemgruber (s/d) a tendência é que as fronteiras entre educação
+presencial e à distância cada vez possuam demarcações menos rígidas devido às
+tecnologias decorrentes da Inteligência Artificial: com o aperfeiçoamento dos
+suportes de processamento da informação e dos meios de comunicação há
+possibilidade de um refinamento crescente da interação mediada. Nesse sentido, até
+o conceito de educação presencial se modifica: “o virtual se possibilita como
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+37
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+realização de presença” (LOBO NETO, 2006, p. 414). Nesse sentido a tecnologia
+disponibilizada
+
+pela
+
+Inteligência
+
+Artificial
+
+é
+
+decisiva
+
+na
+
+realização
+
+dessa
+
+possibilidade.
+O uso de tecnologia decorrente das pesquisas em Inteligência artificial é uma
+realidade em diversas aplicações atualmente, incluindo na EAD. Não só a IA pode
+‘dialogar’ com o humano, como o humano ‘dialoga’ com a IA constantemente, a fim
+de que os programas desenvolvidos sejam favoráveis ao desenvolvimento humano.
+Sem dúvida, as tecnologias decorrentes da IA facilitam a promoção da educação,
+mas por outro lado, é pela via do humano que sua implementação poderá ser
+favorável ou não. Nesse sentido, os desafios para a implantação e consolidação de
+uma educação a distância de qualidade no Brasil ainda parecem ser muitos.
+
+Referências
+ALVES, L. Educação a distância: conceitos e história no Brasil e no mundo. Revista
+Brasileira de Educação a Distância, v. 10, p. 83-92, 2011.
+
+CAMPANA, V. F., et al. Agentes para Apoiar o Acompanhamento das Atividades em
+Ambientes Virtuais de Aprendizagem. In: XIX Simpósio Brasileiro de Informática na
+Educação, Fortaleza, CE. Anais do XIX Simpósio Brasileiro de Informática na
+Educação, 2008.
+
+CARVALHO, M. J. S.; NEVADO, R. A. D.; MENEZES, C. D. In: Arquiteturas
+Pedagógicas para educação a distância: concepções e suporte telemático.
+In:Simpósio Brasileiro de Informática na Educação, Juiz de Fora-MG. Brasil. 2005.
+
+CASA, M. E.; RIBEIRO, A.M.; SILVA, J. L. Ambientes de aprendizagem inteligentes.
+In: VALENTINI, C. B.; SACRAMENTO, E. M., Aprendizagem em ambientes
+virtuais: compartilhando ideias e construindo cenários. Caxias: EDUCS, 2010.
+
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+38
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+GALA, A. C. ; MATTAR, J. ; ITHOURALD, I. ; BENTO, M. C. M. ; CZESZAK, W. A. C.
+. Produção de material didático para uma educação a distância flexível. Tecnologia
+Educacional, v. 201, p. 79-88, 2013.
+
+GIRAFFA, L. M. M. Uma arquitetura de tutor utilizando estados mentais. (1998).
+Tese (Doutorado no CPGCC), Universidade Federal do Rio Grande do Sul, Rs.
+
+GOMES, Luiz Fernando. EAD no Brasil: perspectivas e desafios. Avaliação
+(Campinas), Sorocaba , v. 18, n. 1, p. 13-22, 2013.
+
+KERCHOVE, D. A arquitetura da inteligência: interfaces do corpo, da mente e do
+mundo. In: DOMINGUES, D. Arte e vida no século XXI - tecnologia, ciência e
+criatividade. São Paulo: Editora UNESP, p.15-26, 2003.
+
+KOSE, H. Artificial Intelligence applications in distance education. EUA: IGI
+Global, 2015.
+
+LEMGRUBER,
+
+Márcio Silveira. Educação a distância: para além dos caixas
+
+eletrônicos.
+
+Portal
+
+do
+
+MEC.
+
+Disponível
+
+em:
+
+<http://portal.mec.gov.br/arquivos/conferencia/documentos/marcio_lemgruber.pdf >. Acesso
+em: 22 jun. 2012.
+
+LOBO NETO, F. J. Regulamentação da Educação a Distância: caminhos e
+descaminhos. In SILVA, M. (org.). Educação online. São Paulo: Loyola, 2006.
+
+PALLA, M. C.; MARQUES, R.; TATAGIBA PEREIRA, M.; DORNELAS, G. Pontos e
+contra pontos no sistema de Educação a Distância. Tecnologia Educacional, v.
+205, p. 41-48, 2014.
+
+RUSSEL, S.; NORVIG, P. Artificial Intelligence: A Modern Approach. New Jersey:
+Simon & Schuster Company, 1995.
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+39
+
+Revista Cesuca Virtual: Conhecimento sem Fronteiras
+http://ojs.cesuca.edu.br/index.php/cesucavirtual
+
+SANTOS, R. T.; MAGALHÃES, C.; D´EMERY, R. Aspectos do uso da Inteligência
+Artificial em ambientes de EAD. II Encontro Regional de Tecnologia e Negócios,
+Serra Talhada, 2010.
+
+SILVEIRA, S. R.; BARONE, D. A. C. Formação de grupos colaborativos em cursos a
+distância via web: Um estudo de caso utilizando técnicas de inteligência
+
+artificial. Revista Brasileira de informática na Educação. v. 14, n. 2 (maio-ago.
+2006), p. 29-40.
+
+TEIXEIRA, F.; QUILICI GONZALES, M . E . Inteligência Artificial e teoria de
+resolução de problemas. Trans/Form/Ação, São Paulo, v. 6, p. 45-52, 1983.
+
+TERÇARIOL, A. A. O currículo e a Formação de professores formadores em
+ambientes virtuais. Tecnologia Educacional. v. 207, p. 7-19, 2014.
+
+Rua Silvério Manoel da Silva, 160 – Bairro Colinas – Cep.: 94940-243 | Cachoeirinha – RS | Tel/Fax. (51) 33961000 | e-mail: ceadces@cesuca.edu.br
+
+REVISTA CESUCA VIRTUAL: CONHECIMENTO SEM FRONTEIRAS - ISSN 2318-4221 - v.2, n. 4, Ago/2015
+
+40
+
+

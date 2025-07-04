@@ -1,0 +1,539 @@
+Implementa¸c˜ao de seguran¸ca zero-trust para redes
+industriais
+Robson Santos Jr. ∗ Felipe G. Cabral ∗ Publio M. M. Lima ∗
+∗ Departamento de Engenharia de Automa¸c˜ao e Sistemas (EAS),
+Universidade Federal de Santa Catarina (UFSC), Campus Trindade,
+Florian´opolis, 88.040-900, SC, Brasil (robson.fsj@posgrad.ufsc.br,
+felipe.gomes.cabral@ufsc.br, publio.lima@ufsc.br).
+Abstract: Industrial processes have become more interconnected, which allows new production
+configurations, more efficiency, and operational safety. However, this increase in connectivity
+can make industrial systems vulnerable to cyberthreats that can compromise the confidentiality
+of the information transmitted in industrial networks. Several strategies have been proposed
+in the literature to defend industrial systems against external attacks, such as opacity and
+cryptography. However, only few works deal with the problem of industrial networks that
+are internally compromised. In this paper, a new defense approach is proposed considering
+that the industrial network has been compromised. To do so, an analysis of the efficiency
+of RSA cryptographic procedure is carried out to ensure the security of the communication
+between Programmable Logic Controllers (PLCs) and an SCADA application. In this context,
+the information is decrypted only after all network components validate it. Using this strategy,
+it is possible to guarantee a secure information traffic in the network even when one of the
+network agents is compromised by an attacker.
+Resumo: Processos industriais tˆem se tornado cada vez mais conectados, permitindo novas
+configura¸c˜oes de produ¸c˜ao, maior eficiˆencia e seguran¸ca na opera¸c˜ao. Entretanto, essa maior conectividade pode deixar sistemas industriais vulner´aveis a ciberataques capazes de comprometer
+a confidencialidade da informa¸c˜ao transmitida em redes industriais. Diversas estrat´egias tˆem
+sido propostas para defender sistemas industriais contra ataques externos, como opacidade ou
+criptografia. Por´em, poucos trabalhos consideram que a rede industrial possa estar internamente
+comprometida. Neste artigo, uma nova abordagem de defesa ´e proposta considerando-se que a
+rede industrial foi comprometida, o que pode ocorrer quando um atacante tem acesso indevido
+a um elemento que faz parte da rede. Para tanto, uma an´alise da efic´acia da criptografia RSA ´e
+feita para garantir que a comunica¸c˜ao entre Controladores L´ogico Program´aveis (CLPs) e uma
+aplica¸c˜ao SCADA seja segura. Nesse contexto, ´e considerado que nenhum CLP ´e confi´avel, de
+modo a implementar a chamada zero-trust network. Nessa rede, a informa¸c˜ao ´e descriptografada
+apenas ap´os ser validada por todos os componentes da rede. Com essa estrat´egia, ´e poss´ıvel garantir o tr´afego seguro de informa¸c˜oes na rede mesmo que um de seus agentes seja comprometido
+por um atacante.
+Keywords: Cybersecurity; SCADA; Zero Trust; Cryptography; RSA.
+Palavras-chaves: Cyberseguran¸ca; SCADA; Zero Trust; Criptografia; RSA.
+1. INTRODU ¸CAO˜
+Com o avan¸co da Ind´ustria 4.0, o processo de digitaliza¸c˜ao
+permite que um gigantesco n´umero de tecnologias e dispositivos sejam capazes de se comunicar uns com os outros a
+partir de qualquer lugar e a qualquer hora, como observado
+por Munirathinam (2020). Tais tecnologias est˜ao presentes
+desde o controle dos sem´aforos nas cidades at´e grandes
+complexos tecnol´ogicos como plantas petrol´ıferas, subesta-
+¸c˜oes de energia el´etrica e usinas nucleares. Esses e outros
+exemplos fazem parte do cotidiano dos seres humanos,
+conforme apresentado por Ackerman (2017).
+⋆ O presente trabalho foi realizado com o apoio da Coordena¸c˜ao de
+Aperfei¸coamento de Pessoal de N´ıvel Superior (CAPES) - C´odigo de
+Financiamento 001.
+O avan¸co tecnol´ogico, al´em de melhorar a qualidade da
+vida da popula¸c˜ao, abre precedentes para diversos ataques cibern´eticos, a exemplo dos que vˆem ocorrendo com
+gigantes da manufatura e automa¸c˜ao como o ataque `a
+Renault, apresentado em Habibzadeh et al. (2019), e o recente ataque por ransomware `a Siemens Energy, avaliado
+por Alsabbagh and Langendoerfer (2022). Tais ataques
+s˜ao capazes de causar impactos financeiros na casa dos
+milh˜oes de euros, como foi o caso da Renault, que teve
+seu parque de produ¸c˜ao e diversos setores da empresa
+parados em consequˆencia ao ataque sofrido. Tendo em
+vista o impacto que o comprometimento de uma planta
+industrial pode causar, os ambientes da rede operativa
+e os de infraestrutura cr´ıtica devem estar submetidos
+aos padr˜oes mais elevados de seguran¸ca cibern´etica para
+que, de modo priorit´ario, possam estar protegidos contra
+as amea¸cas cont´ınuas causadas por ataques e malwares
+(software malicioso projetado para prejudicar ou explorar
+qualquer dispositivo, servi¸co ou rede program´avel) cada
+vez mais sofisticados, como demonstrado em Mitsarakis
+(2023). Tendo em vista todo este cen´ario e sua relevˆancia,
+o Governo Federal do Brasil publicou em Outubro de
+2023 a Pol´ıtica Nacional de Ciberseguran¸ca (PNCiber), um
+decreto que tem por objetivo unificar a¸c˜oes regulat´orias
+existentes no pa´ıs, buscando diminuir o d´ebito tecnol´ogico
+nacional no setor e ampliar a participa¸c˜ao brasileira na
+coopera¸c˜ao internacional sobre a tem´atica - Federal (2023).
+Ataques cibern´eticos s˜ao classificados na literatura em dois
+tipos (Oliveira et al., 2023): ataques ativos, em que o
+atacante modifica os dados transmitidos para causar danos
+ao sistema (Lima et al., 2021), e ataques passivos, onde o
+objetivo do atacante ´e reconhecer algum padr˜ao ou segredo
+do sistema (Lima et al., 2022, 2023). Neste trabalho, vamos
+considerar o problema de um ataque ativo em uma rede
+industrial. Mais especificamente, vamos considerar a vulnerabilidade do sistema contra ataques internos, ou seja,
+ataques em que o agente n˜ao autorizado ´e uma entidade
+na rede e assim transmite informa¸c˜oes para confundir os
+outros integrantes da rede na tentativa de fazer o sistema
+evoluir para um estado indesej´avel. Nessa situa¸c˜ao, ´e essencial que as mensagens transmitidas sejam validadas,
+caso contr´ario o atacante pode se comunicar com todos da
+rede e assim causar danos ao sistema. Considerando esse
+problema, o conceito de zero-trust network surgiu para que
+seja poss´ıvel transmitir informa¸c˜oes seguras em uma rede
+em que o atacante faz parte da rede.
+2. TRABALHOS RELACIONADOS
+Sistemas de controle industriais s˜ao formados por um conjunto de dispositivos, como CLPs, RTUs, IHMs, sensores
+e atuadores. Estes ativos costumavam estar localizados de
+forma isolada, l´ogica e fisicamente, do mundo externo e
+este per´ımetro era considerado confi´avel. Tal abordagem
+´e conhecida como defesa por per´ımetro, como observado
+em Ackerman (2017). O National Institute for Standards
+and Technology (NIST), agˆencia americana n˜ao reguladora
+com foco em inova¸c˜ao e estabelecimento de padr˜oes, garante que com os avan¸cos tecnol´ogicos e a digitaliza¸c˜ao da
+ind´ustria, os mecanismos legados de defesa por per´ımetro
+j´a n˜ao s˜ao mais efetivos no combate aos invasores, tamb´em conhecidos como hackers. Chegou-se a esta conclus˜ao
+devido ao fato de que com a computa¸c˜ao em nuvem fica
+cada vez mais dif´ıcil delimitar um per´ımetro e garantir
+que todos os ativos, sejam eles tecnol´ogicos ou os pr´oprios usu´arios, sejam confi´aveis (Stafford, 2020). Estudos
+recentes indicam que uma nova abordagem, chamada Zero
+Trust, que ser´a detalhada posteriormente neste artigo,
+possibilita implementar a¸c˜oes que tratam todo e qualquer
+usu´ario ou ativo tecnol´ogico como uma amea¸ca em potencial. Esta premissa exige que haja, de forma constante,
+uma verifica¸c˜ao e controle de acesso a qualquer recurso
+dentro de uma planta industrial. Qualquer tentativa de
+conex˜ao n˜ao verificada e previamente autorizada deve ser
+bloqueada (Peterson, 2021). No entanto, alguns desafios
+para implementa¸c˜ao de uma arquitetura Zero Trust est˜ao
+relacionados com a dificuldade em se implementar uma
+´unica solu¸c˜ao adequada, o que leva `a integra¸c˜ao de v´arias
+tecnologias, acarretando na dificuldade de gerenciamento.
+Outro ponto seria a exigˆencia de substitui¸c˜ao dos equipamentos legados, que n˜ao suportam tecnologias Zero Trust,
+e grandes investimentos financeiros, recursos e capacidade
+t´ecnica (Stouffer et al., 2022).
+Em contrapartida, do Nascimento (2020) prop˜oe um mecanismo que busca aplicar os princ´ıpios Zero Trust em
+sistemas de controle industrial, preservando ativos preexistentes. Com a proposta de preservar os ativos legados,
+sua metodologia visa a implementa¸c˜ao de controles de
+seguran¸ca granulares em pontos cr´ıticos da rede, como
+interfaces de comunica¸c˜ao com a nuvem e dispositivos de
+controle. No entanto, n˜ao aplica o conceito de Zero Trust
+no dado em si, conforme proposto neste artigo.
+Outra abordagem proposta por Premnath et al. (2014)
+para proteger a comunica¸c˜ao entre ativos utiliza a aplica¸c˜ao de um algoritmo de criptografia para garantir a
+seguran¸ca das comunica¸c˜oes em um ambiente SCADA. No
+trabalho foi utilizado o algoritmo de criptografia NTRU,
+introduzido na pr´oxima se¸c˜ao, para garantir a conformidade aos padr˜oes de seguran¸ca dos protocolos SCADA
+e fornecer autentica¸c˜ao, integridade, confidencialidade e
+n˜ao-rep´udio aos dados. Todos estes conceitos ser˜ao detalhados na se¸c˜ao 5 deste artigo. Esta abordagem garante a
+seguran¸ca da comunica¸c˜ao, no entanto, n˜ao aplica os conceitos de seguran¸ca com base na arquitetura Zero Trust.
+3. CONCEITUA ¸CAO˜
+A era digital ´e uma realidade e, consequentemente, uma
+gama infinita de dados e informa¸c˜oes est˜ao sendo gerados
+a cada segundo. Independentemente do tipo de opera¸c˜ao,
+seja ela banc´aria ou comunica¸c˜ao entre ativos pertencentes
+a uma planta de energia el´etrica, garantir sua seguran¸ca ´e
+um desafio latente. Para auxiliar no processo de prote¸c˜ao
+de dados e informa¸c˜oes, a criptografia ´e uma grande aliada.
+Existem in´umeros algoritmos de criptografia, entre eles
+DES (Data Encryption Standard), RSA (Rivest, Shamir
+& Adelman), NTRU (Number Theory Research Unit) e
+demais algoritmos utilizados para criptografia de dados
+(Patil et al., 2016). Os algoritmos s˜ao classificados em duas
+categorias: algoritmos de chave sim´etrica e assim´etrica.
+Os algoritmos de chave sim´etrica compartilham a mesma
+chave pra criptografar e descriptografar os dados. J´a os
+classificados como assim´etricos, n˜ao utilizam a mesma
+chave para criptografia e descriptografia da informa¸c˜ao
+original. Nas subse¸c˜oes a seguir, um breve resumo sobre
+cada uma dessas t´ecnicas de criptografia ´e apresentado.
+3.1 Data Encryption Standard (DES)
+Data Encryption Standard (DES) ´e um mecanismo de
+criptografia que utiliza chave sim´etrica. O comprimento
+da chave ´e de 56 bits e o tamanho do bloco ´e de 64 bits.
+E vulner´avel a ataques de chave quando uma chave fraca ´
+´e usada. DES foi primeiramente publicado em 1972 pela
+IBM como m´etodo de criptografia de dados. Foi adotado
+pelo governo dos EUA como algoritmo de criptografia
+padr˜ao. Come¸cou com uma chave de 64 bits e ent˜ao a
+NSA (National Security Agency) implantou uma restri¸c˜ao
+ao uso do DES com um comprimento de chave de 56 bits,
+portanto o DES descarta 8 bits da chave de 64 bits e ent˜ao
+usa a chave compactada de 56 bits derivada da chave de
+64 bits para criptografar dados em tamanho de bloco de
+64 bits (Jorstad and Landgrave, 1997).
+3.2 RSA
+RSA foi publicado em 1977 e ´e um sistema criptogr´afico
+de chave p´ublicaque recebeu esse nome por conta de seus
+fundadores Rivest, Shamir e Adelman. S˜ao geradas duas
+chaves criptogr´aficas: chave p´ublicae chave privada. O algoritmo RSA consiste em trˆes etapas, a primeira etapa ´e
+a gera¸c˜ao de chave utilizada para criptografar e descriptografar dados, a segunda etapa ´e a criptografia, onde o processo real de convers˜ao de texto simples em texto cifrado
+´e realizado. J´a a terceira etapa ´e a descriptografia, onde
+o texto criptografado ´e convertido em texto simples pelo
+destinat´ario da mensagem. O RSA ´e baseado no problema
+da fatora¸c˜ao para encontrar o produto de dois grandes
+n´umeros primos. O tamanho das chaves varia entre 1.024
+a 4.096 bits. Chaves pequenas o torna vulner´avel e podem
+possibilitar a quebra do algoritmo, concedendo acesso n˜ao
+autorizado `as informa¸c˜oes (Al Hasib and Haque, 2008).
+Algoritmo Matem´atico RSA: Neste artigo, o algoritmo
+de chave assim´etrica para fins de prote¸c˜ao da comunica¸c˜ao
+entre CLPs em uma rede de automa¸c˜ao ´e utilizado. Para
+descrever o mecanismo matem´atico que rege o algoritmo
+RSA, ser˜ao apresentados os passos matem´aticos em cada
+itera¸c˜ao a seguir.
+Descri¸c˜ao do Algoritmo Matem´atico RSA:
+(1) Seleciona dois n´umeros primos p e q;
+(2) Calcula n = p × q;
+(3) Calcula ϕ(n) = (p − 1 × q − 1);
+(4) Calcula chave p´ublica e = co-primo entre 1 e mmc(p−
+1, q − 1);
+(5) Calcula chave privada d: d × e = 1 × mod(ϕ(n));
+(6) Criptografa o dado M: C = Me × mod(n);
+(7) Decifra o dado C: M = C
+d × mod(n);
+3.3 NTRU
+NTRU ´e um sistema criptogr´afico de chave p´ublica
+(PKCS) e um padr˜ao IEEE 1363.1 e X9.98. Foi publicado pela primeira vez em 1996 por J.Hoffstein, J.Pipher
+e Silverman. Ele usa criptografia baseada em rede para
+criptografar e descriptografar dados. NTRU ´e baseado em
+estruturas alg´ebricas de certos an´eis polinomiais (Premnath et al., 2014).
+4. ESTADO ATUAL DA SEGURAN ¸CA
+CIBERNETICA APLICADA A SISTEMAS DE ´
+CONTROLE INDUSTRIAIS
+No ano de 2022, o Instituto Nacional de Padr˜oes e Tecnologia (NIST) publicou um manual intitulado “Orienta¸c˜oes
+para Garantia de Seguran¸ca em Sistemas de Controle
+Industrial” (Stouffer et al., 2022), com o intuito de oferecer instru¸c˜oes para assegurar a integridade dos Sistemas
+de Controle Industrial (ICS), abrangendo seus distintos
+componentes (SCADA, DCS, PLCs, entre outros). Esse
+documento fornece diretrizes para o desenvolvimento de
+uma estrutura de seguran¸ca s´olida para os ICS. Embora o
+manual enfoque primariamente na salvaguarda convencional por meio da instala¸c˜ao de firewalls, tamb´em ressalta
+a ˆenfase em princ´ıpios essenciais de Zero Trust, tais como
+a segmenta¸c˜ao e isolamento de redes, autentica¸c˜ao e autoriza¸c˜ao, em conjunto com pr´aticas de monitoramento e
+auditoria.
+Al´em das orienta¸c˜oes gerais estabelecidas pelo Instituto
+Nacional de Padr˜oes e Tecnologia (NIST), a literatura tem
+apresentado diversas propostas de arquiteturas para Sistemas de Controle Industriais (ICS). Um exemplo significativo ´e a arquitetura hier´arquica proposta pelo Laborat´orio
+Nacional de Idaho, que estende o paradigma hier´arquico
+do Modelo de Referˆencia Purdue, integrando-o aos sistemas de controle em infraestruturas cr´ıticas inteligentes
+(Chiluvuri et al., 2015). E importante observar que a ar- ´
+quitetura proposta n˜ao aborda adequadamente a prote¸c˜ao
+horizontal entre unidades individuais na mesma camada
+de seguran¸ca. Como resultado, permanece vulner´avel aos
+riscos de seguran¸ca que o modelo Zero Trust busca mitigar.
+4.1 Modelo Purdue de Referˆencia
+O Modelo Purdue de Referˆencia adota o princ´ıpio das zonas de seguran¸ca como mecanismo para segmentar, tanto
+a rede corporativa (TI) quanto a rede de Sistemas de Controle Industrial (OT/ICS), em unidades l´ogicas compostas por sistemas que desempenham fun¸c˜oes semelhantes
+ou que apresentem requisitos de funcionalidade similares.
+Para este artigo, direciona-se o foco para o N´ıvel 2 - Zona
+de Processo, uma vez que ser´a o objeto de aplica¸c˜ao das
+solu¸c˜oes criptogr´aficas. A Figura 1 apresenta a metodologia utilizada para agrupamento e classifica¸c˜ao dos ativos
+em uma rede de automa¸c˜ao.
+Figura 1. Modelo Purdue de Referˆencia (Ackerman, 2017).
+Uma infraestrutura de rede que utiliza o Modelo Purdue
+como metodologia de seguran¸ca cibern´etica adota uma
+abordagem baseada em per´ımetros para segmentar as zonas de seguran¸ca, conforme descrito anteriormente. Essa
+configura¸c˜ao ´e concebida sob a premissa de que as amea¸cas
+geralmente se originam do exterior, o que implica que, para
+comprometer a zona mais segura, seria necess´ario superar
+m´ultiplas camadas de defesa. Para o sucesso desejado
+na implementa¸c˜ao do Modelo Purdue, s˜ao estabelecidas
+diretrizes rigorosas. Por exemplo, os dispositivos alocados
+em determinada zona s˜ao autorizados a se comunicar entre
+si e com servidores na Zona Desmilitarizada (DMZ), mas
+s˜ao proibidos de estabelecer comunica¸c˜ao com dispositivos na rede corporativa ou na Internet. Quando ocorre
+a transferˆencia de dados de uma zona de seguran¸ca para
+outra, esses dados s˜ao submetidos a filtragem com permiss˜oes expl´ıcitas. Esta abordagem dificulta certas atividades,
+mas n˜ao impede que um atacante que j´a esteja localizado
+na rede, execute movimenta¸c˜ao lateral e se espalhe pelo
+ambiente. Por estas raz˜oes, um novo modelo surge para
+mitigar esta lacuna de seguran¸ca. O modelo proposto ´e
+chamado de Zero Trust e ´e apresentado na se¸c˜ao a seguir.
+5. TRABALHO E ARQUITETURA PROPOSTA
+O presente trabalho tem como objetivo propor a utiliza¸c˜ao
+de t´ecnicas de criptografia para garantir a seguran¸ca e
+autenticidade das comunica¸c˜oes entre Controladores L´ogicos Program´aveis (CLPs) em um sistema de Automa¸c˜ao
+e Controle de Supervis˜ao de Processos (SCADA). Para
+que a integridade da comunica¸c˜ao seja alcan¸cada, deve-se
+observar alguns pilares:
+• Integridade dos Dados:
+Integridade de dados se refere `a garantia de que os
+dados n˜ao foram alterados de forma n˜ao autorizada,
+mantendo sua precis˜ao e consistˆencia ao longo do
+tempo. O uso de algoritmos de criptografia assim´etrica ´e muito ´util para verificar a integridade dos
+dados.
+• Autentica¸c˜ao: Autentica¸c˜ao ´e o processo de verificar
+a identidade de um usu´ario, garantindo que ele seja
+quem afirma ser. A criptografia assim´etrica pode ser
+usada para confirmar a identidade de entidades na
+rede.
+• Confidencialidade: Confidencialidade refere-se `a prote¸c˜ao dos dados contra acesso n˜ao autorizado, garantindo que apenas pessoas autorizadas possam visualizar ou acessar as informa¸c˜oes. Caso um canal
+de comunica¸c˜ao seja comprometido para garantir a
+confidencialidade algum tipo de criptografia deve ser
+utilizado.
+• N˜ao-rep´udio: N˜ao-rep´udio ´e a garantia de que uma
+parte n˜ao pode negar a autenticidade de uma transa-
+¸c˜ao ou comunica¸c˜ao realizada.
+Al´em disso, ´e importante adotar uma abordagem abrangente de seguran¸ca que inclua medidas como controle de
+acesso, monitoramento de rede e detec¸c˜ao de intrus˜oes para
+proteger contra ataques cibern´eticos mais avan¸cados. Para
+este artigo, tais medidas complementares de seguran¸ca n˜ao
+ser˜ao abordadas.
+5.1 Arquitetura Proposta
+A comunica¸c˜ao entre CLPs em sistemas de automa¸c˜ao
+industrial requer a ado¸c˜ao de medidas que garantam a
+seguran¸ca das informa¸c˜oes transmitidas. A arquitetura
+proposta permite o envio de dados de duas maneiras:
+Comunica¸c˜ao direta e Comunica¸c˜ao Protegida.
+Comunica¸c˜ao direta A comunica¸c˜ao direta ´e empregada
+para transmiss˜ao em tempo real, onde n˜ao h´a viabilidade
+de aplica¸c˜ao de t´ecnicas adicionais de prote¸c˜ao. Esses
+dados s˜ao enviados ao destino sem passar por processos
+de criptografia e decodifica¸c˜ao, geralmente consistindo em
+informa¸c˜oes n˜ao cr´ıticas.
+Comunica¸c˜ao Protegida J´a a comunica¸c˜ao protegida ´e
+destinada aos dados cr´ıticos do sistema. Dados cr´ıticos
+e n˜ao cr´ıticos s˜ao classificados de acordo com a planta
+industrial ao qual os CLPs est˜ao alocados. Estes dados
+passam por todo o processo de prote¸c˜ao descritos neste
+artigo. Para isso, um conjunto de t´ecnicas de seguran¸ca
+s˜ao implementadas.
+A seguir, ser´a apresentado um passo a passo desse processo, com foco na comunica¸c˜ao entre o CLP 1 e o CLP
+3, validada pelo CLP 2 e tendo como base a arquitetura
+proposta na Figura 2.
+Figura 2. Arquitetura proposta – Comunica¸c˜ao segura
+entre CLPs.
+(1) Prepara¸c˜ao para a Comunica¸c˜ao: Antes de iniciar a
+troca de dados, o CLP 1 prepara-se identificando o
+tipo de informa¸c˜ao a ser enviada e gerando um par
+de chaves (p´ublica e privada) exclusivas para essa
+transmiss˜ao. Esta etapa utiliza a autentica¸c˜ao para
+refor¸car a seguran¸ca da comunica¸c˜ao.
+(2) Criptografia com a Chave Privada do CLP 1: O dado
+selecionado para envio ´e criptografado utilizando a
+chave privada do CLP 1. Esse passo assegura a
+autenticidade do dado, j´a que somente o CLP 1 possui
+acesso `a sua chave privada. Nesta etapa, garante-se a
+integridade do dado.
+(3) Criptografia Adicional com a Chave P´ublica do CLP
+3: O texto cifrado resultante ´e ent˜ao criptografado
+novamente, desta vez utilizando a chave p´ublica do
+CLP 3. Essa medida garante que somente o destinat´ario pretendido, o CLP 3, possa decifrar e acessar
+o conte´udo da mensagem. Com o dado ´ıntegro, esta
+etapa tem por objetivo garantir a confidencialidade
+da comunica¸c˜ao.
+(4) Criptografia para valida¸c˜ao pelo CLP 2: Para fortalecer ainda mais a seguran¸ca, o texto cifrado ´e criptografado mais uma vez, desta vez com a chave p´ublica
+do CLP 2. Essa etapa ´e crucial, pois o CLP 3 s´o
+poder´a decifrar e acessar a informa¸c˜ao ap´os valida¸c˜ao
+realizada pelo CLP 2. Esta etapa, por sua vez, refor¸ca
+novamente a autenticidade do dado.
+(5) Decifragem pelo CLP 2: Ao receber o texto cifrado
+pelo CLP 1, o CLP 2 pode ent˜ao decifrar a informa¸c˜ao
+utilizando sua chave privada. Esta etapa garante que
+a mensagem est´a integra e autˆentica.
+(6) Decifragem pelo CLP 3: Em seguida, o CLP 3 ele
+utiliza sua chave privada para decifrar o dado do
+CLP 1, mas para chegar ao dado final utiliza a chave
+p´ublica do CLP 1 para decifrar o texto original e,
+finalmente, acessar o dado enviado pelo CLP 1. Com
+esta etapa o CLP 3 tem a certeza do dado que
+est´a recebendo. Portanto, o n˜ao-rep´udio ao dado ´e
+garantido.
+Esse processo garante a seguran¸ca e integridade das informa¸c˜oes trocadas entre os CLPs, promovendo um ambiente confi´avel para as opera¸c˜oes industriais. Ao seguir
+esses passos, os sistemas de automa¸c˜ao podem proteger-se
+contra poss´ıveis amea¸cas cibern´eticas e manter a eficiˆencia
+e precis˜ao dos processos industriais.
+5.2 Aplica¸c˜ao
+Para demonstrar a aplica¸c˜ao da t´ecnica proposta, ser´a
+utilizada a arquitetura proposta na Figura 2, onde ´e
+apresentado um universo com trˆes CLPs e um deles ´e
+utilizado como mecanismo de verifica¸c˜ao da autenticidade
+e integridade do dado em trˆansito. Os CLPs ser˜ao tratados
+como CLP 1, CLP 2 e CLP 3. O CLP 1 deseja se comunicar
+com o CLP 3. O CLP 2 validar´a a comunica¸c˜ao e a
+mensagem emitida pelo CLP 1 estar´a compreens´ıvel para
+o CLP 3 ap´os esta etapa.
+Os parˆametros para cada CLP podem ser observados na
+Tabela 1. E importante ressaltar que para o processo de ´
+criptografia, seguindo a sequˆencia apresentada na se¸c˜ao 5,
+deve-se obedecer a seguinte regra: o tamanho da mensagem
+a ser criptografada deve ser menor que o valor de n. Caso
+haja a necessidade de criptografar um dado maior que n,
+deve ser adicionado na mensagem a ser criptografada o
+valor diferencial entre a mensagem e o n. Ao decifrar a
+mensagem, dever´a ser somado a ela o valor que ultrapassou
+o tamanho de n. Desta forma, ´e poss´ıvel compensar o dado
+que foi limitado pelo tamanho de n.
+Tabela 1. Parˆametros para aplica¸c˜ao da metodologia.
+CLP p q n ϕ(n) e d
+CLP1 3 11 33 20 7 3
+CLP2 11 17 187 160 53 157
+CLP3 7 17 119 96 29 53
+Seguindo a metodologia proposta na se¸c˜ao 5.1, ser˜ao realizados os passos de criptografia para garantir a integridade,
+autenticidade, confidencialidade e n˜ao-rep´udio dos dados.
+Os passos de 1 a 6 apresentados na se¸c˜ao 5.1 ser˜ao reproduzidos a seguir de modo a validar a metodologia proposta.
+(1) Prepara¸c˜ao para a Comunica¸c˜ao: Para esta etapa
+do processo, o CLP 1 estabelece o dado M a ser
+compartilhado. Para os fins de demonstra¸c˜ao, ser´a
+definido M = 6.
+(2) Criptografia com a Chave Privada do CLP 1: Utilizandose da chave privada d do CLP 1, ´e realizada a primeira
+criptografia. Esta etapa ´e crucial, pois garante que o
+dado foi de fato enviado pelo CLP 1, uma vez que
+somente ele conhece sua chave privada. A Equa¸c˜ao
+(1) demonstra este processo.
+C1 = 63 × mod(33) (1)
+Ap´os calculado C1 = 18, segue-se a l´ogica do passo
+2, onde o dado criptografado com as informa¸c˜oes
+privadas do CLP 1 ser´a criptografado novamente com
+as informa¸c˜oes p´ublicas do CLP 2. Este passo tem por
+objetivo refor¸car a seguran¸ca de que apenas o CLP 3
+poder´a ter acesso ao dado inicial.
+(3) Criptografia Adicional com a Chave P´ublica do CLP
+3:
+Seguindo a mesma linha do passo 1, realiza-se a
+criptografia do dado M2 = C1 = 18. A Equa¸c˜ao (2)
+descreve este passo.
+C2 = 1829 × mod(119) (2)
+Como resultado da Equa¸c˜ao (2) obt´em-se C2 = 86.
+(4) Criptografia para valida¸c˜ao pelo CLP 2:
+De modo a aplicar uma camada extra de prote¸c˜ao `a
+comunica¸c˜ao, o CLP 2 ser´a utilizado como validador
+da comunica¸c˜ao entre os CLP’s 1 e 3. Portanto,
+criptografa-se C2 com as informa¸c˜oes p´ublicas do
+CLP 2, garantindo que o dado correto chegar´a ao
+CLP 3 apenas ap´os a valida¸c˜ao com as informa¸c˜oes
+privadas que somente o CLP 2 conhece. A Equa¸c˜ao
+(3) demonstra esta etapa do processo.
+C3 = 8653 × mod(187) (3)
+Como resultado da Equa¸c˜ao (3), ´e obtido C3 = 69.
+(5) Decifragem pelo CLP 2:
+Tendo o CLP 2 recebido a solicita¸c˜ao para validar
+o dado enviado pelo CLP 1 ao CLP 3, inicia-se o
+processo de decifragem da mensagem. A (4) apresenta
+esta etapa.
+M2 = 69157 × mod(187) (4)
+Como resultado da Equa¸c˜ao (4), obt´em-se M2 = 86.
+(6) Decifragem pelo CLP 3:
+Nesta etapa o CLP 3 ter´a a possibilidade de decifrar
+o dado validado pelo CLP 2, uma vez que com as
+suas informa¸c˜oes privadas e as informa¸c˜oes p´ublicas
+do CLP 1, poder´a ter acesso ao dado inicial enviado
+pelo CLP 1. A Equa¸c˜ao (5) apresenta este processo.
+M3 = 8653 × mod(119) (5)
+A Equa¸c˜ao(5) apresenta M3 = 18. No entanto, este
+ainda n˜ao ´e o dado final. O dado final ser´a alcan¸cado
+atrav´es da Equa¸c˜ao (6)
+M4 = 187 × mod(33) (6)
+Com o retorno da Equa¸c˜ao (6), ´e verificado que M4 =
+M = 6, ou seja, a mensagem inicial enviada pelo CLP 1 foi,
+com sucesso, recebida pelo CLP 3 com todas as garantias
+de seguran¸ca validadas pelos processos de criptografia e
+valida¸c˜ao.
+6. RESULTADOS ESPERADOS
+Espera-se com este estudo validar estrat´egias que possibilitem a implementa¸c˜ao de conceitos de seguran¸ca Zero Trust
+na comunica¸c˜ao entre os ativos pertencentes `a zona de
+opera¸c˜ao do Modelo Purdue. Esta linha de pesquisa busca
+abrir caminhos no entendimento sobre a aplicabilidade e
+efic´acia da aplica¸c˜ao de conceitos de seguran¸ca Zero Trust
+em ambientes industriais em n´ıvel de processo.
+Al´em disso, pretende-se avaliar outros algoritmos de criptografia para fins comparativos no que tange ao consumo
+recursos computacionais. Essa an´alise permitir´a identificar
+as solu¸c˜oes mais adequadas em termos de custo computacional, garantindo que a implementa¸c˜ao de uma camada de
+seguran¸ca cibern´etica n˜ao comprometa o funcionamento
+da planta.
+Disclaimer: E sabido que o consumo de recursos com- ´
+putacionais para as valida¸c˜oes de seguran¸ca propostas
+neste artigo ´e elevado quando utilizada a comunica¸c˜ao
+segura. Pelo fato de CLPs n˜ao possu´ırem alto poder de
+processamento, os pr´oximos passos para esta pesquisa ser˜ao direcionados `a aplica¸c˜ao de t´ecnicas de criptografia
+com chaves sim´etricas. Tal solu¸c˜ao requer menor poder
+de processamento e sua viabilidade poder´a ser validada e
+comparada ao proposto neste artigo.
+7. CONCLUSAO˜
+Neste artigo foram apresentadas as necessidades da industria quando se trata de digitaliza¸c˜ao. Entre as principais necessidades est´a a seguran¸ca dos ambientes industriais. Quando observado o mecanismo utilizado para
+prote¸c˜ao dos per´ımetros antes dos avan¸cos tecnol´ogicos e
+da digitaliza¸c˜ao, observa-se que as t´ecnicas de seguran¸ca
+est˜ao menos eficientes e podem permitir a presen¸ca de
+um atacante no ambiente sem a identifica¸c˜ao pelas ferramentas de seguran¸ca. Com o objetivo de mitigar tais
+fragilidades, foi apresentado um modelo de seguran¸ca que
+busca sempre validar todas as comunica¸c˜oes dentro de
+uma planta. Para este artigo apresentou-se uma solu¸c˜ao
+que objetiva levar conceitos de seguran¸ca Zero Trust ao
+n´ıvel de processo, ou seja, sempre validar as comunica¸c˜oes
+entre os ativos que est˜ao no n´ıvel mais baixo do Modelo
+Purdue. Foram apresentadas t´ecnicas de criptografia que
+possibilitam que tais comunica¸c˜oes alcancem sua autenticidade, integridade, confidencialidade e n˜ao-rep´udio de
+dados. Uma sequˆencia de a¸c˜oes foram apresentadas para
+que este objetivo seja alcan¸cado. Observa-se, no entanto,
+que h´a limita¸c˜oes que precisam ser superadas para que as
+a¸c˜oes aqui apresentadas sejam fact´ıveis. Por isso, trabalhos futuros ser˜ao conduzidos para comparar as principais
+t´ecnicas de criptografia sim´etrica e assim´etrica, de modo
+a apresentar quais delas possuem maior adaptabilidade ao
+cen´ario de CLPs em redes industriais.
+REFERENCIAS ˆ
+Ackerman, P. (2017). Industrial Cybersecurity: Efficiently
+secure critical infrastructure systems. Packt Publishing.
+Al Hasib, A. and Haque, A.A.M.M. (2008). A comparative
+study of the performance and security issues of aes and
+rsa cryptography. In 2008 third international conference
+on convergence and hybrid information technology, volume 2, 505–510. IEEE.
+Alsabbagh, W. and Langendoerfer, P. (2022). A remote
+attack tool against siemens s7-300 controllers: A practical report. In Kommunikation und Bildverarbeitung in
+der Automation: Ausgew¨ahlte Beitr¨age der Jahreskolloquien KommA und BVAu 2020, 3–21. Springer Berlin
+Heidelberg Berlin, Heidelberg.
+Chiluvuri, N.T., Harshe, O.A., Patterson, C.D., and Baumann, W.T. (2015). Using heterogeneous computing
+to implement a trust isolated architecture for cyberphysical control systems. In Proceedings of the 1st ACM
+Workshop on Cyber-Physical System Security, 25–35.
+do Nascimento, E.M. (2020). Applying zero trust principles to secure industrial control networks. In Anais do
+XX Simp´osio Brasileiro em Seguran¸ca da Informa¸c˜ao e
+de Sistemas Computacionais, 484–489. SBC.
+Federal, G. (2023). Decreto nº 11.856. URL https://
+www.in.gov.br/en/web/dou/-/decreto-n-11.
+856-de-26-de-dezembro-de-2023-533845289.
+Acessado em: 15 Jan. 2024.
+Habibzadeh, H., Nussbaum, B.H., Anjomshoa, F., Kantarci, B., and Soyata, T. (2019). A survey on cybersecurity, data privacy, and policy issues in cyber-physical
+system deployments in smart cities. Sustainable Cities
+and Society, 50, 101660.
+Jorstad, N.D. and Landgrave, T. (1997). Cryptographic algorithm metrics. In 20th National Information Systems
+Security Conference, 1–38.
+Lima, P.M., Alves, M.V., Carvalho, L.K., and Moreira,
+M.V. (2021). Security of cyber-physical systems: Design
+of a security supervisor to thwart attacks. IEEE Transactions on Automation Science and Engineering, 19(3),
+2030–2041.
+Lima, P.M., Carvalho, L.K., and Moreira, M.V. (2023).
+Ensuring confidentiality of cyber-physical systems using
+event-based cryptography. Information Sciences, 621,
+119–135.
+Lima, P.M., da Silva, C.K., de Farias, C.M., Carvalho,
+L.K., and Moreira, M.V. (2022). Event-based cryptography for automation networks of cyber-physical
+systems using the stream cipher ChaCha20. IFACPapersOnLine, 55(28), 58–65. 16th IFAC Workshop on
+Discrete Event Systems WODES 2022.
+Mitsarakis, K. (2023). Contemporary Cyber Threats to
+Critical Infrastructures: Management and Countermeasures.
+Munirathinam, S. (2020). Industry 4.0: Industrial Internet
+of Things (IIOT). 117, 129–164.
+Oliveira, S., B. Leal, A., Teixeira, M., and K. Lopes, Y.
+(2023). A classification of cybersecurity strategies in
+the context of discrete event systems. Annual reviews
+in Control.
+Patil, P., Narayankar, P., Narayan, D., and Meena, S.M.
+(2016). A comprehensive evaluation of cryptographic
+algorithms: Des, 3des, aes, rsa and blowfish. Procedia
+Computer Science, 78, 617–624.
+Peterson, E. (2021). Achieving visibility and control in ot
+systems: Remote maintenance, securing remote access,
+and the zero-trust approach.
+Premnath, A.P., Jo, J.Y., and Kim, Y. (2014). Application
+of ntru cryptographic algorithm for scada security. In
+2014 11th international conference on information technology: new generations, 341–346. IEEE.
+Stafford, V. (2020). Zero trust architecture. NIST special
+publication, 800, 207.
+Stouffer, K., Pease, M., Tang, C., Zimmerman, T., Pillitteri, V., and Lightman, S. (2022). Guide to operational
+technology (ot) security. National Institute of Standards
+and Technology: Gaithersburg, MD, USA.

@@ -1,0 +1,373 @@
+﻿Software como Serviço: Um Modelo de Negócio Emergente
+
+Cássio A. Melo, Daniel F. Arcoverde, Éfrem R. A. Moraes, João H. C. Pimentel, 
+Rodrigo Q. Freitas
+
+Centro de Informática – Universidade Federal de Pernambuco (UFPE)
+Av. Prof. Luiz Freire – Cidade Universitária – Recife – PE – Brasil
+
+{cam2,dfa,eram,jhcp,rqf}@cin.ufpe.br
+
+Abstract. In many organizations, the great amount of heterogeneous and 
+disintegrated systems has stimulated a new wave of strategies, as Service 
+Oriented Architecture (SOA) and Software as Service (SaaS). On the right 
+hand, the necessary complexity for an effective implantation of a modular 
+architecture for local production. In another hand, the on-demand service has 
+become a practical solution for the time-to-value reduction, mainly for small 
+and average companies. This paper presents an overview of the model, some 
+definitions and business cases of well-succeeded suppliers of SaaS.
+
+Resumo. Em muitas organizações, o domínio de sistemas heterogêneos e 
+desintegrados têm impulsionado uma nova onda de estratégias, como Service 
+Oriented Architecture (SOA) e Software como Serviço (SaaS). De um lado, a 
+complexidade necessária para a implantação efetiva de uma arquitetura 
+modular favorece a produção local. De outro, o consumo do serviço sob 
+demanda tem se tornado uma solução objetiva e prática para a diminuição do 
+time-to-value, principalmente em pequenas e médias empresas. O presente 
+artigo apresenta uma visão geral do modelo, algumas definições e casos de 
+provedores de SaaS bem-sucedidos.
+
+1. Introdução
+Por décadas, as companhias utilizavam seu software em sua própria infra-estrutura e 
+eram responsáveis por todas as atividades de manutenção, integridade, escalabilidade, 
+disponibilidade e uma série de encargos relacionados ao gerenciamento de TI na 
+empresa. Além de custos relacionados à compra de licenças e atualizações, as empresas 
+tinham que adequar sua infra-estrutura e contratar pessoas especializadas para as 
+atividades de gerenciamento.
+
+Neste cenário, vem se desenvolvendo muito rapidamente um modelo emergente 
+de comercialização de software, conhecido como Software como Serviço ou Software as 
+a Service (SaaS). Neste modelo, a funcionalidade da aplicação é oferecida através de um 
+modelo de assinatura pela Internet. O cliente não se torna dono do software, ao invés 
+disso, ele aluga a solução total que é oferecida remotamente.
+
+O fornecedor é responsável pela distribuição, a operação, e a manutenção da 
+infra-estrutura de TI. Ele opera tipicamente em uma única instância da aplicação e 
+controla todas as atualizações. Estas características empresas reduz a  com as múltiplas 
+plataformas e versões, o que pode ajudar a reduzir dramaticamente os custos de suporte. 
+
+
+
+O modelo por assinatura e o baixo investimento inicial, ajuda as empresas à 
+incorporarem novos mercados e alcançar novos conjuntos de clientes.
+
+2. Software como Serviço (SaaS)
+Software como Serviço (Software as a Service - SaaS) é um modelo de entrega de 
+software onde as empresas clientes pagam, não pela propriedade do software, mas pelo 
+uso do mesmo e as companhias fornecedoras provêm manutenção e suporte técnico aos 
+seus clientes. Segundo Frederick Chong e Gianpaolo Carraro, SaaS pode ser definido 
+como "Software implementado como um serviço hospedado e acessado pela Internet". 
+Isso quer dizer que SaaS inclui uma série de serviços e aplicativos que podemos nem 
+esperar encontrar nessa categoria, como por exemplo um serviço de email baseado na 
+Web.
+
+Segundo os mesmos autores, existem duas categorias principais de software como 
+serviço:
+
+ Serviços de linha de negócios: oferecidos a empresas e organizações de todos 
+os tamanhos. Os serviços de linha de negócios geralmente são soluções de 
+negócios grandes e personalizáveis direcionadas para facilitar processos de 
+negócios como finanças, gerenciamento da cadeia de suprimentos e relações com 
+o cliente. Normalmente esses serviços são vendidos aos clientes como assinatura. 
+Um exemplo desse tipo de serviço são as soluções personalizáveis do Salesforce.
+
+ Serviços orientados a cliente: oferecidos ao público em geral. Os serviços 
+orientados a cliente às vezes são vendidos como assinatura, mas geralmente são 
+fornecidos sem custo e financiados por anúncios. Um outro exemplo desse tipo de 
+serviço são os serviços oferecidos pelo Google.
+
+De acordo com o IDC, as características chaves de SaaS incluem:
+
+ Rede para acesso e gerenciamento de software disponível comercialmente;
+
+ O gerenciamento é melhor a partir de localizações centrais do que dentro do 
+cliente. Essas localizações permitem aos clientes acesso remoto a aplicações via 
+web;
+
+ Entrega de aplicação que tipicamente é mais próxima de um modelo um-para-
+muitos do que de um modelo um-para-um. Isso inclui a arquitetura, o preço e 
+outras características de gerenciamento. Tudo está mais próximo de um modelo 
+um-para-muitos.
+
+Software como serviço consegue ser vantajoso por levar em conta um outro fator 
+conhecido como long tail, conceito que foi popularizada pelo escritor Chris Anderson 
+[Anderson, 2004] ao explicar por que os varejistas on-line como Amazon.com estão 
+posicionados de uma forma diferente que permite atender uma imensa demanda que os 
+varejistas tradicionais não podem atender de uma maneira econômica.
+
+
+
+Figure 1. Long Tail.
+
+O tradicional varejo convencional em lojas concentra-se em vender os itens mais 
+populares, pois não é possível ter em estoque cada um dos milhões de livros, CDs e 
+DVDs que é produzido. Por causa disso os varejistas não armazenam seus produtos em 
+prateleiras, mas os despacham para seus clientes diretamente dos grandes armazéns 
+espalhados pelo mundo. Assim podem anunciar e vender tanto os livros menos 
+populares quanto o número um dos mais vendidos. O acesso a essa longa cauda de 
+vendas de baixo volume se converte em uma quantidade imensa de renda. De maneira 
+semelhante ocorre em software como serviço. Ao eliminar grande parte da manutenção 
+e utilizando a economia de escala para combinar e centralizar as necessidades de 
+hardware e de serviços dos clientes, os fornecedores de SaaS podem oferecer soluções a 
+um custo muito menor do que os fornecedores tradicionais. Isso permite ao SaaS acesso 
+exclusivo a uma faixa inteiramente nova de clientes em potencial que sempre esteve 
+inacessível aos fornecedores de soluções tradicionais porque nunca foi economicamente 
+viável atendê-los [Chong e Carraro, 2006].
+
+2.1. O Espectro Contínuo do Modelo SaaS
+É difícil delinear objetivamente as características que definem o modelo SaaS. Tomado 
+três critérios principais no que diz respeito à ambos os modelos podemos caracterizar da 
+seguinte forma:
+
+Figure 2. Espectro contínuo de Software como Serviço definido por Chong.
+
+
+
+Licenciamento: Claramente, SaaS adiciona muito mais opções de licenciamento em 
+relação ao esquema de licença perpétua que domina o mercado tradicional de software. 
+A inscrição (Subscription), transação (Transaction) e baseado em anúncio (Ad-funded) 
+são formas que ajudam no baixo custo inicial de adquirir potencialidades do software. 
+Na teoria, se os fornecedores de SaaS tiram vantagem de uma economia de escala e 
+adotam uma única instância, aplicação com uma arquitetura multi-uso, a tendência é que 
+o custo a longo prazo para os provedores de Saas para oferecerem suas aplicações 
+devem ser menores do que se cada cliente individual tivesse que licenciar e hospedar a 
+aplicação por eles próprios. Na prática, a forma de como essas economias com provedor 
+irá implicar em redução de gastos com licenças a longo prazo para cada cliente 
+individual é de fato muito circunstancial. Por exemplo, se a empresa já possuir um setor 
+de gerenciamento de TI consolidado que está hospedando outras aplicações 
+proprietárias, pode ser menos custoso para a empresa adiquirir uma licença perpétua, 
+operar e manter a aplicação in house.
+
+Localização: Embora o progresso da tecnologia de rede e comunicações tenha ajudado 
+a mitigar o fator "distância" no mundo físico, nós ainda não estamos no estágio onde 
+tanto conexão banda-larga quanto velocidade são abundantes o suficiente para nós 
+ignorarmos a latência da rede na performace da aplicação. No final do contínuo SaaS, os 
+serviços de software são hospedados por terceiros e acessados através da web. 
+Dependendo da aplicação e do números de usuários acessando a aplicação, a empresa 
+pode precisar de investimento e pagamento de taxas de transmissão para terem uma rede 
+local que supra a demanda. Uma outra opção interessante de implementação de 
+aplicação em SaaS também ajuda a mitigar essa questão devido à distancia da rede e 
+largura de banda. Por exemplo, serviços de sotware podem ser oferecidos através de um 
+modelo de appliance. Nesse modelo uma aplicação pré-configurada é arrendada e 
+instalada no cliente. Normalmente, os datos são processados e colocados em cache no 
+appliance para diminuir o número de micro-transações e aumentar a velocidade do 
+acesso do usuário. Periodicamente, partes dos dados são sincronizados com os dados 
+localizados no provedor de serviço de software.
+
+A localização do serviço também afeta a habilidade da empresa controlar o 
+acesso aos dados de negócio e a lógica do processo. Normalmente, com uma instalção 
+proprietária, isolação física é um mecanismo natural para proteção dos dados da 
+empresa. Quando os dados da aplicação estão armazenados e hospedados remotamente 
+em um provedor SaaS, essas empresas precisam confiar na regulamentação da indústria, 
+contratos de serviço e mecanismos de securança de dados e políticas do servidor de 
+serviço para proteção, ao invés da isolação física.
+
+Gerencimanto do ciclo de vida da aplicação: Para manter e operar aplicações sob-
+premissa, empresas de TI precisam desenvolver um competência no gerenciamento da 
+informação. Além de de ser familiarizada com a rede, a plataforma do usuários e da 
+aplicação para que a solução de software e é entregue, a empresa precisa tamém prezar 
+pelas práticas de excelência operacional para resolver probelmas de segurança, robustez, 
+performace e disponibilidade. Tipicamente esses conjuntos de melhores práticas 
+operacionais tabmém são apoiados por outro conjuntos de infra-estrutura e ferramentas 
+de gerenciamento para monitoramento e diagnóstico de eventos e erros, como tamém 
+um sistema de suporte ao cliente, para abertura, resolução e finalização de bugs.
+
+
+
+Por causa dos obstáculos acima, algumas empresas podem ver o ASP como 
+soluções divinas de seus problemas da gerência de aplicação. O extremo oposto do 
+espectro de SaaS, gerência de TI é cuidada inteiramente pelo fornecedor de SaaS. De 
+fato, a execução de tarefas da gerência e as responsabilidades são opacas aos 
+consumidores de SaaS. Esta é transferência natural e lógica da responsabilidade da 
+gerência de TI porque a empresa “não possui” a aplicação. As exigências da segurança, 
+da disponibilidade, do desempenho e da característica da aplicação são estabelecidas 
+com os SLAs (Service Level Agreements) de serviço com o fornecedor de SaaS.
+
+2.2. Diferenças Entre o Modelo de Negócio Tradicional e o SaaS
+As diferenças podem ser sumarizadas na tabela a seguir:
+
+Table 1. Comparação de características entre os modelos de pacotes de 
+software tradicional e de software como serviço.
+
+Pacotes de software tradicional Software como Serviço
+
+Projetado para os clientes instalarem, Projetado para ser distribuído como 
+gerenciarem e manterem serviço pela Internet
+
+A solução é arquitetada para ser executada Projetado para executar em milhares de 
+por uma companhia individual em uma clientes diferentes em um único código
+infra-estrutura dedicada
+
+Pouco freqüente, atualizações principais a 
+Freqüente, atualizações "digeríveis" a cada 
+
+cada 18-24 meses, vendido 
+3-6 meses para minimizar o impacto no 
+
+individualmente para cada base de cliente 
+cliente e melhorar a satisfação 
+
+instalada
+
+Controle de Versão Ao corrigir um problema para um cliente, 
+Taxa de Upgrade é corrigido para todos 
+
+Funcionalidade repetível via Web Pode usar APIs abertas e Web services 
+services, APIs abertas e conectores para facilitar a integração, mas cada 
+padrões cliente tipicamente tem que pagar pelo 
+
+trabalho de integração 
+
+2.3. Investimento em SaaS
+Quando se pensa em formar uma empresa  que atue nesta área, faz-se necessário um 
+investimento na área de marketing e vendas da empresa, para que o público alvo veja o 
+serviço como algo de fato confiável, já que o cliente teme a dependência que vai ter da 
+empresa de SaaS, e um dos principais riscos que se sofre neste ramo é justamente a 
+sensação de comodidade gerada pela dependência que o cliente tem da empresa, e que a 
+prejudica, pois outras empresas estão crescendo e acabam engolindo os clientes dos 
+acomodados. Soluções que obtiveram sucesso, projetaram pro negócio uma arquitetura 
+extensível, dando possibilidade de customização para os seus clientes, e ganham no 
+questo de disponibilidade, que normalmente é 24x7x365. Trabalhar com SaaS, tem a 
+vantagem de poder introduzir novas funcionalidades instantaneamente enquanto 
+esperam um próximo release principal, coisa que as outras dificilmente farão, devido ao 
+custo de distribuição de mudanças, e necessidade do usuário ir atrás dessas mudanças, 
+
+
+
+além disso, acrescenta-se o baixo investimento com infra-estrutura. Algumas 
+desvantagens também afetam essas organizações como a necessidade de um 
+investimento por volta de $35 milhões através de um capital de risco, enquanto uma 
+empresa de licenças perpétuas precisa de $20 milhões, elas também levam 6 a 7 anos 
+para que ela sofra uma liquidação (aquisição ou IPO), o que significa 2 ou 3 anos a mais 
+do que as empresas de licença permanente. Em compensação este  ramo de produção de 
+software, tem perspectiva de crescimento de chegar a um faturamento total $10 bilhões 
+nos próximos dois anos.
+
+3. Casos de Negócios
+Nessa seção apresentaremos alguns dos casos mais bem-sucedidos do modelo SaaS. 
+
+3.1. Salesforce.com
+Fundado em 1999 por um executivo da Oracle chamado Marc Benioff, pode-se dizer 
+que a Salesforce.com, inovou completamente o mercado de softwares CRM (Customer 
+Relationship Management) utilizando o conceito de SaaS. Ambiente de aplicações 
+integrado e customizável  para organizações de todo o tamanho. Desde seu início as 
+suas ações na bolsa, crescem considerávelmente chegando a um crescimento total de 
+1000 % nos últimos 4 anos. Hoje a empresa possui mais de 646 mil assinates de 
+aproximadeamente 29800 empresas, que depende da Salesforce.com para gerênciar suas 
+vendas, marketing, serviços ao consumidor, e outras funções críticas de negócios. 
+
+Um dos dos fatores chave para sucesso desse negócio é a customização, que é 
+feita através do Apex e AppExchange.  O AppExchange trata-se de um local virtual 
+onde as pessoas podem comprar ou vender customizações que elas fzeram, e que podem 
+facilitar o seu ambiente o o de outras empresas que procuram uma customização 
+parecida, o que é mais uma forma de ganho para a Salesforce.com. O Apex é uma API 
+disponibilizada gratuitamente para que as pessoas possam desenvolver essas 
+customizações para adequar a Salesforce ao seu tipo aplicação, ou até mesmo que 
+simplesmente possa ser útil para outras aplicações podendo ser vendida no 
+AppExchange. O Apex serve também como forma de divulgação do AppExchange e 
+Salesforce.com, pois a partir de sua utilização comprova-se sua eficiência.
+
+No gráfico abaixo pode-se observar um paralelo entre a quantidade em milhares 
+de assinantes e sua venda, além de demosntrar que a longo prazo, o que o usuário gastou 
+com as mensalidades, pode ultrapassar o valor acumulado em possíveis compras de 
+liceças. Por causa disto tambem, a empresa que oferece o serviço tem que convencer os 
+assinenetes, através do marketing,  de que vale a pena pagar por assinaturas, já que se 
+tem um gasto bem menor com infra-estrutura, profissionais, suporte técnico, 
+treinamento, manutenção e outras formas de gastos.
+
+
+
+Figura 2. Base de clientes por tempo e receita do Salesforce.com
+
+Durante muito tempo várias pessoas e organizações temiam o modelo de cobrança de 
+software que propunha a existência de assinaturas ao invés de licenças. A maioria das 
+empresas que atuam na área de SaaS aderiram a este modelo de negócio, pois a longo 
+prazo passou a ser algo mais lucrativo, como mostra a figura abaixo onde o usuário que 
+paga por uma licensa de software até paga um valor maior pelo software, mas 
+dificilmente retorna a pagar com um intervalo menor que um ano, ou num tempo menor 
+que a criação de uma nova versão do software. No SaaS apesar do preço da assinatura 
+ser num valor abaixo do da licença, o assinante paga essa taxa constantemente, e  além 
+desse fator, como foi explicitado anteriormente, cria-se uma relação de depêndencia da 
+empresa que ao mesmo tempo recebe as assinaturas, dá o suporte da aplicação. Desta 
+forma , este modelo de negócio cria um panorama vantajoso para quem o absorve como 
+solução, tanto para o assinante que vai ter um menor custo com a infra-estrutura, e com 
+a manutenção e suporte do software, apesar de possívelmente um dia seus gastos 
+ultrapassarem a compra de uma licensa,  como para as empresas de desenvolvimento 
+que criam novas soluções baseadas no conceito de SaaS, desde que consigam atingir 
+uma base grande de clientes, necessecitando então, de um tempo maior. Um pequeno 
+exemplo mostra na figura logo abaixo um break-even que ocorre após três anos de seu 
+início, e onde a linha azul representa o pagamento de software por assinatura, e a 
+vermelha, software por licença.
+
+Figura 3. Taxa de mensalidade de um serviço SaaS X aquisição de licença 
+perpétua no Salesforce
+
+
+
+3.2. IBM On Demand
+Um dos projetos da gigantesca IBM, é o de hospedagem e manutenção de aplicações 
+dos clientes, o chamado ”IBM On Demand”. Através dele a IBM oferece todo suporte à 
+hospedagem  manutenção das aplicações de clientes externos ou até mesmo de projetos 
+internos específicos, utilizando-se para isso de vários profissionais da área técnica  que 
+são altamente especializados. Como a logomarca IBM já tem um poder de persuasão 
+grande quando se trata de confiança, ela vem adquirindo cada vez mais clientes. 
+Algumas das aplicações que a IBM dá suporte  são: SAP, Siebel, Lótus Notes, e Oracle. 
+Além de dar suporte e hospedagem através dessas aplicações, por a IBM ter uma área de 
+atuação muito vasta, ela pode intermediar ou até mesmo assumir o gerenciamento 
+completo de aplicações dessas empresas. As vantagens demonstradas vêm através de 
+diminuir o custo total de propriedade, como também o foco no negócio da empresa e 
+redução de investimento inicial, além da garantia de performance, escalabilidade e 
+segurança, com disponibilidade de acesso para o cliente de 24 horas por dia e 7 dias por 
+semana. O sistema apresenta também algumas desvantagens como a dependência da 
+empresa numa área sensível confiando todos os seus dados a outra, e a não integração 
+com sistemas desenvolvidos internamente.
+
+O modelo de negócios dessa solução é interessante, pois se apóia principalmente 
+na em contratos de vários anos, além da enorme escalabilidade do serviço. A IBM 
+também trata dessas aplicações setorizando os locais de gerenciamento das aplicações 
+através de centros de controle que estão espalhados por diversas partes do mundo. O 
+projeto Applications On Demand oferece hoje suporte a mais de 250 mil assinantes e 
+está disponível nos  seguintes modelos: 
+
+ Development: Inclui um ambiente de desenvolvimento a aplicação, e softwares 
+pre-configurados de outros softwares de empresas, independentes e e que estão 
+associados a serviços de suporte. 
+
+ Full Service: Solução completa, que cuida de toda a hospedagem e também do 
+gerenciamento das aplicações da empresa. 
+
+ OnSite: Serviços de gerenciamento da aplicação que são oferecidos remotamente 
+no seu próprio site. 
+
+ Professional Services: Serviço de infra-estrutura e de gerenciamento projetado 
+pra reduzir os custos das aplicações da empresa 
+
+ Enhancements: Customização, desenvolvimento  e outros serviços para 
+melhorar as aplicações. 
+
+ Testing: Testes de performance, testes funcionais, criação de uma  garantia de 
+qualidade mais eficaz.
+
+4. Conclusão
+Naturalmente, o SaaS oferece vantagens e desvantagens como expomos ao longo desse 
+artigo. As previsões apontam para um crescimento do SaaS percentagem do total de 
+contratos de software, mas ambos modelos irão persistir por um longo tempo. Existe, 
+todavia, um amplo debate sobre as reais vantagens que o SaaS pode oferecer. O SaaS é 
+conceitualmente similar ao modelo do mainframe original em que o controle era 
+
+
+
+centralizado, a privacidade do usuário era mínima e a flexibilidade permitida ao usuário 
+individual era limitada. Muito do sucesso do PC após sua introdução nas décadas de 70 
+e 80 era devido ao poder que deu aos usuários individuais. Muitos consumidores podem 
+sentir que em SaaS a falta de controle de sua privacidade alcançou um limite 
+inaceitável. Um outro fator a ser considerado é a necessidade para o uso off-line. Muitos 
+usuários, como o pessoal de vendas de uma empresa, freqüentemente necessitam do 
+acesso off-line aos dados enquanto estão viajando.
+
+Referências
+[Chong, 2006] http://blogs.msdn.com/fred_chong/archive/2006/09/27/774408.aspx
+
+[Anderson, 2004] http://www.wired.com/wired/archive/12.10/tail.html
+
+[Chong e Carraro, 2006] http://msdn2.microsoft.com/en-us/library/aa479069.aspx

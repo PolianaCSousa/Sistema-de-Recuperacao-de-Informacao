@@ -1,0 +1,871 @@
+Computação quântica
+Um computador quântico executa cálculos utilizando-se das propriedades da mecânica
+quântica, e isso já muda o paradigma em relação a computação clássica drasticamente.
+Analogamente a um computador clássico, que funciona a partir de circuitos elétricos e
+portas lógicas manipulando bits, o computador quântico opera a partir de circuitos quânticos
+baseados em portas lógicas quânticas, manipulando a sua unidade fundamental, o q-bit.
+3.1 Bit quântico (q-bit)
+A estrutura básica de informação na computação clássica é o bit, a estrutura análoga na
+computação quântica é o bit quântico, que é usualmente chamado de q-bit (qbit, qubit ou
+quibit). Um q-bit é um estado quântico da forma:
+|ψi = α|0i + β|1i (3.1)
+onde α, β ∈ C (números complexos), as amplitudes, com |α|
+2 + |β|
+2 = 1 e {|0i, |1i} é uma
+base que expande H2
+. Essa base é chamada de base computacional e pode ser representada
+por notação matricial como segue:
+|0i =
+"
+1
+0
+#
+e |1i =
+"
+0
+1
+#
+(3.2)
+Quando sofre uma medição, o q-bit |ψi pode colapsar para o estado |0i com probabilidade
+|α|
+2
+, ou para |1i com probabilidade |β|
+2
+.
+O vetor |ψi é chamado de superposição dos vetores, com amplitudes α e β. Em mecânica
+quântica, o vetor é também chamado de estado [PLeNM12].
+|ψi = α|0i + β|1i =
+"
+α
+β
+#
+(3.3)
+A principal diferença, entre o bit clássico e o bit quântico, é que o bit clássico pode estar
+somente com um valor armazenado num determinado instante, esse valor é 0 ou 1. O bit
+quântico (q-bit) está numa sobreposição de 0’s e 1’s num determinado instante, ou seja, 0 e
+1 estão armazenados ao mesmo tempo. Realizar uma medição de um sistema quântico é um
+problema central na teoria quântica, e muitos estudos foram e continuam sendo feitos nessa
+área. Em um computador clássico, é possível a princípio saber sobre o estado de qualquer bit
+em memória, sem alterar o sistema. No computador quântico, a situação é diferente, q-bits
+podem estar em estados sobrepostos, ou até mesmo emaranhados, e o simples ato de medir
+um estado quântico altera seu estado.
+3.1.1 Esfera de bloch
+Como observado na equação 3.1, α e β são números complexos, então podem ser escritos
+como α = a + ib(a, b ∈ R) e β = c + id(c, d ∈ R), então:
+|α|
+2 + |β|
+2 = a
+2 + b
+2 + c
+2 + d
+2 = 1 (3.4)
+A partir disso, o q-bit é interpretado como um vetor unitário (a, b, c, d) ∈ R
+4
+e a esfera
+unitária de R
+4
+como o lugar geométrico dos q-bits.
+As amplitudes também podem ser expressas na forma z = |z|e
+iArg(z)
+, onde 0 ≤ Arg(z) ≤
+2π é o argumento do número complexo z. Definindo γ = Arg(α) e φ = Arg(β) − Arg(α),
+reescreve-se a equação 3.1 da forma:
+|ψi = |α|e
+iγ|0i + |β|e
+i(γ+φ)
+|1i (3.5)
+Sendo |α| ≥ 0, |β| ≥ 0 e |α|
+2 + |β|
+2 = 1 , define-se também ξ por meio das equações
+cos(ξ) = |α| e sen(ξ) = |β| (onde 0 ≤ ξ ≤
+π
+2
+). tomando θ = 2ξ, θ ∈ [0, π], tem-se a forma
+polar de um q-bit:
+|ψi = e
+iγ 
+cos 
+θ
+2
+
+|0i + e
+iφsen 
+θ
+2
+
+|1i
+
+(3.6)
+onde θ = 2arccos(|α|) = 2arcsen(|β|) com θ ∈ [0, π], φ = Arg(β) − Arg(α) com φ ∈
+[0, 2π) e γ = Arg(α) com γ ∈ [0, 2π).
+Devido a algumas propriedades [CLM07], pode-se desprezar o fator e
+iγ (chamado fator
+de fase global), assim:
+|ψi = cos 
+θ
+2
+
+|0i + e
+iφsen 
+θ
+2
+
+|1i (3.7)
+reescrevendo da seguinte forma:
+|ψi = cos 
+θ
+2
+
+|0i + cos(φ)sen 
+θ
+2
+
+|1i + isen(φ)sen 
+θ
+2
+
+|1i (3.8)
+Ou seja, o vetor |ψi pode ser entendido como:
+|ψi =
+"
+a
+c + id #
+(3.9)
+O espaço vetorial em questão tem dimensão quatro e uma de suas bases ortonormais é o
+conjunto:
+{
+"
+1
+0
+#
+,
+"
+i
+0
+#
+,
+"
+0
+1
+#
+,
+"
+0
+i
+#
+} (3.10)
+Entretanto, é possível representar o vetor |ψi utilizando apenas três vetores dessa bases:
+|ψi = cos 
+θ
+2
+ "
+1
+0
+#
++ cos(φ)sen 
+θ
+2
+ "
+0
+1
+#
++ sen(φ)sen 
+θ
+2
+ "
+0
+i
+#
+(3.11)
+O subespaço gerado pelos elementos
+{
+"
+1
+0
+#
+,
+"
+0
+1
+#
+,
+"
+0
+i
+#
+} (3.12)
+tem dimensão três. Como esse subespaço está definido sobre o corpo dos reais, ele é isomorfo
+a R
+3
+. Pode-se então imaginar que, quando desprezado o fator de fase global de um q-bit,
+ele é “projetado” em um subconjunto de R
+3
+. Observa-se que o lugar geométrico determinado
+por |ψié uma semiesfera de R
+3
+. Com algumas manipulações bem demonstradas em [CLM07],
+mostra-se que essa representação pode ser estendida para a Esfera de Bloch, como a figura
+3.1.
+Figura 3.1: Representação de um q-bit Esfera de Bloch [OS04].
+20 COMPUTAÇÃO QUÂNTICA 3.2
+θ φ ψ Observação
+0 0 |0i Polo Norte
+π 0 |1i Polo Sul
+π
+2
+0
+|0i+|1i
+√
+2
+Equador - sobre eixo x
+π
+2
+π
+2
+|0i+i|1i
+√
+2
+Equador - sobre eixo y
+Tabela 3.1: Direção e sentido do vetor representativo do q-bit para alguns estados.[OS04]
+Pode-se dizer que a Esfera de Bloch é o lugar geométrico dos vetores de Bloch. Considerando a forma polar de um q-bit, o Vetor de Bloch é dado por:
+|ψi =
+
+
+
+cos(φ)sen(θ)
+sen(φ)sen(θ)
+cos(θ)
+
+
+ , φ ∈ [0, 2π), θ ∈ [0, π] (3.13)
+Exemplo:
+Encontrar o vetor que indica a localização do q-bit |ψi =
+√
+3
+2
+|0i+
+1
+2
+|1i na Esfera de Bloch:
+Passo 1 Acha-se as amplitudes:
+α =
+√
+3
+2
+e β =
+1
+2
+(3.14)
+Passo 2 Econtrando θ:
+θ = 2arcos(
+√
+3
+2
+) = 2arcsen(
+1
+2
+) = π
+3
+(3.15)
+Passo 3 Econtrando φ:
+φ = Arg(
+1
+2
+) − Arg(
+√
+3
+2
+) = 0 (3.16)
+Passo 4 Substituindo no Vetor de Bloch:
+|ψi =
+
+
+
+cos(0)sen(
+π
+3
+)
+sen(0)sen(
+π
+3
+)
+cos(
+π
+3
+)
+
+
+ =
+
+
+
+√
+3
+2
+0
+1
+2
+
+
+ (3.17)
+3.2 Portas quânticas
+Similar ao sistemas clássico de computação, as portas lógicas quânticas realizam a função de um operador lógico atuando na informação, ou nos q-bits, e assim manipulando ou
+alterando o seu estado
+3.2.1 Portas quânticas de 1 q-bit
+O conjunto de portas quânticas, matrizes de transformação, que realizam operações unitárias sobre um q-bit é infinito, pois as possibilidades de matrizes unitárias 2x2 são infinitas.
+As matrizes unitárias garantem que a computação possa ser reversível (dado um q-bit |ψ1i
+em um estado arbitrário que passará pela porta quântica X produzindo o resultado |ψ2i e
+a porta quântica inversa da X no q-bit |ψ2i, tem como resultado o q-bit inicial |ψ1i). Um
+vetor de estado (q-bit) deve ser unitário, e portanto, após a aplicação de uma porta quântica,
+tem-se outro vetor de estado que continuará sendo unitário [NC00].
+Seguem algumas das portas mais usuais:
+Porta Pauli-I
+Esta porta também é conhecida como porta identidade e o resultado de sua operação
+não altera o estado do q-bit de entrada. Normalmente é omitida na maioria das referências.
+A porta Pauli-I é definida como
+I =
+"
+1 0
+0 1 #
+(3.18)
+A aplicação dela sobre um estado |ψi = |0i + |1i:
+I|ψi =
+"
+1 0
+0 1 # " α
+β
+#
+=
+"
+α
+β
+#
+= |0i + |1i = |ψi (3.19)
+Figura 3.2: Representação, em circuitos, da Porta Pauli-I.
+Porta NOT ou Pauli-X
+A porta Pauli-X gira os q-bits π em torno do eixo x, como mostrado na figura 3.3. No caso
+em que o q-bit está posicionado em um dos estados clássicos, ela simplesmente atuará como
+um "bit-flip" semelhante a porta NOT, usado na computação clássica. É definida como:
+X =
+"
+0 1
+1 0 #
+(3.20)
+Esta é uma matriz Hermitiana e satisfaz X2 = I, onde I é a identidade. Os auto-vetores
+normalizados das matrizes de Pauli, quando transformados em vetores de Bloch, resultam
+em vetores pertencentes aos eixos. Assim, os auto-vetores normalizados do operador X são:
+22 COMPUTAÇÃO QUÂNTICA 3.2
+vx1 =
+1
+√
+2
+"
+−1
+1
+#
+e vx2 =
+1
+√
+2
+"
+1
+1
+#
+(3.21)
+e os vetores de Bloch associados a eles são:
+B(vx1
+) =
+
+
+
+−1
+0
+0
+
+
+
+e B(vx2
+) =
+
+
+
+1
+0
+0
+
+
+ (3.22)
+que pertencem ao eixo x da esfera.
+Figura 3.3: O estado do q-bit antes e depois da porta Pauli-X [Gra18].
+A aplicação dela sobre os vetores |0i e |1i:
+X|0i =
+"
+0 1
+1 0 # " 1
+0
+#
+=
+"
+0
+1
+#
+= |1i (3.23)
+X|1i =
+"
+0 1
+1 0 # " 0
+1
+#
+=
+"
+1
+0
+#
+= |0i (3.24)
+Esta porta inverte o estado do q-bit de entrada.
+Figura 3.4: Representações, em circuitos, da Porta Pauli-X.
+Porta Pauli-Y
+O portão Pauli-Y gira o q-bit π radianos ao redor do eixo y. É definida como:
+Y =
+"
+0 −i
+i 0
+#
+(3.25)
+A aplicação dela sobre um estado |ψi = |0i + |1i:
+Y |ψi =
+"
+0 −i
+i 0
+# " α
+β
+#
+=
+"
+−iα
+iβ #
+= i(|0i − |1i) (3.26)
+Figura 3.5: Representação, em circuitos, da Porta Pauli-Y.
+Porta Pauli-Z
+A porta Pauli-Z gira os q-bit π radianos em torno do eixo z. Este deixa a amplitude
+do q-bit inalterada, ou seja, |0i ainda será |0i e |1i ainda será |1i, mas a fase do q-bit será
+deslocada por π radianos. A mudança de fase não afeta a probabilidade do estado clássico
+entrar em colapso, mas muda o estado do q-bit. Quando o q-bit está em superposição com
+uma probabilidade igual de colapso para |0i e |1i, o resultado de um deslocamento de fase
+de π radianos será a transformação |+i → |−i, |−i → |+i. É definida como:
+X =
+"
+1 0
+0 −1
+#
+(3.27)
+A aplicação dela sobre um estado |ψi = |0i + |1i:
+Z|ψi =
+"
+1 0
+0 −1
+# " α
+β
+#
+=
+"
+α
+−β
+#
+= |0i − |1i (3.28)
+Figura 3.6: Representações, em circuitos, da Porta Pauli-Z.
+Porta Hadamard ou H
+A porta de Hadamard é usada para forçar um q-bit a se sobrepor. A operação gira o
+q-bit π radianos em torno do eixo x + z e pode ser visualizado na esfera de Bloch como uma
+rotação de π
+2
+radianos em torno do eixo y seguido de uma rotação de π radianos em torno
+do eixo x. Se a porta de Hadamard for aplicada a um q-bit em um estado clássico de |0i ou
+|1i, a operação forçará o q-bit a uma sobreposição com amplitudes de probabilidade iguais
+de |0i e |1i. É definida como:
+H =
+1
+√
+2
+"
+1 1
+1 −1
+#
+(3.29)
+A aplicação dela sobre um estado, leva a uma superposição |ψi = |0i + |1i:
+H|0i =
+1
+√
+2
+"
+1 1
+1 −1
+# " 1
+0
+#
+=
+1
+√
+2
+"
+1
+1
+#
+=
+|0i + |1i
+√
+2
+(3.30)
+H|1i =
+1
+√
+2
+"
+1 1
+1 −1
+# " 0
+1
+#
+=
+1
+√
+2
+"
+1
+−1
+#
+=
+|0i − |1i
+√
+2
+(3.31)
+Esta porta é utilizada para colocar o estado de um q-bit em superposição com mesma
+probabilidade para os dois estados. Ela é muito utilizada no circuito quântico que implementa
+a TFQ (Transformada de Fourier Quântica).
+Figura 3.7: Representação, em circuitos, da Porta Hadamard.
+Porta de Fase ou S
+A porta de fase é definida como:
+S =
+"
+1 0
+0 i
+#
+(3.32)
+A aplicação dela sobre um estado genérico |ψi = α|0i + β|1i:
+S|ψi = S(α|0i + β|1i) = "
+1 0
+0 i
+# " α
+β
+#
+=
+"
+α 0
+0 iβ #
+= α|0i + iβ|1i (3.33)
+Figura 3.8: Representação, em circuitos, da Porta de Fase
+Porta π/8 ou T
+A Porta T é definida como:
+T =
+"
+1 0
+0 e
+iπ/4
+#
+(3.34)
+A aplicação dela sobre um estado |ψi = α|0i + β|1i:
+T|ψi = α|0i + e
+iπ/4β|1i) (3.35)
+Figura 3.9: Representação, em circuitos, da Porta π/8 ou T.
+Porta Rk
+A porta Rk é definida como:
+Rk =
+"
+1 0
+0 e
+2iπ/2
+k
+#
+(3.36)
+A aplicação dela sobre um estado |ψi = α|0i + β|1i:
+Rk|ψi = α|0i + e
+2iπ/2
+k
+β|1i) (3.37)
+Matrizes de rotação
+Das matrizes de Pauli, surge uma outra classe de matrizes, as Matrizes de Rotação, que
+são definidas como:
+Rx(θ) ≡ e
+− iθX
+2 , Ry(θ) ≡ e
+− iθY
+2 e Rz(θ) ≡ e
+− iθZ
+2 (3.38)
+Porém, para as matrizes A tais que A2 = I, então:
+e
+iAx =
+X∞
+k=0
+x
+k
+(Ai)
+k
+k!
+= I + ixA −
+x
+2
+I
+2! −
+ix3
+IA
+3! +
+x
+4
+I
+4! + · · · = cos(x)I + iAsen(x) (3.39)
+Com esse resultado, é Possível reescrever as matrizes de rotação:
+Rx(θ) ≡ e
+− iθX
+2 ≡ cos(
+θ
+2
+)I + iXsen(
+θ
+2
+) ≡
+"
+cos(
+θ
+2
+) −isen(
+θ
+2
+)
+−isen(
+θ
+2
+) cos(
+θ
+2
+)
+#
+(3.40)
+Ry(θ) ≡ e
+− iθY
+2 ≡ cos(
+θ
+2
+)I + iY sen(
+θ
+2
+) ≡
+"
+cos(
+θ
+2
+) sen(
+θ
+2
+)
+sen(
+θ
+2
+) cos(
+θ
+2
+)
+#
+(3.41)
+Rz(θ) ≡ e
+− iθZ
+2 ≡ cos(
+θ
+2
+)I + iZsen(
+θ
+2
+) ≡
+"
+e
+− iθ
+2 0
+0 e
+iθ
+2
+#
+(3.42)
+Estas matrizes representam rotações em torno dos eixos x, y e z na esfera unitária do 3.2.2 Portas quânticas de múltiplos q-bits
+Apesar de o conjunto de portas de um q-bit ser infinito, esse conjunto não é universal,
+isto é, não é suficiente para construir qualquer operação, sendo assim, para realizar operações
+sobre n q-bits é necessário utilizar portas com mais de um q-bit.
+Porta CNOT quântica
+A Porta CNOT atua em estados de 2 q-bits de entrada, o controle e o alvo. Uma porta
+controlada age de acordo com o q-bit de controle. Ela será ativada apenas quando o q-bit de
+controle estiver no estado |1i. Os q-bits de controle e alvo podem ser estados superpostos,
+além disso, podem estar emaranhados.
+A representação matricial da porta quântica CNOT é a dada por:
+CNOT =
+
+
+
+
+
+
+1 0 0 0
+0 1 0 0
+0 0 0 1
+0 0 1 0
+
+
+
+
+
+
+(3.43)
+A ação pode ser representada de forma esquemática na base computacional da seguinte
+maneira:
+CNOT|a, bi → |a, a ⊕ bi (3.44)
+onde a, b ∈ {0,1} e ⊕ é módulo 2.
+CNOT|00i → |00i (3.45)
+CNOT|01i → |01i
+CNOT|10i → |11i
+CNOT|11i → |10i
+Figura 3.10: Representação circuital da Porta CNOT Quântica. A linha superior representa o
+q-bit de controle, e a linha de baixo o q-bit-alvo
+Porta Toffoli quântica
+O funcionamento da porta Toffoli é bastante semelhante a CNOT, também é uma porta
+controlada, só que com dois q-bits de controle. Seu funcionamento pode ser da seguinte maneira, caso os q-bits |ai e |bi sejam iguais a |1i o q-bit |ci será negado.
+Figura 3.11: Representação circuital da Porta Toffoli Quântica. As linhas superiores representam
+os q-bits de controle, e a linha de baixo o q-bit-alvo.
+A repreesntação matricial da porta Toffoli é dada por:
+T OF F OLI =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 0
+0 0 1 0 0 0 0 0
+0 0 0 1 0 0 0 0
+0 0 0 0 1 0 0 0
+0 0 0 0 0 1 0 0
+0 0 0 0 0 0 0 1
+0 0 0 0 0 0 1 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(3.46)
+A ação pode ser representada na base computacional da seguinte maneira:
+T OF F OLI|a, b, ci → |a, b, c ⊕ abi (3.47)
+onde a, b, c ∈ {0,1} e ⊕ é módulo 2. A base computacional possui 8 elementos nesse caso.
+Porta SWAP
+A porta de Swap, como pode ser visualizado na figura 3.12, é formado por três portas
+CNOT.
+A evolução desta porta pode ser descrita como a troca de seus valores entre si.
+A representação matricial da porta Swap é dada por:
+SW AP =
+
+
+
+
+
+
+1 0 0 0
+0 0 1 0
+0 1 0 0
+0 0 0 1
+
+
+
+
+
+
+(3.48)
+A ação pode ser representada na base computacional da seguinte maneira:
+SW AP|a, bi → |b, ai (3.49) Figura 3.12: Representação circuital da Porta Swap Quântica.
+Porta Fredkin
+A porta Fredkin, que também é uma porta controlada, funciona com um q-bit de controle
+associado à uma porta Swap. Seu funcionamento pode ser da seguinte maneira, caso o q-bit
+de controle seja |1i e os q-bits alvo trocam de valor entre si.
+Figura 3.13: Representação circuital da Porta Fredkin Quântica. A linha superiore representam o
+q-bit de controle, e as linha de baixo os q-bits-alvo.
+A repreesntação matricial da porta Fredkin é dada por:
+F REDKIN =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 0
+0 0 1 0 0 0 0 0
+0 0 0 1 0 0 0 0
+0 0 0 0 1 0 0 0
+0 0 0 0 0 0 1 0
+0 0 0 0 0 1 0 0
+0 0 0 0 0 0 0 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(3.50)
+Porta Uf ou oráculo
+É uma porta muitas vezes chamada de “black box”. É uma porta que não é pré-definida e,
+portanto, pode ser utilizada para manipular qualquer número de q-bits. Em outras palavras,
+ela é uma porta “genérica” onde se pode implementar qualquer operação, desde que esta
+obedeça às regras dos operadores unitários.
+São operadores lineares unitários que calculam uma função característica arbitrária e
+desconhecida.
+3.2 PORTAS QUÂNTICAS 29
+Figura 3.14: Representação circuital de uma Porta Oráculo.
+Oráculos são amplamente utilizados em algoritmos quânticos voltados para problemas
+de busca ou extração de informações de funções desconhecidas

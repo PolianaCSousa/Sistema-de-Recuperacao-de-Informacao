@@ -6,9 +6,6 @@ import numpy as np
 import pandas as pd
 from time import sleep
 
-
-
-
 #palavrasParaRetirar
 stopWords = [
     "eu", "tu", "ele", "ela", "nós", "vocês", "eles", "elas",
@@ -18,7 +15,31 @@ stopWords = [
     "nosso", "nossa", "nossos", "nossas",
     "esse", "essa", "isso", "este", "esta", "isto",
     "aquele", "aquela", "aquilo",
-    "quem", "que", "qual", "sim", "não", "com", "tem", "yes", "not", "para", "uma", "dos", "como", "por"
+    "quem", "que", "qual", "sim", "não", "com", "tem", "yes", "not", "para",
+    "uma", "dos", "como", "por", "the", "and", "for", "that", "this", "with",
+    "are", "ser", "can", "são", "mais", "das", "from", "you", "have", "cada",
+    "which", "foi", "one", "but", "more", "will", "all", "some", "when", "use",
+    "they", "our", "new", "such", "has", "pode", "sobre", "using", "podem", "seja",
+    "other", "pelo", "there", "tipo", "mas", "return", "each", "would", "also", "quando",
+    "set", "these", "based", "then", "assim", "uso", "into", "int", "está"
+]
+
+# Q = redes
+referenciaRedes = [
+    "doc1.txt", "doc8.txt", "doc22.txt", "doc27.txt", "doc224.txt",
+    "doc267.txt", "doc300.txt", "doc324.txt", "doc326.txt", "doc349.txt"
+]
+
+# Q = software
+referenciaSoftware = [
+    "doc13.txt", "doc15.txt", "doc90.txt", "doc107.txt", "doc180.txt",
+    "doc187.txt", "doc130.txt", "doc135.txt", "doc253.txt", "doc328.txt"
+]
+
+# Q = informação
+referenciaInformacao = [
+    "doc14.txt", "doc19.txt", "doc23.txt", "doc26.txt", "doc28.txt",
+    "doc55.txt", "doc60.txt", "doc72.txt", "doc100.txt", "doc150.txt"
 ]
 
 def index_collection(vocabulary):
@@ -179,16 +200,13 @@ def create_dictionary(fileName):
 def create_collection_dictionary():
 
     dictionary = dict()
-    qtd_files = 3
+    qtd_files = 360
 
     for i in range(1, qtd_files + 1): #o range é exclusivo no final, entao para chegar até o 2 precisa adicionar mais um. Ex, se for range(1,5) ele vai do 1 ao 4
         dictionary['doc'+str(i)+'.txt'] = create_dictionary('doc'+str(i)+'.txt')
 
     return dictionary
-    #print(dictionary)
-    #para ver o dicionario formatado jogue o resultado do terminal nesse link: https://jsonformatter.curiousconcept.com/#
 
-#def indexar(arrayComPalavrasRepetidas):
 
 def get_most_relevant_terms():
 
@@ -204,7 +222,7 @@ def get_most_relevant_terms():
    # print(vocabulary)
     sorted_vocabulary = dict(sorted(vocabulary.items(),key=lambda word: word[1], reverse=True))
 
-    vocabulary_50 = dict(islice(sorted_vocabulary.items(), 20))
+    vocabulary_50 = dict(islice(sorted_vocabulary.items(), 200))
 
 
     #print(vocabulary_50)
@@ -239,7 +257,7 @@ def vetorial_model(term1, term2):
     # === Cálculo de TF-IDF ===
     N = len(docs)
     df_terms = np.count_nonzero(matriz_numpy > 0, axis=1)
-    idf = np.log(N / (df_terms + 1e-10))
+    idf = np.log2(N / (df_terms + 1e-10))
     tf_idf = matriz_numpy * idf[:, np.newaxis]
 
     # === Vetor da consulta TF-IDF ===
@@ -337,30 +355,8 @@ def menu():
 
 
 if __name__ == "__main__":
-    #boolean_model()
-    # menu()
-    #vocabulary = extract_vocabulary('doc1.txt')
-    # result = get_most_relevant_terms() #menu 2
-    #print(result)
-
-    # index = bool_index(result)
 
     menu()
-
-    '''
-    vocabulary2 = create_dictionary('doc2.txt')
-    vocabulary1 = create_dictionary('doc1.txt')
-    
-    arquivos["doc1.txt"] = vocabulary1
-    arquivos["doc2.txt"] = vocabulary2
-    '''
-
-
-    '''for fileName in arquivos:
-        print(arquivos[fileName]['doce'])
-        break
-        #print(arquivos)
-    '''
 
 
 

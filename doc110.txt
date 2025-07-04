@@ -1,0 +1,1402 @@
+TÉCNICAS DA PESQUISA
+OPERACIONAL APLICADAS NA
+OTIMIZAÇÃO DOS SERVIÇOS POSTAIS
+Deise Maria Bertholdi Costa*
+Maria Teresinha Arns Steiner**
+Celso Carnieri**
+Luzia Vidal S. Zamboni*
+Arinei C. Lindbeck da Silva**
+v.8, n.1, p. 37-55, abr. 2001
+Universidade Federal do Paraná
+Departamentos: *Desenho e **Matemática
+Caixa Postal 19081 – CEP 81531-900 - Curitiba – PR
+E-mails: deise@cce.ufpr.br, tere@mat.ufpr.br,
+carnieri@mat.ufpr.br, luzia@cce.ufpr.br
+Resumo
+O presente trabalho apresenta uma metodologia para a otimização do serviço de entrega de cor-
+respondências realizado pela Empresa de Correios e Telégrafos (ECT) a partir da aplicação de
+algumas técnicas da Pesquisa Operacional. Como o serviço de entrega e as etapas que o antecedem
+(separação e ordenação dos objetos) são realizadas manualmente, existe a necessidade de otimizá-las
+e isto é possível redefindo-se as regiões de atendimento para cada carteiro. Para tanto, o problema
+foi tratado como um problema de roteamento de veículos. Vários algoritmos clássicos foram
+utilizados; inicialmente para definir as áreas de atendimento dos carteiros, chamados de distritos
+postais e, a seguir, para estabelecer o roteiro de entrega das correspondências, considerando, nesta
+fase, as distâncias reais entre os pontos de entrega. Vários testes computacionais foram realizados,
+variando-se os algoritmos e parâmetros iniciais e suas respostas comparadas através das distâncias
+totais e de tempos computacionais, determinando-se, assim, os algoritmos com melhores desempenhos.
+Palavras-chave: problema de roteamento de veículos, clusters e rotas ótimas.
+1. Introdução
+O
+volume de objetos (correspondências,
+encomendas, etc.) entregue pela empresa
+estatal ECT-Correios tem aumentado em média,
+na cidade de Curitiba, de 10 a 15% ao ano,
+sendo que a mesma não pode efetuar novas
+contratações. Com a falta de funcionários38
+Costa, Steiner, Carnieri, Zamboni & Silva – Técnicas da Pesquisa Operacional
+ocorrem os atrasos na entrega das correspondên-
+cias. Como o maior custo da empresa está na
+área de distribuição domiciliar, em torno de 40 a
+45% do custo total, existe, então, a necessidade
+de melhorar o processo de entrega, que é
+composto, basicamente, da separação, ordenação
+e entrega dos objetos, etapas estas que são
+realizadas pelos próprios carteiros. Isto é
+possível, estabelecendo-se adequadamente áreas
+de atendimento para cada carteiro e fornecendo
+roteiros de entrega otimizados.
+Pretende-se, neste trabalho, estabelecer um
+procedimento de solução para a entrega de
+objetos pelos serviços postais com os seguintes
+objetivos: determinar novas áreas de atendimen-
+to para entrega de correspondências para cada
+carteiro (denominada de Distrito Postal do
+carteiro – DP), considerando que a carga
+transportada seja aproximadamente a mesma
+para todos e, obter para cada carteiro o roteiro
+otimizado de entrega dos objetos dentro de seu
+distrito postal.
+Para a solução da primeira fase do problema,
+da determinação dos distritos postais, foram
+utilizados algoritmos clássicos de solução do
+problema de roteamento capacitado de vários
+veículos e de vários depósitos. Vários testes
+foram realizados, variando-se parâmetros iniciais
+tais como: posição dos depósitos, capacidade
+máxima do veículo (no caso, carga máxima que
+o carteiro pode transportar), entre outros. Para o
+roteamento dos distritos postais, segunda fase do
+problema, foram testados vários algoritmos
+clássicos de solução do problema do caixeiro
+viajante, comparando-se os seus desempenhos em
+função do tempo computacional e de distâncias
+mínimas. As melhores soluções para estas duas
+fases foram identificadas e indicadas para com-
+porem um procedimento de solução que pode ser
+aplicado a quaisquer outras regiões da cidade.
+Como se trata de um problema de grande
+escala, com uma imensa quantidade de pontos de
+parada, houve a necessidade de utilizar uma
+linguagem de programação que possuísse a
+interação com um banco de dados, a fim de ser
+rápida a busca de informações. Os algoritmos
+foram programados na linguagem Visual Basic,
+utilizando as informações contidas num banco
+de dados. As respostas são dadas de duas
+maneiras: graficamente, podendo-se visualizar
+os distritos postais formados e as seqüências das
+rotas; e por meio de relatórios, indicando-se
+seqüências de atendimento, quantidade de
+pontos de parada, tempos computacionais e
+distâncias dos trajetos.
+Alguns trabalhos relacionados ao problema
+abordado podem ser citados: no artigo Schedu-
+ling the postal carriers for the United States
+postal service, LEVY & BODIN (1988)
+propuseram o roteamento de um carteiro dentro
+da sua área de atendimento, estabelecendo um
+programa de atendimento diário, não se
+preocupando com demanda, bem como com a
+divisão inicial da região entre os carteiros.
+Outros trabalhos similares: o problema da coleta
+de lixo (BELTRAMI & BODIN, 1972);
+estabelecimento de frota para coleta de lixo
+urbano (CLARK & GILLEAN, 1977); rotea-
+mento e scheduling de máquinas para varrer ruas
+(BODIN & KURSH, 1978) e o problema da
+coleta de lixo urbano (NOGUEIRA et al., 1989).
+Outras técnicas de solução para o problema
+de roteamento de veículos têm sido utilizadas. O
+problema da divisão de uma região em setores,
+por exemplo, pode ser tratado através do
+problema das p-medianas onde é utilizado um
+algoritmo para agrupamento de objetos (neste
+caso, são os pontos de parada) que leva em
+consideração além das distâncias euclidianas
+entre todos os pontos de parada, também um
+peso associado (podendo ser a demanda dos
+objetos) (MULVEY et al., 1984; BEZERRA,
+1995). Outra proposta para a divisão de uma
+região em sub-regiões é colocada por
+DAGANZO (1984) e por GRACIOLLI (1996)
+que apresentam formulações para zoneamento,
+dividindo uma área em zonas, objetivando a
+minimização da distância média percorrida por
+ponto de parada, utilizando um algoritmo
+genético híbrido.
+Para o problema de roteamento de veículos,
+podem-se citar várias meta-heurísticas, como porGESTÃO & PRODUÇÃO v.8, n.1, p.37-55, abr. 2001
+exemplo: algoritmos genéticos (MAYERLE,
+1996; BEZERRA, 1995), busca tabu
+(COLORNI et al., 1996; GLOVER, 1989, 1990;
+GENDREAU et al., 1991; RIBEIRO, 1994;
+SOSA et al., 1996), simulated annealing
+(COLORNI et al., 1996; BARBOSA, 1989) e
+técnicas GRASP (Greedy Randomized Adaptive
+Search Procedure) (FEO et al., 1995). Estas
+meta-heurísticas, consideradas não determinísti-
+cas, tem como motivação evitar a obtenção de
+mínimos locais, mantendo temporariamente
+soluções ruins durante as iterações, com o
+objetivo de proporcionar a busca de soluções em
+outras vizinhanças, podendo fornecer soluções
+melhores do que as atuais já encontradas.
+2. Descrição do Processo de Entrega das
+Correspondências
+A
+função principal dos Correios, como
+prestadora de serviços de entregas, é de
+efetuar a distribuição de objetos tais como
+correspondências, encomendas, folhetos de
+propaganda, entre outros, aos devidos destinatá-
+rios. Nesta seção será descrito o processo de
+separação e entrega dos objetos realizado pelos
+funcionários dos Correios enfatizando os
+problemas do processo.
+Os Correios em Curitiba possuem um Centro
+de Triagem (CT) responsável pelo recebimento
+dos objetos da própria cidade e de outras localida-
+des. O CT possui uma equipe de funcionários que
+faz o tratamento manual dos objetos selecionan-
+do-os de acordo com o destino, ou seja, pelo CEP
+(código de endereçamento postal), e encami-
+nhando-os para os devidos locais (processo de
+primeira triagem). O CEP é um conjunto
+numérico constituído de oito algarismos, cujo
+objetivo principal é orientar e acelerar o trata-
+mento, o encaminhamento e a distribuição de
+objetos, podendo identificar uma rua, um trecho
+de rua, um edifício, um órgão público, etc.
+Os objetos que são entregues em Curitiba,
+estão codificados com os CEP’s de oito dígitos
+variando de 80000-000 a 82999-999, sendo que
+esta numeração está subdividida em 12 faixas,
+39
+cada uma das quais corresponde a uma região de
+Curitiba, formada por bairros da cidade. Em
+cada região os Correios possuem uma unidade
+responsável pela entrega de objetos, sendo
+denominada de Centro de Distribuição Domiciliar
+(CDD). Cada região abrangida por um CDD é
+ainda subdividida em distritos postais (DP) de
+acordo com o número de carteiros que trabalham
+na unidade. O DP de um carteiro é o seu local de
+entrega dos objetos, definindo, assim, a sua área
+de atendimento.
+Para efetuar a entrega dos objetos nos devi-
+dos endereços dos usuários dos serviços postais,
+diariamente, o carteiro efetua a separação de sua
+carga de trabalho, que é realizada dentro da
+unidade do CDD (processo de segunda triagem).
+Esta tarefa é composta por uma triagem coletiva,
+uma individual e uma ordenação. Na triagem
+coletiva, da qual participam todos os carteiros,
+os objetos que chegaram do CT são separados de
+acordo com os distritos postais. Para tanto, cada
+carteiro deve saber identificar a qual DP
+pertence o objeto que ele está separando, ou seja,
+ele deve conhecer quais são os CEP’s (ou as
+ruas) atendidos por seus colegas. Terminada esta
+fase, cada carteiro coleta os objetos relativos ao
+seu DP, e então começa a separar a sua própria
+carga, de acordo com os CEP’s. Após esta
+triagem individual, ele faz a ordenação das
+correspondências para entrega (seqüência em
+que a correspondência será entregue) de acordo
+com o trajeto que irá percorrer. A seguir, o
+carteiro inicia seu trabalho externo, deslocando-
+se até o ponto de início da entrega e percorrendo
+depois, a pé, de bicicleta ou moto, uma rede
+viária, composta de ruas pavimentadas ou não,
+os endereços dos usuários, denominados de
+pontos de parada, que obviamente não são os
+mesmos diariamente.
+A região utilizada para este trabalho foi a
+atendida pelo CDD-Capão da Imbuia, o qual
+atende 5 bairros da cidade. Existem 28 carteiros
+trabalhando neste CDD, formando então os 28
+distritos postais. A maioria dos distritos é muito
+afastada da sede do CDD, assim o carteiro, para
+chegar ao seu DP, utiliza um ônibus de linha e40
+Costa, Steiner, Carnieri, Zamboni & Silva – Técnicas da Pesquisa Operacional
+depois realiza a entrega dos objetos. Um dos
+grandes problemas desta região é a falta de
+seqüência na numeração dos pontos de entrega
+(das casas ou edifícios), ou ainda, a existência
+numa mesma rua de várias casas com a mesma
+numeração. As ruas em que isto ocorre são
+chamadas de ruas críticas.
+Em 1993 foram coletadas informações sobre
+uma parte desta região (somente de um bairro),
+tais como: tempo gasto para percorrer um trecho
+de rua e para entregar as correspondências,
+quantidade de objetos a serem entregues, modo
+de fazer o trajeto (pode percorrer um lado do
+trecho, fazer o contorno no final do mesmo e
+retornar pelo outro lado – modo em U; pode
+percorrer o trecho cruzando a rua de um lado
+para o outro – modo em Z; pode percorrer
+apenas um lado da rua, pois o outro não há
+entregas – modo L). Após o levantamento destes
+dados, foi realizada a divisão da região em
+distritos postais, de maneira manual, pelos
+funcionários, tentando não dividir as ruas críticas
+entre os carteiros.
+Outro problema é o aumento da quantidade
+de entregas. Nos últimos cinco anos, a quantida-
+de de objetos entregues passou de 3,3 bilhões de
+objetos por ano para 6,2 bilhões de objetos por
+ano (CAMAROTTI, 1997). No CDD-Capão da
+Imbuia, o aumento do volume dos objetos para
+entrega elevou muito o tempo dispendido com o
+trabalho interno, prejudicando o trabalho exter-
+no. Em geral, o carteiro entrega apenas 70 ou
+80% da carga total de seu CDD, deixando para o
+dia seguinte o que não pôde ser entregue no
+próprio dia, acumulando uma grande quantidade
+de objetos sendo entregues com atraso.
+Algumas propostas, fornecidas pela própria
+ECT-Correios, estão sendo levantadas para
+melhorar o serviço de entrega dos objetos, tais
+como:
+a) Perspectiva de triagem no CT pelos grupos de
+CEP’s – no CDD-Capão da Imbuia, os cinco
+primeiros dígitos do CEP (que constituem o
+CEP5) variam dentro da faixa de 82800 a
+82980, formando 12 subdivisões do CDD.
+A proposta dos Correios é que as correspon-
+dências já cheguem ao CDD separadas em
+conjuntos de CEP5. Assim, cada grupo de
+carteiros poderia se preocupar com a triagem
+de cada um dos conjuntos de CEP5, manipu-
+lando um quantidade menor de objetos na
+triagem coletiva, reduzindo assim, o tempo
+deste processo.
+b) Perspectiva de aquisição de máquinas de
+leitura do CEP – desde o início de 1997, os
+Correios adotaram um novo padrão no uso e
+preenchimento de envelopes, para permitir a
+adoção da mecanização postal. Já utilizada
+em São Paulo, Rio de Janeiro e Brasília, a
+mecanização postal faz com que a separação
+das correspondências seja realizada por má-
+quinas e não mais de forma manual. Com
+isto, o carteiro receberá sua correspondência já
+separada, não participando mais do processo
+de triagem, dedicando seu tempo ao trabalho
+de ordenação e entrega dos objetos, propor-
+cionando rapidez e eficiência ao serviço.
+3.
+Definição do Problema
+O
+s Correios enfrentam a falta de carteiros
+para efetuar a entrega dos objetos, bem
+como o aumento de volume dos mesmos. A
+grande preocupação está em diminuir o tempo de
+triagem, ou seja, da separação dos objetos,
+tempo este que poderia ser utilizado na entrega;
+e também na otimização do trajeto realizado pelo
+carteiro, que facilitaria seu trabalho. Desta forma
+ele poderia entregar uma quantidade maior de
+objetos, percorrendo o mínimo necessário de
+trechos que não possuem entrega. Percebe-se
+que o principal problema é o da divisão inicial
+do CDD, que é feita atualmente de forma
+manual, não prevendo a distribuição da carga de
+forma equilibrada entre os carteiros, tornando-se
+uma divisão ineficiente. O problema a ser
+tratado pode, então, ser dividido em duas fases:
+a) Divisão do CDD-Capão da Imbuia em novos
+DP’s (Fase I – formação de clusters), deter-
+minando-se qual carteiro deverá atender a
+quais pontos de entrega (endereço dos usuá-
+rios). Numa primeira proposta considera-se aGESTÃO & PRODUÇÃO v.8, n.1, p.37-55, abr. 2001
+divisão existente dos códigos de endereça-
+mento postal para realizar tal divisão, com o
+propósito de facilitar o processo de triagem e
+de reduzir o tempo dispendido com o mesmo.
+A segunda proposta não considera tais divi-
+sões. Nesta fase foram consideradas as de-
+mandas dos pontos de entrega.
+b) Roteamento de cada um dos DP’s (Fase II –
+roteamento), formando, assim, a seqüência de
+pontos de parada no trajeto, estabelecendo
+roteiros que utilizem o mínimo possível de
+trechos improdutivos. Foram consideradas,
+nesta fase, as distâncias reais entre os pontos
+de parada.
+Da maneira como o problema foi estabeleci-
+do, ele pode ser tratado como um Problema de
+Roteamento de veículos, podendo ser formulado
+como um problema de otimização em redes.
+3.1 Dados do Problema
+O CDD-Capão da Imbuia é responsável pela
+entrega dos objetos nos bairros: Atuba, Bairro
+Alto, Tarumã, Capão da Imbuia e Cajuru da
+cidade de Curitiba. A rede viária formada pela
+região do CDD compõe o grafo G(N,A,C) do
+problema, onde N é o conjunto de nós (pontos de
+interseção das ruas), A define o conjunto de
+arcos (trechos de ruas) e C é a matriz de custos
+(distâncias) entre todos os nós do grafo G,
+ilustrado na Figura 1a. Os Correios possuem o
+levantamento da quantidade de objetos entregues
+por trecho somente da região inferior do CDD,
+formada pelo bairro do Cajuru. Os dados
+utilizados neste trabalho são desta região, sobre
+a qual é proposta, então, a solução do problema,
+formando o subgrafo G0(N0,A0,C0) de G(N,A,C),
+apresentado na Figura 1b.
+Em cada trecho de rua (arco do grafo G0)
+existem vários pontos de entrega dos objetos,
+estabelecidos pelos endereços dos usuários dos
+serviços postais. Os carteiros atualmente não
+compartilham entregas num mesmo trecho;
+assim todos os pontos de um mesmo trecho são
+associados a um único ponto, que é estabelecido
+pelo ponto médio do arco. Estes pontos médios
+41
+formam então o conjunto dos pontos de parada
+do problema. Designar um ponto de parada a um
+carteiro é o correspondente a designar um trecho
+produtivo do grafo G0 a ele, e desta forma estão
+definidos os seus pontos de entrega, ou seja, os
+endereços dos usuários.
+Tem-se, assim, um novo grafo G1 ilustrado na
+Figura 2a que é obtido da seguinte forma: se o
+trecho for produtivo, então é introduzido no
+grafo G0 o ponto médio do arco, e atribuído a ele
+a demanda do trecho; caso contrário, o ponto
+médio não é incluído no grafo. Esta é uma das
+abordagens de solução para a Fase I do problema
+– denominada de abordagem trecho.
+Além da designação dos pontos de parada
+formados pelos pontos médios dos trechos
+produtivos, é proposta também a designação dos
+pontos de parada correspondentes aos pontos
+médios das ruas – abordagem rua, ilustrada na
+Figura 2b. O objetivo desta segunda abordagem
+é facilitar ainda mais o processo de triagem
+realizado pelos carteiros, que precisam memori-
+zar todos os CEP’s e nomes das ruas de seus
+colegas para poder efetuar a separação dos
+objetos; e facilitar também o processo de
+entrega, pois como o DP será formado por ruas
+inteiras (com os mesmos CEP’s de oito dígitos)
+então o carteiro conhecerá as particularidades de
+cada rua, sabendo com certeza onde deve fazer
+cada entrega. A obtenção do grafo G2 é análoga
+a do grafo G1, ou seja, ele é formado a partir do
+grafo G0 com a inclusão de pontos de parada,
+que neste caso são os pontos médios das ruas.
+Cada um destes pontos médios são obtidos da
+seguinte forma: identificam-se os pontos inicial
+e final da rua (identificada pelo mesmo CEP de
+oito dígitos), a seguir estes pontos são ligados
+por um segmento de reta, assim, o ponto médio
+da rua torna-se o ponto médio do segmento de
+reta. É atribuído a este ponto a demanda igual a
+soma das cargas de entrega dos trechos
+produtivos desta rua.
+A abordagem trecho possui o total de 1214
+pontos de parada associados aos trechos
+produtivos do grafo G1, que possui no total 1471
+trechos, enquanto que na abordagem rua existem42
+Costa, Steiner, Carnieri, Zamboni & Silva – Técnicas da Pesquisa Operacional
+Figura 1 – a) Grafo G associado à rede viária do CDD-Capão da Imbuia
+b) Grafo G0 associado à rede viária do bairro do Cajuru
+Figura 2 – a) Formação do grafo G1 a partir da inclusão dos pontos de parada no grafo G0
+b) Formação do grafo G2 a partir da inclusão dos pontos de parada no grafo G0
+296 pontos de parada associados às ruas
+produtivas do grafo G2, dentre suas 330 ruas (em
+relação aos mesmos CEP’s de oito dígitos).
+Os Correios possuem o levantamento da
+carga de entrega dos objetos em todos os trechos
+da região inferior do CDD. Este valor é que
+deveria ser considerado como demanda do
+trecho e, como conseqüência, seria a demanda
+do ponto de parada associado. Porém, existem
+trechos longos com pouca entrega, outros
+trechos curtos que possuem muitas entregas,
+bem como existem aqueles que são curtos ou
+longos que possuem pouca ou muita entrega.
+Assim, para haver um equilíbrio na divisão do
+CDD em DP’s, ou seja, para que um carteiro não
+caminhe mais do que o outro, ou carregue uma
+quantidade maior de objetos, deve ocorrer uma
+divisão justa da região. Para isso, os Correios
+estabeleceram o conceito de valor do trecho em
+carteiro (VTC). Este valor é um coeficiente
+estabelecido para cada trecho, que relaciona:
+velocidade de percorrida, tempo de percorrida,
+modo de percorrida, tipo de região e carga de
+entrega. As demandas de cada distrito postal
+atualmente variam entre 0.68 e 1.25 VTC.
+Foi então estabelecida a demanda do ponto de
+parada da seguinte forma: se a abordagem é
+trecho, basta associar ao ponto de parada o VTC
+do trecho como sendo a demanda do trecho, e se
+a abordagem é rua, então é associado ao pontoGESTÃO & PRODUÇÃO v.8, n.1, p.37-55, abr. 2001
+43
+Figura 3 – a) Subdivisão da região inferior do CDD-Capão da Imbuia de acordo com o CEP5
+b) Divisão da região inferior do CDD em 4 grupos de CEP5
+de parada da rua a soma de todos os VTC dos
+trechos como sendo a demanda da rua. A
+demanda total da região é de 13.14 unidades em
+VTC. Para simplificação, VTC será chamado
+apenas de demanda do ponto de parada. O aten-
+dimento da região considerada é realizada por 13
+carteiros, então a demanda total para cada deve
+ser aproximadamente uma unidade de VTC.
+Cada rua do CDD possui um CEP que é
+composto de oito dígitos, sendo que os cinco
+primeiros identificam uma região do CDD ao
+qual eles pertencem e os três últimos represen-
+tam as divisões da rua em pedaços menores,
+variando conforme seu tamanho e características.
+Agrupando as ruas que possuem em comum o
+mesmo CEP5 (os cinco primeiros dígitos do
+CEP) são formadas oito regiões que dividem a
+região inferior do CDD, ilustradas na Figura 3a.
+4. Resolução do Problema
+A
+maioria dos Problemas de Roteamento é
+NP-Hard. Assim, abordagens conhecidas
+para resolver perfeitamente este problema
+crescem exponencialmente em relação ao tempo
+computacional, de acordo com o tamanho do
+mesmo. Um recurso freqüente é utilizar heurís-
+ticas ou procedimentos aproximados para obter
+soluções quase-ótimas ao invés de soluções
+ótimas. No caso do problema estudado é
+utilizada uma abordagem de resolução por meio
+de técnicas heurísticas clássicas de roteamento
+de veículos. A seguir, são mostradas as etapas de
+resolução e os algoritmos utilizados.
+4.1 Resolução da Fase I: Divisão do CDD em
+Distritos Postais
+Pela designação de todos os pontos de para-
+da, estabelecidos pela abordagem trecho ou rua
+aos carteiros, é determinada a divisão do CDD
+em DP’s, onde cada distrito postal deve possuir,
+em média, a mesma demanda (uma unidade de
+VTC). Para esta divisão são fornecidas duas
+propostas: a divisão da região considerando a
+divisão já existente dos CEP’s (proposta 1) e
+outra sem considerar tal divisão (proposta 2).
+4.1.1 Proposta 1: Divisão do CDD dentro de
+Grupos de CEP5
+A primeira proposta de divisão do CDD em
+DP’s utiliza agrupamentos de CEP5. Um grupo
+de CEP5 é formado por um ou mais conjuntos de
+CEP de cinco dígitos (Figura 3b). Estes agrupa-
+mentos são formados de modo que sejam sub-
+regiões vizinhas (adjacentes) e que a soma das
+demandas em VTC de cada sub-região seja
+aproximadamente um número inteiro. Esta
+escolha foi obtida manualmente levando em
+consideração a forma da região. A divisão do
+CDD, portanto, é obtida de forma que o carteiro44
+Costa, Steiner, Carnieri, Zamboni & Silva – Técnicas da Pesquisa Operacional
+Quadro 1 – Definição dos grupos de CEP5 (AR – Abordagem Rua, AT – Abordagem Trecho)
+Quantidade de
+Quantidade de
+Demanda Média
+Carteiros no
+Pontos de Parada
+(DG/MG)
+Grupo (MG)
+(AR / AT)
+Grupos
+(G)CEP5 associadoDemanda do
+Grupo (DG)182900, 82920, 829504.21971641.054929119 / 419
+2829302.02277221.01138642 / 208
+382940, 829604.00640741.00160167 / 367
+482970, 829802.89933930.96644668 / 220
+Quadro 2 – Definição do único grupo de CEP5 para a proposta 2
+(AR – Abordagem Rua, AT – Abordagem Trecho)
+Grupo
+(G)CEP5 associadoDemanda do
+Grupo (DG)
+únicoos 8 conjuntos13.148234
+possua seu DP contido em um, até o máximo de
+3 grupos de sub-regiões formadas pelo CEP5.
+Com isto, as correspondências já seriam
+separadas de acordo com o seu CEP5 pelo CT,
+fazendo com que os carteiros manipulassem uma
+quantidade menor de objetos, apenas aqueles
+pertencentes ao seu grupo de CEP5. Esta
+proposta fornece então uma solução imediata
+para o problema atual de triagem coletiva,
+simplificando-o, significativamente, conforme
+exposto no Quadro 1.
+Quantidade de
+Quantidade de
+Demanda média
+Carteiros no
+Pontos de Parada
+(DG/MG)
+Grupo (MG)
+(AR / AT)
+13
+1.011402
+296 / 1214
+abordagem trecho ou rua, dentre os seus 13
+carteiros, sendo que cada um terá uma demanda
+média de 1.011402 (em VTC) de carga de
+trabalho.
+Esta proposta pode ser estabelecida de forma
+análoga à proposta 1, sendo que existe agora
+apenas 1 único grupo de CEP5 formado por
+todos os conjuntos de CEP5. Esta situação pode
+ser analisada no Quadro 2.
+4.1.2 Proposta 2: Divisão de Todo o CDD4.1.3 Aplicação dos Algoritmos de Rotea-
+mento de Veículos para Obter a Divisão
+do CDD em DP’s
+Com a perspectiva de aquisição de máquinas
+para identificação dos endereços de entrega dos
+objetos (ou dos CEP’s) que são capazes de
+separar as correspondências de acordo com o DP
+correspondente, não há mais necessidade de
+preocupar-se em facilitar o processo de triagem
+manual, pois este seria eliminado. Assim, pode-
+se efetuar a divisão de todo CDD em 13 DP’s de
+uma única vez, considerando a região toda,
+realizando desta forma uma divisão equânime
+entre os carteiros. A proposta 2, então, efetua a
+divisão da região inferior do CDD de uma única
+vez, designando os pontos de parada, dentro daNas duas propostas apresentadas nas seções
+4.1.1 e 4.1.2 foram aplicados os algoritmos
+heurísticos de roteamento de vários veículos
+com vários depósitos. As rotas obtidas determi-
+nam os distritos postais dos carteiros. Os pontos
+de parada a serem visitados pelos carteiros
+correspondem aos pontos médios de cada rua ou
+trecho de rua que possuem entrega.
+A demanda média de cada grupo considerado
+(cada um dos 4 grupos segundo a proposta 1 ou
+o grupo único formado pela região toda segundo
+a proposta 2 – quadros 1 e 2) é fornecida
+dividindo-se a demanda total do grupo pelaGESTÃO & PRODUÇÃO v.8, n.1, p.37-55, abr. 2001
+45
+Figura 4 – a) Posição das sementes (depósitos fictícios) para a proposta 1
+b) Posição das sementes para a proposta 2
+quantidade de carteiros do grupo. O estabeleci-
+mento da carga máxima de um carteiro
+(demanda máxima que ele pode atender) é
+fornecida multiplicando-se a demanda média do
+grupo por uma fator α de aumento. Foram
+realizados testes variando-se α entre 1,03 e 1,10.
+Este fator tem o objetivo de fornecer uma
+margem de folga para a carga máxima que o
+carteiro pode transportar. Se considerássemos
+que esta carga fosse exatamente a mesma para
+cada carteiro, o algoritmo utilizado para a
+formação de clusters que considera a demanda
+deixaria vários pontos de parada sem designa-
+ção, havendo a necessidade de serem feitos
+muitos ajustes posteriores.
+Considerando a sede do CDD como o depósi-
+to fictício para a formação dos clusters, teríamos
+DP’s com formas alongadas. Para evitar isto,
+foram criados depósitos fictícios situados dentro
+da região e com suas posições coincidindo com
+algum ponto de parada. Para determinar a
+localização destes depósitos fictícios utilizou-se
+o algoritmo de geração de sementes (PARAÍBA,
+1990). Este algoritmo escolhe a primeira semen-
+te como sendo o ponto de parada mais próximo
+da sede do CDD. Em seguida, escolhe a próxima
+semente como sendo o ponto de parada tal que a
+soma das distâncias dele a todas as outras
+sementes já obtidas seja máxima. O processo é
+repetido até que todas as sementes desejadas
+sejam obtidas. Foram testadas várias quantidades
+de sementes de acordo com a proposta de
+resolução, sendo que uma das situações para
+cada proposta está ilustrada na Figura 4.
+Definidas as localizações dos depósitos, a
+demanda dos pontos de parada e a carga máxima
+de cada carteiro, pode-se utilizar os algoritmos
+de roteamento de vários veículos e vários
+depósitos para a obtenção dos clusters. O
+procedimento descrito a seguir foi generalizado,
+sem fazer distinção entre os tipos de propostas
+(1 e 2) e de abordagens (trecho e rua).
+Inicialmente é aplicado o chamado algoritmo
+M-Dep das razões (GOLDEN et al., 1977) para
+formação temporária dos agrupamentos de
+pontos de parada (cada grupo é considerado
+separadamente – quadros 1 e 2) em torno das
+sementes (depósitos), sem considerar a demanda
+e utilizando a distância euclidiana (esta designa-
+ção é temporária). Este algoritmo obtém uma lista
+de valores (razões), e por meio dela é designado
+o ponto de parada a um dos depósitos. Para cada
+ponto de parada (nó i) são determinados os dois
+depósitos mais próximos segundo a distância
+euclidiana, t ′i e t ′i′ ; a seguir são calculadas as
+razões destas distâncias ( ri = cit ′i / cit ′i′ ). Os nós
+são ordenados de acordo com os valores das
+razões em ordem crescente. Esta lista determina
+a ordem na qual os nós serão designados aos
+depósitos: aqueles que estão relativamente46
+Costa, Steiner, Carnieri, Zamboni & Silva – Técnicas da Pesquisa Operacional
+próximos ao primeiro depósito e mais afastados
+em relação ao segundo são considerados
+primeiro. Os nós i que possuem a razão ri < δ
+(0 < δ < 1) são designados ao depósito mais
+próximo t ′i . A cada inclusão de um novo nó
+numa rota é utilizado o algoritmo de inserção
+econômica para determinar a sua posição dentro
+da rota (GOLDEN et al., 1980; BODIN et al.,
+1983). Os nós i que possuem a razão ri ≥ δ são
+designados a um dos outros depósitos existentes
+da seguinte forma: para cada dois nós adjacentes
+j e k, que já estão designados a um depósito t,
+calcular o custo (distância euclidiana) cji + cik – cjk
+de inserção do nó i entre os nós j e k. O nó i deve
+ser designado ao depósito t associado ao par (j, k)
+que forneceu o menor custo (algoritmo de inserção
+econômica). Neste problema utilizou-se δ=0,8.
+A seguir, é aplicado o algoritmo dos savings
+com múltiplos depósitos – denominado
+M-DepCW (TILLMAN et al., 1972), o qual é
+uma generalização do algoritmo dos savings de
+Clarke e Wright (CLARKE & WRIGHT, 1964),
+que passa a considerar a demanda de cada ponto
+de parada para a formação dos clusters. O
+algoritmo M-DepCW necessita da designação
+temporária dos pontos a algum depósito, já
+obtida pelo algoritmo M-Dep das razões.
+Formam-se então n rotas iniciais, temporárias,
+uma para cada nó, ligadas ao depósito corres-
+pondente. Para cada par de nós i e j, e cada
+depósito k, são calculados os savings sijk em
+função dos custos c (distância euclidiana):
+sijk = ci k + c jk – cij, onde: ci k = 2 min {c i t }− c i k ,
+t∈ConjDep
+se o nó i ainda não teve uma designação
+permanente, ou ci k = ci k , caso contrário. O
+saving representa a economia na distância total
+viajada quando se liga i e j a k. Estes valores são
+ordenados numa lista de maneira decrescente. O
+método liga sucessivamente pares de nós com o
+objetivo de reduzir o custo total, mas a partir do
+momento em que dois ou mais nós foram
+designados a uma rota comum a partir de um
+depósito, eles não podem ser redesignados a um
+outro depósito. E ainda, como no algoritmo
+original dos savings de Clarke e Wright, os nós i
+e j podem ser ligados se e somente se i e j não
+são pontos interiores da rota. A cada passo, a
+escolha de ligar um par de nós i e j de uma rota a
+partir de um depósito k é feita em termos dos
+savings quando são ligados i e j a k. Os nós i e j
+são ligados ao depósito k tal que sijk seja
+máximo, e que forneça uma solução factível em
+relação ao controle de capacidade da rota (no
+caso é a carga máxima que o carteiro pode
+transportar). Os valores dos savings para estes
+pontos i e j são atualizados, pois tornaram-se nós
+com designação permanente. Este procedimento
+é então repetido até o término da lista de valores
+de savings. A quantidade de rotas utilizada é
+dada pelo valor de MG (quantidade de carteiros
+que atende ao grupo de CEP5 considerado).
+Como os valores dos savings podem ser
+negativos, ou ainda, pelo fato do saving indicar a
+designação de um ponto, a rota que já se encontra
+com a capacidade máxima utilizada, tem-se que
+ao final do processo ficam pontos de parada sem
+designação. Foi realizado então um ajuste das
+respostas incluindo os pontos de paradas sem
+designação nas rotas obtidas pelo algoritmo
+M-DepCW. Foi feita a seguinte operação: para
+cada nó i que não está roteirizado é determinada
+a posição de inserção, que é obtida por determi-
+nar o nó j, de alguma das M rotas já obtidas, tal
+que cij seja mínimo e que não ultrapasse o limite
+da capacidade da rota. Este é o processo de
+inserção utilizado pelo algoritmo de inserção
+mais próxima (GOLDEN et al., 1980).
+Foram obtidos, a seguir, novos pontos iniciais
+e finais para cada rota. Eles foram obtidos como
+sendo os pontos mais próximos de todos os
+outros pontos, ou seja, foi calculada a distância
+acumulada de cada ponto de parada até os outros
+pontos da mesma rota, e escolhido como ponto
+inicial da rota aquele que forneceu a menor das
+somas das distâncias, e como ponto final o que
+forneceu a segunda menor soma das distâncias.
+A intenção é que o processo de melhoria entre
+rotas (explicado a seguir) troque os pontos que
+estejam no meio da rota, ou seja, os que estejam
+mais afastados da concentração dos pontos de
+parada. Precisou-se, então, fornecer uma novaGESTÃO & PRODUÇÃO v.8, n.1, p.37-55, abr. 2001
+seqüência para cada rota, e para isso utilizou-se
+o algoritmo de inserção econômica (GOLDEN
+et al., 1980; BODIN et al., 1983). Este algoritmo
+pode ser aplicado também para solucionar um
+problema de roteamento de vários veículos e um
+depósito. No caso, ele foi aplicado ao roteamen-
+to de apenas um veículo (carteiro). O primeiro
+passo é identificar o nó mais afastado do ponto
+inicial da rota. A seguir, deve-se obter a rota
+inicial formada pelos: ponto inicial, ponto mais
+afastado do ponto inicial da rota e pelo ponto
+final. Para cada nó i não roteirizado, calcular a
+posição mais econômica para sua inserção na
+rota da seguinte forma: determinar dois nós
+adjacentes j e k da rota, tal que cji + cik – cjk seja
+mínimo. Inserir o nó cujo valor de inserção seja
+mínimo na rota. Recalcular as posições de
+inserção econômica para cada nó i não roteiriza-
+do, continuar o processo até que todos os nós
+estejam roteirizados.
+A última etapa para a formação dos clusters é
+a utilização dos algoritmos de melhoria de rotas.
+Eles fazem trocas de posições dos nós entre as
+rotas ou dentro de uma mesma rota se esta nova
+configuração resultar num custo (comprimento
+da rota) menor do que o anterior.
+Foram utilizados inicialmente os algoritmos
+de troca simples e dupla entre rotas (WATERS,
+1987). O algoritmo de troca simples funciona da
+seguinte forma: para cada nó i da rota I são
+determinados nós j’ e j” de uma rota J tal que
+[ c(i’,i) + c(i,i”) + c(j’,j”) – [ c(i’,i”) + c(j’,i) +
+c(i,j”) ] > 0 ] (onde i’ e i” são os nós adjacentes
+ao nó i) seja máximo e que a demanda do nó i
+possa ser atendida pela rota J. É efetuada a
+inserção do nó i na rota J de acordo com o maior
+valor obtido. Continuar este procedimento para
+cada rota considerada até que nenhuma melhoria
+a mais seja obtida. O procedimento de troca
+dupla de nós é semelhante ao anterior: são consi-
+derados agora dois pontos i, da rota I, e j, da rota
+J, e calculado o valor: [ c(i’,i) + c(i,i”) + c(j’,j) +
+c(j,j”) – [ c(i’,j) + c(j,i”) + c(j’,i) + c(i,j”) ] > 0 ]
+(i’ e i” adjacentes ao nó i, e j’ e j”adjacentes ao j)
+para cada par de nós i e j. O maior valor indica
+quais pontos devem ser trocados entre as rotas,
+47
+desde que não ultrapasse a capacidade de cada
+rota. Este procedimento é repetido até que
+nenhuma melhoria mais seja obtida.
+Para melhorias das rotas foi utilizado o
+algoritmo k-opt (LIN et al., 1973), utilizando k
+igual a 2 e 3. Para cada rota são desconectados k
+arcos (por exemplo, para k = 2 são desconecta-
+dos 2 arcos que unem 4 nós, podendo ou não
+serem adjacentes). Estes k caminhos são
+reconectados formando uma nova rota. Se o
+comprimento da nova rota for menor do que o
+original, então esta nova configuração é
+utilizada. Escolhe-se novos k arcos e continua-se
+o procedimento até que nenhuma melhoria mais
+seja obtida.
+Após a utilização dos procedimentos de
+melhorias das rotas tem-se os clusters definitivos
+de pontos, obtendo-se os distritos postais de cada
+um dos carteiros. A seguir deve ser realizado o
+roteamento de cada distrito, considerando agora
+as distâncias reais.
+4.2 Resolução da Fase II: Roteamento das
+Sub-regiões
+Após a divisão do CDD em DP’s há a neces-
+sidade de efetuar o roteamento dos mesmos.
+Para tanto, é proposto o uso de quatro algoritmos
+de roteamento de veículos, três deles referentes
+ao roteamento de nós e um de roteamento de
+arcos.
+4.2.1 Aplicação dos Algoritmos de Rotea-
+mento de Nós
+Os algoritmos de roteamento de nós adotados
+neste trabalho são: inserção econômica
+(GOLDEN et al., 1980), savings de Clarke e
+Wright (CLARKE & WRIGHT, 1964) e sweep
+(GILLETT et al., 1974). Estes algoritmos
+fornecem soluções para o problema de roteamen-
+to de um ou vários veículos em relação a um
+depósito. Nesta etapa eles foram aplicados a
+cada rota separadamente.
+O algoritmo de inserção econômica já foi
+apresentado no item 4.1.3. O algoritmo dos48
+Costa, Steiner, Carnieri, Zamboni & Silva – Técnicas da Pesquisa Operacional
+savings de Clarke e Wright funciona da seguinte
+maneira: inicialmente é obtida uma solução
+inicial consistindo em servir cada nó exclusiva-
+mente por uma rota, ligada ao depósito (nó 0).
+São calculados os savings para cada par de nós i
+e j: sij = c0i + c0j – cij (o custo cij é dado pela
+distância real entre i e j). Estes valores são
+colocados em ordem decrescente. Os nós i e j
+são unidos de acordo com esta seqüência dada
+pelos savings.
+O algoritmo sweep fornece a seqüência dos
+nós da seguinte maneira: inicialmente é realizada
+uma mudança de coordenadas tal que o depósito
+coincida com a nova origem do sistema. São
+obtidas as coordenadas polares para cada nó i:
+ângulo e raio. É formada uma lista dos nós,
+ordenados pelos ângulos em ordem crescente. A
+rota é formada, começando-se pelo primeiro nó
+da lista e incluindo-se os demais, seguindo a
+seqüência da lista.
+Se a abordagem da Fase I foi considerar a rua
+toda para formação do distrito, então nesta nova
+fase, cada uma delas foi subdividida em trechos,
+e foram utilizados para roteamento apenas os
+trechos produtivos dessa rua. Assim, os pontos
+de parada do DP são os pontos médios dos
+trechos produtivos do referido DP, tanto da
+abordagem trecho quanto rua.
+Para os algoritmos de roteamento de nós, o
+roteamento de cada DP foi realizado da seguinte
+forma: (1) obtenção dos pontos de parada do DP;
+(2) definição das coordenadas x e y máximas e
+mínimas dos pontos de parada: xmax, ymax,
+xmin e ymin, para formação de um retângulo
+com vértices (xmin–100,ymin–100), (xmin–100,
+ymax+100), (xmax+100,ymin–100) e (xmax+100,
+ymax+100), unidade em metros; (3) formação do
+grafo G3 composto de todos os pontos de parada
+do DP e dos vértices do grafo inicial G0 que
+estão contidos dentro do retângulo definido no
+passo 2 anterior; (4) cálculo da distância real
+entre os nós do grafo G3, aplicando o algoritmo
+de Floyd (FLOYD, 1962); (5) aplicação de um
+dos algoritmos de roteamento de nós sobre os
+pontos de parada, sendo que os pontos inicial e
+final sempre são os mais próximos da sede do
+CDD (para que os algoritmos possam ser
+comparados); (6) utilização do algoritmo de
+melhoria de rota 2-opt (o algoritmo 3-opt não foi
+utilizado pela grande quantidade de pontos de
+parada), aplicado sobre a seqüência da rota dada
+pelo passo 5 anterior, fornecendo a seqüência
+dos pontos de parada para a rota; (7) recuperação
+da trajetória da rota, quadra a quadra, entre os
+pontos de parada, fornecendo a seqüência do
+trajeto para o DP.
+4.2.2 Aplicação do Algoritmo de Roteamento
+de Arcos
+O algoritmo utilizado para o roteamento de
+arcos é o algoritmo do carteiro chinês (BODIN
+et al., 1983). Inicialmente deve ser obtida a
+matriz de custos das arestas do grafo considera-
+do. Identificar os vértices de grau ímpar. Se não
+existirem vértices de grau ímpar então realizar o
+passo final do procedimento, pois existe um
+circuito euleriano no grafo. Caso contrário, obter
+o mínimo custo entre todos os vértices de grau
+ímpar. Determinar o matching de mínimo custo
+(combinação dos vértices dois a dois). Introduzir
+as arestas de custo mínimo no grafo. Passo final:
+formar o circuito euleriano, utilizando a Regra
+de Fleury (CHRISTOFIDES, 1975).
+O algoritmo do carteiro chinês é aplicado a
+um grafo conexo, ou seja, a região deve possuir
+ligações entre todos os seus arcos, formando
+uma região não disjunta. Porém, os DP’s
+estabelecidos na Fase I possuem arcos ou grupos
+de arcos (subgrafos conexos) que não são
+ligados a região toda do DP, estabelecendo um
+grafo desconexo. Portanto, existe a necessidade
+preliminar à aplicação do algoritmo do carteiro
+chinês, de interligar a região do DP, pela
+inclusão de arcos, para deixar o grafo relativo ao
+DP conexo. Após esta etapa, procede-se com a
+utilização do algoritmo do carteiro chinês.
+Se a abordagem da Fase I foi rua, então cada
+rua foi subdividida em trechos, e foram
+utilizados para roteamento apenas os trechos
+produtivos. Assim, os pontos de parada do DP,
+que são os pontos médios dos trechos produtivosGESTÃO & PRODUÇÃO v.8, n.1, p.37-55, abr. 2001
+do referido DP, definem os arcos produtivos que
+devem ser atravessados pelo carteiro, tanto da
+abordagem trecho quanto rua.
+O roteamento de cada DP foi realizada da
+seguinte forma: (1) formação do grafo G4
+composto de todos os trechos produtivos do DP,
+que foram definidos pela designação dos seus
+pontos médios na Fase I, sendo seus vértices as
+extremidades de cada arco (trecho produtivo) do
+DP; (2) identificação das regiões disjuntas, ou
+seja, aquelas que não possuem ligações por meio
+de arcos existentes do grafo G4, utilizando para
+isso o algoritmo de Floyd; (3) unir duas a duas
+as regiões disjuntas por arcos do grafo inicial G0,
+formando o grafo conexo G5; (4) cálculo da
+distância real entre os vértices do grafo G5,
+aplicando o algoritmo de Floyd; (5) aplicação do
+algoritmo do carteiro chinês sobre os arcos do
+grafo G5, sendo que o arco inicial da rota é
+aquele que possui uma das extremidades mais
+próximas da sede do CDD, obtendo-se assim, a
+seqüência de percorrida dos arcos; (6) recupera-
+ção da trajetória da rota quadra a quadra,
+fornecendo a seqüência de percorrida dos arcos,
+determinando o trajeto para o DP.
+5. Resultados Numéricos
+A
+divisão atual da região inferior abrangida
+pelo CDD-Capão da Imbuia, conforme já
+analisado, necessita de 13 carteiros para a tarefa
+de entrega dos objetos. São então fornecidas a
+seguir as respostas obtidas pelos algoritmos
+anteriormente apresentados.
+5.1 Respostas para a Fase I – Divisão do
+CDD em DP’s
+Foram realizados ao todo 4 conjuntos de
+testes, alternando-se entre dividir a região toda
+do CDD, considerando ou não a divisão
+existente dos grupos de CEP’s, e entre as
+abordagens rua e trecho, formando um total de
+31 testes. Nas soluções apresentadas a seguir,
+são fornecidas informações sobre cada um dos
+testes realizados, o fator de aumento α utilizado,
+49
+a quantidade de sementes utilizada para cada
+grupo de CEP5, a carga máxima utilizada (α . D
+= fator de aumento . demanda total da região),
+distância total entre os pontos de parada após a
+utilização do algoritmo M-DepCW e do ajuste
+(inserção mais próxima), distância total após o
+algoritmo de inserção econômica e distância
+total após a utilização dos algoritmos de
+melhorias de rotas. As distâncias são euclidianas
+e fornecidas em metros.
+Para a abordagem trecho não foi utilizado o
+algoritmo 3-opt para melhoria da seqüência entre
+os pontos de parada devido a grande quantidade
+de nós de cada uma das rotas.
+Para a proposta 1, considerando a divisão de
+CEP’s, abordagem rua, foram realizados 10
+testes, variando-se os parâmetros de fator de
+aumento α e quantidade de sementes utilizadas
+por grupos de CEP5. Os melhores resultados são
+dados pelos testes de números 3 e 4, os quais
+forneceram DP’s mais concentrados e distância
+total menor (euclidiana) entre os pontos de
+parada, conforme exposto no Quadro 3. Este foi
+o critério para a escolha das melhores soluções.
+Para a proposta 1, considerando a divisão de
+CEP’s, abordagem trecho, foram realizados 8
+testes, apresentados no Quadro 4, variando-se os
+parâmetros de fator de aumento α e quantidade
+de sementes utilizadas por grupos de CEP5. Os
+melhores resultados são dados pelos testes de
+números 14 e 17.
+Já para a proposta 2, que não considera a
+divisão dos CEP’s, abordagem rua, foram
+realizados 5 testes, apresentados no Quadro 5,
+variando-se os parâmetros de fator de aumento α
+e quantidade de sementes utilizadas por grupos
+de CEP5. Os melhores resultados são dados
+pelos testes de números 23 e 24.
+E, finalmente para a proposta 2, que não con-
+sidera a divisão dos CEP’s, abordagem trecho,
+foram realizados 8 testes, apresentados no
+Quadro 6, variando-se os parâmetros de fator de
+aumento α e quantidade de sementes utilizadas
+por grupos de CEP5. Os melhores resultados são
+dados pelos testes de números 32 e 37. Para o
+teste 33, formaram-se apenas 12 rotas.50
+Costa, Steiner, Carnieri, Zamboni & Silva – Técnicas da Pesquisa Operacional
+Quadro 3 – Comparação dos testes realizados para a fase I, proposta 1, abordagem rua
+TesteGrupo 2Grupo 3Grupo 4
+Distância
+Distância
+Carga
+total
+total
+máxima
+MdepCW e Inserção
+Total (α.D)
+Ajuste
+Econômica
+Grupo 1
+Quantidade de sementes para
+cada Grupo CEP5
+Fator de
+aumento
+α11.05323213.858139.6856845.2849147.37
+21.05111113.851340.9951436.2943912.63
+31.06111113.9350280.3451705.0442839.75
+41.07111114.0652458.5155645.4343406.98
+51.03222213.5457941.458246.4849851.17
+61.04222213.6759233.4660163.5751424.01
+71.05222213.858175.8557421.5147111.21
+81.06222213.9357504.157401.0546329.29
+91.07222214.0657805.1157441.4846804.87
+101.10222214.4657283.3557963.4744201.35
+Distância
+total
+Melhorias
+Quadro 4 – Comparação dos testes realizados para a fase I, proposta 1, abordagem trecho
+TesteGrupo 2Grupo 3Grupo 4
+Distância
+Carga
+total
+máxima
+MdepCW e
+total (α.D)
+Ajuste
+Fator de
+aumento
+αGrupo 1
+Quantidade de sementes para
+cada Grupo CEP5
+111.05111113.8
+121.071111131.10111141.0522151.072161.091718Distância
+total
+InserçãoDistância
+total
+Melhorias
+153911.1123998.7104770.9
+14.06157364.29123089.4106466.3
+114.46157489.9120616.4106327.4
+2213.8195065.3118253.2101731.8
+22214.06194299.9115856.5103346.8
+222214.33197131.9115283102881.6
+1.09222214.33181306.7113253.7101146.3
+1.07222214.06193340.1116561.8104019.8
+A proposta 1 que considera os CEP’s para a
+divisão do CDD em DP’s e com o uso da abor-
+dagem rua, nota-se que o trabalho de triagem das
+correspondências pode ser facilitado, pois os
+carteiros poderão manipular uma quantidade
+bem menor de correspondências; bem como
+auxilia o processo de entrega dos objetos, pois os
+DP’s dos carteiros serão constituídos por ruas
+inteiras; assim, ele ficará encarregado pela
+entrega das correspondências das ruas críticas
+(por inteiro), podendo memorizar a seqüência da
+numeração utilizada neste tipo de rua.
+O resultado do teste 3, proposta 1 – conside-
+rando a divisão de CEP’s e abordagem rua é
+mostrado no Quadro 7 a seguir. O fator de
+aumento α utilizado foi de 1.06 e, portanto, aGESTÃO & PRODUÇÃO v.8, n.1, p.37-55, abr. 2001
+51
+Quadro 5 – Comparação dos testes realizados para a fase I, proposta 2, abordagem rua
+Carga
+Dist. total
+máxima
+MDepCW /
+Ajuste
+total (α*D)
+TesteFator de
+aumento αQuantidade de sementes
+para todo o CDD (grupo
+único de CEP5)Distância
+total
+InserçãoDistância
+total
+Melhorias
+211.03213.54
+46590.0155168.7944850.75
+221.04213.6746552.5554137.2544017.37
+231.05213.846134.2156415.5242095.91
+241.06213.9345551.2453184.5343144.38
+251.07214.0645553.7754908.6744983.52
+Quadro 6 – Comparação dos testes realizados para a fase I, proposta 2, abordagem trecho
+Carga
+Dist. total
+máxima
+MdepCW e
+Ajuste
+total (α.D)
+Distância
+total
+InserçãoDistância
+total
+Melhorias
+111082117890.5106598.3
+13.8112443.9121017106053.2
+113.35110638.4123617.9105180.2
+1.05213.8139324131181.6117769.6
+351.06213.93136639.6128724.9105517.9
+361.07214.06130910.7123575.1106005.7
+371.08214.2136279.79124137.4103295.8
+381.08314.2164386.5134340118754.2
+TesteFator de
+aumento αQuantidade de sementes
+para todo o CDD (grupo
+único de CEP5)311.07114.06
+321.051331.1034
+carga máxima considerada para o carteiro foi de
+α . DG = fator de aumento . demanda média do
+grupo de CEP5 (terceira coluna). Utilizou-se
+apenas 1 semente para cada grupo de CEP5. A
+quantidade de carga que será transportada por
+carteiro, determinada pelo algoritmo de clusters,
+é indicada na segunda coluna.
+Os 13 distritos postais obtidos para este teste
+estão ilustrados na Figura 5 a seguir.
+A Proposta 1 tem por objetivo fazer com que
+o carteiro possua seu DP com a menor quantida-
+de de CEP5. Para o teste 3 cada DP obtido
+possui 3 códigos de CEP no máximo. E para a
+triagem, é reduzido, consideravelmente, o
+volume de objetos manipulados, pois 4 carteiros
+são necessários para a triagem de 3 CEP5’s, 2
+carteiros para 1 CEP5, 4 carteiros para 2 CEP5’s
+e 3 carteiros para 2 CEP5’s.
+5.2 Respostas para a Fase II – Roteamento
+de Cada DP’s
+Para determinar a seqüência dos pontos de
+parada dos distritos postais foram aplicados
+separadamente os algoritmos: inserção econômi-
+ca, savings de Clarke e Wright, sweep e o do
+carteiro chinês aos melhores resultados da Fase
+I, para cada uma das propostas e abordagens.
+Após a utilização dos algoritmos de roteamento
+de nós foi utilizado o algoritmo de melhoria
+2-opt. Os testes para os quais foram realizados o
+roteamento foram os de números 3, 17, 23 e 37.
+Os valores obtidos para estes testes estão no
+Quadro 8.
+Na Figura 6 tem-se a seqüência do trajeto
+para uma parte da região abrangida pelo DP2 para
+a proposta 2, abordagem rua, teste 3, aplicando52
+Costa, Steiner, Carnieri, Zamboni & Silva – Técnicas da Pesquisa Operacional
+Quadro 7 – Solução para a fase I, proposta 1, abordagem rua, fornecida pelo teste 3
+Distrito
+PostalCarga
+Transportada
+por CarteiroCarga
+MáximaSemente
+AssociadaDistância
+MdepCW e
+AjusteDistância
+Inserção
+EconômicaDistância
+Melhoria
+10.9479141.11822514587.645726.853703.63
+21.0973311.11822516777.434973.464815.95
+31.0723681.11822514720.384557.654399.04
+41.1021031.11822513481.143721.793242.24
+50.9924081.07206913655.033252.93459.19
+61.0303641.07206915953.265495.743100.15
+70.9632781.06169812412.432657.612655.58
+81.0300921.06169811785.822271.051526.2
+91.0096711.06169814293.924990.174444.25
+101.0033661.06169811739.21965.211622.54
+110.9824961.02443312828.572874.142436.91
+120.9036811.02443313381.593331.742841.93
+131.013161.02443314663.875886.684592.1
+Total13.1413.931 semente50280.3451705.0442839.75
+Figura 5 – Divisão do CDD em DP's para a fase I, proposta 1, abordagem rua, fornecida pelo teste 3GESTÃO & PRODUÇÃO v.8, n.1, p.37-55, abr. 2001
+53
+Quadro 8 – Distâncias reais do trajeto dos roteiros para cada teste realizado para a fase II, de
+roteamento de cada DP
+Teste
+3
+17
+23
+37
+Proposta
+1
+1
+2
+2
+Abordagem
+rua
+trecho
+rua
+trecho
+AlgoritmoDistância Total
+do CDDDistância Média
+por carteiro
+Inserção223387.7517183.67
+Savings224593.6217276.43
+Sweep225641.6017357.04
+Carteiro Chinês245707.9318900.61
+Inserção216294.4516638.03
+Savings216342.6416641.74
+Sweep220419.7416955.36
+Carteiro Chinês221064.4017004.95
+Inserção225996.5017384.34
+Savings225748.0017365.23
+Sweep234142.7718010.98
+Carteiro Chinês247167.7219012.90
+Inserção218927.2516840.55
+Savings220881.5816990.89
+Sweep228653.9217588.76
+Carteiro Chinês223762.9017212.53
+Figura 6 – Seqüência do trajeto do DP2 para a proposta 2, abordagem rua, teste 3,
+aplicando o algoritmo de inserção econômica
+o algoritmo de inserção econômica. O primeiro
+ponto da rota está identificado pelo número 1 e o
+último pelo número 173. Os pontos de parada e
+os arcos onde existem entregas estão identifica-
+dos por pontos e traços fortes. Dois números
+indicados sobre o mesmo ponto de parada signi-
+fica que o carteiro faz o trajeto em U, ou seja,
+percorre um lado da rua e retorna pelo outro.
+6. Conclusões
+C
+om base nos vários testes realizados foi
+possível estabelecer um procedimento para
+determinar a divisão de uma região e seu
+roteamento, em especial, para atender a situação
+atual dos Correios – que consiste em dividir a
+região do CDD em sub-regiões (DP’s), utilizando54
+Costa, Steiner, Carnieri, Zamboni & Silva – Técnicas da Pesquisa Operacional
+a proposta de divisão da região dentro dos
+grupos de CEP’s, designando uma rua inteira a
+somente um carteiro.
+A solução sugerida para a situação atual dos
+Correios é utilizar a resposta obtida pelo teste de
+número 3, utilizando para carga máxima de cada
+carteiro o valor de α . DG = (1.06 . demanda média
+do grupo de CEP5) e utilizar para o roteamento
+nos distritos postais o algoritmo de inserção
+econômica, pois foi o que forneceu os melhores
+resultados. Para cada cluster obtido na fase I, a
+distância euclidiana, em média, foi de 3295km
+(distância total / quantidade de carteiros), e varia-
+ção da carga para entrega para cada DP, compa-
+rando a menor delas em relação a maior foi de
+15%; e para a fase II, a distância real de percurso
+foi de 17183 km, em média, para cada carteiro.
+Embora outros testes tenham fornecido
+distâncias um pouco menores, este é o que se
+mostra mais interessante para ser aplicado à
+situação atual dos Correios pois tende a facilitar
+significativamente o processo de triagem dos
+objetos, reduzindo o tempo dispendido nesta
+tarefa e conseqüentemente ganha-se mais tempo
+para executar o trabalho externo de entrega das
+correspondências.
+Referências Bibliográficas
+BARBOSA, V.C.: “Redes neuronais e simulatedCLARKE, G. & WRIGHT, J.W.: “Scheduling of
+annealing como ferramentas para otimização
+combinatória”. Investigación Operativa, v. 1, n. 2,
+p. 125-142, 1989.
+BELTRAMI, E.J. & BODIN, L.D.: “Networks and
+vehicle routing for municipal waste collection”.
+Networks, v. 4, p. 65-94, 1972.
+BERTHOLDI COSTA, D.M.: Aplicação de algumas
+Técnicas da Pesquisa Operacional na Otimização
+dos Serviços Postais. Curitiba, 1997. Dissertação
+de Mestrado, Universidade Federal do Paraná.
+BEZERRA, O.B.: Localização de postos de coleta
+para apoio ao escoamento de produtos extra-
+tivistas – um estudo de caso aplicado ao babaçu.
+Florianópolis, 1995. Dissertação (Mestrado em
+Engenharia) – Departamento de Engenharia de
+Produção e Sistemas, Universidade Federal de
+Santa Catarina.
+BODIN, L.; GOLDEN, B.; ASSAD, A. & BALL, M.:
+Routing and Scheduling of vehicles and crews: the
+state of the art. Special Issue. England: Pergamon
+Press, 1983.
+BODIN, L.D. & KURSH, S.J.: “A computer-assisted
+system for the routing and scheduling of street
+sweepers”. Operations Research, v. 26, n. 4,
+p. 525-537, july/aug, 1978.
+CAMAROTTI, G.: “Rapidez extraviada”. Revista
+Veja, São Paulo, n. 11, p. 68-70, mar, 1997.
+CLARK, R.M. & GILLEAN, J.I.: “Solid waste
+collection: a case study”. Operational Research
+Quarterly, v. 28, n. 4, p. 795-806, 1977.vehicles from a central depot to a number of
+delivery points”. Operations Research, v. 12, n. 4,
+p. 568-581, july/aug, 1964.
+COLORNI, A.; DORIGO, M.; MAFFIOLI, F.;
+MANIEZZO, V. et al.: “Heuristics from nature for
+hard combinatorial optimization problems”. Inter-
+national Transactions in Operational Research,
+v. 3, n. 1, p. 1-21, 1996
+CHRISTOFIDES, N.: Graph theory – an algorithmic
+approach. New York: Academic Press Inc, 1975.
+DAGANZO, C.F.: “The distance traveled to visit
+Noints with a maximum of C stops per vehicle: an
+analytic model and an application”. Transp.
+Science, v. 18, p. 331-350, 1984.
+EDMONDS, J. & JOHNSON, E.L.: “Matching, Euler
+tours and the chinese postman”. Mathematical
+Programming, v. 5, p. 88-124, 1973.
+FEO, T.A. & RESENDE, M.G.C.: “Greedy
+randomized adaptive search procedures”. Journal
+of Global Optimization, p. 1-27, 1995.
+FLOYD, R.W.: “Algorithm 97: shortest path”.
+Communications of the Association for Com-
+puting Machinery, v. 5, p. 345, 1962.
+GENDREAU, M.G.; HERTZ, A. & LAPORTE, G.:
+“A tabu search heuristic for the vehicle routing
+problem”. Publication #777, Centre de Recherche
+sur les Transports, Université de Montréal, 1991.
+GILLETT, B.E. & MILLER, L.R.: “A heuristic
+algorithm for the vehicle-dispatch problem”. Ops
+Res., v. 22, p. 340-349, 1974.GESTÃO & PRODUÇÃO v.8, n.1, p.37-55, abr. 2001
+GOLDEN, B.; BODIN, L.; DOYLE, T. &
+STEWART JR, W.: “Approximate traveling
+salesman algorithms”. Operations Research,
+v. 28, n. 3, parte II, p. 694-711, may/june, 1980.
+GOLDEN, B.L.; MAGNANTI, T.L. & NGUYEN, H.Q.:
+“Implementing vehicle routing
+Networks, v. 7, p. 113-148, 1977.
+algorithms”.
+GLOVER, F.: “Tabu search, Part I”. ORSA Journal
+on Computing, v. 1, n. 3, p. 190-206, 1989.
+GLOVER, F.: “Tabu search, Part II”. ORSA Journal
+on Computing, v. 2, p. 4-32, 1990.
+GRACIOLLI, O.D.: Dimensionamento e otimização
+55
+MULVEY, J.M. & BECK, M.P.: “Solving capacitated
+clustering problems”. European Journal of
+Operational Research. v 18, p. 339-348,1984.
+NOGUEIRA, C.H.C.; MAGALHÃES, I.B.; IZU, M.
+et al.: O problema da coleta do lixo urbano: uma
+solução via programação matemática. Trabalho
+interno. Rio de Janeiro: Instituto de Matemática
+UFF, 1989.
+PARAIBA, L.C.; FERNANDES, J.F.R. & ANDO,
+A.S.: Um algoritmo heurístico de construção
+paralela para o problema do M-caixeiro viajante.
+Trabalho interno. Campinas: UNICAMP, 1990.
+de sistemas de distribuição física de produtos –
+um enfoque contínuo. Florianópolis, 1996. Exame
+de qualificação para doutoramento, Universidade
+Federal de Santa Catarina.RIBEIRO, C.: Busca tabu. VII Congresso latino-
+LEVY, L. & BODIN, L.: “Scheduling the postalheurísticas para o problema de agrupamento
+capacitado aplicando busca tabu. XXVIII
+Simpósio Brasileiro de Pesquisa Operacional, Rio
+de Janeiro, 1996.
+carriers for the United States postal service: an
+application of arc partitioning and routing”. In:
+GOLDEN, B.L. & ASSAD, A.A. (Eds.) Vehicle
+routing: Methods and studies. North-Holland:
+Elsevier Science Publishers B. V., p. 359-394, 1988.
+LIN, S. & KERNIGHAN, B.W.: “An effective
+heuristic algorithm for the travelling salesman
+problem.” Op. Res., v. 21, p. 498-516, 1973.
+MAYERLE, S.F.: Um algoritmo genético para
+solução do problema do caixeiro viajante.
+Trabalho interno. Florianópolis: UFSC, 1996.
+ibero americano de investigacion de operaciones e
+ingenieria de sistemas, Chile, 1994.
+SOSA, N.G.M. & FRANÇA, P.M.: Um estudo de
+TILLMAN, F.A. & CAIN, T.M.: “An upperbound
+algorithm for the single and multiple terminal
+delivery problem”. Management Science, v. 18,
+n. 11, p. 664-682, july, 1972.
+WATERS, C.D.J.: “A solution procedure for the
+vehicle scheduling problem based on iterative
+route improvement”. Journal of the Operational
+Research Society, v. 38, n. 9, p. 833-839, 1987.
+OPERATIONS RESEARCH TECHNIQUES APPLIED IN THE POST SERVICES
+Abstract
+A solution is proposed for the problem of correspondence delivery done by the post service system,
+using some Operation Research techniques. Having in mind that the delivery and its preceding phases
+(selection and sorting) are manually made, there is a necessity to optimise these procedures and that
+is possible reorganising the postmen’s delivery areas. To do that, this problem was treated as a
+Vehicle Routing Problem. Many classic algorithms were used, at first to determine the postmen’s
+delivery area, called postal districts, and then to establish the mail delivery route, using in this phase
+the real distance among the delivery points. Many tests were done changing the algorithms and initial
+parameters, and the results were compared using the total distances and the computational time spent,
+in order to determine the algorithms with the best performance.
+Key words: vehicle routing problem, clusters and optimal routes.

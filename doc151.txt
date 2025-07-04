@@ -1,0 +1,2039 @@
+Theoretical Computer Science 344 (2005) 243–278
+ www.elsevier.com/locate/tcs
+ Ant colony optimization theory: A survey
+ Marco Dorigoa,∗,1, Christian Blumb,2
+ aIRIDIA, Université Libre de Bruxelles, CP 194/6, Ave. F. Roosevelt 50, 1050 Brussels, Belgium
+ bALBCOM,LSI, Universitat Politècnica de Catalunya, Jordi Girona 1-3, Campus Nord, 08034 Barcelona, Spain
+ Received 21 March 2005; received in revised form 22 May 2005; accepted 30 May 2005
+ Communicated by T. Baeck
+ Abstract
+ Research on a new metaheuristic for optimization is often initially focused on proof-of-concept
+ applications. It is only after experimental work has shown the practical interest of the method that
+ researchers try to deepen their understanding of the method’s functioning not only through more and
+ more sophisticated experiments but also by means of an effort to build a theory. Tackling questions
+ such as “how and why the method works’’ is important, because finding an answer may help in
+ improving its applicability. Ant colony optimization, which was introduced in the early 1990s as
+ a novel technique for solving hard combinatorial optimization problems, finds itself currently at
+ this point of its life cycle. With this article we provide a survey on theoretical results on ant colony
+ optimization.First,wereviewsomeconvergenceresults.Thenwediscussrelationsbetweenantcolony
+ optimization algorithms and other approximate methods for optimization. Finally, we focus on some
+ research efforts directed at gaining a deeper understanding of the behavior of ant colony optimization
+ algorithms. Throughout the paper we identify some open questions with a certain interest of being
+ solved in the near future.
+ ©2005 Elsevier B.V. All rights reserved.
+ Keywords: Ant colony optimization; Metaheuristics; Combinatorial optimization; Convergence; Stochastic
+ gradient descent; Model-based search; Approximate algorithms
+ ∗ Corresponding author. Tel.: +3226503169; fax: +3226502715.
+ E-mail addresses: mdorigo@ulb.ac.be (M. Dorigo), cblum@lsi.upc.edu (C. Blum).
+ 1 Marco Dorigo acknowledges support from the Belgian FNRS, of which he is a Research Director, and from
+ the “ANTS’’ project, an “Action de Recherche Concertée’’ funded by the Scientific Research Directorate of the
+ French Community of Belgium.
+ 2 Christian Blum acknowledges support from the “Juan de la Cierva’’ program of the Spanish Ministry of
+ Science and Technology of which he is a post-doctoral research fellow, and from the Spanish CICYT project
+ TRACER(grant TIC-2002-04498-C05-03).
+ 0304-3975/$-see front matter © 2005 Elsevier B.V. All rights reserved.
+ doi:10.1016/j.tcs.2005.05.020
+244
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 1. Introduction
+ In the early 1990s, ant colony optimization (ACO) [20,22,23] was introduced by
+ M. Dorigo and colleagues as a novel nature-inspired metaheuristic for the solution of
+ hard combinatorial optimization (CO) problems. ACO belongs to the class of metaheuris
+tics [8,32,40], which are approximate algorithms used to obtain good enough solutions
+ to hard CO problems in a reasonable amount of computation time. Other examples of
+ metaheuristics are tabu search [30,31,33], simulated annealing [44,13], and evolutionary
+ computation [39,58,26]. The inspiring source of ACO is the foraging behavior of real ants.
+ When searching for food, ants initially explore the area surrounding their nest in a random
+ manner. As soon as an ant finds a food source, it evaluates the quantity and the quality of
+ the food and carries some of it back to the nest. During the return trip, the ant deposits a
+ chemical pheromone trail on the ground. The quantity of pheromone deposited, which may
+ depend on the quantity and quality of the food, will guide other ants to the food source. As
+ it has been shown in [18], indirect communication between the ants via pheromone trails
+ enables them to find shortest paths between their nest and food sources. This characteristic
+ of real ant colonies is exploited in artificial ant colonies in order to solve CO problems.
+ According to Papadimitriou and Steiglitz [56], a CO problem P = (S,f) is an op
+timization problem in which, given a finite set of solutions S (also called search space)
+ and an objective function f : S→ R+ that assigns a positive cost value to each of the
+ solutions, the goal is either to find a solution of minimum cost value,3 or—as in the case
+ of approximate solution techniques—a good enough solution in a reasonable amount of
+ time. ACO algorithms belong to the class of metaheuristics and therefore follow the latter
+ goal. The central component of an ACO algorithm is a parametrized probabilistic model,
+ which is called the pheromone model. The pheromone model consists of a vector of model
+ parameters T called pheromone trail parameters. The pheromone trail parameters Ti ∈ T ,
+ which are usually associated to components of solutions, have values i, called pheromone
+ values. The pheromone model is used to probabilistically generate solutions to the problem
+ under consideration by assembling them from a finite set of solution components. At run
+time, ACO algorithms update the pheromone values using previously generated solutions.
+ The update aims to concentrate the search in regions of the search space containing high
+ quality solutions. In particular, the reinforcement of solution components depending on the
+ solution quality is an important ingredient of ACO algorithms. It implicitly assumes that
+ good solutions consist of good solution components.4 To learn which components con
+tribute to goodsolutionscanhelpassemblingthemintobettersolutions.Ingeneral,theACO
+ approach attempts to solve an optimization problem by repeating the following two steps:
+ • candidate solutions are constructed using a pheromone model, that is, a parametrized
+ probability distribution over the solution space;
+ • thecandidate solutions are used to modify the pheromone values in a way that is deemed
+ to bias future sampling toward high quality solutions.
+ 3 Note that minimizing over an objective function f is the same as maximizing over −f. Therefore, every CO
+ problem can be described as a minimization problem.
+ 4 Note that this does not require the objective function to be (partially) separable. It only requires the existence
+ of a fitness-distance correlation [41].
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 245
+ After the initial proof-of-concept application to the traveling salesman problem (TSP)
+ [22,23], ACO was applied to many other CO problems.5 Examples are the applications to
+ assignment problems [14,47,46,63,66], scheduling problems [11,17,27,51,64], and vehicle
+ routing problems [29,59]. Among other applications, ACO algorithms are currently state
+of-the-art for solving the sequential ordering problem (SOP) [28], the resource constraint
+ project scheduling (RCPS) problem [51], and the open shop scheduling (OSS) problem [4].
+ For an overview of applications of ACO we refer the interested reader to [24].
+ The first theoretical problem considered was the one concerning convergence. The ques
+tion is: will a given ACO algorithm find an optimal solution when given enough resources?
+ This is an interesting question, because ACO algorithms are stochastic search procedures
+ in which the pheromone update could prevent them from ever reaching an optimum. When
+ considering a stochastic optimization algorithm, there are at least two possible types of
+ convergence that can be considered: convergence in value and convergence in solution.
+ When studying convergence in value, we are interested in evaluating the probability that
+ the algorithmwill generateanoptimalsolutionatleastonce.Onthecontrary,whenstudying
+ convergence in solution we are interested in evaluating the probability that the algorithm
+ reaches a state which keeps generating the same optimal solution. The first convergence
+ proofs were presented by Gutjahr in [37,38]. He proved convergence with probability 1−
+ to the optimal solution (in [37]), and more in general to any optimal solution (in [38]), of a
+ particular ACO algorithm that he called graph-based ant system (GBAS). Notwithstanding
+ its theoretical interest, the main limitation of this work was that GBAS is quite different
+ from any implemented ACO algorithm and its empirical performance is unknown. A sec
+ond strand of work on convergence focused therefore on a class of ACO algorithms that
+ are among the best-performing in practice, namely, algorithms that apply a positive lower
+ bound min to all pheromone values. The lower bound prevents the probability to generate
+ any solution to become zero. This class of algorithms is denoted by ACOmin
+ . Dorigo and
+ Stützle, first in [65] and later in [24], presented a proof for the convergence in value, as
+ well as a proof for the convergence in solution, for algorithms from ACOmin
+ . With the
+ convergence of ACO algorithms we deal in Section 3 of this paper.
+ Recently, researchers have been dealing with the relation of ACO algorithms to other
+ methods for learning and optimization. One example is the work presented in [2] that
+ relates ACO to the fields of optimal control and reinforcement learning. A more promi
+nent example is the work that aimed at finding similarities between ACO algorithms and
+ other probabilistic learning algorithms such as stochastic gradient ascent (SGA), and the
+ cross-entropy (CE) method. Meuleau and Dorigo have shown in [52] that the pheromone
+ update as outlined in the proof-of-concept application to the TSP [22,23] is very similar
+ to a stochastic gradient ascent in the space of pheromone values. Based on this obser
+vation, the authors developed an SGA-based type of ACO algorithm whose pheromone
+ update describes a stochastic gradient ascent. This algorithm can be shown to converge
+ to a local optimum with probability 1. In practice, this SGA-based pheromone update has
+ 5 Note that the class of ACO algorithms also comprises methods for the application to problems arising in
+ networks, such as routing and load balancing (see, for example, [19]), and for the application to continuous
+ optimization problems (see, for example, [62]). However, in this review we exclusively focus on ACO for solving
+ COproblems.
+246
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ not been much studied so far. The first implementation of SGA-based ACO algorithms
+ was proposed in [3] where it was shown that SGA-based pheromone updates avoid certain
+ types of search bias. Zlochin et al. [67] have proposed a unifying framework for so-called
+ model-based search (MBS) algorithms. An MBS algorithm is characterized by the use of a
+ (parametrized) probabilistic model M ∈ M(whereMisthesetofallpossibleprobabilistic
+ models) that is used to generate solutions to the problem under consideration. The class of
+ MBSalgorithmscanbedividedintotwosubclasseswithrespecttothewaytheprobabilistic
+ model is used. The algorithms in the first subclass use a given probabilistic model without
+ changing the model structure at run-time, whereas the algorithms of the second subclass
+ use and change the probabilistic model in alternating phases. ACO algorithms are exam
+ples of algorithms from the first subclass. In this paper we deal with model-based search
+ in Section 4.
+ While convergence proofs can provide insight into the working of an algorithm, they
+ are usually not very useful to the practitioner that wants to implement efficient algorithms.
+ This is because, generally, either infinite time or infinite space are required for a stochas
+tic optimization algorithm to converge to an optimal solution (or to the optimal solution
+ value). The existing convergence proofs for particular ACO algorithms are no exception.
+ As more relevant for practical applications might be considered the research efforts that
+ were aimed at a better understanding of the behavior of ACO algorithms. Blum [3] and
+ Blum and Dorigo [5,7] made the attempt of capturing the behavior of ACO algorithms in
+ a formal framework. This work is closely related to the notion of deception as used in the
+ evolutionary computation field. The term deception was introduced by Goldberg in [34]
+ with the aim of describing problems that are misleading for genetic algorithms (GAs).
+ Well-known examples of GA-deceptive problems are n-bit trap functions [16]. These func
+tions are characterized by (i) fix-points that correspond to sub-optimal solutions and that
+ have large basins of attraction, and (ii) fix-points with relatively small basins of attraction
+ that correspond to optimal solutions. Therefore, for these problems a GAwill—in most
+ cases—not find an optimal solution. In [3,5,7], Blum and Dorigo adopted the term decep
+tion for the field of ant colony optimization, similarly to what had previously been done in
+ evolutionary computation. It was shown that ant colony optimization algorithms in general
+ suffer from first order deception in the same way as GAs suffer from deception. Blum and
+ Dorigo further introduced the concept of second order deception, which is caused by a bias
+ that leads to decreasing algorithm performance over time. Among the principal causes for
+ this search bias were identified situations in which some solution components on average
+ receive update from more solutions than others they compete with. This was shown for
+ scheduling problems in [9,10], and for the k-cardinality tree problem in [12]. Recently,
+ Montgomery et al. [54] made an attempt to extend the work by Blum and Sampels [9,10]
+ to assignment problems, and to attribute search bias to different algorithmic components.
+ Merkle and Middendorf [48,49] were the first to study the behavior of a simple ACO algo
+rithm by analyzing the dynamics of its model, which is obtained by applying the expected
+ pheromone update. Their work deals with the application of ACO to idealized permutation
+ problems. When applied to constrained problems such as permutation problems, the solu
+tion construction process of ACO algorithms consists of a sequence of random decisions in
+ which later decisions depend on earlier ones. Therefore, the later decisions of the construc
+tion process are inherently biased by the earlier ones. The work of Merkle and Middendorf
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 247
+ shows that this leads to a bias which they call selection bias. Furthermore, the competition
+ between the ants was identified as the main driving force of the algorithm. Some of the
+ principal aspects of the above mentioned works are discussed in Section 5.
+ Outline. In Section 2 we introduce ACO in a way that suits its theoretical study. For this
+ purpose we take inspiration from the way of describing ACO as done in [6]. We further
+ outline successful ACO variants and introduce the concept of models of ACO algorithms,
+ taking inspiration from [49]. In Section 3wedealwithexistingconvergenceproofsforACO
+ algorithms,whileinSection4wepresenttheworkonestablishingtherelationbetweenACO
+ and other techniques for optimization. In Section 5 we deal with some important aspects
+ of the works on search bias in ACO algorithms. Finally, in Section 6 we draw conclusions
+ and propose an outlook to the future.
+ 2. Ant colony optimization
+ ACO algorithms are stochastic search procedures. Their central component is the phe
+romone model, which is used to probabilistically sample the search space. The pheromone
+ model can be derived from a model of the tackled CO problem, defined as follows:
+ Definition 1. A model P = (S, ,f)of a CO problem consists of:
+ • asearch (or solution) space S defined over a finite set of discrete decision variables and
+ a set ofconstraints among the variables;
+ • anobjective function f : S → R+ to be minimized.
+ ThesearchspaceS isdefinedasfollows:Givenisasetofndiscrete variablesXi withvalues
+ vj
+ i ∈ Di ={v1
+ i ,...,v|Di|
+ i
+ }, i = 1,...,n. Avariable instantiation, that is, the assignment
+ of a value vj
+ i to a variable Xi, is denoted by Xi = vj
+ i . Afeasible solution s ∈ S is a
+ completeassignment(i.e.,anassignmentinwhicheachdecisionvariablehasadomainvalue
+ assigned) that satisfies the constraints. If the set of constraints is empty,theneachdecision
+ variable can takeanyvaluefromitsdomainindependentlyofthevaluesoftheotherdecision
+ variables. In this case we call P an unconstrained problem model, otherwise a constrained
+ problem model. Afeasible solution s∗ ∈ S is called a globally optimal solution (or global
+ optimum), if f(s∗)⩽f(s)∀s ∈ S. The set of globally optimal solutions is denoted by
+ S∗ ⊆S.Tosolve a CO problem one has to find a solution s∗ ∈ S∗.
+ Amodel of the CO problem under consideration implies a finite set of solution com
+ponents and a pheromone model as follows. First, we call the combination of a decision
+ variable Xi and one of its domain values vj
+ i a solution component denoted by cj
+ i . Then, the
+ pheromone model consists of a pheromone trail parameter T j
+ i for each solution compo
+nent cj
+ i . The set of all solution components is denoted by C. The value of a pheromone trail
+ parameter T j
+ i—called pheromone value—is denoted by j
+ i .6 The vector of all pheromone
+ 6 Notethatpheromonevaluesareingeneralafunctionofthealgorithm’siterationt: j
+ i = j
+ i (t).Thisdependence
+ on the iteration will however be made explicit only when necessary.
+248
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ trail parameters is denoted by T . As a CO problem can be modeled in different ways,
+ different models of a CO problem can be used to define different pheromone models.
+ Asanexample, we consider the asymmetric traveling salesman problem (ATSP): a com
+pletely connected, directed graph G(V,A) with a positive weight dij associated to each
+ arc aij ∈ A is given. The nodes of the graph represent cities and the arc weights represent
+ distances between the cities. The goal consists in finding among all (directed) Hamiltonian
+ cycles in G one for which the sum of the weights of its arcs is minimal, that is, a short
+est Hamiltonian cycle. This NP-hard CO problem can be modeled as follows: we model
+ each city i ∈ V by a decision variable Xi whose domain consists of a domain value vj
+ i
+ for each outgoing arc aij. Avariable instantiation Xi = vj
+ i means that arc aij is part of
+ the corresponding solution. The set of constraints must be defined so that only candidate
+ solutions that correspond to Hamiltonian cycles in G are valid solutions. The set of solution
+ components C consists of a solution component cj
+ i for each combination of variable Xi and
+ domain value vj
+ i , and the pheromone model T consists of a pheromone trail parameter T j
+ i ,
+ with value j
+ i , associated to each solution component cj
+ i .
+ 2.1. The framework of a basic ACO algorithm
+ When trying to prove theoretical properties for the ACO metaheuristic, the researcher
+ facesafirstmajorproblem:ACO’sverygeneraldefinition.Althoughgeneralityisadesirable
+ property, it makes theoretical analysis much morecomplicated, if possible at all. It is for this
+ reason that weintroduceACOinaformthatcoversallthealgorithmsthatweretheoretically
+ studied, but that is not as general as the definition of the ACO metaheuristic as given, for
+ example, in Chapter 2 of [24] (see also footnote 5).
+ Algorithm 1 captures the framework of a basic ACO algorithm. It works as follows. At
+ eachiteration,na antsprobabilisticallyconstructsolutionstothecombinatorialoptimization
+ problemunderconsideration,exploitingagivenpheromonemodel.Then,optionally,alocal
+ search procedure is applied to the constructed solutions. Finally, before the next iteration
+ starts, some of the solutions are used for performing a pheromone update. This framework
+ is explained with more details in the following.
+ InitializePheromoneValues(T ). At the start of the algorithm the pheromone values are
+ all initialized to a constant value c>0.
+ ConstructSolution(T ).ThebasicingredientofanyACOalgorithmisaconstructiveheuris
+tic for probabilistically constructing solutions. Aconstructive heuristic assembles solutions
+ as sequences of elements from the finite set of solution components C. Asolution con
+struction starts with an empty partial solution sp = . Then, at each construction step
+ the current partial solution sp is extended by adding a feasible solution component from
+ the set N(sp) ⊆ C \{sp}. This set is determined at each construction step by the solution
+ construction mechanism in such a way that the problem constraints are met. The process of
+ constructing solutions can be regarded as a walk (or a path) on the so-called construction
+ graph GC = (C,L), which is a fully connected graph whose vertices are the solution com
+ponents in CandwhoseedgesaretheelementsofL.TheallowedwalksonGC areimplicitly
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 249
+ Algorithm 1 The framework of a basic ACO algorithm
+ input: An instance P of a CO problem model P = (S,f, ).
+ InitializePheromoneValues(T )
+ sbs ←NULL
+ while termination conditions not met do
+ Siter ←∅
+ for j = 1,...,na do
+ s ←ConstructSolution(T )
+ if s is a valid solution then
+ s ←LocalSearch(s)
+ {optional}
+ if (f(s)<f(sbs)) or (sbs = NULL) then sbs ← s
+ Siter ← Siter ∪{s}
+ end if
+ end for
+ ApplyPheromoneUpdate(T ,Siter,sbs)
+ end while
+ output: The best-so-far solution sbs
+ defined by the solution construction mechanism that defines the set N(sp) with respect to a
+ partial solution sp. The choice of a solution component cj
+ i ∈ N(sp) is, at each construction
+ step, done probabilistically with respect to the pheromone model. The probability for the
+ choice of cj
+ i is proportional to [ j
+ i ] ·[ (cj
+ i )] , where is a function that assigns to each
+ valid solution component—possibly depending on the current construction step—a heuris
+tic value which is also called the heuristic information. The value of parameters and ,
+ > 0and > 0,determines the relative importance of pheromone value and heuristic
+ information. The heuristic information is optional, but often needed for achieving a high
+ algorithm performance. In most ACO algorithms the probabilities for choosing the next
+ solution component—also called the transition probabilities—are defined as follows:
+ p(cj
+ i | sp) =
+ [ j
+ i ] ·[ (cj
+ i )]
+ cl
+ k∈N(sp) [ l
+ k] ·[ (cl
+ k)]
+ , ∀cj
+ i ∈ N(sp).
+ (1)
+ Note that potentially there are many different ways of choosing the transition probabilities.
+ The above form has mainly historical reasons, because it was used in the first ACO algo
+rithms [22,23] to be proposed in the literature. In the rest of the paper we assume that the
+ construction of a solution is aborted if N(sp) =∅and s is not a valid solution.7
+ As an example of this construction mechanism let us consider again the ATSP (see
+ Section 2). Let I denote the set of indices of the current decision variable and of the
+ decision variables that have already a value assigned. Let ic denote the index of the cur
+rent decision variable (i.e., the decision variable that has to be assigned a value in the
+ current construction step). The solution construction starts with an empty partial solution
+ 7 Alternatively, non-valid solutions might be punished by giving them an objective function value that is higher
+ than the value of any feasible solution.
+250
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ sp = ,withic ∈{1,...,|V|} randomly chosen, and with I ={ic}. Also, the index of the
+ f
+ irst decision variable is stored in variable if (i.e., if ← ic). Then, at each of the |V|−1
+ construction steps a solution component cj
+ ic 
+∈ N(sp) is added to the current partial solution,
+ where N(sp) ={ck
+ ic 
+| k ∈{1,...,|V|} \ I}. This means that at each construction step a
+ domainvalueischosenforthedecisionvariablewithindexic.Oncethesolutioncomponent
+ cj
+ ic 
+is added to sp, ic is set to j. The transition probabilities used in each of the first |V|−1
+ construction steps are those of Equation 1, where the heuristic information can, in the case
+ of the ATSP, be defined as (cj
+ i ) = 1/dij (this choice introduces a bias towards short arcs).
+ The last construction step consists of adding solution component c if
+ ic 
+to the partial solution
+ sp, which corresponds to closing the Hamiltonian cycle.8
+ LocalSearch(s). Alocal search procedure may be applied for improving the solutions
+ constructed by the ants. The use of such a procedure is optional, though experimentally it
+ has been observed that, if available, its use improves the algorithm’s overall performance.
+ ApplyPheromoneUpdate(T ,Siter,sbs). The aim of the pheromone value update rule is to
+ increase the pheromone values on solution components that have been found in high quality
+ solutions. Most ACO algorithms use a variation of the following update rule:
+ j
+ i ←(1− )· j
+ i + 
+Supd 
+·
+ {s∈Supd|cj
+ i∈s} 
+F(s),
+ (2)
+ for i = 1,...,n, and j = 1,...,|Di|. Instantiations of this update rule are obtained by
+ different specifications of Supd, which—in all the cases that we consider in this paper—is a
+ subset of Siter ∪{sbs}, where Siter is the set of solutions that were constructed in the current
+ iteration, and sbs is the best-so-far solution. The parameter ∈ (0,1] is called evaporation
+ rate. It has the function of uniformly decreasing all the pheromone values. From a practical
+ point of view, pheromone evaporation is needed to avoid a too rapid convergence of the
+ algorithm toward a sub-optimal region. It implements a useful form of forgetting, favoring
+ the exploration of new areas in the search space. F : S→ R+ is a function such that
+ f(s)<f(s) ⇒+∞>F(s)⩾F(s), ∀s= s ∈S,whereSisthesetofallthe sequen
+ces of solution components that may be constructed by the ACO algorithm and that cor
+respond to feasible solutions. F(·) is commonly called the quality function. Note that the
+ factor 1/Supd is usually not used. We introduce it for the mathematical purpose of studying
+ the expected update of the pheromone values. In the cases that we study in this paper the
+ factor is constant. Hence it does not change the algorithms’ qualitative behaviour.
+ 2.2. ACO variants
+ Variants of the ACO algorithm generally differ from each other in the pheromone update
+ rule that is applied. Awell-known example of an instantiation of update rule (2) is the
+ 8 Note that this description of the ACO solution construction mechanism for the ATSP is equivalent to the
+ original description as given in [23].
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 251
+ AS-update rule, that is, the update rule of Ant System (AS) [23]. The AS-update rule is
+ obtained from update rule 2 by setting
+ Supd ← Siter.
+ (3)
+ This update rule is well-known due to the fact that AS was the first ACO algorithm to be
+ proposed in the literature. An example of a pheromone update rule that is more used in
+ practice is the IB-update rule (where IB stands for iteration-best). The IB-update rule is
+ given by
+ Supd ← argmax{F(s) | s ∈ Siter}.
+ (4)
+ The IB-update rule introduces a much stronger bias towards the good solutions found than
+ the AS-update rule. However, this increases the danger of premature convergence. An even
+ stronger bias is introduced by the BS-update rule, where BS refers to the use of the best
+so-far solution sbs, that is, the best solution found since the first algorithm iteration. In this
+ case, Supd is set to {sbs}.
+ Inpractice, ACOalgorithmsthatusevariationsoftheIB-updateortheBS-updateruleand
+ that additionally include mechanisms to avoid premature convergence achieve better results
+ than algorithms that use the AS-update rule. Examples are ant colony system (ACS) [21]
+ and MAX–MIN Ant System (MMAS) [66], which are among the most successful
+ ACOvariants in practice.
+ ACSworksasfollows. First, instead of choosing at each step during a solution construc
+tion the next solution component according to Eq. (1), an ant chooses, with probability
+ q0, the solution component that maximizes [ j
+ i ] ·[ (cj
+ i )] , or it performs, with proba
+bility 1 − q0, a probabilistic construction step according to Eq. (1). This type of solution
+ construction is called pseudo-random proportional. Second, ACS uses the BS-update rule
+ with the additional particularity that the pheromone evaporation is only applied to values
+ of pheromone trail parameters that belong to solution components that are in sbs. Third,
+ after each solution construction step, the following additional pheromone update is applied
+ to pheromone values j
+ i whose corresponding solution components cj
+ i have been added to
+ the solutions under construction:
+ j
+ i ←(1− )· j
+ i + · 0,
+ (5)
+ where 0 is a small positive constant such that Fmin⩾0⩾c, Fmin = min{F(s) | s ∈ S},
+ and c is the initial value of the pheromones. In practice, the effect of this local pheromone
+ update is to decrease the pheromone values on the visited solution components, making in
+ this way these components less desirable for the following ants. We want to remark already
+ at this point that ACS belongs to the class ACOmin 
+of algorithms, that is, the class of ACO
+ algorithms that apply a lower bound min > 0 to all the pheromone values. In the case of
+ ACS, this lower bound is given by 0. This follows from the fact that (i) j
+ i ⩾0, ∀ T j
+ i ∈ T ,
+ and (ii) F(sbs)⩾0.
+ MMASalgorithmsarecharacterizedasfollows. Dependingonsomeconvergencemea
+sure, at each iteration either the IB-update or the BS-update rule (both as explained above)
+ are used for updating the pheromone values. At the start of the algorithm the IB-update
+ rule is used more often, while during the run of the algorithm the frequency with which the
+252
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ BS-updaterule is used increases. Instead of using an implicit lower bound in the pheromone
+ values like ACS, MMASalgorithmsuseanexplicitlowerbound min > 0.Therefore,also
+ MMASbelongstotheclass ACOmin 
+of ACOalgorithms. In addition to the lower bound,
+ MMASalgorithms use F(sbs)/ as an upper bound to the pheromone values. The value
+ of this bound is updated each time a new improved solution is found by the algorithm.
+ It is interesting to note that F(sbs)/ is an approximation of the real upper bound max
+ to the value of the pheromones, given below.
+ j
+ Proposition 1. Given Algorithm 1 that is using the pheromone update rule from Eq. (2),
+ for any pheromone value j
+ i , the following holds:
+ lim
+ t→∞
+ i (t)⩽ F(s∗) ·|{Supd}|
+ ,
+ (6)
+ where s∗ is an optimal solution, and j
+ i (t) denotes the pheromone value j
+ i at iteration t.
+ Proof. The maximum possible increase of a pheromone value j
+ i is—at any iteration—
+ F(s∗)·|{Supd}| if all the solutions in Supd are equal to the optimal solution s∗ with cj
+ i ∈ s∗.
+ Therefore, due to evaporation, the pheromone value j
+ i at iteration t is bounded by
+ j
+ i
+ max(t) = (1 − )t ·c + t
+ k=1
+ (1 − )t−k ·F(s∗)·|{Supd}|,
+ (7)
+ where c is the initial value for all the pheromone trail parameters. Asymptotically, because
+ 0 < ⩽1,thissumconverges to F(s∗)·|{Supd}|/ . □
+ From this proposition it is clear that the pheromone value upper bound in the case of the
+ IB- or the BS-update rule is F(s∗)/ .
+ 2.3. The hyper-cube framework
+ Rather than being an ACOvariant, the hyper-cube framework (HCF) for ACO (proposed
+ in [6]) is a framework for implementing ACO algorithms that comes with several benefits.
+ In ACO algorithms, the vector of pheromone values can be regarded as a |C|-dimensional
+ vector 9 . The application of a pheromone value update rule changes this vector. It moves
+ in a |C|-dimensional hyper-space defined by the lower and upper limits of the range of
+ values that the pheromone trail parameters can assume. We will denote this hyper-space in
+ the following by HT . Proposition 1 shows that the upper limit for the pheromone values
+ depends on the quality function F(·), which implies that the limits of HT can be very
+ different dependingonthequalityfunctionandthereforedependingontheprobleminstance
+ tackled. In contrast, the pheromone update rule of the HCF as described in the following
+ implicitly defines the hyper-space HT independently of the quality function F(·) and of
+ 9 Remember that we denote by C the set of all solution components.
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 253
+ the problem instance tackled. For example, the pheromone update rule from Eq. (2), once
+ written in HCF-form, becomes
+ j
+ i ←(1− )· j
+ i + · 
+{s∈Supd|cj
+ i∈s}
+ F(s)
+ {s∈Supd} F(s) ,
+ (8)
+ for i = 1,...,n, j = 1,...,|Di|. The difference between this pheromone update rule and
+ the one that is used in standard ACO algorithms consists in the normalization of the added
+ amount of pheromone.
+ InordertogiveagraphicalinterpretationofthepheromoneupdateintheHCF,weconsider
+ a solution s from a different point of view. With respect to a solution s ∈ S, we partition
+ the set of solution components C into two subsets, the set Cin that contains all solution
+ components cj
+ i ∈ s, and Cout = C \ Cin. In this way, we can associate to a solution s a
+ binary vector s of dimension |C| in whichtheposition corresponding to solution component
+ cj
+ i is set to 1 if cj
+ i ∈ Cin, to 0 otherwise. This means that we can regard a solution s as a
+ corner of the |C|-dimensional unit hyper-cube, and that the set of feasible solutions S can
+ be regarded as a (sub)set of the corners of this same hypercube. In the following, we denote
+ the convex hull of S by ˜ S. It holds that
+ ∈ ˜ S ⇔ = 
+ss, 
+s∈S
+ s ∈[0,1], 
+s =1.
+ s∈S
+ (9)
+ As an example see Fig. 1(a). In the following, we give a graphical interpretation of the
+ pheromone update rule in the HCF. When written in vector form, Eq. (8) can be expressed
+ as
+ ←(1− )· + ·m,
+ where m is a |C|-dimensional vector with
+ m= 
+s · s where s =
+ s∈Supd
+ F(s)
+ s∈Supd 
+F(s) .
+ (10)
+ (11)
+ Vector misavectorin ˜ S,theconvexhullofS,as s∈Siter s = 1and0⩽ s⩽1∀s ∈ Siter.
+ It also holds that vector m is the weighted average of binary solution vectors. The higher
+ the quality F(s) of a solution s, the higher its influence on vector m. Simple algebra allows
+ us to express Eq. (10) as
+ ←+ ·(m− ).
+ (12)
+ This shows that the application of the pheromone update rule in the HCF shifts the current
+ pheromone value vector toward m (see Fig. 1(b)). The size of this shift is determined
+ by the value of parameter . In the extreme cases there is either very little update (when
+ is very close to zero), or the current pheromone value vector is replaced by m (when
+ = 1). Furthermore, if the initial pheromone value vector is in ˜ S, it remains in ˜ S,
+ and the pheromone values are bounded to the interval [0,1]. This means that the HCF,
+254
+ (0, 0, 1)
+ (0, 0, 0)
+ (a)
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ Sol. of ant 2
+ (0, 1, 1)
+ (1, 1, 1)
+ (1, 0, 1)
+ (1, 1, 0)
+ (0, 1, 1)
+ (0, 0, 1)
+ Sol. of ant 1
+ (1, 1, 1)
+ (1, 0, 1)
+ (1, 0, 0)
+ (0, 0, 0)
+ (b)
+ (1, 0, 0)
+ (1, 1, 0)
+ Fig. 1. (a) Example of the convex hull of binary solution vectors; (b) example of the pheromone update in the
+ HCF. In this example, the set S of feasible solutions in binary vector form consists of the three vectors (0,0,0),
+ (1, 1,0) and (0,1,1). The gray shaded area depicts the set ˜ S. In (b), two solutions have been created by two
+ ants. The vector m is the weighted average of these two solutions (where we assume that (0,0,0) is of higher
+ quality), and will be shifted toward m as a result of the pheromone value update rule (Eq. (8)). Figure from [6].
+ ©IEEEPress.
+ independently of the problem instance tackled, defines the hyper-space for the pheromone
+ values to be the |C|-dimensional unit hypercube.10
+ It is interesting to note that in the case of the IB- and BS-update rules (in which only one
+ solution supd ∈{sib,sbs} is used for updating) the old pheromone vector is shifted toward
+ the updating solution supd in binary vector form:
+ ←+ ·(supd − ).
+ (13)
+ As anotational convention we use HCF-AS-update, HCF-IB-update, and HCF-BS-update,
+ if the corresponding update rules are considered for an ACO algorithm that is implemented
+ in the HCF.
+ 2.4. Models of ACO algorithms
+ Merkle and Middendorf introduced the use of models of ACO algorithms in [49] for the
+ study of the dynamics of the ACO algorithm search process. A model of an ACO algorithm
+ is a deterministic dynamical system obtained by applying the expected pheromone update
+ instead of the real pheromone update. The advantage of studying an ACO algorithm model
+ is that it—being deterministic—behaves always in the same way, in contrast to the behavior
+ of the ACOalgorithm itself which in each run slightly differs due to the stochasticity. There
+ are several ways of studying an ACO model. For example, one might study the evolution of
+ the pheromone values over time, or one might study the evolution of the expected quality of
+ 10 Note that earlier attempts to normalize pheromone values exist in the literature (see, for example, [35]).
+ However, existing approaches do not provide a framework for doing it automatically.
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 255
+ the solutions that are generated per iteration. This expected iteration quality is henceforth
+ denoted by WF(T ),orbyWF(T | t), where t>0 is the iteration counter.
+ We use the following notation for defining ACO models. The template for this
+ notation is
+ M(<problem >,< update_rule >,< nr_of_ants >),
+ (14)
+ where < problem > is the considered problem (or problem type, such as, for example,
+ unconstrained problems), < update_rule >isthepheromoneupdaterulethatisconsidered,
+ and < nr_of_ants >isthenumberofants that build solutions at each iteration. The number
+ <nr_of_ants >canbeaspecific integer na⩾1, any finite integer (denoted by na < ∞), or
+ na =∞.Inall cases, the character ∗ denotes any possible entry. As an example, consider
+ the model M(∗,AS,na < ∞):thisisthemodelofanACOalgorithmthatcanbeappliedto
+ any problem, and that uses the AS-update rule and a finite number of ants at each iteration.
+ The expected iteration quality of model M(∗,AS,na < ∞) is
+ WF(T ) = 
+p(Sna | T ) · 1
+ Sna∈Sna
+ na 
+· 
+s∈Sna 
+F(s) ,
+ (15)
+ where Sna is the set of all multi-sets of cardinality na consisting of elements from S, and
+ p(Sna | T ) is the probability that the na ants produce the multi-set Sna ∈ Sna, given the
+ current pheromone values. The expected pheromone update of model M(∗,AS,na < ∞)
+ is
+ 
+ j
+ i ←(1− )· j
+ i + 
+na 
+· 
+Sna∈Sna
+ p(Sna | T ) 
+
+ F(s)
+ ,
+ s∈Sna|cj
+ i∈s
+ (16)
+ for i = 1,...,n, j = 1,...,|Di|.
+ In order to reduce the computational complexity we may consider model M(∗,AS,na =
+ ∞), which assumes an infinite number of ants per iteration.11 In this case, the expected
+ iteration quality is given by
+ WF(T ) = 
+F(s) · p(s | T ),
+ s∈S
+ (17)
+ where p(s | T )isthe probability to produce solution s given the current pheromone values.
+ The expected pheromone update of model M(∗,AS,na =∞) is given by
+ j
+ i ←(1− )· j
+ i + · 
+F(s) · p(s | T ).
+ {s∈S|cj
+ i∈s}
+ (18)
+ If, instead, we consider model M(∗,HCF-AS,na =∞), that is, the AS algorithm im
+plemented in the HCF using an infinite number of ants, the expected iteration quality is
+ the same as in model M(∗,AS,na =∞) (see Eq. (17)), but the expected pheromone
+ 11 The way of examining the expected behavior of an algorithm by assuming an infinite number of solutions per
+ iteration has already been used in the field of evolutionary computation (see for example the zeroth order model
+ proposed in [57]).
+256
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ update becomes
+ j
+ i ←(1− )· j
+ i + · 
+F(s)·p(s|T )
+ WF(T ) ,
+ {s∈S|cj
+ i∈s}
+ (19)
+ for i = 1,...,n, j = 1,...,|Di|. The study of models of ACO algorithms will play an
+ important role in Section 5 of this paper.
+ 3. Convergence of ACO algorithms
+ In this section, we discuss convergence of two classes of ACO algorithms: ACObs, min
+ and ACObs, min(t). These two classes are defined as follows. First, in order to ease the
+ derivations, both ACObs, min 
+and ACObs, min(t) use simplified transition probabilities that
+ do not consider heuristic information: Eq. (1) (see Section 2.1), becomes
+ p(cj
+ i | sp) =
+ [ j
+ i ]
+ cl
+ k∈N(sp) [ l
+ k]
+ , ∀ cj
+ i ∈ N(sp).
+ (20)
+ Second, both algorithm classes use the BS-update rule (see Section 2.2). Third, both
+ ACObs, min 
+and ACObs, min(t) use a lower limit min > 0 for the value of pheromone trails,
+ chosen so that min <F(s∗), where s∗ is an optimal solution. ACObs, min(t) differs from
+ ACObs, min 
+because it allows the change of the value of min at run-time.
+ For ACObs, min 
+convergenceinvalueisprovenviaTheorem1whichessentiallysaysthat,
+ because of the use of a fixed positive lower bound on the pheromone values, ACObs, min 
+is
+ guaranteed to find an optimal solution if given enough time.
+ For ACObs, min(t), first convergence in value is proven via Theorem2,underthecondition
+ that the bound min decreases to zero slowly enough.12 Then, convergence in solution
+ is proven via Theorem 3, which shows that a sufficiently slow decrement of the lower
+ pheromone trail limits leads to the effect that the algorithm converges to a state in which all
+ the ants construct the optimal solution over and over again (made possible by the fact that
+ the pheromone trails go to zero).
+ 3.1. Convergence in value
+ In this subsection, we state that ACObs, min 
+is guaranteed to find an optimal solution with
+ a probability that can be made arbitrarily close to 1 if given enough time (convergence
+ in value). However, as we will indicate in Section 3.2, the convergence in solution for
+ ACObs, min 
+cannot be proved.
+ In Proposition 1 (see Section 2.2) it was proved that, due to pheromone evaporation,
+ the pheromone values are asymptotically bounded from above with max as the limit. The
+ following proposition follows directly from Proposition 1.
+ 12 Unfortunately, Theorem 2 cannot be proven for the exponentially fast decrement of the pheromone trails
+ obtained by a constant pheromone evaporation rate, which most ACO algorithms use.
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 257
+ Proposition 2. Once an optimal solution s∗ has been found by algorithm ACObs, min
+ , it
+ holds that
+ ∀cj
+ i ∈ s∗ : lim
+ t→∞ 
+j
+ i (t) = max = F(s∗)
+ .
+ (21)
+ The proof of this proposition is basically a repetition of the proof of Proposition 1,
+ restricted to the solution components of the optimal solution s∗. Additionally, 0 has—for
+ each cj
+ i ∈ s∗—to be replaced by j
+ i (t∗) (where t∗ is the iteration in which s∗
+ was found).
+ Proposition 1 implies that, for the proof of Theorem 1 (see below), the only essential
+ point is that min > 0, because from above the pheromone values will anyway be bounded
+ by max. Proposition 2 additionally states that, once an optimal solution s∗ has been found,
+ the pheromone values on all solution components of s∗ converge to max = F(s∗)/ .
+ Theorem 1. Let p∗(t) be the probability that ACObs, min 
+finds an optimal solution at least
+ once within the first t iterations. Then, for an arbitrarily small > 0 and for a sufficiently
+ large t it holds that
+ p∗(t)⩾1 − ,
+ and asymptotically limt→∞ p∗(t) = 1.
+ (22)
+ Proof. The proof of this theorem consists in showing that, because of min > 0, at each
+ algorithm iteration any generic solution, including any optimal solution, can be generated
+ with a probability greater than zero. Therefore, by choosing a sufficiently large number of
+ iterations, the probability of generating any solution, and in particular an optimal one, can
+ be made arbitrarily close to 1. For a detailed proof see [65] or [24]. □
+ 3.2. Convergence in solution
+ In this subsection we deal with the convergence in solution of algorithm ACObs, min(t).
+ For proving this property, it has to be shown that, in the limit, any arbitrary ant of the colony
+ will construct the optimal solution with probability one. This cannot be proven if, as done in
+ ACObs, min
+ , a small, positive lower bound is imposed on the lower pheromone value limits
+ because in this case at any iteration t each ant can construct any solution with a non-zero
+ probability. The key of the proof is therefore to allow the lower pheromone trail limits to
+ decrease over time toward zero, but making this decrement slow enough to guarantee that
+ the optimal solution is eventually found.
+ Theproof of convergence in solution as presented in [24] was inspired by an earlier work
+ of Gutjahr [38]. It is organized in two theorems. First, Theorem 2 proves convergence in
+ valueofACObs, min(t) whenitslowerpheromonetraillimitsdecreasetowardzeroatnotmore
+ than logarithmic speed. Next, Theorem 3 states, under the same conditions, convergence in
+ solution of ACObs, min(t).
+258
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ ∀t ⩾1, min(t) =
+ Theorem 2. Let the lower pheromone trail limits in ACObs, min(t) be
+ d
+ ln(t + 1) ,
+ (23)
+ with d being a constant, and let p∗(t) be the probability that ACObs, min(t) finds an optimal
+ solution at least once within the first t iterations. Then it holds that
+ lim
+ t→∞ 
+p∗(t) = 1.
+ (24)
+ Proof. The proof consists in showing that there is an upper bound to the probability of not
+ constructing an optimal solution whose value goes to zero in the limit. Adetailed proof can
+ be found in [24]. □
+ It remains to be proved that any ant will in the limit construct the optimal solution with
+ probability 1 (i.e., convergence in solution). This result is stated in Theorem 3.
+ Theorem 3. Let t∗ be the iteration in which the first optimal solution s∗ has been found
+ and p(s∗,t,k)be the probability that an arbitrary ant k constructs s∗ in the t-th iteration,
+ with t>t∗. Then it holds that limt→∞ p(s∗,t,k)= 1.
+ Proof. Theproofofthistheoremconsists in showing that the pheromone values of solution
+ components that do not belong to the optimal solution asymptotically converge to 0. For
+ details see [24]. □
+ 3.3. Extension to include additional features of ACO algorithms
+ Most, if not all, ACOalgorithms in practice include some features that are present neither
+ in ACObs, min 
+nor in ACObs, min(t). Of particular interest is how the use of local search to
+ improvetheconstructedsolutionsandtheuseofheuristicinformationaffecttheconvergence
+ proof for ACObs, min
+ .13 Concerning the use of local search, it is rather easy to see that it
+ neither affects the convergence properties of ACObs, min
+ , nor those of ACObs, min(t). This is
+ because the validity of both convergence proofs (as presented in [24]) depends only on the
+ way solutions are constructed and not on the fact that the solutions are taken or not to their
+ local optima by a local search routine.
+ The second question concerns the consequences of the use of heuristic information, that
+ is, when considering Eq. (1) instead of Eq. (20) for computing the transition probabilities
+ during solution construction. In fact, neither Theorem 1 nor Theorems 2 and 3 are affected
+ by the heuristic information, if we have 0 < (cj
+ i )<+∞ for each cj
+ i ∈ C and < ∞.In
+ fact, with these assumptions (·) is limited to some (instance specific) interval [ min
+ , max
+ ],
+ with min 
+> 0and max 
+< +∞.Then,theheuristicinformationhastheonlyeffecttochange
+ the lower bounds on the probability of making a specific decision (which is an important
+ component of the proofs of Theorems 2 and 3).
+ 13 Note that, here and in the following, although the remarks made on ACObs,min in general also apply to
+ ACObs,min(t), for simplicity we often refer only to ACObs,min .
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 3.4. Convergence proofs for other types of ACO algorithms
+ 259
+ Apioneering study from which much of the inspiration for later works was taken is
+ that of Gutjahr [36–38]. In [37] he presented the first piece of research on the convergence
+ properties of ACO algorithms, which deals with the convergence in solution for the so
+called graph-based ant system (GBAS). GBAS is very similar to ACObs, min(t) except that
+ min = 0andthepheromone update rule changes the pheromones only when, in the current
+ iteration, a solution at least as good as the best one found so far is generated. The following
+ theorems were proved for GBAS:
+ Theorem 4. For each > 0, for a fixed evaporation rate , and for a sufficiently large
+ numberof ants, the probability p that a fixed ant constructs the optimal solution at iteration
+ tisp⩾1− forall t⩾t0, with t0 = t0( ).
+ Theorem 5. For each > 0, for a fixed number of ants, and for an evaporation rate 
+sufficiently close to zero, the probability p that a fixed ant constructs the optimal solution
+ at iteration t is p⩾1 − for all t⩾t0, with t0 = t0( ).
+ One of the limitations of these proofs is that they require the problem to have a single
+ optimal solution. This limitation has been removed in an extension of the above two results
+ in [36]. Another limitation is the way of updating the pheromone values. While the conver
+gence results presented in previous sections hold independently of the way the pheromone
+ values are updated, the theorems for GBAS hold only for its particular pheromone update
+ rule. In [36] this limitation was weakened by only requiring the GBAS update rule in the
+ f
+ inal phases of the algorithm.
+ Finally, Gutjahr [38] provided a proof of convergence in solution for two variants of
+ GBAS that gave the inspiration for the proof of Theorem 2. The first variant was called
+ GBAS/tdlb (for time-dependent lower pheromone bound), and the second one GBAS/tdev
+ (for time-dependent evaporation rate). GBAS/tdlb uses a lower bound on the pheromone
+ values very similar to the one that is used in Theorem 2. Differently, in GBAS/tdev it is the
+ pheromone evaporation rate that is varied during the run of the algorithm: for proving that
+ GBAS/tdev converges in solution, pheromone evaporation is decreased slowly, and in the
+ limit it tends to zero.
+ 3.5. Final remarks on convergence proofs
+ From the point of view of the researcher interested in practical applications of the al
+gorithms, the interesting part of the discussed convergence proofs is Theorem 1, which
+ guarantees that ACObs, min 
+will find an optimal solution if it runs long enough. It is there
+fore interesting that this theorem also applies to ACOalgorithmsthat differ from ACObs, min
+ in the way the pheromone update procedure is implemented. In general, Theorem 1 applies
+ to any ACO algorithm for which the probability p(s) of constructing a solution s ∈ S
+ always remains greater than a small constant > 0. In ACObs, min 
+this is a direct conse
+quence of the fact that 0 < min < max < +∞,whichwasobtainedby(i)explicitlysetting
+ a minimum value min for pheromone trails, (ii) limiting the amount of pheromone that the
+260
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ ants may deposit after each iteration to finite values, (iii) letting pheromone evaporate over
+ time, that is, by setting > 0, and by (iv) the particular form of choosing the transition
+ probabilities. As mentioned in Section 2.2, we call the class of ACO algorithms that impose
+ a lower bound (and, implicitly, an upper bound) to the pheromone values ACOmin
+ . By defi
+nition, Theorem 1 holds therefore for any algorithm in ACOmin
+ , which contains practically
+ relevant algorithms such as ACS and MMAS.
+ Open problem 1. Theproofsthatwerepresented in this section do not say anything about
+ the time required to find an optimal solution, which can be astronomically large. It would
+ be interesting to obtain results on convergence speed for ACO algorithms, in spirit similar
+ to what has been done in evolutionary computation for relatively simple problems such as,
+ for example, ONE-MAX [43].
+ 4. Model-based search
+ Up to now we have regarded ACO algorithms as a class of stochastic search procedures
+ working in the space of the solutions of a combinatorial optimization problem. Under this
+ interpretation, artificial ants are stochastic constructive heuristics that build better and better
+ solutions to a combinatorial optimization problem by using and updating pheromone trails.
+ In other words, our attention has been directed to the stochastic constructive procedure used
+ bytheantsandtohowtheantsusethesolutionstheybuildtobiasthesearchoffutureantsby
+ changing pheromone values. In the following, we show that by changing the point of view,
+ we can clarify the intrinsic relation of ACO algorithms to algorithms such as stochastic
+ gradient ascent (SGA) [53,60] and the cross-entropy (CE) method [15,61]. This is done
+ by studying these algorithms under a common algorithmic framework called model-based
+ search (MBS) [67]. The results presented in this section were obtained in [25,52,67].
+ An MBS algorithm is characterized by the use of a (parametrized) probabilistic model
+ M ∈M(whereMistheset of all possible probabilistic models) that is used to generate
+ solutions to the problem under consideration. At a very general level, a model-based search
+ algorithm attempts to solve an optimization problem by repeating the following two steps:
+ • Candidate solutions are constructed using some parametrized probabilistic model, that
+ is, a parametrized probability distribution over the solution space.
+ • Candidate solutions are evaluated and then used to modify the probabilistic model in
+ a way that is deemed to bias future sampling toward low cost solutions. Note that the
+ model’sstructuremaybefixedinadvance,withsolelythemodel’sparametervaluesbeing
+ updated, or alternatively, the structure of the model may be allowed to change as well.
+ In the following, we focus on the use of fixed model structures based on a vector of model
+ parameters T , andidentify a modelMwithitsvectorofparametersT .Thewayofsampling
+ solutions (i.e., the way of constructing solutions) induces a probability function p( ·|T ) on
+ the search space of the tackled optimization problem. Given this probability function and a
+ certain setting of the parameter values, the probability of a solution s ∈ S to be sampled
+ is denoted by p(s | ). We assume that
+ •∀s ∈ Sthemodel parameters can assume values s such that the distribution p( · | s)
+ defined by p(s | s) = 1 and p(s | s) = 0 ∀s= sis obtained. This “expressiveness”
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 261
+ assumption is needed in order to guarantee that the sampling can concentrate in the
+ proximity of any solution, an optimal solution in particular;14
+ • and that the probability function p( · | T ) is continuously differentiable with respect
+ to T .
+ In MBS algorithms, the view on an algorithm is dominated by its probabilistic model.
+ Therefore, the tackled optimization problem is replaced by the following continuous max
+imization problem:
+ ∗ ←argmaxWF(T),
+ (25)
+ where WF(T ) (as introduced in Section 2.4) denotes the expected quality of a generated
+ solution depending on the values of the parameters T . It may be easily verified that,
+ under the “expressiveness’’ assumption we made about the space of possible probability
+ distributions, the support of p( · | ∗) (i.e., the set {s | p(s | ∗)>0}) is necessarily
+ contained in S∗. This implies that solving the problem given by Eq. (25) is equivalent to
+ solving the original combinatorial optimization problem.
+ In the following we first outline the SGAand the CE methods in the MBS framework,
+ before we show the relation of the two methods to ACO algorithms. In particular, we will
+ see that the pheromone update rules as proposed in the ACO literature have a theoretical
+ justification.
+ 4.1. Stochastic gradient ascent
+ Apossible way of searching for a (possibly local) optimum of the problem given by
+ Eq. (25) is to use the gradient ascent method. In other words, gradient ascent may be
+ used as a heuristic to change with the goal of solving Eq. (25). The gradient ascent
+ procedure starts from some initial model parameter value setting (possibly randomly
+ generated). Then, at each iteration it calculates the gradient ∇WF(T ) and updates to
+ become +∇ WF(T)| ,15 where isastep-size parameter.
+ The gradient can be calculated (bearing in mind that ∇ lnf =∇f/f) as follows:
+ ∇WF(T)=∇
+ = 
+= 
+s∈S
+ s∈S
+ F(s)p(s | T ) = 
+s∈S
+ s∈S
+ p(s | T )F(s) ∇p(s|T )
+ p(s|T )
+ F(s)∇p(s | T )
+ p(s | T )F(s)∇ lnp(s | T ).
+ (26)
+ However, the gradient ascent algorithm cannot be implemented in practice, as for its eval
+uation a summation over the whole search space is needed. Amore practical alternative is
+ the use of stochastic gradient ascent, which replaces—for a given parameter setting —
+ the expectation in Eq. (26) by an empirical mean of a sample generated from p( · | ).
+ 14 Note that this condition may be relaxed by assuming that the probability distribution induced by a parameter
+ value setting is in the closure of all inducible probability distributions.
+ 15 Note that ∇WF(T )| denotes the gradient of WF(T ) evaluated in .
+262
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ The update rule for the stochastic gradient then becomes
+ (t +1) = (t)+
+ F(s)∇ lnp(s | (t)),
+ s∈Supd
+ (27)
+ where Supd is the sample at iteration t. In order to derive a practical algorithm from the
+ SGAapproach, we need a model for which the derivatives of lnp( ·|T ) can be calculated
+ efficiently. In Section 4.3 we will show how this can be done within the context of the ACO
+ metaheuristic.
+ 4.2. The cross-entropy method
+ Starting from someinitial distribution that is given by the probability function p( ·| (0))
+ (denoted in the following by p0), the CE method inductively builds a series of distributions
+ pt = p(·| (t))inanattempttoincreasetheprobabilityofgeneratinghighqualitysolutions
+ after each iteration. Atentative way to achieve this goal is to set pt+1 equal to ˆ p, where ˆ p
+ is proportional to pt as follows:
+ ˆ
+ p ∝ptF(·),
+ (28)
+ where F(·) is, again, some quality function, depending on the objective function.
+ If this were possible, then, for time independent quality functions, after t iterations we
+ would obtain pt ∝ p0F(·)t. Consequently, as t →∞, pt would converge to a probability
+ distribution restricted to S∗. Unfortunately, even if the distribution pt is such that it can
+ be induced by some setting of the parameter values, for the distribution ˆ p as defined
+ by Eq. (28) this does not necessarily hold, hence some sort of projection is needed. A
+ natural candidate for the projection pt+1 is the distribution p that minimizes the Kullback
+Leibler divergence [45], which is a commonly used measure of the difference between two
+ distributions:
+ D(ˆ pp) = 
+ˆ
+ p(s | T )ln ˆ p(s | T )
+ s∈S
+ p(s | T )
+ or equivalently the cross-entropy:
+ − 
+ˆ
+ p(s | T )lnp(s | T ).
+ s∈S
+ (29)
+ (30)
+ Since ˆ p ∝ ptF(·), the cross-entropy minimization is equivalent to the following maximiza
+tion problem:
+ pt+1 = argmax
+ p(·| ) s∈S
+ p(s | (t))F(s)lnp(s | ).
+ (31)
+ In a waysimilar to what happened with the gradient of Eq. (26), the maximization problem
+ given by Eq. (31) cannot be solved in practice, because the evaluation of the function on
+ the right-hand side requires summation over the whole search space. As before, however,
+ a finite sample approximation can be used
+ pt+1 = argmax
+ p(·| ) s∈Supd
+ F(s)lnp(s | ),
+ (32)
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 263
+ where Supd is the sample at iteration t. In some relatively simple cases this problem can
+ be solved exactly. In general, however, the analytical solution is unavailable. Still, even if
+ the exact solution is not known, some iterative methods such as SGAfor solving this opti
+mization problem may be used. It should be noted that, since the new vector of pheromone
+ values (t + 1) is a random variable, depending on a sample, there is no use in running
+ the SGAprocess till full convergence. Instead, in order to obtain some robustness against
+ sampling noise, a fixed number of SGAupdates may be used. One particular choice, which
+ is of special interest, is the use of a single gradient ascent update, leading to an update
+ rule which is identical to the SGAupdate shown in Eq. (27). However, in general the CE
+ method imposes less restrictions on the quality function (e.g., allowing it to change over
+ time), hence the resulting algorithm may be seen as a generalization of SGA.
+ 4.3. Relation of ACO with SGA and the CE method
+ The discussion of SGAand of the CE method in the previous two sections was focused
+ on the update of the model parameter values. However, this is only one of the components
+ needed in any model-based search algorithm. In the following we focus on the probability
+ function p( · | T ) that is implicitly given by the solution construction process of ACO
+ algorithms. We show that the calculation of the derivatives of this probability function can
+ be carried out in a reasonable time, and we outline the existing work on deriving updates
+ of the parameter values that describe a SGA, respectively a CE method, in the space of the
+ parameter values.
+ TheSGAupdateinACO.TheSGAparametervalueupdatethatwedescribeinthefollowing
+ is a generalization of the one that was presented in [67] (which was itself a generalization
+ of the one that was given in [52]).
+ As described in Section 2.1, in ACO algorithms a solution s is constructed as a finite
+length sequence cj
+ i ,...,cl
+ k,...,cs r of solution components c from the set C of solu
+tion components. For the sake of simplicity, we rename the components of the sequence
+ so to obtain c1,c2,...,c|s| . By defining the transition probabilities as done in Eq. (1)
+ (see p. 8), the probability function in ACO algorithms can be written as
+ |s|−1
+ p(s | T ) =
+ h=1
+ p(ch+1 | sp
+ h),
+ where sp
+ h is the partial sequence c1,...,ch , and consequently
+ |s|−1
+ ∇lnp(s | T ) =
+ h=1
+ ∇lnp(ch+1 | sp
+ h).
+ (33)
+ (34)
+ Let us now consider an arbitrary solution construction step h ∈{1,...,|s|} with N(sp
+ h)
+ being the set of solution components that can be added to the current partial sequence sp
+ h.
+ For the sake of readability let us also denote the “desirability’’ [ j
+ i ] ·[ (cj
+ i )] of a solution
+ component cj
+ i (as used for determining the transition probabilities in Eq. (1)) by d(cj
+ i ).
+264 M.Dorigo,C.Blum/TheoreticalComputerScience344(2005)243–278
+ Ifcj
+ i ∈N(sp
+ h)andcj
+ i =ch+1itholdsthat
+ Tj
+ i
+ lnp(cj
+ i |sp
+ h) =
+ Tj
+ i
+ 
+ 
+ ln d(cj
+ i )
+ cl
+ k∈N(sp
+ h)
+ d(cl
+ k)
+ 
+ 
+ 
+ =
+ Tj
+ i
+ lnd(cj
+ i )−ln
+ cl
+ k∈N(sp
+ h)
+ d(cl
+ k)
+ =d(cj
+ i ) d(cj
+ i )−d(cj
+ i )
+ cl
+ k∈N(sp
+ h)
+ d(cl
+ k)
+ =
+ 
+ 
+ 1−d(cj
+ i )
+ cl
+ k∈N(sp
+ h)
+ d(cl
+ k)
+ 
+ 
+ 
+ d(cj
+ i )
+ d(cj
+ i )
+ = 1−p(cj
+ i |sp
+ h) d(cj
+ i )
+ d(cj
+ i )
+ . (35)
+ Otherwise,ifcj
+ i ∈N(sp
+ h)butcj
+ i =ch+1itholds(byasimilarargument)that
+ Tj
+ i
+ lnp(cj
+ i |sp
+ h) =−p(cj
+ i |sp
+ h) d(cj
+ i )
+ d(cj
+ i )
+ . (36)
+ Finally,ifcj
+ i / ∈N(sp
+ h)thenp(cj
+ i |sp
+ h)isindependentofTj
+ i andthereforewehavethat
+ Tj
+ i
+ lnp(cj
+ i |sp
+ h) =0. (37)
+ Bycombiningtheseresults, theSGApheromoneupdateprocedureisderivedasfollows.
+ Letsbethesolutionforwhichpheromoneupdateshavetobeperformed.First,becauseof
+ Eqs.(27)and(35),pheromonesassociatedtosolutioncomponentscj
+ i ∈sarereinforcedwith
+ theamount F(s)·d(cj
+ i )/d(cj
+ i ).Then,becauseofEqs.(27),(35)and(36),pheromonesthat
+ areassociatedtoallthesolutioncomponentsthatwereconsidered16duringtheconstruction
+ ofsaredecreasedbyanamountgivenby F(s)·p(cj
+ i |sp
+ h)·d(cj
+ i )/d(cj
+ i ).Last,because
+ ofEq.(37),alltheremainingpheromonesarenotupdated.
+ Inordertoguaranteestabilityoftheresultingalgorithm,itisdesirabletohaveabounded
+ gradient∇lnp(s |T).Thismeansthatafunctiond(·), forwhichd(·)/d(·)isbounded,
+ shouldbeused.In[52]theauthorssuggestusingd(·)=exp(·),whichleadstod(·)/d(·)≡
+ 1.Itshouldbefurthernotedthatif,inaddition,F(·)=1/f(·)and =1,thereinforcement
+ partbecomes1/f(·)asintheoriginalAntSystemalgorithm(seeSection2.2).
+ Thecross-entropyupdateinACO.AswehaveshowninSection4.2,theCEmethodrequires
+ ateachstepthesolutionoftheproblemstatedinEq.(32).Since,ingeneral,theexactsolution
+ isnotavailable,aniterativeschemesuchasgradientascentcouldbeemployed.Aswehave
+ shownintheprevioussection,thegradientofthelog-probabilityforACO-typeprobabilistic
+ functionscanbeefficientlycalculated.Theobtainedvaluesmaybepluggedintoanygeneral
+ 16Wesaythatasolutioncomponentc j
+ i was“considered’’atconstructionsteph,ifc j
+ i ∈N(sp
+ h).
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 265
+ iterative solution scheme of the cross-entropy minimization problem, for example, the one
+ described by Eq. (27). If, for example, we use a single-step gradient ascent for solving
+ Eq. (32), we obtain a generalization of the SGApheromone update, in which the quality
+ function is permitted to change over time.
+ In some special cases, such as for example unconstrained problems, it can be shown
+ (see [24]) that the parameter update of the CE method is exactly the same as the update of
+ Ant System implemented in the HCF (see Section 2.3) with a setting of = 1 (remember
+ that is the evaporation rate in standard ACO update rules).
+ Open problem 2. The relation of ACO algorithms to other probabilistic learning algo
+rithms suchasestimationofdistribution algorithms [55], or graphical modelsandBayesian
+ networks [42], is relatively unexplored. More work on these subjects could be of interest.
+ 5. Search bias in ACO algorithms
+ In ACO algorithms we find different forms of search bias. A first type of desirable
+ bias, whose goal is to direct the search towards good zones of the search space, is given
+ by the pheromone update rule. Aless desirable form of bias, however, can be caused by
+ algorithm features such as the pheromone model and the solution construction process.
+ In fact, sometimes this additional bias is harmful and results in a decrease of algorithm
+ performance over time. There are basically two different strands of work on this type of
+ potentially harmful bias in ACO algorithms. In this section we first review results obtained
+ by Blumetal. in [12,7], and then we summarize those obtained by Merkle and Middendorf
+ in [49].
+ 5.1. Negative search bias caused by an unfair competition
+ The fact that the average quality of the generated solutions improves over time is, in
+ general, considered to be a desirable characteristic for a metaheuristic. This is because
+ the generation of better average quality solutions during the algorithms’ execution is often
+ positively correlated with the probability to generate improved best solutions. Therefore,
+ situations in which this is not the case might be labeled negative search bias, as it was done
+ by BlumandDorigoin[7]. For detecting this type of search bias, they studied the evolution
+ of the expected iteration quality WF(T | t)17 of the solutions that are generated by ACO
+ algorithm models.
+ First, the application of ACO algorithms to unconstrained CO problems was consid
+ered, that is, CO problems in which the set of constraints is empty (see Definition 1
+ at p. 6). By relating the expected pheromone update to a type of function called growth
+ transformation [1], the following result was proved in [6]:
+ Theorem 6. The expected iteration quality WF(T ) of M(U,HCF-AS,na =∞), where
+ U stands for the application to unconstrained problems, is continuously non-decreasing.
+ 17 WF(T | t)is the value of WF(T ) at iteration t. For a definition of WF(T ) see Section 2.4.
+266
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ More formally, it holds that
+ WF(T | t +1)>WF(T |t),
+ as long as at least one pheromone value changes from iteration t to iteration t + 1.
+ (38)
+ An extension of this result to the model M(U,AS,na =∞) was later presented in [5].
+ These results indicate that the AS algorithm shows a desired behavior when applied to
+ unconstrained problems. However, this result is not exceedingly useful, because most of the
+ relevantoptimizationproblemstackledwithACOalgorithmsareconstrained.Therefore,the
+ focus of research shifted to constrained problems. An example is the case study concerning
+ the NP-hard k-cardinality tree (KCT) problem [12,3], a generalization of the well-known
+ minimum spanning tree (MST) problem. It is defined as follows: Given is an undirected
+ graph G = (V,E)(where |V|=nand|E|=m)withedge-weights w(e) ∈ N+, ∀ e ∈ E.
+ The set of all trees in G with exactly k edges is henceforth denoted by Tk. The goal is to
+ f
+ ind a tree Tk ∈ Tk that minimizes
+ f(Tk) = 
+w(e).
+ e∈E(Tk)
+ (39)
+ This means that the objective function value of a k-cardinality tree is given by the sum
+ of the weights of all its edges. We consider the following CO problem model of the KCT
+ problem: We assign a binary decision variable Xe to each edge e ∈ E.IfXe = 1, then e is
+ part of the k-cardinality tree that is built. The pheromone model is derived as follows. We
+ introduce for each of the binary decision variables Xe two solution components: c0 e, which
+ corresponds to Xe = 0, and c1 e corresponding to Xe = 1. The pheromone model consists
+ of a pheromone trail parameter T j
+ e for each solution component cj
+ e, with j ∈{0,1}.
+ The considered solution construction mechanism works as follows. The algorithm starts
+ with an empty partial solution sp
+ 0 = , and with empty sets ET (for collecting the added
+ edges) and VT (for collecting the implicitly added vertices). Then, at construction step h,
+ 0 <h<k,asolution component c1 e ∈ N(sp
+ h) is added to the current partial solution sp
+ h.
+ Whenaddingthe solution component c1 e to sp
+ h we also add e ={v,v} to ET and v and v to
+ VT. For the first construction step, set N(sp
+ 0) is defined as N(sp
+ 0) ={c1 e | e ={v,v}∈E}
+ and for each subsequent construction step h as
+ N(sp
+ h) ={c1
+ e | (e ={v,v}∈E \ET)∧((v ∈ VT)∨(v ∈ VT))}.
+ (40)
+ The definition of N(sp
+ h) is such that only feasible k-cardinality trees can be generated.
+ After k construction steps are performed we add, for all e ∈ E with c1 e / ∈ sp
+ k , the solu
+tion component c0 e to sp
+ k . By this last step a sequence s is completed that corresponds to
+ a feasible solution. The transition probabilities are at each construction step defined by
+ Eq. (1), with = 1 and = 0. The setting of = 0 means that no heuristic infor
+mation for biasing the transition probabilities was considered in order to study the pure
+ behavior of the algorithm.
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 267
+ Fig. 2. The complete search tree defined by the solution construction mechanism of the ACO algorithm and the
+ problem instance kct_simple_inst. The bold path in the search tree shows the steps of constructing solution
+ s3 = c1 e2
+ ,c1 e3
+ ,c0 e1
+ , c0 e4
+ . Figure from [3]. © Akademische Verlagsgesellschaft Aka GmbH.
+ Theevolution of the model M(KCT,AS,na =∞)andthebehavioroftheASalgorithm
+ was studied when applied to the following small problem instance:
+ The weight settings for this instance are w(e1) = w(e4) = 1 and w(e2) = w(e3) = 2.
+ Let us denote this problem instance by kct_simple_inst, and let us consider the problem
+ of solving the 2-cardinality tree problem in kct_simple_inst. An ACO algorithm using
+ the above described solution construction mechanism can produce six different sequences
+ of solution components that map to valid solutions. All six possible solution constructions
+ are shown in form of a search tree in Fig. 2, where sequences s1 and s2 correspond to the
+ solution (1,1,0,0), that is, (X1 = 1,X2 = 1,X3 = 0,X4 = 0), s3 and s4 correspond to
+ the solution (0,1,1,0),ands5 ands6 maptothesolution(0,0,1,1).Theobjectivefunction
+ values are f(s1) = f(s2) = f(s5) = f(s6) = 3 and f(s3) = f(s4) = 4. This means
+ that s1, s2, s5, and s6 are optimal solutions to this problem instance, whereas s3 and s4 are
+ sub-optimal solutions.
+ Theresults of applying the model M(KCT,AS,na =∞)tokct_simple_instaregraph
+ically shown in Fig. 3. The expected iteration quality WF continuously decreases over time.
+ At first sight, this is a surprising result, as we would expect the exact opposite from an
+ ACOalgorithm. However, this behavior can be easily explained by taking a closer look at
+ the search tree that is shown in Fig. 2. In the first construction step, there are four differ
+ent possibilities to extend the empty partial solution. The four solution components that
+ can be added are c1 e1
+ , c1 e2
+ , c1 e3
+ , and c1 e4
+ . However, solution components c1 e1 
+and c1 e4 
+in ex
+pectation only receive update from two solutions (i.e., sequences s1 and s2 in case of c1 e1
+ ,
+ respectively sequences s5 and s6 in case of c1 e4
+ ), whereas solution components c1 e2 
+and c1 e3
+ in expectation receive update from four solutions (i.e., sequences si, where i ∈{1,...,4},
+ in case of c1 e2
+ , respectively sequences si, where i ∈{3,...,6}, in case of c1 e3
+ ). This means
+ that for many initial settings of the pheromone values (e.g., when the initial pheromone
+ values are set to the same positive constant c>0) T 1 e2 
+and T 1 e3 
+receive in expectation
+268
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 0.35
+ 0.34
+ 0.33
+ expected quality
+ 0.32
+ 0.31
+ 0.3
+ 0.29
+ 0.28
+ 0.27
+ ρ = 0.01
+ ρ = 0.05
+ ρ = 0.1
+ ρ = 0.5
+ 0
+ 500
+ 1000
+ iteration
+ 1500
+ 2000
+ Fig. 3. The evolution of the expected iteration quality WF of the model M(KCT,AS,na =∞) applied to
+ problem instance kct_simple_inst for different settings of the evaporation parameter . All the pheromone values
+ were initialized to 0.5. The plots show that the expected iteration quality continuously decreases. Moreover, for
+ increasing 
+the impact of the pheromone value update increases and the expected iteration quality decreases
+ faster. Figure from [3]. © Akademische Verlagsgesellschaft Aka GmbH.
+ more updates than T 1 e1 
+and T 1 e4 
+just because the number of solutions that contribute to
+ their updates is higher. Therefore, over time the probability of constructing the sub-optimal
+ solutions s3 and s4 increases, whereas the probability of constructing the optimal solutions
+ si, wherei ∈{1,2,5,6},decreases.Thismeansthattheexpectediterationqualitydecreases
+ over time.
+ The behavior of the real AS algorithm was compared to the behavior of its model by
+ applying AS to the same problem instance kct_simple_inst. Fig. 4 shows the evolution
+ of the empirically obtained average quality of the solutions per iteration for two different
+ evaporation rate values. The results show that when is small the empirical behavior of
+ the algorithm approximates quite well the behavior of its model. However, the stochastic
+ error makes the real AS algorithm, after approximately 1000 iterations, decide for one of
+ the two optimal solutions, which results in a turn from decreasing average iteration quality
+ to increasing average iteration quality.
+ The bias that is introduced by the fact that some solution components receive in expecta
+tion updates from moresolutionsthanothers results from an unfair competition between the
+ solution components. In contrast, a fair competition can be defined as follows (see also [7]):
+ Definition 2. Given a model P of a CO problem, we call the combination of an ACO
+ algorithm and a problem instance P of P a competition-balanced system (CBS), if the
+ following holds: given a feasible partial solution sp and the set of solution components
+ N(sp) that can be added to extend sp, each solution component c ∈ N(sp) is a component
+ of the same number of feasible solutions (in terms of sequences built by the algorithm) as
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 0.35
+ 0.34
+ average iteration quality
+ 0.33
+ 0.32
+ 0.31
+ 0.3
+ 0.29
+ 0.28
+ AS
+ 0.35
+ 0.34
+ 0.33
+ 0.32
+ 0.31
+ 0.3
+ 0.29
+ average iteration quality
+ 0.28
+ 269
+ AS
+ 0.27
+ (a)
+ 0
+ 500
+ 1000
+ iteration
+ 1500
+ 2000
+ 0.27
+ (b)
+ 0
+ 500
+ 1000
+ iteration
+ 1500
+ 2000
+ Fig. 4. (a) Instance kct_simple_inst, na = 10, = 0.01; (b) instance kct_simple_inst, na = 10, = 0.05. The
+ plots show the evolution of the average iteration quality obtained by the AS algorithm applied to problem instance
+ kct_simple_inst for na = 10 (i.e., 10 ants per iteration) and two different settings of the evaporation parameter
+ ( ∈{0.01,0.05}). All the pheromone values were initialized to 0.5. The results are averaged over 100 runs
+ (error bars show the standard deviation and are plotted every 50-th iteration). Figure from [3]. © Akademische
+ Verlagsgesellschaft Aka GmbH.
+ any other solution component c ∈ N(sp),c= c.18 Inthiscontext,wecallthecompetition
+ betweenthesolutioncomponentsafair competitionifthecombinationofanACOalgorithm
+ and a problem instance is a CBS.
+ The application to the small KCT example instance has shown that ACO algorithms
+ applied to the KCT problem when modeled as shown above are—in general—not CBSs.
+ The question is now if we can expect an algorithm not to suffer from a negative search bias
+ in case an algorithm/problem instance combination is a CBS. In [7], the authors started to
+ investigate this question by studying the application of ACO algorithms to the asymmetric
+ traveling salesman problem (ATSP). The results of applying the model M(ATSP,AS,na =
+ ∞) to randomly generated ATSP instances suggest that the expected iteration quality is
+ continuously non-decreasing. However, in general this question is still open.
+ Open problem 3. Is the property of being a competition-balanced system sufficient to
+ ensure the absence of any negative search bias? In this context, it would be interesting to
+ see if the result that is stated in Theorem 6 can be extended to the model M(∗,AS,na =
+ ∞)applied to problems for which the combination of AS and the problem is a competition
+balanced system; as, for example, AS applied to the ATSP.
+ Finally, we note that a (temporary) decrease in expected iteration quality is not necessarily
+ an indicator for the existence of a negative search bias. In other words, the evolution of
+ the expected iteration quality is not a reliable indicator for negative search bias. As an
+ example, let us consider the application of the model M(U,IB,na =∞) to a very simple
+ unconstrained maximization problem consisting of two binary variables X1 and X2. This
+ 18 Note that there exist ACO algorithms in which partial solutions are extended by “groups’’ of solution com
+ponents. In these cases the definition of a CBS has to be adapted accordingly.
+270
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 3
+ 2.8
+ 2.6
+ expected quality
+ 2.4
+ 2.2
+ 2
+ 1.8
+ 1.6
+ rho = 0.001
+ 0
+ 500
+ 1000
+ iteration
+ 1500
+ 2000
+ Fig. 5. The evolution of the expected iteration quality WF of the model M(U,IB,na =∞) applied an uncon
+strained problem instance with two variables (see text for details).
+ problem has 4 solutions: s1 = c0
+ 1,c0
+ 2 , s2 = c1
+ 1,c0
+ 2 , s3 = c0
+ 1,c1
+ 2 , and s4 = c1
+ 1,c1
+ 2 .
+ Let us assign the following objective function values: f(s1) = 2, f(s2) = f(s3) = 1,
+ and f(s4) = 3. Note that, as we are maximizing, we choose F(·) = f(·).AnyACO
+ algorithm using the solution construction process for unconstrained problems as outlined
+ at the beginning of this section is a CBS. Let us assume that at the start of the algorithm the
+ pheromone values are initialized so that p(X1 = 1) = p(X2 = 1) = , with a positive
+ numberclose to zero. With this setting, the probability to construct any of the four solutions
+ is greater than zero. Therefore, as model M(U,IB,na =∞) considers an infinite number
+ of ants per iteration, for sure at each iteration solution s4 will be the iteration-best solution,
+ and will therefore be used for updating the pheromone values. The graphic in Fig. 5 shows
+ the evolution of the expected quality of the solutions generated by M(U,IB,na =∞)
+ starting from a setting such that = 0.01. During the first approximately 200 iterations,
+ the expected quality decreases. For a sufficiently large population size, this result will be
+ approximated by the IB algorithm. Clearly, in this case, the decrease of expected iteration
+ quality is not due to a negative bias. This leads to another open question:
+ Open problem 4. Can it be shown that the models M(U,IB,na =∞) and/or M(U,BS,
+ na =∞)havestable attractors that correspond to solutions to the problems?
+ 5.2. Search bias caused by selection fix-points
+ MerkleandMiddendorf[48–50]studiedthedynamicsofmodelsofACOalgorithms.One
+ of the questions they tackled concerns the source ofthedriving force of the algorithm. Often
+ ACO practitioners ask themselves: Why to use more than one ant per iteration? Wouldn’t
+ the algorithm work with only one ant? The work presented in [49] gives a theory-based
+ answer to this question. Let us in the following consider the AS algorithm implemented in
+ the HCF for the application to unconstrained problems; and let us consider the use of one
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 271
+ ant per iteration. The expected pheromone update of the algorithms’ model, that is, model
+ M(U,AS-HCF,na = 1),19 is given by
+ j
+ i (t + 1) = (1− )· j
+ i (t)+ · 
+p(s | T ).
+ {s∈S|cj
+ i∈s}
+ (41)
+ However, it holds that {s∈S|cj
+ i∈s} p(s | T ) = p(cj
+ i | T ) (because the tackled problem
+ is unconstrained). Moreover, it holds that p(cj
+ i | T ) = j
+ i (t), because the algorithm is
+ implemented in the HCF. Therefore, Eq. (41) can be rewritten as
+ j
+ i (t + 1) = (1− )· j
+ i (t)+ · j
+ i (t),
+ (42)
+ andthereforeitholdsthat j
+ i (t+1) = j
+ i (t).Thismeansthattheexpectedpheromoneupdate
+ does not change the pheromone values, which shows that—without the competition among
+ the ants—in ACO algorithm models applied to unconstrained problems, when considering
+ either the AS or the IB updates in the HCF, there is no driving force of the algorithm. This
+ suggests that (i) the competition between the ants is a driving force of ACO algorithms,
+ and that (ii) for the above mentioned type of ACO algorithm models, no negative search
+ bias exists. In the following, we show how this result relates to ACO algorithms that are not
+ implemented in the HCF.
+ Let us indicate by j
+ i the amount of update that a pheromone value j
+ i receives. Then,
+ we can express a general pheromone update rule by
+ j
+ i (t + 1) = (1− )· j
+ i (t)+ · j
+ i .
+ In case of model M(U,AS,na = 1), it holds that
+ j
+ i =p(cj
+ i | T ) = j
+ i (t) |Di|
+ k=1
+ k
+ i (t) ,
+ (43)
+ (44)
+ whichingeneralisnotequalto j
+ i (t). Therefore, in case the algorithm is not implementedin
+ the HCF, Eq. (43) makes the pheromone values move towards a situation in which j
+ i (t) =
+ j
+ i
+ . Such situations were labeled by Merkle and Middendorf selection fix-points in [49],
+ where they showed the relevance of the selection fix-point bias caused by the selection
+ f
+ ix-points of ACO algorithms applied to constrained problems.
+ In particular, the above mentioned work focused on the behavioral study of models
+ M(PP,IB-HCF,na < ∞) when applied to the following type of permutation problems
+ (PP): Aproblem instance P consists of a set of n items I ={1,...,n} and an n × n cost
+ matrix C =[ci,j]i,j=1,...,n with integer entries (costs) ci,j ⩾0. The set of solutions S to the
+ problem consists of all possible permutations of the n items. Given such a permutation ,
+ its objective function value f( ) is given by n
+ i=1 ci, (i). The problem consists in finding
+ a permutation ∈ S with minimal objective function value. Given a problem instance P,
+ 19 Note that with na = 1 models M(U,AS-HCF,na = 1) and M(U,IB-HCF,na = 1) are equivalent.
+272 M.Dorigo,C.Blum/TheoreticalComputerScience344(2005)243–278
+ onecanproduce“restricted’’permutationprobleminstancesofdifferentsizes.Given,for
+ example,aprobleminstancePwithcostmatrix
+ C=
+ 
+ 
+ 0 1 2
+ 1 0 1
+ 2 1 0
+ 
+ , (45)
+ aprobleminstanceP2withthefollowingcostmatrixcanbeproduced:
+ C2=
+ 
+       
+ 0 1 2 ∞∞∞
+ 1 0 1 ∞∞∞
+ 2 1 0 ∞∞∞
+ ∞∞∞ 0 1 2
+ ∞∞∞ 1 0 1
+ ∞∞∞ 2 1 0
+ 
+       
+ . (46)
+ Inasimilarway,biggerprobleminstances(i.e.,Pk, k>2)canbeproducedfromthe
+ elementarysubproblemP.Theobjectivefunctionvalueforasolution forarestricted
+ probleminstancePkbecomes k−1
+ j=0
+ n
+ i=1 cjk+i, (jk+i)(wherethec-entriesarefromthe
+ matrixCk).Theserestrictedpermutationproblemssimulaterealworldproblemsthatconsist
+ ofsubproblemsmoreorlessindependentofeachother.TheCOproblemmodel thatwas
+ usedtotackletheseproblemswithanACOalgorithmisthefollowing:Givenarestricted
+ permutationprobleminstancePk,toeachpositionr=1,...,knofapermutationtobebuilt
+ isassignedadecisionvariableXr.ThedomainDr foravariableXr containsallelements
+ l ∈Ik={1,...,kn}withcr,l =∞(whichmeans thatwedonotallowposition/item
+ combinationswithinfinitecost).Again,weintroduceforeachvariable/valuecombination
+ (Xr,l∈Dr)asolutioncomponentcl r,whichhasassociatedapheromonetrailparameter
+ Tl r .All thepheromonevaluesareinitiallyset to1/n.Thesolutionconstructionworksas
+ follows:Westartfromanemptypartialsolutionsp
+ 0= .SetIp,whichisthesetofalready
+ placeditems,issettotheemptysetatthestartofsolutionconstruction.Then,ateachsteph
+ weassigntoeachdecisionvariable(intheorderr=1,...,kn)avaluebyselectingoneof
+ thesolutioncomponentscl r fromN(sp
+ h)={cq
+ r |q∈Dr\Ip}.Thetransitionprobabilities
+ areateachconstructionstepdefinedbyEq.(1)(seeSection2.1),with =1and =0.
+ Wehaveseenabovethat,whenACOalgorithmsthatareimplementedintheHCFare
+ appliedtounconstrainedproblems,everysettingofthepheromonevalues(giventhatthey
+ areprobabilities)isaselectionfix-point.However,whataretheselectionfix-pointsof,for
+ example,aconstrainedproblemsuchastheelementarysubproblemofsizen=3withthe
+ costmatrixshowninEq.(45)?Ifwedepictthevectorofpheromonevaluesinmatrixform
+ (i.e.,inthesameformascostmatrixC)weget
+ 
+  
+ 1
+ 1
+ 2
+ 1
+ 3
+ 1=1− 1
+ 1− 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 3
+ 2=1− 1
+ 2− 2
+ 2
+ 1
+ 3=1− 1
+ 1− 1
+ 2
+ 2
+ 3=1− 2
+ 1− 2
+ 2
+ 3
+ 3= 1
+ 1+ 2
+ 1+ 1
+ 2+ 2
+ 2−1
+ 
+  . (47)
+M.Dorigo,C.Blum/TheoreticalComputerScience344(2005)243–278 273
+ Itiseasytoverifythatwiththeinitialsettingofthepheromonevaluesto1/n,theequations
+ inthismatrixhold.Furthermore,thepheromoneupdateintheHCFpreservesthisproperty.
+ Therefore,weonlyhavetocareaboutthefourpheromonevalues 1
+ 1, 2
+ 1, 1
+ 2,and 2
+ 2.Assuming
+ oneantperiteration,itisclearthatforthepheromonevalues 1
+ 1and 2
+ 1 itholdsthat 1
+ 1= 1
+ 1
+ and 2
+ 1= 2
+ 1,respectively.Thisisbecausethechoiceofanitemforthefirstpositionofthe
+ permutationtobebuiltdoesnotdependonanyotherdecision.Thisshowsthatthecrucial
+ pheromonevaluesare 1
+ 2and 2
+ 2.The-valuesforthesepheromonevaluesare:
+ 1
+ 2=
+ 2
+ 1
+ 1
+ 2
+ 1− 2
+ 2
+ +(1− 1
+ 1− 2
+ 1) 1
+ 2
+ 1
+ 2+ 2
+ 2
+ , (48)
+ 2
+ 2=
+ 1
+ 1
+ 2
+ 2
+ 1− 1
+ 2
+ +(1− 1
+ 1− 2
+ 1) 2
+ 2
+ 1
+ 2+ 2
+ 2
+ . (49)
+ Asshownin[49],therearefoursolutionstotheequations 1
+ 2− 1
+ 2=0and 2
+ 2− 2
+ 2=0.
+ Dependingontheexactsettingofthepheromonevalues 1
+ 1, 2
+ 1,and 3
+ 1,exactlyoneofthese
+ solutionsisastableselectionfix-point.20 Fig.6showsexamplesofselectionfix-pointsof
+ differentpheromonevaluesettings.
+ Theinterestingquestionis,ifandhowtheseselectionfix-pointswillinfluencethesearch
+ processwhenmorethanoneantperiterationisused,thatis,undercompetitionconditions.
+ MerkleandMiddendorfappliedthemodelM(PP,HCF-IB,na=2),forexample,tothere
+strictedpermutationproblemP64,wherePistheelementarysubproblemdiscussedabove.
+ Observingtheevolutionof( 1
+ 2, 2
+ 2, 3
+ 2)and( 1
+ 3, 2
+ 3, 3
+ 3)onecannoticeaclearbias intro
+ducedbytheselectionfix-points(whicharechanging,withchangingpheromonevalues).
+ ThisisshowninFig.7.MerkleandMiddendorfobservedthat theinfluenceoftheselec
+tionfix-points—whenthemodel isstillfarfromconvergence—increaseswithincreasing
+ problemsize.Thisisduetothefactthatwithincreasingproblemsizetheinfluenceofthe
+ competitionbetweentheantsononeelementarysubproblemdecreases,andthemodelap
+proachesthebehaviorofthemodelwhichonlyusesoneant.Summarizing,wecanconclude
+ that—evenifanalgorithm/instancecombinationisaCBS(seeDefinition2)—whenapplied
+ toconstrainedproblemsthesearchprocessisinfluencedbyabiastowardstheselection
+ fix-points.
+ Recently,MerkleandMiddendorf[50]extendedtheirworkbyintroducingapheromone
+ updatewhichtheycallthecompetitioncontrolledpheromoneupdate.Thisupdateisbased
+ ontheobservationthatthedecisionsofanant(duringsolutionconstruction)donotallhave
+ thesameimportance.Theyintroducedameasure,basedontheKullback–Leiblerdivergence
+ [45], inorder todeterminethisimportance.Basedonthismeasure,solutioncomponents
+ thatwerechosenindecisionswithhigherimportancereceiveproportionallymoreupdate
+ thanothersolutioncomponents.Theusefulnessofthisupdate,thatwasshownforanACO
+ model,hasstilltobetestedinanimplementedalgorithm.
+ 20Notethatthestabilityofaselectionfix-pointcanbedeterminedbyanalyzingtheeigenvaluesoftheJacobian
+ matrixofthevectorfunction[f1,f2]=[ 1
+ 2− 1
+ 2, 2
+ 2− 2
+ 2].
+274
+ (1,0,0)
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ (0,1,0)
+ 4
+ 6
+ 1,5
+ 6
+ 2
+ 5
+ 3
+ SPs
+ stable
+ 2
+ 3
+ 4
+ 1 
+1
+ 2
+ 1,2
+ 3,4 6
+ 3 6
+ 4
+ unstable down
+ unstable left
+ unstable right
+ 1
+ 2
+ 3
+ 5
+ 5
+ 5
+ 6
+ 4
+ (0,0,1)
+ Fig. 6. The graphic shows the stable as well as the three unstable selection fix-points (SPs) (given by ( 1
+ 2, 2
+ 2, 3
+ 2))
+ for six different settings of the first row ( 1
+ 1, 2
+ 1, 3
+ 1). All SPs and pheromone settings (which are triples of points)
+ are shown in the following form: The first coordinate is the distance from the line between (0,1,0) and (0,0,1).
+ The second coordinate is the distance from the line between (1,0,0) and (0,0,1), and the third coordinate is the
+ distance from the line between (0,1,0) and (1,0,0). The inner triangle contains the triples with all coordinates
+ ⩽1
+ 2 . When all the coordinates are ⩾0, the corresponding point appears inside the big triangle. If not, the point
+ is placed outside, as it happens for some of the unstable fix-points. Numbers denote the corresponding SPs and
+ pheromone settings. The authors would like to express their thanks to Daniel Merkle and Martin Middendorf for
+ providing this graphic which appeared in [49]. © MIT Press.
+ Open problem 5. How does selection fix-point bias relate to the bias introduced by the
+ fact that an algorithm/instance combination is not a competition-balanced system? Is, in
+ such a case, also the selection bias a negative force? Can something be said about the
+ nature of the selection fix-points for certain types of optimization problems?
+ Open problem 6. The development of new algorithmic components for ACO based on
+ theoretical foundation (in the same spirit as the competition controlled pheromone update
+ introduced in [50]) is an interesting research direction. The extraction of guidelines con
+cerning the choice of ACO algorithmic components as a function of the characteristics of
+ the considered CO problem could improve the applicability of ACO algorithms in practice.
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ (0,1,0)
+ (0,1,0)
+ 2nd row
+ fixed points
+ 275
+ 3rd row
+ fixed points
+ (1,0,0)
+ (a)
+ (0,0,1)
+ (1,0,0)
+ (b)
+ (0,0,1)
+ Fig. 7. (a) Evolution of ( 1
+ 2, 2
+ 2, 3
+ 2) (i.e., the 2nd row); (b) evolution of ( 1
+ 3, 2
+ 3, 3
+ 3) (i.e., the 3rd row). The
+ graphics show the evolution of the pheromone values ( 1
+ 2, 2
+ 2, 3
+ 2) starting from (0.6,0.1,0.3) (in (a)), respectively
+ ( 1
+ 3, 2
+ 3, 3
+ 3)startingfrom(0.3,0.6,0.1)(in(b)),ofthemodelM(PP,HCF-IB,na = 2)appliedtoprobleminstance
+ P64. The pheromone values as well as the corresponding fix-points are shown at iterations 0, 10, 20, 50, 100,
+ 200, 500, and 1000. The authors would like to express their thanks to Daniel Merkle and Martin Middendorf for
+ providing these two graphics which appeared in [49]. © MIT Press.
+ 6. Conclusions
+ In this paper we have over-viewed some recent efforts to develop a theory of ant colony
+ optimization. After giving a brief introduction to the algorithms and problems considered in
+ the overview, we have discussed convergence, presented connections between ACO algo
+rithms and the stochastic gradient ascent and cross-entropy methods within the framework
+ of model-based search, and finally discussed the influence of search bias on the working of
+ ACO algorithms. For each of these different research directions we explicitly listed those
+ that are, in our opinion, some of the most interesting open problem. As the ACO research
+ f
+ ield is currently flourishing, we expect to see many of these problems solved in the near
+ future.
+ Asafinalcomment,wenotethatACOresearchisnotonlyabouttheory. On the contrary,
+ most of the field is concerned with experimental work. To the reader that, after learning
+ the theoretical underpinnings of ACO as presented in this paper, becomes interested in the
+ more practical aspects of the development of ACO algorithms, we suggest the recent book
+ by Dorigo and Stützle [24]. This book describes in detail all the different types of ACO
+ algorithms proposed in the literature, suggests how to apply them to different classes of
+ combinatorial optimization problems and provides hints on how to efficiently implement
+ them. Source code for ACO algorithms treated in the book is available for download in the
+ software section of the ACO web-page (http://www.aco-metaheuristic.org).
+ Acknowledgements
+ Wewish to thank Mauro Birattari, Nicolas Meuleau, Michael Sampels, Thomas Stützle,
+ and Mark Zlochin for the time they spent with us discussing subjects strictly related to this
+276
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ paper (and for writing with us many of the cited papers). Without them this paper would
+ probably not exist. Additionally, we wish to thank Prasanna Balaprakash, Daniel Merkle
+ andPaolaPellegrini, as well as the TCSeditorThomasBäck,forthemanyusefulcomments
+ and the careful proof-reading of a draft version of this paper.
+ References
+ [1] L.E. Baum, G.R. Sell, Growth transformations for functions on manifolds, Pacific J. Math. 27 (2) (1968)
+ 211–227.
+ [2] M. Birattari, G. Di Caro, M. Dorigo, Toward the formal foundation of ant programming, in: M. Dorigo,
+ G. DiCaro,M.Sampels(Eds.), Ant Algorithms, Proc. ANTS 2002, Third Internat. Workshop, Lecture Notes
+ in Computer Science, Vol. 2463, Springer, Berlin, Germany, 2002, pp. 188–201.
+ [3] C. Blum, Theoretical and Practical Aspects of Ant Colony Optimization, Dissertations in Artificial
+ Intelligence, Vol. 282, Akademische Verlagsgesellschaft Aka GmbH, Berlin, Germany, 2004.
+ [4] C. Blum, Beam-ACO—Hybridizing ant colony optimization with beam search: an application to open shop
+ scheduling, Comput. Oper. Res. 32 (6) (2005) 1565–1591.
+ [5] C. Blum, M. Dorigo, Deception in ant colony optimization, in: M. Dorigo, M. Birattari, C. Blum, L.M.
+ Gambardella, F. Mondada, T. Stützle (Eds.), Proc. ANTS 2004, Fourth Internat. Workshop on Ant Colony
+ Optimization and Swarm Intelligence, Lecture Notes in Computer Science, Vol. 3172, Springer, Berlin,
+ Germany, 2004, pp. 119–130.
+ [6] C. Blum, M. Dorigo, The hyper-cube framework for ant colony optimization, IEEE Trans. Systems, Man,
+ Cybernet.-Part B 34 (2) (2004) 1161–1172.
+ [7] C. Blum, M. Dorigo, Search bias in ant colony optimization: on the role of competition-balanced systems,
+ IEEE Trans. Evol. Comput. 9 (2) (2005) 159–174.
+ [8] C. Blum, A.Roli, Metaheuristics in combinatorial optimization: overview and conceptual comparison, ACM
+ Comput. Surveys 35 (3) (2003) 268–308.
+ [9] C.Blum,M.Sampels,AntColonyOptimizationforFOPshopscheduling:acasestudyondifferentpheromone
+ representations, Proc. 2002 Congr. on Evolutionary Computation (CEC’02), Vol. 2, IEEE Computer Society
+ Press, Los Alamitos, CA, 2002, pp. 1558–1563.
+ [10] C. Blum, M. Sampels, When model bias is stronger than selection pressure, in: J.J. Merelo Guervós et al.
+ (Eds.), Proc. PPSN-VII, Seventh Internat. Conf. on Parallel Problem Solving from Nature, Lecture Notes in
+ Computer Science, Vol. 2439, Springer, Berlin, Germany, 2002, pp. 893–902.
+ [11] C. Blum, M. Sampels, An ant colony optimization algorithm for shop scheduling problems, J. Math. Model.
+ Algorithms 3 (3) (2004) 285–308.
+ [12] C. Blum, M. Sampels, M. Zlochin, On a particularity in model-based search, in: W.B. Langdon et al. (Eds.),
+ Proc. Genetic and Evolutionary Computation Conf. (GECCO-2002), Morgan Kaufmann Publishers, San
+ Francisco, CA, 2002, pp. 35–42.
+ [13] V. ˇ Cerný, Athermodynamicalapproachtothetravellingsalesmanproblem:anefficientsimulation algorithm,
+ J. Optim. Theory Appl. 45 (1985) 41–51.
+ [14] D. Costa, A. Hertz, Ants can color graphs, J. Oper. Res. Soc. 48 (1997) 295–305.
+ [15] J.S. de Bonet, C.L. Isbell Jr., P. Viola, MIMIC: finding optima by estimating probability densities, in: M.C.
+ Mozer, M.I. Jordan, T. Petsche (Eds.), Adv. Neural Inform. Process. Systems, Vol. 7 (NIPS7), MIT Press,
+ Cambridge, MA, 1997, pp. 424–431.
+ [16] K.Deb,D.E.Goldberg,Analyzingdeceptionintrapfunctions,in:L.D.Whitley(Ed.),FoundationsofGenetic
+ Algorithms, Vol. 2, Morgan Kaufmann, San Mateo, CA, 1993, pp. 93–108.
+ [17] M.L. den Besten, T. Stützle, M. Dorigo, Ant colony optimization for the total weighted tardiness problem,
+ in: M. Schoenauer, K. Deb, G. Rudolph, X. Yao, E. Lutton, J.J. Merelo, H.-P. Schwefel (Eds.), Proc. PPSN
+VI, Sixth Internat. Conf. on Parallel Problem Solving from Nature, Lecture Notes in Computer Science,
+ Vol. 1917, Springer, Berlin, Germany, 2000, pp. 611–620.
+ [18] J.-L. Deneubourg, S. Aron, S. Goss, J.-M. Pasteels, The self-organizing exploratory pattern of the argentine
+ ant, J. Insect Behav. 3 (1990) 159–168.
+M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ 277
+ [19] G.DiCaro,M.Dorigo,AntNet:distributed stigmergetic control for communications networks, J. Artif. Intel.
+ Res. 9 (1998) 317–365.
+ [20] M. Dorigo, Optimization, learning and natural algorithms (in Italian), Ph.D. Thesis, Dipartimento di
+ Elettronica, Politecnico di Milano, Italy, 1992.
+ [21] M.Dorigo, L.M. Gambardella, Ant colony system: a cooperative learning approach to the traveling salesman
+ problem, IEEE Trans. Evol. Comput. 1 (1) (1997) 53–66.
+ [22] M.Dorigo,V.Maniezzo,A.Colorni,Positivefeedbackasasearchstrategy,Tech.Report91-016,Dipartimento
+ di Elettronica, Politecnico di Milano, Italy, 1991.
+ [23] M. Dorigo, V. Maniezzo, A. Colorni, Ant system: optimization by a colony of cooperating agents, IEEE
+ Trans. Systems, Man, Cybernet.-Part B 26 (1) (1996) 29–41.
+ [24] M. Dorigo, T. Stützle, Ant Colony Optimization, MIT Press, Cambridge, MA, 2004.
+ [25] M. Dorigo, M. Zlochin, N. Meuleau, M. Birattari, Updating ACO pheromones using stochastic gradient
+ ascent and cross-entropy methods, in: S. Cagnoni, J. Gottlieb, E. Hart, M. Middendorf, G.R. Raidl (Eds.),
+ Applications of Evolutionary Computing, Proc. EvoWorkshops 2002, Lecture Notes in Computer Science,
+ Vol. 2279, Springer, Berlin, Germany, 2002, pp. 21–30.
+ [26] L.J. Fogel, A.J. Owens, M.J. Walsh, Artificial Intelligence Through Simulated Evolution, Wiley, New York,
+ 1966.
+ [27] C. Gagné, W.L. Price, M. Gravel, Comparing an ACO algorithm with other heuristics for the single machine
+ scheduling problem with sequence-dependent setup times, J. Oper. Res. Soc. 53 (2002) 895–906.
+ [28] L.M. Gambardella, M. Dorigo, Ant colony system hybridized with a new local search for the sequential
+ ordering problem, INFORMS J. Comput. 12 (3) (2000) 237–255.
+ [29] L.M. Gambardella, É.D. Taillard, G. Agazzi, MACS-VRPTW: a multiple ant colony system for vehicle
+ routing problems with time windows, in: D. Corne, M. Dorigo, F. Glover (Eds.), New Ideas in Optimization,
+ McGraw-Hill, London, UK, 1999, pp. 63–76.
+ [30] F. Glover, Tabu search—Part I, ORSAJ. Comput. 1 (3) (1989) 190–206.
+ [31] F. Glover, Tabu search—Part II, ORSAJ. Comput. 2 (1) (1990) 4–32.
+ [32] F. Glover, G. Kochenberger (Eds.), Handbook of Metaheuristics, Kluwer Academic Publishers, Norwell,
+ MA, 2002.
+ [33] F. Glover, M. Laguna, Tabu Search, Kluwer Academic Publishers, Dordrecht, 1997.
+ [34] D.E. Goldberg, Simple genetic algorithms and the minimal deceptive problem, in: L. Davis (Ed.), Genetic
+ Algorithms and Simulated Annealing, Pitman, London, UK, 1987, pp. 74–88.
+ [35] M. Guntsch, M. Middendorf, Pheromone modification strategies for ant algorithms applied to dynamic TSP,
+ in: E.J.W. Boers, J. Gottlieb, P.L. Lanzi, R.E. Smith, S. Cagnoni, E. Hart, G.R. Raidl, H. Tijink (Eds.),
+ Applications of Evolutionary Computing: Proc. EvoWorkshops 2001, Lecture Notes in Computer Science,
+ Vol. 2037, Springer, Berlin, Germany, 2001, pp. 213–222.
+ [36] W.J. Gutjahr, Ageneralized convergence result for the graph-based ant system metaheuristic, Tech. Report
+ 99-09, Department of Statistics and Decision Support Systems, University of Vienna, Austria, 1999.
+ [37] W.J. Gutjahr, Agraph-based ant system and its convergence, Future Gen. Comput. Systems 16 (9) (2000)
+ 873–888.
+ [38] W.J. Gutjahr, ACO algorithms with guaranteed convergence to the optimal solution, Inform. Process. Lett.
+ 82 (3) (2002) 145–153.
+ [39] J.H. Holland, Adaption in Natural and Artificial Systems, The University of Michigan Press, Ann Harbor,
+ MI, 1975.
+ [40] H.H. Hoos, T. Stützle, Stochastic Local Search: Foundations and Applications, Elsevier, Amsterdam,
+ The Netherlands, 2004.
+ [41] T. Jones, S. Forrest, Fitness distance correlation as a measure of problem difficulty for genetic algorithms,
+ in: L.J. Eshelman (Ed.), Proc. 6th Internat. Conf. on Genetic Algorithms, Kaufman, LosAltos, CA, 1995,
+ pp. 184–192.
+ [42] M.I. Jordan (Ed.), Learning in Graphical Models, MIT Press, Cambridge, MA, 1998.
+ [43] L. Kallel, B. Naudts, A. Rogers (Eds.), Theoretical Aspects of Evolutionary Computing, Natural Computing
+ Series, Springer, Berlin, Germany, 2001.
+ [44] S. Kirkpatrick, C.D. Gelatt, M.P. Vecchi, Optimization by simulated annealing, Science 220 (4598) (1983)
+ 671–680.
+ [45] S. Kullback, Information Theory and Statistics, Wiley, New York, 1959.
+278
+ M. Dorigo, C. Blum / Theoretical Computer Science 344 (2005) 243–278
+ [46] V. Maniezzo, Exact and approximate nondeterministic tree-search procedures for the quadratic assignment
+ problem, INFORMS J. Comput. 11 (4) (1999) 358–369.
+ [47] V. Maniezzo, A. Colorni, The ant system applied to the quadratic assignment problem, IEEE Trans. Data
+ Knowledge Eng. 11 (5) (1999) 769–778.
+ [48] D.Merkle,M.Middendorf,ModellingACO:composedpermutationproblems,in:M.Dorigo,G.DiCaro,M.
+ Sampels (Eds.), Ant Algorithms, Proc. ANTS 2002, Third Internat. Workshop, Lecture Notes in Computer
+ Science, Vol. 2463, Springer, Berlin, Germany, 2002, pp. 149–162.
+ [49] D. Merkle, M. Middendorf, Modelling the dynamics of ant colony optimization algorithms, Evol. Comput.
+ 10 (3) (2002) 235–262.
+ [50] D. Merkle, M. Middendorf, Competition controlled pheromone update for ant colony optimization, in: M.
+ Dorigo, M. Birattari, C. Blum, L.M. Gambardella, F. Mondada, T. Stützle (Eds.), Proc. ANTS 2004, Fourth
+ Internat. WorkshoponAntColonyOptimizationandSwarmIntelligence,LectureNotesinComputerScience,
+ Vol. 3172, Springer, Berlin, Germany, 2004, pp. 95–105.
+ [51] D. Merkle, M. Middendorf, H. Schmeck, Ant colony optimization for resource-constrained project
+ scheduling, IEEE Trans. Evol. Comput. 6 (4) (2002) 333–346.
+ [52] N. Meuleau, M. Dorigo, Ant colony optimization and stochastic gradient descent, Artif. Life 8 (2) (2002)
+ 103–121.
+ [53] T. Mitchell, Machine Learning, McGraw-Hill, Boston, 1997.
+ [54] J. Montgomery, M. Randall, T. Hendtlass, Search bias in constructive metaheuristics and implications for ant
+ colony optimization, in: M. Dorigo, M. Birattari, C. Blum, L.M. Gambardella, F. Mondada, T. Stützle (Eds.),
+ Proc. ANTS 2004, Fourth Internat. Workshop on Ant Colony Optimization and Swarm Intelligence, Lecture
+ Notes in Computer Science, Vol. 3172, Springer, Berlin, Germany, 2004, pp. 391–398.
+ [55] H. Mühlenbein, G. Paaß. From recombination of genes to the estimation of distributions, in: H.-M. Voigt,
+ W. Ebeling, I. Rechenberg, H.-P. Schwefel (Eds.), Proc. 4th Conf. on Parallel Problem Solving from Nature,
+ PPSN IV, Lecture Notes in Computer Science, Vol. 1411, Springer, Berlin, 1996, pp. 178–187.
+ [56] C.H. Papadimitriou, K. Steiglitz, Combinatorial Optimization—Algorithms and Complexity, Dover
+ Publications Inc., New York, 1982.
+ [57] A. Prügel-Bennett, A. Rogers, Modelling genetic algorithm dynamics, in: L. Kallel et al. (Eds.), Theoretical
+ Aspects of Evolutionary Computation, Natural Computing Series, Springer, Berlin, Germany, 2001,
+ pp. 59–85.
+ [58] I. Rechenberg, Evolutionsstrategie: Optimierung technischer Systeme nach Prinzipien der biologischen
+ Evolution, Frommann-Holzboog, 1973.
+ [59] M. Reimann, K. Doerner, R.F. Hartl, D-ants: savings based ants divide and conquer the vehicle routing
+ problems, Comput. Oper. Res. 31 (4) (2004) 563–591.
+ [60] G.E. Robbins, H. Monroe, Astochastic approximation method, Ann. Math. Statist. 22 (1951) 400–407.
+ [61] R.Y.Rubinstein,Combinatorialoptimization,cross-entropy,antsandrareevents,in:StochasticOptimization:
+ AlgorithmsandApplications,KluwerAcademicPublishers,Dordrecht,TheNetherlands,2001,pp.303–364.
+ [62] K. Socha, ACO for continuous and mixed-variable optimization, in: M. Dorigo, M. Birattari, C. Blum, L.M.
+ Gambardella, F. Mondada, T. Stützle (Eds.), Proc. ANTS 2004, Fourth Internat. Workshop on Ant Colony
+ Optimization and Swarm Intelligence, Lecture Notes in Computer Science, Vol. 3172, Springer, Berlin,
+ Germany, 2004, pp. 25–36.
+ [63] K.Socha,M.Sampels,M.Manfrin,Antalgorithmsfortheuniversity course timetabling problem with regard
+ to the state-of-the-art, in: G. Raidl et al. (Ed.), Applications of Evolutionary Computing, Proc. EvoWorkshops
+ 2003, Vol. 2611, 2003, pp. 334–345.
+ [64] T. Stützle, An ant approach to the flow shop problem, in: Fifth European Congr. on Intelligent Techniques
+ and Soft Computing, EUFIT’98, 1998, pp. 1560–1564.
+ [65] T. Stützle, M. Dorigo, Ashort convergence proof for a class of ACO algorithms, IEEE Trans. Evol. Comput.
+ 6 (4) (2002) 358–365.
+ [66] T. Stützle, H.H. Hoos, MAX-MIN ant system, Future Gen. Comput. Systems 16 (8) (2000) 889–914.
+ [67] M. Zlochin, M. Birattari, N. Meuleau, M. Dorigo, Model-based search for combinatorial optimization:
+ a critical survey, Ann. Oper. Res. 131 (1–4) (2004) 373–395.

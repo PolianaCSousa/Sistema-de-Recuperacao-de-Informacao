@@ -1,0 +1,889 @@
+PEDRO RAMON COSER DIAZ
+IMPACTOS DA MINERAÇÃO DE CRIPTOMOEDAS NO CONSUMO DE ENERGIA
+ELÉTRICA E NO MEIO AMBIENTE
+Sorocaba
+2024
+PEDRO RAMON COSER DIAZ
+IMPACTOS DA MINERAÇÃO DE CRIPTOMOEDAS NO CONSUMO DE ENERGIA
+ELÉTRICA E NO MEIO AMBIENTE
+Trabalho de Conclusão de Curso
+apresentado ao Instituto de Ciência e
+Tecnologia de Sorocaba, Universidade
+Estadual Paulista (UNESP), como parte dos
+requisitos para obtenção do grau de
+Bacharel em Engenharia Ambiental.
+Orientador: Prof. Dr. Admilson Irio Ribeiro
+Sorocaba
+2024
+
+PEDRO RAMON COSER DIAZ
+IMPACTOS DA MINERAÇÃO DE CRIPTOMOEDAS NO CONSUMO DE ENERGIA
+ELÉTRICA E NO MEIO AMBIENTE
+Sorocaba, 30 de Julho de 2024
+Prof. Dr. Admilson Irio Ribeiro
+Orientador
+Trabalho aprovado por meio de parecer, homologado pelo Conselho de Curso
+em reunião de 01 de Julho de 2024.
+Sorocaba
+2024
+RESUMO
+Atualmente grandes tecnologias possibilitam uma nova era digital no âmbito
+financeiro após a revolucionária criação das Criptomoedas, uma moeda sem lastro e
+extremamente volátil, onde há diversas áreas de utilização e trazendo benefícios e
+malefícios, tanto para a sociedade quanto para o planeta. Diante disso, serão
+apresentados dados de consumo de energia do que chamam de Mineração de
+Criptomoedas, será também relacionado com o consumo de algumas cidades
+brasileiras e ao fim, haverá uma comparação do consumo de energia elétrica gerado
+em pontos de mineração com estas cidades, além de informar qual é o impacto
+causado no quesito ambiental.
+Palavras-chave: criptomoedas; bitcoin; etherium; mineração de criptomoedas; meio
+ambiente; energia elétrica.
+ABSTRACT
+Currently, major technologies enable a new digital era in the financial realm following
+the revolutionary creation of cryptocurrencies, a currency without backing and
+extremely volatile, with various areas of application and bringing both benefits and
+drawbacks, both for society and the planet. In light of this, data on the energy
+consumption of what is called Cryptocurrency Mining will be presented, also related
+to the consumption of some Brazilian cities, and, in the end, there will be a
+comparison of the electricity consumption generated in mining points and these
+cities, as well as information on the environmental impact caused.
+Keywords: cryptocurrencies; bitcoin; ethereum; cryptocurrency mining; environment;
+electric power.
+SUMÁRIO
+1 INTRODUÇÃO 8
+1.1 O crescimento exponencial das Criptomoedas e seu impacto 8
+2 OBJETIVO 9
+3 OBJETIVOS ESPECÍFICOS 10
+4 REVISÃO DA LITERATURA 11
+4.1 Mineração de criptomoedas 11
+4.2 Tipos de energia elétrica 13
+4.2.1 Energia proveniente de fontes não renováveis 14
+4.2.2 Energia proveniente de fontes renováveis 16
+4.3 Principais trabalhos relacionados ao tema 18
+5 MATERIAIS E MÉTODOS 21
+5.1 Metodologia aplicada no desenvolvimento 21
+5.2 Cálculo de consumo na mineração de criptomoedas 22
+5.2.1 Componentes computacionais utilizados 22
+5.2.2 Cálculo de consumo de energia elétrica de um rig 24
+5.2.3 Cálculo de consumo de energia em uma fazenda de mineração 26
+5.3 Dados das cidades escolhidas 28
+5.3.1 Dados do consumo de energia elétrica na cidade de São Paulo-SP 29
+5.3.2 Dados do consumo de energia elétrica na cidade de Campinas-SP 30
+6 RESULTADOS 32
+6.1 Dados obtidos da fazenda de mineração de criptomoedas 32
+6.2 Dados obtidos das cidades de São Paulo- SP e Campinas- SP 33
+6.2.1 Dados obtidos de São Paulo- SP 33
+6.2.2 Dados obtidos de Campinas- SP 34
+6.3 Comparação entre todos os dados obtidos 35
+7 CONSIDERAÇÕES FINAIS 36
+REFERÊNCIAS 37
+8
+1 INTRODUÇÃO
+1.1 O crescimento exponencial das Criptomoedas e seu impacto
+Atualmente, o Bitcoin destaca-se como a criptomoeda mais proeminente,
+seguido de perto pelo Ethereum (INVESTING, 2024). No entanto, a fama destas não
+obscurece a realidade de que existem aproximadamente 10 mil criptomoedas
+distintas em circulação no vasto mercado digital. Este cenário é reflexo da rápida
+inovação e adoção dessa forma de moeda ao longo dos últimos anos.
+O sucesso do Bitcoin e de outras criptomoedas está profundamente entrelaçado
+com a tecnologia blockchain. Esta tecnologia descentralizada proporciona um
+registro imutável de todas as transações, garantindo segurança e transparência. O
+Ethereum, por sua vez, elevou a barra ao permitir a execução de contratos
+inteligentes, tornando-se uma plataforma mais versátil para o desenvolvimento de
+aplicações descentralizadas (DApps).
+O impacto das criptomoedas no mercado financeiro tem sido notável. O Bitcoin,
+por exemplo, atingiu uma valorização significativa, atingindo R$336.580,00 em
+novembro de 2021 (CNN,2023a). Investidores e instituições financeiras têm, cada
+vez mais, demonstrado interesse nesse ativo digital como uma classe de
+investimento diversificada. Além disso, as criptomoedas têm potencial para
+remodelar o sistema financeiro global, oferecendo transferências rápidas e
+eficientes, reduzindo custos e eliminando intermediários.
+Apesar dos benefícios percebidos, o ecossistema das criptomoedas gera um
+grande problema para o meio ambiente, muitas pessoas buscam adquirí-las através
+da mineração das mesmas. Um processo no qual existe uma demanda de energia
+elétrica em níveis colossais, fazendo com que sua mineração impacte diretamente
+às redes elétricas e ao meio ambiente. A busca por um equilíbrio entre a inovação
+tecnológica e a proteção ao meio ambiente tem sido um desafio constante.
+Com o estudo da quantidade de energia elétrica que um galpão de mineração
+consome, podemos comparar dados reais de cidades e trazer a tona um problema
+que a mineração tem causado para a sociedade, bem como conscientizar a todos
+para tentar assim controlar os danos e tentar encontrar alternativas mais viáveis e
+benéficas para o meio ambiente de mineração destas Criptomoedas.
+9
+2 OBJETIVO
+O presente trabalho tem como objetivo principal o cálculo de consumo de
+energia elétrica gerado pelos rigs de mineração dentro de galpões próprios para
+mineração de Criptomoedas e compará-los com o consumo de energia elétrica de
+duas cidades do estado São Paulo.
+10
+3 OBJETIVOS ESPECÍFICOS
+1. Selecionar os componentes mais utilizados em computadores para mineração de
+Criptomoedas;
+2. Calcular o quanto apenas um rig de mineração consome de energia elétrica e
+escaloná-lo para diversos rigs de mineração que se encontram dentro de uma fazenda de
+mineração de Criptomoedas;
+3. Recuperar dados de consumo de energia elétrica na cidade de São Paulo (SP) e
+Campinas (SP);
+4. Comparar os dados obtidos de energia elétrica consumida dentro de um galpão de
+mineração de Criptomoeda com os dados obtidos de energia elétrica nas duas cidades
+escolhidas.
+11
+4 REVISÃO DA LITERATURA
+4.1 Mineração de criptomoedas
+Atualmente, temos duas opções apenas para se obter criptomoedas, sendo elas
+a compra de criptomoedas em diversos locais da internet ou a mineração das
+mesmas, onde, para se conseguir começar a minerar é necessário um computador
+composto de componentes de extrema potência para lidar com inúmeros cálculos de
+alta complexidade.
+Segundo Bazan (2018), o processo de mineração se inicia com a doação de
+cálculos matemáticos computacionais para o computador do minerador, onde o
+mesmo necessita que seu hardware descriptografe esse novo cálculo, chamado de
+transação, e o coloque em um novo bloco, assim fazendo sua validação e inserindo
+o dentro de uma Blockchain, ao final, o minerador recebe uma recompensa em
+criptomoedas mediante ao seu desempenho dedicado nessa transação.
+A blockchain é uma tecnologia inovadora que serve como o alicerce para a
+maioria das criptomoedas. A ideia central por trás da blockchain é criar um registro
+digital descentralizado e distribuído que registra transações de forma segura,
+transparente e imutável.
+O que a torna tão especial é a sua segurança, onde especialistas comparam sua
+criptografia pesada que envolve chaves públicas e privadas com o sistema de duas
+chaves para acessar um caixa forte (TAPSCOTT; TAPSCOTT, 2018).
+O nome "blockchain" deriva da estrutura da tecnologia. As transações são
+agrupadas em blocos, e cada bloco contém um conjunto de transações, um carimbo
+de data/hora e um código único chamado hash. O hash de um bloco é gerado com
+base nas informações contidas nele e no hash do bloco anterior. Isso cria uma
+cadeia contínua de blocos, conectando cada bloco ao anterior, garantindo a
+integridade e a imutabilidade do registro.
+12
+Imagem 1: Infográfico de funcionamento do Blockchain.
+Fonte: MERCADO PAGO (2020)
+Outros benefícios que podemos encontrar dentro da Blockchain temos sua
+eficiência aprimorada dentro de transações B2B (“de empresas para empresas”),
+onde normalmente são lentas e geralmente apresentam grandes gargalos
+operacionais, com o uso de Blockchains os contratos inteligentes e sua
+transparência fazem com que os processos de transações sejam mais rápidos e
+eficientes. Além de também termos o benefício dentro de auditorias, por conta de
+seus dados serem cronologicamente imutáveis, sendo assim, impossível de se
+haver mudanças em seus dados. (AWS, 2020)
+Por fim, podemos afirmar que apesar de ser algo extremamente complexo, a
+mineração de criptomoedas é uma forma lucrativa para muitas pessoas e onde as
+mesmas contam com diversas tecnologias de ponta para realizar tais cálculos.
+Onde, além dos próprios mineradores, as pessoas que estão realizando a transação
+podem contar com uma segurança extremamente eficaz que seria a Blockchain.
+13
+4.2 Tipos de energia elétrica
+Um dos pontos mais importantes que devemos desenvolver dentro deste projeto
+é a definição de energia elétrica, como ela é gerada, quais os diferentes modos em
+que a obtemos e quais os impactos que ela traz para o meio ambiente.
+A definição de energia elétrica nada mais é do que a capacidade de trabalho de
+uma corrente elétrica, onde a mesma funciona através da conversão de energia por
+meio de combustíveis, podendo eles serem renováveis ou não renováveis.
+A eletricidade que utilizamos em nosso cotidiano é gerada através do
+movimento entre dois pontos de um condutor e podendo ser obtida através de
+energia termodinâmica ou mecânica, após essa energia ser gerada, ela é
+transportada para diversas localizações através de um processo que chamamos de
+transmissão (PORTAL SOLAR, 2019).
+Imagem 2: Matriz Energética Mundial
+Fonte: EPE (2017)
+14
+Existem dois meios principais para a aquisição de energia no mundo, as
+renováveis e as não renováveis. De acordo com a Empresa de Pesquisa Energética
+– Matriz Energética e Elétrica (EPE, 2017), o Brasil teve no ano de 2017, em torno
+de 60% de sua energia elétrica produzida por fonte hídrica, obteve também quase
+7% de fonte eólica e um pouco menos de 6% de biomassa, ou seja, quase 75% de
+sua energia produzida veio de fontes renováveis.
+Tabela 1: Tabela com tipos de fonte de energia.
+Fonte: SANTOS et al(2017)
+4.2.1 Energia proveniente de fontes não renováveis
+Fontes não renováveis são aquelas que após serem utilizadas, não é possível
+utilizá-las novamente, seja por conta da escassez ou por uma taxa de renovação
+extremamente lenta. Comparada com as fontes renováveis, as fontes não
+renováveis apresentam um custo muito inferior de utilização e uma elevada taxa de
+produtividade.
+Porém, diferente das fontes renováveis, as fontes não renováveis apresentam
+grandes impactos ambientais, por se utilizar a queima de combustíveis fósseis e o
+manejo de elementos altamente radioativos, há uma grande chance de se causar
+danos severos para nosso meio ambiente, trazendo problemas como o aquecimento
+global, chuvas ácidas e surtindo efeito em toda a saúde da fauna e flora mundial.
+15
+Existem diversos tipos de fontes não renováveis de energia, entre ela temos as
+seguintes:
+- Combustíveis fósseis: são recursos que se formaram ao longo de milhões
+de anos a partir de restos de materiais orgânicos enterrados, como o petróleo, gás
+natural e carvão mineral. Tanto sua extração quanto sua queima apresentam grande
+liberação de dióxido de carbono e outros poluentes que afetam diretamente a
+camada de ozônio na terra e assim contribuindo para o aquecimento global e
+inúmeros outros problemas ambientais.
+- Minerais metálicos: Alguns recursos minerais como a prata, o ouro, o cobre
+e o ferro são extraídos diretamente da crosta terrestre para serem utilizados dentro
+de indústrias e usinas, sua retirada causa sérios impactos ambientais.
+- Energia nuclear: Apesar do que muito se fala sobre a energia nuclear ser
+uma fonte de energia alternativa, o descarte do material radioativo gerado ainda é
+um grande problema para o meio ambiente, também precisamos levar em conta que
+a mesma utiliza urânio como combustível, um elemento limitado e que em seu
+enriquecimento para ser utilizado pode apresentar grandes riscos ambientais e de
+segurança.
+16
+4.2.2 Energia proveniente de fontes renováveis
+As fontes renováveis são recursos naturais utilizados para gerar energia que
+possuem a vantagem de serem sempre reabastecidos pela natureza, ou seja, sua
+utilização é altamente sustentável a longo prazo. Além disso, sua utilização não
+apresenta grandes impactos ao meio ambiente como vimos nas fontes não
+renováveis.
+Atualmente, a transição para tais fontes é um assunto de extrema importância
+no mundo inteiro, há um grande esforço global para tornar a utilização de energia
+vinda de fontes não renováveis algo obsoleto e surgir a adoção total desta energia
+considerada limpa, isso se deve como uma tentativa reduzir as emissões de carbono
+para mitigação do efeito estufa.
+Como dito anteriormente, o Brasil consegue se beneficiar de suas fontes
+renováveis de maneira majestosa, onde podemos ver na imagem abaixo o
+aproveitamento delas.
+Imagem 3: Matriz de tipo de energia utilizada no Brasil
+Fonte: ABRHIDRO (2023)
+17
+Contamos com uma vasta gama de tipos de energia renováveis atualmente,
+onde podemos ver detalhadamente a seguir:
+- Energia solar: Dentro a parte de energia solar, podemos dividir ela em
+fotovoltaica e térmica, onde a energia fotovoltaica abrange células solares feitas a
+partir de materiais semicondutores como o próprio silício, ela se ativa com a
+incidência do Sol em suas células, onde assim que isso ocorre, elétrons são
+energizados e liberados, gerando uma corrente elétrica. Já na parte térmica, temos
+usinas de energia solar, que utilizam da energia solar para o aquecimento de seus
+fluidos que quando esquentados, liberam vapores não nocivos em suas turbinas que
+geram eletricidade.
+- Energia eólica: Utilizada em larga escala na região nordeste do Brasil, onde
+podemos encontrar parques eólicos, uma junção de inúmeras turbinas eólicas que
+produzem energia elétrica através da energia cinética. Isso ocorre graças aos
+aerogeradores modernos que possuem lâminas que capturam a força do vento entre
+suas pás e assim, girando um gerador que produzirá eletricidade.
+- Energia hidrelétrica: Aproveita-se do movimento da água proveniente de
+rios ou represas, onde essa água passa por turbinas que utilizam da energia
+potencial da água para gerar eletricidade. Considerado o meio mais utilizado no
+Brasil atualmente.
+- Energia geotérmica: Usinas geotérmicas aproveitam do calor natural gerado
+pelo interior da Terra, normalmente água ou vapor quente são extraídos e utilizados
+para gerar eletricidade ou até mesmo fornecer calor diretamente.
+- Biomassa: Neste processo, materiais orgânicos são utilizados, como por
+exemplo resíduos agrícolas como a cana de açúcar, madeira e outros produtos
+biodegradáveis, em conversões para biocombustíveis líquidos ou gasosos para
+geração de energia, neste processo existe o que chamamos de cogeração, onde
+além de produção de eletricidade, a biomassa pode ser diretamente utilizada para
+aquecimento e gerando uma utilização da mesma de forma mais eficiente.
+18
+4.3 Principais trabalhos relacionados ao tema
+Tendo em vista os pontos explicados anteriormente, tanto com a mineração de
+criptomoedas e os tipos de energia elétrica existentes no mundo, tomamos nota de
+duas vertentes que se unem em uma parte que seria o consumo dessa energia
+elétrica para a mineração de criptomoedas pelos mineradores.
+Tal assunto já se apresenta no nosso cotidiano como uma preocupação cada
+vez maior. Diversas teses e documentos nos informam do aumento esdrúxulo de
+consumo de energia elétrica desde o surgimento dessa tecnologia.
+Foi necessário pesquisas nestes documentos para que houvesse uma base de
+como o meio ambiente está sendo afetado e até mesmo avaliar quão grande é este
+impacto, tendo em vista que atualmente temos inúmeros meios de aquisição de
+energia limpa e renovável.
+Devemos também tomar nota de que a tecnologia nunca se estabiliza em
+quesito a sua evolução, a cada novo ano, novos processadores mais potentes
+surgem no mercado, assim como placas de vídeos que ajudam neste processo e,
+assim como se tornam mais potentes, maior é seu consumo de energia.
+Dentro de seus estudos, Medeiros (2022), nos traz a perspectiva da eficácia das
+leis ambientais quanto ao consumo e a prática irregular da mineração de
+criptomoedas de acordo com a Lei de Crimes Ambientais (9.605/98). Em seus
+estudos, o mesmo concluiu que mesmo a lei sendo rodeada de princípios fortes e
+características legais, acaba sendo ineficaz quanto ao controle da mineração no
+Brasil. Isso se deu devido a grande dúvida gerada em relação a qual seria o
+procedimento necessário a ser adotado para obtermos uma penalização individual
+eficaz e pela ausência de uma tipificação dessa conduta de lei. Se descreve que
+ainda é muito difícil encontrar e caracterizar o indivíduo praticante de tal ato que
+seria a mineração.
+Temos também a visão deste impacto nos estudos de Girard (2018), onde o
+mesmo nos informa pontos de onde há realmente um benefício social que justifique
+a utilização e adoção maciça das criptomoedas, seus exemplos apresentam países
+com grandes crises financeiras como a Venezuela e a Rússia. O mesmo demonstra
+que a Rússia é um dos principais países mineradores da atualidade e que sua fonte
+de energia elétrica utilizada provém majoritariamente de combustíveis fósseis.
+19
+Em outra parte de seus estudos, Girard (2018), nos informa de países
+desenvolvendo métodos de mineração que chegam a consumir 50% a menos de
+energia para o processo. Ao final o mesmo discute que atualmente existem dois
+cenários para o mundo da mineração de criptomoedas, um deles seria como a
+maciça Rússia utilizando grandes quantidades de combustíveis fósseis para suas
+atividades e em contrapartida temos países como a Islândia, tentando novas
+tecnologias para reduzir o impacto ambiental através de adoção de energia limpa
+em suas fazendas de mineração.
+Os estudos apresentados por Divino e Antunes (2021) visam o reflexo que a
+mineração de criptomoedas trará para a Agenda de 2030 da ONU, uma iniciativa
+que conta com 17 objetivos de Desenvolvimento Sustentável (ODS) e 169 metas
+universais (BRASIL, 2020). Dentro destes 17 objetivos, 4 se destacam para o
+estudo, sendo eles: 7 - energia acessível e limpa, 13 - ação contra a mudança global
+do clima, 14 - vida na água e 15 - vida terrestre. Dentro de suas considerações
+finais, Divino e Antunes (2021) citam cita o impacto direto da mineração de
+criptomoedas com a quantidade de gás carbônico emitido na atmosfera terrestre. O
+mesmo ainda cita que quanto maior a demanda de criptomoedas, mais será utilizada
+energia para poder confeccioná-las e ainda afirma que devido a dificuldade de
+solução do hash, com novas moedas sendo criadas e incorporadas no algoritmo, há
+uma tendência ainda maior de consumo de energia para se gerar essas novas
+criptomoedas.
+Em seu trabalho sobre como o impacto da mineração de criptomoedas pode
+afetar o setor elétrico, Gonçalves (2022) nos trás novamente uma visão de onde a
+aplicação e utilização de criptomoedas nos trouxeram tecnologias altamente
+benéficas no setor da tecnologia, como por exemplo a criação dos hashes. O autor
+também nos informa do crescimento exponencial das tecnologias envolvidas na
+mineração de criptomoedas conhecidas como FPGAs e ASICs, tais tecnologias são
+responsáveis por realizarem o processo de SHA-256 a fim de atingir o produto final
+da mineração de criptomoedas que seria encontrar o hash. Ao final, o autor nos
+aponta que a grande preocupação da mineração de criptomoedas vem de que sua
+prática de ser minerada em grande escala vem de poucos países, porém, mesmo
+que sejam apenas uma parcela da população mundial, ainda há um consumo
+20
+exorbitante de energia elétrica que causam desregulação na curva de consumo de
+energia elétrica e apagões em determinados momentos.
+O tema de mineração de criptomoedas também é abordado de uma maneira
+interessante no estudo de Pires et al. (2018), onde os mesmos se referem a essa
+prática como uma ameaça cibernética e que o processo de mineração de
+criptomoedas pode ser visto como um novo tipo de ataque cibernético. O autor
+descreve em seu trabalho que a Universidade Federal do Rio de Janeiro - UFRJ
+estava recebendo estes ataques em que hackers invadiram as máquinas da
+universidade para executarem de forma ilegal o processo de mineração de
+criptomoedas. O mesmo afirma que tal processo além de prejudicar os sistemas
+públicos do país e que podem se tornar recorrentes, há um lado que acabam
+ameaçando a estabilidade das próprias criptomoedas, onde, uma vez que os
+ataques ocorram com mais frequência, há grandes chances de aumentar o incentivo
+ao banimento de criptomoedas no país, fazendo assim seu valor entrar em
+decadência. Por fim, o autor diz que uma forma de mitigar estes ataques ilegais
+seria a monetização da mineração de criptomoedas para o benefício público, pois
+em muitos momentos a utilização dos recursos de rede da universidade se
+apresentam ociosos, fazendo assim, um bom momento para serem utilizados para a
+mineração.
+21
+5 MATERIAIS E MÉTODOS
+Neste capítulo, será apresentado o assunto que envolve a metodologia que se
+foi empregada para o desenvolvimento desta monografia, bem como a descrição
+dos repositórios constituintes dos dados utilizados e os cálculos utilizados.
+5.1 Metodologia aplicada no desenvolvimento
+Tendo em mente que para a mineração de criptomoedas utilizamos o que são
+chamados de rigs de mineração, a primeira característica essencial é a escolha dos
+componentes mais presentes dentro deles para podermos ter um cálculo baseado
+na realidade atual, além de que existem diversos modelos de rigs, podendo haver de
+variações nas quantidades de placas de vídeo utilizadas.
+Em seguida, para uma fazenda de mineração de criptomoedas, há uma escolha
+variável de tamanho de galpões onde estarão localizados todos os rigs de
+mineração, podendo variar entre galpões de 100m2 até 600m2
+.
+Imagem 4: Modelo de rig de mineração
+Fonte: DREAMSTIME (2019)
+22
+Diante dos parâmetros apresentados acima, o desenvolvimento desta
+monografia teve como planejamento as seguintes etapas para serem executadas:
+1) Escolha dos componentes que serão utilizados como base para os rigs bem
+como qual estrutura será adotada;
+2) Escolha de um galpão para podermos escalonar os dados obtidos de
+consumo de energia elétrica de um rig;
+3) Coleta de dados de consumo de energia elétrica em duas cidades diferentes
+dentro do interior de SP através de repositórios de domínios públicos;
+4) Interpretação, comparação e análise dos resultados obtidos em ambas as
+partes.
+5.2 Cálculo de consumo na mineração de criptomoedas
+Os dados de consumo de energia elétrica em processos de mineração de criptomoedas
+foram obtidos a partir de cálculos descritos a seguir.
+5.2.1 Componentes computacionais utilizados
+Para a construção de um rig de mineração, são necessários alguns
+componentes computacionais de alta performance, sendo eles: uma placa-mãe, um
+processador (CPU) e uma placa de vídeo (GPU).
+É correto afirmar que também temos presente memórias RAM e HD`s ou SSD`s,
+porém o consumo de energia elétrica vindo dessas partes é quase nulo comparado
+com os demais citados acima. Por conta disso, não é necessário um detalhamento
+de consumo de energia elétrica para tais componentes.
+Devemos também tomar nota que por se tratar de uma fazenda de mineração,
+todo o resfriamento que seria necessário para os componentes através de coolers
+conectados diretamente se fazem desnecessários, pois toda a refrigeração será
+gerada dentro do próprio galpão contendo os demais rigs de mineração.
+23
+● Placa-mãe
+De acordo com Kerstens e Aaron S. (2024), a melhor placa-mãe presente no
+mercado para a mineração de criptomoedas na atualidade é a ASRock H110 Pro
+BTC+, uma placa criada diretamente com o foco em mineração de criptomoedas.
+Como se trata de uma placa no formato ATX, podemos dizer que seu consumo
+em média seria de 70 watts/hora. (COOLERMASTER, 2024)
+● Processador (CPU)
+Para o processador, iremos utilizar o que é considerado hoje o mais potente do
+mercado dentro de formatos padrões de placas-mãe, no qual, de acordo com
+Paes(2023), o processador mais potente é o Intel Core i9 14900K. A seguir
+podemos ver as especificações deste processador.
+Imagem 5: Especificações Intel Core i9 14900k
+Fonte: INTEL (2023)
+24
+Vale ressaltar que existem processadores ainda mais potentes, como o AMD
+Threadripper PRO, porém são processadores feitos para data centers e servidores,
+os quais utilizam placas-mãe especializadas e fora do escopo apresentado nesta
+tese.
+● Placa de vídeo (GPU)
+O mercado atual de placas de vídeo é vasto, tendo uma variedade extensa de
+modelos, tamanhos e características, de acordo com Dantas (2024), uma das placas
+de vídeo dominante para mineração de criptomoedas hoje é a Placa de Vídeo Galax
+Nvidia Geforce RTX 4070 ST 12Gb GDDR6X. Onde suas especificações seguem
+abaixo.
+Imagem 6: Placa de Vídeo Galax Nvidia Geforce RTX 4070 ST 12Gb GDDR6X
+Fonte: GALAX (2023)
+Podemos notar que de acordo com os requisitos, o mínimo que se pede de fonte
+de alimentação é de 700 watts, porém, de acordo com Valle (2024), em seus testes
+de bancada com a placa, os valores mais altos obtidos de consumo foram de 436
+Watts/hora.
+5.2.2 Cálculo de consumo de energia elétrica de um rig
+A partir dos dados de componentes citados acima, já é possível calcular o
+consumo de um rig de mineração. Existem diversos modelos de rigs de mineração,
+onde a principal diferença entre eles é a quantidade de placas de vídeo suportadas
+em sua estrutura.
+25
+Para mantermos uma média do número de placas de vídeo, utilizaremos um rig
+contendo 8 placas de vídeo em sua estrutura, bem como um espaço para a
+placa-mãe. Podemos ver a representação de como seria esta estrutura na imagem
+abaixo(imagem 7).
+Imagem 7: Rig de mineração estruturado para 8 placas de vídeo
+Fonte: AMAZON (2020)
+Novamente tomando nota que na imagem aparece uma fonte de alimentação,
+isso se dá por ser atribuído a um cenário doméstico, onde o minerador compra
+apenas alguns rigs para mineração. No cenário de estudos desta monografia,
+estamos utilizando o conceito em larga escala, logo, a fonte de alimentação não se
+faz presente dentro destas estruturas.
+Para o cálculo do consumo de Watts por hora gerado no rig escolhido, utilizamos
+cálculos básicos de somatória, onde somamos a quantidade de Watts por hora que
+cada componente necessitará.
+26
+Como o processo de mineração de criptomoedas exige de formas extremas de
+todos os componentes nos rigs, utilizaremos como base os dados citados acima
+com maior utilização de Watts/hora de cada componente, ou seja, para a placa-mãe
+utilizaremos 70 Watts/hora. Para nosso processador podemos observar que em
+suas especificações existem duas medições, a potência básica e a potência em
+modo turbo, utilizaremos a potência em modo turbo, já que a mesma é a eficiente
+dentre as duas, ou seja, 253 Watts/hora. Por fim, para a placa de vídeo utilizaremos
+os dados fornecidos por Valle (2024) de 436 Watts/hora.
+Na tabela 2 será apresentado a relação de todos os componentes junto de seus
+gastos e a somatória ao fim.
+Tabela 2: Tabela com todos os componentes dentro de um rig e seu consumo energético.
+Componentes Modelo
+Consumo individual
+de energia
+(Watts/hora)
+Placa-Mãe ASRock H110 Pro BTC+ 70
+Processador Intel Core i9 14900k 253
+Placa de Vídeo Galax Nvidia Geforce RTX 4070 436
+Placa de Vídeo Galax Nvidia Geforce RTX 4070 436
+Placa de Vídeo Galax Nvidia Geforce RTX 4070 436
+Placa de Vídeo Galax Nvidia Geforce RTX 4070 436
+Placa de Vídeo Galax Nvidia Geforce RTX 4070 436
+Placa de Vídeo Galax Nvidia Geforce RTX 4070 436
+Placa de Vídeo Galax Nvidia Geforce RTX 4070 436
+Placa de Vídeo Galax Nvidia Geforce RTX 4070 436
+Somatória do Consumo de
+Energia (Watts/hora) 3811
+Fonte: Autoria Própria
+Podemos notar que se trata de um consumo extremamente alto de energia
+elétrica, lembrando também que não estamos contando com outros componentes
+como HD’s, SSD’s e memórias RAM.
+27
+5.2.3 Cálculo de consumo de energia em uma fazenda de mineração
+Para essa parte do estudo tomaremos como base uma fazenda de mineração
+de 600m2
+, temos hoje uma fazenda de mineração com o mesmo dimensionamento
+localizada em Boden, na Suécia chamada de Blockchain HIVE e que, atualmente,
+abriga em torno de 17 mil placas de vídeo para mineração (COINDESK, 2022).
+Obtivemos os dados de um único rig no tópico anterior, portanto nos resta fazer
+o escalonamento do valor unitário obtido para 17 mil placas de vídeo. Novamente
+este cálculo se trata de uma fórmula básica, onde pegamos o valor unitário obtido
+anteriormente e aplicamos uma simples multiplicação onde o valor a ser multiplicado
+será 17 mil placas de vídeo divididas por 8, número de placas de vídeo em cada rig,
+logo, 2.601 mil.
+Neste cálculo também devemos adicionar o resfriamento que será necessário
+nesta fazenda de mineração. De acordo com a Refrimec (2020), para se obter a
+quantidade correta de BTU’s para alguma instalação é necessário realizarmos a
+seguinte conta:
+(600 x m2
+) + (600 x número de pessoas no local) + (600 x equipamentos no local)
+Porém, se realizarmos esta conta contando com 600m2
+, uma equipe de poucas
+pessoas e 17 mil equipamentos, o valor será fora da realidade, onde o mesmo
+assunto será trazido à tona novamente na parte de métricas de erro.
+Para conseguirmos fazer um cálculo possível e racional, iremos utilizar uma
+tabela de medidas comparando metros quadrados de ambiente com a quantidade
+necessária de BTU’s como ilustrado na tabela 3.
+28
+Tabela 3: Tabela de relação de m2 com BTU’s necessários em um determinado espaço.
+Fonte: LEROY MERLIN (2018)
+Podemos notar que para um espaço de 60m2
+, o recomendado é um ar
+condicionado de 48.000 BTU’s, logo, para o presente estudo serão necessários 10
+ar condicionados de 48.000 BTU’s.
+Utilizaremos o Ar-Condicionado Split Inverter Cassete 48000 BTUs como
+modelo base, onde em suas especificações encontramos que seu consumo é de
+89,3 KWH/MÊS, ou seja, 124 Watts/hora (FRIGELAR, 2022).
+Sendo assim, ao multiplicarmos o valor de um ar condicionado por 10, obtemos que
+o consumo total de energia elétrica para os ar condicionados é de 1.240 Watts/hora.
+5.3 Dados das cidades escolhidas
+Nesta parte da monografia, será demonstrado como foi realizada a tomada dos
+valores de consumo de energia elétrica em duas cidades localizadas no interior do
+estado de SP, sendo elas São Paulo (SP) e Campinas (SP)
+29
+5.3.1 Dados do consumo de energia elétrica na cidade de São Paulo-SP
+Para a tomada de dados do consumo de energia elétrica na cidade de São
+Paulo, iremos utilizar dados obtidos através do acervo de dados energéticos
+fornecido pelo site oficial oferecido pelo Governo de SP (2020).
+A imagem 8 ilustra a primeira tela que nos oferece todos os municípios
+encontrados no estado de SP.
+Imagem 8: Página oficial do Governo oferecendo dados de consumo de energia elétrica
+Fonte: SÃO PAULO (2020)
+Ao selecionarmos a cidade escolhida, o site nos informa os dados de consumo
+de energia elétrica de forma detalhada, onde o ano mais recente que podemos obter
+é 2020.
+A seguir os dados obtidos da cidade de São Paulo - SP são apresentados
+através de tabelas de maneira minuciosa, desde a quantidade de consumo de
+energia elétrica por setor do município, bem como sua população, área e região
+administrativa.
+30
+Imagem 9: Dados de consumo de energia elétrica de São Paulo- SP
+Fonte: SÃO PAULO (2020)
+Onde todos os dados obtidos serão discutidos de forma mais detalhada na
+seção de resultados.
+5.3.2 Dados do consumo de energia elétrica na cidade de Campinas-SP
+Para a tomada de dados do consumo de energia elétrica na cidade de
+Campinas, também localizada no interior do estado de São Paulo, utilizaremos o
+mesmo método que utilizamos para a cidade de São Paulo- SP.
+Por conta de ambas as cidades estarem localizadas no estado de SP,
+conseguimos utilizar esta ferramenta que nos traz dados precisos e do mesmo ano,
+podendo ter uma melhor precisão em ambas as medidas.
+A seguir será apresentada a imagem 10 relacional de consumo de energia
+elétrica da cidade de Campinas, bem como seus dados de população, área e região
+administrativa.
+31
+Imagem 10: Dados de consumo de energia elétrica de Campinas- SP
+Fonte: SÃO PAULO (2020)
+Onde, assim como os dados obtidos para a cidade de São Paulo-SP, todos os
+dados obtidos serão discutidos de forma mais detalhada na seção de resultados.
+32
+6 RESULTADOS
+Neste capítulo será dissertado sobre os resultados obtidos do consumo de
+ambas as métricas escolhidas para o estudo desta monografia.
+Sendo o primeiro os dados obtidos da fazenda de mineração de criptomoedas
+conforme todos os dados selecionados e calculados e em seguida a apresentação
+dos dados de ambas as cidades escolhidas para o estudo.
+Ao final, será apresentado uma comparação do consumo de energia elétrica
+entre as cidades de São Paulo- SP e Campinas- SP com os dados obtidos do
+consumo de energia elétrica da fazenda de mineração de criptomoedas.
+6.1 Dados obtidos da fazenda de mineração de criptomoedas
+Para obtermos uma boa comparação, os dados obtidos do consumo de energia
+elétrica na fazenda de mineração de criptomoedas serão distribuídos em consumo
+por dia, consumo por mês e consumo por ano.
+A tabela 3 foi utilizada como base para o escalonamento das demais medidas,
+como o consumo por dia, mês e ano.
+Tabela 3: Tabela com a somatória do consumo de energia elétrica numa fazenda de mineração por
+hora.
+Equipamento
+Quantida
+de
+Consumo individual
+de energia
+(Watts/hora)
+Consumo total de energia
+(Watts/hora)
+Ar Condicionado
+48.000 BTU's 10 124 1.240,00
+Rig de mineração 2125 3811 8.098.375,00
+Somatória do
+Consumo de Energia
+(Watts/hora) 8.099.615,00
+Fonte: Autoria Própria
+33
+Onde o valor obtido de consumo de uma fazenda de mineração de criptomoedas
+com uma área de 600m2
+foi de mais de 8 milhões de Watts por hora. Um valor
+extremamente alto considerando ser apenas um galpão contendo computadores de
+alta performance.
+Com os dados obtidos acima, foi possível fazer um escalonamento para
+utilizarmos os dados de consumo de energia elétrica em dia, mês e ano. Onde
+abaixo estão presentes tais dados.
+Tabela 4: Tabela com a somatória do consumo de energia elétrica numa fazenda de mineração por
+hora, dia, mês e ano.
+Consumo total de
+energia (Watts/hora) Hora Dia Mês Ano
+Fazenda de mineração
+de Criptomoedas
+8.099.615,
+00
+194.390.760,
+00 5.831.722.800,00
+69.980.673.600,
+00
+Fonte: Autoria Própria
+Onde em seu valor anual, obtemos um número na casa de quase 70 bilhões de
+Watts de consumo.
+É importante ressaltar que este cálculo é contido dos principais componentes
+que podem ser encontrados dentro de uma fazenda de mineração, onde tomamos
+nota baseado em dados verdadeiros e disponíveis ao público. Existem inúmeras
+fazendas de mineração com o mesmo tamanho atuando de forma ilegal e irregular,
+podendo haver uma variação tanto para mais quanto para menos em termos de
+consumo de energia elétrica.
+6.2 Dados obtidos das cidades de São Paulo- SP e Campinas- SP
+6.2.1 Dados obtidos de São Paulo- SP
+Para os dados da cidade de São Paulo - SP foi utilizado a mesma ideia lógica do
+que a utilizada nos dados de consumo de energia elétrica da fazenda de
+criptomoedas, onde o primeiro dado obtido foi uma relação em Watts por hora.
+Será apresentado uma tabela com os valores obtidos de Watts para dia, mês e
+ano assim como feito anteriormente. A principal diferença é que os dados foram
+34
+obtidos diretamente do site oficial do governo do estado de São Paulo (2020), não
+sendo necessário nenhum cálculo inicial.
+O valor obtido para a cidade de São Paulo - SP foi de 257.270.550 Watts/hora e
+a seguir, a tabela informará como os dados se comportaram ao serem escalonados.
+Tabela 4: Tabela com a somatória do consumo de energia elétrica em São Paulo - SP por hora, dia,
+mês e ano.
+Consumo total
+de energia
+(Watts/hora) Hora Dia Mês Ano
+São Paulo - SP
+257.270.550
+,00
+6.174.493.200,0
+0
+185.234.796.000,
+00
+2.222.817.552.000,
+00
+Fonte: Autoria Própria
+De acordo com a tabela acima, o valor obtido é consideravelmente maior devido
+à São Paulo ser uma cidade global e uma das maiores cidades do mundo.
+6.2.2 Dados obtidos de Campinas- SP
+Por se tratar de uma cidade do interior, seu consumo de energia elétrica não se
+equiparou tanto à cidade de São Paulo, porém, é a terceira cidade que mais
+consome energia no estado. Seu consumo de energia elétrica chega a 30.096.690
+Watts/hora.
+A seguir, a tabela com os dados obtidos ao se escalonar o consumo de energia
+elétrica de Watts/hora para um dia, um mês e um ano.
+Tabela 5: Tabela com a somatória do consumo de energia elétrica em Campinas- SP por hora, dia,
+mês e ano.
+Consumo total de
+energia (Watts/hora) Hora Dia Mês Ano
+Campinas - SP
+30.096.690,
+00
+722.320.560,
+00
+21.669.616.800,
+00
+260.035.401.600,
+00
+Fonte: Autoria Própria
+35
+6.3 Comparação entre todos os dados obtidos
+Por fim, será comparado todos os dados obtidos unificados na tabela 6. Os
+valores serão apresentados do maior para o menor, onde pode se notar uma
+diferença grande com a principal cidade do estado de SP, São Paulo.
+Tabela 6: Somatória do consumo de energia elétrica na fazenda de mineração, São Paulo e
+Campinas por hora, dia, mês e ano.
+Consumo total de
+energia
+(Watts/hora) Hora Dia Mês Ano
+São Paulo - SP
+257.270.550,
+00
+6.174.493.200,
+00
+185.234.796.000,0
+0
+2.222.817.552.000,
+00
+Campinas - SP
+30.096.690,0
+0
+722.320.560,0
+0 21.669.616.800,00
+260.035.401.600,0
+0
+Fazenda de
+mineração de
+Criptomoedas 8.099.615,00
+194.390.760,0
+0 5.831.722.800,00 69.980.673.600,00
+Fonte: Autoria Própria
+Com todos os dados apresentados, podemos notar uma diferença grande entre
+as duas cidades e a fazenda de mineração de criptomoedas, onde o valor anual
+obtido para a cidade de São Paulo foi de mais de 2 trilhões de Watts/hora.
+A cidade de Campinas obteve um resultado de um pouco mais de 250 bilhões
+de Watts/hora em sua média anual.
+Por fim, a fazenda de mineração de criptomoedas obteve um valor anual
+próximo aos 70 bilhões de Watts/hora.
+Estes valores obtidos nos indicam índices preocupantes, onde em apenas uma
+fazenda de mineração de criptomoedas representa cerca de 25% do total de energia
+elétrica consumida pela cidade de Campinas. Tal valor se torna mais alarmante ao
+compararmos a área da cidade de Campinas de 795.690,00 km2 com a área
+utilizada de 600m2 para a fazenda de mineração de criptomoedas.
+Onde se considerarmos 4 fazendas de mineração de criptomoedas do mesmo
+tamanho e com as mesmas especificações, teremos um consumo maior do que a
+própria cidade.
+36
+7 CONSIDERAÇÕES FINAIS
+Este TCC teve como principal objetivo de apresentar o impacto da mineração de
+criptomoedas no meio ambiente, tendo nota outras teses e trabalhos apresentados,
+podemos afirmar que o impacto causado por esta prática está afetando diretamente
+o meio ambiente. Seja ele por um consumo extremamente alto de energia elétrica,
+por consumo de materiais fósseis para gerar esta energia ou até mesmo com
+problemas como a escassez de silício por conta da alta procura de placas de vídeo
+para mineração.
+Mesmo contando com fontes de energia limpa e renovável, com projetos
+ambientais como o da ONU para 2030, ainda enfrentamos grandes problemas com
+o crescimento exponencial de criptomoedas. Isso reflete em uma sociedade que ao
+mesmo tempo que existem pessoas trabalhando para diminuir o impacto gerado
+pelo consumo excessivo de energia elétrica, temos o outro lado, pessoas que
+tendem a se aproveitar dos frutos desta energia sem algum zelo pelo meio
+ambiente, apenas visando o lucro.
+Em alguns países, como a China, a prática de mineração de criptomoedas foi
+proibida após um impacto grande em suas redes elétricas (REUTERS, 2023). Porém
+sua prática ainda segue ocorrendo de forma ilegal.
+Assim como não há uma legislação que controle o consumo de energia para
+esta prática, dificilmente haverá um controle certeiro de como os mineradores
+deverão agir ou não agir. Isso favorece o consumo irregular de energia elétrica,
+gerando problemas de alto consumo e até mesmo um consumo que poderia ser
+reduzido para se exercer as mesmas atividades.
+Por fim, o crescimento da utilização de criptomoedas é algo inevitável e que
+apresenta sim grandes revoluções e oportunidades importantes e benéficas para
+toda a humanidade, porém, sem um controle de como essas criptomoedas são
+geradas e mineradas, estamos fadados a sofrer com um consumo cada vez mais
+extremo de energia elétrica no mundo, podendo resultar em desastres catastróficos
+em todo sistema de rede elétrica ao redor do mundo.
+37
+REFERÊNCIAS
+ABRHidro. Principal fonte de energia de cada estado do Brasil. 2023. Disponível em:
+https://www.site.abrhidro.org.br/post/principal-fonte-de-energia-de-cada-estado-do-brasil
+Acesso em: 15 jan. 2024
+AWS. O que é a tecnologia Blockchain. 2020. Disponível em:
+https://aws.amazon.com/pt/what-is/blockchain/?aws-products-all.sort-by=item.additionalField
+s.productNameLowercase&aws-products-all.sort-order=asc
+Acesso em: 12 jan. 2024
+AMAZON. Kingwin Miner Rig Caixa de alumínio com 6 ou 8 GPU Mineração
+empilhável Frame Expert Crypto Mining Rack para Ethereum Classic, Flux, Ergo,
+Neoxa, Ravencoin – Criptomoeda de fluxo de ar GPU, banco de teste PC. 2020.
+Disponível em:
+https://www.amazon.com.br/Kingwin-empilh%C3%A1vel-Ethereum-Classic-Ravencoin/dp/B
+07H44XZPW
+Acesso em: 20 jan. 2024
+BAZAN, Vinícius. O que é mineração e como minerar Bitcoin?. 2018. Disponível em:
+https://www.empiricus.com.br/artigos/investimentos/o-que-e-mineracao-e-como-minerarbitcoin/?xpromo=XE-ME-GGL-D3SA-KW-X-SH-X-X-X
+Acesso em: 12 jan. 2024.
+BRASIL. Supremo Tribunal Federal. Agenda 2030. 2020. Disponível em:
+https://portal.stf.jus.br/hotsites/agenda-2030/
+Acesso em: 18 jan. 2024
+CNN. Bitcoin tem maior valor em 18 meses com juros mais baixos e regulação no
+radar.[S. l.], 2023a. Disponível em:
+https://www.cnnbrasil.com.br/economia/bitcoin-tem-maior-valor-em-18-meses-com-juros-ma
+is-baixos-e-regulacao-no-radar/
+Acesso em: 03 dez. 2023.
+CNN. China proíbe mineração e declara ilegais transações com criptomoedas no país. [S.
+l.], 2023b. Disponível em:
+https://www.cnnbrasil.com.br/economia/china-amplia-restricoes-e-proibe-mineracao-de-cript
+omoedas-em-todo-o-pais/
+Acesso em: 05 fev. 2024
+COINDESK. Como é uma fazenda de mineração de Bitcoin? Veja fotos impressionantes
+de instalações na Rússia e outros 5 países. 2022. Disponível em:
+https://www.infomoney.com.br/mercados/como-e-uma-fazenda-de-mineracao-de-bitcoin-veja
+-fotos-impressionantes-de-instalacoes-na-russia-e-outros-5-paises/#
+Acesso em: 20 jan. 2024
+COOLERMASTER. Power Supply Calculator. 2024. Disponível em:
+https://www.coolermaster.com/power-supply-calculator/
+Acesso em: 19 jan. 2024
+38
+DIVINO, Sthéfano Bruno Santos; ANTUNES, Beatriz Gaia Barreto. A mineração de
+criptomoedas e os impactos ambientais: reflexos na Agenda 2030. Revista Jurídica
+Luso-Brasileira, Lisboa, ano 7, n. 6, p. 2179-2215, 2021. Disponível em:
+https://www.cidp.pt/revistas/rjlb/2021/6/2021_06_2179_2215.pdf. Acesso em: 18 jan. 2024
+DREAMSTIME. Modelo de Rig Architect da mineração. 2019. Disponível em:
+https://pt.dreamstime.com/modelo-de-rig-architect-da-minera%C3%A7%C3%A3o-image118
+329550
+Acesso em: 18 jan. 2024
+EPE, Empresa de Pesquisa Energética. Matriz Energética e Elétrica. 2017.
+Disponível em: https://www.epe.gov.br/pt/abcdenergia/matriz-energetica-e-eletrica.
+Acesso em: 13 jan. 2024
+FRIGELAR. Ar-Condicionado Split Inverter Cassete 48000 BTUs Carrier Só Frio
+40KVCB48C5 220V. 2022. Disponível em:
+https://www.frigelar.com.br/ar-condicionado-split-cassete-inverter-carrier-so-frio-48000-btus40kvcb48c5-220v/p/kit1453
+Acesso em: 20 jan. 2024
+GALAX. Galax Nvidia Geforce RTX 4070 ST 12Gb GDDR6X. 2023. Disponível em:
+https://www.galax.com/en/graphics-card/geforce-rtx-4070-st.html
+Acesso em: 19 jan. 2024
+GIRARD, Lucas. Impactos ambientais da mineração de criptomoedas. Boletim do
+Centro de Estudos Sociedade e Tecnologia, São Paulo, v. 3, n. 6, p. 1-2, ago. 2018.
+Disponível em:
+http://www.cest.poli.usp.br/wp-content/uploads/2018/08/V3N6-Impactos-Ambientais-da-Min
+era%C3%A7%C3%A3o-de-Criptomoedas.pdf. Acesso em: 19 jan. 2024.
+GONÇALVES, Luiz. IMPACTO DA MINERAÇÃO DE CRIPTOMOEDAS NO SETOR
+ELÉTRICO. Orientador: Carlos Antônio Alves. 2022. Trabalho de Conclusão de Curso
+(bacharelado em Engenharia Elétrica) - Universidade Estadual Paulista (Unesp), São Paulo.
+2022.
+DANTAS, Tiago. Melhores Placas de Vídeo para Mineração. 2024. Disponível em:
+https://geek360.net/melhores-placas-de-video-para-mineracao/. Acesso em: 08 ago. 2024
+INTEL. Intel® Core™ i9 processor 14900K. 2023. Disponível em:
+https://www.intel.com.br/content/www/br/pt/products/sku/236773/intel-core-i9-processor-149
+00k-36m-cache-up-to-6-00-ghz/specifications.html
+Acesso em: 19 jan. 2024
+INVESTING. Preço de Criptomoedas e cotações. 2024. Disponível em:
+https://br.investing.com/crypto/
+Acesso em: 03 dez. 2023.
+KERSTENS, Peter; AARON S. O melhor hardware de mineração Ethereum. [S. l.], 2024.
+Disponível em:
+39
+https://br.bitdegree.org/crypto/tutoriais/melhor-hardware-mineracao-ethereum. Acesso em: 20
+jan. 2024
+LEROY MERLIN. Veja como calcular os BTUs do ar condicionado. 2018. Disponível em:
+https://www.leroymerlin.com.br/dicas/aprenda-a-calcular-os-btus-do-ar-condicionado
+Acesso em: 20 jan. 2024
+MEDEIROS, João. A MINERAÇÃO DE CRIPTOMOEDAS DE FORMA
+IMODERADA E SEUS IMPACTOS AMBIENTAIS: UMA ANÁLISE À LUZ DA LEI
+Nº 9.605/98. 2022. Disponível em:
+https://www.cidp.pt/revistas/rjlb/2021/6/2021_06_2179_2215.pdf.
+Acesso em: 18 jan. 2024
+MERCADO PAGO. Criptomoedas, tudo que você precisa saber. 2020. Disponível em:
+https://meubolso.mercadopago.com.br/tudo-sobre-criptomoedas
+Acesso em: 12 jan. 2024
+PAES, João. Intel lança processador de desktop "mais rápido do mundo" junto com
+mais modelos da 14ª geração. 2023. Disponível em:
+https://br.ign.com/tech-3/115206/news/intel-lanca-processador-de-desktop-mais-rapido-do-m
+undo-junto-com-mais-modelos-da-14a-geracao
+Acesso em: 19 jan. 2024
+PIRES, Victor; COUTINHO, Felipe; MENASCHÉ, Daniel; FARIAS, Claudio. Gatos
+virtuais: detectando e avaliando os impactos da mineração de criptomoedas em
+infraestrutura pública. 2018. Disponível em:
+https://sol.sbc.org.br/index.php/sbseg/article/view/13962/13811.
+Acesso em: 19 jan. 2024
+PORTAL SOLAR. Energia elétrica: o que é, como funciona a geração e como chega em
+nossas casas. 2019. Disponível em: https://www.portalsolar.com.br/energia-eletrica-o-que-e.
+Acesso em: 12 jan. 2024
+REFRIMEC. Como calcular BTUs para ar-condicionado de comércio e escritórios. 2020.
+Disponível em:
+https://refrimec.com/blog/como-calcular-btus-para-ar-condicionado-de-comercio-e-escritorios
+/
+Acesso em: 20 jan. 2024
+REUTERS. China proíbe mineração e declara ilegais transações com criptomoedas no
+país. 2023. Disponível em:
+https://www.cnnbrasil.com.br/economia/financas/china-amplia-restricoes-e-proibe-mineracao
+-de-criptomoedas-em-todo-o-pais/ .Acesso em: 12 jan. 2024
+SANTOS, Paola; FLORENTINO, Maria; BASTOS, Jhennyfer; TREVISAN, Giselle.
+FONTES RENOVÁVEIS E NÃO RENOVÁVEIS GERADORAS DE
+ENERGIA ELÉTRICA NO BRASIL. 2017. Disponível em:
+https://www.researchgate.net/profile/Giselle-Trevisan/publication/342716427_Fontes_Reno
+vaveis_e_Nao_Renovaveis_Geradoras_de_Energia_Eletrica_no_Brasil/links/5f0336ae92851
+c52d619fd2f/Fontes-Renovaveis-e-Nao-Renovaveis-Geradoras-de-Energia-Eletrica-no-Brasil
+.pdf
+40
+Acesso em: 18 jan. 2024
+SÃO PAULO (Estado). Secretaria de Meio Ambiente, Infraestrutura e Logística.
+Ranking Paulista de Energia. São Paulo: SEMIL, 2020. Disponível em:
+https://dadosenergeticos.energia.sp.gov.br/Portalcev2/Municipios/ranking/index.html. Acesso
+em: 20 jan. 2024.
+TAPSCOTT, Don; TAPSCOTT, Alex. Blockchain revolution. 2018. Disponível em:
+https://books.google.com.br/books?hl=pt-BR&lr=&id=O0tSEAAAQBAJ&oi=fnd&pg=PT2&
+dq=o+que+%C3%A9+blockchain&ots=VF3gNy3mYz&sig=UF0poCp4rBz2MnqPS1wKmW
+ugRKs#v=onepage&q=o%20que%20%C3%A9%20blockchain&f=false
+Acesso em: 12 jan. 2024.
+VALLE, Davi. RTX 4070 Ti é boa? Veja ficha técnica e preço da placa Nvidia. 2024.
+Disponível em:
+https://www.techtudo.com.br/guia/2024/01/rtx-4070-ti-e-boa-veja-ficha-tecnica-e-preco-da-pl
+aca-nvidia-edinfoeletro.ghtml
+Acesso em: 19 jan. 2024

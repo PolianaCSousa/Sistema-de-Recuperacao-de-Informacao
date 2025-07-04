@@ -1,0 +1,2 @@
+2. Ada Lovelace – A Primeira Programadora da História
+Ada Lovelace, matemática inglesa do século XIX, foi a primeira pessoa a escrever um algoritmo para ser processado por uma máquina (a máquina analítica de Charles Babbage). Ela antecipou o uso dos computadores para mais do que cálculos numéricos, imaginando aplicações criativas para a tecnologia.

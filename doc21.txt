@@ -1,0 +1,305 @@
+Uma Visao Geral da Arquitetura ˜ Cell
+Wellington Mariusso (010086)
+Instituto de Computac¸ ˜ao
+UNICAMP
+wellington.mariusso@ic.unicamp.br
+RESUMO
+A arquitetura Cell foi desenvolvida a partir de uma proposta
+das empresas Sony e Toshiba feita `a IBM para a cria¸c˜ao de
+uma tecnologia que permitisse alto desempenho de processamento sem o ˆonus do alto consumo de energia e pre¸cos
+elevados. O resultado disso foi o desenvolvimento conjunto
+do Cell, ou CBEA (Cell Broadband Engine Architecture),
+uma arquitetura multicore heterogˆenea, otimizada para demandas como entretenimento, criptografia e computa¸c˜ao cient´ıfica.
+Este texto tem por objetivo apresentar as principais caracter´ısticas da arquitetura, proporcionando uma vis˜ao geral
+dos pontos em que ela difere das arquiteturas convencionais.
+Palavras Chave
+arquitetura de computadores, Cell, multicore
+1. INTRODUC¸ AO˜
+A arquitetura Cell, conhecida formalmente como CBEA (Cell
+Broadband Engine Architecture) [2], foi desenvolvida em conjunto pela IBM, Sony e Toshiba com o objetivo inicial de
+usar chips deste tipo como a base para o novo console de entretenimento da Sony, o Playstation 3 [4]. Aplica¸c˜oes deste
+tipo demandam alto poder de processamento, mas n˜ao podem ter custo elevado, o que diminuiria muito o poss´ıvel
+mercado consumidor.
+Para poder suprir estas duas necessidades, associada `a necessidade de evitar consumo de energia muito elevado, a alternativa foi criar uma arquitetura multicore heterogˆenea [1].
+O fato de o chip ser multicore, permite que um alto desempenho seja alcan¸cado atrav´es do uso de paralelismo, sem a necessidade de custear v´arias vezes o encapsulamento do chip
+– o que teria de ser feito no caso de se usar uma arquitetura
+paralela usando processadores completamente independentes. Um chip Cell t´ıpico, como os que ser˜ao usados pela
+Sony em seu console, possui nove processadores capazes de
+atuar em paralelo, o que permite um bom desempenho.
+Para diminuir as necessidades de consumo de energia e tamb´em
+de custo, optou-se por uma arquitetura paralela, por´em contendo processadores com caracter´ısticas diferentes para realizar tarefas diferenciadas. A arquitetura define que todo
+chip Cell deve ter dois tipos de processadores diferentes: os
+PPEs (PowerPC Processor Element), que ´e um processador
+de prop´osito geral e os SPUs (Synergistic Processor Unit),
+que s˜ao processadores mais especializados, mas n˜ao define
+exatamente quantos processadores de cada tipo devem estar
+presentes – exige apenas que pelo menos um de cada tipo
+esteja no chip [2] . Os SPUs tamb´em s˜ao chamados de SPEs
+(SPU Element). Em um chip t´ıpico, h´a apenas um PPE e
+oito SPEs. Na verdade, n˜ao h´a a necessidade de que todos
+os componentes estejam fisicamente no mesmo chip, mas em
+geral essa ´e uma caracter´ısticas importante para a garantia
+de baixo custo e de performance.
+O PPE ´e um processador PowerPC de 64 bits, de prop´osito
+geral. Isso garante que um Cell seja capaz de executar
+aplica¸c˜oes gen´ericas, sem compila¸c˜ao especial, desde que tenham sido desenvolvidas para PowerPC.
+O SPU ´e um processador mais especializado, menor, com um
+conjunto de instru¸c˜oes diferente do conjunto de instru¸c˜oes
+do PowerPC. Este processador permite instru¸c˜oes do tipo
+SIMD (Single Instruction, Multiple Data) e opera com valores de at´e 128 bits. Este processadores tˆem por objetivo
+trabalhar com aplica¸c˜oes que dependam fortemente de manipula¸c˜ao num´erica, como criptografia, computa¸c˜ao cient´ıfica
+e aplica¸c˜oes de m´ıdia (´audio, v´ıdeo, etc.).
+Dessa forma, os SPUs atuam como co-processadores para
+os PPEs, que distribuem as tarefas computacionalmente pesadas. Esta decis˜ao permite um melhor aproveitamento da
+´area ocupada pelo chip, dado que os SPUs s˜ao menores e
+mais simples.
+Al´em disso, a arquitetura define a existˆencia de um mecanismo r´apido de acesso `a mem´oria e uma interface r´apida
+para a realiza¸c˜ao de entrada e sa´ıda de dados.
+Interconectando os componentes do Cell, h´a um barramento
+chamado EIB (Element Interconnect BUS), que transmite
+at´e 96 bytes por ciclo.
+EIB
+PXU L1
+L2 MIC BIC
+SXU
+LS
+SPE
+SXU
+LS
+SPE
+SXU
+LS
+SPE
+SXU
+LS
+SPE
+SXU
+LS
+SPE
+SXU
+LS
+SPE
+SXU
+LS
+SPE
+SXU
+LS
+SPE
+PPE
+Memoria
+Principal
+Canais
+de I/O
+Figura 1: Vis˜ao Geral do Cell
+As caracter´ısticas de cada um destes componentes ser˜ao discutidas com mais detalhes posteriormente.
+2. PRINCIPAIS COMPONENTES
+Nesta se¸c˜ao, s˜ao apresentados os principais componentes de
+arquitetura Cell e suas caracter´ısticas mais importantes.
+2.1 PowerPC Processor Element (PPE)
+A arquitetura CBEA define que todo sistema compat´ıvel
+com Cell deve ter, pelo menos, um processador do tipo PPE.
+Este processador deve ser um processador de 64 bits, compat´ıvel com a fam´ılia PowerPC, mas deve ter algumas caracter´ısticas diferenciadas. E necess´ario, por exemplo, que o ´
+processador tenha um conjunto de instru¸c˜oes relativo `as extens˜oes multim´ıdia, permitindo que ele tamb´em seja usado
+para execu¸c˜ao de programas fortemente dependente de processamento de dados. Portanto, o PPE tamb´em possui um
+pequeno conjunto de instru¸c˜oes SIMD.
+O PPE ainda pode ser dividido em duas partes: o cache L2
+e a PXU (PowerPC eXecution Unit).
+Al´em disso, o PPE presente no Cell deve ter uma implementa¸c˜ao que permita a opera¸c˜ao em freq¨uˆencias altas, al´em
+de ter caracter´ısticas de baixo consumo de energia, mesmo
+que para isso algumas funcionalidades dos PowerPCs mais
+novos n˜ao estejam presentes. Boa parte das caracter´ısticas
+do PPE n˜ao s˜ao parte da especifica¸c˜ao CBEA, sendo dependentes de implementa¸c˜ao.
+No caso do Cell t´ıpico, que ser´a usado pela Sony nos consoles
+de entretenimento, muitas destas caracter´ısticas podem ser
+observadas e s˜ao interessantes para exemplificar o potencial
+desta unidade. As caracter´ısticas do PPE que seguem s˜ao
+referentes a esta implementa¸c˜ao espec´ıfica.
+O cache L2, por exemplo, foi reduzido em rela¸c˜ao ao que
+existe nos processadores PowerPC recentes. O cache L2
+possui apenas 512KB, j´a que ´e comum o cache ocupar uma
+´area muito grande do chip. Dessa forma, pode-se poupar
+´area para que pudessem ser colocados outros processadores
+no mesmo chip. Essa decis˜ao foi de certa forma contrabalanceada pelo uso de mem´orias externas r´apidas, do tipo
+XDR da RAMBUS. O cache ´e L1 ´e de 32KB, e ´e dividido
+em um cache para dados e outro cache para instru¸c˜oes.
+A PXU desta implementa¸c˜ao ´e capaz de executar instru¸c˜oes
+de duas threads simultaneamente, mas n˜ao reordena instru¸c˜oes – uma involu¸c˜ao se compararmos aos PowerPCs
+mais novos, que j´a possuem esta caracter´ıstica. A PXU
+pode ser subdivida em trˆes componentes ainda menores, mas
+ainda com funcionalidade bem definida. A IU ( Instruction
+Unit), a XU (Fixed Point Execution Unit) e a VSU (Vector
+Scalar Unit).
+A IU ´e respons´avel pelo controle do PPE e cuida de tarefas
+como fetch de instru¸c˜oes, decodifica¸c˜ao e branch prediction.
+A cada ciclo, 4 instru¸c˜oes sofrem fetch e duas delas s˜ao processadas pela IU. A tabela usada para branch prediction
+possui 4 KB de tamanho e possui um pipeline de 23 est´agios.
+A XU ´e respons´avel pela execu¸c˜ao das instru¸c˜oes que envolvem n´umeros inteiros e de instru¸c˜oes do tipo Load e Store. A
+XU possui, para cada thread, 32 registradores de prop´osito
+geral de 64 bits e a unidade de Load e Store, da qual o cache
+L1 de dados faz parte, tem caracter´ısticas n˜ao bloqueantes.
+Isso significa que, enquanto o cache est´a processando uma
+requisi¸c˜ao `a mem´oria por conta de um cache miss, pode receber outras requisi¸c˜oes. Na pr´atica ´e poss´ıvel, portanto,
+observar um cache hit ao mesmo tempo que h´a o processamento do cache miss.
+A VSU ´e respons´avel pela execu¸c˜ao de instru¸c˜oes SIMD e
+tamb´em atua como unidade de ponto flutuante. A unidade
+de ponto flutuante da VSU tamb´em possui um banco de
+32 registradores de 64 bits por thread, tem um pipeline interno de 10 est´agios e ´e compat´ıvel com as especifica¸c˜oes da
+IEEE. A unidade vetorial da VSU processa vetores de 32
+entradas de 128 bits por thread e todas as instru¸c˜oes para
+esta unidade s˜ao instru¸c˜oes do tipo SIMD de 128 bits.
+2.2 Synergistic Processing Element (SPE)
+Os processadores do tipo SPE s˜ao bem diferentes dos processadores do tipo PPE. O objetivo principal de tais processadores ´e garantir alto desempenho para aplica¸c˜oes que
+processam dados de maneira intensiva, tais como opera¸c˜oes
+para tratamento de ´audio, v´ıdeo, criptografia e c´alculos para
+simula¸c˜ao de fenˆomenos.
+2.2.1 Local Store
+Um das maiores barreiras para alcan¸car altos n´ıveis de performance ´e o gargalo de acesso `a mem´oria. O custo de fazer
+acessos constantes `a mem´oria ´e muito grande e deve ser evitado sempre que poss´ıvel[5].
+Para tentar minimizar tais problemas, os SPEs tˆem mem´oria
+pr´opria e n˜ao tˆem acesso direto `a mem´oria principal do sistema. Essa mem´oria ´e uma mem´oria r´apida (t˜ao r´apida
+quanto mem´oria usada em sistemas de cache) e ´e usada para
+guardar tanto instru¸c˜oes quanto dados. A implementa¸c˜ao
+dessas mem´oria tenta minimizar o n´umero de transistores
+necess´arios para guardar os dados, para melhorar o aproveitamento da ´area do chip.
+A comunica¸c˜ao com a mem´oria principal ´e feita por DMA
+e ´e responsabilidade de uma unidade interna de gerˆencia
+de mem´oria, chamada MFC (Memory Flow Controller). As
+transferˆencia de dados com a mem´oria principal podem ser
+iniciadas tanto pelos PPEs quanto pelos SPEs e ´e poss´ıvel,
+atrav´es de um esquema de filas, executar simultaneamente
+m´ultiplos comandos de DMA.
+Dessa forma, os dados necess´arios para executar uma tarefa em um SPE em geral est˜ao sempre presentes no Local
+Store e foram pr´e carregados pelo PPE antes de entregar a
+tarefa. Isso minimiza bastante os acessos (principalmente
+os acessos aleat´orios) `a mem´oria principal, garantindo uma
+performance muito boa em rela¸c˜ao `as arquiteturas convencionais.
+Em uma implementa¸c˜ao t´ıpica do Cell, o Local Store ocupa
+de 85% a 90% da ´area total do SPE, o que equivale a 256KB
+de mem´oria r´apida e local.
+O Local Store provˆe dois canais de acesso: um canal mais
+largo, de 128 bytes, ´e usada para interface com o sistema
+de DMA. Um canal mais enxuto, de 128 bits, ´e usado para
+interfacear com a unidade de execu¸c˜ao do SPE.
+Como o Local Store ´e uma unidade r´apida de mem´oria, n˜ao
+h´a a necessidade de mem´oria cache para os SPEs. Mesmo
+assim, a arquitetura permita que haja um cache entre o Local
+Store e o MFC, para evitar chamadas `a mem´oria principal
+desnecess´arias.
+2.2.2 A unidade de execuc¸ao – SXU ˜
+A unidade de execu¸c˜ao de instru¸c˜oes do SPE ´e chamada de
+SXU (SPE eXecution Unit) e ´e otimizada para trabalhar
+com dados em unidades de 128 bits. Apenas uma ´unica
+thread ´e executada por vez, mas ´e poss´ıvel executar mais
+de umas instru¸c˜ao por ciclo, dependendo dos tipos de instru¸c˜ao. Caso seja uma instru¸c˜ao de acesso a mem´oria e
+uma instru¸c˜ao de opera¸c˜ao com dados, ´e poss´ıvel que ambas sejam executadas simultaneamente. A SXU n˜ao realiza reordena¸c˜ao de instru¸c˜oes, deixando esta tarefa para o
+compilador e o conjunto de instru¸c˜oes ´e novo, desenhado especificamente para o Cell, para permitir o aproveitamento
+m´aximo das funcionalidades implementadas.
+A SXU tem um banco de 128 registradores de 128 bits cada,
+o que permite que o compilador tenha muitas op¸c˜oes para
+reorganizar as instru¸c˜oes de forma a minimizar poss´ıveis perdas com latˆencia. Instru¸c˜oes com inteiros s˜ao executadas em
+dois ciclos e instru¸c˜oes do tipo Load e de ponto flutuante de
+precis˜ao simples s˜ao executadas em apenas 6 ciclos.
+Essa performance para execu¸c˜ao de opera¸c˜oes com ponto
+flutuante ´e alcan¸cada facilmente porque a unidade de ponto
+flutuante n˜ao ´e compat´ıvel com o padr˜ao IEEE, e portanto
+algumas simplifica¸c˜oes foram feitas. Isso permitiu que uma
+unidade menor, mais simples e mais r´apida fosse criada.
+Os projetistas do Cell argumentam que este n˜ao ´e um problema s´erio [1], visto que para a maioria das aplica¸c˜oes a
+que a arquitetura est´a destinada, uma pequena falha de
+arredondamento provocada por problemas na normaliza¸c˜ao
+n˜ao implicaria em perdas consider´aveis. Em um v´ıdeo, por
+exemplo, n˜ao seria t˜ao problem´atico sem um pixel parece
+ligeiramente mais claro ou mais escuro. Quando um personagem em um jogo realiza um salto, n˜ao teria problema se o
+do c´alculo da f´ısica envolvida provocasse um deslocamento
+aqu´em do poss´ıvel para o personagem, em dadas situa¸c˜oes.
+Caso haja a necessidade de tratar com mais seriedade os
+dados de ponto flutuante, deve-se avaliar se n˜ao seria melhor usar precis˜ao dupla (que ´e tratada com mais cuidado
+pela SXU) ou ent˜ao usar o pr´oprio PPE para realizar tais
+c´alculos.
+O conjunto de instru¸c˜oes da SXU ´e SIMD [3]– o que significa
+que uma ´unica instru¸c˜ao ´e capaz de processar muitos dados
+simultaneamente. As instru¸c˜oes podem tratar os dados de
+v´arias formas diferentes, contato que no total tenham sido
+processados 128 bits. E poss´ıvel, com uma ´unica instru¸c˜ao ´
+SIMD, realizar opera¸c˜oes com:
+• 16 inteiros de 8 bits
+• 8 inteiros de 16 bits
+• 4 inteiros de 32 bits
+• 4 valores de ponto flutuante com precis˜ao simples
+• 2 valores de ponto flutuante com precis˜ao dupla
+E importante observar que, diferentemente do PPE, o SPE ´
+n˜ao possui caracter´ısticas de branch prediction, pois uma
+unidade deste tipo traria uma complexidade adicional que
+n˜ao ´e desejada para este elemento. Por outro lado, ´e poss´ıvel
+que o programador (ou compilador) possa indicar, atrav´es
+de instru¸c˜oes especiais, qual ´e o destino mais prov´avel de um
+branch. Dessa forma, quando a SXU detecta que um branch
+se aproxima, realiza o pr´e-fetch das instru¸c˜oes que est˜ao no
+suposto endere¸co de destino do branch.
+2.2.3 Restric¸oes ˜
+O SPE n˜ao ´e um processador de prop´osito geral como o SPE
+e portanto possui algumas restri¸c˜oes. A principal delas ´e o
+fato de n˜ao ter acesso direto `a mem´oria principal – todos os
+acessos `a mem´oria principal tˆem de ser feitos atrav´es do controlador de mem´oria, por comandos DMA. O SPE tamb´em
+n˜ao sabe distinguir entre diferentes modos do processador,
+como modo usu´ario e modo privilegiado. E imposs´ıvel ao ´
+SPE acessar recursos de controle do sistema, como tabelas
+de p´agina por exemplo.
+Por conta destas restri¸c˜oes, grande parte das tarefas realizadas pelo sistema operacional devem ser executadas pelos
+PPEs.
+3. SOFTWARE
+Como a arquitetura Cell ´e razoavelmente diferente do que
+vem sendo trabalhado com as arquiteturas convencionais, ´e
+importante que os softwares tenham que ser desenvolvidos
+com caracter´ısticas especiais.
+Embora qualquer aplica¸c˜ao compat´ıvel com PowerPC possa
+ser executada no Cell sem a necessidade de altera¸c˜oes, ´e de
+suma importˆancia que software tenha que ser desenvolvido
+especificamente para a arquitetura Cell para que todo o potencial seja aproveitado.
+Essa iniciativa deve come¸car pela cria¸c˜ao de novos compiladores. Paralelamente ao desenvolvimento do Cell, uma
+equipe da IBM trabalhou na cria¸c˜ao de compiladores otimizados, mas ainda h´a muito o que caminhar neste sentido.
+Como vimos, tanto os SPEs quanto os PPEs foram projetados imaginando que boa parte das tarefas de otimiza¸c˜ao
+fossem realizadas pelo processador. Por exemplo: n˜ao h´a reordena¸c˜ao de instru¸c˜oes em nenhum dos processadores. No
+caso do PPE, n˜ao h´a nem ao menos branch prediction.
+Al´em disso, ´e necess´ario que os programas para essa nova
+arquitetura sejam criados levando em considera¸c˜ao suas caracter´ısticas. Os programas devem ser feitos de forma que
+possam ser divididos em tarefas menores e independentes,
+que podem ser divididas entres os v´arios SPEs. Deve-se
+tamb´em programar imaginando que existe um conjunto de
+instru¸c˜oes SIMD que deve ser usado para maximizar performance. Por outro lado, ´e necess´ario desenvolver software
+capaz de escalonar de maneira eficientes tais tarefas para os
+SPEs corretos, bem como garantir que os dados necess´arios
+estejam presentes no Local Store do SPE.
+Freq¨uˆencia de clock 4+ GHz
+Pico de performance (precis˜ao simples) 256 GFlops
+Pico de performance (precis˜ao dupla) 26 GFlops
+Cache L2 512 KB
+Local Store (total) 4 MB
+Area ´ 221 mm2
+Transistores 240 milh˜oes
+Tabela 1: Estat´ısticas relacionadas ao Cell
+4. PERFORMANCE E ESTAT´ISTICAS
+Para termos uma id´eia do que um chip Cell ´e capaz de fazer, ´e interessante apresentarmos alguns dados. Os dados
+que est˜ao sendo apresentados na Tabela 1 s˜ao referentes `a
+implementa¸c˜ao t´ıpica do Cell, que ser´a usada no Sony Playstation 3.
+5. CONCLUSAO˜
+A arquitetura Cell, desenvolvida em conjunto pela Sony,
+Toshiba e IBM ´e uma arquitetura multicore de alto desempenho, que tenta minimizar custo e gasto com energia.
+Atualmente a arquitetura j´a tem um mercado potencial gigantesco, que s˜ao os consumidores de console Playstation
+da Sony, mas o potencial do Cell permite que ele ainda seja
+introduzido em v´arias ´areas diferentes.
+Para garantir o sucesso da plataforma, por´em, ´e imprescind´ıvel que seja desenvolvido software para maximizar o
+uso da arquitetura.
+6. REFERÊNCIAS
+[1] E. Altman, P. Capek, et al. The cell architecture –
+innovation matters. IBM, Sony, Toshiba, ISSCC, 2005.
+[2] IBM. Cell Broadband Engine Architecture – Version
+1.0. IBM, Sony, Toshiba, 2005.
+[3] IBM. Synergistic Processor Unit Instruction Set
+Architecture – Version 1.0. IBM, Sony, Toshiba, 2005.
+[4] J. A. Kahle, M. N. Day, H. P. Hofstee, et al.
+Introduction to the cell processor. IBM J. Res & Dev.,
+49(4/5):589–604, July/September 2005.
+[5] W. Wulf and S. McKee. Hitting the memory wall:
+Implications of the obvious. ACM Computer
+Architecture News, 23(1):20–24, 1995.

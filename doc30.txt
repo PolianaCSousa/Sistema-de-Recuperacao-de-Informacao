@@ -1,0 +1,771 @@
+181HEURÍSTICAS NOS JULGAMENTOS SOB INCERTEZA
+Estudos de Psicologia I Campinas I 23(2) I 181-189 I abril - junho 2006
+1 Doutorando em Psicologia, Pontifícia Universidade Católica do Rio Grande do Sul. Porto Alegre, RS, Brasil.
+2 Professor, Escola Superior de Propaganda e Marketing. Rua Guilherme Schell, 350, 90640-040, Porto Alegre, RS, Brasil. Correspondência para/Correspondence
+to: L.M. TONETTO. E-mail: <leandro.tonetto@terra.com.br>.
+3 Mestre em Psicologia. Porto Alegre, RS, Brasil.
+4 Professor, Curso de Psicologia, Faculdades de Taquara. Taquara, RS, Brasil.
+5 Doutoranda em Psicologia, Programa de Pós-Graduação em Psicologia do Desenvolvimento, Universidade Federal do Rio Grande do Sul. Porto Alegre, RS,
+Brasil.
+6 Professora, Centro Universitário Franciscano. Santa Maria, RS, Brasil.
+7 Professora Doutora, Coordenadora do Grupo de Pesquisa em Processos Cognitivos, Programa de Pós-Graduação em Psicologia, Pontifícia Universidade
+Católica do Rio Grande do Sul. Porto Alegre, RS, Brasil.
+▼ ▼ ▼ ▼ ▼
+O papel das heurísticas no julgamento e na
+tomada de decisão sob incerteza
+The heuristics role in judgment and decision
+making under uncertainty
+Leandro Miletto TONETTO1, 2
+Lisiane Lindenmeyer KALIL3
+Wilson Vieira MELO4
+Daniela Di Giorgio SCHNEIDER5,6
+Lilian Milnitsky STEIN7
+Resumo
+Heurísticas são regras gerais de influência utilizadas pelo decisor para simplificar seus julgamentos em tarefas decisórias de
+incerteza. Com o intuito de entender as regras heurísticas no julgamento e na tomada de decisão, realiza-se uma revisão teórica,
+que prioriza as pesquisas de Tversky e Kahneman, englobando as heurísticas de ancoragem, disponibilidade e representatividade.
+Palavras-chave: heurísticas; incerteza; julgamento; tomada de decisão.
+Abstract
+Heuristics are influential rules that guide people’ judgments in decision tasks under uncertainty. This paper presents a theoretical review of
+heuristic rules in judgment and decision making focusing on Tversky and Kahneman’s research. It discusses heuristics of anchoring, availability
+and representative.
+Key words: heuristics; uncertainty; judgment; decision making.
+Muitos julgamentos e tomadas de decisão do
+cotidiano são feitos sob incerteza quando desconhecemos as probabilidades associadas aos possíveis
+resultados de uma tarefa decisória. Julgamentos
+realizados sob incerteza podem ser exemplificados com
+a estimativa da cotação futura do real, com os possíveis
+182L.M. TONETTO et al.
+Estudos de Psicologia ICampinas I23(2) I 181-189 I abril -.junho 2006
+resultados da próxima eleição, dentre outros (Plous, 1993;
+Tversky & Fox, 1995; Tversky & Kahneman, 1974).
+Importantes decisões sobre investimentos financeiros,
+desastres ambientais e seguros são muitas vezes
+tomadas sem conhecimentos suficientes sobre
+probabilidades relevantes (Mellers, Schwartz & Cooke,
+1998). Grande parte das situações cotidianas, como
+dirigir um carro e realizar um diagnóstico médico, são
+caracterizadas pela incerteza. Sob incerteza, o decisor
+necessita predizer eventos que podem acontecer a
+qualquer momento e necessita distingui-los de
+mudanças ambientais e de processamento de
+informação de cunho situacional (Kerstholt, 1994).
+Há, ainda, as decisões de risco, nas quais o decisor
+tem conhecimento das probabilidades associadas aos
+resultados. Um exemplo de decisão de risco é a
+realização de cirurgias de alto risco, situação na qual o
+cirurgião conhece as probabilidades de sucesso
+baseadas em estatísticas (Plous, 1993; Tversky & Fox, 1995;
+Tversky & Kahneman, 1974).
+A tomada de decisão, seja sob risco ou sob
+incerteza, pode ser entendida a partir de modelos que
+visam normatizar a tomada de decisão. Segundo Hastie
+(2001), a origem dos estudos sobre julgamento e tomada
+de decisão reside na prescrição de formas exitosas de
+tomar decisões em jogos e situações seguras. Os
+princípios clássicos envolvidos nessas situações são
+identificar as ações que maximizam a possibilidade de
+obter resultados desejáveis e minimizar a possibilidade
+de que ocorram resultados indesejáveis sob condições
+idealizadas.
+Além dos modelos normativos, que visam definir
+como as decisões devem ser tomadas para maximizar
+a racionalidade, observa-se o desenvolvimento de
+modelos descritivos, que têm o objetivo de descrever
+como os seres humanos tomam decisões de fato
+(Hammond, 2000). Hastie (2001) afirma que, historicamente, a ênfase foi modificada, passando a incidir
+sobre os métodos de tomada de decisão, especialmente
+em decisões com informações não confiáveis e
+incompletas, em ambientes complexos e suscetíveis a
+rápidas mudanças, e levando em conta o processamento
+mental limitado. Uma das formas de aproximação com
+boas decisões, nesse sentido, é a utilização de heurísticas
+em ambientes complexos.
+Plous (1993) conceitua as heurísticas como regras
+gerais de influência utilizadas pelos sujeitos para chegar
+aos seus julgamentos em tarefas decisórias de incerteza
+e cita, como vantagens de utilização, a redução do tempo
+e dos esforços empreendidos para que sejam feitos
+julgamentos razoavelmente bons. As heurísticas
+reduzem a complexidade das tarefas de acessar
+probabilidades e predizer valores a simples operações
+de julgamento. Geralmente, as heurísticas são úteis, mas,
+por vezes, podem levar a erros severos e sistemáticos
+(Tversky & Kahneman, 1974).
+A área de investigação hoje conhecida como
+“Heurísticas e Vieses” provém de pesquisas em
+Psicologia datadas das décadas de 50 e 60, que
+demonstraram que os julgamentos humanos são
+menos coerentes que modelos matemáticos como
+aquele proposto pelo Teorema de Bayes. Em 1954,
+Edwards documentou substanciais discrepâncias entre
+a inferência humana e os modelos de Bayes. Em 1955 e
+1956, Simon desenvolveu sua teoria da “Racionalidade
+Limitada”, que postulava que as pessoas buscam
+soluções que satisfaçam suas aspirações e, então,
+simplificam a procura de solução para um problema
+decisório, haja vista as limitações de tempo e de trabalho
+mental humano (Hammond, 2000).
+As pesquisas em Psicologia Experimental
+Cognitiva sobre a utilização de heurísticas no
+julgamento e tomada de decisão surgiram na década
+de 70 (Tversky & Kahneman, 1974). No cenário da
+Psicologia Cognitiva, o julgamento é considerado como
+a avaliação de duas ou mais opções, e a tomada de
+decisão, a escolha realizada entre as alternativas dadas,
+sendo essas funções independentes e complexas, mas
+inter-relacionadas (Plous, 1993; Tversky & Kahneman,
+1981). As pesquisas desenvolvidas desde 1974 violaram
+a concepção de que o ser humano é capaz de dominar
+a racionalidade, concepção oriunda das pesquisas
+clássicas sobre tomada de decisão, que têm origem nas
+Ciências Econômicas.
+Com a Psicologia, então, o conceito de
+racionalidade passou a ser reexaminado. Muitos teóricos
+passaram a se preocupar em desvelar como as pessoas
+encontram decisões eficientes, adaptativas e satisfatórias
+(Mellers, Schwartz & Cooke, 1998).
+Segundo Maule e Hodgkinson (2002), o ponto
+de partida para as teorias sobre julgamento e tomada
+183HEURÍSTICAS NOS JULGAMENTOS SOB INCERTEZA
+Estudos de Psicologia I Campinas I 23(2) I 181-189 I abril - junho 2006
+de decisão é o fato de que as pessoas têm capacidade
+limitada para o trabalho mental. Para lidar com um
+mundo complexo e marcado por rápidas mudanças, as
+pessoas desenvolveram modos simples de raciocinar.
+No que tange ao julgamento e tomada de decisão, as
+heurísticas assumem o papel de simplificar o processamento cognitivo que envolve julgar alternativas sob
+incerteza.
+Plous (1993) chama a atenção para o fato de que
+os decisores não têm domínio da racionalidade, como
+propõe a teoria da escolha racional advinda das Ciências
+Econômicas. Essa impossibilidade de domínio da
+racionalidade se deve ao fato de que as informações
+sobre as alternativas de dada tarefa decisória são
+freqüentemente perdidas ou incertas. Além disso, a
+percepção é seletiva e a memória é sujeita a vieses, bem
+como os resultados atribuídos às alternativas podem
+ser erroneamente considerados, e a comparação de
+todas as opções seria possível somente com auxílios de
+memória, tendo em vista a enorme demanda
+mnemônica exigida para essa tarefa.
+Nesse sentido, o presente artigo explora
+questões como as seguintes: Como as pessoas
+formulam pensamentos e posicionamentos como “Eu
+penso que...” ou “As chances são...”? O que determina
+essas crenças? Como os decisores estimam
+probabilidades de fatos incertos e valores de
+quantidades incertas? Descrevem-se três heurísticas
+utilizadas pelas pessoas em julgamentos sob incerteza:
+(a) ancoragem e ajustamento, normalmente utilizada
+em predições numéricas quando um valor inicial está
+disponível; (b) disponibilidade de instâncias ou cenários,
+utilizada para acessar a freqüência de uma classe ou a
+plausibilidade de um desenvolvimento particular, e (c)
+representatividade, usualmente empregada quando as
+pessoas necessitam julgar a probabilidade de um evento
+ou objeto A pertencer à classe ou processo B (Tversky &
+Kahneman, 1974). Essas heurísticas serão exploradas,
+priorizando-se o estudo clássico de Tversky e Kahneman
+(1974).
+Recentemente, Kahneman (2003) excluiu a
+ancoragem do conceito de heurística. Essa modificação
+se deve à revisão do conceito de heurística, que passa a
+ser entendida como substituição de atributos, de modo
+que elementos omissos ou faltantes são substituídos
+por outros que sejam de domínio prévio das pessoas.
+Neste artigo, entretanto, a ancoragem foi mantida na
+revisão teórica. Ela pode ser questionada como
+heurística, mas é inegável sua compreensão como um
+fenômeno de julgamento tão robusto quanto os demais
+descritos neste artigo.
+Ancoragem e ajustamento
+Os termos ancoragem e ajustamento foram
+popularizados na literatura sobre julgamento e tomada
+de decisão por Tversky e Kahneman (1974), embora
+noções de ancoragem tenham sido introduzidas em
+descrições anteriores sobre inversões de preferências
+(Lichtenstein & Slovic, 1971).
+Em julgamentos sob incerteza, quando as
+pessoas devem realizar estimativas ou decidir sobre
+alguma quantia, elas tendem a ajustar a sua resposta
+com base em algum valor inicial disponível, que servirá
+como âncora. Esse atalho cognitivo corresponde à
+heurística de “ancoragem e ajustamento” (Tversky &
+Kahneman, 1974), na qual a âncora proposta pode
+influenciar a resposta final.
+Em diversos estudos, o processo de ancoragem
+é iniciado com a solicitação explícita para que as pessoas
+comparem o valor da âncora com o valor alvo. Por
+exemplo, em um clássico estudo de Tversky e Kahneman
+(1974), foi solicitado que as pessoas estimassem a
+porcentagem de países africanos nas Nações Unidas e
+o grupo que recebeu o número 10 como âncora inicial
+(obtido por meio de uma “roda da fortuna”) estimou em
+25% em média, enquanto que o grupo que recebeu o
+número 65 como valor inicial teve uma estimativa média
+de 45%.
+Em outros estudos, as pessoas não são
+diretamente solicitadas a comparar o valor da âncora
+com o valor alvo. Entretanto, o valor da âncora é
+informativo (embora não muito relevante), o que pode
+levar os sujeitos a considerá-lo como ponto de referência
+(Guthrie, Rachlinski & Wistrich, 2001; Northcraft &
+Neale,1987).
+A ancoragem ocorre, também, quando o
+indivíduo baseia sua estimativa no resultado de um
+cálculo incompleto. Em outro estudo de Tversky e
+Kahneman (1974), foi solicitado que um grupo de alunos
+fizessem uma estimativa, dentro de cinco segundos, do
+produto de 8x7x6x5x4x3x2x1, enquanto que outro
+184L.M. TONETTO et al.
+Estudos de Psicologia ICampinas I23(2) I 181-189 I abril -.junho 2006
+grupo deveria estimar, no mesmo intervalo de tempo, o
+produto de 1x2x3x4x5x6x7x8. A média estimada na
+primeira seqüência foi 2.250, enquanto a média estimada
+para a segunda foi 512. O resultado dos primeiros passos
+de multiplicação serviu como âncora para a estimativa
+final dos dois grupos.
+Embora a heurística de ancoragem e ajustamento possa ser freqüentemente útil em julgamentos
+e decisões, uma vez que possibilita uma economia de
+tempo e não demanda tanto esforço cognitivo, também
+pode levar a vieses. O julgamento pode ser enviesado
+em direção a uma âncora irrelevante (como, por exemplo, um número arbitrário fornecido pelo pesquisador).
+O contexto no qual um estímulo está inserido
+pode ter efeitos significativos no julgamento das
+pessoas, de assimilação ou contraste (Martin, Seta &
+Crelia, 1990). Uma âncora moderada tende a produzir
+assimilação, isto é, o movimento do julgamento em
+direção à âncora. Alguns estudos também têm
+encontrado o efeito de assimilação em âncoras de
+valores extremos, embora o grau de assimilação não
+seja proporcional à magnitude da âncora (Strack &
+Mussweiler, 1997; Wegener, Petty, Detweiler-Bedell &
+Jarvis, 2001).
+A ancoragem tem sido observada em diversos
+domínios e tarefas, como em decisões sobre questões
+de conhecimento geral (Chapman & Johnson, 1999;
+Strack & Mussweiler, 1997; Tversky & Kahenman, 1974;
+Wilson, Houston, Etling & Brekke, 1996), estimativas de
+probabilidade (Plous, 1989; Tversky & Kahneman, 1974),
+julgamentos na área jurídica (Guthrie et al., 2001; Marti &
+Wissler, 2000; Sunstein, Kahneman & Schkade, 1998),
+estimativas de preços de imóveis (George, Duffy & Ahuja,
+2000; Northcraft & Neale, 1987), negociações (Kahneman,
+1992; Whyte & Sebenius, 1997) e decisões sobre metas
+pessoais (Hinsz, Kalnbach & Lorentz, 1997).
+As causas da ancoragem, cujo entendimento é
+importante para evitar ou atenuar possíveis vieses no
+julgamento e tomada de decisão, ainda não são bem
+conhecidas (Chapman & Johnson, 1999; Strack &
+Mussweiler, 1997; Wilson et al., 1996). Os efeitos de
+ancoragem têm sido usualmente explicados através da
+idéia de ajustamento insuficiente. Tversky e Kahneman
+(1974) sugeriram um processo cognitivo particular pelo
+qual os decisores primeiro se focam na âncora e, então,
+fazem uma série de ajustamentos dinâmicos em direção
+a sua estimativa final. Uma vez que os ajustamentos são
+freqüentemente insuficientes, a resposta final tende a
+ser enviesada em direção à âncora.
+Em estudos mais recentes, diversos autores têm
+sugerido que a origem da ancoragem esteja no estágio
+de recuperação de informação. Chapman e Johnson
+(1999, 2002), Strack e Mussweiler (1997) e Mussweiler e
+Strack (2001) demonstraram que a âncora age como
+uma sugestão, tornando mais disponível a informação
+que é mais consistente com a âncora. Ou seja, a presença
+da âncora pode determinar qual informação será
+recuperada pelo indivíduo.
+Apesar de ainda não estarem plenamente
+estabelecidos os mecanismos da ancoragem, os seus
+efeitos são robustos (Chapman & Johnson, 2002;
+Mussweiler, 2002; Whyte & Sebenius, 1997; Wong &
+Kwong, 2000) e têm sido amplamente obtidos por
+diversas pesquisas. Whyte e Sebenius (1997) demonstraram que a ancoragem possui um efeito poderoso,
+mesmo quando a âncora não está relacionada com a
+tarefa de estimativa e outras âncoras mais apropriadas
+e relevantes estão disponíveis. Eles também apontaram
+que os grupos, assim como os indivíduos, são suscetíveis
+aos efeitos de uma âncora arbitrária.
+A influência das âncoras persiste inclusive
+quando elas são claramente não informativas para o
+julgamento (Tversky & Kahneman, 1974; Wilson et al.,
+1996). Mesmo a advertência às pessoas sobre a natureza
+não informativa da âncora não impede que elas sejam
+influenciadas por este valor (Chapman & Johnson, 1999;
+George et al., 2000). Em julgamentos e decisões efetuados
+por pessoas com auxílio de programas de computador,
+o efeito de ancoragem também foi observado (George
+et al., 2000), o que demonstra efetivamente a robustez
+do fenômeno.
+Disponibilidade
+De acordo com Tversky e Kahneman (1974), em
+algumas situações, a facilidade com que um
+determinado fato é lembrado ou imaginado pelo
+indivíduo pode determinar uma hiper ou subestimação
+da probabilidade ou freqüência desse evento ocorrer.
+Dessa forma, as pessoas julgam essa probabilidade pela
+facilidade de evocar exemplos em suas memórias.
+185HEURÍSTICAS NOS JULGAMENTOS SOB INCERTEZA
+Estudos de Psicologia I Campinas I 23(2) I 181-189 I abril - junho 2006
+Experiências anteriores e informações acerca do fato
+são avaliadas de maneira vívida pela nossa mente, o
+que causa uma espécie de artifício cognitivo ou
+construção mental que chamamos de disponibilidade.
+A disponibilidade é um dos fenômenos mais freqüentes
+das heurísticas.
+Assim, se pedirmos para um grupo de pessoas
+estimar o grau de violência de sua cidade, por exemplo,
+muito provavelmente, as pessoas que já tiverem sido
+assaltadas, que já passaram por algum evento
+relacionado à violência urbana ou mesmo que tenham
+assistido a uma reportagem televisiva sobre o assunto
+irão avaliar o risco de agressão como sendo mais intenso
+do que aquelas que não tiveram nenhum tipo de
+experiência negativa nesse sentido.
+Segundo Kahneman e Smith (2002), vencedores
+do Prêmio Nobel de Economia, um achado geral da
+Psicologia Experimental Cognitiva é que, comparadas
+com informações não familiares, as informações
+familiares são mais facilmente acessadas pela memória
+de longo prazo e parecem mais realistas ou relevantes.
+De acordo com Jimenez e Rodriguez (1996), quando se
+pede para uma pessoa estimar a probabilidade de se
+ficar doente de meningite, por exemplo, entre os 10 e 20
+anos de idade, é provável que ela julgue a probabilidade
+baseando-se nos casos que conhece ou que saiba ter
+ocorrido na sua rua ou no bairro.
+Um dos mais importantes estudos acerca da
+heurística da disponibilidade foi feito por Tversky e
+Kahneman (1974), no qual eles fizeram aos participantes
+da pesquisa a seguinte questão: “Se uma palavra de três
+letras é mostrada aleatoriamente de um texto em inglês,
+é mais freqüente que a palavra comece com ‘r’ ou que
+tenha ‘r’ como sua terceira letra?”. A maioria dos
+participantes disse ser mais provável que a palavra
+começasse com “r” do que tivesse “r” na terceira letra.
+Entretanto, a língua inglesa possui mais palavras de três
+letras que terminam em “r” do que as que começam
+com tal letra. A maioria dos participantes julgou de
+forma errada porque as palavras que efetivamente
+começam com “r” são mais facilmente evocadas pela
+memória do que as que têm a letra “r” como sua terceira
+letra. O uso da heurística da disponibilidade leva-nos
+cotidianamente ao erro no que tange à influência da
+memória de longo prazo.
+Além da memória de longo prazo, outra função
+cognitiva envolvida é a imaginação, que possui um
+importante papel na heurística da disponibilidade, uma
+vez que auxilia na avaliação da freqüência e da
+probabilidade de ocorrência dos fatos e eventos em
+questão, bem como está diretamente associada ao grau
+de interesse da pessoa pelo assunto e à carga emocional
+envolvida. Entretanto, a capacidade de imaginação do
+ser humano é limitada, podendo também interferir,
+muitas vezes, negativamente, no processo de estimação
+dessas probabilidades e freqüências. De acordo com
+Plous (1993), a imaginação de um resultado não é a
+garantia de que esse aparecerá, e se ele é difícil de ser
+antevisto ou de ser imaginado, a tentativa de imaginálo pode realmente reduzir a percepção de que ele
+efetivamente ocorrerá. As variáveis espaço, tempo e nível
+de conhecimento acerca do assunto também
+participam dessa construção mental.
+Outro caso no qual imaginar um evento pode
+não aumentar sua aparente probabilidade é quando o
+fato é extremamente negativo. Em um estudo feito por
+Plous (1989), foi solicitado a aproximadamente 2 mil
+pessoas que estimassem as chances de ocorrência de
+uma guerra nuclear dentro da próxima década. O estudo
+revelou basicamente dois aspectos importantes acerca
+da heurística da disponibilidade. O primeiro mostrou
+que, quando foi pedido para que as pessoas
+imaginassem vividamente como seria uma guerra
+nuclear, isso não teve um efeito significativo no quão
+provável eles julgaram ser tal guerra. O segundo achado
+revelou que, ao serem solicitadas a considerar caminhos
+prováveis para uma guerra nuclear, essas pessoas
+tiveram uma efetividade igualmente insignificante na
+estimativa das probabilidades.
+Existem, ainda, outras operações mentais
+envolvidas nesse processo. Recordar e construir são
+formas completamente diferentes de trazer informações
+para a mente, uma vez que seguem regras diferentes e
+são usadas para responder diferentes questões
+(Kahneman & Tversky, 1982a).
+Assim, pode-se dizer que a heurística da disponibilidade é um procedimento eficaz e rápido, utilizado
+com freqüência no julgamento e tomada de decisão
+em condições de incerteza. Essa forma de utilização das
+heurísticas parece ser um modo bastante comum e
+pode levar muitas vezes a equívocos e erros de
+processamento da informação.
+186L.M. TONETTO et al.
+Estudos de Psicologia ICampinas I23(2) I 181-189 I abril -.junho 2006
+Representatividade
+São diversas as situações cotidianas que evidenciam o quanto as pessoas se apóiam na heurística da
+representatividade ao construírem seus julgamentos.
+De acordo com esse princípio heurístico, é conferida
+alta probabilidade de ocorrência a um evento quando
+esse é típico ou representativo de um tipo de situação
+(Eysenck, 2001; Jimenez & Rodriguez, 1996; Kahneman &
+Tversky, 1982a; Plous, 1993; Tversky & Kahneman, 1974;
+Williams, Watts, MacLeod & Mathews, 1997). Essa
+representatividade, por sua vez, é determinada pela
+grande similaridade de um evento específico com a
+maioria dos outros de uma mesma classe. Em suma, a
+probabilidade de ocorrência de um evento é avaliada
+pelo nível no qual ele é similar às principais características
+do processo ou população a partir do qual ele foi
+originado.
+Algumas questões probabilísticas propiciam o
+uso dessa heurística, como, por exemplo: qual é a
+probabilidade do objeto A pertencer à classe B? Qual é
+a perspectiva de o evento A originar-se do processo B?
+Ao responder tais questões, é possível que o indivíduo
+avalie as probabilidades a partir do nível no qual A
+assemelha-se a B, utilizando, dessa forma, a heurística
+da representatividade como embasamento para o seu
+raciocínio probabilístico. As probabilidades subjetivas
+têm um importante papel nesse processo, na medida
+em que as pessoas substituem as leis de chance pelas
+heurísticas (Kahnemann & Tversky, 1982b).
+A representatividade pode ser ilustrada através
+do exemplo de Steve (Tversky & Kahnemann, 1974), um
+indivíduo envergonhado e introvertido, disponível, mas
+com pouco interesse em pessoas, ou no mundo real.
+Trata-se de uma pessoa meiga e meticulosa, que precisa
+se organizar e se estruturar, demonstrando paixão por
+detalhes. Com base nessa descrição, como é possível
+estimar com segurança a ocupação profissional de
+Steve? Conforme os princípios que norteiam a heurística
+da representatividade, a probabilidade de Steve ser, por
+exemplo, um bibliotecário, dentre diversas outras
+ocupações, é avaliada a partir do grau com que ele é
+representativo ou similar ao estereótipo de um
+bibliotecário.
+No entender de Tversky e Kahneman (1974),
+pesquisas com essa problemática têm confirmado que
+o indivíduo tende a ordenar as ocupações por
+probabilidade e similaridade, como no exemplo de
+Steve. Essa abordagem da representatividade, embora
+muito útil em termos de “economia cognitiva”, pode
+conduzir a sérios erros, na medida em que similaridade,
+ou representatividade, não leva em conta vários fatores
+que devem ser apreciados no julgamento de
+probabilidades.
+Nesse sentido, aqueles autores apontam a
+consideração às probabilidades de resultados anteriores
+como um dos fatores omitidos nesse processo. Na
+medida em que as pessoas avaliam a probabilidade
+pela representatividade, conseqüentemente, omitem
+probabilidades anteriores. Um outro aspecto que,
+igualmente, deveria ser respeitado no uso da
+representatividade é o tamanho da amostra (Tversky &
+Kahneman, 1974). Não raro a probabilidade de um
+resultado de uma amostra é avaliada por sua
+similaridade com o parâmetro correspondente na
+população. Os indivíduos, ao empregarem essa
+heurística, falham por não considerar o tamanho da
+amostra, mesmo quando ela está enfatizada na
+formulação do problema.
+Um fator similarmente desconsiderado nesse
+princípio heurístico é a concepção de que uma
+seqüência de eventos gerada por um processo aleatório
+representará as características essenciais desse processo,
+mesmo quando essa seqüência é curta (Tversky &
+Kahneman, 1974). Dessa forma, as pessoas crêem que as
+características essenciais do processo serão retratadas
+não apenas globalmente na seqüência inteira, mas
+também localmente em cada uma de suas partes. Essa
+tendência, que foi denominada “lei dos números
+pequenos” (Tversky & Kahnemann, 1971), caracteriza-se
+na crença que o indivíduo tem de que amostras
+aleatórias de uma população assemelham-se mais com
+essa do que as predições derivadas da teoria estatística
+de amostras.
+Outro aspecto prejudicado na heurística da
+representatividade é a sensibilidade concernente à
+previsibilidade (Tversky & Kahneman, 1974). Quando
+solicitados a fazerem algumas predições numéricas,
+como o cenário futuro da economia ou o resultado de
+um investimento específico, os indivíduos freqüentemente se guiam pela representatividade. Por exemplo,
+supõe-se que é dada a uma pessoa a descrição de um
+187HEURÍSTICAS NOS JULGAMENTOS SOB INCERTEZA
+Estudos de Psicologia I Campinas I 23(2) I 181-189 I abril - junho 2006
+funcionário de uma empresa e é pedido que seja
+prognosticada sua carreira profissional. Se a descrição
+do profissional for muito favorável, um sucesso muito
+alto parecerá mais representativo de tal descrição; se a
+descrição for medíocre, um desempenho medíocre
+parecerá mais representativo. Entretanto, o nível no qual
+a descrição é favorável não determina a fidedignidade
+dessa descrição ou o nível na qual essa permite uma
+predição exata. Conseqüentemente, se as pessoas
+prognosticam somente em termos do que é favorável
+na descrição, suas predições serão insensíveis à
+fidedignidade da evidência e à autenticidade esperada
+da predição.
+À luz dos pressupostos de Tversky e Kahneman
+(1974), um ponto que da mesma forma parece não pesar
+em julgamentos dessa natureza diz respeito às
+interpretações acertadas de validade. Algumas vezes,
+as pessoas predizem algo selecionando o resultado (por
+exemplo, uma ocupação) que é mais representativo do
+input (por exemplo, a descrição de uma pessoa). A
+confiança que elas têm em suas predições depende
+primeiramente da intensidade da representatividade
+(isto é, da qualidade da semelhança entre o resultado
+selecionado e o input), com pouca ou nenhuma consideração aos fatores que limitam a precisão dessa
+previsibilidade. Essa confiança injustificada, que é
+produzida a partir de um bom ajuste entre o resultado
+previsto e a informação de entrada, pode ser chamada
+de ilusão da validade.
+O uso da heurística da representatividade
+também conduz a um outro tipo de erro, denominado
+falácia da conjunção (Eysenck, 2001). Trata-se de uma
+crença errônea do indivíduo de que a combinação de
+dois eventos é mais provável de ocorrer do que um
+deles sozinho. Nesse sentido, Plous (1993) complementa
+que a co-ocorrência de dois eventos não pode ser mais
+provável que a probabilidade de cada um deles sozinho.
+Por fim, tem-se na heurística da representatividade uma dentre as várias formas de desvio de um
+raciocínio probabilístico objetivo. Kahneman e Tversky
+(1982b) designam esse processo como exercendo um
+importante papel em uma variedade de julgamentos
+probabilísticos, entre eles julgamentos clínicos e
+previsões políticas e financeiras. Parece razoável supor,
+a partir dessa breve explanação, que essa substituição
+das leis de probabilidade por heurísticas é percebida
+pelo indivíduo como confiável e segura, uma vez que
+leva a estimativas razoáveis em muitas situações. Esse
+fato favorece o uso sistemático desses atalhos cognitivos,
+dificultando, conseqüentemente, sua futura eliminação.
+Conclusão
+As heurísticas são mecanismos cognitivos
+adaptativos que reduzem o tempo e os esforços nos
+julgamentos, mas que podem levar a erros e vieses de
+pensamento. A supressão da lógica favorece o
+estabelecimento de um círculo vicioso, já que, muitas
+vezes, os resultados dos julgamentos realizados por
+regras heurísticas são satisfatórios para o sujeito, o que
+torna a utilização de atalhos mentais freqüentes e,
+portanto, os erros e vieses uma constante.
+Apesar dos potenciais prejuízos acarretados pela
+utilização de heurísticas, você já pensou como seria sua
+vida se fosse necessário, a cada decisão, avaliar todas as
+possibilidades geradas como soluções para dado
+problema decisório? Possivelmente sua vida se resumiria
+a avaliar alternativas. Assim como a vida sem memória
+não é viável, na medida em que não seria possível
+reconhecer nem ao menos um rosto familiar, sobreviver
+sem utilizar heurísticas também não seria possível.
+As heurísticas, mais uma vez, ratificam as
+limitações cognitivas dos seres humanos. Conforme se
+pode perceber, há prós e contras em sua utilização, mas
+não se pode questionar a necessidade de sua existência,
+considerando a vida no mundo contemporâneo. A vida,
+cada vez mais, é acelerada, e as decisões ágeis são um
+imperativo, portanto não seria possível responder a essa
+demanda sem as heurísticas.
+Muitas vezes, quando o ser humano se defronta
+com uma decisão de alta relevância ou complexidade,
+é preciso ter cuidado com os possíveis erros e vieses aos
+quais as heurísticas podem conduzir. Há diversas
+formas igualmente adaptativas de se minimizarem
+esses efeitos.
+A heurística de ancoragem, como visto, é um
+fenômeno extremamente robusto, sendo difícil evitar
+seus efeitos. Em uma decisão ideal, as pessoas deveriam
+descontar ou ignorar valores sugeridos que sejam
+desproporcionalmente altos ou baixos, mas isso não
+ocorre na prática. O primeiro passo na direção da
+188L.M. TONETTO et al.
+Estudos de Psicologia ICampinas I23(2) I 181-189 I abril -.junho 2006
+precisão da decisão é ter consciência desses valores
+extremos e procurar gerar, na medida do possível, outros
+valores que contrabalancem a âncora inicial. Assim, por
+exemplo, antes de julgar o valor de uma casa que parece
+ser superestimado, a pessoa deveria imaginar qual seria
+o valor real se o preço de venda fosse surpreendentemente baixo (Plous, 1993).
+Já a disponibilidade é uma heurística que envolve
+diferentes e complexos tipos de funções cognitivas, tais
+como a memória e a imaginação. É indubitavelmente
+uma das mais freqüentes heurísticas e, como as demais,
+leva-nos constantemente ao erro. Uma forma de
+minimizar esse problema é comparar explicitamente o
+super e o subestimado, baseando-se em um maior
+número de informações acerca do fato e demandando,
+portanto, um maior investimento de atenção e de tempo
+para a tomada de decisão.
+Contudo, a heurística da representatividade,
+apesar de normalmente produzir estimativas
+condizentes com respostas advindas das teorias
+normativas, algumas vezes conduz a desvios e
+inconsistências previsíveis. No intuito de propiciar o
+desenvolvimento de habilidades de julgamento mais
+eficazes, as pesquisas sobre esse princípio heurístico
+explicitam a importância de se atentar para algumas
+questões. Ponderar os dados utilizados ou sugeridos
+inicialmente como base para os julgamentos é um
+aspecto relevante, visto que, quando esses são extremos,
+a representatividade é um frágil indicador de
+probabilidade. Não confundir a especificidade de um
+objeto com seu grau de representatividade é um fator
+igualmente significativo. Apropriando-se de algumas
+sugestões desse cunho, torna-se possível evitar alguns
+erros de julgamento resultantes do uso dessa heurística.
+Cabe ressaltar que as três heurísticas exploradas
+têm como ponto comum a influência da experiência
+ou da sugestão prévia em relação a dado problema
+decisório. Seja em função de sugestão de valores
+(ancoragem), memória ou imaginação (disponibilidade)
+ou, ainda, da similaridade de um evento com outros da
+mesma classe (representatividade), é importante
+lembrar que não é possível dissociar história pregressa
+da vida atual.
+As heurísticas ratificam a proposição de que
+somos parcialmente influenciados por nosso passado
+e por nossas tentativas deliberadas de modificar o
+presente. Dessa forma, a tentativa de controlar os efeitos
+das heurísticas pode ser entendida como uma forma
+de, ao exercitar o controle dos processamentos
+cognitivos envolvidos em uma tarefa de julgamento,
+minimizar os efeitos determinantes do passado.
+Com base nos postulados acima descritos,
+pode-se perceber que, apesar de as heurísticas serem
+mecanismos que podem levar a erros e vieses de
+pensamento, existem formas de atenuar seus efeitos.
+Modelos descritivos, nesse sentido, como tentativas de
+descrever como os seres humanos tomam decisões de
+fato, podem ser associados aos modelos que objetivam
+a maximização da racionalidade por meio da definição
+de normas para a tomada de decisões – os modelos
+normativos. Essa proposta de associação pode ser
+entendida como uma tentativa de minimizar as
+limitações de ambos os tipos de modelos, de forma
+que, compreendendo os vieses que usualmente se dão
+na tomada de decisões, torna-se viável que se possa
+pensar de forma mais acurada.
+Referências
+Chapman, G. B., & Johnson, E. J. (1999). Anchoring, activation,
+and the construction of values. Organizational Behavior
+and Human Decision Processes, 79 (2), 115–153.
+Chapman, G. B., & Johnson, E. J. (2002). Incorporating the
+irrelevant: anchors in judgments of belief and value. In
+T. Gilovich, D. Griffin & D. Kahneman (Eds.), Heuristics &
+biases: the psychology of intuitive judgment (pp.121-138).
+New York: Cambridge University Press.
+Eysenck, M. W. (2001). Principles of cognitive psychology (2nd
+ed.). London: Psychology Press.
+George, J. F., Duffy, K., & Ahuja, M. (2000). Countering the
+anchoring and adjustment bias with decision support
+systems. Decision Support Systems, 29 (2), 195-206.
+Guthrie, C., Rachlinski, J. J., & Wistrich, A. J. (2001). Inside the
+judicial mind. Cornell Law Review, 86 (4), 777-830.
+Hammond, K. (2000). Judgments under stress. Oxford: Oxford
+University Press.
+Hastie, R. (2001). Problems for judgment and decision
+making. Annual Review of Psychology, 52, 653-683.
+Hinsz, V. B., Kalnbach, L. R., & Lorentz, N. R. (1997). Using
+judgmental anchors to establish challenging self-set
+goals without jeopardizing commitment. Organizational
+Behavior and Human Decision Processes, 71 (3), 287-308.
+Jimenez, S. B., & Rodriguez, B., G. (1996). Procesos psicologicos
+basicos. Madrid: Editorial Universitas.
+Kahneman, D. (1992). Reference points, anchors, norms and
+mixed feelings. Organizational Behavior and Human
+Decision Processes, 51, 296-312.
+189HEURÍSTICAS NOS JULGAMENTOS SOB INCERTEZA
+Estudos de Psicologia I Campinas I 23(2) I 181-189 I abril - junho 2006
+Kahneman, D. (2003). A perspective on judgment and
+choice: mapping bounded rationality. American
+Psychologist, 58 (9), 697-720.
+Kahneman, D., & Tversky, A. (1982a). The simulation heuristic.
+In D. Kahneman, P. Slovic & A.Tversky. Judgment under
+uncertainty: heuristics and biases (pp.201-208). New York:
+Cambridge University Press.
+Kahnemann, D., & Tversky, A. (1982b). Subjective probability:
+a judgment of representativeness. In D. Kahneman, P.
+Slovic & A. Tversky. Judgment under uncertainty: heuristics
+and biases (pp.33-47). New York: Cambridge University
+Press.
+Kahnemann, D., & Smith, V. (2002). Fundations of behavioral
+and experimental economics: Daniel Kahneman and
+Vernon Smith. The prize in economic sciences. Acesso em
+abril 1, 2005, disponível em http://nobelprize.org/
+economics/laureates/2002/ecoadv02.pdf
+Kerstholt, J. (1994). The effect of time pressure on decisionmaking behaviour in a dynamic task environment. Acta
+Psychologica, 86, 89-104.
+Lichtenstein, S., & Slovic, P. (1971). Reversals of preference
+between bids and choices in gambling decisions. Journal
+of Experimental Psychology, 89, 46–55.
+Marti, M. W., & Wissler, R. L. (2000). Be careful what you ask
+for: the effect of anchors on personal injury damages
+awards. Journal of Experimental Psychology: Applied, 6 (2),
+91-103.
+Martin, L. L., Seta, J. J., & Crelia, R. A. (1990). Assimilation and
+contrast as a function of people’s willingness and ability
+to expend effort in forming an impression. Journal of
+Personality and Social Psychology, 59 (1), 27-37.
+Maule, J. A., & Hodgkinson, G. P. (2002). Heuristics, biases
+and strategic decision making. The Psychologist, 15 (2),
+68-71.
+Mellers, B. A., Schwartz, A., & Cooke, A. D. J. (1998). Judgment
+and decision making. Annual Review of Psychology, 49,
+447-477.
+Mussweiler, T. (2002). The malleability of anchoring effects.
+Experimental Psychology, 49 (1), 67-72.
+Mussweiler, T., & Strack, F. (2001). The semantics of anchoring.
+Organizational Behavior and Human Decision Processes, 86
+(2), 234-255.
+Northcraft, G. B., & Neale, M. A. (1987). Experts, amateurs,
+and real estate: an anchoring-and-adjustment
+perspective on property pricing decisions.
+Organizational Behavior and Human Decision Processes,
+39, 84-97.
+Plous, S. (1989). Thinking the unthinkable: The effects of
+anchoring on likelihood estimates of nuclear war. Journal
+of Applied Social Psychology, 19, 67-91.
+Plous, S. (1993). The psychology of judgment and decision
+making. New York: McGraw-Hill.
+Strack, F., & Mussweiler, T. (1997). Explaining the enigmatic
+anchoring effect: Mechanisms of selective accessibility.
+Journal of Personality and Social Psychology, 73 (3),
+437-446.
+Sunstein, C. R., Kahneman, D., & Schkade, D. (1998). Assessing
+punitive damages (with notes on cognition and valuation
+in law). The Yale Law Journal, 107 (7), 2071-2153.
+Tversky, A., & Fox, C. R. (1995). Weighing risk and uncertainty.
+Psychological Review, 102 (2), 269-283.
+Tversky, A., & Kahneman, D. (1971). Belief in the law of small
+numbers. Psychological Bulletin, 76 (2), 105-110.
+Tversky, A., & Kahneman, D. (1974). Judgment under
+uncertainty: heuristics and biases. Science, 185 (4157),
+1124-1131.
+Tversky, A., & Kahneman, D. (1981). The framing of decisions
+and the psychology of choice. Science, 211 (4481),
+453-458.
+Wegener, D. T., Petty, R. E., Detweiler-Bedell, B., & Jarvis, W.
+B. (2001). Implications of attitude change theories for
+numerical anchoring: anchor plausibility and the limits
+of anchor effectiveness. Journal of Experimental Social
+Psychology, 37, 62-69.
+Whyte, G., & Sebenius, J. K. (1997). The effect of multiple
+anchors on anchoring in individual and group judgment.
+Organizational Behavior and Human Decision Processes, 69
+(1), 75-85.
+Williams, J. M. G., Watts, F. N., MacLeod, C., & Mathews, A.
+(1997). Cognitive Psychology and emotional disorders.
+Chichester, UK: Wiley.
+Wilson, T. D., Houston, C. E., Etling, K. M., & Brekke, N. (1996).
+A new look at anchoring effects: basic anchoring and its
+antecedents. Journal of Experimental Psychology: General,
+125 (4), 387-402.
+Wong, K. F. E., & Kwong, J. Y. (2000). Is 7300m equal to 7.3
+km? Same semantics but different anchoring effects.
+Organizational Behavior and Human Decision Processes, 82
+(2), 314-333.
+Recebido em: 8/9/2004
+Versão final reapresentada em: 18/7/2005
+Aprovado em: 4/11/2005
+190L.M. TONETTO et al.
+Estudos de Psicologia ICampinas I23(2) I 181-189 I abril -.junho 2006

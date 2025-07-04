@@ -1,0 +1,703 @@
+                                                                                                                  Revisão de Literatura
+
+http://dx.doi.org/10.1590/0104-07072017002260017
+
+
+
+
+     MÉTODOS PARA DESENVOLVIMENTO DE APLICATIVOS MÓVEIS EM
+           SAÚDE: REVISÃO INTEGRATIVA DA LITERATURA
+
+
+
+
+          Daniela Couto Carvalho Barra1, Sibele Maria Schuantes Paim2, Grace Teresinha Marcon Dal Sasso3,
+                                                Gabriela Winter Colla4
+
+
+
+
+2
+    Doutora em Enfermagem. Professora do Departamento de Enfermagem da Universidade Federal de Santa Catarina. Professora
+    do Programa de Pós-Graduação Mestrado Profissional em Informática em Saúde. Florianópolis, Santa Catarina, Brasil. E-mail:
+    daniela.barra@ufsc.br
+1
+    Graduanda do Curso de Graduação em Enfermagem da UFSC e PIBIC/CNPq. Florianópolis, Santa Catarina, Brasil. E-mail: sibele.
+    schuantes@hotmail.com
+3
+    Doutora em Enfermagem. Professora do Departamento de Enfermagem e do Programa de Pós-Graduação em Enfermagem da
+    UFSC. Florianópolis, Santa Catarina, Brasil. E-mail: grace.sasso@ufsc.br
+4
+    Mestranda do Programa de Pós-Graduação em Enfermagem da UFSC. Florianópolis, Santa Catarina, Brasil. E-mail: gabrielawcolla@
+    gmail.com
+
+RESUMO
+Objetivo: identificar nas publicações nacionais e internacionais indexadas nas bases de dados os principais métodos adotados pelos
+pesquisadores para o desenvolvimento de aplicativos móveis em saúde.
+Método: revisão integrativa da literatura de estudos publicados nas bases de dados MEDLINE/PubMed, Scopus, Web of Science, CINAHL
+e SciELO, no período de 2012 a 2016. Foram selecionados para análise 21 artigos.
+Resultados: os principais métodos para desenvolvimento de aplicativos móveis na área da saúde descritos nos artigos foram: design
+instrucional sistemático, design instrucional contextualizado, design centrado no usuário e ciclo de vida de desenvolvimento de sistemas.
+Conclusão: independentemente do método de desenvolvimento escolhido, as etapas devem ser bem definidas e estruturadas, a fim de
+que o aplicativo móvel desenvolvido seja útil ao usuário final.
+DESCRITORES: Aplicativos móveis. Aplicação de informática médica. Informática em enfermagem. Informática médica. Tecnologia da
+informação.
+
+
+
+
+             METHODS FOR DEVELOPING MOBILE APPS IN HEALTH: AN
+                  INTEGRATIVE REVIEW OF THE LITERATURE
+
+ABSTRACT
+Objective: to identify, in the Brazilian and international publications indexed in the databases, the main methods adopted by researchers
+for developing mobile apps in health.
+Method: integrative review of the literature, of studies published in the following databases: MEDLINE/PubMed, Scopus, Web of Science,
+CINAHL and SciELO, in 2012 – 2016. A total of 21 articles were selected for analysis.
+Results: the main methods for developing mobile apps in the area of health, described in the articles, were: systematic design of instruction,
+contextualized design of instruction, user-centered design and systems development life cycle.
+Conclusion: regardless of the method of development selected, the stages must be well-defined and structured, so that the mobile app
+developed may be useful to the end-user.
+DESCRIPTORS: Mobile applications. Medical Informatics Applications. Nursing Informatics. Medical Informatics. Information Technology.
+
+
+                                                                                               Texto Contexto Enferm, 2017; 26(4):e2260017
+Barra DCC, Paim SMS, Dal Sasso GTM, Colla GW                                                                                              2/12
+
+
+MÉTODOS PARA DESARROLLO DE APLICACIONES MÓVILES EN SALUD:
+           REVISIÓN INTEGRAL DE LA LITERATURA
+RESUMEN
+Objetivo: identificar en las publicaciones nacionales e internacionales indexadas en las bases de datos los principales métodos adoptados
+por los investigadores para el desarrollo de aplicaciones móviles en salud.
+Método: revisión integrativa de literatura de estudios publicados en las bases de datos MEDLINE/PubMed, Scopus, Web of Science,
+CINAHL y Scielo, en el período de 2012 a 2016. Fueron seleccionados para el análisis, 21 artículos.
+Resultados: los principales métodos para el desarrollo de aplicaciones móviles en el área de la salud descritos en los artículos fueron: diseño
+instructivo sistemático, diseño educativo contextual, diseño centrado en el usuario y ciclo de vida de desarrollo de sistemas.
+Conclusión: independientemente del método de desarrollo elegido, las etapas deben estar bien definidas y estructuradas, a fin de que la
+aplicación móvil desarrollada sea útil para el usuario final.
+DESCRIPTORES: Aplicaciones móviles. Aplicación de informática médica. Informática en enfermería. Informática médica. Tecnología
+de la información.
+
+
+INTRODUÇÃO                                                               vas formas de comunicação.7-9 Tais características
+                                                                         agregam valor estratégico para a nova sociedade
+      No contexto atual, as Tecnologias da In-
+                                                                         da Era da Informação.10
+formação e Comunicação (TICs) voltadas para a
+área da saúde possuem diversas ferramentas que                                 Atualmente, é possível constatar uma prolife-
+apóiam a estruturação e a organização dos dados                          ração de tecnologias e aplicativos móveis (m-saú-
+e informações, possibilitando o armazenamento,                           de/m-health) que estão colaborando para a cons-
+processamento, acesso em tempo real e/ou remoto e                        trução de uma nova modalidade de assistência em
+compartilhamento dos mesmos, seja pelos diversos                         saúde, no qual as informações referentes à saúde das
+profissionais envolvidos na assistência, bem como,                       pessoas se fazem oportunas e onipresentes.6 Diver-
+pelo próprio paciente/usuário.1-5 Tais tecnologias                       sos estudos apontam que tais aplicativos, incluindo
+                                                                         as informações geradas pelos mesmos, podem ser
+são consideradas um recurso global, o qual conecta
+                                                                         utilizados para otimização dos resultados e redução
+diversos computadores criando uma rede de infor-
+                                                                         dos riscos em saúde, bem como, para compreensão
+mações e que permite colaborar com o desenvolvi-
+                                                                         dos fatores determinantes que promovem a saúde
+mento e aperfeiçoamento das profissões da saúde.1
+                                                                         e/ou que levam à doença.11-16
+      As TICs, além de possibilitar a divulgação,
+                                                                               Especificamente na área da enfermagem, con-
+disseminação e atualização do conhecimento na área
+                                                                         sidera-se que as ferramentas disponibilizadas pelas
+da saúde, podem apoiar a tomada de decisão clínica
+                                                                         TICs associadas à prática clínica, educacional e de
+dos profissionais contribuindo com a elaboração
+                                                                         gestão exigem dos enfermeiros o empreendimento
+de diagnósticos fidedignos e orientações/condutas
+                                                                         de esforços para alcançar uma definição de seu papel
+terapêuticas qualificadas destinadas aos pacientes/
+                                                                         frente à informática na enfermagem. Evidencia-se a
+usuários.1-2,5 Ressalta-se ainda que, o acesso em tem-
+                                                                         necessidade iminente destes profissionais em realizar
+po real e/ou remoto às informações, contribui para
+                                                                         uma reflexão, bem como, se inserir no ambiente tec-
+a solução de problemas/necessidades de saúde em
+                                                                         nológico dos aplicativos móveis, fortemente presen-
+diferentes regiões geográficas, promovendo uma
+                                                                         tes no contexto cultural, social e econômico do país.17
+ampla cobertura da assistência à saúde especializa-
+da realizada nos grandes centros urbanos.1                                     Diante destas considerações, surgiu a seguinte
+                                                                         questão de pesquisa: quais são os principais méto-
+      Neste cenário, destacam-se o fenômeno das
+                                                                         dos adotados pelos pesquisadores para o desenvol-
+tecnologias móveis (tablets, smartphones, etc.), espe-                   vimento de aplicativos móveis em saúde? Assim,
+cialemte da utilização de aplicativos móveis (tam-                       este estudo de revisão integrativa da literatura
+bém conhecidos como apps – do inglês application)                        objetivou identificar nas publicações nacionais e
+entre a população mundial. Os apps são conceituados                      internacionais indexadas nas bases de dados os prin-
+como um conjunto de ferramentas desenhado para                           cipais métodos adotados pelos pesquisadores para
+realizar tarefas e trabalhos específicos.6                               o desenvolvimento de aplicativos móveis em saúde.
+      Os dispositivos móveis, em especial, os apli-
+cativos móveis, visam atender o acesso das pessoas
+                                                                         MÉTODO
+à informação e ao conhecimento, sem restrição
+de tempo e espaço. A possibilidade da queda de                                 Trata-se de um estudo de revisão integrativa
+barreiras de tempo e espaço permite também no-                           da literatura de estudos científicos publicados no
+
+                                                                                                Texto Contexto Enferm, 2017; 26(4):e2260017
+Métodos para desenvolvimento de aplicativos móveis em saúde...                                                          3/12
+
+período de 2012 a 2016. As etapas desta revisão foram            para a pesquisa com o intuito de se obter o maior
+alicerçadas em um protocolo previamente estabeleci-              número de estudos acerca da temática revisada.
+do, visando manter o rigor científico e metodológico,                   Os critérios de inclusão dos estudos foram:
+a saber: 1) elaboração da pergunta de pesquisa; 2) de-           pesquisas originais, revisões de literatura (sistemáti-
+finição dos critérios de inclusão de estudos e seleção           ca, integrativa ou narrativa) e relatos de experiência
+da amostra (busca ou amostragem na literatura); 3)               publicados entre janeiro de 2012 a dezembro de
+representação dos estudos selecionados em formato                2016, em língua inglesa, portuguesa ou espanho-
+de tabelas, considerando todas as características em             la; disponíveis na íntegra e que apresentassem
+comum (coleta de dados); 4) análise crítica dos estu-            expressamente as etapas/métodos (framework) de
+dos incluídos, identificando diferenças e conflitos; 5)          desenvolvimento do aplicativo móvel na área da
+interpretação/discussão dos resultados; 6) apresen-              saúde, especificamente, enfermagem, medicina e
+tação da revisão integrativa de forma clara e objetiva           saúde pública. Os critérios de exclusão considerados
+das evidências/dados encontrados.18                              foram duplicidade dos artigos, editoriais, anais de
+      Para responder a questão norteadora da                     congresso, estudos de casos e artigos de reflexão.
+revisão, realizou-se a busca bibliográfica das pu-                      Cabe ressaltar que a seleção dos estudos foi
+blicações indexadas nas seguintes bases de dados:                conduzida conforme a metodologia Preferred Repor-
+MEDLINE/PubMed, Scopus, CINAHL, Web of                           ting Items for Systematic Reviews and Meta-Analyses
+Science e SciELO. Os descritores MeSH adotados                   (PRISMA).19 Os pesquisadores foram divididos em
+foram: Mobile Applications; Medical informatics;                 2 grupos, cada um com 2 membros. O grupo 1 foi
+Medical informatics Applications; Public health infor-           responsável por realizar a busca nas bases de dados,
+matics; Nursing informatics; Information technology;             utilizando os descritores e palavras-chave selecio-
+Telemedicine; e Technology. Devido à variedade de                nados. Nesta etapa foram encontrados 1.984 artigos.
+termos utilizados na área da TIC, optou-se ainda por             Após a busca, os artigos foram compartilhados com
+incluir na busca as seguintes palavras-chave: mobile             o grupo 2 e assim procedeu-se as demais etapas
+technology; e-Health, m-health; telehealth; healthcare           da revisão de forma independente e simultânea. A
+application; cybercare. Destaca-se que as expressões             figura 1 apresenta a síntese dos resultados obtidos
+booleanas AND e OR foram os recursos adotados                    em cada etapa.
+
+
+
+
+Figura 1 - Fluxograma do processo de seleção dos estudos a partir da metodologia PRISMA.
+Florianópolis-SC, 2017
+
+                                                                                  Texto Contexto Enferm, 2017; 26(4):e2260017
+Barra DCC, Paim SMS, Dal Sasso GTM, Colla GW                                                                   4/12
+
+      O método de leitura científica foi adotado para    do estudo, área da saúde atendida pelo aplicativo
+realizar a análise dos dados. Este método se desen-      móvel, referencial teórico e método adotado para o
+volve em três etapas: 1) visão sincrética – leitura de   desenvolvimento do aplicativo móvel. Agrupados
+reconhecimento geral visando se aproximar do tema        por semelhança de conteúdo, duas categorias para
+do estudo e leitura seletiva buscando as informações     análise foram concebidas: Descrição das caracte-
+acerca do objetivo do estudo; 2) visão analítica:        rísticas dos estudos e Métodos utilizados para o
+leitura reflexiva e crítica dos artigos selecionados     desenvolvimento de aplicativos móveis em saúde.
+e escolha dos conteúdos principais relacionados ao
+tema; e 3) visão sintética: leitura de interpretação     RESULTADOS
+dos dados/resultados apresentados nos estudos.20
+      Destaca-se que foi elaborado um instrumento
+                                                         Descrição das Características dos Estudos
+para a coleta e análise dos dados dos estudos que             As publicações selecionadas para a identifi-
+incluídos. Neste instrumento foram registradas as se-    cação dos principais métodos adotados pelos pes-
+guintes informações: autoria, país, idioma, categoria    quisadores para o desenvolvimento de aplicativos
+de publicação, ano de publicação, periódico, objetivo    móveis em saúde estão descritas no quadro 1.
+
+Quadro 1 - Descrição das publicações sobre métodos para desenvolvimento de aplicativos móveis em
+saúde, segundo ano de publicação, periódico, método e área da saúde do aplicativo. Florianópolis-SC,
+Brasil, 2017
+
+  Ano                         Periódico                    Método utilizado          Área da saúde do App
+                                                         Ciclo de Vida de
+  2014     Acta Paulista Enfermagem                      Desenvolvimento de      Oncologia21
+                                                         Sistemas
+                                                         Design Instrucional
+  2014     Oncology Nursing Forum                                                Oncologia22
+                                                         Sistemático
+                                                         Design Instrucional
+  2015     European Journal of Oncology Nursing                                  Oncologia23
+                                                         Sistemático
+                                                         Design Instrucional
+  2015     Journal of Medical Internet Research                                  Oncologia24
+                                                         Sistemático
+                                                         Design Instrucional
+  2014     Patient Preference and Adherence                                      Doença Respiratória25
+                                                         Sistemático
+                                                         Design Instrucional
+  2014     JMIR Mhealth and Uhealth                                              Doença Respiratória26
+                                                         Sistemático
+                                                         Design Instrucional
+  2016     Journal of Biomedical Informatics                                     Doença Respiratória27
+                                                         Sistemático
+                                                         Design Instrucional
+  2016     Translational Behavioral Medicine                                     Atenção Primária à Saúde28
+                                                         Sistemático
+                                                         Design Centrado no
+  2013     JMIR Mhealth and Uhealth                                              Atenção Primária à Saúde29
+                                                         Usuário
+                                                         Design Instrucional
+  2015     Revista Panamericana de Salud Publica                                 Atenção Primária à Saúde30
+                                                         Sistemático
+                                                         Design Instrucional
+  2014     Online Journal of Nursing Informatics                                 Geriatria31
+                                                         Sistemático
+                                                         Design Centrado no
+  2015     Conference IMCOM                                                      Geriatria32
+                                                         Usuário
+                                                         Design Instrucional
+  2014     Computers Informatics Nursing                                         Pediatria33
+                                                         Sistemático
+                                                         Design Instrucional
+  2012     Nursing Informatics                                                   Pediatria34
+                                                         Sistemático
+                                                         Design Instrucional
+  2012     Revista Escola de Enfermagem da USP                                   Cuidados Críticos35
+                                                         Contextualizado
+
+                                                                         Texto Contexto Enferm, 2017; 26(4):e2260017
+Métodos para desenvolvimento de aplicativos móveis em saúde...                                                           5/12
+
+
+   Ano                           Periódico                Método utilizado                     Área da saúde do App
+                                                        Design Instrucional
+   2016     Revista Latino Americana de Enfermagem                                         Cuidados Críticos36
+                                                        Sistemático
+            Journal of the American Medical Informatics Design Instrucional
+   2012                                                                                    Doença Renal37
+            Association                                 Sistemático
+                                                        Design Instrucional
+   2015     Healthcare Informatics Research                                                Doença Metabólica38
+                                                        Sistemático
+            JAMIA: Journal of the American Medical      Design Instrucional
+   2015                                                                                    Saúde Mental39
+            Informatics Association                     Sistemático
+                                                        Design Instrucional                Recuperação Pós-Anesté-
+   2015     JMIR Mhealth and Uhealth
+                                                        Sistemático                        sica40
+                                                        Design Instrucional
+   2016     JMIR Research Protocols                                                        Nutrição Parenteral41
+                                                        Sistemático
+
+      Na base de dados MEDLINE/PubMed foram                      (02); Argentina, Austrália, Chile, Coreia do Sul,
+selecionados doze artigos para análise; Scopus e                 Espanha, Holanda, Indonésia, Itália e Taiwan, 43%
+Web of Science três estudos em cada; CINAHL dois                 (09), sendo um artigo de cada nação. Quanto aos
+estudos; e um artigo na SciELO, totalizando 21 arti-             idiomas dos artigos analisados, 86% (18) foram
+gos analisados. Destaca-se que 86% (18) dos estudos
+                                                                 publicados em inglês e 14% (03) em língua portu-
+foram publicados em periódicos internacionais e
+14% (03) em periódicos nacionais.                                guesa; nenhuma publicação em língua espanhola
+                                                                 foi selecionada para análise.
+    Em relação aos países de origem dos estudos,
+houve a seguinte distribuição: Estados Unidos da                       A figura 2 apresenta a distribuição dos estudos
+América, 33,5% (07); Brasil, 14% (03); Suécia, 9,5%              selecionados segundo o ano de publicação.
+
+
+
+
+Figura 2 - Distribuição das publicações por ano. Florianópolis- SC, Brasil, 2017
+
+     Os artigos foram classificados quanto à sua                 ciou-se a seguinte distribuição: oncologia (hospitalar,
+categoria de publicação, conforme explicitado pelos              domiciliar e auditoria),21-22 19% (4); doenças respira-
+periódicos: 86% (18) pesquisas originais; 9,5% (2)               tórias (asma/adolescente e cuidado domiciliar),25-27
+comunicados breves e; 4,5% (1) protocolo.                        14,3% (3); Atenção Primária à Saúde (promoção à saú-
+      Em relação à área de especialidade dos aplica-             de, doenças crônicas e doenças cardiovasculares),28-30
+tivos móveis desenvolvidos e/ou avaliados, eviden-               14,3% (3); geriatria,31-32 9,5% (2); pediatria (cuidados
+
+                                                                                   Texto Contexto Enferm, 2017; 26(4):e2260017
+Barra DCC, Paim SMS, Dal Sasso GTM, Colla GW                                                                             6/12
+
+paliativos e cuidados ao recém-nascido)33,34 9,5%                 possui três formas de abordagem para o desenvol-
+(2); cuidados críticos (adulto e neonatal),35-36 9,5%             vimento de sistemas: ciclo de vida clássico, ciclo de
+(2); doença renal (hemodiálise),37 4,8% (1); doença               vida espiral e ciclo de vida da prototipação. Tais
+metabólica (obesidade),38 4,8% (1); saúde mental                  formas visam auxiliar o desenvolvedor/pesquisa-
+(depressão)39 4,8% (1); recuperação pós-operatória40              dor a identificar as necessidades dos usuários.51-52
+4,8% (1) e; nutrição (parenteral) 41 4,8% (1).
+                                                                  DISCUSSÃO
+Métodos utilizados para o desenvolvimento
+                                                                        Uma gama de métodos/procedimentos de De-
+de aplicativos móveis em saúde                                    sign Instrucional foi desenvolvido nas últimas déca-
+      A partir da revisão realizada evidenciou-                   das visando a construção de novas ferramentas tec-
+se que os descritores Mobile applications; Medical                nológicas (nomeadamente, os aplicativos móveis),
+informatics; Medical informatics applications; Public             que melhoram o processo de ensino-aprendizagem
+health informatics; Nursing informatics; Information              e o desempenho dos usuários nos mais diversos
+technology; Telemedicine; e Technology, bem como as               contextos. Observa-se que os desenvolvedores/
+palavras-chave mobile technology, e-Health, m-health,             pesquisadores adotam uma série de meios/recursos
+telehealth e healthcare application contemplaram es-              instrucionais para atingir seus objetivos, entretanto,
+tudos que abordaram os principais métodos para                    independente do método escolhido e das diferentes
+desenvolvimento de aplicativos móveis na área da                  etapas que compõem cada um deles, a maioria dos
+saúde. A palavra chave cybercare, pesquisada de                   métodos inclui as etapas análise, concepção, de-
+forma isolada e/ou em associação com os demais                    senvolvimento, implementação e avaliação.42,44,46,53
+descritores, não apresentou estudos sobre a temática              Aponta-se ainda que, no design instrucional e tec-
+central desta revisão integrativa da literatura.                  nológico, além da das etapas mencionadas, inclui-se
+      Um dos métodos mais difundidos mundial-                     a etapa da gestão como um todo.53
+mente é o Design Instrucional Sistemático (DIS)                         De uma forma geral, o Design Instrucional
+(Systematic Design of Instruction).22-28,30-31,33-34,36-41 Ela-   contempla planejamento, preparação, produção e
+borado por Walter Dick e Lou M. Carey42-43 em 1978,               publicação de textos, imagens, sons e movimentos,
+este modelo contempla as etapas análise, design/                  simulações e atividades sustentadas por ferramentas
+desenvolvimento, implementação e avaliação.                       virtuais disponibilizadas pelas TICs.45 Este método
+      Outro método utilizado para o desenvolvi-                   possui algumas características e mecanismos con-
+mento de aplicativos móveis em saúde é o Design                   textuais, entre elas: individualização dos ritmos
+Instrucional Contextualizado (DIC).35 Este método                 de aprendizagem; adaptável às características
+adota as mesmas etapas do método Design Instru-                   institucionais, nacionais, regionais e/ou locais;
+cional Sistemático, entretanto, a etapa implemen-                 possibilidade de constante atualização mediante
+tação acontece simultaneamente com as etapas                      feedback/opinião dos usuários; acesso em tempo
+de análise/concepção, agregando novos estágios                    real e/ou remoto às informações; possibilidade de
+e adicionando maior detalhamento à ferramenta                     comunicação entre os usuários e desenvolvedores/
+tecnológica.44-46                                                 pesquisadores; e monitoramento da construção in-
+      O método Design Centrado no Usuário (DCU)                   dividual e coletiva dos conhecimentos dos usuários.
+(User Centered Design) foi utilizado para desenvol-                     Diferentes modalidades de Design Instrucio-
+ver aplicativos na área de Enfermagem Geriátrica32                nal que possuem objetivos semelhantes, diferen-
+e Atenção Primária (prevenção de doenças crô-                     ciam-se em suas modelações e características, estão
+nicas).29 Trata-se de um método que estabelece a                  descritas na literatura.44 Desta forma, o modelo de
+participação/colaboração entre os usuários e os                   Design Instrucional se divide conforme apresen-
+designers/pesquisadores na fase da concepção para                 tado: Design Instrucional Fixo (DIF), Design Ins-
+o desenvolvimento de sistemas informatizados,                     trucional Aberto (DIA), DIC e o Modelo Integrative
+nomeadamente, os aplicativos móveis.47-50                         Learning Design Framework (ILDF).
+      O método Ciclo de Vida de Desenvolvimento                         O método DIC considera central a atividade
+de Sistemas (CVDS) (Systems Development Life Cycle                humana, buscando o equilíbrio entre a automação
+– SDLC) foi adotado no estudo que desenvolveu                     dos processos de planejamento, personalização e
+um aplicativo para a consulta de medicamentos                     contextualização da instrução/conteúdo e as ferra-
+quimioterápicos visando auxiliar a auditoria em                   mentas tecnológicas disponíveis. Ou seja, o termo
+enfermagem de contas hospitalares.21 Este método                  DIC é adotado para descrever uma ação intencional
+
+                                                                                   Texto Contexto Enferm, 2017; 26(4):e2260017
+Métodos para desenvolvimento de aplicativos móveis em saúde...                                                            7/12
+
+de planejamento, desenvolvimento e aplicações                    o processo de ensino-aprendizagem de forma bem
+didáticas específicas e contextualizadas, alicerça-              sucedida. Este método contempla as etapas análise,
+das pelas ferramentas disponibilizadas pelas TICs,               design/desenvolvimento, implementação e avalia-
+incorporando em suas diversas fases mecanismos                   ção, enfatizando a análise completa e detalhada dos
+e processos que favorecem a contextualização e                   diversos componentes instrucionais que se relacio-
+flexibilidade do conteúdo/instrução.44-45                        nam, a avaliação integral dos materiais produzidos
+       O DIC é composto pelas seguintes etapas:                  e o refinamento/atualização do conteúdo/instrução
+análise, design, desenvolvimento, implementação                  ao longo de todo o processo de desenvolvimento da
+e avaliação. Entretanto, enquanto os modelos de                  ferramenta tecnológica.42-43,46,53-54
+design instrucionais convencionais incorporam es-                       Apesar das etapas descritas neste método, os
+tágios específicos em cada etapa, este modelo adota              autores apontam que não existe um único modelo
+o entrelaçamento entre suas etapas ao longo de todo              para a criação e desenvolvimento de uma instrução/
+o processo de desenvolvimento da instrução/con-                  conteúdo e incentivam os desenvolvedores/pesqui-
+teúdo. O DIC inicialmente caracteriza os usuários,               sadores/designers e usuários a criarem seu próprio
+identifica as necessidades dos mesmos e realiza um               método/processo de design instrucional visando
+levantamento de restrições, aprimorando e atuali-                soluções singulares para problemas e/ou necessi-
+zando estes dados e informações paralelamente às                 dades específicas em suas situações práticas.42-43,54
+novas demandas e participação dos usuários. Assim,                      Este método pode ser utilizado para uma di-
+a fase implementação não ocorre separadamente da                 versidade de sistemas instrucionais, neste estudo,
+fase concepção (análise, design e desenvolvimento),              os aplicativos móveis.22-23,26-28,34,38-39 Destaca-se, ainda,
+ambas progridem e incorporam uma série de está-                  que o Modelo Dick e Carey baseia-se em diversas
+gios que se complementam.44-46                                   perspectivas existentes no processo de ensino-
+       Para exemplificar a utilização do método                  -aprendizagem, assim especificadas: Behaviorismo
+DIC, cita-se o estudo que desenvolveu e avaliou                  (definição dos componentes da estratégia instrucio-
+um aplicativo móvel para o ensino da mensuração                  nal); Teoria Cognitiva (formulação da apresentação
+da pressão venosa central destinado a acadêmicos                 do material/conteúdo instrucional e processamento
+de enfermagem (usuários finais). Nesse estudo,                   das informações); Construtivismo (análise de con-
+as pesquisadoras contemplaram todas as etapas                    textos para auxiliar os usuários na construção de
+descritas pelo DIC, assim especificadas: I) Análise:             estruturas conceituais para a aprendizagem).42-43,53-54
+“levantamento das necessidades, a caracterização do                     O método DCU possui uma abordagem ampli-
+público-alvo, a coleta de referencial bibliográfico, a           ficada. Trata-se de um termo geral caracterizado por
+definição dos objetivos educacionais, a definição dos            uma filosofia e etapas que descrevem os processos
+conteúdos, a análise da infra-estrutura tecnológica              de um projeto, centrado na criação e envolvimento
+e a criação de um diagrama para orientar a constru-              dos usuários na concepção de sistemas informati-
+ção da ferramenta”;35:109 II) Design: “planejamento              zados.47 Ou seja, no DCU os usuários finais podem
+e a produção do conteúdo didático, a definição                   influenciar diretamente todas as etapas metodo-
+dos tópicos e redação dos módulos, a seleção das                 lógicas, sendo fundamental que o pesquisador/
+mídias e o desenho da interface (layout). Optou-se               desenvolvedor/designer entenda o contexto de
+pela utilização de imagens e textos, estruturados em             utilização da ferramenta tecnológica e os requisitos
+tópicos, e conectados por hipertextos (links)”;35:109 III)       fornecidos pelos usuários.47,55-57
+Desenvolvimento: [...] “seleção das ferramentas do                      Destaca-se que no DCU a participação do
+aplicativo multimídia, a definição da estrutura de               usuário pode variar de intensidade.47 Numa extre-
+navegação e o planejamento da configuração de am-                midade da construção da ferramenta tecnológica, o
+bientes”;35:109 IV) Implementação: [...] “configuração           envolvimento pode ser relativamente baixo, ou seja,
+das ferramentas e recursos tecnológicos educacio-                os usuários podem ser consultados e observados
+nais, bem como a construção de um ambiente para                  quanto às suas necessidades e serem convidados
+download da aplicação na internet e sua instalação no            a participar de testes de usabilidade do sistema
+dispositivo móvel”;35:109 e V) Avaliação: “avaliação             desenvolvido. Na outra extremidade, os usuários
+de especialistas em relação aos conteúdos, recursos              podem se envolver de forma intensa, participando
+didáticos e interface do ambiente”.35:109                        ativamente de todas as etapas do projeto, incluindo
+       O método DIS, também denominado Modelo                    a própria concepção da ferramenta tecnológica.
+de Dick e Carey, possui uma abordagem de siste-                         Vale ressaltar que a norma International Orga-
+mas objetivando uma instrução efetiva para apoiar                nization for Standardization (ISO) 13.407: Human-cen-
+
+                                                                                    Texto Contexto Enferm, 2017; 26(4):e2260017
+Barra DCC, Paim SMS, Dal Sasso GTM, Colla GW                                                                      8/12
+
+tered design processes for interactive systems (processo   modelo/método inflexível. Ao adotar este método,
+de design centrado no ser humano para sistemas             o pesquisador/desenvolvedor entregará todo o sis-
+interativos) descreve três soluções de design para         tema/ferramenta tecnológica ao final do projeto.51-52
+o DCU: I) Design cooperativo (usuários e desenvol-                O ciclo de vida espiral baseia-se no conceito de
+vedores/pesquisadores estão envolvidos em todas            maior necessidade do usuário. Este método desen-
+as etapas); II) Design participativo (usuários ocasio-     volve e entrega o sistema/ferramenta tecnológica
+nalmente participam do processo de concepção) e;           em versões. Ressalta-se que cada versão segue todas
+III) Design contextual (baseia-se no contexto atual).55    as etapas do CVDS, com as seguintes exceções: I)
+       Vários mecanismos apóiam o DCU, entre eles:         etapa implementação pode ser adotada por algu-
+testes de usabilidade, engenharia de usabilidade de        mas ou todas as versões; II) etapa manutenção será
+sistemas, avaliação heurística e avaliações rápidas/       aplicada somente à última versão disponibilizada.
+testes piloto. As avaliações rápidas (testes piloto) são   No CVDS abordagem espiral, os usuários podem
+consideradas importantes para que os usuários pos-         acompanhar o sistema em desenvolvimento e julgar
+sam dar seu feedback desde o início do projeto, bem        se o conteúdo/instrução atende de modo satisfató-
+como, promover a aproximação dos mesmos com                rio suas necessidades, possibilitando a substituição
+os desenvolvedores/pesquisadores e a ferramenta            do sistema existente (novas versões).51-52
+tecnológica em si.47                                              O ciclo de vida da prototipação aborda a
+       Como exemplo de aplicação do método DCU,            descoberta gradual e evolutiva do sistema em de-
+cita-se o estudo que desenvolveu um aplicativo             senvolvimento pelos usuários e desenvolvedores/
+móvel de monitorização e reação para estimular             pesquisadores. Ou seja, a partir de um conjunto de
+a atividade física em pessoas portadoras de doen-          necessidades dos usuários, os desenvolvedores/
+ça crônica na atenção primária. Neste estudo, os           pesquisadores as implementam rapidamente e as
+pesquisadores recrutaram pessoas em associações            refinam/detalham a partir do aumento do conhe-
+nacionais de pacientes portadores de Doença Pul-           cido do sistema pelos usuários e pelos próprios
+monar Obstrutiva Crônica (DPOC) e diabetes para            desenvolvedores.51-52
+participarem da equipe de pesquisa. Estes pacientes               Este modelo possui três categorias: I) protótipo
+retrataram e refletiram as necessidades, demandas          em papel ou protótipo computacional (demonstra
+e restrições da sua condição enquanto portadores           a interação homem/máquina e o entendimento
+de doenças crônicas, bem como, forneceram aos              claro desta interação existente); II) protótipo de
+pesquisadores feedback sobre a compreensão das             trabalho (implementa algumas funções exigidas
+questões abordadas nas entrevistas e dos conteú-           pelo usuário que poderão ser melhoradas durante
+dos/documentos destinados aos usuários finais.             o desenvolvimento do sistema); e III) protótipo
+Ao adotar o método DCU, os pesquisadores con-              funcional (permite ao usuário o armazenamento
+seguiram reunir requisitos do usuário que foram            de dados e execução de operações com tais dados).
+traduzidos em soluções técnicas pela equipe de             Destaca-se que os protótipos possibilitam visualizar
+engenharia do projeto, possibilitando a interação          aspectos incertos do sistema em desenvolvimento,
+contínua entre todos os envolvidos.29                      bem como, podem verificar e testar hipóteses sobre
+       O método CVDS contempla as seguintes                tais aspectos. Assim, os protótipos são considerados
+etapas: análise (levantamento das necessidades e           tipicamente incompletos e não possuem a intenção
+identificação das necessidades da instituição/usuá-        de funcionar sem falhas toleráveis.51-52
+rio); projeto (especificações detalhadas do projeto);             Estudo que desenvolveu um aplicativo para
+desenvolvimento (inclui desenvolvimento ou aqui-           consulta de medicamentos quimioterápicos na
+sição do software); implementação (após passar por         auditoria de contas hospitalares.21 As pesquisado-
+testes avaliativos); e manutenção (manter e atualizar      ras adotaram o método de CVDS – prototipação,
+o sistema constantemente). O CVDS se subdivide em          contemplando as seguintes etapas: I) comunicação:
+três categorias: ciclo de vida clássico, ciclo de vida     “levantamento dos requisitos do software”;21:180; II)
+espiral e ciclo de vida da prototipação.51-52              planejamento: descrição dos “recursos que seriam
+       O ciclo de vida clássico, também denominado         utilizados e o cronograma a ser seguido”;21:180 III)
+Modelo em Cascata, segue todas as etapas do CVDS           modelagem: “criação do modelo consistente com
+descritas anteriormente. Possui uma estrutura              requisitos levantados”;21:180 IV) construção: “geração
+linear, sequencial e ausência de revisão de cada           de códigos e testes para revelar erros”;21:180 e V) im-
+etapa, ou seja, o desenvolvimento do sistema se            plantação: “a etapa final onde o produto é analisado
+dá em uma única direção, sendo considerado um              e avaliado”.21:180
+
+                                                                            Texto Contexto Enferm, 2017; 26(4):e2260017
+Métodos para desenvolvimento de aplicativos móveis em saúde...                                                            9/12
+
+       Um estudo de revisão sistemática sintetizou               2 Barra DCC, Almeida SRW, Sasso GTMD, Paese F, Rios
+os conhecimentos atuais sobre os fatores que in-                   GC. Metodologia para modelagem e estruturação do
+fluenciam a adoção de aplicativos de saúde móvel                   processo de enfermagem informatizado em terapia
+(m-saúde/m-health) por profissionais de saúde. A                   intensiva. Texto Contexto Enferm [Internet]. 2016
+                                                                   [cited 2016 Nov 12]; 25(3):e2380015. Available from:
+partir dos 33 estudos selecionados para análise,
+                                                                   http://www.scielo.br/pdf/tce/v25n3/pt_0104-0707-
+179 elementos foram reconhecidos como facilita-                    tce-25-03-2380015.pdf
+dores (54,7%) ou barreiras (45,3) para a adoção de
+                                                                 3 Filipova AA. Electronic health records use and
+tais ferramentas tecnológicas. Entre os principais                 barriers and benefits to use in skilled nursing facilities.
+elementos identificados, caracterizados como indi-                 Comput Inform Nurs [Internet]. 2013 [cited 2017
+vidual, organizacional e contextual, destacaram-se:                Feb 20]; 31(7):305-18. Available from: http://dx.doi.
+utilidade/finalidade e facilidade de uso; design e                 org/10.1097/NXN.0b013e318295e40e
+preocupações técnicas; segurança, privacidade, cus-              4 Roberts S, Chaboyer W, Gonzalez R, Marshall A.
+to e tempo; familiaridade com a tecnologia; intera-                Using technology to engage hospitalised patients
+ção com colegas, pacientes e gestores.16 Ressalta-se,              in their care: a realist review. BMC Health Serv Res
+portanto, a relevância da escolha apropriada do mé-                [Internet]. 2017 [cited 2017 Aug 03]; 17: 388. Available
+todo para desenvolvimento de aplicativos móveis                    from: https://www.ncbi.nlm.nih.gov/pmc/articles/
+em saúde, uma vez que, as questões relacionadas                    PMC5461760/pdf/12913_2017_Article_2314.pdf
+à facilidade de uso, design e componentes técnicos               5 Matsuda LM, Évora YDM, Higarashi IH, Gabriel CS,
+dos sistemas constituem-se em fatores diretamente                  Inoue KC. Informática em enfermagem: desvelando o
+relacionados ao sucesso e às barreiras para a adoção               uso do computador por enfermeiros. Texto Contexto
+                                                                   Enferm [Internet]. 2015 [cited 2017 Aug 03]; 24(1):178-
+destas ferramentas tecnológicas.
+                                                                   86. Available from: http://www.scielo.br/scielo.
+                                                                   php?script=sci_arttext&pid=S0104070720150001001
+CONCLUSÃO                                                          78&lng=pt
+                                                                 6 Banos O, Villalonga C, Garcia R, Saez A, Damas M,
+      Neste estudo de revisão integrativa da literatu-
+                                                                   Holgado-Terriza JA, et al. Design, implementation
+ra optou-se por analisar somente os artigos que con-               and validation of a novel open framework for
+tinham a descrição do método utilizado, associado                  agile development of mobile health applications.
+ao detalhamento de suas respectivas etapas, para o                 Biomed Eng Online [Internet]. 2015 [cited 2017 Mar
+desenvolvimento de aplicativos móveis em saúde.                    20]; 14(Suppl 2): S6. Available from: http://dx.doi.
+Entretanto, vale destacar que as autoras ao adotarem               org/10.1186/1475-925X-14-S2-S6
+o “Método de Leitura Científica”, na fase visão sin-             7 Keengwe J, Bhargava M. Mobile learning and
+crética, para a análise dos 1.984 artigos, foi possível            integration of mobile technologies in education.
+evidenciar que, de forma geral, os pesquisadores/                  Educ Inf Technol [Internet]. 2014 [cited 2016 Nov
+desenvolvedores/designers utilizaram os principais                 15]; 19(4):737-46. Available from: http://dx.doi.
+métodos para desenvolvimento de aplicativos descri-                org/10.1007/s10639-013-9250-3
+tos na literatura, quais sejam: design instrucional, de-         8 Clay CA. Exploring the use of mobile technologies
+sign instrucional sistematizado, design instrucional               for the acquisition of clinical skills. Nurse Educ
+                                                                   Today. [Internet]. 2011 [cited 2016 Dec 01]; 31(1):582-
+contextualizado, design centrado no usuário e ciclo
+                                                                   6. Available from: http://dx.doi.org/10.1016/j.
+de vida de desenvolvimento de sistemas.
+                                                                   nedt.2010.10.011.
+      Esta revisão integrativa permitiu identificar              9 Boulos MNK, Brewer AC, Karimkhani C, Buller DB,
+as etapas descritas em cada método, destacando                     Dellavalle RP. Mobile medical and health apps: state of
+as características de cada uma delas e ainda com-                  the art, concerns, regulatory control and certification.
+preender que, independente do método escolhido,                    Online J Public Health Inform [Internet]. 2014 [cited
+as etapas devem ser bem definidas e estruturadas                   2017 Feb 14]; 5(3):229. Available from: http://dx.doi.
+de forma adequada, para que o aplicativo móvel                     org/10.5210/ojphi.v5i3.4814
+desenvolvido seja útil ao usuário final.                         10 Saccol A, Schlemmer E, Barbosa J. M-learning e
+                                                                    U-learning - novas perspectivas da aprendizagem
+                                                                    móvel e ubíqua. São Paulo: Pearson Prentice Hall; 2011.
+REFERÊNCIAS
+                                                                 11 Marcano BJS, Jamsek J, Huckvale K, O’Donoghue
+1 Guimarães EMP, Godoy SCB. Telenfermagem -                         J, Morrison CP, Car J. Comparison of self-administered
+  Recurso para assistência e educação em enfermagem.                survey questionnaire responses collected using
+  Rev Min Enferm [Internet]. 2012 [cited 2016 Nov 12];              mobile apps versus other methods. Cochrane
+  16(2):157-8. Available from: http://www.reme.org.                 Database Syst Rev [Internet]. 2015 [cited 2017 Jan
+  br/artigo/detalhes/513                                            26]. 27; (7):MR000042. Available from: http://dx.doi.
+
+                                                                                    Texto Contexto Enferm, 2017; 26(4):e2260017
+Barra DCC, Paim SMS, Dal Sasso GTM, Colla GW                                                                          10/12
+
+   org/10.1002/14651858.MR000042.pub2                         23 Sundberg K, Eklöf AL, Blomberg K, Isaksson AK,
+12 Habib MA, Mohktar MS, Kamaruzzaman SB, Lim                    Wengström Y. Feasibility of an interactive ICT-
+   KS, Pin TM, Ibrahim F. Smartphone-based solutions             platform for early assessment and management of
+   for fall detection and prevention: challenges and             patient-reported symptoms during radiotherapy for
+   open issues. Sensors [Internet]. 2014 [cited 2016 Dec         prostate cancer. Eur J Oncol Nurs. 2015 Oct [cited 2016
+   21]; 14(4):7181-208. Available from: http://dx.doi.           Dec 15]; 19(5):523-8.
+   org/10.3390/s140407181                                     24 Galligioni E, Piras EM, Galvagni M, Eccher C, Caramatti
+13 Bsoul M, Minn H, Tamil L. Apnea medassist: Real-time          S, Zanolli D, et al. Integrating m-health in oncology:
+    sleep apnea monitor using single-lead ecg. IEEE Trans        experience in the Province of Trento. J Med Internet
+    Inform Technol Biomed. [Internet]. 2011 [cited 2016          Res [Internet]. 2015 [cited 2016 Dec 16]; 17(5):e114.
+    Dec 21]; 15(3):416-27. Available from: http://dx.doi.        Available from: http://dx.doi.org/10.2196/jmir.3743
+    org/10.1109/TITB.2010.2087386                             25 Rhee H, Allen J, Mammen J, Swift M. Mobile phone-
+14 Banos O, Villalonga C, Damas M, Gloesekoetter                 based asthma self-management aid for adolescents
+   P, Pomares H, Rojas I. Physiodroid: Combining                 (mASMAA): a feasibility study. Patient Prefer
+   wearable health sensors and mobile devices for a              Adherence. 2014 [cited 2016 Dec 15]; 8:63-72. Available
+   ubiquitous, continuous, and personal monitoring.              from: http://dx.doi.org/10.2147/PPA.S53504.
+   Scientific World J [Internet]. 2014 [cited 2017 Jan 21];   26 Rhee H, Miner S, Sterling M, Halterman JS, Fairbanks
+   2014(490824):1-11. Available from: http://dx.doi.             E. The development of an automated device for
+   org/10.1155/2014/490824                                       asthma monitoring for adolescents: methodologic
+15 Gaggioli A, Pioggia G, Tartarisco G, Baldus G, Corda          approach and user acceptability. JMIR Mhealth
+   D, Cipresso P, et al. A mobile data collection platform       Uhealth [Internet]. 2014 Apr-Jun [cited 2016 Dec 14 ];
+   for mental health research. Pers Ubiquit Comput.              2(2):e27. Available from: http://dx.doi.org/10.2196/
+   [Internet]. 2013 [cited 2016 Dec 22]; 17(2):241-251.          mhealth.3118
+   Available from: http://dx.doi.org/10.1007/s00779-          27 Risso NA, Neyem A, Benedetto JI, Carrillo MJ, Farías
+   011-0465-2                                                    A, Gajardo MJ, et al. A cloud-based mobile system
+16 Peres HHC, Marin HF. Informática em Enfermagem                to improve respiratory therapy services at home.
+   e Telenfermagem: desafios e avanços na formação e             J Biomed Inform [Internet]. 2016 Oct [cited 2016
+   no cuidado. J Health Inform [Internet]. 2012 Jan-Mar          Dec 14]; 63:45-53. Available from: http://dx.doi.
+   [cited 2017 Jan 21]; 4(1):I. Available from: http://          org/10.1016/j.jbi.2016.07.006
+   www.jhi-sbis.saude.ws/ojs-jhi/index.php/jhi-sbis/          28 Buman MP, Epstein DR, Gutierrez M, Herb C,
+   article/viewFile/194/110                                      Hollingshead K, Huberty JL, et al. BeWell24:
+17 Gagnon MP, Ngangue P, Payne-Gagnon J, Desmartis               development and process evaluation of a smartphone
+   M. m-Health adoption by healthcare professionals: a           “app” to improve sleep, sedentary, and active
+   systematic review. J Am Med Inform Assoc [Internet].          behaviors in US Veterans with increased metabolic
+   2016 Jan [cited 2016 Dec 21]; 23(1):212-20. Available         risk. Transl Behav Med [Internet]. 2016 Sep [cited 2016
+   from: http://dx.doi.org/10.1093/jamia/ocv052                  Dec 15]; 6(3):438-48. Available from: http://dx.doi.
+18 Ganong LH. Integrative reviews of nursing. Rev Nurs           org/10.1007/s13142-015-0359-3
+   Health. 1987 Feb; 10(1):1-11.                              29 Weegen SDV, Verwey R, Spreeuwenberg M, Tange
+19 Moher D, Liberati A, Tetzlaff J, Altman DG. Preferred         H, Weijden TVD, Witte L. The Development of a
+   reporting items for systematic reviews and meta-              mobile monitoring and feedback tool to stimulate
+   analyses: The PRISMA statement. Int J Surg [Internet].        physical activity of people with a chronic disease in
+   2010 [cited 2017 Jan 14]; 8(5):336-41. Available from:        primary care: a user-centered design. JMIR Mhealth
+   http://dx.doi.org/10.1016/j.ijsu.2010.02.007                  Uhealth [Internet]. 2013 Jul-Dec [cited 2016 Dec 16];
+20 Cervo AI, Bervian PA. Metodologia científica. São             1(2):e8. Available from: 10.2196/mhealth.2526
+   Paulo: Prentice Hall; 2002.                                30 Rdunez P, Tajer C. Disseminating cardiovascular
+21 Grossi LM, Pisa IT,  Marin HF. Oncoaudit:                     disease risk assessment with a PAHO mobile app:
+   desenvolvimento e avaliação de aplicativo para                a public eHealth intervention. Rev Panam Salud
+   enfermeiros auditores. Acta Paul Enferm [Internet].           Publica [Internet]. 2015 [cited 2016 Dec 15]; 38(1):82-5.
+   2014 [cited 2016 Dec 15]; 27(2):179-185. Available from:      Available from: http://www.scielosp.org/pdf/rpsp/
+   http://dx.doi.org/10.1590/1982-                               v38n1/v38n1a11.pdf
+22 Rodgers CC, Krance R, Street RLJ, Hockenberry MJ.          31 Davis B, Nies M, Shehab M, Shenk D. Developing a
+   Symptom Prevalence and Physiological Biomarkers               pilot e-mobile app for dementia caregiver support:
+   among Adolescents using a Mobile Phone Intervention           Lessons learned. Online J Nurs Inform (OJNI)
+   Following Hematopoietic Stem Cell Transplant. Oncol           [Internet]. 2014 [cited 2016 Dec 14]; 18(1). Available
+   Nurs Forum [Internet]. 2014 May [cited 2016 Dec               from: http://ojni.org/issues/?p=3095.
+   15]; 41(3): 229-36. Available from: http://dx.doi.         32 Dirin M, Dirin A, Laine TH. User-centered design
+   org/10.1188/14.ONF.229-236                                    of a context-aware nurse assistant (CANA) at
+
+                                                                                 Texto Contexto Enferm, 2017; 26(4):e2260017
+Métodos para desenvolvimento de aplicativos móveis em saúde...                                                           11/12
+
+   Finnish elderly houses. In: Proceeding IMCOM                     hazard analysis in the context of parenteral nutrition:
+   ‘15 Proceedings of the 9th International Conference              description of a framework and a prototype
+   on Ubiquitous Information Management and                         app. JMIR Research Protocols [Internet]. 2016 [cited
+   Communication, 2015 Jan 8-10; Bali, Indonesia.                   2016 Dec 16]; 5(2):e57. Available from: http://dx.doi.
+   Article No. 39. Available from: http://dx.doi.                   org/10.2196/resprot.4907.
+   org/10.1145/2701126.2701225                                   42 Dick W. A model for the systematic design of
+33 Lindley LC, Zhou W, Mack JW, Li X. Pediatric hospice             instruction. In: Tennyson RD, Schott F, Seel FSNM,
+    and palliative care: Designing a mobile app for clinical        Dijkstra S, editors. Instructional design: international
+    practice. Comput Inform Nurs [Internet]. 2014 Jul               perspectives. New York (USA)/London(UK):
+    [cited 2016 Dec 14]; 32(7):299–302. Available from:             Routledge Taylor & Francis Group; 2012.
+    http://dx.doi.org/10.1097/CIN.0000000000000084.              43 Dick W, Carey L, Carey JO. The Systematic Design
+34 Kuo MC, Lu YC, Chang P. A newborn baby care                      of Instruction. Educational Technology Research and
+   support app and system for mhealth. Nurs Inform.                 Development. 2006 [cited 2017 Mar 01]; 54(4):417-20.
+   2012 [cited 2016 Dec 16]; 2012: 228. Available from:          44 Filatro A. Design instrucional na prática. São Paulo:
+   https://www.ncbi.nlm.nih.gov/pmc/articles/                       Pearson Education do Brasil; 2008.
+   PMC3799188/
+                                                                 45 Filatro A, Piconez SCB. Design instrucional
+35 Galvão ECF, Püschel VAA. Aplicativo multimídia                   contextualizado. In: Congresso Internacional de
+   em plataforma móvel para o ensino da mensuração                  Educação a Distância, 2004 Oct; Salvador, Brasil.
+   da pressão venosa central. Rev Esc Enferm USP                    Available from http://P.abed.org.br/congresso2004/
+   [Internet]. 2012 Oct [cited 2017 Mar 20]; 46(spe):107-15.        por/htm/049-TC-B2.htm.
+   Available from: http://www.scielo.br/pdf/reeusp/
+                                                                 46 Cervelin S. Design Instrucional à educação profissional
+   v46nspe/16.pdf
+                                                                    on-line [tese]. Florianópolis (SC): Universidade Federal
+36 Rezende LCM, Santos SR, Medeiros AL. Assessment                  de Santa Catarina, Programa de Pós-Graduação em
+   of a prototype for the Systemization of Nursing Care             Engenharia e Gestão do Conhecimento; 2013.
+   on a mobile device. Rev Latino-am Enfermagem
+                                                                 47 Abras, C, Maloney-Krichmar D, Preece, J. User-
+   [Internet]. 2016 [cited 2017 Mar 20]; 24:e2714.
+                                                                    Centered Design. In: Bainbridge W. Encyclopedia of
+   Available from: http://dx.doi.org/10.1590/1518-
+                                                                    Human-Computer Interaction. Thousand Oaks: Sage
+   8345.0898.2714
+                                                                    Publications; 2004.
+37 Connelly K, Siek KA, Chaudry B, Jones J, Astroth K,
+                                                                 48 Schulze AN. User-Centered Design for Information
+   Welch JL. An offline mobile nutrition monitoring
+                                                                    Professionals. Journal of Education for Library and
+   intervention for varying-literacy patients receiving
+                                                                    Information Science [Internet]. 2001 [cited 2017 Mar
+   hemodialysis: a pilot study examining usage and
+                                                                    12]; 42(2):116-122. Available from: http://dx.doi.
+   usability. J Am Med Inform Assoc JAMIA [Internet].
+                                                                    org/10.2307/40324024.
+   2012 [cited 2016 Dec 15]; 19(5):705-12. Available
+   from: https://www.ncbi.nlm.nih.gov/pmc/articles/              49 Vredenburg K, Mao JY, Smith PW, Carey T. A survey
+   PMC3422827/                                                      of user-centered design practice. In: CHI Conference
+                                                                    on Human Factors in Computing Systems, 2002;
+38 Jeon E, Park H-A. Development of a smartphone
+                                                                    New York, USA. Available from: http://dx.doi.
+   application for clinical-guideline-based obesity
+                                                                    org/10.1145/503376.503460.
+   management. Healthc Inform Res [Internet]. 2015
+   [cited 2016 Dec 14]; 21(1):10-20. Available from:             50 Endsley MR, Jones DG. Desingning for situation
+   http://dx.doi.org/10.4258/hir.2015.21.1.10.                      Awareness – an approach to user-centered design.
+                                                                    New York (US): CRC Express: Taylor and Francis
+39 BinDhim NF, Shaman AM, Trevena L, Basyouni MH,
+                                                                    Group; 2016.
+   Pont LG, Alhawassi TM. Depression screening via a
+   smartphone app: cross-country user characteristics            51 Alves RF, Vanalle RM. Ciclo de Vida de Desenvolvimento
+   and feasibility. J Am Med Inform Assoc [Internet].                de Sistemas - Visão Conceitual dos Modelos Clássico,
+   2015 [cited 2016 Dec 19]; 22(1):29-34. Available from:            Espiral e Prototipação. Associação Brasileira de
+   https://doi.org/10.1136/amiajnl-2014-002840.                      Engenharia de Produção [Internet]. 2001 [cited 2017
+                                                                     Mar 27]. Available from: http://www.abepro.org.br/
+40 Jaensson M, Dahlberg K, Eriksson M, Grönlund
+                                                                     biblioteca/ENEGEP2001_TR93_0290.pdf
+   Å, Nilsson U. The development of the Recovery
+   Assessments by Phone Points (RAPP): a mobile                  52 Gordon ST, Gordon JR. Sistemas de Informação: Uma
+   phone app for postoperative recovery monitoring and              Abordagem Gerencial. LTC; 2006.
+   assessment. JMIR mHealth and uHealth [Internet].              53 Reiser RA. A History of Instructional Design and
+   2015 [cited 2016 Dec 19]; 3(3):e86. Available from:              Technology; Part I: A History of Instructional Media.
+   http://dx.doi.org/10.2196/mhealth.4649.                          Berlin (GE): Educational Technology Research and
+41 Alonso Rorís VM, Álvarez Sabucedo LM, Wanden-                    Development.; 2001.
+   Berghe C, Santos Gago JM, Sanz-Valero J. Towards              54 Dick W, Carey L, Carey JO. The systematic design of
+   a mobile-based platform for traceability control and             instruction. New York (US); Pearson; 2014.
+
+                                                                                    Texto Contexto Enferm, 2017; 26(4):e2260017
+Barra DCC, Paim SMS, Dal Sasso GTM, Colla GW                                                                     12/12
+
+55 International Organization for Standardization -       57 Dirin A, Casarini M. Adaptive m-learning application
+   ISO 13407: Human-centered design processes for            for driving licences candidates based on UCD
+   interactive systems. Geneva (CH): ISO; 1999.              for m-learning framework. In: CSEDU2014-6 th
+                                                             International Conference on Computer Supported
+56 International Organization for Standardization - ISO      Education, 2014; Helsinki, Finland. p.187-93. Available
+    9241-210: Ergonomics of human-system interaction;        from: https://files.ifi.uzh.ch/stiller/CLOSER%20
+    Part 210: Human-centred design for interactive           2014/CSEDU/CSEDU/Ubiquitous%20Learning/
+    systems. Geneva (CH): ISO; 2010.                         Short%20Papers/CSEDU_2014_113_CR.pdf
+
+
+
+
+Correspondência: Daniela Couto Carvalho Barra                                          Recebido: 30 de março de 2017
+Universidade Federal de Santa Catarina                                                Aprovado: 22 de agosto de 2017
+Centro de Ciências da Saúde, Departamento de Enfermagem
+Bloco I, sala 503.
+88040-900 – Trindade, Florianópolis, SC, Brasil
+E-mail: daniela.barra@ufsc.br
+
+
+                                                                            Texto Contexto Enferm, 2017; 26(4):e2260017
+

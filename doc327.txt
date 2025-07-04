@@ -1,0 +1,187 @@
+Protótipo de assistente virtual para ambientes domiciliares voltados a pessoas com deficiência
+Roger Mendes Cobra
+30/11/2020
+CONTEÚDO
+RESUMO
+1. INTRODUÇÃO
+2. MATERIAIS E METODOS
+2.1 DEFINIÇÃO DO ASSISTENTE VIRTUAL
+2.2 ESTABELECIMENTO DO LAYOUT DO ASSISTENTE VIRTUAL
+2.3 DESCRIÇÃO E DESELVOLVIMENTO DO ASSISTENTE VIRTUAL
+2.4 REALIZAÇÃO DE TESTES E ANÁLISES
+3. DISCUSSÃO
+4. RESULTADOS
+5. CONCLUSÃO
+REFERÊNCIAS
+Roger Mendes Cobra
+ARTIGO ORIGINAL
+
+COBRA, Roger Mendes [1], WATAYA, Roberto Sussumu [2]
+
+COBRA, Roger Mendes. WATAYA, Roberto Sussumu. Protótipo de assistente virtual para ambientes domiciliares voltados a pessoas com deficiência. Revista Científica Multidisciplinar Núcleo do Conhecimento. Ano 05, Ed. 11, Vol. 18, pp. 64-76. Novembro de 2020. ISSN: 2448-0959, Link de acesso: https://www.nucleodoconhecimento.com.br/ciencia-da-computacao/prototipo-de-assistente, DOI: 10.32749/nucleodoconhecimento.com.br/ciencia-da-computacao/prototipo-de-assistente
+
+RESUMO
+Com o avanço da tecnologia e o advento da Internet das Coisas surgiram inúmeras possibilidades, as quais permitem o uso de diversos aparelhos via controle remoto ou até mesmo por comando de voz, possibilitando a fácil interação de pessoas com máquinas, graças a Interfaces Homem e Máquina (IHM), podendo oferecer sistemas cada vez mais inteligentes para resolução de problemas do cotidiano. Este trabalho objetiva-se em desenvolver um assistente virtual com comando de voz para auxílio de pessoas com deficiência visual e baixa mobilidade a fim de promover maior praticidade e funcionalidade no ambiente domiciliar, de acordo com as necessidades do deficiente. Trata-se de um estudo de campo prático e qualitativo, com o intuito de desenvolver um assistente virtual para promover praticidade e autonomia as pessoas com deficiência. Foi utilizado o compilador Visual Studio 2017 como plataforma de desenvolvimento do assistente virtual na linguagem C sharp, utilizando a (API) “microsoft Speech.Recognition”. Utilizamos a plataforma de desenvolvimento IDE ARDUINO 2019 para desenvolvimento do software embarcado na placa Arduíno para comunicação entre as placas logicas através da programação. Ao finalizar o desenvolvimento do software encontrou-se algumas dificuldades como o Assistente Virtual realizar comandos que não foram solicitados e o ajuste na sensibilidade do reconhecimento de voz. Após período de teste e implantação, o sistema do  Assistente Virtual funcionou da forma desejada, recebendo o comando de voz para ligar o ventilador e o executando, ligando o dispositivo e informando que o ventilador foi ligado para o desenvolvedor. Conclui-se que o Assistente virtual é de extrema importância na autonomia e independência no dia a dia de pessoas com deficiência, facilitando suas atividades de vida diária. Durante o percurso do projeto notou-se que alguns desafios necessitam de ajustes, com por exemplo, a implantação e suas diversidades residenciais e pessoais de cada usuário. Se faz necessário reaver alguns métodos de software, hardware e implantação, para efetividade e inovação, afim de promover uma melhor experiência para o usuário.
+
+Palavras- chave: Assistente Virtual, internet das coisas, IOT, deficientes visuais.
+
+1. INTRODUÇÃO
+Com o advento da tecnologia no cenário global, disponibiliza uma enorme quantidade de sistemas e maquinas autônomas, e uma dessas tecnologias inovadoras temos as casas controlas pelos Smartphones ou até mesmo por voz em rede local e externas, ou casas inteligentes no qual o controle de temperatura e iluminação são feitas de formas automáticas, o acesso a essas tecnologias estão cada vez mais fáceis, sejam elas através de conteúdos didáticos na internet, bem como, baixos custos de componentes eletrônicos como sensores, processadores e microcontroladores (BARBOSA e SILVA, 2010); (LACERDA, 2015).
+
+A internet das coisas (IoT) proporcionam inúmeras possibilidades em vários segmentos da sociedade, como eletrodomésticos que preparam refeições de forma autônoma, brinquedos e setores da agronomia, é nesta onda da tecnologia que embarcamos no desenvolvimento de um Assistente Virtual (AV). (STELLMAN, 2010); (GOVERNO DO ESTADO DE SÃO PAULO, 2010).
+
+Um Assiste Virtual é capaz de interagir com pessoas através do comando de voz ou Interface Homem e Máquina (IHM), recebendo comandos e transmitindo informações ao usuário, e tem como base um software capaz de interpretar comandos ou designar comandos para Hardwares, que é a parte física de um AV, como por exemplo, o usuário pode estabelecer um comando por voz e o AV executa desligando uma lâmpada (BARBOSA e SILVA, 2010); (LACERDA, 2015); (STELLMAN, 2010); (GOVERNO DO ESTADO SÃO PAULO, 2010).
+
+Olhando para diversos problemas e paradigmas, temos em nosso meio, pessoas com deficiência (PCD), segundo dados da Organização Mundial da Saúde (OMS), no mundo existem cerca de 314 milhões de pessoas com deficiência visual, sendo 45 milhões diagnosticadas com cegueira e 269 milhões com baixa visão e, segundo o Censo de 2010 realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE) o Brasil possui cerca de 13 milhões de pessoas portadoras de alguma deficiência motora, na qual, apresentam dificuldades de locomoção dentro de casa, tendo como obstáculos moveis, escadas e outros fatores, essas dificuldades, prejudicam sua autonomia, tornando-os dependentes de terceiros para a realização de tarefas simples, como por exemplo, abrir o portão de sua própria residência. (CATÁLOGO NACIONAL DE PRODUTOS, 2014); (CENSO, 2010).
+
+Além disso, estima-se que a população brasileira na faixa dos 60 anos com necessidades especiais, aumentará cerca de 10%, evidenciando a importância da preocupação com o atendimento às necessidades especiais, diante deste contexto, o assistente virtual entra como uma alternativa ao auxílio na praticidade e autonomia no ambiente domiciliar (INTRODUÇÃO À TECNOLOGIA ASSISTIVA, 2014); (CATÁLOGO NACIONAL DE PRODUTOS TECNOLOGIA ASSISTIVA DISPONIVEL, 2014); (CENSO, 2010); (ARRUDA, 2010).
+
+Algumas tarefas do dia a dia que realizamos como, ir checar se realmente trancou o portão antes de dormir, para uns podem ser tarefas simples, já para um Deficiente Visual, talvez não sejam tarefas  tão simples assim, sejam, dependendo de uma cadeira de rodas para locomoção tendo que encarar escadas para checar ao portão, e/ou uma pessoa com deficiência visual realizando essa tarefa, orientando-se apenas com auxilio de uma bengala. Algumas outras dificuldades, também podem ser observadas como: Ligar ventilador; acender a luz; colocar o celular para carregar; ligar televisão e abrir e fechar portas. (ARRUDA, 2010).
+
+Dito isso,  este estudo objetiva-se desenvolver um assistente virtual, com comando de voz, para auxílio de pessoas com deficiência visual, a fim de, promover maior praticidade e funcionalidade no ambiente domiciliar, de acordo com as necessidades do deficiente visual.
+
+2. MATERIAIS E METODOS
+Trata-se de um estudo de campo prático e qualitativo, com o intuito de desenvolver um assistente virtual para promover praticidade e autonomia as pessoas com deficiência (PCD) no ambiente domiciliar, no qual foi realizado pesquisa de opinião sobre as dificuldades referentes ao seu ambiente domiciliar. Abaixo podem ser observados os materiais utilizados e o desenvolvimento do Assistente virtual.
+
+Tabela 1- Softwares utilizados para desenvolvimento do assistente virtual. São Paulo, 2020.
+
+SOFTWARE	VERSÃO	PREÇO/LICENÇA	PROPRIEDADES
+WINDOWS	7 Ultimate	0,00	Livre
+VISUAL STUDIO	Visual Studio Community 2017	0,00	Livre
+C CHARP	V2003	0,00	Livre
+IDE ARDUINO	2019	0,00	Livre
+FONTE: TABELA DESENVOLVIDA PELO AUTOR, 2020
+
+Tabela 2- Hardware utilizados para desenvolvimento do assistente virtual. São Paulo, 2020.
+
+
+FONTE: TABELA DESENVOLVIDA PELO AUTOR, 2020
+Figura 1- Diagrama Metodológico e desenvolvimento do Assistente virtual. São Paulo,2020.
+
+
+Fonte: Diagrama desenvolvido pelo autor,2020.
+2.1 DEFINIÇÃO DO ASSISTENTE VIRTUAL
+Por meio de síntese de voz, o assistente virtual consegue entender o comando da fala humana.  Uma vez entendido o comando, o AV executa uma função interna (placa mãe), que por sua vez através das placas auxiliares executam as funções externas (Arduíno e modulo Rele), acionando dispositivos como: Abrir portões elétricos, trancar e destrancar fechaduras elétricas, acender e apagar luzes (lâmpadas), ou ate mesmo, responder uma simples pergunta: O portão está trancado?
+
+2.2 ESTABELECIMENTO DO LAYOUT DO ASSISTENTE VIRTUAL
+Os materiais utilizados para construção do layout foram: Caixa de espuma densa, leve e  retangular, onde foi encaixado todos os componentes com facilidade, na qual a placa mãe foi fixada na parte superior da caixa e os demais componentes (Arduíno e modulo rele) na parte inferior; A entrada e saída de cabos estruturados, foram realizados através de furos na caixa.
+
+Ao implantar nas residências, o mesmo, devera ser instalado, em um quadro elétrico paralelo ao quadro elétrico já existente a casa dos DV, sendo de suma importância a analise previa do mapa elétrico da residência.
+
+2.3 DESCRIÇÃO E DESELVOLVIMENTO DO ASSISTENTE VIRTUAL
+Foi utilizado o compilador Visual Studio 2017, como plataforma de desenvolvimento do assistente virtual na linguagem C sharp, utilizando a (API) “microsoft Speech.Recognition”.
+
+Utilizamos a plataforma de desenvolvimento IDE ARDUINO 2019, para desenvolvimento do software, embarcado na placa Arduíno, para complexa comunicação entre as placas logicas através da programação. O projeto foi realizado em 6 etapas; na primeira etapa foi realizado a tentativa de reconhecimento de voz; segunda etapa foi colocado comandos pré-estabelecido em forma de código; terceira etapa foi realizado a modelagem da IHM; quarta etapa foi realizado testes de saída de dados via porta serial; quinta etapa comunicação com hardware externo utilizando a placa Arduíno para executar comando solicitado via voz; sexta etapa foi realizado o preenchimento do vocabulário de entendimento do software do Assistente Virtual.
+
+Os hardwares utilizados foram: placa de notebook a placa central onde roda o software do AV no sistema operacional Windows 7 Ultimate; Arduíno responsável por receber os comandos via comunicação serial da placa central executando o comando externo passando para os módulos adjacentes; Módulo Relé de 16 Canais 5v responsável por acionar lâmpadas, ventiladores, portões elétricos e fechaduras elétricas; sensores responsáveis por coletar os dados, como por exemplo, se o portão encontra-se aberto ou fechado informando ao Arduíno que por sua vez informa a placa central, passando informação via áudio para o usuário.
+
+2.4 REALIZAÇÃO DE TESTES E ANÁLISES
+Nos primeiros testes, foram gerados reconhecimentos dos comandos programados no AV, notando-se, que o sistema se mantinha o tempo todo captando sons ambientes e conversas aleatórias, gerando do AV (comando não entendido), para solucionar este problema, foi criada uma rotina na programação do AV para que o mesmo, quando recebesse o comando ” ATLAS PARE DE OUVIR/ATLAS, FIQUE OFF”, para que o mesmo ficasse em modo hibernar. Ao reestabelecer os testes com as novas configurações o mesmo não respondia aos sons ambientes, esperando um comando para sair da hibernação, sendo este comando” ATLAS, VOCÊ ESTA AI” retornando assim, para as suas funções anteriores.
+
+Após, constatar que os testes de comunicação homem e maquina foram plausíveis, partimos para os testes de comunicação entre as placas adjacentes, sendo testado o comando: “ ATLAS, LIGAR LUZ” e a mesma foi acionada com o retorno de áudio do AV, respondendo ao comando:” COMANDO EXECUTADO”,  finalizando através das placas Arduíno e módulo rele, concluindo assim, o acionamento externo dos dispositivos residenciais, os testes podem ser visualizados na tabela 3.
+
+Tabela 3 – Teste de Desempenho do Assistente Virtual
+
+COMANDO POR VOZ	RESPOSTA em segundos
+Atlas pare de Ouvir	1s – modo hibernar
+Atlas fique Off	1s – modo hibernar
+Atlas você está aí?	1s – modo On
+Atlas Ligar a Luz	1s – Luz Ativada – Comando Executado
+(…)	(…)
+Atlas, Abrir a Porta	1s – Tarefa executada;
+Atlas, Fechar a Porta	1s – Tarefa executada;
+Atlas, Acender a Luz	1s – Tarefa executada;
+Atlas, Apagar a Luz	1s – Tarefa executada;
+Atlas, Ligar a TV	1s – Tarefa executada;
+Atlas, Desligar a TVAtlas, colocar o Celular para Carregar	1s – Tarefa executada; AV – bugou !!!! não foi executada a ordem!
+Fonte: Tabela Desenvolvida Pelo Autor, 2020
+
+3. DISCUSSÃO
+Alguns autores, desenvolveram controladores por meio de voz e controle, como o software via voice, que controla cadeiras de rodas, através de reconhecimento de voz, que por meio de uma interface feito por visual Basic. Os principais resultados, se basearam com índices de acerto de aproximadamente 95,2%, concluindo que há uma possibilidade de uma construção de cadeiras de rodas elétrica debaixo custo. (CHIELE E ZERBETTO, 2010)
+
+Já Outros autores, desenvolveram trabalhos que visavam o controle de um robô por reconhecimento de fala NXT, lego.  Os comandos se davam por meio de conexão Bluetooth, no qual foram utilizados modelos acústicos, sendo desenvolvido também uma, API, para todas as linguagens e direcionadas para a plataforma, onde controlavam o robô em tempo real, tendo sua linguagem o XML. Para reconhecimento de fala, foi utilizado um programa fornecido pelo LaPS Coruja 2.0, reconhecendo palavras isoladas. O trabalho teve 80% de confiança, sendo observado que a captura da fala e ruído é muito sensível e importante (SANTANA, 2014). Podendo ser comparado com atual estudo, no qual o AV, também mostrou algumas limitações quanto aos comandos de voz e a sensibilidade de ruídos e captação de sons.
+
+Já (BARROS E IANHAS, 2014), tiveram uma proposta de automação residencial, a fim de auxiliar e controlar equipamentos domésticos por meio de comando de voz e fala, com o objetivo de promover segurança. Foi utilizado a plataforma Arduino UNO e também o modulo EASY VR SHIELD, utilizando banco de vozes para gravação das falas. Foi utilizado também módulos relês e LEDS de infravermelhos, para controlar cargas de ventiladores, lâmpadas e televisões. Os testes foram satisfatórios para os autores.
+
+Comparando com o presente estudo, que utilizou critérios parecidos, entretanto com o objetivo de promover qualidade de vida para Pessoas com deficiência ou mobilidade reduzida.
+
+Já (OBAID et al, 2014), desenvolveram um projeto de automação residencial, a fim de ajudar pessoas com baixa mobilidade, utilizando também a plataforma Arduino UNO, módulo Wi-Fi ZigBee e o software Lab VieW, sendo utilizado o Microsoft Speech (SAPI), sendo testados em 3 eletrodomésticos comandados por módulos relês. Os autores se mostraram satisfeitos com os resultados pós testes, alegando que a vantagem de utilizar esses modelos era de que o sistema poderia ser treinado apenas uma vez, chegando à conclusão de que se é possível controlar aparelhos domésticos utilizando ZigBee.
+
+Desenvolvendo um sistema de automação residencial, (GOBINATHAN e NARAVANADASS, 2014), também utilizaram reconhecimento de fala para pessoas com deficiência. O sistema também é classificado como baixo custo, sendo utilizado a plataforma Raspberry Pi modelo B, bem como, dois módulos GSM/GPRS SIM300 e utilizando também o Sphinx-4 speech recognition.  Os autores alegam que o sistema apresentou 93,55% de acerto, contribuindo para as atividades de vida dos usuários.
+
+Por fim, (KRONBAUER e COSTA, 2015), criaram um dispositivo para interação de um usuário com ambientes de Inteligência conhecido como AmIs, por meio de comando de voz.  Os autores utilizaram a plataforma Raspberry Pi e sistema Rapbian, a base foi o software Jasper, para a tradução de voz, os autores utilizaram AT&TSpeech API.  Após avaliações o dispositivo, realizou todas as tarefas propostas, concluindo assim, que a abordagem pode ser uma solução para criação de interfaces por meio de voz.
+
+4. RESULTADOS
+Ao finalizar o desenvolvimento do software encontrou-se algumas dificuldades como o AV realizar comandos que não foram solicitados e o ajuste na sensibilidade do reconhecimento de voz. Após período de teste e implantação, o sistema AV funcionou da forma desejada, recebendo o comando de voz para ligar o ventilador e o mesmo executou o comando ligando o dispositivo e informando que o ventilador foi ligado para o desenvolvedor.
+
+Por estar limitado ao tempo na confeccção e desenvolvimento do AV, não fizemos mais nenhum acionamento por comando de voz e sua programação para executar diversas tarefas correspondentes
+
+5. CONCLUSÃO
+Conclui-se que o Assistente virtual é de extrema importância na autonomia e independência no dia a dia de pessoas com deficiência facilitando suas atividades de vida diária. Durante o percurso do projeto notou-se que alguns desafios necessitam de ajustes como por exemplo a implantação e suas diversidades residenciais e pessoais de cada usuário.
+
+Se faz necessário reaver alguns métodos de software, hardware e implantação, para efetividade e inovação afim de promover uma melhor experiência para o usuário.
+
+REFERÊNCIAS
+ARRUDA, S. M. C. P. Atividade de vida diária e deficiência visual. In: Haddad, M. A. O. et al. Baixa visão e cegueira: os caminhos para a reabilitação, a educação e a inclusão. Rio de Janeiro: Cultura Médica/Guanabara Koogan, p.467-78, 2010.
+
+BARROS, M.D. da S.; IANHAS, E.R.F. Domótica-Automação Residencial por comando de Voz. 2014. Disponível em: . Acesso em: 7 de Jun. 2017.
+
+BARBOSA J. D., Simone; SILVA da S., Bruno. Interação Humano-computador. Elsevier, São Paulo, SP, pg. 26-33. 2010.
+
+BRAGA CJ, Junior CCA, Damasceno PJR, Albernaz, CHN. Estudo e relato sobre a utilização da tecnologia pelos deficientes visuais. IHC proceedings, 2012, MT, Brazil.
+
+BRASIL. Instituto Brasileiro de Geografia Estatística. Censo demográfico 2010: resultados preliminares do universo. [citado 2014 Jan 23]. Disponível em:http://www.ibge.gov.br/estadosat/temas.php?sigla=ap&tema=censodemog2010_defic.
+
+CATÁLOGO NACIONAL DE PRODUTOS DE TECNOLOGIA ASSISTIVA. Disponível em: <http://assistiva.mct.gov.br>. Acesso em 8 de dez. de 2014.
+
+CENSO 2010. Disponível em: <http://www.ibge.gov.br>. Acesso em: 8 de dez. de 2014.
+
+CHIELE, M. R.; ZERBETTO, A. Desenvolvimento de uma Cadeira de Rodas Controlada por Voz. ResearchGate, 2010. Disponível em: < https://www.researchgate.net/publication/266294187_DESENVOLVIMENTO_DE_UMA_CADEIRA_DE_RODAS_CONTROLADA_POR_VOZ>. Acesso em: 7 de Jun. de 2017.
+
+DESENHO UNIVERSAL: HABITAÇÃO DE INTERESSE SOCIAL. Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos Governo do Estado de São Paulo. 2010.
+
+FELIPPE,  João  Álvaro  de  Moraes. Caminhando  juntos:  manual  das  habilidades  básicas  de orientação  e  mobilidade.  São  Paulo:  Laramara —Associação  Brasileira  de  Assistência  ao Deficiente Visual, 2001.
+
+FELIPPE, João Álvaro de Moraes; FELIPPE, Vera Lucia Rhein. Orientaçãoe mobilidade. São Paulo: Laramara —Associação Brasileira de Assistência ao Deficiente Visual, 1997.
+
+GOBINATHAN, P; NARAYANADASS, R. Low Cost Home Automation Using Offline Speech Recognition, International Journal of Signal Processing Systems, vol. 2, Dec, 2014.
+
+INTRODUÇÃO À TECNOLOGIA ASSISTIVA. Disponível em:< http://www.assistiva.com.br/>. Acesso em 8 de dez. de 2014.
+
+KLEINA, Claudio. Tecnologia assistiva em educação especial e educação inclusiva 1. ed. Curitiba. Paraná. 2012. Editora intersaberes. Disponível em: http://eniac.bv3.digitalpages.com.br/users/publications/9788582120354/pages/5 Acesso em: 10 set 2016.
+
+KRONBAUER, A.H.; COSTA,V.F. A New Approach to the Interpretation of Voice Commands. Proceedings of the 21st Brazilian Symposium on Multimedia and the Web, Manaus, Brasil, Out. 2015.
+
+LACERDA, Flavia, Lima-Marques, Mamede Da necessidade de princípios de Arquitetura da Informação para a Internet das Coisas. Perspect. ciênc. inf., Jun 2015, vol. 20, no.2, p.158-171. ISSN 1413-9936.
+
+LIMA, T. Raspberry Pi B+. Embarcados, 2014. Disponível em:  Acesso em: 20 ago. 2017.
+
+MACHADO,   Edileine   Vieira. Orientação   e   mobilidade:   conhecimentos   básicos   para   a inclusão da pessoa com deficiência visual. Brasília: MEC/Seesp, 2003.
+
+MENESCAL,  A.  A  pessoa  portadora  de  deficiência  visual  usando  seu  corpo,  e  descobrindo  o mundo:  atividades  físicas  e  esportivas.  In: Lazer,  atividades  físicas  e  esportivas  para portadores de deficiência. Brasília: Sesi/Ministério do Esporte e Turismo, 2001. cap. 4, p. 135-176.
+
+MORAES, C. e CASTRUCCI, P. Engenharia de Automação Industrial. 2ª ed. São Paulo: LTC, 2007. 360 p. ISBN: 9788521615323.
+
+OBAID, T. “Zigbee Based Voice Controlled Wireless Smart Home System” International Journal of Wireless & Mobile Networks (IJWMN), Vol. 6, No. 1, February 2014.
+
+OLIVEIRA, M.V.S.; OTTOBONI, R. Projeto de automação residencial: Acionamento por comando de voz. Centro universitário de Itajubá – FEPI, 2015.
+
+PIMENTEL, V.C. A.; BARBACENA, I.L.; CORREIA, S.E.N.; DIAS, M.C. Uma plataforma de baixo custo comandada por voz para tecnologias assistivas com programação em python. In: Congresso Brasileiro de Engenharia Biomédica, XXIV, MG. Anais…, Uberlândia: Universidade Federal de Uberlândia, 2014, pag. 1414-141.
+
+SABATÉ, Xavier Grau (Coord.). Tecnología y discapacidad visual: necesidades tecnológicas y aplicaciones en la vida diaria de las personas con ceguera y deficiencia visual. Organización Nacional de Ciegos Españoles (ONCE). Madrid, 2004.
+
+SANT’ANA, D.G. Controle por Voz utilizando a Engine Julius com Fala Contínua. Universidade Regional de Blumenau-FURB, Trabalho de Conclusão de Curso, 2014, 64 fl.
+
+SANTAROSA, Lucila Maria. Telemática y la inclusión virtual y social de personas con necesidades especiales: un espacio posible en la Internet. Congresso Iberoamericano de Informática Educativa, 5., Viña del Mar, Chile, 2000. Disponível em:  Acesso em: 28 julho 2004.
+
+SILVEIRA, D.P. O que é tecnologia assistiva? Oficina da NET, 2016. Disponível em: https://www.oficinadanet.com.br/post/17558-o-que-e-tecnologia-assistiva. Acesso em: 6 de Mar. 2018.
+
+STELLMAN, Richard M. Free Software, Free Society: Selected Essays of Richard M Stallman. 2. Ed – Boston: Free Software Foundation, 2010.
+
+[1] Graduando em Ciências Da Computação, técnico em Mecatrônica.
+
+[2] Orientador. Doutorado em Educação. Mestrado em Educação. Graduação em Matemática. Graduação em Sistemas para Internet. Graduação em Tecnologia em Redes de Computadores. Graduação em Tecnologia em Redes de Computadores.
+
+Enviado: Novembro, 2020.
+
+Aprovado: Novembro, 2020.

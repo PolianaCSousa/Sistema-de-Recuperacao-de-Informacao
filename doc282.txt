@@ -1,0 +1,2895 @@
+arXiv:1206.5533v2 [cs.LG] 16 Sep 2012
+Practical Recommendations for Gradient-Based Training of Deep
+Architectures
+Yoshua Bengio
+Version 2, Sept. 16th, 2012
+Abstract
+Learning algorithms related to artificial neural net-
+works and in particular for Deep Learning may seem
+to involve many bells and whistles, called hyper-
+parameters. This chapter is meant as a practical
+guide with recommendations for some of the most
+commonly used hyper-parameters, in particular in
+the context of learning algorithms based on back-
+propagated gradient and gradient-based optimiza-
+tion. It also discusses how to deal with the fact that
+more interesting results can be obtained when allow-
+ing one to adjust many hyper-parameters. Overall, it
+describes elements of the practice used to successfully
+and efficiently train and debug large-scale and often
+deep multi-layer neural networks. It closes with open
+questions about the training difficulties observed with
+deeper architectures.
+1 Introduction
+Following a decade of lower activity, research in arti-
+ficial neural networks was revived after a 2006 break-
+through (Hinton et al., 2006; Bengio et al., 2007;
+Ranzato et al., 2007) in the area of Deep Learning,
+based on greedy layer-wise unsupervised pre-training
+of each layer of features. See (Bengio, 2009) for a
+review. Many of the practical recommendations that
+justified the previous edition of this book are still
+valid, and new elements were added, while some sur-
+vived longer by virtue of the practical advantages
+they provided. The panorama presented in this chap-
+ter regards some of these surviving or novel elements
+of practice, focusing on learning algorithms aiming
+at training deep neural networks, but leaving most
+of the material specific to the Boltzmann machine
+family to another chapter (Hinton, 2013).
+Although such recommendations come out of a liv-
+ing practice that emerged from years of experimenta-
+tion and to some extent mathematical justification,
+they should be challenged. They constitute a good
+starting point for the experimenter and user of learn-
+ing algorithms but very often have not been formally
+validated, leaving open many questions that can be
+answered either by theoretical analysis or by solid
+comparative experimental work (ideally by both). A
+good indication of the need for such validation is that
+different researchers and research groups do not al-
+ways agree on the practice of training neural net-
+works.
+Several of the recommendations presented here can
+be found implemented in the Deep Learning Tutori-
+als1 and in the related Pylearn2 library2, all based on
+the Theano library (discussed below) written in the
+Python programming language.
+The 2006 Deep Learning break-
+through (Hinton et al., 2006; Bengio et al., 2007;
+Ranzato et al., 2007) centered on the use of un-
+supervised representation learning to help learning
+internal representations3 by providing a local train-
+1 http://deeplearning.net/tutorial/
+2 http://deeplearning.net/software/pylearn2
+3 A neural network computes a sequence of data transfor-
+mations, each step encoding the raw input into an intermediate
+or internal representation, in principle to make the prediction
+or modeling task of interest easier.
+1
+ing signal at each level of a hierarchy of features4.
+Unsupervised representation learning algorithms can
+be applied several times to learn different layers
+of a deep model. Several unsupervised represen-
+tation learning algorithms have been proposed
+since then. Those covered in this chapter (such as
+auto-encoder variants) retain many of the properties
+of artificial multi-layer neural networks, relying
+on the back-propagation algorithm to estimate
+stochastic gradients. Deep Learning algorithms
+such as those based on the Boltzmann machine
+and those based on auto-encoder or sparse coding
+variants often include a supervised fine-tuning stage.
+This supervised fine-tuning as well as the gradient
+descent performed with auto-encoder variants also
+involves the back-propagation algorithm, just as
+like when training deterministic feedforward or
+recurrent artificial neural networks. Hence this
+chapter also includes recommendations for training
+ordinary supervised deterministic neural networks
+or more generally, most machine learning algorithms
+relying on iterative gradient-based optimization of
+a parametrized learner with respect to an explicit
+training criterion.
+This chapter assumes that the reader already un-
+derstands the standard algorithms for training su-
+pervised multi-layer neural networks, with the loss
+gradient computed thanks to the back-propagation
+algorithm (Rumelhart et al., 1986). It starts by
+explaining basic concepts behind Deep Learning
+and the greedy layer-wise pretraining strategy (Sec-
+tion 1.1), and recent unsupervised pre-training al-
+gorithms (denoising and contractive auto-encoders)
+that are closely related in the way they are trained
+to standard multi-layer neural networks (Section 1.2).
+It then reviews in Section 2 basic concepts in it-
+erative gradient-based optimization and in particu-
+lar the stochastic gradient method, gradient com-
+putation with a flow graph, automatic differenta-
+4 In standard multi-layer neural networks trained using
+back-propagated gradients, the only signal that drives param-
+eter updates is provided at the output of the network (and
+then propagated backwards). Some unsupervised learning al-
+gorithms provide a local source of guidance for the parameter
+update in each layer, based only on the inputs and outputs of
+that layer.
+tion. The main section of this chapter is Section 3,
+which explains hyper-parameters in general, their op-
+timization, and specifically covers the main hyper-
+parameters of neural networks. Section 4 briefly de-
+scribes simple ideas and methods to debug and visu-
+alize neural networks, while Section 5 covers paral-
+lelism, sparse high-dimensional inputs, symbolic in-
+puts and embeddings, and multi-relational learning.
+The chapter closes (Section 6) with open questions
+on the difficulty of training deep architectures and
+improving the optimization methods for neural net-
+works.
+1.1 Deep Learning and Greedy Layer-
+Wise Pretraining
+The notion of reuse, which explains the power of
+distributed representations (Bengio, 2009), is also
+at the heart of the theoretical advantages behind
+Deep Learning. Complexity theory of circuits,
+e.g. (H˚astad, 1986; H˚astad and Goldmann, 1991),
+(which include neural networks as special cases) has
+much preceded the recent research on deep learning.
+The depth of a circuit is the length of the longest
+path from an input node of the circuit to an out-
+put node of the circuit. Formally, one can change
+the depth of a given circuit by changing the defini-
+tion of what each node can compute, but only by a
+constant factor (Bengio, 2009). The typical compu-
+tations we allow in each node include: weighted sum,
+product, artificial neuron model (such as a mono-
+tone non-linearity on top of an affine transforma-
+tion), computation of a kernel, or logic gates. Theo-
+retical results (H˚astad, 1986; H˚astad and Goldmann,
+1991; Bengio et al., 2006b; Bengio and LeCun, 2007;
+Bengio and Delalleau, 2011) clearly identify families
+of functions where a deep representation can be expo-
+nentially more efficient than one that is insufficiently
+deep. If the same set of functions can be represented
+from within a family of architectures associated with
+a smaller VC-dimension (e.g. less hidden units5),
+learning theory would suggest that it can be learned
+5 Note that in our experiments, deep architectures tend to
+generalize very well even when they have quite large numbers
+of parameters.
+2
+with fewer examples, yielding improvements in both
+computational efficiency and statistical efficiency.
+Another important motivation for feature learning
+and Deep Learning is that they can be done with un-
+labeled examples, so long as the factors (unobserved
+random variables explaining the data) relevant to the
+questions we will ask later (e.g. classes to be pre-
+dicted) are somehow salient in the input distribution
+itself. This is true under the manifold hypothesis,
+which states that natural classes and other high-level
+concepts in which humans are interested are asso-
+ciated with low-dimensional regions in input space
+(manifolds) near which the distribution concentrates,
+and that different class manifolds are well-separated
+by regions of very low density. It means that a small
+semantic change around a particular example can
+be captured by changing only a few numbers in a
+high-level abstract representation space. As a conse-
+quence, feature learning and Deep Learning are in-
+timately related to principles of unsupervised learn-
+ing, and they can work in the semi-supervised setting
+(where only a few examples are labeled), as well as in
+the transfer learning and multi-task settings (where
+we aim to generalize to new classes or tasks). The
+underlying hypothesis is that many of the underlying
+factors are shared across classes or tasks. Since rep-
+resentation learning aims to extract and isolate these
+factors, representations can be shared across classes
+and tasks.
+One of the most commonly used approaches for
+training deep neural networks is based on greedy
+layer-wise pre-training (Bengio et al., 2007). The
+idea, first introduced in Hinton et al. (2006), is to
+train one layer of a deep architecture at a time us-
+ing unsupervised representation learning. Each level
+takes as input the representation learned at the pre-
+vious level and learns a new representation. The
+learned representation(s) can then be used as input
+to predict variables of interest, for example to clas-
+sify objects. After unsupervised pre-training, one can
+also perform supervised fine-tuning of the whole sys-
+tem6, i.e., optimize not just the classifier but also
+the lower levels of the feature hierarchy with respect
+6 The whole system composes the computation of the rep-
+resentation with computation of the predictor’s output.
+to some objective of interest. Combining unsuper-
+vised pre-training and supervised fine-tuning usu-
+ally gives better generalization than pure supervised
+learning from a purely random initialization. The
+unsupervised representation learning algorithms for
+pre-training proposed in 2006 were the Restricted
+Boltzmann Machine or RBM (Hinton et al., 2006),
+the auto-encoder (Bengio et al., 2007) and a spar-
+sifying form of auto-encoder similar to sparse cod-
+ing (Ranzato et al., 2007).
+1.2 Denoising and Contractive Auto-
+Encoders
+An auto-encoder has two parts: an encoder func-
+tion f that maps the input x to a representation
+h = f (x), and a decoder function g that maps h
+back in the space of x in order to reconstruct x.
+In the regular auto-encoder the reconstruction func-
+tion r(·) = g(f (·)) is trained to minimize the average
+value of a reconstruction loss on the training exam-
+ples. Note that reconstruction loss should be high for
+most other input configurations7. The regularization
+mechanism makes sure that reconstruction cannot be
+perfect everywhere, while minimizing the reconstruc-
+tion loss at training examples digs a hole in recon-
+struction error where the density of training exam-
+ples is large. Examples of reconstruction loss func-
+tions include ||x − r(x)||2 (for real-valued inputs) and
+− ∑
+i xi log ri(x) + (1 − xi) log(1 − ri(x)) (when in-
+terpreting xi as a bit or a probability of a binary
+event). Auto-encoders capture the input distribu-
+tion by learning to better reconstruct more likely in-
+put configurations. The difference between the recon-
+struction vector and the input vector can be shown to
+be related to the log-density gradient as estimated by
+the learner (Vincent, 2011; Bengio et al., 2012) and
+the Jacobian matrix of the reconstruction with re-
+spect to the input gives information about the second
+derivative of the density, i.e., in which direction the
+density remains high when you are on a high-density
+7 Different regularization mechanisms have been proposed
+to push reconstruction error up in low density areas: denoising
+criterion, contractive criterion, and code sparsity. It has been
+argued that such constraints play a role similar to the partition
+function for Boltzmann machines (Ranzato et al., 2008a).
+3
+manifold (Rifai et al., 2011a; Bengio et al., 2012). In
+the Denoising Auto-Encoder (DAE) and the Con-
+tractive Auto-Encoder (CAE), the training procedure
+also introduces robustness (insensitivity to small vari-
+ations), respectively in the reconstruction r(x) or in
+the representation f (x). In the DAE (Vincent et al.,
+2008, 2010), this is achieved by training with stochas-
+tically corrupted inputs, but trying to reconstruct the
+uncorrupted inputs. In the CAE (Rifai et al., 2011a),
+this is achieved by adding an explicit regularizing
+term in the training criterion, proportional to the
+norm of the Jacobian of the encoder, || ∂f (x)
+∂x ||2. But
+the CAE and the DAE are very related (Bengio et al.,
+2012): when the noise is Gaussian and small, the
+denoising error minimized by the DAE is equiva-
+lent to minimizing the norm of the Jacobian of the
+reconstruction function r(·) = g(f (·)), whereas the
+CAE minimizes the norm of the Jacobian of the en-
+coder f (·). Besides Gaussian noise, another interest-
+ing form of corruption has been very successful with
+DAEs: it is called the masking corruption and con-
+sists in randomly zeroing out a large fraction (like
+20% or even 50%) of the inputs, where the zeroed
+out subset is randomly selected for each example. In
+addition to the contractive effect, it forces the learned
+encoder to be able to rely only on an arbitrary subset
+of the input features.
+Another way to prevent the auto-encoder from per-
+fectly reconstructing everywhere is to introduce a
+sparsity penalty on h, discussed below (Section 3.1).
+1.3 Online Learning and Optimization
+of Generalization Error
+The objective of learning is not to minimize training
+error or even the training criterion. The latter is a
+surrogate for generalization error, i.e., performance
+on new (out-of-sample) examples, and there are no
+hard guarantees that minimizing the training crite-
+rion will yield good generalization error: it depends
+on the appropriateness of the parametrization and
+training criterion (with the corresponding prior they
+imply) for the task at hand.
+Many learning tasks of interest will require huge
+quantities of data (most of which will be unlabeled)
+and as the number of examples increases, so long as
+capacity is limited (the number of parameters is small
+compared to the number of examples), training er-
+ror and generalization approach each other. In the
+regime of such large datasets, we can consider that
+the learner sees an unending stream of examples (e.g.,
+think about a process that harvests text and images
+from the web and feeds it to a machine learning algo-
+rithm). In that context, it is most efficient to simply
+update the parameters of the model after each exam-
+ple or few examples, as they arrive. This is the ideal
+online learning scenario, and in a simplified setting,
+we can even consider each new example z as being
+sampled i.i.d. from an unknown generating distribu-
+tion with probability density p(z). More realistically,
+examples in online learning do not arrive i.i.d. but
+instead from an unknown stochastic process which
+exhibits serial correlation and other temporal depen-
+dencies. Many learning algorithms rely on gradient-
+based numerical optimization of a training criterion.
+Let L(z, θ) be the loss incurred on example z when
+the parameter vector takes value θ. The gradient
+vector for the loss associated with a single example
+is ∂L(z,θ)
+∂θ .
+If we consider the simplified case of i.i.d. data,
+there is an interesting observation to be made: the
+online learner is performing stochastic gradient de-
+scent on its generalization error. Indeed, the gener-
+alization error C of a learner with parameters θ and
+loss function L is
+C = E[L(z, θ)] =
+∫
+p(z)L(z, θ)dz
+while the stochastic gradient from sample z is
+ˆg = ∂L(z, θ)
+∂θ
+with z a random variable sampled from p. The gra-
+dient of generalization error is
+∂C
+∂θ = ∂
+∂θ
+∫
+p(z)L(z, θ)dz =
+∫
+p(z) ∂L(z, θ)
+∂θ dz = E[ˆg]
+showing that the online gradient ˆg is an unbiased es-
+timator of the generalization error gradient ∂C
+∂θ . It
+means that online learners, when given a stream of
+4
+non-repetitive training data, really optimize (maybe
+not in the optimal way, i.e., using a first-order gra-
+dient technique) what we really care about: general-
+ization error.
+2 Gradients
+2.1 Gradient Descent and Learning
+Rate
+The gradient or an estimator of the gradient is
+used as the core part the computation of parame-
+ter updates for gradient-based numerical optimiza-
+tion algorithms. For example, simple online (or
+stochastic) gradient descent (Robbins and Monro,
+1951; Bottou and LeCun, 2004) updates the param-
+eters after each example is seen, according to
+θ(t) ← θ(t−1) − ǫt
+∂L(zt, θ)
+∂θ
+where zt is an example sampled at iteration t and
+where ǫt is a hyper-parameter that is called the learn-
+ing rate and whose choice is crucial. If the learn-
+ing rate is too large8, the average loss will increase.
+The optimal learning rate is usually close to (by a
+factor of 2) the largest learning rate that does not
+cause divergence of the training criterion, an observa-
+tion that can guide heuristics for setting the learning
+rate (Bengio, 2011), e.g., start with a large learning
+rate and if the training criterion diverges, try again
+with 3 times smaller learning rate, etc., until no di-
+vergence is observed.
+See Bottou (2013) for a deeper treatment of
+stochastic gradient descent, including suggestions to
+set learning rate schedule and improve the asymp-
+totic convergence through averaging.
+In practice, we use mini-batch updates based on
+an average of the gradients9 inside each block of B
+8 above a value which is approximately 2 times the largest
+eigenvalue of the average loss Hessian matrix
+9 Compared to a sum, an average makes a small change in
+B have only a small effect on the optimal learning rate, with an
+increase in B generally allowing a small increase in the learning
+rate because of the reduced variance of the gradient.
+examples:
+θ(t) ← θ(t−1) − ǫt
+1
+B
+B(t+1)
+∑
+t′ =Bt+1
+∂L(zt′ , θ)
+∂θ . (1)
+With B = 1 we are back to ordinary online gradient
+descent, while with B equal to the training set size,
+this is standard (also called “batch”) gradient de-
+scent. With intermediate values of B there is gener-
+ally a sweet spot. When B increases we can get more
+multiply-add operations per second by taking advan-
+tage of parallelism or efficient matrix-matrix multipli-
+cations (instead of separate matrix-vector multiplica-
+tions), often gaining a factor of 2 in practice in overall
+training time. On the other hand, as B increases, the
+number of updates per computation done decreases,
+which slows down convergence (in terms of error vs
+number of multiply-add operations performed) be-
+cause less updates can be done in the same computing
+time. Combining these two opposing effects yields a
+typical U-curve with a sweet spot at an intermediate
+value of B.
+Keep in mind that even the true gradient direction
+(averaging over the whole training set) is only the
+steepest descent direction locally but may not point
+in the right direction when considering larger steps.
+In particular, because the training criterion is not
+quadratic in the parameters, as one moves in param-
+eter space the optimal descent direction keeps chang-
+ing. Because the gradient direction is not quite the
+right direction of descent, there is no point in spend-
+ing a lot of computation to estimate it precisely for
+gradient descent. Instead, doing more updates more
+frequently helps to explore more and faster, especially
+with large learning rates. In addition, smaller values
+of B may benefit from more exploration in parame-
+ter space and a form of regularization both due to the
+“noise” injected in the gradient estimator, which may
+explain the better test results sometimes observed
+with smaller B.
+When the training set is finite, training proceeds
+by sweeps through the training set called an epoch,
+and full training usually requires many epochs (iter-
+ations through the training set). Note that stochas-
+tic gradient (either one example at a time or with
+mini-batches) is different from ordinary gradient de-
+5
+scent, sometimes called “batch gradient descent”,
+which corresponds to the case where B equals the
+training set size, i.e., there is one parameter update
+per epoch). The great advantage of stochastic gra-
+dient descent and other online or minibatch update
+methods is that their convergence does not depend
+on the size of the training set, only on the number
+of updates and the richness of the training distribu-
+tion. In the limit of a large or infinite training set,
+a batch method (which updates only after seeing all
+the examples) is hopeless. In fact, even for ordinary
+datasets of tens or hundreds of thousands of exam-
+ples (or more!), stochastic gradient descent converges
+much faster than ordinary (batch) gradient descent,
+and beyond some dataset sizes the speed-up is al-
+most linear (i.e., doubling the size almost doubles the
+gain)10. It is really important to use the stochastic
+version in order to get reasonable clock-time conver-
+gence speeds.
+As for any stochastic gradient descent method (in-
+cluding the mini-batch case), it is important for ef-
+ficiency of the estimator that each example or mini-
+batch be sampled approximately independently. Be-
+cause random access to memory (or even worse, to
+disk) is expensive, a good approximation, called in-
+cremental gradient (Bertsekas, 2010), is to visit the
+examples (or mini-batches) in a fixed order corre-
+sponding to their order in memory or disk (repeating
+the examples in the same order on a second epoch, if
+we are not in the pure online case where each exam-
+ple is visited only once). In this context, it is safer if
+the examples or mini-batches are first put in a ran-
+dom order (to make sure this is the case, it could
+be useful to first shuffle the examples). Faster con-
+vergence has been observed if the order in which the
+mini-batches are visited is changed for each epoch,
+which can be reasonably efficient if the training set
+holds in computer memory.
+10 On the other hand, batch methods can be parallelized
+easily, which becomes an important advantage with currently
+available forms of computing power.
+2.2 Gradient Computation and Auto-
+matic Differentiation
+The gradient can be either computed manually or
+through automatic differentiation. Either way, it
+helps to structure this computation as a flow graph,
+in order to prevent mathematical mistakes and make
+sure an implementation is computationally efficient.
+The computation of the loss L(z, θ) as a function of
+θ is laid out in a graph whose nodes correspond to
+elementary operations such as addition, multiplica-
+tion, and non-linear operations such as the neural
+networks activation function (e.g., sigmoid or hyper-
+bolic tangent), possibly at the level of vectors, matri-
+ces or tensors. The flow graph is directed and acyclic
+and has three types of nodes: input nodes, internal
+nodes, and output nodes. Each of its nodes is as-
+sociated with a numerical output which is the result
+of the application of that computation (none in the
+case of input nodes), taking as input the output of
+previous nodes in a directed acyclic graph. Example
+z and parameter vector θ (or their elements) are the
+input nodes of the graph (i.e., they do not have in-
+puts themselves) and L(z, θ) is a scalar output of the
+graph. Note that here, in the supervised case, z can
+include an input part x (e.g. an image) and a target
+part y (e.g. a target class associated with an object
+in the image). In the unsupervised case z = x. In
+a semi-supervised case, there is a mix of labeled and
+unlabeled examples, and z includes y on the labeled
+examples but not on the unlabeled ones.
+In addition to associating a numerical output oa to
+each node a of the flow graph, we can associate a gra-
+dient ga = ∂L(z,θ)
+∂oa . The gradient will be defined and
+computed recursively in the graph, in the opposite
+direction of the computation of the nodes’ outputs,
+i.e., whereas oa is computed using outputs op of pre-
+decessor nodes p of a, ga will be computed using the
+gradients gs of successor nodes s of a. More precisely,
+the chain rule dictates
+ga = ∑
+s
+gs
+∂os
+∂oa
+where the sum is over immediate successors of a.
+Only output nodes have no successor, and in par-
+ticular for the output node that computes L, the
+6
+gradient is set to 1 since ∂L
+∂L = 1, thus initializing
+the recursion. Manual or automatic differentiation
+then only requires to define the partial derivative as-
+sociated with each type of operation performed by
+any node of the graph. When implementing gradi-
+ent descent algorithms with manual differentiation
+the result tends to be verbose, brittle code that lacks
+modularity – all bad things in terms of software en-
+gineering. A better approach is to express the flow
+graph in terms of objects that modularize how to
+compute outputs from inputs as well as how to com-
+pute the partial derivatives necessary for gradient de-
+scent. One can pre-define the operations of these ob-
+jects (in a “forward propagation” or fprop method)
+and their partial derivatives (in a “backward prop-
+agation” or bprop method) and encapsulate these
+computations in an object that knows how to com-
+pute its output given its inputs, and how to com-
+pute the gradient with respect to its inputs given
+the gradient with respect to its output. This is the
+strategy adopted in the Theano library11 with its Op
+objects (Bergstra et al., 2010), as well as in libraries
+such as Torch12 (Collobert et al., 2011b) and Lush13.
+Compared to Torch and Lush, Theano adds an in-
+teresting ingredient which makes it a full-fledged au-
+tomatic differentiation tool: symbolic computation.
+The flow graph itself (without the numerical values
+attached) can be viewed as a symbolic representation
+(in a data structure) of a numerical computation. In
+Theano, the gradient computation is first performed
+symbolically, i.e., each Op object knows how to create
+other Ops corresponding to the computation of the
+partial derivatives associated with that Op. Hence the
+symbolic differentiation of the output of a flow graph
+with respect to any or all of its input nodes can be
+performed easily in most cases, yielding another flow
+graph which specifies how to compute these gradi-
+ents, given the input of the original graph. Since the
+gradient graph typically contains the original graph
+(mapping parameters to loss) as a sub-graph, in or-
+der to make computations efficient it is important to
+automate (as done in Theano) a number of simplifica-
+tions which are graph transformations preserving the
+11 http://deeplearning.net/software/theano/
+12 http://www.torch.ch
+13 http://lush.sourceforge.net
+semantics of the output (given the input) but yield-
+ing smaller (or more numerically stable or more effi-
+ciently computed) graphs (e.g., removing redundant
+computations). To take advantage of the fact that
+computing the loss gradient includes as a first step
+computing the loss itself, it is advantageous to struc-
+ture the code so that both the loss and its gradient are
+computed at once, with a single graph having multi-
+ple outputs. The advantages of performing gradient
+computations symbolically are numerous. First of all,
+one can readily compute gradients over gradients, i.e.,
+second derivatives, which are useful for some learn-
+ing algorithms. Second, one can define algorithms or
+training criteria involving gradients themselves, as re-
+quired for example in the Contractive Auto-Encoder
+(which uses the norm of a Jacobian matrix in its
+training criterion, i.e., really requires second deriva-
+tives, which here are cheap to compute). Third, it
+makes it easy to implement other useful graph trans-
+formations such as graph simplifications or numerical
+optimizations and transformations that help making
+the numerical results more robust and more efficient
+(such as working in the domain of logarithms of prob-
+abilities rather than in the domain of probabilities
+directly). Other potential beneficial applications of
+such symbolic manipulations include parallelization
+and additional differential operators (such as the R-
+operator, recently implemented in Theano, which is
+very useful to compute the product of a Jacobian ma-
+trix ∂f (x)
+∂x or Hessian matrix ∂2L(x,θ)
+∂θ2 with a vector
+without ever having to actually compute and store
+the matrix itself (Pearlmutter, 1994)).
+3 Hyper-Parameters
+A pure learning algorithm can be seen as a func-
+tion taking training data as input and producing
+as output a function (e.g. a predictor) or model
+(i.e. a bunch of functions). However, in practice,
+many learning algorithms involve hyper-parameters,
+i.e., annoying knobs to be adjusted. In many algo-
+rithms such as Deep Learning algorithms the number
+of hyper-parameters (ten or more!) can make the idea
+of having to adjust all of them unappealing. In addi-
+tion, it has been shown that the use of computer clus-
+7
+ters for hyper-parameter selection can have an im-
+portant effect on results (Pinto et al., 2009). Choos-
+ing hyper-parameter values is formally equivalent to
+the question of model selection, i.e., given a family
+or set of learning algorithms, how to pick the most
+appropriate one inside the set? We define a hyper-
+parameter for a learning algorithm A as a variable to
+be set prior to the actual application of A to the data,
+one that is not directly selected by the learning algo-
+rithm itself. It is basically an outside control knob.
+It can be discrete (as in model selection) or continu-
+ous (such as the learning rate discussed above). Of
+course, one can hide these hyper-parameters by wrap-
+ping another learning algorithm, say B, around A, to
+selects A’s hyper-parameters (e.g. to minimize vali-
+dation set error). We can then call B a hyper-learner,
+and if B has no hyper-parameters itself then the com-
+position of B over A could be a “pure” learning al-
+gorithm, with no hyper-parameter. In the end, to
+apply a learner to training data, one has to have a
+pure learning algorithm. The hyper-parameters can
+be fixed by hand or tuned by an algorithm, but their
+value has to be selected. The value of some hyper-
+parameters can be selected based on the performance
+of A on its training data, but most cannot. For any
+hyper-parameter that has an impact on the effective
+capacity of a learner, it makes more sense to select its
+value based on out-of-sample data (outside the train-
+ing set), e.g., a validation set performance, online er-
+ror, or cross-validation error. Note that some learn-
+ing algorithms (in particular unsupervised learning
+algorithms such as algorithms for training RBMs by
+approximate maximum likelihood) are problematic in
+this respect because we cannot directly measure the
+quantity that is to be optimized (e.g. the likelihood)
+because it is intractable. On the other hand, the
+expected denoising reconstruction error is easy to es-
+timate (by just averaging the denoising error over a
+validation set).
+Once some out-of-sample data has been used for
+selecting hyper-parameter values, it cannot be used
+anymore to obtain an unbiased estimator of gener-
+alization performance, so one typically uses a test
+set (or double cross-validation14, in the case of small
+14 Double cross-validation applies recursively the idea of
+datasets) to estimate generalization error of the pure
+learning algorithm (with hyper-parameter selection
+hidden inside).
+3.1 Neural Network Hyper-
+Parameters
+Different learning algorithms involve different sets of
+hyper-parameters, and it is useful to get a sense of
+the kinds of choices that practitioners have to make
+in choosing their values. We focus here mostly on
+those relevant to neural networks and Deep Learning
+algorithms.
+3.1.1 Hyper-Parameters of the Approximate
+Optimization
+First of all, several learning algorithms can be viewed
+as the combination of two elements: a training cri-
+terion and a model (e.g., a family of functions, a
+parametrization) on the one hand, and on the other
+hand, a particular procedure for approximately op-
+timizing this criterion. Correspondingly, one should
+distinguish hyper-parameters associated with the op-
+timizer from hyper-parameters associated with the
+model itself, i.e., typically the function class, regular-
+izer and loss function. We have already mentioned
+above some of the hyper-parameters typically asso-
+ciated with gradient-based optimization. Here is a
+more extensive descriptive list, focusing on those used
+in stochastic (mini-batch) gradient descent (although
+number of training iterations is used for all iterative
+optimization algorithms).
+• The initial learning rate (ǫ0 below, Eq.(2)).
+This is often the single most important hyper-
+parameter and one should always make sure that
+it has been tuned (up to approximately a fac-
+tor of 2). Typical values for a neural network
+with standardized inputs (or inputs mapped to
+the (0,1) interval) are less than 1 and greater
+than 10−6 but these should not be taken as strict
+cross-validation, using an outer loop cross-validation to evalu-
+ate generalization error and then applying an inner loop cross-
+validation inside each outer loop split’s training subset (i.e.,
+splitting it again into training and validation folds) in order to
+select hyper-parameters for that split.
+8
+ranges and greatly depend on the parametriza-
+tion of the model. A default value of 0.01 typi-
+cally works for standard multi-layer neural net-
+works but it would be foolish to rely exclu-
+sively on this default value. If there is only
+time to optimize one hyper-parameter and one
+uses stochastic gradient descent, then this is the
+hyper-parameter that is worth tuning.
+• The choice of strategy for decreasing or adapt-
+ing the learning rate schedule (with hyper-
+parameters such as the time constant τ in Eq. (2)
+below). The default value of τ → ∞ means that
+the learning rate is constant over training it-
+erations. In many cases the benefit of choos-
+ing other than this default value is small. An
+example of O(1/t) learning rate schedule, used
+in Bergstra and Bengio (2012) is
+ǫt = ǫ0τ
+max(t, τ ) (2)
+which keeps the learning rate constant for the
+first τ steps and then decreases it in O(1/tα),
+with traditional recommendations (based on
+asymptotic analysis of the convex case) suggest-
+ing α = 1. See Bach and Moulines (2011) for a
+recent analysis of the rate of convergence for the
+general case of α ≤ 1, suggesting that smaller
+values of α should be used in the non-convex
+case, especially when using a gradient averaging
+or momentum technique (see below). An adap-
+tive and heuristic way of automatically setting
+τ above is to keep ǫt constant until the training
+criterion stops decreasing significantly (by more
+than some relative improvement threshold) from
+epoch to epoch. That threshold is a less sensi-
+tive hyper-parameter than τ itself. An alterna-
+tive to a fixed schedule with a couple of (global)
+free hyper-parameters like in the above formula
+is the use of an adaptive learning rate heuristic,
+e.g., the simple procedure proposed in Bottou
+(2013): at regular intervals during training, us-
+ing a fixed small subset of the training set (what
+matters is only the number of examples used,
+not what fraction of the whole training set it
+represents), continue training with N different
+choices of learning rate (all in parallel), and keep
+the value that gave the best results until the next
+re-estimation of the optimal learning rate. Other
+examples of adaptive learning rate strategies are
+discussed below (Sec. 6.2).
+• The mini-batch size (B in Eq. (1)) is typi-
+cally chosen between 1 and a few hundreds, e.g.
+B = 32 is a good default value, with values above
+10 taking advantage of the speed-up of matrix-
+matrix products over matrix-vector products.
+The impact of B is mostly computational, i.e.,
+larger B yield faster computation (with ap-
+propriate implementations) but requires visiting
+more examples in order to reach the same error,
+since there are less updates per epoch. In the-
+ory, this hyper-parameter should impact train-
+ing time and not so much test performance, so it
+can be optimized separately of the other hyper-
+parameters, by comparing training curves (train-
+ing and validation error vs amount of training
+time), after the other hyper-parameters (except
+learning rate) have been selected. B and ǫ0 may
+slightly interact with other hyper-parameters so
+both should be re-optimized at the end. Once
+B is selected, it can generally be fixed while the
+other hyper-parameters can be further optimized
+(except for a momentum hyper-parameter, if one
+is used).
+• Number of training iterations T (measured
+in mini-batch updates). This hyper-parameter
+is particular in that it can be optimized almost
+for free using the principle of early stopping: by
+keeping track of the out-of-sample error (as for
+example estimated on a validation set) as train-
+ing progresses (every N updates), one can decide
+how long to train for any given setting of all the
+other hyper-parameters. Early stopping is an
+inexpensive way to avoid strong overfitting, i.e.,
+even if the other hyper-parameters would yield
+to overfitting, early stopping will considerably
+reduce the overfitting damage that would other-
+wise ensue. It also means that it hides the over-
+fitting effect of other hyper-parameters, possibly
+obscuring the analysis that one may want to do
+when trying to figure out the effect of individual
+9
+hyper-parameters, i.e., it tends to even out the
+performance obtained by many otherwise overfit-
+ting configurations of hyper-parameters by com-
+pensating a too large capacity with a smaller
+training time. For this reason, it might be use-
+ful to turn early-stopping off when analyzing the
+effect of individual hyper-parameters. Now let
+us turn to implementation details. Practically,
+one needs to continue training beyond the se-
+lected number of training iterations ˆT (which
+should be the point of lowest validation error
+in the training run) in order to ascertain that
+validation error is unlikely to go lower than at
+the selected point. A heuristic introduced in the
+Deep Learning Tutorials15 is based on the idea
+of patience (set initially to 10000 examples in the
+MLP tutorial), which is a minimum number of
+training examples to see after the candidate se-
+lected point ˆT before deciding to stop training
+(i.e. before accepting this candidate as the final
+answer). As training proceeds and new candi-
+date selected points ˆT (new minima of the vali-
+dation error) are observed, the patience param-
+eter is increased, either multiplicatively or addi-
+tively on top of the last ˆT found. Hence, if we
+find a new minimum16 at t, we save the current
+best model, update ˆT ← t and we increase our
+patience up to t+constant or t× constant. Note
+that validation error should not be estimated af-
+ter each training update (that would be really
+wasteful) but after every N examples, where N
+is at least as large as the validation set (ideally
+several times larger so that the early stopping
+overhead remains small)17.
+• Momentum β. It has long been advo-
+cated (Hinton, 1978, 2010) to temporally smooth
+out the stochastic gradient samples obtained
+15 http://deeplearning.net/tutorial/
+16 Ideally, we should use a statistical test of significance and
+accept a new minimum (over a longer training period) only if
+the improvement is statistically significant, based on the size
+and variance estimates one can compute for the validation set.
+17 When an extra processor on the same machine is available,
+validation error can conveniently be recomputed by a proces-
+sor different from the one performing the training updates,
+allowing more frequent computation of validation error.
+during the stochastic gradient descent. For ex-
+ample, a moving average of the past gradients
+can be computed with ¯g ← (1−β)¯g+βg, where g
+is the instantaneous gradient ∂L(zt,θ)
+∂θ or a mini-
+batch average, and β is a small positive coeffi-
+cient that controls how fast the old examples get
+downweighted in the moving average. The sim-
+plest momentum trick is to make the updates
+proportional to this smoothed gradient estima-
+tor ¯g instead of the instantaneous gradient g.
+The idea is that it removes some of the noise and
+oscillations that gradient descent has, in particu-
+lar in the directions of high curvature of the loss
+function18. A default value of β = 1 (no mo-
+mentum) works well in many cases but in some
+cases momentum seems to make a positive dif-
+ference. Polyak averaging (Polyak and Juditsky,
+1992) is a related form of parameter averag-
+ing19 that has theoretical advantages and has
+been advocated and shown to bring improve-
+ments on some unsupervised learning procedures
+such as RBMs (Swersky et al., 2010). More re-
+cently, several mathematically motivated algo-
+rithms (Nesterov, 2009; Le Roux et al., 2012)
+have been proposed that incorporate some form
+of momentum and that also ensure much faster
+convergence (linear rather than sublinear) com-
+pared to stochastic gradient descent, at least for
+convex optimization problems. See also Bottou
+(2013) for an example of averaged SGD with
+successful empirical speedups in the convex
+case. Note however that in the pure online
+case (stream of examples) and under some as-
+sumptions, the sublinear rate of convergence of
+stochastic gradient descent with O(1/t) decrease
+of learning rate is an optimal rate, at least for
+convex problems (Nemirovski and Yudin, 1983).
+That would suggest that for really large train-
+18 Think about a ball coming down a valley. Since it has not
+started from the bottom of the valley it will oscillate between
+its sides as it settles deeper, forcing the learning rate to be
+small to avoid large oscillations that would kick it out of the
+valley. Averaging out the local gradients along the way will
+cancel the opposing forces from each side of the valley.
+19 Polyak averaging uses for predictions a moving average of
+the parameters found in the trajectory of stochastic gradient
+descent.
+10
+ing sets it may not be possible to obtain bet-
+ter rates than ordinary stochastic gradient de-
+scent, albeit the constants in front (which de-
+pend on the condition number of the Hessian)
+may still be greatly reduced by using second-
+order information online (Bottou and LeCun,
+2004; Bottou and Bousquet, 2008).
+• Layer-specific optimization hyper-
+parameters: although rarely done, it is
+possible to use different values of optimization
+hyper-parameters (such as the learning rate) on
+different layers of a multi-layer network. This is
+especially appropriate (and easier to do) in the
+context of layer-wise unsupervised pre-training,
+since each layer is trained separately (while the
+layers below are kept fixed). This would be
+particularly useful when the number of units
+per layer varies a lot from layer to layer. See
+the paragraph below entitled Layer-wise opti-
+mization of hyper-parameters (Sec. 3.3.4).
+Some researchers also advocate the use of
+different learning rates for the different types
+of parameters one finds in the model, such as
+biases and weights in the standard multi-layer
+network, but the issue becomes more important
+when parameters such as precision or variance
+are included in the lot (Courville et al., 2011).
+Up to now we have only discussed the hyper-
+parameters in the setup where one trains a neural
+network by stochastic gradient descent. With other
+optimization algorithms, some hyper-parameters
+are typically different. For example, Conju-
+gate Gradient (CG) algorithms typically have a
+number of line search steps (which is a hyper-
+parameter) and a tolerance for stopping each line
+search (another hyper-parameter). An optimiza-
+tion algorithm like L-BFGS (limited-memory Broy-
+den–Fletcher–Goldfarb–Shanno) also has a hyper-
+parameter controlling the memory usage of the algo-
+rithm, the rank of the Hessian approximation kept in
+memory, which also has an influence on the efficiency
+of each step. Both CG and L-BFGS are iterative
+(e.g., one line search per iteration), and the number
+of iterations can be optimized as described above for
+stochastic gradient descent, with early stopping.
+3.2 Hyper-Parameters of the Model
+and Training Criterion
+Let us now turn to “model” and “criterion” hyper-
+parameters typically found in neural networks, espe-
+cially deep neural networks.
+• Number of hidden units nh. Each layer in a
+multi-layer neural network typically has a size
+that we are free to set and that controls ca-
+pacity. Because of early stopping and possibly
+other regularizers (e.g., weight decay, discussed
+below), it is mostly important to choose nh large
+enough. Larger than optimal values typically do
+not hurt generalization performance much, but
+of course they require proportionally more com-
+putation (in O(n2
+h) if scaling all the layers at
+the same time in a fully connected architecture).
+Like for many other hyper-parameters, there is
+the option of allowing a different value of nh for
+each hidden layer20 of a deep architecture. See
+the paragraph below entitled Layer-wise opti-
+mization of hyper-parameters (Sec. 3.3.4).
+In a large comparative study (Larochelle et al.,
+2009), we found that using the same size for all
+layers worked generally better or the same as us-
+ing a decreasing size (pyramid-like) or increasing
+size (upside down pyramid), but of course this
+may be data-dependent. For most tasks that
+we worked on, we find that an overcomplete21
+first hidden layer works better than an under-
+complete one. Another even more often vali-
+dated empirical observation is that the optimal
+nh is much larger when using unsupervised pre-
+training in a supervised neural network, e.g., go-
+ing from hundreds of units to thousands of units.
+A plausible explanation is that after unsuper-
+vised pre-training many of the hidden units are
+carrying information that is irrelevant to the spe-
+cific supervised task of interest. In order to make
+sure that the information relevant to the task is
+captured, larger hidden layers are therefore nec-
+essary when using unsupervised pre-training.
+20 A hidden layer is a group of units that is neither an input
+layer nor an output layer.
+21 larger than the input vector
+11
+• Weight decay regularization coefficient λ. A
+way to reduce overfitting is to add a regulariza-
+tion term to the training criterion, which lim-
+its the capacity of the learner. The parameters
+of machine learning models can be regularized
+by pushing them towards a prior value, which
+is typically 0. L2 regularization adds a term
+λ ∑
+i θ2
+i to the training criterion, while L1 reg-
+ularization adds a term λ ∑
+i |θi|. Both types of
+terms can be included. There is a clean Bayesian
+justification for such a regularization term: it is
+the negative log-prior − log P (θ) on the param-
+eters θ. The training criterion then corresponds
+to the negative joint likelihood of data and pa-
+rameters, − log P (data, θ) = − log P (data|θ) −
+log P (θ), with the loss function L(z, θ) being in-
+terpreted as − log P (z|θ) and − log P (data|θ) =
+− ∑T
+t=1 L(zt, θ) if the data consists of T i.i.d.
+examples zt. This detail is important to note
+because when one is doing stochastic gradient-
+based learning, it makes sense to use an unbi-
+ased estimator of the gradient of the total train-
+ing criterion (including both the total loss and
+the regularizer), but one only considers a single
+mini-batch or example at a time. How should the
+regularizer be weighted in this sum, which is dif-
+ferent from the sum of the regularizer and the to-
+tal loss on all examples? On each mini-batch up-
+date, the gradient of the regularization penalty
+should be multiplied not just by λ but also by
+B
+T , i.e., one over the number of updates needed
+to go once through the training set. When the
+training set size is not a multiple of B, the last
+mini-batch will have size B′ < B and the contri-
+bution of the regularizer to the mini-batch gradi-
+ent should therefore be modified accordingly (i.e.
+scaled by B′
+B compared to other mini-batches).
+In the pure online setting (there is no fixed ahead
+training set size nor iterating again on the ex-
+amples), it would then make sense to use B
+t at
+example t, or one over the number of updates
+to date. L2 regularization penalizes large val-
+ues more strongly and corresponds to a Gaus-
+sian prior ∝ exp(− 1
+2
+||θ||2
+σ2 ) with prior variance
+σ2 = 1/(2λ). Note that there is a connection
+between early stopping (see above, choosing the
+number of training iterations) and L2 regular-
+ization (Collobert and Bengio, 2004a), with one
+basically playing the same role as the other (but
+early stopping allowing a much more efficient se-
+lection of the hyper-parameter value, which sug-
+gests dropping L2 regularization altogether when
+early-stopping is used). However, L1 regular-
+ization behaves differently and can sometimes
+be useful, acting as a form of feature selection.
+L1 regularization makes sure that parameters
+that are not really very useful are driven to zero
+(i.e. encouraging sparsity of the parameter val-
+ues), and corresponds to a Laplace density prior
+∝ e− |θ|
+s with scale parameter s = 1
+λ . L1 regu-
+larization often helps to make the input filters22
+cleaner (more spatially localized) and easier to
+interpret. Stochastic gradient descent will not
+yield actual zeros but values hovering around
+zero. If both L1 and L2 regularization are used,
+a different coefficient (i.e. a different hyper-
+parameter) should be considered for each, and
+one may also use a different coefficient for differ-
+ent layers. In particular, the input weights and
+output weights may be treated differently.
+One reason for treating output weights differ-
+ently (i.e., not relying only on early stopping)
+is that we know that it is sufficient to regu-
+larize only the output weights in order to con-
+strain capacity: in the limit case of the num-
+ber of hidden units going to infinity, L2 regular-
+ization corresponds to Support Vector Machines
+(SVM) while L1 regularization corresponds to
+boosting (Bengio et al., 2006a). Another reason
+for treating inputs and outputs differently from
+hidden units is because they may be sparse. For
+example, some input features may be 0 most of
+the time while others are non-zero frequently. In
+that case, there are fewer examples that inform
+the model about that rarely active input feature,
+and the corresponding parameters (weights out-
+going from the corresponding input units) should
+22 The input weights of a 1st layer neuron are often called
+“filters” because of analogies with signal processing techniques
+such as convolutions.
+12
+be more regularized than the parameters associ-
+ated with frequently observed inputs. A similar
+situation may occur with target variables that
+are sparse (e.g., trying to predict rarely observed
+events). In both cases, the effective number of
+meaningful updates seen by these parameters is
+less than the actual number of updates. This
+suggests to scale the regularization coefficient of
+these parameters by one over the effective num-
+ber of updates seen by the parameter. A related
+formula turns up in Bayesian probit regression
+applied to sparse inputs (Graepel et al., 2010).
+Some practitioners also choose to penalize only
+the weights w and not the biases b associated
+with the hidden unit activations w′z+b for a unit
+taking the vector of values z as input. This guar-
+antees that even with strong regularization, the
+predictor would converge to the optimal constant
+predictor, rather than the one corresponding to
+0 activation. For example, with the mean-square
+loss and the cross-entropy loss, the optimal con-
+stant predictor is the output average.
+• Sparsity of activation regularization coeffi-
+cient α. A common practice in the Deep
+Learning literature (Ranzato et al., 2007, 2008b;
+Lee et al., 2008, 2009; Bagnell and Bradley,
+2009; Glorot et al., 2011a; Coates and Ng, 2011;
+Goodfellow et al., 2011) consists in adding a
+penalty term to the training criterion that en-
+courages the hidden units to be sparse, i.e.,
+with values at or near 0. Although the L1
+penalty (discussed above in the case of weights)
+can also be applied to hidden units activations,
+this is mathematically very different from the
+L1 regularization term on parameters. Whereas
+the latter corresponds to a prior on the pa-
+rameters, the former does not because it in-
+volves the training distribution (since we are
+looking at data-dependent hidden units out-
+puts). Although we will not discuss this much
+here, the inspiration for a sparse representa-
+tion in Deep Learning comes from the ear-
+lier work on sparse coding (Olshausen and Field,
+1997). As discussed in Goodfellow et al. (2009)
+sparse representations may be advantageous be-
+cause they encourage representations that dis-
+entangle the underlying factors of representa-
+tion. A sparsity-inducing penalty is also a
+way to regularize (in the sense of reducing the
+number of examples that the learner can learn
+by heart) (Ranzato et al., 2008b), which means
+that the sparsity coefficient is likely to interact
+with the many other hyper-parameters which in-
+fluence capacity. In general, increased sparsity
+can be compensated by a larger number of hid-
+den units.
+Several approaches have been proposed to in-
+duce a sparse representation (or with more hid-
+den units whose activation is closer to 0). One
+approach (Ranzato et al., 2008b; Le et al., 2011;
+Zou et al., 2011) is simply to penalize the L1
+norm of the representation or another function
+of the hidden units’ activation (such as the
+student-t log-prior). This typically makes sense
+for non-linearities such as the sigmoid which
+have a saturating output around 0, but not for
+the hyperbolic tangent non-linearity (whose sat-
+uration is near the -1 and 1 interval borders
+rather than near the origin). Another option
+is to penalize the biases of the hidden units,
+to make them more negative (Ranzato et al.,
+2007; Lee et al., 2008; Goodfellow et al., 2009;
+Larochelle and Bengio, 2008). Note that penal-
+izing the bias runs the danger that the weights
+could compensate for the bias23, which could
+hurt the numerical optimization of parameters.
+When directly penalizing the hidden unit out-
+puts, several variants can be found in the litera-
+ture, but no clear comparative analysis has been
+published to evaluate which one works better.
+Although the L1 penalty (i.e., simply α times
+the sum of output elements hj in the case of sig-
+moid non-linearity) would seem the most natural
+(because of its use in sparse coding), it is used
+in few papers involving sparse auto-encoders. A
+close cousin of the L1 penalty is the Student-
+t penalty (log(1 + h2
+j )), originally proposed for
+sparse coding (Olshausen and Field, 1997). Sev-
+23 because the input to the layer generally has a non-zero
+average, that when multiplied by the weights acts like a bias
+13
+eral researchers penalize the average output ¯hj
+(e.g. over a mini-batch), and instead of pushing
+it to 0, encourage it to approach a fixed target ρ.
+This can be done through a mean-square error
+penalty such as ∑
+j (ρ − ¯hj )2, or maybe more
+sensibly (because hj behaves like a probabil-
+ity), a Kullback-Liebler divergence with respect
+to the binomial distribution with probability ρ,
+−ρ log ¯hj − (1 − ρ) log(1 − ¯hj )+constant, e.g.,
+with ρ = 0.05, as in (Hinton, 2010). In addition
+to the regularization penalty itself, the choice
+of activation function can have a strong impact
+on the sparsity obtained. In particular, rectify-
+ing non-linearities (such as max(0, x), instead of
+a sigmoid) have been very successful in several
+instances (Jarrett et al., 2009; Nair and Hinton,
+2010; Glorot et al., 2011a; Mesnil et al., 2011;
+Glorot et al., 2011b). The rectifier also re-
+lates to the hard tanh (Collobert and Bengio,
+2004b), whose derivatives are also 0 or 1.
+In sparse coding and sparse predictive cod-
+ing (Kavukcuoglu et al., 2009) the activations
+are directly optimized and actual zeros are the
+expected result of the optimization. In that
+case, ordinary stochastic gradient is not guaran-
+teed to find these zeros (it will oscillate around)
+and other methods such as proximal gradient are
+more appropriate (Bertsekas, 2010).
+• Neuron non-linearity. The typical neuron
+output is s(a) = s(w′x + b), where x is the
+vector of inputs into the neuron, w the vec-
+tor of weights and b the offset or bias pa-
+rameter, while s is a scalar non-linear func-
+tion. Several non-linearities have been proposed
+and some choices of non-linearities have been
+shown to be more successful (Jarrett et al., 2009;
+Glorot and Bengio, 2010; Glorot et al., 2011a).
+The most commonly used by the author, for hid-
+den units, are the sigmoid 1/(1+e−a), the hyper-
+bolic tangent ea −e−a
+ea +e−a , the rectifier max(0, a) and
+the hard tanh (Collobert and Bengio, 2004b).
+Note that the sigmoid was shown to yield se-
+rious optimization difficulties when used as the
+top hidden layer of a deep supervised network
+(Glorot and Bengio, 2010) without unsupervised
+pre-training, but works well for auto-encoder
+variants24. For output (or reconstruction) units,
+hard neuron non-linearities like the rectifier do
+not make sense because when the unit is satu-
+rated (e.g. a < 0 for the rectifier) and associ-
+ated with a loss, no gradient is propagated in-
+side the network, i.e., there is no chance to cor-
+rect the error25. In the case of hidden layers the
+gradient manages to go through a subset of the
+hidden units, even if the others are saturated.
+For output units a good trick is to obtain the
+output non-linearity and the loss by considering
+the associated negative log-likelihood and choos-
+ing an appropriate (conditional) output proba-
+bility model, usually in the exponential family.
+For example, one can typically take squared er-
+ror and linear outputs to correspond to a Gaus-
+sian output model, cross-entropy and sigmoids
+to correspond to a binomial output model, and
+− log output[target class] with softmax outputs
+to correspond to multinomial output variables.
+For reasons yet to be elucidated, having a sig-
+moidal non-linearity on the output (reconstruc-
+tion) units (along with target inputs normalized
+in the (0,1) interval) seems to be helpful when
+training the contractive auto-encoder.
+• Weights initialization scaling coefficient.
+Biases can generally be initialized to zero
+but weights need to be initialized carefully
+to break the symmetry between hidden units
+of the same layer26. Because different out-
+put units receive different gradient signals,
+this symmetry breaking issue does not con-
+24 The author hypothesizes that this discrepency is due
+to the fact that the weight matrix W of an auto-encoder of
+the form r(x) = W T sigmoid(W x) is pulled towards being or-
+thonormal since this would make the auto-encoder closer to the
+identity function, because W T W x ≈ x when W is orthonormal
+and x is in the span of the rows of W .
+25 A hard non-linearity for the output units non-linearity is
+very different from a hard non-linearity in the loss function,
+such as the hinge loss. In the latter case the derivative is 0
+only when there is no error.
+26 By symmetry, if hidden units of the same layer share the
+same input and output weights, they will compute the same
+output and receive the same gradient, hence performing the
+same update and remaining identical, thus wasting capacity.
+14
+cern the output weights (into the output
+units), which can therefore also be set to zero.
+Although several tricks (LeCun et al., 1998a;
+Glorot and Bengio, 2010) for initializing the
+weights into hidden layers have been proposed
+(i.e. a hyper-parameter is the discrete choice
+between them), Bergstra and Bengio (2012) also
+inserted as an extra hyper-parameter a scaling
+coefficient for the initialization range. These
+tricks are based on the idea that units with
+more inputs (the fan-in of the unit) should have
+smaller weights. Both LeCun et al. (1998a) and
+Glorot and Bengio (2010) recommend scaling by
+the inverse of the square root of the fan-in, al-
+though Glorot and Bengio (2010) and the Deep
+Learning Tutorials use a combination of the fan-
+in and fan-out, e.g., sample a Uniform(−r, r)
+with r = √6/(fan-in + fan-out) for hyperbolic
+tangent units and r = 4√6/(fan-in + fan-out)
+for sigmoid units. We have found that we could
+avoid any hyper-parameter related to initializa-
+tion using these formulas (and the derivation in
+Glorot and Bengio (2010) can be used to derive
+the formula for other settings). Note however
+that in the case of RBMs, a zero-mean Gaussian
+with a small standard deviation around 0.1 or
+0.01 works well (Hinton, 2010) to initialize the
+weights, while visible biases are typically set to
+their optimal value if the weights were 0, i.e.,
+log(¯x/(1 − ¯x)) in the case of a binomial visible
+unit whose corresponding binary input feature
+has empirical mean ¯x in the training set.
+An important choice is whether one should use
+unsupervised pre-training (and which unsuper-
+vised feature learning algorithm to use) in or-
+der to initialize parameters. In most settings
+we have found unsupervised pre-training to help
+and very rarely to hurt, but of course that
+implies additional training time and additional
+hyper-parameters.
+• Random seeds. There are often several sources
+of randomness in the training of neural net-
+works and deep learners (such as for random
+initialization, sampling examples, sampling hid-
+den units in stochastic models such as RBMs,
+or sampling corruption noise in denoising auto-
+encoders). Some random seeds could therefore
+yield better results than others. Because of the
+presence of local minima in the training criterion
+of neural networks (except in the linear case or
+with fixed lower layers), parameter initialization
+matters. See Erhan et al. (2010b) for an exam-
+ple of histograms of test errors for hundreds of
+different random seeds. Typically, the choice of
+random seed only has a slight effect on the result
+and can mostly be ignored in general or for most
+of the hyper-parameter search process. If com-
+puting power is available, then a final set of jobs
+with different random seeds (5 to 10) for a small
+set of best choices of hyper-parameter values can
+squeeze a bit more performance. Another way to
+exploit computing power to push performance a
+bit is model averaging, as in Bagging (Breiman,
+1994) and Bayesian methods. After training
+them, the outputs of different networks (or in
+general different learning algorithms) can be av-
+eraged. For example, the difference between the
+neural networks being averaged into a commit-
+tee may come from the different seeds used for
+parameter initialization, or the use of different
+subsets of input variables, or different subsets of
+training examples (the latter being called Bag-
+ging).
+• Preprocessing. Many preprocessing steps have
+been proposed to massage raw data into ap-
+propriate inputs for neural networks and model
+selection must also choose among them. In
+addition to element-wise standardization (sub-
+tract mean and divide by standard devia-
+tion), Principal Components Analysis (PCA)
+has often been advocated (LeCun et al., 1998a;
+Bergstra and Bengio, 2012) and also allows di-
+mensionality reduction, at the price of an ex-
+tra hyper-parameter (the number of principal
+components retained, or the proportion of vari-
+ance explained). A convenient non-linear pre-
+processing is the uniformization (Mesnil et al.,
+2011) of each feature (which estimates its cumu-
+lative distribution Fi and then transforms each
+feature xi by its quantile F −1
+i (xi), i.e., returns
+15
+an approximate normalized rank or quantile for
+the value xi). A simpler to compute transform
+that may help reduce the tails of input features
+is a non-linearity such as the logarithm or the
+square root, in an attempt to make them more
+Gaussian-like.
+In addition to the above somewhat generic choices,
+more choices arise with different architectures and
+learning algorithms. For example, the denois-
+ing auto-encoder has a hyper-parameter scaling the
+amount of input corruption and the contractive auto-
+encoder has as hyper-parameter a coefficient scaling
+the norm of the Jacobian of the encoder, i.e., control-
+ling the importance of the contraction penalty. The
+latter seems to be a rather sensitive hyper-parameter
+that must be tuned carefully. The contractive auto-
+encoder’s success also seems sensitive to the weight
+tying constraint used in many auto-encoder archi-
+tectures: the decoder’s weight matrix is equal to the
+transpose of the encoder’s weight matrix. The spe-
+cific architecture used in the contractive auto-encoder
+(with tied weights, sigmoid non-linearies on hidden
+and reconstruction units, along with squared loss or
+cross-entropy loss) works quite well but other related
+variants do not always train well, for reasons that
+remain to be understood.
+There are also many architectural choices that
+are relevant in the case of convolutional architec-
+tures (e.g. for modeling images, time-series or
+sound) (LeCun et al., 1989, 1998b; Le et al., 2010) in
+which hidden units have local receptive fields. Their
+discussion is postponed to another chapter (LeCun,
+2013).
+3.3 Manual Search and Grid Search
+Many of the hyper-parameters or model choices de-
+scribed above can be ignored by picking a standard
+trick suggested here or in some other paper. Still,
+one remains with a substantial number of choices to
+be made, which may give the impression of neural
+network training as an art. With modern comput-
+ing facilities based on large computer clusters, it is
+however possible to make the optimization of hyper-
+parameters a more reproducible and automated pro-
+cess, using techniques such as grid search or better,
+random search, or even hyper-parameter optimiza-
+tion, discussed below.
+3.3.1 General guidance for the exploration of
+hyper-parameters
+First of all, let us consider recommendations for ex-
+ploring hyper-parameter settings, whether with man-
+ual search, with an automated procedure, or with
+a combination of both. We call a numerical hyper-
+parameter one that involves choosing a real number or
+an integer (where order matters), as opposed to mak-
+ing a discrete symbolic choice from an unordered set.
+Examples of numerical hyper-parameters are regular-
+ization coefficients, number of hidden units, number
+of training iterations, etc. One has to think of hyper-
+parameter selection as a difficult form of learning:
+there is both an optimization problem (looking for
+hyper-parameter configurations that yield low vali-
+dation error) and a generalization problem: there is
+uncertainty about the expected generalization after
+optimizing validation performance, and it is possi-
+ble to overfit the validation error and get optimisti-
+cally biased estimators of performance when com-
+paring many hyper-parameter configurations. The
+training criterion for this learning is typically the
+validation set error, which is a proxy for general-
+ization error. Unfortunately, the relation between
+hyper-parameters and validation error can be com-
+plicated. Although to first approximation we expect
+a kind of U-shaped curve (when considering only a
+single hyper-parameter, the others being fixed), this
+curve can also have noisy variations, in part due to
+the use of finite data sets.
+• Best value on the border. When considering
+the validation error obtained for different values
+of a numerical hyper-parameter one should pay
+attention as to whether or not the best value
+found is near the border of the investigated in-
+terval. If it is near the border, then this sug-
+gests that better values can be found with val-
+ues beyond the border: it is recommended in
+that case to explore further, beyond that border.
+Because the relation between a hyper-parameter
+16
+and validation error can be noisy, it is gener-
+ally not enough to try very few values. For
+instance, trying only 3 values for a numerical
+hyper-parameter is insufficient, even if the best
+value found is the middle one.
+• Scale of values considered. Exploring values
+of a numerical hyper-parameter entails choosing
+a starting interval to be searched, which is there-
+fore a kind of hyper-hyper-parameter. By choos-
+ing the interval large enough to start with, but
+based on previous experience with this hyper-
+parameter, we ensure that we do not get com-
+pletely wrong results. Now instead of choosing
+the intermediate values linearly in the chosen in-
+terval, it often makes much more sense to con-
+sider a linear or uniform sampling in the log-
+domain (in the space of the logarithm of the
+hyper-parameter). For example, the results ob-
+tained with a learning rate of 0.01 are likely to
+be very similar to the results with 0.011 while
+results with 0.001 could be quite different from
+results with 0.002 even though the absolute dif-
+ference is the same in both cases. The ratio
+between different values is often a better guide
+of the expected impact of the change. That is
+why exploring uniformly or regularly-spaced val-
+ues in the space of the logarithm of the numer-
+ical hyper-parameter is typically preferred for
+positive-valued numerical hyper-parameters.
+• Computational considerations. Validation
+error is actually not the only measure to consider
+in selecting hyper-parameters. Often, one has to
+consider computational cost, either of training
+or prediction. Computing resources for training
+and prediction are limited and generally con-
+dition the choice of intervals of considered val-
+ues: for example increasing the number of hid-
+den units or number of training iterations also
+scales up computation. An interesting idea is
+to use computationally cheap estimators of val-
+idation error to select some hyper-parameters.
+For example, Saxe et al. (2011) showed that the
+architecture hyper-parameters of convolutional
+networks could be selected using random weights
+in the lower layers of the network (filters of
+the convolution). While this yields a noisy and
+biased (pessimistic) estimator of the validation
+error which would otherwise be obtained with
+full training, this cheap estimator appears to be
+correlated with the expensive validation error.
+Hence this cheap estimator is enough for select-
+ing some hyper-parameters (or for keeping un-
+der consideration for further and more expen-
+sive evaluation only the few best choices found).
+Even without cheap estimators of generalization
+error, high-throughput computing (e.g., on clus-
+ters, GPUs, or clusters of GPUs) can be ex-
+ploited to run not just hundreds but thousands
+of training jobs, something not conceivable only
+a few years ago, with each job taking on the order
+of hours or days for larger datasets. With com-
+putationally cheap surrogates, some researchers
+have run on the order of ten thousands trials,
+and we can expect future advances in parallelized
+computing power to boost these numbers.
+3.3.2 Coordinate Descent and Multi-
+Resolution Search
+When performing a manual search and with access to
+only a single computer, a reasonable strategy is coor-
+dinate descent: change only one hyper-parameter at a
+time, always making a change from the best configu-
+ration of hyper-parameters found up to now. Instead
+of a standard coordinate descent (which systemati-
+cally cycles through all the variables to be optimized)
+one can make sure to regularly fine-tune the most
+sensitive variables, such as the learning rate.
+Another important idea is that there is no point in
+exploring the effect of fine changes before one or more
+reasonably good settings have been found. The idea
+of multi-resolution search is to start the search by
+considering only a few values of the numerical hyper-
+parameters (over a large range), or considering large
+changes each time a new value is tried. One can then
+start from the one or few best configurations found
+and explore more locally around them with smaller
+variations around these values.
+17
+3.3.3 Automated and Semi-automated Grid
+Search
+Once some interval or set of values has been selected
+for each hyper-parameter (thus defining a search
+space), a simple strategy that exploits parallel com-
+puting is the grid search. One first needs to con-
+vert the numerical intervals into lists of values (e.g.,
+K regularly-spaced values in the log-domain of the
+hyper-parameter). The grid search is simply an ex-
+haustive search through all the combinations of these
+values. The cross-product of these lists contains a
+number of elements that is unfortunately exponen-
+tial in the number of hyper-parameters (e.g., with
+5 hyper-parameters, each allowed to take 6 different
+values, one gets 65 = 7776 configurations). In sec-
+tion 3.4 below we consider an approach that works
+more efficiently than the grid search when the num-
+ber of hyper-parameters increases beyond 2 or 3.
+The advantage of the grid search, compared to
+many other optimization strategies (such as coordi-
+nate descent), is that it is fully parallelizable. If a
+large computer cluster is available, it is tempting to
+choose a model selection strategy that can take ad-
+vantage of parallelization. One practical disadvan-
+tage of grid search (especially against random search,
+Sec. 3.4), with a parallelized set of jobs on a cluster,
+is that if only one of the jobs fails27 then one has
+to launch another volley of jobs to complete the grid
+(and yet a third one if any of these fails, etc.), thus
+multiplying the overall computing time.
+Typically, a single grid search is not enough and
+practitioners tend to proceed with a sequence of grid
+searches, each time adjusting the ranges of values
+considered based on the previous results obtained.
+Although this can be done manually, this procedure
+can also be automated by considering the idea of
+multi-resolution search to guide this outer loop. Dif-
+ferent, more local, grid searches can be launched in
+the neighborhood of the best solutions found previ-
+ously. In addition, the idea of coordinate descent can
+also be thrown in, by making each grid search focus
+on only a few of the hyper-parameters. For exam-
+ple, it is common practice to start by exploring the
+27 For all kinds of hardware and software reasons, a job
+failing is very common.
+initial learning rate while keeping fixed (and initially
+constant) the learning rate descent schedule. Once
+the shape of the schedule has been chosen, it may be
+possible to further refine the learning rate, but in a
+smaller interval around the best value found.
+Humans can get very good at performing hyper-
+parameter search, and having a human in the loop
+also has the advantage that it can help detect bugs
+or unwanted or unexpected behavior of a learning
+algorithm. However, for the sake of reproducibil-
+ity, machine learning researchers should strive to use
+procedures that do not involve human decisions in
+the middle, only at the outset (e.g., setting hyper-
+parameter ranges, which can be specified in a paper
+describing the experiments).
+3.3.4 Layer-wise optimization of hyper-
+parameters
+In the case of Deep Learning with unsupervised
+pre-training there is an opportunity for combin-
+ing coordinate descent and cheap relative valida-
+tion set performance evaluation associated with
+some hyper-parameter choices. The idea, described
+by Mesnil et al. (2011); Bengio (2011), is to perform
+greedy choices for the hyper-parameters associated
+with lower layers (near the input) before training the
+higher layers. One first trains (unsupervised) the
+first layer with different hyper-parameter values and
+somehow estimates the relative validation error that
+would be obtained from these different configurations
+if the final network only had this single layer as in-
+ternal representation. In the common case where the
+ultimate task is supervised, it means training a simple
+supervised predictor (e.g. a linear classifier) on top
+of the learned representation. In the case of a linear
+predictor (e.g. regression or logistic regression) this
+can even be done on the fly while unsupervised train-
+ing of the representation progresses (i.e. can be used
+for early stopping as well), as in (Larochelle et al.,
+2009). Once a set of apparently good (according
+to this greedy evaluation) hyper-parameters values
+has been found (or possibly using only the best one
+found), these good values can be used as starting
+point to train (and hyper-optimize) a second layer
+in the same way, etc. The completely greedy ap-
+18
+proach is to keep only the best configuration up to
+now (for the lower layers), but keeping the K best
+configurations overall only multiplies computational
+costs of hyper-parameter selection by K for layers be-
+yond the first one, because we would still keep only
+the best K configurations from all the 1st layer and
+2nd layer hyper-parameters as starting points for ex-
+ploring 3rd layer hyper-parameters, etc. This proce-
+dure is formalized in the Algorithm 1 below. Since
+greedy layer-wise pre-training does not modify the
+lower layers when pre-training the upper layers, this
+is also very efficient computationally. This proce-
+dure allows one to set the hyper-parameters associ-
+ated with the unsupervised pre-training stage, and
+then there remains hyper-parameters to be selected
+for the supervised fine-tuning stage, if one is desired.
+A final supervised fine-tuning stage is strongly sug-
+gested, especially when there are many labeled exam-
+ples (Lamblin and Bengio, 2010).
+3.4 Random Sampling of Hyper-
+Parameters
+A serious problem with the grid search approach to
+find good hyper-parameter configurations is that it
+scales exponentially badly with the number of hyper-
+parameters considered. In the above sections we have
+discussed numerous hyper-parameters and if all of
+them were to be explored at the same time it would
+be impossible to use only a grid search to do so.
+One may think that there are no other options sim-
+ply because this is an instance of the curse of di-
+mensionality. But like we have found in our work
+on Deep Learning (Bengio, 2009), if there is some
+structure in a target function we are trying to dis-
+cover, then there is a chance to find good solutions
+without paying an exponential price. It turns out
+that in many practical cases we have encountered,
+there is a kind of structure that random sampling
+can exploit (Bergstra and Bengio, 2012). The idea
+of random sampling is to replace the regular grid
+by a random (typically uniform) sampling. Each
+tested hyper-parameter configuration is selected by
+independently sampling each hyper-parameter from
+a prior distribution (typically uniform in the log-
+domain, inside the interval of interest). For a discrete
+Algorithm 1 : Greedy layer-wise hyper-
+parameter optimization.
+input K: number of best configurations to keep
+at each level.
+input N LEV ELS: number of levels of the deep
+architecture
+input LEV ELSET T IN GS: list of hyper-
+parameter settings to be considered for unsuper-
+vised pre-training of a level
+input SF T SET T IN GS: list of hyper-parameter
+settings to be considered for supervised fine-tuning
+Initialize set of best configurations S = ∅
+for L = 1 to N LEV ELS do
+for C in LEV ELSET T IN GS do
+for H in (S or {∅}) do
+* Pretrain level L using hyper-parameter
+setting C for level L and the parameters ob-
+tained with setting H for lower levels.
+* Evaluate target task performance L using
+this depth-L pre-trained architecture (e.g.
+train a linear classifier on top of these layers
+and estimate validation error).
+* Push the pair (C ∪ H, L) into S if it is
+among the K best performing of S.
+end for
+end for
+end for
+for C in SF T SET T IN GS do
+for H in S do
+* Supervised fine-tuning of the pre-trained ar-
+chitecture associated with H, using supervised
+fine-tuning hyper-parameter setting C.
+* Evaluate target task performance L of this
+fine-tuned predictor (e.g. validation error).
+* Push the pair (C ∪H, L) into S if it is among
+the K best performing of S.
+end for
+end for
+output S the set of K best-performing models
+with their settings and validation performance.
+19
+hyper-parameter, a multinomial distribution can be
+defined according to our prior beliefs on the likely
+good values. At worse, i.e., with no prior preference
+at all, this would be a uniform distribution across the
+allowed values. In fact, we can use our prior knowl-
+edge to make this prior distribution quite sophisti-
+cated. For example, we can readily include knowl-
+edge that some values of some hyper-parameters only
+make sense in the context of other particular val-
+ues of hyper-parameters. This is a practical consid-
+eration for example when considering layer-specific
+hyper-parameters when the number of layers itself is
+a hyper-parameter.
+The experiments performed (Bergstra and Bengio,
+2012) show that random sampling can be many times
+more efficient than grid search as soon as the number
+of hyper-parameters goes beyond the 2 or 3 typically
+seen with SVMs and vanilla neural networks. The
+main reason why faster convergence is observed is
+because it allows one to explore more values for each
+hyper-parameter, whereas in grid search, the same
+value of a hyper-parameter is repeated in exponen-
+tially many configurations (of all the other hyper-
+parameters). In particular, if only a small subset of
+the hyper-parameters really matters, then this proce-
+dure can be shown to be exponentially more efficient.
+What we found is that for different datasets and ar-
+chitectures, the subset of hyper-parameters that mat-
+tered most was different, but it was often the case
+that a few hyper-parameters made a big difference
+(and the learning rate is always one of them!). When
+marginalizing (by averaging or minimizing) the val-
+idation performance to visualize the effect of one or
+two hyper-parameters, we get a more noisy picture
+using a random search compared to a grid search,
+because of the random variations of the other hyper-
+parameters but one with much more resolution, be-
+cause so many more different values have been consid-
+ered. Practically, one can plot the curves of best val-
+idation error as the number of random trials28 is in-
+creased (with mean and standard deviation, obtained
+by considering, for each choice of number of trials, all
+possible same-size subsets of trials), and this curve
+28 each random trial corresponding to a training job with a
+particular choice of hyper-parameter values
+tells us that we are approaching a plateau, i.e., it tells
+us whether it is worth it or not to continue launching
+jobs, i.e., we can perform a kind of early stopping in
+the outer optimization over hyper-parameters. Note
+that one should distinguish the curve of the “best
+trial in first N trials” with the curve of the mean (and
+standard deviation) of the “best in a subset of size
+N”. The latter is a better statistical representative of
+the improvements we should expect if we increase the
+number of trials. Even if the former has a plateau,
+the latter may still be on the increase, pointing for the
+need to more hyper-parameter configuration samples,
+i.e., more trials (Bergstra and Bengio, 2012). Com-
+paring these curves with the equivalent obtained from
+grid search we see faster convergence with random
+search. On the other hand, note that one advan-
+tage of grid search compared to random sampling is
+that the qualitative analysis of results is easier be-
+cause one can consider variations of a single hyper-
+parameter with all the other hyper-parameters being
+fixed. It may remain a valid option to do a small
+grid search around the best solutions found by ran-
+dom search, considering only the hyper-parameters
+that were found to matter or which concern a scien-
+tific question of interest29.
+Random search maintains the advantage of easy
+parallelization provided by grid search and improves
+on it. Indeed, a practical advantage of random search
+compared to grid search is that if one of the jobs fails
+then there is no need to re-launch that job. It also
+means that if one has launched 100 random search
+jobs, and finds that the convergence curve still has an
+interesting slope, one can launch another 50 or 100
+without wasting the first 100. It is not that simple to
+combine the results of two grid searches because they
+are not always compatible (i.e., one is not a subset of
+the other).
+Finally, although random search is a useful ad-
+dition to the toolbox of the practitioner, semi-
+automatic exploration is still helpful and one will
+often iterate between launching a new volley of
+jobs and analysis of the results obtained with
+29 This is often the case in machine learning research, e.g.,
+does depth of architecture matter? then we need to control ac-
+curately for the effect of depth, with all other hyper-parameters
+optimized for each value of depth.
+20
+the previous volley in order to guide model de-
+sign and research. What we need is more, and
+more efficient, automation of hyper-parameter op-
+timization. There are some interesting steps in
+this direction (Hutter, 2009; Bergstra et al., 2011;
+Hutter et al., 2011; Srinivasan and Ramakrishnan,
+2011) but much more needs to done.
+4 Debugging and Analysis
+4.1 Gradient Checking and Con-
+trolled Overfitting
+A very useful debugging step consists in verifying
+that the implementation of the gradient ∂L
+∂θ is com-
+patible with the computation of L as a function of
+θ. If the analytically computed gradient does not
+match the one obtained by a finite difference approx-
+imation, this signals that a bug is probably present
+somewhere. First of all, looking at for which i one
+gets important relative change between ∂L
+∂θi and its
+finite difference approximation, we can get hints as
+to where the problem may be. An error in sign is
+particularly troubling, of course. A good next step is
+then to verify in the same way intermediate gradients
+∂L
+∂a with a some quantities that depend on the faulty
+θ, such as intervening neuron activations.
+As many researchers know, the gradient can be
+approximated by a finite difference approximation
+obtained from the first-order Taylor expansion of a
+scalar function f with respect to a scalar argument
+x: ∂f (x)
+∂x = f (x + ε) − f (x)
+ε + o(ε)
+But a less known fact is that a second order approx-
+imation can be achieved by considering the following
+alternative formula:
+∂f (x)
+∂x ≈ f (x + ε) − f (x − ε)
+2ε + o(ε2).
+The second order terms of the Taylor expansion of
+f (x + ε) and f (x − ε) cancel each other because they
+are even, leaving only 3rd or higher order terms,
+i.e., o(ε2) error after dividing the difference by ε.
+Hence this formula is twice more expensive (not a
+big deal while debugging) but provides quadratically
+more precision.
+Note that because of finite precision in the com-
+putation, there will be a difference between the an-
+alytic (even correct) and finite difference gradient.
+Contrary to naive expectations, the relative differ-
+ence may grow if we choose an ε that is too small,
+i.e., the error should first decrease as ε is decreased,
+and then may worsen when numerical precision kicks
+in, due to non-linearities. We have often used a value
+of ε = 10−4 in neural networks, a value that is suffi-
+ciently small to detect most bugs.
+Once the gradient is known to be well computed,
+another sanity check is that gradient descent (or any
+other gradient-based optimization) should be able
+to overfit on a small training set30. In particular,
+to factor out effects of SGD hyper-parameters, a
+good sanity check for the code (and the other hyper-
+parameters) is to verify that one can overfit on a small
+training set using a powerful second order method
+such as L-BFGS. For any optimizer, though, as the
+number of examples is increased, the degradation of
+training error should be gradual while validation er-
+ror should improve. And one typically sees the advan-
+tages of SGD over batch second-order methods like
+L-BFGS increase as the training set size increases.
+The break-even point may depend on the task, paral-
+lelization (multi-core or GPU, see Sec.5 below), and
+architecture (number of computations compared to
+number of parameters, per example).
+Of course, the real goal of learning is to achieve
+good generalization error, and the latter can be es-
+timated by measuring performance on an indepen-
+dent test set. When test error is considered too
+high, the first question to ask is whether it is be-
+cause of a difficulty in optimizing the training cri-
+terion or because of overfitting. Comparing train-
+ing error and test error (and how they change as
+we change hyper-parameters that influence capacity,
+30 In principle, bad local minima could prevent that, but in
+the overfitting regime, e.g., with more hidden units than exam-
+ples, the global minimum of the training error can generally be
+reached almost surely from random initialization, presumably
+because the training criterion becomes convex in the parame-
+ters that suffice to get the training error to zero (Bengio et al.,
+2006a), i.e., the output weights of the neural network.
+21
+such as the number of training iterations) helps to
+answer that question. Depending on the answer, of
+course, the appropriate ways to improve test error
+are different. Optimization difficulties can be fixed
+by looking for bugs in the training code, inappropri-
+ate values of optimization hyper-parameters, or sim-
+ply insufficient capacity (e.g. not enough degrees of
+freedom, hidden units, embedding sizes, etc.). Over-
+fitting difficulties can be addressed by collecting more
+training data, introducing more or better regular-
+ization terms, multi-task training, unsupervised pre-
+training, unsupervised term in the training criterion,
+or considering different function families (or neural
+network architectures). In a multi-layer neural net-
+work, both problems can be simultaneously present.
+For example, as discussed in Bengio et al. (2007);
+Bengio (2009), it is possible to have zero training er-
+ror with a large top-level hidden layer that allows the
+output layer to overfit, while the lower layer are not
+doing a good job of extracting useful features because
+they were not properly optimized.
+Unless using a framework such as Theano which
+automatically handles the efficient allocation of
+buffers for intermediate results, it is important to
+pay attention to such buffers in the design of the
+code. The first objective is to avoid memory alloca-
+tion in the middle of the training loop, i.e., all mem-
+ory buffers should be allocated once and for all. Care-
+less reuse of the same memory buffers for different
+uses can however lead to bugs, which can be checked,
+in the debugging phase, by initializing buffers to the
+NaN (Not-A-Number) value, which propagates into
+downstream computation (making it easy to detect
+that uninitialized values were used)31.
+4.2 Visualizations and Statistics
+The most basic statistics that should be measured
+during training are error statistics. The average loss
+on the training set and the validation set and their
+evolution during training are very useful to monitor
+progress and differentiate overfitting from poor op-
+timization. To make comparisons easier, it may be
+31 Personal communication from David Warde-Farley, who
+learned this trick from Sam Roweis.
+useful to compare neural networks during training in
+terms of their “age” (number of updates made times
+mini-batch size B, i.e., number of examples visited)
+rather than in terms of number of epochs (which is
+very sensitive to the training set size).
+When using unsupervised training to learn the first
+few layers of a deep architecture, a very common de-
+bugging and analysis tool is the visualization of fil-
+ters, i.e., of the weight vectors associated with in-
+dividual hidden units. This is simplest in the case
+of the first layer and where the inputs are images
+(or image patches), time-series, or spectrograms (all
+of which are visually interpretable). Several recipes
+have been proposed to extend this idea to visualize
+the preferred input of hidden units in layers that
+follow the first one (Lee et al., 2008; Erhan et al.,
+2010a). In the case of the first layer, since one of-
+ten obtains Gabor filters, a parametric fit of these
+filters to the weight vector can be done so as to vi-
+sualize the distribution of orientations, positions and
+scales of the learned filters. An interesting special
+case of visualizing first-layer weights is the visual-
+ization of word embeddings (see Section 5.3 below)
+using a dimensionality reduction technique such as
+t-SNE (van der Maaten and Hinton, 2008).
+An extension of the idea of visualizing filters (which
+can apply to non-linear or deeper features) is that of
+visualizing local (arount the given test point) lead-
+ing tangent vectors, i.e., the main directions in input
+space to which the representation (at a given layer)
+is most sensitive to (Rifai et al., 2011b).
+In the case where the inputs are not images or eas-
+ily visualizable, or to get a sense of the weight values
+in different hidden units, Hinton diagrams (Hinton,
+1989) are also very useful, using small squares whose
+color (black or white) indicates a weight’s sign and
+whose area represents its magnitude.
+Another way to visualize what has been learned
+by an unsupervised (or joint label-input) model is
+to look at samples from the model. Sampling pro-
+cedures have been defined at the outset for RBMs,
+Deep Belief Nets, and Deep Boltzmann Machines,
+for example based on Gibbs sampling. When weights
+become larger, mixing between modes can become
+very slow with Gibbs sampling. An interesting alter-
+native is rates-FPCD (Tieleman and Hinton, 2009;
+22
+Breuleux et al., 2011) which appears to be more ro-
+bust to this problem and generally mixes faster, but
+at the cost of losing theoretical guarantees.
+In the case of auto-encoder variants, it was not
+clear until recently whether they were really captur-
+ing the underlying density (since they are not opti-
+mized with respect to the maximum likelihood prin-
+ciple or an approximation of it). It was therefore
+even less clear if there existed appropriate sampling
+algorithms for auto-encoders, but a recent proposal
+for sampling from contractive auto-encoders appears
+to be working very well (Rifai et al., 2012), based on
+arguments about the geometric interpretation of the
+first derivative of the encoder (Bengio et al., 2012),
+showing that denoising and contractive auto-encoders
+capture local moments (first and second) of the train-
+ing density.
+To get a sense of what individual hidden units rep-
+resent, it has also been proposed to vary only one
+unit while keeping the others fixed, e.g., to the value
+obtained by finding the hidden units representation
+associated with a particular input example.
+Another interesting technique is the visual-
+ization of the learning trajectory in function
+space (Erhan et al., 2010b). The idea is to asso-
+ciate the function (as opposed to simply the pa-
+rameters) computed by a neural network with a
+low-dimensional (2-D or 3-D) representation, e.g.,
+with the t-SNE (van der Maaten and Hinton, 2008)
+or Isomap (Tenenbaum et al., 2000) algorithms, and
+then plot the evolution of this function during train-
+ing, or the population of such trajectories for different
+initializations. This provides visualization of effec-
+tive local minima32 and shows that no two different
+random initializations ended up in the same effective
+local minimum.
+Finally, another useful type of visualization is to
+display statistics (e.g., histogram, mean and stan-
+dard deviation) of activations (inputs and outputs
+of the non-linearities at each layer), activation gradi-
+ents, parameters and parameter gradients, by groups
+(e.g. different layers, biases vs weights) and across
+training iterations. See Glorot and Bengio (2010)
+32 It is difficult to know for sure if it is a true local minima
+or if it appears like one because the optimization algorithm is
+stuck.
+for a practical example. A particularly interesting
+quantity to monitor is the discriminative ability of
+the representations learnt at each layer, as discussed
+in (Montavon et al., 2012), and ultimately leading to
+an analysis of the disentangled factors captured by
+the different layers as we consider deeper architec-
+tures.
+5 Other Recommendations
+5.1 Multi-core machines, BLAS and
+GPUs
+Matrix operations are the most time-consuming in
+efficient implementations of many machine learning
+algorithms and this is particularly true of neural
+networks and deep architectures. The basic opera-
+tions are matrix-vector products (forward propaga-
+tion and back-propagation) and vector times vector
+outer products (resulting in a matrix of weight gra-
+dients). Matrix-matrix multiplications can be done
+substantially faster than the equivalent sequence of
+matrix-vector products for two reasons: by smart
+caching mechanisms such as implemented in the
+BLAS library (which is called from many higher-level
+environments such as python’s numpy and Theano,
+Matlab, Torch or Lush), and thanks to parallelism.
+Appropriate versions of BLAS can take advantage
+of multi-core machines to distribute these computa-
+tions on multi-core machines. The speed-up is how-
+ever generally a fraction of the total speedup one can
+hope for (e.g. 4× on a 4-core machine), because of
+communication overheads and because not all com-
+putation is parallelized. Parallelism becomes more
+efficient when the sizes of these matrices is increased,
+which is why mini-batch updates can be computa-
+tionally advantageous, and more so when more cores
+are present.
+The extreme multi-core machines are the GPUs
+(Graphics Processing Units), with hundreds of cores.
+Unfortunately, they also come with constraints and
+specialized compilers which make it more difficult to
+fully take advantage of their potential. On 512-core
+machines, we are routinely able to get speed-ups of
+4× to 40× for large neural networks. To make the
+23
+use of GPUs practical, it really helps to use existing
+libraries that efficiently implement computations on
+GPUs. See Bergstra et al. (2010) for a comparative
+study of the Theano library (which compiles numpy-
+like code for GPUs). One practical issue is that only
+the GPU-compiled operations will typically be done
+on the GPU, and that transfers between the GPU
+and CPU considerably slow things down. It is im-
+portant to use a profiler to find out what is done
+on the GPU and how efficient these operations are
+in order to quickly invest one’s time where needed
+to make an implementation GPU-efficient and keep
+most operations on the GPU card.
+5.2 Sparse High-Dimensional Inputs
+Sparse high-dimensional inputs can be efficiently han-
+dled by traditional supervised neural networks by us-
+ing a sparse matrix multiplication. Typically, the in-
+put is a sparse vector while the weights are in a dense
+matrix, and one should use an efficient implementa-
+tion made for just this case in order to optimally take
+advantage of sparsity. There is still going to be an
+overhead on the order of 2× or more (on the multiply-
+add operations, not the others) compared to a dense
+implementation of the matrix-vector product.
+For many unsupervised learning algorithms there is
+unfortunately a difficulty. The computation for these
+learning algorithms usually involves some kind of re-
+construction of the input (like for all auto-encoder
+variants, but also for RBMs and sparse coding vari-
+ants), as if the inputs were in the output space of
+the learner. Two exceptions to this problem are
+semi-supervised embedding (Weston et al., 2008) and
+Slow Feature Analysis (Wiskott and Sejnowski, 2002;
+Berkes and Wiskott, 2002). The former pulls the rep-
+resentation of nearby examples near each other and
+pushes dissimilar points apart, while also tuning the
+representation for a supervised learning task. The
+latter maximizes the learned features’ variance while
+minimizing their covariance and maximizing their
+temporal auto-correlation.
+For algorithms that do need a form of input re-
+construction, an efficient approach based on sam-
+pled reconstruction (Dauphin et al., 2011) has been
+proposed, successfully implemented and evaluated
+for the case of auto-encoders and denoising auto-
+encoders. The first idea is that on each example (or
+mini-batch), one samples a subset of the elements
+of the reconstruction vector, along with the associ-
+ated reconstruction loss. One only needs to com-
+pute the reconstruction and the loss associated with
+these sampled elements (or features), as well as the
+associated back-propagation operations into hidden
+units and reconstruction weights. That alone would
+multiplicatively reduce the computational cost by the
+amount of sparsity but make the gradient much more
+noisy and possibly biased as well, if the sampling dis-
+tribution was chosen not uniform. To reduce the vari-
+ance of that estimator, the idea is to guess for which
+features the reconstruction loss will be larger and to
+sample with higher probability these features (and
+their loss). In particular, the authors always sample
+the features with a non-zero in the input (or the cor-
+rupted input, in the denoising case), and uniformly
+sample an equal number of those with a zero in the
+input and corrupted input. To make the estimator
+unbiased now requires introducing a weight on the
+reconstruction loss associated with each sampled fea-
+ture, inversely proportional to the probability of sam-
+pling it, i.e., this is an importance sampling scheme.
+The experiments show that the speed-up increases
+linearly with the amount of sparsity while the aver-
+age loss is optimized as well as in the deterministic
+full-computation case.
+5.3 Symbolic Variables, Embeddings,
+Multi-Task Learning and Multi-
+Relational Learning
+Parameter sharing (Lang and Hinton, 1988; LeCun,
+1989; Lang and Hinton, 1988; Caruana, 1993; Baxter,
+1995, 1997) is an old neural network technique for in-
+creasing statistical power: if a parameter is used in N
+times more contexts (different tasks, different parts of
+the input, etc.) then it may be as if we had N times
+more training examples for tuning its value. More
+examples to estimate a parameter reduces its vari-
+ance (with respect to sampling of training examples),
+which is directly influencing generalization error: for
+example the generalization mean squared error can
+24
+be decomposed as the sum of a bias term and a vari-
+ance term (Geman et al., 1992). The reuse idea was
+first exploited by applying the same parameter to dif-
+ferent parts of the input, as in convolutional neu-
+ral networks (Lang and Hinton, 1988; LeCun, 1989).
+Reuse was also exploited by sharing the lower lay-
+ers of a network (and the representation of the input
+that they capture) across multiple tasks associated
+with different outputs of the network (Caruana, 1993;
+Baxter, 1995, 1997). This idea is also one of the key
+motivations behind Deep Learning (Bengio, 2009) be-
+cause one can think of the intermediate features com-
+puted in higher (deeper) layers as different tasks that
+can share the sub-features computed in lower layers
+(nearer the input). This very basic notion of reuse
+is key to improving generalization in many settings,
+guiding the design of neural network architectures in
+practical applications as well.
+An interesting special case of these ideas is in the
+context of learning with symbolic data. If some in-
+put variables are symbolic, taking value in a finite
+alphabet, they can be represented as neural net-
+work inputs by a one-hot subvector of the input vec-
+tor (with a 0 everywhere except at the position as-
+sociated with the particular symbol). Now, some-
+times different input variables refer to different in-
+stances of the same type of symbol. A patent ex-
+ample is with neural language models (Bengio et al.,
+2003; Bengio, 2008), where the input is a sequence of
+words. In these models, the same input layer weights
+are reused for words at different positions in the input
+sequence (as in convolutional networks). The prod-
+uct of a one-hot sub-vector with this shared weight
+matrix is a generally dense vector, and this asso-
+ciates each symbol in the alphabet with a point in
+a vector space33, which we call its embedding. The
+idea of vector space representations for words and
+symbols is older (Deerwester et al., 1990) and is a
+particular case of the notion of distributed represen-
+tation (Hinton, 1986, 1989) central to the connec-
+tionist approaches. Learned embeddings of symbols
+(or other objects) can be conveniently visualized us-
+ing a dimensionality reduction algorithm such as t-
+33 the result of the matrix multiplication, which equals one
+of the columns of the matrix
+SNE (van der Maaten and Hinton, 2008).
+In addition to sharing the embedding parame-
+ters across positions of words in an input sentence,
+Collobert et al. (2011a) share them across natural
+language processing tasks such as Part-Of-Speech
+tagging, chunking and semantic role labeling. Param-
+eter sharing is a key idea behind convolutional nets,
+recurrent neural networks and dynamic Bayes nets, in
+which the same parameters are used for different tem-
+poral or spatial slices of the data. This idea has been
+generalized from sequences and 2-D images to arbi-
+trary graphs with recursive neural networks or recur-
+sive graphical models (Pollack, 1990; Frasconi et al.,
+1998; Bottou, 2011; Socher et al., 2011), Markov
+Logic Networks (Richardson and Domingos, 2006)
+and relational learning (Getoor and Taskar, 2006).
+A relational database can be seen as a set of ob-
+jects (or typed values) and relations between them,
+of the form (object1, relation-type, object2). The
+same global set of parameters can be shared to char-
+acterize such relations, across relations (which can be
+seen as tasks) and objects. Object-specific parame-
+ters are the parameters specifying the embedding of
+a particular discrete object. One can think of the el-
+ements of each embedding vector as implicit learned
+attributes. Different tasks may demand different at-
+tributes, so that objects which share some underly-
+ing characteristics and behavior should end up hav-
+ing similar values of some of their attributes. For
+example, words appearing in semantically and syn-
+tactically similar contexts end up getting a very close
+embedding (Collobert et al., 2011a). If the same at-
+tributes can be useful for several tasks, then statisti-
+cal power is gained through parameter sharing, and
+transfer of information between tasks can happen,
+making the data of some task informative for gener-
+alizing properly on another task.
+The idea proposed in Bordes et al. (2011, 2012) is
+to learn an energy function that is lower for posi-
+tive (valid) relations present in the training set, and
+parametrized in two parts: on the one hand the sym-
+bol embeddings and on the other hand the rest of
+the neural network that maps them to a scalar en-
+ergy. In addition, by considering relation types them-
+selves as particular symbolic objects, the model can
+reason about relations themselves and have relations
+25
+between relation types. For example, ‘To be’ can act
+as a relation type (in subject-attribute relations) but
+in the statement “ ‘To be’ is a verb” it appears both
+as a relation type and as an object of the relation.
+Such multi-relational learning opens the door to
+the application of neural networks outside of their
+traditional applications, which was based on a single
+homogeneous source of data, often seen as a matrix
+with one row per example and one column (or group
+of columns) per random variable. Instead, one often
+has multiple heterogeneous sources of data (typically
+providing examples seen as a tuple of values), each in-
+volving different random variables. So long as these
+different sources share some variables, then the above
+multi-relational multi-task learning approaches can
+be applied. Each variable can be associated with its
+embedding function (that maps the value of a vari-
+able to a generic representation space that is valid
+across tasks and data sources). This framework can
+be applied not only to symbolic data but to mixed
+symbolic/numeric data if the mapping from object
+to embedding is generalized from a table look-up to
+a parametrized function (the simplest being a linear
+mapping) from its raw attributes (e.g., image fea-
+tures) to its embedding. This has been exploited
+successfully to design image search systems in which
+images and queries are mapped to the same semantic
+space (Weston et al., 2011).
+6 Open Questions
+6.1 On the Added Difficulty of Train-
+ing Deeper Architectures
+There are experimental results which provide some
+evidence that, at least in some circumstances, deeper
+neural networks are more difficult to train than
+shallow ones, in the sense that there is a greater
+chance of missing out on better minima when start-
+ing from random initialization. This is borne out
+by all the experiments where we find that some
+initialization scheme can drastically improve per-
+formance. In the Deep Learning literature this
+has been shown with the use of unsupervised pre-
+training (supervised or not), both applied to super-
+vised tasks — training a neural network for clas-
+sification (Hinton et al., 2006; Bengio et al., 2007;
+Ranzato et al., 2007) — and unsupervised tasks —
+training a Deep Boltzmann Machine to model the
+data distribution (Salakhutdinov and Hinton, 2009).
+The learning trajectories visualizations
+of Erhan et al. (2010b) have shown that even
+when starting from nearby configurations in function
+space, different initializations seem to always fall in
+a different effective local minimum. Furthermore,
+the same study showed that the minima found when
+using unsupervised pre-training were far in function
+space from those found from random initialization,
+in addition to giving better generalization error.
+Both of these findings highlight the importance of
+initialization, hence of local minima effects, in deep
+networks. Finally, it has been shown that these
+effects were both increased when considering deeper
+architectures (Erhan et al., 2010b).
+There are also results showing that specific ways
+of setting the initial distribution and ordering of
+examples (“curriculum learning”) can yield bet-
+ter solutions (Elman, 1993; Bengio et al., 2009;
+Krueger and Dayan, 2009). This also suggest that
+very particular ways of initializing parameters, very
+different from uniformly sampled, can have a strong
+impact on the solutions found by gradient descent.
+The hypothesis proposed in (Bengio et al., 2009) is
+that curriculum learning can act similarly to a con-
+tinuation method, i.e., starting from an easier opti-
+mization task (e.g. convex) and tracking the local
+minimum as the learning task is gradually made more
+difficult and closer to the real task of interest.
+Why would training deeper networks be more dif-
+ficult? This is clearly still an open question. A
+plausible partial answer is that deeper networks are
+also more non-linear (since each layer composes more
+non-linearity on top of the previous ones), making
+gradient-based methods less efficient. It may also be
+that the number and structure of local minima both
+change qualitatively as we increase depth. Theoreti-
+cal arguments support a potentially exponential gain
+in expressive power of deeper architectures (Bengio,
+2009; Bengio and Delalleau, 2011) and it would be
+plausible that with this added expressive power com-
+ing from the combinatorics of composed reuse of sub-
+26
+functions could come a corresponding increase in the
+number (and possibly quality) of local minima. But
+the best ones could then also be more difficult to find.
+On the practical side, several experimental results
+point to factors that may help training deep architec-
+tures:
+• A local training signal. What many success-
+ful procedures for training deep networks have
+in common is that they involve a local training
+signal that helps each layer decide what to do
+without requiring the back-propagation of gradi-
+ents through many non-linearities. This includes
+of course the many variants of greedy layer-wise
+pre-training but also the less well-known semi-
+supervised embedding algorithm (Weston et al.,
+2008).
+• Initialization in the right range. Based
+on the idea that both activations and gradients
+should be able to flow well through a deep archi-
+tecture without significant reduction in variance,
+Glorot and Bengio (2010) proposed setting up
+the initial weights to make the Jacobian of each
+layer have singular values near 1 (or preserve
+variance in both directions). In their experi-
+ments this clearly helped greatly reducing the
+gap between purely supervised and pre-trained
+deep networks.
+• Choice of non-linearities. In the same
+study (Glorot and Bengio, 2010) and a follow-
+up (Glorot et al., 2011a) it was shown that the
+choice of hidden layer non-linearities interacted
+with depth. In particular, without unsupervised
+pre-training, a deep neural network with sig-
+moids in the top hidden layer would get stuck
+for a long time on a plateau and generally pro-
+duce inferior results, due to the special role of
+0 and of the initial gradients from the output
+units. Symmetric non-linearities like the hy-
+perbolic tangent did not suffer from that prob-
+lem, while softer non-linearities (without ex-
+ponential tails) such as the softsign function
+s(a) = a
+1+|a| worked even better. In Glorot et al.
+(2011a) it was shown that an asymmetric but
+hard-limiting non-linearity such as the rectifier
+(s(a) = max(0, a), see also (Nair and Hinton,
+2010)) actually worked very well (but should not
+be used for output units), in spite of the prior be-
+lief that the fact that when hidden units are sat-
+urated, gradients would not flow well into lower
+layers. In fact gradients flow very well, but on
+selected paths, possibly making the credit as-
+signment (which parameters should change to
+handle the current error) sharper and the Hes-
+sian condition number better. A recent heuris-
+tic that is related to the difficulty of gradient
+propagation through neural net non-linearities is
+the idea of “centering” the non-linear operation
+such that each hidden unit has zero average out-
+put and zero average slope (Schraudolph, 1998;
+Raiko et al., 2012).
+6.2 Adaptive Learning Rates and
+Second-Order Methods
+To improve convergence and remove learning rates
+from the list of hyper-parameters, many authors have
+advocated exploring adaptive learning rate methods,
+either for a global learning rate (Cho et al., 2011),
+a layer-wise learning rate, a neuron-wise learning
+rate, or a parameter-wise learning rate (Bordes et al.,
+2009) (which then starts to look like a diagonal New-
+ton method). LeCun (1987); LeCun et al. (1998a)
+advocate the use of a second-order diagonal New-
+ton (always positive) approximation, with one learn-
+ing rate per parameter (associated with the approx-
+imated inverse second derivative of the loss with re-
+spect to the parameter). Hinton (2010) proposes
+scaling learning rates so that the average weight up-
+date is on the order of 1/1000th of the weight mag-
+nitude. LeCun et al. (1998a) also propose a simple
+power method in order to estimate the largest eigen-
+value of the Hessian (which would be the optimal
+learning rate). An interesting alternative to variants
+of Newton’s method are variants of the natural gradi-
+ent method (Amari, 1998), but like the basic Newton
+method it is computationally too expensive, requir-
+ing operations on a too large square matrix (num-
+ber of parameters by number of parameters). Diag-
+onal and low-rank online approximations of natural
+gradient (Le Roux et al., 2008; Le Roux et al., 2011)
+27
+have been proposed and shown to speed-up train-
+ing in some contexts. Several adaptive learning rate
+procedures have been proposed recently and merit
+more attention and evaluations in the neural network
+context, such as adagrad (Duchi et al., 2011) and
+the adaptive learning rate method from Schaul et al.
+(2012) which claims to remove completely the need
+for a learning rate hyper-parameter.
+Whereas stochastic gradient descent converges
+very quickly initially it is generally slower than
+second-order methods for the final convergence, and
+this may be important in some applications. As a
+consequence, batch training algorithms (performing
+only one update after seeing the whole training set)
+such as the Conjugate Gradient method (a second
+order method) have dominated stochastic gradient
+descent for not too large datasets (e.g. less than
+thousands or tens of thousands of examples). Fur-
+thermore, it has recently been proposed and success-
+fully applied to use second-order methods over large
+mini-batches (Le et al., 2011; Martens, 2010). The
+idea is to do just a few iterations of the second-order
+methods on each mini-batch and then move on to
+the next mini-batch, starting from the best previous
+point found. A useful twist is to start training with
+one or more epoch of SGD, since SGD remains the
+fastest optimizer early on in training.
+At this point in time however, although the second-
+order and natural gradient methods are appealing
+conceptually, have demonstrably helped in the stud-
+ied cases and may in the end prove to be very impor-
+tant, they have not yet become a standard for neural
+networks optimization and need to be validated and
+maybe improved by other researchers, before displac-
+ing simple (mini-batch) stochastic gradient descent
+variants.
+6.3 Conclusion
+In spite of decades of experimental and theoretical
+work on artificial neural networks, and with all the
+impressive progress made since the first edition of
+this book, in particular in the area of Deep Learning,
+there is still much to be done to better train neural
+networks and better understand the underlying issues
+that can make the training task difficult. As stated in
+the introduction, the wisdom distilled here should be
+taken as a guideline, to be tried and challenged, not
+as a practice set in stone. The practice summarized
+here, coupled with the increase in available comput-
+ing power, now allows researchers to train neural net-
+works on a scale that is far beyond what was possible
+at the time of the first edition of this book, helping
+to move us closer to artificial intelligence.
+Acknowledgements
+The author is grateful for the comments and feed-
+back provided by Nicolas Le Roux, Ian Goodfel-
+low, James Bergstra, Guillaume Desjardins, Razvan
+Pascanu, David Warde-Farley, Eric Larsen, Frederic
+Bastien, and Sina Honari, as well as for the finan-
+cial support of NSERC, FQRNT, CIFAR, and the
+Canada Research Chairs.
+References
+Amari, S. (1998). Natural gradient works efficiently
+in learning. Neural Computation, 10(2), 251–276.
+Bach, F. and Moulines, E. (2011). Non-asymptotic
+analysis of stochastic approximation algorithms. In
+NIPS’2011 .
+Bagnell, J. A. and Bradley, D. M. (2009). Differen-
+tiable sparse coding. In NIPS’2009 , pages 113–120.
+Baxter, J. (1995). Learning internal representations.
+In COLT’95 , pages 311–320.
+Baxter, J. (1997). A Bayesian/information theoretic
+model of learning via multiple task sampling. Ma-
+chine Learning, 28, 7–40.
+Bengio, Y. (2008). Neural net language models.
+Scholarpedia, 3(1), 3881.
+Bengio, Y. (2009). Learning deep architectures for
+AI . Now Publishers.
+Bengio, Y. (2011). Deep learning of representations
+for unsupervised and transfer learning. In JMLR
+W&CP: Proc. Unsupervised and Transfer Learn-
+ing.
+28
+Bengio, Y. and Delalleau, O. (2011). On the expres-
+sive power of deep architectures. In ALT’2011 .
+Bengio, Y. and LeCun, Y. (2007). Scaling learning
+algorithms towards AI. In Large Scale Kernel Ma-
+chines.
+Bengio, Y., Ducharme, R., Vincent, P., and Jauvin,
+C. (2003). A neural probabilistic language model.
+JMLR, 3, 1137–1155.
+Bengio, Y., Le Roux, N., Vincent, P., Delalleau, O.,
+and Marcotte, P. (2006a). Convex neural networks.
+In NIPS’2005 , pages 123–130.
+Bengio, Y., Delalleau, O., and Le Roux, N. (2006b).
+The curse of highly variable functions for local ker-
+nel machines. In NIPS’2005 , pages 107–114.
+Bengio, Y., Lamblin, P., Popovici, D., and
+Larochelle, H. (2007). Greedy layer-wise training
+of deep networks. In NIPS’2006 .
+Bengio, Y., Louradour, J., Collobert, R., and We-
+ston, J. (2009). Curriculum learning. In ICML’09 .
+Bengio, Y., Alain, G., and Rifai, S. (2012). Im-
+plicit density estimation by local moment matching
+to sample from auto-encoders. Technical report,
+arXiv:1207.0057.
+Bergstra, J. and Bengio, Y. (2012). Random search
+for hyper-parameter optimization. J. Machine
+Learning Res., 13, 281–305.
+Bergstra, J., Breuleux, O., Bastien, F., Lamblin, P.,
+Pascanu, R., Desjardins, G., Turian, J., Warde-
+Farley, D., and Bengio, Y. (2010). Theano: a
+CPU and GPU math expression compiler. In Proc.
+Python for Scientific Comp. Conf. (SciPy).
+Bergstra, J., Bardenet, R., Bengio, Y., and K´egl, B.
+(2011). Algorithms for hyper-parameter optimiza-
+tion. In NIPS’2011 .
+Berkes, P. and Wiskott, L. (2002). Applying slow fea-
+ture analysis to image sequences yields a rich reper-
+toire of complex cell properties. In ICANN’02 ,
+pages 81–86.
+Bertsekas, D. P. (2010). Incremental gradient, sub-
+gradient, and proximal methods for convex opti-
+mization: a survey. Technical Report 2848, LIDS.
+Bordes, A., Bottou, L., and Gallinari, P. (2009). Sgd-
+qn: Careful quasi-newton stochastic gradient de-
+scent. Journal of Machine Learning Research, 10,
+1737–1754.
+Bordes, A., Weston, J., Collobert, R., and Bengio, Y.
+(2011). Learning structured embeddings of knowl-
+edge bases. In AAAI 2011 .
+Bordes, A., Glorot, X., Weston, J., and Bengio, Y.
+(2012). Joint learning of words and meaning rep-
+resentations for open-text semantic parsing. AIS-
+TATS’2012 .
+Bottou, L. (2011). From machine learning to machine
+reasoning. Technical report, arXiv.1102.1808.
+Bottou, L. (2013). Large-scale learning with stochas-
+tic gradient descent. In K.-R. M¨uller, G. Mon-
+tavon, and G. B. Orr, editors, Neural Networks:
+Tricks of the Trade, Reloaded . Springer.
+Bottou, L. and Bousquet, O. (2008). The tradeoffs of
+large scale learning. In NIPS’2008 .
+Bottou, L. and LeCun, Y. (2004). Large-scale on-line
+learning. In NIPS’2003 .
+Breiman, L. (1994). Bagging predictors. Machine
+Learning, 24(2), 123–140.
+Breuleux, O., Bengio, Y., and Vincent, P. (2011).
+Quickly generating representative samples from an
+rbm-derived process. Neural Computation, 23(8),
+2053–2073.
+Caruana, R. (1993). Multitask connectionist learn-
+ing. In Proceedings of the 1993 Connectionist Mod-
+els Summer School , pages 372–379.
+Cho, K., Raiko, T., and Ilin, A. (2011). Enhanced
+gradient and adaptive learning rate for training
+restricted boltzmann machines. In ICML’2011 ,
+pages 105–112.
+29
+Coates, A. and Ng, A. Y. (2011). The importance
+of encoding versus training with sparse coding and
+vector quantization. In ICML’2011 .
+Collobert, R. and Bengio, S. (2004a). Links between
+perceptrons, MLPs and SVMs. In ICML’2004 .
+Collobert, R. and Bengio, S. (2004b). Links between
+perceptrons, MLPs and SVMs. In International
+Conference on Machine Learning, ICML.
+Collobert, R., Weston, J., Bottou, L., Karlen, M.,
+Kavukcuoglu, K., and Kuksa, P. (2011a). Natural
+language processing (almost) from scratch. Journal
+of Machine Learning Research, 12, 2493–2537.
+Collobert, R., Kavukcuoglu, K., and Farabet, C.
+(2011b). Torch7: A matlab-like environment for
+machine learning. In BigLearn, NIPS Workshop.
+Courville, A., Bergstra, J., and Bengio, Y. (2011).
+Unsupervised models of images by spike-and-slab
+RBMs. In ICML’2011 .
+Dauphin, Y., Glorot, X., and Bengio, Y. (2011). Sam-
+pled reconstruction for large-scale learning of em-
+beddings. In Proc. ICML’2011 .
+Deerwester, S., Dumais, S. T., Furnas, G. W., Lan-
+dauer, T. K., and Harshman, R. (1990). Indexing
+by latent semantic analysis. J. Am. Soc. Informa-
+tion Science, 41(6), 391–407.
+Duchi, J., Hazan, E., and Singer, Y. (2011). Adap-
+tive subgradient methods for online learning and
+stochastic optimization. Journal of Machine
+Learning Research.
+Elman, J. L. (1993). Learning and development in
+neural networks: The importance of starting small.
+Cognition, 48, 781–799.
+Erhan, D., Courville, A., and Bengio, Y. (2010a).
+Understanding representations learned in deep ar-
+chitectures. Technical Report 1355, Universit´e de
+Montr´eal/DIRO.
+Erhan, D., Bengio, Y., Courville, A., Manzagol, P.-
+A., Vincent, P., and Bengio, S. (2010b). Why does
+unsupervised pre-training help deep learning? J.
+Machine Learning Res., 11, 625–660.
+Frasconi, P., Gori, M., and Sperduti, A. (1998). A
+general framework for adaptive processing of data
+structures. IEEE Transactions on Neural Net-
+works, 9(5), 768–786.
+Geman, S., Bienenstock, E., and Doursat, R. (1992).
+Neural networks and the bias/variance dilemma.
+Neural Computation, 4(1), 1–58.
+Getoor, L. and Taskar, B. (2006). Introduction to
+Statistical Relational Learning. MIT Press.
+Glorot, X. and Bengio, Y. (2010). Understanding
+the difficulty of training deep feedforward neural
+networks. In AISTATS’2010 , pages 249–256.
+Glorot, X., Bordes, A., and Bengio, Y. (2011a).
+Deep sparse rectifier neural networks. In AIS-
+TATS’2011 .
+Glorot, X., Bordes, A., and Bengio, Y. (2011b). Do-
+main adaptation for large-scale sentiment classifi-
+cation: A deep learning approach. In ICML’2011 .
+Goodfellow, I., Le, Q., Saxe, A., and Ng, A.
+(2009). Measuring invariances in deep networks.
+In NIPS’2009 , pages 646–654.
+Goodfellow, I., Courville, A., and Bengio, Y. (2011).
+Spike-and-slab sparse coding for unsupervised fea-
+ture discovery. In NIPS Workshop on Challenges
+in Learning Hierarchical Models.
+Graepel, T., Candela, J. Q., Borchert, T., and Her-
+brich, R. (2010). Web-scale Bayesian click-through
+rate prediction for sponsored search advertising in
+microsoft’s bing search engine. In ICML’2010 .
+H˚astad, J. (1986). Almost optimal lower bounds for
+small depth circuits. In STOC’86 , pages 6–20.
+H˚astad, J. and Goldmann, M. (1991). On the power
+of small-depth threshold circuits. Computational
+Complexity, 1, 113–129.
+Hinton, G. E. (1978). Relaxation and its role in vi-
+sion. Ph.D. thesis, University of Edinburgh.
+Hinton, G. E. (1986). Learning distributed represen-
+tations of concepts. In Proc. 8th Annual Conf. Cog.
+Sc. Society, pages 1–12.
+30
+Hinton, G. E. (1989). Connectionist learning proce-
+dures. Artificial Intelligence, 40, 185–234.
+Hinton, G. E. (2010). A practical guide to train-
+ing restricted Boltzmann machines. Technical Re-
+port UTML TR 2010-003, Department of Com-
+puter Science, University of Toronto.
+Hinton, G. E. (2013). A practical guide to training
+restricted boltzmann machines. In K.-R. M¨uller,
+G. Montavon, and G. B. Orr, editors, Neural Net-
+works: Tricks of the Trade, Reloaded . Springer.
+Hinton, G. E., Osindero, S., and Teh, Y.-W. (2006).
+A fast learning algorithm for deep belief nets. Neu-
+ral Computation, 18, 1527–1554.
+Hutter, F. (2009). Automated Configuration of Algo-
+rithms for Solving Hard Computational Problems.
+Ph.D. thesis, University of British Columbia.
+Hutter, F., Hoos, H., and Leyton-Brown, K. (2011).
+Sequential model-based optimization for general
+algorithm configuration. In LION-5 .
+Jarrett, K., Kavukcuoglu, K., Ranzato, M., and Le-
+Cun, Y. (2009). What is the best multi-stage ar-
+chitecture for object recognition? In ICCV’09 .
+Kavukcuoglu, K., Ranzato, M.-A., Fergus, R., and
+LeCun, Y. (2009). Learning invariant features
+through topographic filter maps. In CVPR’2009 .
+Krueger, K. A. and Dayan, P. (2009). Flexible shap-
+ing: how learning in small steps helps. Cognition,
+110, 380–394.
+Lamblin, P. and Bengio, Y. (2010). Important gains
+from supervised fine-tuning of deep architectures
+on large labeled sets. NIPS*2010 Deep Learning
+and Unsupervised Feature Learning Workshop.
+Lang, K. J. and Hinton, G. E. (1988). The develop-
+ment of the time-delay neural network architecture
+for speech recognition. Technical Report CMU-CS-
+88-152, Carnegie-Mellon University.
+Larochelle, H. and Bengio, Y. (2008). Classifica-
+tion using discriminative restricted Boltzmann ma-
+chines. In ICML’2008 .
+Larochelle, H., Bengio, Y., Louradour, J., and Lam-
+blin, P. (2009). Exploring strategies for training
+deep neural networks. J. Machine Learning Res.,
+10, 1–40.
+Le, Q., Ngiam, J., Chen, Z., hao Chia, D. J., Koh,
+P. W., and Ng, A. (2010). Tiled convolutional neu-
+ral networks. In NIPS’2010 .
+Le, Q., Ngiam, J., Coates, A., Lahiri, A., Prochnow,
+B., and Ng, A. (2011). On optimization methods
+for deep learning. In ICML’2011 .
+Le Roux, N., Manzagol, P.-A., and Bengio, Y. (2008).
+Topmoumoute online natural gradient algorithm.
+In NIPS’07 .
+Le Roux, N., Bengio, Y., and Fitzgibbon, A. (2011).
+Improving first and second-order methods by mod-
+eling uncertainty. In Optimization for Machine
+Learning. MIT Press.
+Le Roux, N., Schmidt, M., and Bach, F. (2012).
+A stochastic gradient method with an exponen-
+tial convergence rate for strongly-convex optimiza-
+tion with finite training sets. Technical report,
+arXiv:1202.6258.
+LeCun, Y. (1987). Mod`eles connexionistes de
+l’apprentissage. Ph.D. thesis, Universit´e de Paris
+VI.
+LeCun, Y. (1989). Generalization and network de-
+sign strategies. Technical Report CRG-TR-89-4,
+University of Toronto.
+LeCun, Y. (2013). to appear. In K.-R. M¨uller,
+G. Montavon, and G. B. Orr, editors, Neural Net-
+works: Tricks of the Trade, Reloaded . Springer.
+LeCun, Y., Boser, B., Denker, J. S., Henderson, D.,
+Howard, R. E., Hubbard, W., and Jackel, L. D.
+(1989). Backpropagation applied to handwritten
+zip code recognition. Neural Computation, 1(4),
+541–551.
+LeCun, Y., Bottou, L., Orr, G. B., and M¨uller, K.
+(1998a). Efficient backprop. In Neural Networks,
+Tricks of the Trade.
+31
+LeCun, Y., Bottou, L., Bengio, Y., and Haffner, P.
+(1998b). Gradient based learning applied to docu-
+ment recognition. IEEE , 86(11), 2278–2324.
+Lee, H., Ekanadham, C., and Ng, A. (2008). Sparse
+deep belief net model for visual area V2. In
+NIPS’07 .
+Lee, H., Grosse, R., Ranganath, R., and Ng, A. Y.
+(2009). Convolutional deep belief networks for scal-
+able unsupervised learning of hierarchical represen-
+tations. In ICML’2009 .
+Martens, J. (2010). Deep learning via Hessian-free
+optimization. In ICML’2010 , pages 735–742.
+Mesnil, G., Dauphin, Y., Glorot, X., Rifai, S., Ben-
+gio, Y., Goodfellow, I., Lavoie, E., Muller, X.,
+Desjardins, G., Warde-Farley, D., Vincent, P.,
+Courville, A., and Bergstra, J. (2011). Unsuper-
+vised and transfer learning challenge: a deep learn-
+ing approach. In JMLR W&CP: Proc. Unsuper-
+vised and Transfer Learning, volume 7.
+Montavon, G., Braun, M. L., and Muller, K.-R.
+(2012). Deep boltzmann machines as feed-forward
+hierarchies. In AISTATS’2012 .
+Nair, V. and Hinton, G. E. (2010). Rectified linear
+units improve restricted Boltzmann machines. In
+ICML’2010 .
+Nemirovski, A. and Yudin, D. (1983). Problem com-
+plexity and method efficiency in optimization. Wi-
+ley.
+Nesterov, Y. (2009). Primal-dual subgradient meth-
+ods for convex problems. Mathematical program-
+ming, 120(1), 221–259.
+Olshausen, B. A. and Field, D. J. (1997). Sparse
+coding with an overcomplete basis set: a strategy
+employed by V1? Vision Research, 37, 3311–3325.
+Pearlmutter, B. (1994). Fast exact multiplication by
+the Hessian. Neural Computation, 6(1), 147–160.
+Pinto, N., Doukhan, D., DiCarlo, J. J., and Cox,
+D. D. (2009). A high-throughput screening ap-
+proach to discovering good forms of biologically
+inspired visual representation. PLoS Comput Biol ,
+5(11), e1000579.
+Pollack, J. B. (1990). Recursive distributed represen-
+tations. Artificial Intelligence, 46(1), 77–105.
+Polyak, B. and Juditsky, A. (1992). Acceleration of
+stochastic approximation by averaging. SIAM J.
+Control and Optimization, 30(4), 838–855.
+Raiko, T., Valpola, H., and LeCun, Y. (2012). Deep
+learning made easier by linear transformations in
+perceptrons. In AISTATS’2012 .
+Ranzato, M., Poultney, C., Chopra, S., and LeCun,
+Y. (2007). Efficient learning of sparse representa-
+tions with an energy-based model. In NIPS’06 .
+Ranzato, M., Boureau, Y.-L., and LeCun, Y. (2008a).
+Sparse feature learning for deep belief networks.
+In J. Platt, D. Koller, Y. Singer, and S. Roweis,
+editors, Advances in Neural Information Process-
+ing Systems 20 (NIPS’07), pages 1185–1192, Cam-
+bridge, MA. MIT Press.
+Ranzato, M., Boureau, Y., and LeCun, Y. (2008b).
+Sparse feature learning for deep belief networks. In
+NIPS’2007 .
+Richardson, M. and Domingos, P. (2006). Markov
+logic networks. Machine Learning, 62, 107–136.
+Rifai, S., Vincent, P., Muller, X., Glorot, X., and
+Bengio, Y. (2011a). Contracting auto-encoders:
+Explicit invariance during feature extraction. In
+ICML’2011 .
+Rifai, S., Dauphin, Y., Vincent, P., Bengio, Y., and
+Muller, X. (2011b). The manifold tangent classi-
+fier. In NIPS’2011 .
+Rifai, S., Bengio, Y., Dauphin, Y., and Vincent, P.
+(2012). A generative process for sampling contrac-
+tive auto-encoders. In ICML’2012 .
+Robbins, H. and Monro, S. (1951). A stochastic
+approximation method. Annals of Mathematical
+Statistics, 22, 400–407.
+32
+Rumelhart, D. E., Hinton, G. E., and Williams,
+R. J. (1986). Learning representations by back-
+propagating errors. Nature, 323, 533–536.
+Salakhutdinov, R. and Hinton, G. (2009). Deep
+Boltzmann machines. In AISTATS’2009 .
+Saxe, A. M., Koh, P. W., Chen, Z., Bhand, M.,
+Suresh, B., and Ng, A. (2011). On random weights
+and unsupervised feature learning. In ICML’2011 .
+Schaul, T., Zhang, S., and LeCun, Y. (2012). No
+More Pesky Learning Rates. Technical report.
+Schraudolph, N. N. (1998). Centering neural network
+gradient factors. In G. B. Orr and K.-R. Muller, ed-
+itors, Neural Networks: Tricks of he Trade, pages
+548–548. Springer.
+Socher, R., Manning, C., and Ng, A. Y. (2011). Pars-
+ing natural scenes and natural language with recur-
+sive neural networks. In ICML’2011 .
+Srinivasan, A. and Ramakrishnan, G. (2011). Pa-
+rameter screening and optimisation for ILP using
+designed experiments. Journal of Machine Learn-
+ing Research, 12, 627–662.
+Swersky, K., Chen, B., Marlin, B., and de Freitas,
+N. (2010). A tutorial on stochastic approximation
+algorithms for training restricted boltzmann ma-
+chines and deep belief nets. In Information Theory
+and Applications Workshop.
+Tenenbaum, J., de Silva, V., and Langford, J. C.
+(2000). A global geometric framework for nonlin-
+ear dimensionality reduction. Science, 290(5500),
+2319–2323.
+Tieleman, T. and Hinton, G. (2009). Using fast
+weights to improve persistent contrastive diver-
+gence. In ICML’2009 .
+van der Maaten, L. and Hinton, G. E. (2008). Visual-
+izing data using t-sne. J. Machine Learning Res.,
+9.
+Vincent, P. (2011). A connection between score
+matching and denoising autoencoders. Neural
+Computation, 23(7).
+Vincent, P., Larochelle, H., Bengio, Y., and Man-
+zagol, P.-A. (2008). Extracting and composing
+robust features with denoising autoencoders. In
+ICML 2008 .
+Vincent, P., Larochelle, H., Lajoie, I., Bengio, Y.,
+and Manzagol, P.-A. (2010). Stacked denoising au-
+toencoders: Learning useful representations in a
+deep network with a local denoising criterion. J.
+Machine Learning Res., 11.
+Weston, J., Ratle, F., and Collobert, R. (2008). Deep
+learning via semi-supervised embedding. In ICML
+2008 .
+Weston, J., Bengio, S., and Usunier, N. (2011). Ws-
+abie: Scaling up to large vocabulary image anno-
+tation. In Proceedings of the International Joint
+Conference on Artificial Intelligence, IJCAI .
+Wiskott, L. and Sejnowski, T. J. (2002). Slow fea-
+ture analysis: Unsupervised learning of invari-
+ances. Neural Computation, 14(4), 715–770.
+Zou, W. Y., Ng, A. Y., and Yu, K. (2011). Unsu-
+pervised learning of visual invariance with tempo-
+ral coherence. In NIPS 2011 Workshop on Deep
+Learning and Unsupervised Feature Learning.
+33

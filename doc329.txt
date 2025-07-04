@@ -1,0 +1,34 @@
+A navalha de Ockham na Ciência da Computação
+Como o princípio da hipótese mais simples é aplicada à Ciência da Computação
+O princípio da Navalha de Ockham é definido como a regra da hipótese mais simples. Foi nomeada em homenagem a Guilherme de Ockham, um frade e filósofo inglês do século 14. Esta norma é uma das bases do método científico. Neste artigo iremos explicar melhor o que é este princípio e como ele é aplicado à Ciência da Computação.
+
+Imagem de uma navalha medieval toda cravejada e de cor prateada. Ao fundo tem-se um templo medieval para ilustrar o contexto da época da Navalha de Ockham.
+Definição
+A Navalha de Ockham baseia-se na ideia de que a Natureza sempre escolhe o caminho mais simples. Assim, no método científico, deveríamos escolher sempre a hipótese mais simples dentre as disponíveis. Ela é um princípio metodológico e não uma lei ou verdade absoluta. Logo, a hipótese mais simples deve ser investigada e não tomada como verdade. A Navalha de Ockham te ajuda a escolher o caminho ao qual se busca refutar ou reforçar uma hipótese. 
+
+Vamos exemplificar com algo ficcional. Imagine que em meio a um milharal em um sítio, infelizmente, foi encontrado um corpo levemente carbonizado. Algumas testemunhas reportaram ter visto um clarão durante a noite. Ao começar uma investigação para identificar a causa da morte duas hipóteses foram levantadas:
+
+  1. A pessoa foi atacada por algum animal selvagem;
+  2. Um ser alienígena matou a pessoa;
+  3. Um raio caiu sobre a pessoa;
+
+Baseado no princípio da Navalha de Ockham, qual seria a hipótese mais simples a ser investigada? Em tese, seria a número 3, pois um raio parece ser a explicação mais simples dentre as opções disponíveis. Não quer dizer que é, de fato, a explicação correta, mas certamente a mais plausível dadas as circunstâncias conhecidas. 
+
+Por último, um outro argumento que reforça o princípio da Navalha de Ockham é o fato de que, estatisticamente falando, uma hipótese mais simples, ou seja, que contém menos variáveis, está menos suscetível a erros do que uma hipótese complexa e com múltiplas variáveis. Consequentemente, a hipótese mais simples é mais verificável. 
+
+A navalha de Ockham na Ciência da Computação
+A Navalha de Ockham se faz relevante em vários tópicos em Ciência da Computação. Vamos citar alguns exemplos a seguir para esclarecer a abordagem. Lembre-se que o princípio da Navalha de Ockham é um método e não uma solução genérica para problemas diversos.
+
+Projeto e análise de algoritmos
+Ao elaborar algoritmos, um algoritmo com menos passos, menor complexidade e menor utilização de recursos (memória/CPU), geralmente é preferível pois tende a ser mais simples de entender, implementar e debugar. Logo, espelha a ideia da Navalha de Ockham.
+
+Escolha de modelos de Aprendizado de Máquina
+Na avaliação de modelos de aprendizado de máquina utiliza-se o conceito de Regularização, que penaliza modelos complexos, pois tendem a gerar overfitting (respostas incorretas pois o modelo está levando em consideração ruídos das entradas do treinamento do modelo). Assim, um modelo que alcança o percentual de sucesso (respostas corretas) com a menor complexidade possível, costuma ser preferível.
+
+Projeto de Sistemas
+Ao projetar software, sistemas computacionais ou interfaces, o design mais simples é comumente preferível. Eles são mais simples de validar, menos suscetíveis a conter falhas ocultas e tipicamente mais amigáveis aos usuários. Minimizar o número de componentes/interações está diretamente alinhado com o princípio da Navalha de Ockham.
+
+Conclusão
+Em essência, a Navalha de Ockham é um princípio metodológico e filosófico que favorece a simplicidade em hipóteses que explicam um determinado fenômeno em investigação. A Ciência da Computação pode se beneficiar desse princípio de modo escolher soluções mais simples, eficientes e replicáveis para problemas computacionais. 
+
+Fique com um trecho interessante do filme O nome da Rosa em que é retratado o período em que o princípio da Navalha de Ockham foi definido. No trecho do filme, note que as pessoas seguem preceitos religiosos, ou conclusões de conhecimento popular para justificar/responder que não se deve rir ou fazer graça. No entanto, um dos Frades segue uma linha de raciocínio mais lógico, baseado em evidências e através de hipóteses simples e verificáveis. De certa forma, o trecho exemplifica conflitos da transição desde o período medieval até o iluminismo, assim como a Navalha de Ockham se tornou uma das bases do método científico.
