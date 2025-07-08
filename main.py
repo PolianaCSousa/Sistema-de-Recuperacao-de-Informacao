@@ -42,6 +42,57 @@ referenciaInformacao = [
     "doc55.txt", "doc60.txt", "doc72.txt", "doc100.txt", "doc150.txt"
 ]
 
+def final_avaliation():
+    vocabulary = get_most_relevant_terms()
+    index = index_collection(vocabulary)
+    final_result = {}
+    p5 = 0
+    p10 = 0
+
+    for key, value in index.items():
+        if key == 'informação' or key == 'software':
+            sorted_docs = dict(sorted(value[1].items(), key=lambda item: item[1], reverse=True))
+            vocabulary_10 = dict(islice(sorted_docs.items(), 10))
+            result = list(vocabulary_10.keys())
+            print(f'{key}: {result}')
+            aux = 0
+            final_result[key] = {}
+
+            for i in range(10):
+                if key == 'informação':
+                    if result[i] in referenciaInformacao:
+                        aux += 1
+                elif key == 'software':
+                    if result[i] in referenciaSoftware:
+                        aux += 1
+
+                if i == 4:
+                    final_result[key]["p5"] = aux / 5
+                if i == 9:
+                    final_result[key]["p10"] = aux / 10
+    print(final_result)
+
+
+def get_most_relevant_terms():
+
+    dictionary = create_collection_dictionary()
+    vocabulary = dict()
+
+    for key, value in dictionary.items():
+        for key, v in value.items():
+            if key in vocabulary:
+                vocabulary[key] = vocabulary[key] + v
+            else:
+                vocabulary[key] = v
+   # print(vocabulary)
+    sorted_vocabulary = dict(sorted(vocabulary.items(),key=lambda word: word[1], reverse=True))
+
+    vocabulary_50 = dict(islice(sorted_vocabulary.items(), 50))
+
+
+    #print(vocabulary_50)
+    return vocabulary_50
+
 def index_collection(vocabulary):
 
     collection = create_collection_dictionary()
@@ -63,6 +114,41 @@ def index_collection(vocabulary):
        # print(index[vocabulary_key])
     return index
 
+def create_collection_dictionary():
+
+    dictionary = dict()
+    qtd_files = 360
+
+    for i in range(1, qtd_files + 1): #o range é exclusivo no final, entao para chegar até o 2 precisa adicionar mais um. Ex, se for range(1,5) ele vai do 1 ao 4
+        dictionary['doc'+str(i)+'.txt'] = create_dictionary('doc'+str(i)+'.txt')
+    #print(dictionary)
+    return dictionary
+
+def create_dictionary(fileName):
+
+    vocabulary = extract_vocabulary(fileName)
+    counter = Counter(vocabulary)
+    """for k,v in counter.items():
+        print(k,v)"""
+    #print(counter)
+    return dict(counter)
+
+def extract_vocabulary(fileName):
+    try:
+        file = open(fileName, 'r', encoding='utf-8')
+    except FileNotFoundError:
+        print(f'Arquivo {fileName} não encontrado.')
+        return []
+
+    vocabulary = []
+    for line in file:
+        strings = re.findall(r'\b[^\W\d_]{3,}\b', line, re.UNICODE)
+        lower_strings = list(map(str.lower, strings))
+        filtered = [s for s in lower_strings if s not in stopWords]
+        vocabulary = vocabulary + filtered
+
+    file.close()
+    return vocabulary
 
 def bool_index(vocabulary):
     collection = create_collection_dictionary()
@@ -171,62 +257,14 @@ def words_in_vocabulary(words,vocabulary):
     else:
         return consult_boolean_index
 
-def extract_vocabulary(fileName):
-    try:
-        file = open(fileName, 'r', encoding='utf-8')
-    except FileNotFoundError:
-        print(f'Arquivo {fileName} não encontrado.')
-        return []
-
-    vocabulary = []
-    for line in file:
-        strings = re.findall(r'\b[^\W\d_]{3,}\b', line, re.UNICODE)
-        lower_strings = list(map(str.lower, strings))
-        filtered = [s for s in lower_strings if s not in stopWords]
-        vocabulary = vocabulary + filtered
-
-    file.close()
-    return vocabulary
-
-def create_dictionary(fileName):
-
-    vocabulary = extract_vocabulary(fileName)
-    counter = Counter(vocabulary)
-    """for k,v in counter.items():
-        print(k,v)"""
-    #print(counter)
-    return dict(counter)
-
-def create_collection_dictionary():
-
-    dictionary = dict()
-    qtd_files = 360
-
-    for i in range(1, qtd_files + 1): #o range é exclusivo no final, entao para chegar até o 2 precisa adicionar mais um. Ex, se for range(1,5) ele vai do 1 ao 4
-        dictionary['doc'+str(i)+'.txt'] = create_dictionary('doc'+str(i)+'.txt')
-
-    return dictionary
 
 
-def get_most_relevant_terms():
-
-    dictionary = create_collection_dictionary()
-    vocabulary = dict()
-
-    for key, value in dictionary.items():
-        for key, v in value.items():
-            if key in vocabulary:
-                vocabulary[key] = vocabulary[key] + v
-            else:
-                vocabulary[key] = v
-   # print(vocabulary)
-    sorted_vocabulary = dict(sorted(vocabulary.items(),key=lambda word: word[1], reverse=True))
-
-    vocabulary_50 = dict(islice(sorted_vocabulary.items(), 200))
 
 
-    #print(vocabulary_50)
-    return vocabulary_50
+
+
+
+
 
 def vetorial_model(term1, term2):
     import numpy as np
@@ -298,9 +336,9 @@ def menu():
 
     while True:
         option = int(input("\n\n******** TRABALHO DE RECUPERAÇÃO DE INFORMAÇÃO **************\n"
-              "**************************************************************\n"
+              "\n"
               "******** ALUNOS: LEANDRO & POLIANA ***************************\n"
-              "**************************************************************\n"
+              "\n"
               "********************** MENU **********************************\n"
               "********** 1 - PARA INDEXAR A COLEÇÃO ************************\n"
               "********** 2 - PARA IMPRIMIR O VOCABULÁRIO *******************\n"
@@ -308,8 +346,9 @@ def menu():
               "********** 4 - PARA IMPRIMIR A MATRIZ DE FREQUENCIAS *********\n"
               "********** 5 - PARA APLICAR O MODELO BOOLEANO ****************\n"
               "********** 6 - REALIZAR CONSULTA PARA O MODELO VETORIAL ******\n"
+              "********** 7 - NOVA FUNCAO DE TESTE ******\n"
               "********** 0 - SAIR ******************************************\n"
-              "**************************************************************\n"
+              "\n"
               "DIGITE A OPÇÃO DESEJADA: "))
 
 
@@ -349,9 +388,13 @@ def menu():
                 #print(term1,term2)
                 vetorial_model(term1,term2)
 
+            case 7:
+                result = final_avaliation()
+                #print(result)
+
+
             case 0:
                 break
-
 
 
 if __name__ == "__main__":
