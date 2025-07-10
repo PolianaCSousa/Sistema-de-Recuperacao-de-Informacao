@@ -346,7 +346,7 @@ def menu():
               "********** 4 - PARA IMPRIMIR A MATRIZ DE FREQUENCIAS *********\n"
               "********** 5 - PARA APLICAR O MODELO BOOLEANO ****************\n"
               "********** 6 - REALIZAR CONSULTA PARA O MODELO VETORIAL ******\n"
-              "********** 7 - NOVA FUNCAO DE TESTE ******\n"
+              "********** 7 - AVALIAÇÃO DO SISTEMA  *************************\n"
               "********** 0 - SAIR ******************************************\n"
               "\n"
               "DIGITE A OPÇÃO DESEJADA: "))
